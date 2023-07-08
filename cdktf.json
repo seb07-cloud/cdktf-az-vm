@@ -2,11 +2,11 @@
   "language": "go",
   "app": "go run main.go",
   "codeMakerOutput": "generated",
-  "projectId": "34a3b47d-3da0-4eca-830e-2e0db161ef61",
-  "sendCrashReports": "true",
-  "terraformProviders": [],
+  "projectId": "3a502194-a78e-4733-abe5-7363a339ea17",
+  "sendCrashReports": "false",
+  "terraformProviders": [
+    "hashicorp/azurerm@3.64.0"
+  ],
   "terraformModules": [],
-  "context": {
-
-  }
+  "context": {}
 }

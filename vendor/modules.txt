@@ -1,0 +1,22 @@
+# github.com/Masterminds/semver/v3 v3.2.0
+## explicit; go 1.18
+github.com/Masterminds/semver/v3
+# github.com/aws/constructs-go/constructs/v10 v10.1.91
+## explicit; go 1.16
+github.com/aws/constructs-go/constructs/v10
+github.com/aws/constructs-go/constructs/v10/jsii
+# github.com/aws/jsii-runtime-go v1.65.1
+## explicit; go 1.16
+github.com/aws/jsii-runtime-go
+github.com/aws/jsii-runtime-go/internal/api
+github.com/aws/jsii-runtime-go/internal/embedded
+github.com/aws/jsii-runtime-go/internal/kernel
+github.com/aws/jsii-runtime-go/internal/kernel/process
+github.com/aws/jsii-runtime-go/internal/objectstore
+github.com/aws/jsii-runtime-go/internal/typeregistry
+github.com/aws/jsii-runtime-go/runtime
+# github.com/hashicorp/terraform-cdk-go/cdktf v0.13.0-pre.54
+## explicit; go 1.16
+github.com/hashicorp/terraform-cdk-go/cdktf
+github.com/hashicorp/terraform-cdk-go/cdktf/internal
+github.com/hashicorp/terraform-cdk-go/cdktf/jsii

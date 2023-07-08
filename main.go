@@ -8,7 +8,10 @@ import (
 func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
 
-	// The code that defines your stack goes here
+	// New Azurerm Provider
+	azurermProvider := NewAzurermProvider(stack, "azurerm", &AzurermProviderConfig{
+		Features: []AzurermProviderFeatures{},
+	})
 
 	return stack
 }
@@ -16,7 +19,7 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 func main() {
 	app := cdktf.NewApp(nil)
 
-	NewMyStack(app, "cdktf-vm-win-linux-")
+	NewMyStack(app, "cdktf-vm-win-linux")
 
 	app.Synth()
 }
