@@ -38,6 +38,9 @@ func (j *jsiiProxy_Construct) Node() Node {
 func NewConstruct(scope Construct, id *string) Construct {
 	_init_.Initialize()
 
+	if err := validateNewConstructParameters(scope, id); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_Construct{}
 
 	_jsii_.Create(
@@ -80,6 +83,9 @@ func NewConstruct_Override(c Construct, scope Construct, id *string) {
 func Construct_IsConstruct(x interface{}) *bool {
 	_init_.Initialize()
 
+	if err := validateConstruct_IsConstructParameters(x); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.StaticInvoke(

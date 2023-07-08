@@ -249,6 +249,9 @@ func (j *jsiiProxy_Node) Scopes() *[]IConstruct {
 func NewNode(host Construct, scope IConstruct, id *string) Node {
 	_init_.Initialize()
 
+	if err := validateNewNodeParameters(host, scope, id); err != nil {
+		panic(err)
+	}
 	j := jsiiProxy_Node{}
 
 	_jsii_.Create(
@@ -270,7 +273,7 @@ func NewNode_Override(n Node, host Construct, scope IConstruct, id *string) {
 	)
 }
 
-func (j *jsiiProxy_Node) SetDefaultChild(val IConstruct) {
+func (j *jsiiProxy_Node)SetDefaultChild(val IConstruct) {
 	_jsii_.Set(
 		j,
 		"defaultChild",
@@ -283,6 +286,9 @@ func (j *jsiiProxy_Node) SetDefaultChild(val IConstruct) {
 func Node_Of(construct IConstruct) Node {
 	_init_.Initialize()
 
+	if err := validateNode_OfParameters(construct); err != nil {
+		panic(err)
+	}
 	var returns Node
 
 	_jsii_.StaticInvoke(
@@ -320,6 +326,9 @@ func (n *jsiiProxy_Node) AddDependency(deps ...IDependable) {
 }
 
 func (n *jsiiProxy_Node) AddMetadata(type_ *string, data interface{}, options *MetadataOptions) {
+	if err := n.validateAddMetadataParameters(type_, data, options); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"addMetadata",
@@ -328,6 +337,9 @@ func (n *jsiiProxy_Node) AddMetadata(type_ *string, data interface{}, options *M
 }
 
 func (n *jsiiProxy_Node) AddValidation(validation IValidation) {
+	if err := n.validateAddValidationParameters(validation); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"addValidation",
@@ -349,6 +361,9 @@ func (n *jsiiProxy_Node) FindAll(order ConstructOrder) *[]IConstruct {
 }
 
 func (n *jsiiProxy_Node) FindChild(id *string) IConstruct {
+	if err := n.validateFindChildParameters(id); err != nil {
+		panic(err)
+	}
 	var returns IConstruct
 
 	_jsii_.Invoke(
@@ -370,6 +385,9 @@ func (n *jsiiProxy_Node) Lock() {
 }
 
 func (n *jsiiProxy_Node) SetContext(key *string, value interface{}) {
+	if err := n.validateSetContextParameters(key, value); err != nil {
+		panic(err)
+	}
 	_jsii_.InvokeVoid(
 		n,
 		"setContext",
@@ -378,6 +396,9 @@ func (n *jsiiProxy_Node) SetContext(key *string, value interface{}) {
 }
 
 func (n *jsiiProxy_Node) TryFindChild(id *string) IConstruct {
+	if err := n.validateTryFindChildParameters(id); err != nil {
+		panic(err)
+	}
 	var returns IConstruct
 
 	_jsii_.Invoke(
@@ -391,6 +412,9 @@ func (n *jsiiProxy_Node) TryFindChild(id *string) IConstruct {
 }
 
 func (n *jsiiProxy_Node) TryGetContext(key *string) interface{} {
+	if err := n.validateTryGetContextParameters(key); err != nil {
+		panic(err)
+	}
 	var returns interface{}
 
 	_jsii_.Invoke(
@@ -404,6 +428,9 @@ func (n *jsiiProxy_Node) TryGetContext(key *string) interface{} {
 }
 
 func (n *jsiiProxy_Node) TryRemoveChild(childName *string) *bool {
+	if err := n.validateTryRemoveChildParameters(childName); err != nil {
+		panic(err)
+	}
 	var returns *bool
 
 	_jsii_.Invoke(

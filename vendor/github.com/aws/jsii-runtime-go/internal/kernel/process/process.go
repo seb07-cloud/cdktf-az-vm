@@ -2,6 +2,7 @@ package process
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -15,7 +16,14 @@ import (
 	"github.com/aws/jsii-runtime-go/internal/embedded"
 )
 
+const JSII_NODE string = "JSII_NODE"
 const JSII_RUNTIME string = "JSII_RUNTIME"
+
+type ErrorResponse struct {
+	Error string  `json:"error"`
+	Stack *string `json:"stack"`
+	Name  *string `json:"name"`
+}
 
 // Process is a simple interface over the child process hosting the
 // @jsii/kernel process. It only exposes a very straight-forward
@@ -97,7 +105,11 @@ func NewProcess(compatibleVersions string) (*Process, error) {
 			p.Close()
 			return nil, err
 		} else {
-			p.cmd = exec.Command("node", entrypoint)
+			if node := os.Getenv(JSII_NODE); node != "" {
+				p.cmd = exec.Command(node, entrypoint)
+			} else {
+				p.cmd = exec.Command("node", entrypoint)
+			}
 		}
 	}
 
@@ -105,7 +117,7 @@ func NewProcess(compatibleVersions string) (*Process, error) {
 	// particular, we are setting NODE_OPTIONS only if `os.Environ()` does not have another value... So the user can
 	// control the environment... However, JSII_AGENT must always be controlled by this process.
 	p.cmd.Env = append([]string{"NODE_OPTIONS=--max-old-space-size=4069"}, os.Environ()...)
-	p.cmd.Env = append(p.cmd.Env, fmt.Sprintf("JSII_AGENT=%s/%s/%s", runtime.Version(), runtime.GOOS, runtime.GOARCH))
+	p.cmd.Env = append(p.cmd.Env, fmt.Sprintf("JSII_AGENT=%v/%v/%v", runtime.Version(), runtime.GOOS, runtime.GOARCH))
 
 	if stdin, err := p.cmd.StdinPipe(); err != nil {
 		p.Close()
@@ -163,13 +175,13 @@ func (p *Process) ensureStarted() error {
 			causes[i] = fmt.Sprintf("- %v", err)
 		}
 		p.Close()
-		return fmt.Errorf("incompatible runtime version:\n%s", strings.Join(causes, "\n"))
+		return fmt.Errorf("incompatible runtime version:\n%v", strings.Join(causes, "\n"))
 	}
 
 	go func() {
 		err := p.cmd.Wait()
 		if err != nil {
-			fmt.Fprintf(os.Stderr, "Runtime process exited abnormally: %s", err.Error())
+			fmt.Fprintf(os.Stderr, "Runtime process exited abnormally: %v", err.Error())
 		}
 		p.Close()
 	}()
@@ -197,7 +209,31 @@ func (p *Process) readResponse(into interface{}) error {
 	if !p.responses.More() {
 		return fmt.Errorf("no response received from child process")
 	}
-	return p.responses.Decode(into)
+
+	var raw json.RawMessage
+	var respmap map[string]interface{}
+	err := p.responses.Decode(&raw)
+	if err != nil {
+		return err
+	}
+
+	err = json.Unmarshal(raw, &respmap)
+	if err != nil {
+		return err
+	}
+
+	var errResp ErrorResponse
+	if _, ok := respmap["error"]; ok {
+		json.Unmarshal(raw, &errResp)
+
+		if errResp.Name != nil && *errResp.Name == "@jsii/kernel.Fault" {
+			return fmt.Errorf("JsiiError: %s", *errResp.Name)
+		}
+
+		return errors.New(errResp.Error)
+	}
+
+	return json.Unmarshal(raw, &into)
 }
 
 func (p *Process) Close() {

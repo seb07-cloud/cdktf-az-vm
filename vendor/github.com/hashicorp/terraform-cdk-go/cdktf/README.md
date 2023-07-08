@@ -1,3 +1,6 @@
+// Copyright (c) HashiCorp, Inc.
+// SPDX-License-Identifier: MPL-2.0
+
 # cdktf
 
 cdktf is a framework for defining cloud infrastructure using Terraform providers and modules. It allows for
@@ -16,3 +19,5 @@ Build the package
 ```bash
 yarn build
 ```
+
+[Learn More](https://cdk.tf/docs)

@@ -65,6 +65,9 @@ func NewDependable_Override(d Dependable) {
 func Dependable_Get(instance IDependable) Dependable {
 	_init_.Initialize()
 
+	if err := validateDependable_GetParameters(instance); err != nil {
+		panic(err)
+	}
 	var returns Dependable
 
 	_jsii_.StaticInvoke(
@@ -82,6 +85,9 @@ func Dependable_Get(instance IDependable) Dependable {
 func Dependable_Implement(instance IDependable, trait Dependable) {
 	_init_.Initialize()
 
+	if err := validateDependable_ImplementParameters(instance, trait); err != nil {
+		panic(err)
+	}
 	_jsii_.StaticInvokeVoid(
 		"constructs.Dependable",
 		"implement",
@@ -94,6 +100,9 @@ func Dependable_Implement(instance IDependable, trait Dependable) {
 func Dependable_Of(instance IDependable) Dependable {
 	_init_.Initialize()
 
+	if err := validateDependable_OfParameters(instance); err != nil {
+		panic(err)
+	}
 	var returns Dependable
 
 	_jsii_.StaticInvoke(
