@@ -21,13 +21,16 @@ To get started with this project, follow these steps:
 
 To install the necessary dependencies, run the following command:
 
-npm install
+cdktf init --template=go --local
+cdktf provider add azurerm@~> 3.6.4
 
-### Building
+### Run the tfprovider script to update the provider config
 
-To build the project, run the following command:
+./scripts/tfprovider.sh
 
-npm run build
+### Fetch Providers
+
+cdktf get
 
 ### Deploying
 
