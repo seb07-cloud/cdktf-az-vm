@@ -8,13 +8,8 @@ import (
 
 const (
 	// Azure location to deploy the resources to
-	azureLocation = "westeurope"
-)
-
-var (
-	// Address space for the virtual network
+	azureLocation    = "westeurope"
 	vnetAddressSpace = "10.0.0.0/16"
-	// Address space for the subnet
 	snetAddressSpace = "10.0.0.0/24"
 )
 
