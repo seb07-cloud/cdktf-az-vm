@@ -1,5 +1,7 @@
 # Infra-Logic-as-Code
 
+![Infra-Logic-as-Code](https://github.com/seb07-cloud/infra-logic-as-code/blob/main/images/cdktf.png)
+
 ./images/terraform.png
 
 This project is based on CDKTF and creates resources in Azure.
