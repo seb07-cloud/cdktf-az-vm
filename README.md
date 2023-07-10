@@ -34,6 +34,7 @@ npm run build
 To deploy the stack to Azure, run the following command:
 
 cdktf synth
+
 cdktf deploy
 
 ## Contributing
