@@ -1,33 +1,36 @@
 package main
 
 import (
+	"cdk.tf/go/stack/shared"
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
+)
 
-	provider "github.com/seb07-cloud/cdktf-vm-win-linux/generated/azurerm/provider"
-	resourceGroup "github.com/seb07-cloud/cdktf-vm-win-linux/generated/azurerm/resource_group"
+const (
+	// Azure location to deploy the resources to
+	azureLocation = "westeurope"
+)
+
+var (
+	// Address space for the virtual network
+	vnetAddressSpace = "10.0.0.0/16"
+	// Address space for the subnet
+	snetAddressSpace = "10.0.0.0/24"
 )
 
 func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
 
-	// New Azurerm Provider instance
-	provider.NewAzurermProvider(stack, "azurerm", &provider.AzurermProviderConfig{
-		Features: &[]*provider.AzurermProviderFeatures{},
-	})
+	// Create an Azure provider
+	shared.NewAzProvider(stack, "azurerm")
 
-	// New Resource Group instance
-	resGrp := resourceGroup.NewResourceGroup(stack, "resourceGroup", &provider.ResourceGroupConfig{
-		Name:     jsii.String("cdktf-vm-win-linux"),
-		Location: jsii.String("westeurope"),
-	})
+	// Create a resource group
+	rgrp := shared.NewAzResourceGroupConfig("cdktf-vm-win-linux", azureLocation)
+	shared.CreateAzResourceGroup(stack, rgrp)
 
-	// output the resource group name
-	cdktf.NewTerraformOutput(stack, jsii.String("names"), &cdktf.TerraformOutputConfig{
-		Value: &[]*string{resGrp.Name()},
-	})
-
+	// Create a virtual network
+	vnet := shared.NewAzVnetConfig("cdktf-vm-win-linux", vnetAddressSpace, azureLocation, rgrp.Name, snetAddressSpace)
+	shared.CreateAzVirtualNetwork(stack, *vnet)
 	return stack
 }
 

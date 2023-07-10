@@ -1,6 +1,6 @@
 {
   "cdktf": "0.17.1",
   "providers": {
-    "azurerm": "~> 3.0"
+    "azurerm": "~> 3.6"
   }
 }
