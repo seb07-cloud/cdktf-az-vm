@@ -1,177 +1,78 @@
-# cloud.google.com/go v0.45.1
-## explicit; go 1.9
-# github.com/Azure/azure-sdk-for-go v38.1.0+incompatible
-## explicit
-# github.com/Azure/go-autorest/autorest v0.9.3
-## explicit; go 1.12
-# github.com/Azure/go-autorest/autorest/adal v0.8.1-0.20191028180845-3492b2aff503
-## explicit; go 1.12
-# github.com/Azure/go-autorest/autorest/azure/cli v0.3.0
-## explicit; go 1.12
-# github.com/Azure/go-autorest/autorest/date v0.2.0
-## explicit; go 1.12
-# github.com/Azure/go-autorest/autorest/to v0.3.0
-## explicit; go 1.12
-# github.com/Azure/go-autorest/autorest/validation v0.2.0
-## explicit; go 1.12
-# github.com/Azure/go-autorest/logger v0.1.0
-## explicit; go 1.12
-# github.com/Azure/go-autorest/tracing v0.5.0
-## explicit; go 1.12
 # github.com/Masterminds/semver/v3 v3.2.1
 ## explicit; go 1.18
 github.com/Masterminds/semver/v3
-# github.com/agext/levenshtein v1.2.2
-## explicit
-# github.com/apparentlymart/go-cidr v1.0.1
-## explicit
-# github.com/apparentlymart/go-textseg v1.0.0
-## explicit
-# github.com/armon/go-radix v1.0.0
-## explicit
-# github.com/aws/aws-sdk-go v1.25.3
-## explicit
-# github.com/aws/constructs-go/constructs/v10 v10.1.167
+# github.com/aws/constructs-go/constructs/v10 v10.2.65
 ## explicit; go 1.18
 github.com/aws/constructs-go/constructs/v10
 github.com/aws/constructs-go/constructs/v10/jsii
 # github.com/aws/jsii-runtime-go v1.84.0
 ## explicit; go 1.18
+github.com/aws/jsii-runtime-go
 github.com/aws/jsii-runtime-go/internal/api
+github.com/aws/jsii-runtime-go/internal/compiler
 github.com/aws/jsii-runtime-go/internal/embedded
 github.com/aws/jsii-runtime-go/internal/kernel
 github.com/aws/jsii-runtime-go/internal/kernel/process
 github.com/aws/jsii-runtime-go/internal/objectstore
 github.com/aws/jsii-runtime-go/internal/typeregistry
 github.com/aws/jsii-runtime-go/runtime
-# github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d
-## explicit
-# github.com/bgentry/speakeasy v0.1.0
-## explicit
-# github.com/btubbs/datetime v0.1.0
-## explicit
-# github.com/davecgh/go-spew v1.1.1
-## explicit
-# github.com/dgrijalva/jwt-go v3.2.0+incompatible
-## explicit
-# github.com/dimchansky/utfbom v1.1.0
-## explicit
-# github.com/fatih/color v1.7.0
-## explicit
-# github.com/golang/protobuf v1.3.2
-## explicit
-# github.com/google/go-cmp v0.3.1
-## explicit; go 1.8
-# github.com/google/uuid v1.1.1
-## explicit
-# github.com/googleapis/gax-go/v2 v2.0.5
-## explicit
-# github.com/hashicorp/errwrap v1.0.0
-## explicit
-# github.com/hashicorp/go-azure-helpers v0.10.0
-## explicit; go 1.13
-# github.com/hashicorp/go-cleanhttp v0.5.1
-## explicit
-# github.com/hashicorp/go-getter v1.4.0
-## explicit
-# github.com/hashicorp/go-hclog v0.9.2
-## explicit
-# github.com/hashicorp/go-multierror v1.0.0
-## explicit
-# github.com/hashicorp/go-plugin v1.0.1
-## explicit
-# github.com/hashicorp/go-safetemp v1.0.0
-## explicit
-# github.com/hashicorp/go-uuid v1.0.1
-## explicit
-# github.com/hashicorp/go-version v1.2.0
-## explicit
-# github.com/hashicorp/golang-lru v0.5.1
-## explicit
-# github.com/hashicorp/hcl v1.0.0
-## explicit
-# github.com/hashicorp/hcl/v2 v2.0.0
-## explicit
-# github.com/hashicorp/logutils v1.0.0
-## explicit
 # github.com/hashicorp/terraform-cdk-go/cdktf v0.17.1
 ## explicit; go 1.18
 github.com/hashicorp/terraform-cdk-go/cdktf
 github.com/hashicorp/terraform-cdk-go/cdktf/internal
 github.com/hashicorp/terraform-cdk-go/cdktf/jsii
-# github.com/hashicorp/terraform-config-inspect v0.0.0-20191115094559-17f92b0546e8
-## explicit
-# github.com/hashicorp/terraform-plugin-sdk v1.6.0
-## explicit; go 1.12
-# github.com/hashicorp/terraform-svchost v0.0.0-20191011084731-65d371908596
-## explicit; go 1.12
-# github.com/hashicorp/yamux v0.0.0-20181012175058-2f1d1f20f75d
-## explicit
-# github.com/jmespath/go-jmespath v0.0.0-20180206201540-c2b33e8439af
-## explicit
-# github.com/mattn/go-colorable v0.1.1
-## explicit
 # github.com/mattn/go-isatty v0.0.19
 ## explicit; go 1.15
-# github.com/mitchellh/cli v1.0.0
-## explicit
-# github.com/mitchellh/colorstring v0.0.0-20190213212951-d06e56a500db
-## explicit
-# github.com/mitchellh/copystructure v1.0.0
-## explicit
-# github.com/mitchellh/go-homedir v1.1.0
-## explicit
-# github.com/mitchellh/go-testing-interface v1.0.0
-## explicit
-# github.com/mitchellh/go-wordwrap v1.0.0
-## explicit
-# github.com/mitchellh/mapstructure v1.1.2
-## explicit
-# github.com/mitchellh/reflectwalk v1.0.1
-## explicit
-# github.com/oklog/run v1.0.0
-## explicit
-# github.com/posener/complete v1.2.1
-## explicit
-# github.com/satori/go.uuid v1.2.0
-## explicit
-# github.com/satori/uuid v0.0.0-20160927100844-b061729afc07
-## explicit
-# github.com/spf13/afero v1.2.2
-## explicit
-# github.com/terraform-providers/terraform-provider-azuread v0.6.1-0.20191007035844-361c0a206ad4
-## explicit
-# github.com/terraform-providers/terraform-provider-azurerm v1.44.0
-## explicit; go 1.13
-# github.com/tombuildsstuff/giovanni v0.7.1
-## explicit; go 1.12
-# github.com/ulikunitz/xz v0.5.5
-## explicit
-# github.com/vmihailenco/msgpack v4.0.1+incompatible
-## explicit
-# github.com/zclconf/go-cty v1.1.0
-## explicit
-# github.com/zclconf/go-cty-yaml v1.0.1
-## explicit
-# go.opencensus.io v0.22.0
-## explicit
-# golang.org/x/crypto v0.0.0-20191206172530-e9b2fee46413
+github.com/mattn/go-isatty
+# github.com/yuin/goldmark v1.4.13
+## explicit; go 1.18
+github.com/yuin/goldmark
+github.com/yuin/goldmark/ast
+github.com/yuin/goldmark/parser
+github.com/yuin/goldmark/renderer
+github.com/yuin/goldmark/renderer/html
+github.com/yuin/goldmark/text
+github.com/yuin/goldmark/util
+# golang.org/x/lint v0.0.0-20210508222113-6edffad5e616
 ## explicit; go 1.11
-# golang.org/x/net v0.0.0-20191009170851-d66e71096ffb
-## explicit; go 1.11
-# golang.org/x/oauth2 v0.0.0-20190604053449-0f29369cfe45
-## explicit; go 1.11
+golang.org/x/lint
+golang.org/x/lint/golint
+# golang.org/x/mod v0.10.0
+## explicit; go 1.17
+golang.org/x/mod/internal/lazyregexp
+golang.org/x/mod/module
+golang.org/x/mod/semver
 # golang.org/x/sys v0.8.0
 ## explicit; go 1.17
-# golang.org/x/text v0.3.2
-## explicit
-# google.golang.org/api v0.9.0
-## explicit; go 1.9
-# google.golang.org/appengine v1.6.1
-## explicit
-# google.golang.org/genproto v0.0.0-20190819201941-24fa4b261c55
-## explicit
-# google.golang.org/grpc v1.23.0
-## explicit
-# gopkg.in/yaml.v2 v2.2.2
-## explicit
+golang.org/x/sys/execabs
+golang.org/x/sys/unix
+# golang.org/x/tools v0.9.3
+## explicit; go 1.18
+golang.org/x/tools/cmd/godoc
+golang.org/x/tools/cmd/goimports
+golang.org/x/tools/go/ast/astutil
+golang.org/x/tools/go/gcexportdata
+golang.org/x/tools/godoc
+golang.org/x/tools/godoc/analysis
+golang.org/x/tools/godoc/redirect
+golang.org/x/tools/godoc/static
+golang.org/x/tools/godoc/util
+golang.org/x/tools/godoc/vfs
+golang.org/x/tools/godoc/vfs/gatefs
+golang.org/x/tools/godoc/vfs/httpfs
+golang.org/x/tools/godoc/vfs/mapfs
+golang.org/x/tools/godoc/vfs/zipfs
+golang.org/x/tools/internal/event
+golang.org/x/tools/internal/event/core
+golang.org/x/tools/internal/event/keys
+golang.org/x/tools/internal/event/label
+golang.org/x/tools/internal/event/tag
+golang.org/x/tools/internal/fastwalk
+golang.org/x/tools/internal/gcimporter
+golang.org/x/tools/internal/gocommand
+golang.org/x/tools/internal/gopathwalk
+golang.org/x/tools/internal/imports
+golang.org/x/tools/internal/pkgbits
+golang.org/x/tools/internal/tokeninternal
+golang.org/x/tools/internal/typeparams
+golang.org/x/tools/playground
