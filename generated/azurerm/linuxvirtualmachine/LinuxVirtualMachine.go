@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine}.
 type LinuxVirtualMachine interface {
 	cdktf.TerraformResource
 	AdditionalCapabilities() LinuxVirtualMachineAdditionalCapabilitiesOutputReference
@@ -30,6 +30,9 @@ type LinuxVirtualMachine interface {
 	AvailabilitySetIdInput() *string
 	BootDiagnostics() LinuxVirtualMachineBootDiagnosticsOutputReference
 	BootDiagnosticsInput() *LinuxVirtualMachineBootDiagnostics
+	CapacityReservationGroupId() *string
+	SetCapacityReservationGroupId(val *string)
+	CapacityReservationGroupIdInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ComputerName() *string
@@ -81,6 +84,8 @@ type LinuxVirtualMachine interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	GalleryApplication() LinuxVirtualMachineGalleryApplicationList
+	GalleryApplicationInput() interface{}
 	Id() *string
 	SetId(val *string)
 	Identity() LinuxVirtualMachineIdentityOutputReference
@@ -109,6 +114,9 @@ type LinuxVirtualMachine interface {
 	Node() constructs.Node
 	OsDisk() LinuxVirtualMachineOsDiskOutputReference
 	OsDiskInput() *LinuxVirtualMachineOsDisk
+	PatchAssessmentMode() *string
+	SetPatchAssessmentMode(val *string)
+	PatchAssessmentModeInput() *string
 	PatchMode() *string
 	SetPatchMode(val *string)
 	PatchModeInput() *string
@@ -210,6 +218,7 @@ type LinuxVirtualMachine interface {
 	PutAdditionalCapabilities(value *LinuxVirtualMachineAdditionalCapabilities)
 	PutAdminSshKey(value interface{})
 	PutBootDiagnostics(value *LinuxVirtualMachineBootDiagnostics)
+	PutGalleryApplication(value interface{})
 	PutIdentity(value *LinuxVirtualMachineIdentity)
 	PutOsDisk(value *LinuxVirtualMachineOsDisk)
 	PutPlan(value *LinuxVirtualMachinePlan)
@@ -223,6 +232,7 @@ type LinuxVirtualMachine interface {
 	ResetAllowExtensionOperations()
 	ResetAvailabilitySetId()
 	ResetBootDiagnostics()
+	ResetCapacityReservationGroupId()
 	ResetComputerName()
 	ResetCustomData()
 	ResetDedicatedHostGroupId()
@@ -232,6 +242,7 @@ type LinuxVirtualMachine interface {
 	ResetEncryptionAtHostEnabled()
 	ResetEvictionPolicy()
 	ResetExtensionsTimeBudget()
+	ResetGalleryApplication()
 	ResetId()
 	ResetIdentity()
 	ResetLicenseType()
@@ -239,6 +250,7 @@ type LinuxVirtualMachine interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPatchAssessmentMode()
 	ResetPatchMode()
 	ResetPlan()
 	ResetPlatformFaultDomain()
@@ -406,6 +418,26 @@ func (j *jsiiProxy_LinuxVirtualMachine) BootDiagnosticsInput() *LinuxVirtualMach
 	_jsii_.Get(
 		j,
 		"bootDiagnosticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) CapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) CapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -671,6 +703,26 @@ func (j *jsiiProxy_LinuxVirtualMachine) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachine) GalleryApplication() LinuxVirtualMachineGalleryApplicationList {
+	var returns LinuxVirtualMachineGalleryApplicationList
+	_jsii_.Get(
+		j,
+		"galleryApplication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) GalleryApplicationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"galleryApplicationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachine) Id() *string {
 	var returns *string
 	_jsii_.Get(
@@ -846,6 +898,26 @@ func (j *jsiiProxy_LinuxVirtualMachine) OsDiskInput() *LinuxVirtualMachineOsDisk
 	_jsii_.Get(
 		j,
 		"osDiskInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) PatchAssessmentMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) PatchAssessmentModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentModeInput",
 		&returns,
 	)
 	return returns
@@ -1342,7 +1414,7 @@ func (j *jsiiProxy_LinuxVirtualMachine) ZoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine} Resource.
 func NewLinuxVirtualMachine(scope constructs.Construct, id *string, config *LinuxVirtualMachineConfig) LinuxVirtualMachine {
 	_init_.Initialize()
 
@@ -1360,7 +1432,7 @@ func NewLinuxVirtualMachine(scope constructs.Construct, id *string, config *Linu
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine azurerm_linux_virtual_machine} Resource.
 func NewLinuxVirtualMachine_Override(l LinuxVirtualMachine, scope constructs.Construct, id *string, config *LinuxVirtualMachineConfig) {
 	_init_.Initialize()
 
@@ -1411,6 +1483,17 @@ func (j *jsiiProxy_LinuxVirtualMachine)SetAvailabilitySetId(val *string) {
 	_jsii_.Set(
 		j,
 		"availabilitySetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine)SetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"capacityReservationGroupId",
 		val,
 	)
 }
@@ -1625,6 +1708,17 @@ func (j *jsiiProxy_LinuxVirtualMachine)SetNetworkInterfaceIds(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"networkInterfaceIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine)SetPatchAssessmentMode(val *string) {
+	if err := j.validateSetPatchAssessmentModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"patchAssessmentMode",
 		val,
 	)
 }
@@ -2101,6 +2195,17 @@ func (l *jsiiProxy_LinuxVirtualMachine) PutBootDiagnostics(value *LinuxVirtualMa
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachine) PutGalleryApplication(value interface{}) {
+	if err := l.validatePutGalleryApplicationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putGalleryApplication",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachine) PutIdentity(value *LinuxVirtualMachineIdentity) {
 	if err := l.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -2226,6 +2331,14 @@ func (l *jsiiProxy_LinuxVirtualMachine) ResetBootDiagnostics() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachine) ResetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetCapacityReservationGroupId",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachine) ResetComputerName() {
 	_jsii_.InvokeVoid(
 		l,
@@ -2298,6 +2411,14 @@ func (l *jsiiProxy_LinuxVirtualMachine) ResetExtensionsTimeBudget() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachine) ResetGalleryApplication() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetGalleryApplication",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachine) ResetId() {
 	_jsii_.InvokeVoid(
 		l,
@@ -2334,6 +2455,14 @@ func (l *jsiiProxy_LinuxVirtualMachine) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachine) ResetPatchAssessmentMode() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetPatchAssessmentMode",
 		nil, // no parameters
 	)
 }

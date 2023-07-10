@@ -80,6 +80,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutExtensionParameters(v
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutGalleryApplicationParameters(value interface{}) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutGalleryApplicationsParameters(value interface{}) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutIdentityParameters(value *LinuxVirtualMachineScaleSetIdentity) error {
 	return nil
 }
@@ -100,6 +108,10 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutRollingUpgradePolicyP
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutScaleInParameters(value *LinuxVirtualMachineScaleSetScaleIn) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSecretParameters(value interface{}) error {
 	return nil
 }
@@ -108,7 +120,15 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSourceImageReferenceP
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSpotRestoreParameters(value *LinuxVirtualMachineScaleSetSpotRestore) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutTerminateNotificationParameters(value *LinuxVirtualMachineScaleSetTerminateNotification) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutTerminationNotificationParameters(value *LinuxVirtualMachineScaleSetTerminationNotification) error {
 	return nil
 }
 
@@ -133,6 +153,10 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetAdminPasswordParamete
 }
 
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetAdminUsernameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	return nil
 }
 
@@ -172,11 +196,19 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetEvictionPolicyParamet
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetExtensionOperationsEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetExtensionsTimeBudgetParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetHealthProbeIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetHostGroupIdParameters(val *string) error {
 	return nil
 }
 

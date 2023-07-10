@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_locator azurerm_media_streaming_locator}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_locator azurerm_media_streaming_locator}.
 type MediaStreamingLocator interface {
 	cdktf.TerraformResource
 	AlternativeMediaId() *string
@@ -42,6 +42,9 @@ type MediaStreamingLocator interface {
 	EndTime() *string
 	SetEndTime(val *string)
 	EndTimeInput() *string
+	FilterNames() *[]*string
+	SetFilterNames(val *[]*string)
+	FilterNamesInput() *[]*string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -126,6 +129,7 @@ type MediaStreamingLocator interface {
 	ResetContentKey()
 	ResetDefaultContentKeyPolicyName()
 	ResetEndTime()
+	ResetFilterNames()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -293,6 +297,26 @@ func (j *jsiiProxy_MediaStreamingLocator) EndTimeInput() *string {
 	_jsii_.Get(
 		j,
 		"endTimeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaStreamingLocator) FilterNames() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"filterNames",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaStreamingLocator) FilterNamesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"filterNamesInput",
 		&returns,
 	)
 	return returns
@@ -569,7 +593,7 @@ func (j *jsiiProxy_MediaStreamingLocator) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_locator azurerm_media_streaming_locator} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_locator azurerm_media_streaming_locator} Resource.
 func NewMediaStreamingLocator(scope constructs.Construct, id *string, config *MediaStreamingLocatorConfig) MediaStreamingLocator {
 	_init_.Initialize()
 
@@ -587,7 +611,7 @@ func NewMediaStreamingLocator(scope constructs.Construct, id *string, config *Me
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_locator azurerm_media_streaming_locator} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_locator azurerm_media_streaming_locator} Resource.
 func NewMediaStreamingLocator_Override(m MediaStreamingLocator, scope constructs.Construct, id *string, config *MediaStreamingLocatorConfig) {
 	_init_.Initialize()
 
@@ -668,6 +692,17 @@ func (j *jsiiProxy_MediaStreamingLocator)SetEndTime(val *string) {
 	_jsii_.Set(
 		j,
 		"endTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MediaStreamingLocator)SetFilterNames(val *[]*string) {
+	if err := j.validateSetFilterNamesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"filterNames",
 		val,
 	)
 }
@@ -1103,6 +1138,14 @@ func (m *jsiiProxy_MediaStreamingLocator) ResetEndTime() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetEndTime",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MediaStreamingLocator) ResetFilterNames() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetFilterNames",
 		nil, // no parameters
 	)
 }

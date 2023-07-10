@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering}.
 type ExpressRouteCircuitPeering interface {
 	cdktf.TerraformResource
 	AzureAsn() *float64
@@ -40,9 +40,13 @@ type ExpressRouteCircuitPeering interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	GatewayManagerEtag() *string
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	Ipv4Enabled() interface{}
+	SetIpv4Enabled(val interface{})
+	Ipv4EnabledInput() interface{}
 	Ipv6() ExpressRouteCircuitPeeringIpv6OutputReference
 	Ipv6Input() *ExpressRouteCircuitPeeringIpv6
 	// Experimental.
@@ -126,13 +130,16 @@ type ExpressRouteCircuitPeering interface {
 	PutMicrosoftPeeringConfig(value *ExpressRouteCircuitPeeringMicrosoftPeeringConfig)
 	PutTimeouts(value *ExpressRouteCircuitPeeringTimeouts)
 	ResetId()
+	ResetIpv4Enabled()
 	ResetIpv6()
 	ResetMicrosoftPeeringConfig()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPeerAsn()
+	ResetPrimaryPeerAddressPrefix()
 	ResetRouteFilterId()
+	ResetSecondaryPeerAddressPrefix()
 	ResetSharedKey()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -260,6 +267,16 @@ func (j *jsiiProxy_ExpressRouteCircuitPeering) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ExpressRouteCircuitPeering) GatewayManagerEtag() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"gatewayManagerEtag",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ExpressRouteCircuitPeering) Id() *string {
 	var returns *string
 	_jsii_.Get(
@@ -275,6 +292,26 @@ func (j *jsiiProxy_ExpressRouteCircuitPeering) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeering) Ipv4Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4Enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeering) Ipv4EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv4EnabledInput",
 		&returns,
 	)
 	return returns
@@ -601,7 +638,7 @@ func (j *jsiiProxy_ExpressRouteCircuitPeering) VlanIdInput() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering} Resource.
 func NewExpressRouteCircuitPeering(scope constructs.Construct, id *string, config *ExpressRouteCircuitPeeringConfig) ExpressRouteCircuitPeering {
 	_init_.Initialize()
 
@@ -619,7 +656,7 @@ func NewExpressRouteCircuitPeering(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit_peering azurerm_express_route_circuit_peering} Resource.
 func NewExpressRouteCircuitPeering_Override(e ExpressRouteCircuitPeering, scope constructs.Construct, id *string, config *ExpressRouteCircuitPeeringConfig) {
 	_init_.Initialize()
 
@@ -686,6 +723,17 @@ func (j *jsiiProxy_ExpressRouteCircuitPeering)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeering)SetIpv4Enabled(val interface{}) {
+	if err := j.validateSetIpv4EnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv4Enabled",
 		val,
 	)
 }
@@ -1115,6 +1163,14 @@ func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetId() {
 	)
 }
 
+func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetIpv4Enabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIpv4Enabled",
+		nil, // no parameters
+	)
+}
+
 func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetIpv6() {
 	_jsii_.InvokeVoid(
 		e,
@@ -1147,10 +1203,26 @@ func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetPeerAsn() {
 	)
 }
 
+func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetPrimaryPeerAddressPrefix() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetPrimaryPeerAddressPrefix",
+		nil, // no parameters
+	)
+}
+
 func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetRouteFilterId() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetRouteFilterId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ExpressRouteCircuitPeering) ResetSecondaryPeerAddressPrefix() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetSecondaryPeerAddressPrefix",
 		nil, // no parameters
 	)
 }

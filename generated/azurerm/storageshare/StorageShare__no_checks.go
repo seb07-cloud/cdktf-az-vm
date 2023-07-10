@@ -72,6 +72,10 @@ func validateStorageShare_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_StorageShare) validateSetAccessTierParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageShare) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

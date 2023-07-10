@@ -260,7 +260,23 @@ func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDatabaseNameParamete
 	return nil
 }
 
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDatabaseRoutingTypeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDataFormatParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetEventgridResourceIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -301,6 +317,14 @@ func (j *jsiiProxy_KustoEventgridDataConnection) validateSetLifecycleParameters(
 }
 
 func (j *jsiiProxy_KustoEventgridDataConnection) validateSetLocationParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetManagedIdentityResourceIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

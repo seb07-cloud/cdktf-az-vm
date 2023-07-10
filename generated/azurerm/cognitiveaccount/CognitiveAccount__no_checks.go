@@ -52,6 +52,10 @@ func (c *jsiiProxy_CognitiveAccount) validateOverrideLogicalIdParameters(newLogi
 	return nil
 }
 
+func (c *jsiiProxy_CognitiveAccount) validatePutCustomerManagedKeyParameters(value *CognitiveAccountCustomerManagedKey) error {
+	return nil
+}
+
 func (c *jsiiProxy_CognitiveAccount) validatePutIdentityParameters(value *CognitiveAccountIdentity) error {
 	return nil
 }
@@ -88,7 +92,19 @@ func (j *jsiiProxy_CognitiveAccount) validateSetCountParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_CognitiveAccount) validateSetCustomQuestionAnsweringSearchServiceIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CognitiveAccount) validateSetCustomQuestionAnsweringSearchServiceKeyParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CognitiveAccount) validateSetCustomSubdomainNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CognitiveAccount) validateSetDynamicThrottlingEnabledParameters(val interface{}) error {
 	return nil
 }
 

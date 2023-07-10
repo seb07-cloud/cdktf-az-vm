@@ -48,6 +48,10 @@ func (h *jsiiProxy_HdinsightSparkClusterRolesWorkerNodeOutputReference) validate
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightSparkClusterRolesWorkerNodeOutputReference) validatePutScriptActionsParameters(value interface{}) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightSparkClusterRolesWorkerNodeOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

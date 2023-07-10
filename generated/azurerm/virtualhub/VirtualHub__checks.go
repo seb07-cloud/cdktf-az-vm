@@ -275,6 +275,14 @@ func (j *jsiiProxy_VirtualHub) validateSetCountParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_VirtualHub) validateSetHubRoutingPreferenceParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_VirtualHub) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -370,6 +378,14 @@ func (j *jsiiProxy_VirtualHub) validateSetSkuParameters(val *string) error {
 }
 
 func (j *jsiiProxy_VirtualHub) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_VirtualHub) validateSetVirtualRouterAutoScaleMinCapacityParameters(val *float64) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

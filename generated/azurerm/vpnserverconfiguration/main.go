@@ -426,6 +426,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putServerRootCertificate", GoMethod: "PutServerRootCertificate"},
 			_jsii_.MemberMethod{JsiiMethod: "resetClientRootCertificate", GoMethod: "ResetClientRootCertificate"},
 			_jsii_.MemberMethod{JsiiMethod: "resetServer", GoMethod: "ResetServer"},
+			_jsii_.MemberMethod{JsiiMethod: "resetServerRootCertificate", GoMethod: "ResetServerRootCertificate"},
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "server", GoGetter: "Server"},
 			_jsii_.MemberProperty{JsiiProperty: "serverInput", GoGetter: "ServerInput"},

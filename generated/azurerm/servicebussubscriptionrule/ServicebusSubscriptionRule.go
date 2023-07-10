@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule}.
 type ServicebusSubscriptionRule interface {
 	cdktf.TerraformResource
 	Action() *string
@@ -68,6 +68,7 @@ type ServicebusSubscriptionRule interface {
 	RawOverrides() interface{}
 	SqlFilter() *string
 	SetSqlFilter(val *string)
+	SqlFilterCompatibilityLevel() *float64
 	SqlFilterInput() *string
 	SubscriptionId() *string
 	SetSubscriptionId(val *string)
@@ -370,6 +371,16 @@ func (j *jsiiProxy_ServicebusSubscriptionRule) SqlFilter() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ServicebusSubscriptionRule) SqlFilterCompatibilityLevel() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"sqlFilterCompatibilityLevel",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServicebusSubscriptionRule) SqlFilterInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -451,7 +462,7 @@ func (j *jsiiProxy_ServicebusSubscriptionRule) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule} Resource.
 func NewServicebusSubscriptionRule(scope constructs.Construct, id *string, config *ServicebusSubscriptionRuleConfig) ServicebusSubscriptionRule {
 	_init_.Initialize()
 
@@ -469,7 +480,7 @@ func NewServicebusSubscriptionRule(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription_rule azurerm_servicebus_subscription_rule} Resource.
 func NewServicebusSubscriptionRule_Override(s ServicebusSubscriptionRule, scope constructs.Construct, id *string, config *ServicebusSubscriptionRuleConfig) {
 	_init_.Initialize()
 

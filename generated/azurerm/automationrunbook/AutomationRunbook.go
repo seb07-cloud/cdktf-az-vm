@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_runbook azurerm_automation_runbook}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_runbook azurerm_automation_runbook}.
 type AutomationRunbook interface {
 	cdktf.TerraformResource
 	AutomationAccountName() *string
@@ -37,6 +37,8 @@ type AutomationRunbook interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	Draft() AutomationRunbookDraftOutputReference
+	DraftInput() *AutomationRunbookDraft
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -57,6 +59,9 @@ type AutomationRunbook interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	LogActivityTraceLevel() *float64
+	SetLogActivityTraceLevel(val *float64)
+	LogActivityTraceLevelInput() *float64
 	LogProgress() interface{}
 	SetLogProgress(val interface{})
 	LogProgressInput() interface{}
@@ -122,13 +127,16 @@ type AutomationRunbook interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutDraft(value *AutomationRunbookDraft)
 	PutJobSchedule(value interface{})
 	PutPublishContentLink(value *AutomationRunbookPublishContentLink)
 	PutTimeouts(value *AutomationRunbookTimeouts)
 	ResetContent()
 	ResetDescription()
+	ResetDraft()
 	ResetId()
 	ResetJobSchedule()
+	ResetLogActivityTraceLevel()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -260,6 +268,26 @@ func (j *jsiiProxy_AutomationRunbook) DescriptionInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AutomationRunbook) Draft() AutomationRunbookDraftOutputReference {
+	var returns AutomationRunbookDraftOutputReference
+	_jsii_.Get(
+		j,
+		"draft",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationRunbook) DraftInput() *AutomationRunbookDraft {
+	var returns *AutomationRunbookDraft
+	_jsii_.Get(
+		j,
+		"draftInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AutomationRunbook) ForEach() cdktf.ITerraformIterator {
 	var returns cdktf.ITerraformIterator
 	_jsii_.Get(
@@ -355,6 +383,26 @@ func (j *jsiiProxy_AutomationRunbook) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationRunbook) LogActivityTraceLevel() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"logActivityTraceLevel",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationRunbook) LogActivityTraceLevelInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"logActivityTraceLevelInput",
 		&returns,
 	)
 	return returns
@@ -591,7 +639,7 @@ func (j *jsiiProxy_AutomationRunbook) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_runbook azurerm_automation_runbook} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_runbook azurerm_automation_runbook} Resource.
 func NewAutomationRunbook(scope constructs.Construct, id *string, config *AutomationRunbookConfig) AutomationRunbook {
 	_init_.Initialize()
 
@@ -609,7 +657,7 @@ func NewAutomationRunbook(scope constructs.Construct, id *string, config *Automa
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_runbook azurerm_automation_runbook} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_runbook azurerm_automation_runbook} Resource.
 func NewAutomationRunbook_Override(a AutomationRunbook, scope constructs.Construct, id *string, config *AutomationRunbookConfig) {
 	_init_.Initialize()
 
@@ -720,6 +768,17 @@ func (j *jsiiProxy_AutomationRunbook)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutomationRunbook)SetLogActivityTraceLevel(val *float64) {
+	if err := j.validateSetLogActivityTraceLevelParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"logActivityTraceLevel",
 		val,
 	)
 }
@@ -1075,6 +1134,17 @@ func (a *jsiiProxy_AutomationRunbook) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (a *jsiiProxy_AutomationRunbook) PutDraft(value *AutomationRunbookDraft) {
+	if err := a.validatePutDraftParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putDraft",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_AutomationRunbook) PutJobSchedule(value interface{}) {
 	if err := a.validatePutJobScheduleParameters(value); err != nil {
 		panic(err)
@@ -1124,6 +1194,14 @@ func (a *jsiiProxy_AutomationRunbook) ResetDescription() {
 	)
 }
 
+func (a *jsiiProxy_AutomationRunbook) ResetDraft() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetDraft",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AutomationRunbook) ResetId() {
 	_jsii_.InvokeVoid(
 		a,
@@ -1136,6 +1214,14 @@ func (a *jsiiProxy_AutomationRunbook) ResetJobSchedule() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetJobSchedule",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AutomationRunbook) ResetLogActivityTraceLevel() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetLogActivityTraceLevel",
 		nil, // no parameters
 	)
 }

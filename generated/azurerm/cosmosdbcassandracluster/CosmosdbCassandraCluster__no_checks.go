@@ -52,6 +52,10 @@ func (c *jsiiProxy_CosmosdbCassandraCluster) validateOverrideLogicalIdParameters
 	return nil
 }
 
+func (c *jsiiProxy_CosmosdbCassandraCluster) validatePutIdentityParameters(value *CosmosdbCassandraClusterIdentity) error {
+	return nil
+}
+
 func (c *jsiiProxy_CosmosdbCassandraCluster) validatePutTimeoutsParameters(value *CosmosdbCassandraClusterTimeouts) error {
 	return nil
 }
@@ -68,6 +72,14 @@ func validateCosmosdbCassandraCluster_IsTerraformResourceParameters(x interface{
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetAuthenticationMethodParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetClientCertificatePemsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -81,6 +93,18 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetDefaultAdminPasswordPara
 }
 
 func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetDelegatedManagementSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetExternalGossipCertificatePemsParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetExternalSeedNodeIpAddressesParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetHoursBetweenBackupsParameters(val *float64) error {
 	return nil
 }
 
@@ -104,7 +128,19 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetProvisionersParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetRepairEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetResourceGroupNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetVersionParameters(val *string) error {
 	return nil
 }
 

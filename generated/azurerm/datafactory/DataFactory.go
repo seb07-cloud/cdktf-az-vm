@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory azurerm_data_factory}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory azurerm_data_factory}.
 type DataFactory interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -77,6 +77,9 @@ type DataFactory interface {
 	PublicNetworkEnabled() interface{}
 	SetPublicNetworkEnabled(val interface{})
 	PublicNetworkEnabledInput() interface{}
+	PurviewId() *string
+	SetPurviewId(val *string)
+	PurviewIdInput() *string
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -136,6 +139,7 @@ type DataFactory interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPublicNetworkEnabled()
+	ResetPurviewId()
 	ResetTags()
 	ResetTimeouts()
 	ResetVstsConfiguration()
@@ -474,6 +478,26 @@ func (j *jsiiProxy_DataFactory) PublicNetworkEnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataFactory) PurviewId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"purviewId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactory) PurviewIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"purviewIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactory) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -595,7 +619,7 @@ func (j *jsiiProxy_DataFactory) VstsConfigurationInput() *DataFactoryVstsConfigu
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory azurerm_data_factory} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory azurerm_data_factory} Resource.
 func NewDataFactory(scope constructs.Construct, id *string, config *DataFactoryConfig) DataFactory {
 	_init_.Initialize()
 
@@ -613,7 +637,7 @@ func NewDataFactory(scope constructs.Construct, id *string, config *DataFactoryC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory azurerm_data_factory} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory azurerm_data_factory} Resource.
 func NewDataFactory_Override(d DataFactory, scope constructs.Construct, id *string, config *DataFactoryConfig) {
 	_init_.Initialize()
 
@@ -765,6 +789,17 @@ func (j *jsiiProxy_DataFactory)SetPublicNetworkEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"publicNetworkEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactory)SetPurviewId(val *string) {
+	if err := j.validateSetPurviewIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"purviewId",
 		val,
 	)
 }
@@ -1180,6 +1215,14 @@ func (d *jsiiProxy_DataFactory) ResetPublicNetworkEnabled() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetPublicNetworkEnabled",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactory) ResetPurviewId() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetPurviewId",
 		nil, // no parameters
 	)
 }

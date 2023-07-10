@@ -106,12 +106,18 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "inboundRouteMapId", GoGetter: "InboundRouteMapId"},
+			_jsii_.MemberProperty{JsiiProperty: "inboundRouteMapIdInput", GoGetter: "InboundRouteMapIdInput"},
 			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "outboundRouteMapId", GoGetter: "OutboundRouteMapId"},
+			_jsii_.MemberProperty{JsiiProperty: "outboundRouteMapIdInput", GoGetter: "OutboundRouteMapIdInput"},
 			_jsii_.MemberProperty{JsiiProperty: "propagatedRouteTable", GoGetter: "PropagatedRouteTable"},
 			_jsii_.MemberProperty{JsiiProperty: "propagatedRouteTableInput", GoGetter: "PropagatedRouteTableInput"},
 			_jsii_.MemberMethod{JsiiMethod: "putPropagatedRouteTable", GoMethod: "PutPropagatedRouteTable"},
+			_jsii_.MemberMethod{JsiiMethod: "resetInboundRouteMapId", GoMethod: "ResetInboundRouteMapId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetOutboundRouteMapId", GoMethod: "ResetOutboundRouteMapId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPropagatedRouteTable", GoMethod: "ResetPropagatedRouteTable"},
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
@@ -279,6 +285,67 @@ func init() {
 		reflect.TypeOf((*VpnGatewayConnectionVpnLink)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"azurerm.vpnGatewayConnection.VpnGatewayConnectionVpnLinkCustomBgpAddress",
+		reflect.TypeOf((*VpnGatewayConnectionVpnLinkCustomBgpAddress)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.vpnGatewayConnection.VpnGatewayConnectionVpnLinkCustomBgpAddressList",
+		reflect.TypeOf((*VpnGatewayConnectionVpnLinkCustomBgpAddressList)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "get", GoMethod: "Get"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "wrapsSet", GoGetter: "WrapsSet"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpnGatewayConnectionVpnLinkCustomBgpAddressList{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexList)
+			return &j
+		},
+	)
+	_jsii_.RegisterClass(
+		"azurerm.vpnGatewayConnection.VpnGatewayConnectionVpnLinkCustomBgpAddressOutputReference",
+		reflect.TypeOf((*VpnGatewayConnectionVpnLinkCustomBgpAddressOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "ipAddress", GoGetter: "IpAddress"},
+			_jsii_.MemberProperty{JsiiProperty: "ipAddressInput", GoGetter: "IpAddressInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ipConfigurationId", GoGetter: "IpConfigurationId"},
+			_jsii_.MemberProperty{JsiiProperty: "ipConfigurationIdInput", GoGetter: "IpConfigurationIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VpnGatewayConnectionVpnLinkCustomBgpAddressOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
 		"azurerm.vpnGatewayConnection.VpnGatewayConnectionVpnLinkIpsecPolicy",
 		reflect.TypeOf((*VpnGatewayConnectionVpnLinkIpsecPolicy)(nil)).Elem(),
 	)
@@ -386,6 +453,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "connectionMode", GoGetter: "ConnectionMode"},
 			_jsii_.MemberProperty{JsiiProperty: "connectionModeInput", GoGetter: "ConnectionModeInput"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "customBgpAddress", GoGetter: "CustomBgpAddress"},
+			_jsii_.MemberProperty{JsiiProperty: "customBgpAddressInput", GoGetter: "CustomBgpAddressInput"},
 			_jsii_.MemberProperty{JsiiProperty: "egressNatRuleIds", GoGetter: "EgressNatRuleIds"},
 			_jsii_.MemberProperty{JsiiProperty: "egressNatRuleIdsInput", GoGetter: "EgressNatRuleIdsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
@@ -413,12 +482,14 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "policyBasedTrafficSelectorEnabledInput", GoGetter: "PolicyBasedTrafficSelectorEnabledInput"},
 			_jsii_.MemberProperty{JsiiProperty: "protocol", GoGetter: "Protocol"},
 			_jsii_.MemberProperty{JsiiProperty: "protocolInput", GoGetter: "ProtocolInput"},
+			_jsii_.MemberMethod{JsiiMethod: "putCustomBgpAddress", GoMethod: "PutCustomBgpAddress"},
 			_jsii_.MemberMethod{JsiiMethod: "putIpsecPolicy", GoMethod: "PutIpsecPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "ratelimitEnabled", GoGetter: "RatelimitEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "ratelimitEnabledInput", GoGetter: "RatelimitEnabledInput"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBandwidthMbps", GoMethod: "ResetBandwidthMbps"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBgpEnabled", GoMethod: "ResetBgpEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConnectionMode", GoMethod: "ResetConnectionMode"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCustomBgpAddress", GoMethod: "ResetCustomBgpAddress"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEgressNatRuleIds", GoMethod: "ResetEgressNatRuleIds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIngressNatRuleIds", GoMethod: "ResetIngressNatRuleIds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIpsecPolicy", GoMethod: "ResetIpsecPolicy"},

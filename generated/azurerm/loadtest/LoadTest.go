@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/load_test azurerm_load_test}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/load_test azurerm_load_test}.
 type LoadTest interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -24,11 +24,14 @@ type LoadTest interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
-	DataplaneUri() *string
+	DataPlaneUri() *string
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	Description() *string
+	SetDescription(val *string)
+	DescriptionInput() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -39,6 +42,8 @@ type LoadTest interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() LoadTestIdentityOutputReference
+	IdentityInput() *LoadTestIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -101,8 +106,11 @@ type LoadTest interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIdentity(value *LoadTestIdentity)
 	PutTimeouts(value *LoadTestTimeouts)
+	ResetDescription()
 	ResetId()
+	ResetIdentity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -163,11 +171,11 @@ func (j *jsiiProxy_LoadTest) Count() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_LoadTest) DataplaneUri() *string {
+func (j *jsiiProxy_LoadTest) DataPlaneUri() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
-		"dataplaneUri",
+		"dataPlaneUri",
 		&returns,
 	)
 	return returns
@@ -178,6 +186,26 @@ func (j *jsiiProxy_LoadTest) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadTest) Description() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"description",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadTest) DescriptionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"descriptionInput",
 		&returns,
 	)
 	return returns
@@ -218,6 +246,26 @@ func (j *jsiiProxy_LoadTest) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadTest) Identity() LoadTestIdentityOutputReference {
+	var returns LoadTestIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LoadTest) IdentityInput() *LoadTestIdentity {
+	var returns *LoadTestIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -414,7 +462,7 @@ func (j *jsiiProxy_LoadTest) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/load_test azurerm_load_test} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/load_test azurerm_load_test} Resource.
 func NewLoadTest(scope constructs.Construct, id *string, config *LoadTestConfig) LoadTest {
 	_init_.Initialize()
 
@@ -432,7 +480,7 @@ func NewLoadTest(scope constructs.Construct, id *string, config *LoadTestConfig)
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/load_test azurerm_load_test} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/load_test azurerm_load_test} Resource.
 func NewLoadTest_Override(l LoadTest, scope constructs.Construct, id *string, config *LoadTestConfig) {
 	_init_.Initialize()
 
@@ -469,6 +517,17 @@ func (j *jsiiProxy_LoadTest)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LoadTest)SetDescription(val *string) {
+	if err := j.validateSetDescriptionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"description",
 		val,
 	)
 }
@@ -832,6 +891,17 @@ func (l *jsiiProxy_LoadTest) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (l *jsiiProxy_LoadTest) PutIdentity(value *LoadTestIdentity) {
+	if err := l.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LoadTest) PutTimeouts(value *LoadTestTimeouts) {
 	if err := l.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -843,10 +913,26 @@ func (l *jsiiProxy_LoadTest) PutTimeouts(value *LoadTestTimeouts) {
 	)
 }
 
+func (l *jsiiProxy_LoadTest) ResetDescription() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDescription",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LoadTest) ResetId() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LoadTest) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetIdentity",
 		nil, // no parameters
 	)
 }

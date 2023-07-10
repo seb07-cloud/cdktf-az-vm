@@ -201,9 +201,25 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetDo
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetEbpfDataPlaneParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetInternalValueParameters(val *KubernetesClusterNetworkProfile) error {
 	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetIpVersionsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -226,6 +242,14 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNe
 }
 
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNetworkPluginParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNetworkPluginModeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -257,7 +281,23 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetPo
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetPodCidrsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetServiceCidrParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetServiceCidrsParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

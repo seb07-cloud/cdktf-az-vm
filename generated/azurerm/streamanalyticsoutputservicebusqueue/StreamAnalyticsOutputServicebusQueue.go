@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue}.
 type StreamAnalyticsOutputServicebusQueue interface {
 	cdktf.TerraformResource
+	AuthenticationMode() *string
+	SetAuthenticationMode(val *string)
+	AuthenticationModeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -48,6 +51,9 @@ type StreamAnalyticsOutputServicebusQueue interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	PropertyColumns() *[]*string
+	SetPropertyColumns(val *[]*string)
+	PropertyColumnsInput() *[]*string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -78,6 +84,9 @@ type StreamAnalyticsOutputServicebusQueue interface {
 	StreamAnalyticsJobName() *string
 	SetStreamAnalyticsJobName(val *string)
 	StreamAnalyticsJobNameInput() *string
+	SystemPropertyColumns() *map[string]*string
+	SetSystemPropertyColumns(val *map[string]*string)
+	SystemPropertyColumnsInput() *map[string]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -113,10 +122,15 @@ type StreamAnalyticsOutputServicebusQueue interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutSerialization(value *StreamAnalyticsOutputServicebusQueueSerialization)
 	PutTimeouts(value *StreamAnalyticsOutputServicebusQueueTimeouts)
+	ResetAuthenticationMode()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPropertyColumns()
+	ResetSharedAccessPolicyKey()
+	ResetSharedAccessPolicyName()
+	ResetSystemPropertyColumns()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -131,6 +145,26 @@ type StreamAnalyticsOutputServicebusQueue interface {
 // The jsii proxy struct for StreamAnalyticsOutputServicebusQueue
 type jsiiProxy_StreamAnalyticsOutputServicebusQueue struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) AuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) AuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationModeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) CdktfStack() cdktf.TerraformStack {
@@ -268,6 +302,26 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) Node() constructs.Node 
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) PropertyColumns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"propertyColumns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) PropertyColumnsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"propertyColumnsInput",
 		&returns,
 	)
 	return returns
@@ -443,6 +497,26 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) StreamAnalyticsJobNameI
 	return returns
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) SystemPropertyColumns() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"systemPropertyColumns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) SystemPropertyColumnsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"systemPropertyColumnsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -494,7 +568,7 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) TimeoutsInput() interfa
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue} Resource.
 func NewStreamAnalyticsOutputServicebusQueue(scope constructs.Construct, id *string, config *StreamAnalyticsOutputServicebusQueueConfig) StreamAnalyticsOutputServicebusQueue {
 	_init_.Initialize()
 
@@ -512,7 +586,7 @@ func NewStreamAnalyticsOutputServicebusQueue(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_queue azurerm_stream_analytics_output_servicebus_queue} Resource.
 func NewStreamAnalyticsOutputServicebusQueue_Override(s StreamAnalyticsOutputServicebusQueue, scope constructs.Construct, id *string, config *StreamAnalyticsOutputServicebusQueueConfig) {
 	_init_.Initialize()
 
@@ -520,6 +594,17 @@ func NewStreamAnalyticsOutputServicebusQueue_Override(s StreamAnalyticsOutputSer
 		"azurerm.streamAnalyticsOutputServicebusQueue.StreamAnalyticsOutputServicebusQueue",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue)SetAuthenticationMode(val *string) {
+	if err := j.validateSetAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMode",
+		val,
 	)
 }
 
@@ -590,6 +675,17 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue)SetName(val *string) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue)SetPropertyColumns(val *[]*string) {
+	if err := j.validateSetPropertyColumnsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"propertyColumns",
 		val,
 	)
 }
@@ -675,6 +771,17 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue)SetStreamAnalyticsJobNam
 	_jsii_.Set(
 		j,
 		"streamAnalyticsJobName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue)SetSystemPropertyColumns(val *map[string]*string) {
+	if err := j.validateSetSystemPropertyColumnsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"systemPropertyColumns",
 		val,
 	)
 }
@@ -967,6 +1074,14 @@ func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) PutTimeouts(value *Stre
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -979,6 +1094,38 @@ func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetOverrideLogicalId(
 	_jsii_.InvokeVoid(
 		s,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetPropertyColumns() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPropertyColumns",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetSharedAccessPolicyKey() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyKey",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetSharedAccessPolicyName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyName",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusQueue) ResetSystemPropertyColumns() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSystemPropertyColumns",
 		nil, // no parameters
 	)
 }

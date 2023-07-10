@@ -25,6 +25,9 @@ type ExpressRouteCircuitPeeringIpv6OutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	Enabled() interface{}
+	SetEnabled(val interface{})
+	EnabledInput() interface{}
 	// Experimental.
 	Fqn() *string
 	InternalValue() *ExpressRouteCircuitPeeringIpv6
@@ -73,6 +76,8 @@ type ExpressRouteCircuitPeeringIpv6OutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutMicrosoftPeering(value *ExpressRouteCircuitPeeringIpv6MicrosoftPeering)
+	ResetEnabled()
+	ResetMicrosoftPeering()
 	ResetRouteFilterId()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -114,6 +119,26 @@ func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) CreationStack(
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) Enabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) EnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enabledInput",
 		&returns,
 	)
 	return returns
@@ -285,6 +310,17 @@ func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference)SetComplexObjec
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference)SetEnabled(val interface{}) {
+	if err := j.validateSetEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enabled",
 		val,
 	)
 }
@@ -549,6 +585,22 @@ func (e *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) PutMicrosoftPe
 		e,
 		"putMicrosoftPeering",
 		[]interface{}{value},
+	)
+}
+
+func (e *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) ResetEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetEnabled",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) ResetMicrosoftPeering() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetMicrosoftPeering",
+		nil, // no parameters
 	)
 }
 

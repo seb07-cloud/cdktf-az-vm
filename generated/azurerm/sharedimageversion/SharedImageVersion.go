@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image_version azurerm_shared_image_version}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image_version azurerm_shared_image_version}.
 type SharedImageVersion interface {
 	cdktf.TerraformResource
+	BlobUri() *string
+	SetBlobUri(val *string)
+	BlobUriInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -28,6 +31,9 @@ type SharedImageVersion interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	EndOfLifeDate() *string
+	SetEndOfLifeDate(val *string)
+	EndOfLifeDateInput() *string
 	ExcludeFromLatest() interface{}
 	SetExcludeFromLatest(val interface{})
 	ExcludeFromLatestInput() interface{}
@@ -76,9 +82,15 @@ type SharedImageVersion interface {
 	SetProvisioners(val *[]interface{})
 	// Experimental.
 	RawOverrides() interface{}
+	ReplicationMode() *string
+	SetReplicationMode(val *string)
+	ReplicationModeInput() *string
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	StorageAccountId() *string
+	SetStorageAccountId(val *string)
+	StorageAccountIdInput() *string
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -119,6 +131,8 @@ type SharedImageVersion interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTargetRegion(value interface{})
 	PutTimeouts(value *SharedImageVersionTimeouts)
+	ResetBlobUri()
+	ResetEndOfLifeDate()
 	ResetExcludeFromLatest()
 	ResetId()
 	ResetManagedImageId()
@@ -126,6 +140,8 @@ type SharedImageVersion interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetReplicationMode()
+	ResetStorageAccountId()
 	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -141,6 +157,26 @@ type SharedImageVersion interface {
 // The jsii proxy struct for SharedImageVersion
 type jsiiProxy_SharedImageVersion struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SharedImageVersion) BlobUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"blobUri",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) BlobUriInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"blobUriInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SharedImageVersion) CdktfStack() cdktf.TerraformStack {
@@ -188,6 +224,26 @@ func (j *jsiiProxy_SharedImageVersion) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) EndOfLifeDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"endOfLifeDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) EndOfLifeDateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"endOfLifeDateInput",
 		&returns,
 	)
 	return returns
@@ -433,6 +489,26 @@ func (j *jsiiProxy_SharedImageVersion) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_SharedImageVersion) ReplicationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) ReplicationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicationModeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SharedImageVersion) ResourceGroupName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -448,6 +524,26 @@ func (j *jsiiProxy_SharedImageVersion) ResourceGroupNameInput() *string {
 	_jsii_.Get(
 		j,
 		"resourceGroupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) StorageAccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersion) StorageAccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountIdInput",
 		&returns,
 	)
 	return returns
@@ -544,7 +640,7 @@ func (j *jsiiProxy_SharedImageVersion) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image_version azurerm_shared_image_version} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image_version azurerm_shared_image_version} Resource.
 func NewSharedImageVersion(scope constructs.Construct, id *string, config *SharedImageVersionConfig) SharedImageVersion {
 	_init_.Initialize()
 
@@ -562,7 +658,7 @@ func NewSharedImageVersion(scope constructs.Construct, id *string, config *Share
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image_version azurerm_shared_image_version} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image_version azurerm_shared_image_version} Resource.
 func NewSharedImageVersion_Override(s SharedImageVersion, scope constructs.Construct, id *string, config *SharedImageVersionConfig) {
 	_init_.Initialize()
 
@@ -570,6 +666,17 @@ func NewSharedImageVersion_Override(s SharedImageVersion, scope constructs.Const
 		"azurerm.sharedImageVersion.SharedImageVersion",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SharedImageVersion)SetBlobUri(val *string) {
+	if err := j.validateSetBlobUriParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"blobUri",
+		val,
 	)
 }
 
@@ -599,6 +706,17 @@ func (j *jsiiProxy_SharedImageVersion)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImageVersion)SetEndOfLifeDate(val *string) {
+	if err := j.validateSetEndOfLifeDateParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endOfLifeDate",
 		val,
 	)
 }
@@ -729,6 +847,17 @@ func (j *jsiiProxy_SharedImageVersion)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_SharedImageVersion)SetReplicationMode(val *string) {
+	if err := j.validateSetReplicationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"replicationMode",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SharedImageVersion)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -736,6 +865,17 @@ func (j *jsiiProxy_SharedImageVersion)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImageVersion)SetStorageAccountId(val *string) {
+	if err := j.validateSetStorageAccountIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"storageAccountId",
 		val,
 	)
 }
@@ -1039,6 +1179,22 @@ func (s *jsiiProxy_SharedImageVersion) PutTimeouts(value *SharedImageVersionTime
 	)
 }
 
+func (s *jsiiProxy_SharedImageVersion) ResetBlobUri() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetBlobUri",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImageVersion) ResetEndOfLifeDate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEndOfLifeDate",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SharedImageVersion) ResetExcludeFromLatest() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1075,6 +1231,22 @@ func (s *jsiiProxy_SharedImageVersion) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImageVersion) ResetReplicationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetReplicationMode",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImageVersion) ResetStorageAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetStorageAccountId",
 		nil, // no parameters
 	)
 }

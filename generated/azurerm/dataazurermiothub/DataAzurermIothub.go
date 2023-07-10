@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/iothub azurerm_iothub}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/iothub azurerm_iothub}.
 type DataAzurermIothub interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -35,6 +35,7 @@ type DataAzurermIothub interface {
 	Hostname() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DataAzurermIothubIdentityList
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -202,6 +203,16 @@ func (j *jsiiProxy_DataAzurermIothub) Id() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermIothub) Identity() DataAzurermIothubIdentityList {
+	var returns DataAzurermIothubIdentityList
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermIothub) IdInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -363,7 +374,7 @@ func (j *jsiiProxy_DataAzurermIothub) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/iothub azurerm_iothub} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/iothub azurerm_iothub} Data Source.
 func NewDataAzurermIothub(scope constructs.Construct, id *string, config *DataAzurermIothubConfig) DataAzurermIothub {
 	_init_.Initialize()
 
@@ -381,7 +392,7 @@ func NewDataAzurermIothub(scope constructs.Construct, id *string, config *DataAz
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/iothub azurerm_iothub} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/iothub azurerm_iothub} Data Source.
 func NewDataAzurermIothub_Override(d DataAzurermIothub, scope constructs.Construct, id *string, config *DataAzurermIothubConfig) {
 	_init_.Initialize()
 

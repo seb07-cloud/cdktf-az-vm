@@ -12,10 +12,6 @@ func (d *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverList) validateRe
 	return nil
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverList) validateSetInternalValueParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverList) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

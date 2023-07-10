@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate}.
 type IothubDpsCertificate interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -45,6 +45,9 @@ type IothubDpsCertificate interface {
 	IotDpsName() *string
 	SetIotDpsName(val *string)
 	IotDpsNameInput() *string
+	IsVerified() interface{}
+	SetIsVerified(val interface{})
+	IsVerifiedInput() interface{}
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -102,6 +105,7 @@ type IothubDpsCertificate interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *IothubDpsCertificateTimeouts)
 	ResetId()
+	ResetIsVerified()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -261,6 +265,26 @@ func (j *jsiiProxy_IothubDpsCertificate) IotDpsNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_IothubDpsCertificate) IsVerified() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isVerified",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IothubDpsCertificate) IsVerifiedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isVerifiedInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_IothubDpsCertificate) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -402,7 +426,7 @@ func (j *jsiiProxy_IothubDpsCertificate) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate} Resource.
 func NewIothubDpsCertificate(scope constructs.Construct, id *string, config *IothubDpsCertificateConfig) IothubDpsCertificate {
 	_init_.Initialize()
 
@@ -420,7 +444,7 @@ func NewIothubDpsCertificate(scope constructs.Construct, id *string, config *Iot
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps_certificate azurerm_iothub_dps_certificate} Resource.
 func NewIothubDpsCertificate_Override(i IothubDpsCertificate, scope constructs.Construct, id *string, config *IothubDpsCertificateConfig) {
 	_init_.Initialize()
 
@@ -498,6 +522,17 @@ func (j *jsiiProxy_IothubDpsCertificate)SetIotDpsName(val *string) {
 	_jsii_.Set(
 		j,
 		"iotDpsName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IothubDpsCertificate)SetIsVerified(val interface{}) {
+	if err := j.validateSetIsVerifiedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"isVerified",
 		val,
 	)
 }
@@ -835,6 +870,14 @@ func (i *jsiiProxy_IothubDpsCertificate) ResetId() {
 	_jsii_.InvokeVoid(
 		i,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IothubDpsCertificate) ResetIsVerified() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetIsVerified",
 		nil, // no parameters
 	)
 }

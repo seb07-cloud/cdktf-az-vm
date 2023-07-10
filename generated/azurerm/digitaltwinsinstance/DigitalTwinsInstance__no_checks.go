@@ -52,6 +52,10 @@ func (d *jsiiProxy_DigitalTwinsInstance) validateOverrideLogicalIdParameters(new
 	return nil
 }
 
+func (d *jsiiProxy_DigitalTwinsInstance) validatePutIdentityParameters(value *DigitalTwinsInstanceIdentity) error {
+	return nil
+}
+
 func (d *jsiiProxy_DigitalTwinsInstance) validatePutTimeoutsParameters(value *DigitalTwinsInstanceTimeouts) error {
 	return nil
 }

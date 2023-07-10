@@ -68,6 +68,10 @@ func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsisCatalogInfoOutputRefere
 	return nil
 }
 
+func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsisCatalogInfoOutputReference) validateSetElasticPoolNameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsisCatalogInfoOutputReference) validateSetInternalValueParameters(val *DataFactoryIntegrationRuntimeAzureSsisCatalogInfo) error {
 	return nil
 }

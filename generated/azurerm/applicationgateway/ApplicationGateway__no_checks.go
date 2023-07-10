@@ -84,6 +84,10 @@ func (a *jsiiProxy_ApplicationGateway) validatePutGatewayIpConfigurationParamete
 	return nil
 }
 
+func (a *jsiiProxy_ApplicationGateway) validatePutGlobalParameters(value *ApplicationGatewayGlobal) error {
+	return nil
+}
+
 func (a *jsiiProxy_ApplicationGateway) validatePutHttpListenerParameters(value interface{}) error {
 	return nil
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_pool azurerm_batch_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_pool azurerm_batch_pool}.
 type BatchPool interface {
 	cdktf.TerraformResource
 	AccountName() *string
@@ -33,13 +33,19 @@ type BatchPool interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DataDisks() BatchPoolDataDisksList
+	DataDisksInput() interface{}
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() BatchPoolDiskEncryptionList
+	DiskEncryptionInput() interface{}
 	DisplayName() *string
 	SetDisplayName(val *string)
 	DisplayNameInput() *string
+	Extensions() BatchPoolExtensionsList
+	ExtensionsInput() interface{}
 	FixedScale() BatchPoolFixedScaleOutputReference
 	FixedScaleInput() *BatchPoolFixedScale
 	// Experimental.
@@ -55,6 +61,12 @@ type BatchPool interface {
 	Identity() BatchPoolIdentityOutputReference
 	IdentityInput() *BatchPoolIdentity
 	IdInput() *string
+	InterNodeCommunication() *string
+	SetInterNodeCommunication(val *string)
+	InterNodeCommunicationInput() *string
+	LicenseType() *string
+	SetLicenseType(val *string)
+	LicenseTypeInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -65,6 +77,8 @@ type BatchPool interface {
 	Metadata() *map[string]*string
 	SetMetadata(val *map[string]*string)
 	MetadataInput() *map[string]*string
+	Mount() BatchPoolMountList
+	MountInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -75,6 +89,11 @@ type BatchPool interface {
 	NodeAgentSkuId() *string
 	SetNodeAgentSkuId(val *string)
 	NodeAgentSkuIdInput() *string
+	NodePlacement() BatchPoolNodePlacementList
+	NodePlacementInput() interface{}
+	OsDiskPlacement() *string
+	SetOsDiskPlacement(val *string)
+	OsDiskPlacementInput() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -95,6 +114,11 @@ type BatchPool interface {
 	StopPendingResizeOperationInput() interface{}
 	StorageImageReference() BatchPoolStorageImageReferenceOutputReference
 	StorageImageReferenceInput() *BatchPoolStorageImageReference
+	TargetNodeCommunicationMode() *string
+	SetTargetNodeCommunicationMode(val *string)
+	TargetNodeCommunicationModeInput() *string
+	TaskSchedulingPolicy() BatchPoolTaskSchedulingPolicyList
+	TaskSchedulingPolicyInput() interface{}
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -103,9 +127,13 @@ type BatchPool interface {
 	TerraformResourceType() *string
 	Timeouts() BatchPoolTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	UserAccounts() BatchPoolUserAccountsList
+	UserAccountsInput() interface{}
 	VmSize() *string
 	SetVmSize(val *string)
 	VmSizeInput() *string
+	Windows() BatchPoolWindowsList
+	WindowsInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -134,28 +162,48 @@ type BatchPool interface {
 	PutAutoScale(value *BatchPoolAutoScale)
 	PutCertificate(value interface{})
 	PutContainerConfiguration(value *BatchPoolContainerConfiguration)
+	PutDataDisks(value interface{})
+	PutDiskEncryption(value interface{})
+	PutExtensions(value interface{})
 	PutFixedScale(value *BatchPoolFixedScale)
 	PutIdentity(value *BatchPoolIdentity)
+	PutMount(value interface{})
 	PutNetworkConfiguration(value *BatchPoolNetworkConfiguration)
+	PutNodePlacement(value interface{})
 	PutStartTask(value *BatchPoolStartTask)
 	PutStorageImageReference(value *BatchPoolStorageImageReference)
+	PutTaskSchedulingPolicy(value interface{})
 	PutTimeouts(value *BatchPoolTimeouts)
+	PutUserAccounts(value interface{})
+	PutWindows(value interface{})
 	ResetAutoScale()
 	ResetCertificate()
 	ResetContainerConfiguration()
+	ResetDataDisks()
+	ResetDiskEncryption()
 	ResetDisplayName()
+	ResetExtensions()
 	ResetFixedScale()
 	ResetId()
 	ResetIdentity()
+	ResetInterNodeCommunication()
+	ResetLicenseType()
 	ResetMaxTasksPerNode()
 	ResetMetadata()
+	ResetMount()
 	ResetNetworkConfiguration()
+	ResetNodePlacement()
+	ResetOsDiskPlacement()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetStartTask()
 	ResetStopPendingResizeOperation()
+	ResetTargetNodeCommunicationMode()
+	ResetTaskSchedulingPolicy()
 	ResetTimeouts()
+	ResetUserAccounts()
+	ResetWindows()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -291,11 +339,51 @@ func (j *jsiiProxy_BatchPool) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_BatchPool) DataDisks() BatchPoolDataDisksList {
+	var returns BatchPoolDataDisksList
+	_jsii_.Get(
+		j,
+		"dataDisks",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) DataDisksInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataDisksInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchPool) DependsOn() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) DiskEncryption() BatchPoolDiskEncryptionList {
+	var returns BatchPoolDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) DiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryptionInput",
 		&returns,
 	)
 	return returns
@@ -316,6 +404,26 @@ func (j *jsiiProxy_BatchPool) DisplayNameInput() *string {
 	_jsii_.Get(
 		j,
 		"displayNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) Extensions() BatchPoolExtensionsList {
+	var returns BatchPoolExtensionsList
+	_jsii_.Get(
+		j,
+		"extensions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) ExtensionsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extensionsInput",
 		&returns,
 	)
 	return returns
@@ -411,6 +519,46 @@ func (j *jsiiProxy_BatchPool) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BatchPool) InterNodeCommunication() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"interNodeCommunication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) InterNodeCommunicationInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"interNodeCommunicationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) LicenseType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"licenseType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) LicenseTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"licenseTypeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchPool) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -456,6 +604,26 @@ func (j *jsiiProxy_BatchPool) MetadataInput() *map[string]*string {
 	_jsii_.Get(
 		j,
 		"metadataInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) Mount() BatchPoolMountList {
+	var returns BatchPoolMountList
+	_jsii_.Get(
+		j,
+		"mount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) MountInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"mountInput",
 		&returns,
 	)
 	return returns
@@ -526,6 +694,46 @@ func (j *jsiiProxy_BatchPool) NodeAgentSkuIdInput() *string {
 	_jsii_.Get(
 		j,
 		"nodeAgentSkuIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) NodePlacement() BatchPoolNodePlacementList {
+	var returns BatchPoolNodePlacementList
+	_jsii_.Get(
+		j,
+		"nodePlacement",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) NodePlacementInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"nodePlacementInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) OsDiskPlacement() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"osDiskPlacement",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) OsDiskPlacementInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"osDiskPlacementInput",
 		&returns,
 	)
 	return returns
@@ -641,6 +849,46 @@ func (j *jsiiProxy_BatchPool) StorageImageReferenceInput() *BatchPoolStorageImag
 	return returns
 }
 
+func (j *jsiiProxy_BatchPool) TargetNodeCommunicationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetNodeCommunicationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) TargetNodeCommunicationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetNodeCommunicationModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) TaskSchedulingPolicy() BatchPoolTaskSchedulingPolicyList {
+	var returns BatchPoolTaskSchedulingPolicyList
+	_jsii_.Get(
+		j,
+		"taskSchedulingPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) TaskSchedulingPolicyInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"taskSchedulingPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchPool) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -691,6 +939,26 @@ func (j *jsiiProxy_BatchPool) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_BatchPool) UserAccounts() BatchPoolUserAccountsList {
+	var returns BatchPoolUserAccountsList
+	_jsii_.Get(
+		j,
+		"userAccounts",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPool) UserAccountsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"userAccountsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchPool) VmSize() *string {
 	var returns *string
 	_jsii_.Get(
@@ -711,8 +979,28 @@ func (j *jsiiProxy_BatchPool) VmSizeInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BatchPool) Windows() BatchPoolWindowsList {
+	var returns BatchPoolWindowsList
+	_jsii_.Get(
+		j,
+		"windows",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_pool azurerm_batch_pool} Resource.
+func (j *jsiiProxy_BatchPool) WindowsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"windowsInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_pool azurerm_batch_pool} Resource.
 func NewBatchPool(scope constructs.Construct, id *string, config *BatchPoolConfig) BatchPool {
 	_init_.Initialize()
 
@@ -730,7 +1018,7 @@ func NewBatchPool(scope constructs.Construct, id *string, config *BatchPoolConfi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_pool azurerm_batch_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_pool azurerm_batch_pool} Resource.
 func NewBatchPool_Override(b BatchPool, scope constructs.Construct, id *string, config *BatchPoolConfig) {
 	_init_.Initialize()
 
@@ -812,6 +1100,28 @@ func (j *jsiiProxy_BatchPool)SetId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_BatchPool)SetInterNodeCommunication(val *string) {
+	if err := j.validateSetInterNodeCommunicationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"interNodeCommunication",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchPool)SetLicenseType(val *string) {
+	if err := j.validateSetLicenseTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"licenseType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BatchPool)SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	if err := j.validateSetLifecycleParameters(val); err != nil {
 		panic(err)
@@ -867,6 +1177,17 @@ func (j *jsiiProxy_BatchPool)SetNodeAgentSkuId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_BatchPool)SetOsDiskPlacement(val *string) {
+	if err := j.validateSetOsDiskPlacementParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"osDiskPlacement",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BatchPool)SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
@@ -904,6 +1225,17 @@ func (j *jsiiProxy_BatchPool)SetStopPendingResizeOperation(val interface{}) {
 	_jsii_.Set(
 		j,
 		"stopPendingResizeOperation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchPool)SetTargetNodeCommunicationMode(val *string) {
+	if err := j.validateSetTargetNodeCommunicationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetNodeCommunicationMode",
 		val,
 	)
 }
@@ -1218,6 +1550,39 @@ func (b *jsiiProxy_BatchPool) PutContainerConfiguration(value *BatchPoolContaine
 	)
 }
 
+func (b *jsiiProxy_BatchPool) PutDataDisks(value interface{}) {
+	if err := b.validatePutDataDisksParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putDataDisks",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchPool) PutDiskEncryption(value interface{}) {
+	if err := b.validatePutDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchPool) PutExtensions(value interface{}) {
+	if err := b.validatePutExtensionsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putExtensions",
+		[]interface{}{value},
+	)
+}
+
 func (b *jsiiProxy_BatchPool) PutFixedScale(value *BatchPoolFixedScale) {
 	if err := b.validatePutFixedScaleParameters(value); err != nil {
 		panic(err)
@@ -1240,6 +1605,17 @@ func (b *jsiiProxy_BatchPool) PutIdentity(value *BatchPoolIdentity) {
 	)
 }
 
+func (b *jsiiProxy_BatchPool) PutMount(value interface{}) {
+	if err := b.validatePutMountParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putMount",
+		[]interface{}{value},
+	)
+}
+
 func (b *jsiiProxy_BatchPool) PutNetworkConfiguration(value *BatchPoolNetworkConfiguration) {
 	if err := b.validatePutNetworkConfigurationParameters(value); err != nil {
 		panic(err)
@@ -1247,6 +1623,17 @@ func (b *jsiiProxy_BatchPool) PutNetworkConfiguration(value *BatchPoolNetworkCon
 	_jsii_.InvokeVoid(
 		b,
 		"putNetworkConfiguration",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchPool) PutNodePlacement(value interface{}) {
+	if err := b.validatePutNodePlacementParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putNodePlacement",
 		[]interface{}{value},
 	)
 }
@@ -1273,6 +1660,17 @@ func (b *jsiiProxy_BatchPool) PutStorageImageReference(value *BatchPoolStorageIm
 	)
 }
 
+func (b *jsiiProxy_BatchPool) PutTaskSchedulingPolicy(value interface{}) {
+	if err := b.validatePutTaskSchedulingPolicyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putTaskSchedulingPolicy",
+		[]interface{}{value},
+	)
+}
+
 func (b *jsiiProxy_BatchPool) PutTimeouts(value *BatchPoolTimeouts) {
 	if err := b.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1280,6 +1678,28 @@ func (b *jsiiProxy_BatchPool) PutTimeouts(value *BatchPoolTimeouts) {
 	_jsii_.InvokeVoid(
 		b,
 		"putTimeouts",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchPool) PutUserAccounts(value interface{}) {
+	if err := b.validatePutUserAccountsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putUserAccounts",
+		[]interface{}{value},
+	)
+}
+
+func (b *jsiiProxy_BatchPool) PutWindows(value interface{}) {
+	if err := b.validatePutWindowsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putWindows",
 		[]interface{}{value},
 	)
 }
@@ -1308,10 +1728,34 @@ func (b *jsiiProxy_BatchPool) ResetContainerConfiguration() {
 	)
 }
 
+func (b *jsiiProxy_BatchPool) ResetDataDisks() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetDataDisks",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetDiskEncryption",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchPool) ResetDisplayName() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetDisplayName",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetExtensions() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetExtensions",
 		nil, // no parameters
 	)
 }
@@ -1340,6 +1784,22 @@ func (b *jsiiProxy_BatchPool) ResetIdentity() {
 	)
 }
 
+func (b *jsiiProxy_BatchPool) ResetInterNodeCommunication() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetInterNodeCommunication",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetLicenseType() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetLicenseType",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchPool) ResetMaxTasksPerNode() {
 	_jsii_.InvokeVoid(
 		b,
@@ -1356,10 +1816,34 @@ func (b *jsiiProxy_BatchPool) ResetMetadata() {
 	)
 }
 
+func (b *jsiiProxy_BatchPool) ResetMount() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetMount",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchPool) ResetNetworkConfiguration() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetNetworkConfiguration",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetNodePlacement() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetNodePlacement",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetOsDiskPlacement() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetOsDiskPlacement",
 		nil, // no parameters
 	)
 }
@@ -1388,10 +1872,42 @@ func (b *jsiiProxy_BatchPool) ResetStopPendingResizeOperation() {
 	)
 }
 
+func (b *jsiiProxy_BatchPool) ResetTargetNodeCommunicationMode() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetTargetNodeCommunicationMode",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetTaskSchedulingPolicy() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetTaskSchedulingPolicy",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchPool) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetUserAccounts() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetUserAccounts",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPool) ResetWindows() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetWindows",
 		nil, // no parameters
 	)
 }

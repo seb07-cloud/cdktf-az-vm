@@ -76,6 +76,14 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateS
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetSecurityEncryptionTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	return nil
 }

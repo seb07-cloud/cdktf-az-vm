@@ -52,6 +52,10 @@ func (m *jsiiProxy_MonitorDiagnosticSetting) validateOverrideLogicalIdParameters
 	return nil
 }
 
+func (m *jsiiProxy_MonitorDiagnosticSetting) validatePutEnabledLogParameters(value interface{}) error {
+	return nil
+}
+
 func (m *jsiiProxy_MonitorDiagnosticSetting) validatePutLogParameters(value interface{}) error {
 	return nil
 }
@@ -109,6 +113,10 @@ func (j *jsiiProxy_MonitorDiagnosticSetting) validateSetLogAnalyticsWorkspaceIdP
 }
 
 func (j *jsiiProxy_MonitorDiagnosticSetting) validateSetNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_MonitorDiagnosticSetting) validateSetPartnerSolutionIdParameters(val *string) error {
 	return nil
 }
 

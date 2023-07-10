@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster}.
 type HdinsightSparkCluster interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -19,6 +19,8 @@ type HdinsightSparkCluster interface {
 	ClusterVersionInput() *string
 	ComponentVersion() HdinsightSparkClusterComponentVersionOutputReference
 	ComponentVersionInput() *HdinsightSparkClusterComponentVersion
+	ComputeIsolation() HdinsightSparkClusterComputeIsolationOutputReference
+	ComputeIsolationInput() *HdinsightSparkClusterComputeIsolation
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -33,9 +35,13 @@ type HdinsightSparkCluster interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() HdinsightSparkClusterDiskEncryptionList
+	DiskEncryptionInput() interface{}
 	EncryptionInTransitEnabled() interface{}
 	SetEncryptionInTransitEnabled(val interface{})
 	EncryptionInTransitEnabledInput() interface{}
+	Extension() HdinsightSparkClusterExtensionOutputReference
+	ExtensionInput() *HdinsightSparkClusterExtension
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -133,6 +139,9 @@ type HdinsightSparkCluster interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutComponentVersion(value *HdinsightSparkClusterComponentVersion)
+	PutComputeIsolation(value *HdinsightSparkClusterComputeIsolation)
+	PutDiskEncryption(value interface{})
+	PutExtension(value *HdinsightSparkClusterExtension)
 	PutGateway(value *HdinsightSparkClusterGateway)
 	PutMetastores(value *HdinsightSparkClusterMetastores)
 	PutMonitor(value *HdinsightSparkClusterMonitor)
@@ -142,7 +151,10 @@ type HdinsightSparkCluster interface {
 	PutStorageAccount(value interface{})
 	PutStorageAccountGen2(value *HdinsightSparkClusterStorageAccountGen2)
 	PutTimeouts(value *HdinsightSparkClusterTimeouts)
+	ResetComputeIsolation()
+	ResetDiskEncryption()
 	ResetEncryptionInTransitEnabled()
+	ResetExtension()
 	ResetId()
 	ResetMetastores()
 	ResetMonitor()
@@ -221,6 +233,26 @@ func (j *jsiiProxy_HdinsightSparkCluster) ComponentVersionInput() *HdinsightSpar
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightSparkCluster) ComputeIsolation() HdinsightSparkClusterComputeIsolationOutputReference {
+	var returns HdinsightSparkClusterComputeIsolationOutputReference
+	_jsii_.Get(
+		j,
+		"computeIsolation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightSparkCluster) ComputeIsolationInput() *HdinsightSparkClusterComputeIsolation {
+	var returns *HdinsightSparkClusterComputeIsolation
+	_jsii_.Get(
+		j,
+		"computeIsolationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightSparkCluster) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -261,6 +293,26 @@ func (j *jsiiProxy_HdinsightSparkCluster) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightSparkCluster) DiskEncryption() HdinsightSparkClusterDiskEncryptionList {
+	var returns HdinsightSparkClusterDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightSparkCluster) DiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightSparkCluster) EncryptionInTransitEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -276,6 +328,26 @@ func (j *jsiiProxy_HdinsightSparkCluster) EncryptionInTransitEnabledInput() inte
 	_jsii_.Get(
 		j,
 		"encryptionInTransitEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightSparkCluster) Extension() HdinsightSparkClusterExtensionOutputReference {
+	var returns HdinsightSparkClusterExtensionOutputReference
+	_jsii_.Get(
+		j,
+		"extension",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightSparkCluster) ExtensionInput() *HdinsightSparkClusterExtension {
+	var returns *HdinsightSparkClusterExtension
+	_jsii_.Get(
+		j,
+		"extensionInput",
 		&returns,
 	)
 	return returns
@@ -732,7 +804,7 @@ func (j *jsiiProxy_HdinsightSparkCluster) TlsMinVersionInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster} Resource.
 func NewHdinsightSparkCluster(scope constructs.Construct, id *string, config *HdinsightSparkClusterConfig) HdinsightSparkCluster {
 	_init_.Initialize()
 
@@ -750,7 +822,7 @@ func NewHdinsightSparkCluster(scope constructs.Construct, id *string, config *Hd
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_spark_cluster azurerm_hdinsight_spark_cluster} Resource.
 func NewHdinsightSparkCluster_Override(h HdinsightSparkCluster, scope constructs.Construct, id *string, config *HdinsightSparkClusterConfig) {
 	_init_.Initialize()
 
@@ -1205,6 +1277,39 @@ func (h *jsiiProxy_HdinsightSparkCluster) PutComponentVersion(value *HdinsightSp
 	)
 }
 
+func (h *jsiiProxy_HdinsightSparkCluster) PutComputeIsolation(value *HdinsightSparkClusterComputeIsolation) {
+	if err := h.validatePutComputeIsolationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putComputeIsolation",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightSparkCluster) PutDiskEncryption(value interface{}) {
+	if err := h.validatePutDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightSparkCluster) PutExtension(value *HdinsightSparkClusterExtension) {
+	if err := h.validatePutExtensionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putExtension",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HdinsightSparkCluster) PutGateway(value *HdinsightSparkClusterGateway) {
 	if err := h.validatePutGatewayParameters(value); err != nil {
 		panic(err)
@@ -1304,10 +1409,34 @@ func (h *jsiiProxy_HdinsightSparkCluster) PutTimeouts(value *HdinsightSparkClust
 	)
 }
 
+func (h *jsiiProxy_HdinsightSparkCluster) ResetComputeIsolation() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetComputeIsolation",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightSparkCluster) ResetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetDiskEncryption",
+		nil, // no parameters
+	)
+}
+
 func (h *jsiiProxy_HdinsightSparkCluster) ResetEncryptionInTransitEnabled() {
 	_jsii_.InvokeVoid(
 		h,
 		"resetEncryptionInTransitEnabled",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightSparkCluster) ResetExtension() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetExtension",
 		nil, // no parameters
 	)
 }

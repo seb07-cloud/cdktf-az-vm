@@ -100,6 +100,10 @@ func (j *jsiiProxy_MssqlElasticpool) validateSetLocationParameters(val *string) 
 	return nil
 }
 
+func (j *jsiiProxy_MssqlElasticpool) validateSetMaintenanceConfigurationNameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_MssqlElasticpool) validateSetMaxSizeBytesParameters(val *float64) error {
 	return nil
 }

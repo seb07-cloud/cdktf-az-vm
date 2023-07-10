@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_account azurerm_automation_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_account azurerm_automation_account}.
 type AutomationAccount interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -31,6 +31,8 @@ type AutomationAccount interface {
 	DscPrimaryAccessKey() *string
 	DscSecondaryAccessKey() *string
 	DscServerEndpoint() *string
+	Encryption() AutomationAccountEncryptionList
+	EncryptionInput() interface{}
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -39,6 +41,7 @@ type AutomationAccount interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HybridServiceUrl() *string
 	Id() *string
 	SetId(val *string)
 	Identity() AutomationAccountIdentityOutputReference
@@ -48,6 +51,9 @@ type AutomationAccount interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthenticationEnabled() interface{}
+	SetLocalAuthenticationEnabled(val interface{})
+	LocalAuthenticationEnabledInput() interface{}
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
@@ -56,6 +62,7 @@ type AutomationAccount interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	PrivateEndpointConnection() AutomationAccountPrivateEndpointConnectionList
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -111,10 +118,13 @@ type AutomationAccount interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutEncryption(value interface{})
 	PutIdentity(value *AutomationAccountIdentity)
 	PutTimeouts(value *AutomationAccountTimeouts)
+	ResetEncryption()
 	ResetId()
 	ResetIdentity()
+	ResetLocalAuthenticationEnabled()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -216,6 +226,26 @@ func (j *jsiiProxy_AutomationAccount) DscServerEndpoint() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AutomationAccount) Encryption() AutomationAccountEncryptionList {
+	var returns AutomationAccountEncryptionList
+	_jsii_.Get(
+		j,
+		"encryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationAccount) EncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"encryptionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AutomationAccount) ForEach() cdktf.ITerraformIterator {
 	var returns cdktf.ITerraformIterator
 	_jsii_.Get(
@@ -241,6 +271,16 @@ func (j *jsiiProxy_AutomationAccount) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationAccount) HybridServiceUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hybridServiceUrl",
 		&returns,
 	)
 	return returns
@@ -296,6 +336,26 @@ func (j *jsiiProxy_AutomationAccount) Lifecycle() *cdktf.TerraformResourceLifecy
 	return returns
 }
 
+func (j *jsiiProxy_AutomationAccount) LocalAuthenticationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationAccount) LocalAuthenticationEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AutomationAccount) Location() *string {
 	var returns *string
 	_jsii_.Get(
@@ -341,6 +401,16 @@ func (j *jsiiProxy_AutomationAccount) Node() constructs.Node {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AutomationAccount) PrivateEndpointConnection() AutomationAccountPrivateEndpointConnectionList {
+	var returns AutomationAccountPrivateEndpointConnectionList
+	_jsii_.Get(
+		j,
+		"privateEndpointConnection",
 		&returns,
 	)
 	return returns
@@ -507,7 +577,7 @@ func (j *jsiiProxy_AutomationAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_account azurerm_automation_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_account azurerm_automation_account} Resource.
 func NewAutomationAccount(scope constructs.Construct, id *string, config *AutomationAccountConfig) AutomationAccount {
 	_init_.Initialize()
 
@@ -525,7 +595,7 @@ func NewAutomationAccount(scope constructs.Construct, id *string, config *Automa
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/automation_account azurerm_automation_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/automation_account azurerm_automation_account} Resource.
 func NewAutomationAccount_Override(a AutomationAccount, scope constructs.Construct, id *string, config *AutomationAccountConfig) {
 	_init_.Initialize()
 
@@ -592,6 +662,17 @@ func (j *jsiiProxy_AutomationAccount)SetLifecycle(val *cdktf.TerraformResourceLi
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AutomationAccount)SetLocalAuthenticationEnabled(val interface{}) {
+	if err := j.validateSetLocalAuthenticationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"localAuthenticationEnabled",
 		val,
 	)
 }
@@ -947,6 +1028,17 @@ func (a *jsiiProxy_AutomationAccount) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (a *jsiiProxy_AutomationAccount) PutEncryption(value interface{}) {
+	if err := a.validatePutEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putEncryption",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_AutomationAccount) PutIdentity(value *AutomationAccountIdentity) {
 	if err := a.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -969,6 +1061,14 @@ func (a *jsiiProxy_AutomationAccount) PutTimeouts(value *AutomationAccountTimeou
 	)
 }
 
+func (a *jsiiProxy_AutomationAccount) ResetEncryption() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetEncryption",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AutomationAccount) ResetId() {
 	_jsii_.InvokeVoid(
 		a,
@@ -981,6 +1081,14 @@ func (a *jsiiProxy_AutomationAccount) ResetIdentity() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AutomationAccount) ResetLocalAuthenticationEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetLocalAuthenticationEnabled",
 		nil, // no parameters
 	)
 }

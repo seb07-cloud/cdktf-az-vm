@@ -67,6 +67,7 @@ type ApplicationGatewayProbeMatchOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetBody()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -481,6 +482,14 @@ func (a *jsiiProxy_ApplicationGatewayProbeMatchOutputReference) InterpolationFor
 	)
 
 	return returns
+}
+
+func (a *jsiiProxy_ApplicationGatewayProbeMatchOutputReference) ResetBody() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetBody",
+		nil, // no parameters
+	)
 }
 
 func (a *jsiiProxy_ApplicationGatewayProbeMatchOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

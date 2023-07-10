@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/public_ip azurerm_public_ip}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/public_ip azurerm_public_ip}.
 type DataAzurermPublicIp interface {
 	cdktf.TerraformDataSource
 	AllocationMethod() *string
@@ -21,6 +21,8 @@ type DataAzurermPublicIp interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DdosProtectionMode() *string
+	DdosProtectionPlanId() *string
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -154,6 +156,26 @@ func (j *jsiiProxy_DataAzurermPublicIp) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermPublicIp) DdosProtectionMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ddosProtectionMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermPublicIp) DdosProtectionPlanId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ddosProtectionPlanId",
 		&returns,
 	)
 	return returns
@@ -460,7 +482,7 @@ func (j *jsiiProxy_DataAzurermPublicIp) Zones() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/public_ip azurerm_public_ip} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/public_ip azurerm_public_ip} Data Source.
 func NewDataAzurermPublicIp(scope constructs.Construct, id *string, config *DataAzurermPublicIpConfig) DataAzurermPublicIp {
 	_init_.Initialize()
 
@@ -478,7 +500,7 @@ func NewDataAzurermPublicIp(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/public_ip azurerm_public_ip} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/public_ip azurerm_public_ip} Data Source.
 func NewDataAzurermPublicIp_Override(d DataAzurermPublicIp, scope constructs.Construct, id *string, config *DataAzurermPublicIpConfig) {
 	_init_.Initialize()
 

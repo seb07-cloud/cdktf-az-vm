@@ -56,6 +56,14 @@ func (s *jsiiProxy_SpringCloudService) validatePutConfigServerGitSettingParamete
 	return nil
 }
 
+func (s *jsiiProxy_SpringCloudService) validatePutContainerRegistryParameters(value interface{}) error {
+	return nil
+}
+
+func (s *jsiiProxy_SpringCloudService) validatePutDefaultBuildServiceParameters(value *SpringCloudServiceDefaultBuildService) error {
+	return nil
+}
+
 func (s *jsiiProxy_SpringCloudService) validatePutNetworkParameters(value *SpringCloudServiceNetwork) error {
 	return nil
 }
@@ -80,6 +88,10 @@ func validateSpringCloudService_IsTerraformResourceParameters(x interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudService) validateSetBuildAgentPoolSizeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudService) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -100,6 +112,10 @@ func (j *jsiiProxy_SpringCloudService) validateSetLocationParameters(val *string
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudService) validateSetLogStreamPublicEndpointEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudService) validateSetNameParameters(val *string) error {
 	return nil
 }
@@ -112,11 +128,19 @@ func (j *jsiiProxy_SpringCloudService) validateSetResourceGroupNameParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudService) validateSetServiceRegistryEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudService) validateSetSkuNameParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_SpringCloudService) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SpringCloudService) validateSetZoneRedundantParameters(val interface{}) error {
 	return nil
 }
 

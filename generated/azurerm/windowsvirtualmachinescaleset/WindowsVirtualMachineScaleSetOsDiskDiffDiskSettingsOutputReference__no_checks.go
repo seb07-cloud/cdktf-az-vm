@@ -64,6 +64,10 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputRefe
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) validateSetPlacementParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

@@ -52,6 +52,10 @@ func (a *jsiiProxy_AutomationRunbook) validateOverrideLogicalIdParameters(newLog
 	return nil
 }
 
+func (a *jsiiProxy_AutomationRunbook) validatePutDraftParameters(value *AutomationRunbookDraft) error {
+	return nil
+}
+
 func (a *jsiiProxy_AutomationRunbook) validatePutJobScheduleParameters(value interface{}) error {
 	return nil
 }
@@ -105,6 +109,10 @@ func (j *jsiiProxy_AutomationRunbook) validateSetLifecycleParameters(val *cdktf.
 }
 
 func (j *jsiiProxy_AutomationRunbook) validateSetLocationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_AutomationRunbook) validateSetLogActivityTraceLevelParameters(val *float64) error {
 	return nil
 }
 

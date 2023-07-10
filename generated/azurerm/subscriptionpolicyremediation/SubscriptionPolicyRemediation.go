@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation}.
 type SubscriptionPolicyRemediation interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -28,6 +28,9 @@ type SubscriptionPolicyRemediation interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	FailurePercentage() *float64
+	SetFailurePercentage(val *float64)
+	FailurePercentageInput() *float64
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -51,12 +54,18 @@ type SubscriptionPolicyRemediation interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	ParallelDeployments() *float64
+	SetParallelDeployments(val *float64)
+	ParallelDeploymentsInput() *float64
 	PolicyAssignmentId() *string
 	SetPolicyAssignmentId(val *string)
 	PolicyAssignmentIdInput() *string
 	PolicyDefinitionId() *string
 	SetPolicyDefinitionId(val *string)
 	PolicyDefinitionIdInput() *string
+	PolicyDefinitionReferenceId() *string
+	SetPolicyDefinitionReferenceId(val *string)
+	PolicyDefinitionReferenceIdInput() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -67,6 +76,9 @@ type SubscriptionPolicyRemediation interface {
 	SetProvisioners(val *[]interface{})
 	// Experimental.
 	RawOverrides() interface{}
+	ResourceCount() *float64
+	SetResourceCount(val *float64)
+	ResourceCountInput() *float64
 	ResourceDiscoveryMode() *string
 	SetResourceDiscoveryMode(val *string)
 	ResourceDiscoveryModeInput() *string
@@ -107,12 +119,16 @@ type SubscriptionPolicyRemediation interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *SubscriptionPolicyRemediationTimeouts)
+	ResetFailurePercentage()
 	ResetId()
 	ResetLocationFilters()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetParallelDeployments()
 	ResetPolicyDefinitionId()
+	ResetPolicyDefinitionReferenceId()
+	ResetResourceCount()
 	ResetResourceDiscoveryMode()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -175,6 +191,26 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) FailurePercentage() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"failurePercentage",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) FailurePercentageInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"failurePercentageInput",
 		&returns,
 	)
 	return returns
@@ -290,6 +326,26 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation) ParallelDeployments() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"parallelDeployments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) ParallelDeploymentsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"parallelDeploymentsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation) PolicyAssignmentId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -330,6 +386,26 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) PolicyDefinitionIdInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation) PolicyDefinitionReferenceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyDefinitionReferenceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) PolicyDefinitionReferenceIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyDefinitionReferenceIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -355,6 +431,26 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) RawOverrides() interface{} {
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) ResourceCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"resourceCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) ResourceCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"resourceCountInput",
 		&returns,
 	)
 	return returns
@@ -451,7 +547,7 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation} Resource.
 func NewSubscriptionPolicyRemediation(scope constructs.Construct, id *string, config *SubscriptionPolicyRemediationConfig) SubscriptionPolicyRemediation {
 	_init_.Initialize()
 
@@ -469,7 +565,7 @@ func NewSubscriptionPolicyRemediation(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/subscription_policy_remediation azurerm_subscription_policy_remediation} Resource.
 func NewSubscriptionPolicyRemediation_Override(s SubscriptionPolicyRemediation, scope constructs.Construct, id *string, config *SubscriptionPolicyRemediationConfig) {
 	_init_.Initialize()
 
@@ -506,6 +602,17 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation)SetFailurePercentage(val *float64) {
+	if err := j.validateSetFailurePercentageParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failurePercentage",
 		val,
 	)
 }
@@ -562,6 +669,17 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation)SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation)SetParallelDeployments(val *float64) {
+	if err := j.validateSetParallelDeploymentsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"parallelDeployments",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation)SetPolicyAssignmentId(val *string) {
 	if err := j.validateSetPolicyAssignmentIdParameters(val); err != nil {
 		panic(err)
@@ -584,6 +702,17 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation)SetPolicyDefinitionId(val *stri
 	)
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation)SetPolicyDefinitionReferenceId(val *string) {
+	if err := j.validateSetPolicyDefinitionReferenceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"policyDefinitionReferenceId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation)SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
@@ -599,6 +728,17 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation)SetProvisioners(val *[]interfac
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation)SetResourceCount(val *float64) {
+	if err := j.validateSetResourceCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceCount",
 		val,
 	)
 }
@@ -902,6 +1042,14 @@ func (s *jsiiProxy_SubscriptionPolicyRemediation) PutTimeouts(value *Subscriptio
 	)
 }
 
+func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetFailurePercentage() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFailurePercentage",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -926,10 +1074,34 @@ func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetOverrideLogicalId() {
 	)
 }
 
+func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetParallelDeployments() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetParallelDeployments",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetPolicyDefinitionId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetPolicyDefinitionId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetPolicyDefinitionReferenceId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPolicyDefinitionReferenceId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SubscriptionPolicyRemediation) ResetResourceCount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetResourceCount",
 		nil, // no parameters
 	)
 }

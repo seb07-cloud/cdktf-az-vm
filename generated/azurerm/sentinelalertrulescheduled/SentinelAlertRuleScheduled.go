@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled}.
 type SentinelAlertRuleScheduled interface {
 	cdktf.TerraformResource
 	AlertDetailsOverride() SentinelAlertRuleScheduledAlertDetailsOverrideList
@@ -96,6 +96,8 @@ type SentinelAlertRuleScheduled interface {
 	QueryPeriodInput() *string
 	// Experimental.
 	RawOverrides() interface{}
+	SentinelEntityMapping() SentinelAlertRuleScheduledSentinelEntityMappingList
+	SentinelEntityMappingInput() interface{}
 	Severity() *string
 	SetSeverity(val *string)
 	SeverityInput() *string
@@ -108,6 +110,9 @@ type SentinelAlertRuleScheduled interface {
 	Tactics() *[]*string
 	SetTactics(val *[]*string)
 	TacticsInput() *[]*string
+	Techniques() *[]*string
+	SetTechniques(val *[]*string)
+	TechniquesInput() *[]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -151,6 +156,7 @@ type SentinelAlertRuleScheduled interface {
 	PutEntityMapping(value interface{})
 	PutEventGrouping(value *SentinelAlertRuleScheduledEventGrouping)
 	PutIncidentConfiguration(value *SentinelAlertRuleScheduledIncidentConfiguration)
+	PutSentinelEntityMapping(value interface{})
 	PutTimeouts(value *SentinelAlertRuleScheduledTimeouts)
 	ResetAlertDetailsOverride()
 	ResetAlertRuleTemplateGuid()
@@ -167,9 +173,11 @@ type SentinelAlertRuleScheduled interface {
 	ResetOverrideLogicalId()
 	ResetQueryFrequency()
 	ResetQueryPeriod()
+	ResetSentinelEntityMapping()
 	ResetSuppressionDuration()
 	ResetSuppressionEnabled()
 	ResetTactics()
+	ResetTechniques()
 	ResetTimeouts()
 	ResetTriggerOperator()
 	ResetTriggerThreshold()
@@ -638,6 +646,26 @@ func (j *jsiiProxy_SentinelAlertRuleScheduled) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_SentinelAlertRuleScheduled) SentinelEntityMapping() SentinelAlertRuleScheduledSentinelEntityMappingList {
+	var returns SentinelAlertRuleScheduledSentinelEntityMappingList
+	_jsii_.Get(
+		j,
+		"sentinelEntityMapping",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SentinelAlertRuleScheduled) SentinelEntityMappingInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sentinelEntityMappingInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SentinelAlertRuleScheduled) Severity() *string {
 	var returns *string
 	_jsii_.Get(
@@ -713,6 +741,26 @@ func (j *jsiiProxy_SentinelAlertRuleScheduled) TacticsInput() *[]*string {
 	_jsii_.Get(
 		j,
 		"tacticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SentinelAlertRuleScheduled) Techniques() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"techniques",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SentinelAlertRuleScheduled) TechniquesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"techniquesInput",
 		&returns,
 	)
 	return returns
@@ -809,7 +857,7 @@ func (j *jsiiProxy_SentinelAlertRuleScheduled) TriggerThresholdInput() *float64 
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled} Resource.
 func NewSentinelAlertRuleScheduled(scope constructs.Construct, id *string, config *SentinelAlertRuleScheduledConfig) SentinelAlertRuleScheduled {
 	_init_.Initialize()
 
@@ -827,7 +875,7 @@ func NewSentinelAlertRuleScheduled(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_alert_rule_scheduled azurerm_sentinel_alert_rule_scheduled} Resource.
 func NewSentinelAlertRuleScheduled_Override(s SentinelAlertRuleScheduled, scope constructs.Construct, id *string, config *SentinelAlertRuleScheduledConfig) {
 	_init_.Initialize()
 
@@ -1078,6 +1126,17 @@ func (j *jsiiProxy_SentinelAlertRuleScheduled)SetTactics(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"tactics",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SentinelAlertRuleScheduled)SetTechniques(val *[]*string) {
+	if err := j.validateSetTechniquesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"techniques",
 		val,
 	)
 }
@@ -1414,6 +1473,17 @@ func (s *jsiiProxy_SentinelAlertRuleScheduled) PutIncidentConfiguration(value *S
 	)
 }
 
+func (s *jsiiProxy_SentinelAlertRuleScheduled) PutSentinelEntityMapping(value interface{}) {
+	if err := s.validatePutSentinelEntityMappingParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putSentinelEntityMapping",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SentinelAlertRuleScheduled) PutTimeouts(value *SentinelAlertRuleScheduledTimeouts) {
 	if err := s.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1529,6 +1599,14 @@ func (s *jsiiProxy_SentinelAlertRuleScheduled) ResetQueryPeriod() {
 	)
 }
 
+func (s *jsiiProxy_SentinelAlertRuleScheduled) ResetSentinelEntityMapping() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSentinelEntityMapping",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SentinelAlertRuleScheduled) ResetSuppressionDuration() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1549,6 +1627,14 @@ func (s *jsiiProxy_SentinelAlertRuleScheduled) ResetTactics() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTactics",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SentinelAlertRuleScheduled) ResetTechniques() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTechniques",
 		nil, // no parameters
 	)
 }

@@ -72,6 +72,10 @@ func (h *jsiiProxy_HpcCache) validatePutDnsParameters(value *HpcCacheDns) error 
 	return nil
 }
 
+func (h *jsiiProxy_HpcCache) validatePutIdentityParameters(value *HpcCacheIdentity) error {
+	return nil
+}
+
 func (h *jsiiProxy_HpcCache) validatePutTimeoutsParameters(value *HpcCacheTimeouts) error {
 	return nil
 }
@@ -88,6 +92,10 @@ func validateHpcCache_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_HpcCache) validateSetAutomaticallyRotateKeyToLatestEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_HpcCache) validateSetCacheSizeInGbParameters(val *float64) error {
 	return nil
 }
@@ -101,6 +109,10 @@ func (j *jsiiProxy_HpcCache) validateSetCountParameters(val interface{}) error {
 }
 
 func (j *jsiiProxy_HpcCache) validateSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_HpcCache) validateSetKeyVaultKeyIdParameters(val *string) error {
 	return nil
 }
 

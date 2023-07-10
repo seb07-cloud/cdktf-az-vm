@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool}.
 type MssqlElasticpool interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -49,6 +49,9 @@ type MssqlElasticpool interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	MaintenanceConfigurationName() *string
+	SetMaintenanceConfigurationName(val *string)
+	MaintenanceConfigurationNameInput() *string
 	MaxSizeBytes() *float64
 	SetMaxSizeBytes(val *float64)
 	MaxSizeBytesInput() *float64
@@ -124,6 +127,7 @@ type MssqlElasticpool interface {
 	PutTimeouts(value *MssqlElasticpoolTimeouts)
 	ResetId()
 	ResetLicenseType()
+	ResetMaintenanceConfigurationName()
 	ResetMaxSizeBytes()
 	ResetMaxSizeGb()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -292,6 +296,26 @@ func (j *jsiiProxy_MssqlElasticpool) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlElasticpool) MaintenanceConfigurationName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlElasticpool) MaintenanceConfigurationNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationNameInput",
 		&returns,
 	)
 	return returns
@@ -568,7 +592,7 @@ func (j *jsiiProxy_MssqlElasticpool) ZoneRedundantInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool} Resource.
 func NewMssqlElasticpool(scope constructs.Construct, id *string, config *MssqlElasticpoolConfig) MssqlElasticpool {
 	_init_.Initialize()
 
@@ -586,7 +610,7 @@ func NewMssqlElasticpool(scope constructs.Construct, id *string, config *MssqlEl
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_elasticpool azurerm_mssql_elasticpool} Resource.
 func NewMssqlElasticpool_Override(m MssqlElasticpool, scope constructs.Construct, id *string, config *MssqlElasticpoolConfig) {
 	_init_.Initialize()
 
@@ -675,6 +699,17 @@ func (j *jsiiProxy_MssqlElasticpool)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MssqlElasticpool)SetMaintenanceConfigurationName(val *string) {
+	if err := j.validateSetMaintenanceConfigurationNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maintenanceConfigurationName",
 		val,
 	)
 }
@@ -1086,6 +1121,14 @@ func (m *jsiiProxy_MssqlElasticpool) ResetLicenseType() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetLicenseType",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlElasticpool) ResetMaintenanceConfigurationName() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetMaintenanceConfigurationName",
 		nil, // no parameters
 	)
 }

@@ -30,6 +30,9 @@ type ApiManagementAdditionalLocationOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	GatewayDisabled() interface{}
+	SetGatewayDisabled(val interface{})
+	GatewayDisabledInput() interface{}
 	GatewayRegionalUrl() *string
 	InternalValue() interface{}
 	SetInternalValue(val interface{})
@@ -80,6 +83,7 @@ type ApiManagementAdditionalLocationOutputReference interface {
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutVirtualNetworkConfiguration(value *ApiManagementAdditionalLocationVirtualNetworkConfiguration)
 	ResetCapacity()
+	ResetGatewayDisabled()
 	ResetPublicIpAddressId()
 	ResetVirtualNetworkConfiguration()
 	ResetZones()
@@ -153,6 +157,26 @@ func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) Fqn() *string
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) GatewayDisabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"gatewayDisabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) GatewayDisabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"gatewayDisabledInput",
 		&returns,
 	)
 	return returns
@@ -355,6 +379,17 @@ func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference)SetComplexObje
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference)SetGatewayDisabled(val interface{}) {
+	if err := j.validateSetGatewayDisabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"gatewayDisabled",
 		val,
 	)
 }
@@ -626,6 +661,14 @@ func (a *jsiiProxy_ApiManagementAdditionalLocationOutputReference) ResetCapacity
 	_jsii_.InvokeVoid(
 		a,
 		"resetCapacity",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementAdditionalLocationOutputReference) ResetGatewayDisabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetGatewayDisabled",
 		nil, // no parameters
 	)
 }

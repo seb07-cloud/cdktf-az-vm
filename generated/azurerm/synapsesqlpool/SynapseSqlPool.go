@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool}.
 type SynapseSqlPool interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -45,6 +45,9 @@ type SynapseSqlPool interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	GeoBackupPolicyEnabled() interface{}
+	SetGeoBackupPolicyEnabled(val interface{})
+	GeoBackupPolicyEnabledInput() interface{}
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
@@ -119,6 +122,7 @@ type SynapseSqlPool interface {
 	ResetCollation()
 	ResetCreateMode()
 	ResetDataEncrypted()
+	ResetGeoBackupPolicyEnabled()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -277,6 +281,26 @@ func (j *jsiiProxy_SynapseSqlPool) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSqlPool) GeoBackupPolicyEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"geoBackupPolicyEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSqlPool) GeoBackupPolicyEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"geoBackupPolicyEnabledInput",
 		&returns,
 	)
 	return returns
@@ -523,7 +547,7 @@ func (j *jsiiProxy_SynapseSqlPool) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool} Resource.
 func NewSynapseSqlPool(scope constructs.Construct, id *string, config *SynapseSqlPoolConfig) SynapseSqlPool {
 	_init_.Initialize()
 
@@ -541,7 +565,7 @@ func NewSynapseSqlPool(scope constructs.Construct, id *string, config *SynapseSq
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_sql_pool azurerm_synapse_sql_pool} Resource.
 func NewSynapseSqlPool_Override(s SynapseSqlPool, scope constructs.Construct, id *string, config *SynapseSqlPoolConfig) {
 	_init_.Initialize()
 
@@ -619,6 +643,17 @@ func (j *jsiiProxy_SynapseSqlPool)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
 		"forEach",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SynapseSqlPool)SetGeoBackupPolicyEnabled(val interface{}) {
+	if err := j.validateSetGeoBackupPolicyEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"geoBackupPolicyEnabled",
 		val,
 	)
 }
@@ -1027,6 +1062,14 @@ func (s *jsiiProxy_SynapseSqlPool) ResetDataEncrypted() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetDataEncrypted",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SynapseSqlPool) ResetGeoBackupPolicyEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetGeoBackupPolicyEnabled",
 		nil, // no parameters
 	)
 }

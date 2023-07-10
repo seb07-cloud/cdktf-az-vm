@@ -68,6 +68,10 @@ func validateStreamAnalyticsOutputMssql_IsTerraformResourceParameters(x interfac
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetAuthenticationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -85,6 +89,14 @@ func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetIdParameters(val *stri
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetMaxBatchCountParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) validateSetMaxWriterCountParameters(val *float64) error {
 	return nil
 }
 

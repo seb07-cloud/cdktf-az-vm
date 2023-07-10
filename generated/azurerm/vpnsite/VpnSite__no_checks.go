@@ -56,6 +56,10 @@ func (v *jsiiProxy_VpnSite) validatePutLinkParameters(value interface{}) error {
 	return nil
 }
 
+func (v *jsiiProxy_VpnSite) validatePutO365PolicyParameters(value *VpnSiteO365Policy) error {
+	return nil
+}
+
 func (v *jsiiProxy_VpnSite) validatePutTimeoutsParameters(value *VpnSiteTimeouts) error {
 	return nil
 }

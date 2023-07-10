@@ -315,6 +315,22 @@ func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLifecycleParameters(val *
 	return nil
 }
 
+func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLinkedDatabaseGroupNicknameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLinkedDatabaseIdParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

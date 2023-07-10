@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_connection azurerm_express_route_connection}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_connection azurerm_express_route_connection}.
 type ExpressRouteConnection interface {
 	cdktf.TerraformResource
 	AuthorizationKey() *string
@@ -37,6 +37,9 @@ type ExpressRouteConnection interface {
 	ExpressRouteCircuitPeeringId() *string
 	SetExpressRouteCircuitPeeringId(val *string)
 	ExpressRouteCircuitPeeringIdInput() *string
+	ExpressRouteGatewayBypassEnabled() interface{}
+	SetExpressRouteGatewayBypassEnabled(val interface{})
+	ExpressRouteGatewayBypassEnabledInput() interface{}
 	ExpressRouteGatewayId() *string
 	SetExpressRouteGatewayId(val *string)
 	ExpressRouteGatewayIdInput() *string
@@ -112,6 +115,7 @@ type ExpressRouteConnection interface {
 	PutTimeouts(value *ExpressRouteConnectionTimeouts)
 	ResetAuthorizationKey()
 	ResetEnableInternetSecurity()
+	ResetExpressRouteGatewayBypassEnabled()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -239,6 +243,26 @@ func (j *jsiiProxy_ExpressRouteConnection) ExpressRouteCircuitPeeringIdInput() *
 	_jsii_.Get(
 		j,
 		"expressRouteCircuitPeeringIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteConnection) ExpressRouteGatewayBypassEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"expressRouteGatewayBypassEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteConnection) ExpressRouteGatewayBypassEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"expressRouteGatewayBypassEnabledInput",
 		&returns,
 	)
 	return returns
@@ -475,7 +499,7 @@ func (j *jsiiProxy_ExpressRouteConnection) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_connection azurerm_express_route_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_connection azurerm_express_route_connection} Resource.
 func NewExpressRouteConnection(scope constructs.Construct, id *string, config *ExpressRouteConnectionConfig) ExpressRouteConnection {
 	_init_.Initialize()
 
@@ -493,7 +517,7 @@ func NewExpressRouteConnection(scope constructs.Construct, id *string, config *E
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_connection azurerm_express_route_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_connection azurerm_express_route_connection} Resource.
 func NewExpressRouteConnection_Override(e ExpressRouteConnection, scope constructs.Construct, id *string, config *ExpressRouteConnectionConfig) {
 	_init_.Initialize()
 
@@ -563,6 +587,17 @@ func (j *jsiiProxy_ExpressRouteConnection)SetExpressRouteCircuitPeeringId(val *s
 	_jsii_.Set(
 		j,
 		"expressRouteCircuitPeeringId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ExpressRouteConnection)SetExpressRouteGatewayBypassEnabled(val interface{}) {
+	if err := j.validateSetExpressRouteGatewayBypassEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"expressRouteGatewayBypassEnabled",
 		val,
 	)
 }
@@ -949,6 +984,14 @@ func (e *jsiiProxy_ExpressRouteConnection) ResetEnableInternetSecurity() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetEnableInternetSecurity",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ExpressRouteConnection) ResetExpressRouteGatewayBypassEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetExpressRouteGatewayBypassEnabled",
 		nil, // no parameters
 	)
 }

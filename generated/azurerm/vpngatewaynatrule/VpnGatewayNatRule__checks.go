@@ -111,6 +111,68 @@ func (v *jsiiProxy_VpnGatewayNatRule) validateOverrideLogicalIdParameters(newLog
 	return nil
 }
 
+func (v *jsiiProxy_VpnGatewayNatRule) validatePutExternalMappingParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*VpnGatewayNatRuleExternalMapping:
+		value := value.(*[]*VpnGatewayNatRuleExternalMapping)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*VpnGatewayNatRuleExternalMapping:
+		value_ := value.([]*VpnGatewayNatRuleExternalMapping)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*VpnGatewayNatRuleExternalMapping; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
+func (v *jsiiProxy_VpnGatewayNatRule) validatePutInternalMappingParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*VpnGatewayNatRuleInternalMapping:
+		value := value.(*[]*VpnGatewayNatRuleInternalMapping)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*VpnGatewayNatRuleInternalMapping:
+		value_ := value.([]*VpnGatewayNatRuleInternalMapping)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*VpnGatewayNatRuleInternalMapping; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (v *jsiiProxy_VpnGatewayNatRule) validatePutTimeoutsParameters(value *VpnGatewayNatRuleTimeouts) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment}.
 type ResourcePolicyAssignment interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -70,6 +70,8 @@ type ResourcePolicyAssignment interface {
 	NotScopes() *[]*string
 	SetNotScopes(val *[]*string)
 	NotScopesInput() *[]*string
+	Overrides() ResourcePolicyAssignmentOverridesList
+	OverridesInput() interface{}
 	Parameters() *string
 	SetParameters(val *string)
 	ParametersInput() *string
@@ -89,6 +91,8 @@ type ResourcePolicyAssignment interface {
 	ResourceId() *string
 	SetResourceId(val *string)
 	ResourceIdInput() *string
+	ResourceSelectors() ResourcePolicyAssignmentResourceSelectorsList
+	ResourceSelectorsInput() interface{}
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -124,6 +128,8 @@ type ResourcePolicyAssignment interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutIdentity(value *ResourcePolicyAssignmentIdentity)
 	PutNonComplianceMessage(value interface{})
+	PutOverrides(value interface{})
+	PutResourceSelectors(value interface{})
 	PutTimeouts(value *ResourcePolicyAssignmentTimeouts)
 	ResetDescription()
 	ResetDisplayName()
@@ -137,7 +143,9 @@ type ResourcePolicyAssignment interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetOverrides()
 	ResetParameters()
+	ResetResourceSelectors()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -454,6 +462,26 @@ func (j *jsiiProxy_ResourcePolicyAssignment) NotScopesInput() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_ResourcePolicyAssignment) Overrides() ResourcePolicyAssignmentOverridesList {
+	var returns ResourcePolicyAssignmentOverridesList
+	_jsii_.Get(
+		j,
+		"overrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourcePolicyAssignment) OverridesInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"overridesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ResourcePolicyAssignment) Parameters() *string {
 	var returns *string
 	_jsii_.Get(
@@ -544,6 +572,26 @@ func (j *jsiiProxy_ResourcePolicyAssignment) ResourceIdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ResourcePolicyAssignment) ResourceSelectors() ResourcePolicyAssignmentResourceSelectorsList {
+	var returns ResourcePolicyAssignmentResourceSelectorsList
+	_jsii_.Get(
+		j,
+		"resourceSelectors",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ResourcePolicyAssignment) ResourceSelectorsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceSelectorsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ResourcePolicyAssignment) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -595,7 +643,7 @@ func (j *jsiiProxy_ResourcePolicyAssignment) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment} Resource.
 func NewResourcePolicyAssignment(scope constructs.Construct, id *string, config *ResourcePolicyAssignmentConfig) ResourcePolicyAssignment {
 	_init_.Initialize()
 
@@ -613,7 +661,7 @@ func NewResourcePolicyAssignment(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/resource_policy_assignment azurerm_resource_policy_assignment} Resource.
 func NewResourcePolicyAssignment_Override(r ResourcePolicyAssignment, scope constructs.Construct, id *string, config *ResourcePolicyAssignmentConfig) {
 	_init_.Initialize()
 
@@ -1101,6 +1149,28 @@ func (r *jsiiProxy_ResourcePolicyAssignment) PutNonComplianceMessage(value inter
 	)
 }
 
+func (r *jsiiProxy_ResourcePolicyAssignment) PutOverrides(value interface{}) {
+	if err := r.validatePutOverridesParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		r,
+		"putOverrides",
+		[]interface{}{value},
+	)
+}
+
+func (r *jsiiProxy_ResourcePolicyAssignment) PutResourceSelectors(value interface{}) {
+	if err := r.validatePutResourceSelectorsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		r,
+		"putResourceSelectors",
+		[]interface{}{value},
+	)
+}
+
 func (r *jsiiProxy_ResourcePolicyAssignment) PutTimeouts(value *ResourcePolicyAssignmentTimeouts) {
 	if err := r.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1192,10 +1262,26 @@ func (r *jsiiProxy_ResourcePolicyAssignment) ResetOverrideLogicalId() {
 	)
 }
 
+func (r *jsiiProxy_ResourcePolicyAssignment) ResetOverrides() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetOverrides",
+		nil, // no parameters
+	)
+}
+
 func (r *jsiiProxy_ResourcePolicyAssignment) ResetParameters() {
 	_jsii_.InvokeVoid(
 		r,
 		"resetParameters",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_ResourcePolicyAssignment) ResetResourceSelectors() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetResourceSelectors",
 		nil, // no parameters
 	)
 }

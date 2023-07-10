@@ -112,6 +112,10 @@ func (j *jsiiProxy_MssqlManagedInstance) validateSetLocationParameters(val *stri
 	return nil
 }
 
+func (j *jsiiProxy_MssqlManagedInstance) validateSetMaintenanceConfigurationNameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_MssqlManagedInstance) validateSetMinimumTlsVersionParameters(val *string) error {
 	return nil
 }

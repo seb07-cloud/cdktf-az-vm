@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation}.
 type ManagementGroupPolicyRemediation interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -28,6 +28,9 @@ type ManagementGroupPolicyRemediation interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	FailurePercentage() *float64
+	SetFailurePercentage(val *float64)
+	FailurePercentageInput() *float64
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -54,12 +57,18 @@ type ManagementGroupPolicyRemediation interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	ParallelDeployments() *float64
+	SetParallelDeployments(val *float64)
+	ParallelDeploymentsInput() *float64
 	PolicyAssignmentId() *string
 	SetPolicyAssignmentId(val *string)
 	PolicyAssignmentIdInput() *string
 	PolicyDefinitionId() *string
 	SetPolicyDefinitionId(val *string)
 	PolicyDefinitionIdInput() *string
+	PolicyDefinitionReferenceId() *string
+	SetPolicyDefinitionReferenceId(val *string)
+	PolicyDefinitionReferenceIdInput() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -70,6 +79,9 @@ type ManagementGroupPolicyRemediation interface {
 	SetProvisioners(val *[]interface{})
 	// Experimental.
 	RawOverrides() interface{}
+	ResourceCount() *float64
+	SetResourceCount(val *float64)
+	ResourceCountInput() *float64
 	ResourceDiscoveryMode() *string
 	SetResourceDiscoveryMode(val *string)
 	ResourceDiscoveryModeInput() *string
@@ -107,12 +119,16 @@ type ManagementGroupPolicyRemediation interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *ManagementGroupPolicyRemediationTimeouts)
+	ResetFailurePercentage()
 	ResetId()
 	ResetLocationFilters()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetParallelDeployments()
 	ResetPolicyDefinitionId()
+	ResetPolicyDefinitionReferenceId()
+	ResetResourceCount()
 	ResetResourceDiscoveryMode()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -175,6 +191,26 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) FailurePercentage() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"failurePercentage",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) FailurePercentageInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"failurePercentageInput",
 		&returns,
 	)
 	return returns
@@ -310,6 +346,26 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) ParallelDeployments() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"parallelDeployments",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) ParallelDeploymentsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"parallelDeploymentsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation) PolicyAssignmentId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -350,6 +406,26 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) PolicyDefinitionIdInput() *
 	return returns
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) PolicyDefinitionReferenceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyDefinitionReferenceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) PolicyDefinitionReferenceIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyDefinitionReferenceIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -375,6 +451,26 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) RawOverrides() interface{} 
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) ResourceCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"resourceCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) ResourceCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"resourceCountInput",
 		&returns,
 	)
 	return returns
@@ -451,7 +547,7 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) TimeoutsInput() interface{}
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation} Resource.
 func NewManagementGroupPolicyRemediation(scope constructs.Construct, id *string, config *ManagementGroupPolicyRemediationConfig) ManagementGroupPolicyRemediation {
 	_init_.Initialize()
 
@@ -469,7 +565,7 @@ func NewManagementGroupPolicyRemediation(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/management_group_policy_remediation azurerm_management_group_policy_remediation} Resource.
 func NewManagementGroupPolicyRemediation_Override(m ManagementGroupPolicyRemediation, scope constructs.Construct, id *string, config *ManagementGroupPolicyRemediationConfig) {
 	_init_.Initialize()
 
@@ -506,6 +602,17 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetDependsOn(val *[]*string)
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetFailurePercentage(val *float64) {
+	if err := j.validateSetFailurePercentageParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failurePercentage",
 		val,
 	)
 }
@@ -573,6 +680,17 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetParallelDeployments(val *float64) {
+	if err := j.validateSetParallelDeploymentsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"parallelDeployments",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetPolicyAssignmentId(val *string) {
 	if err := j.validateSetPolicyAssignmentIdParameters(val); err != nil {
 		panic(err)
@@ -595,6 +713,17 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetPolicyDefinitionId(val *s
 	)
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetPolicyDefinitionReferenceId(val *string) {
+	if err := j.validateSetPolicyDefinitionReferenceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"policyDefinitionReferenceId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
@@ -610,6 +739,17 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetProvisioners(val *[]inter
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation)SetResourceCount(val *float64) {
+	if err := j.validateSetResourceCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceCount",
 		val,
 	)
 }
@@ -902,6 +1042,14 @@ func (m *jsiiProxy_ManagementGroupPolicyRemediation) PutTimeouts(value *Manageme
 	)
 }
 
+func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetFailurePercentage() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetFailurePercentage",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetId() {
 	_jsii_.InvokeVoid(
 		m,
@@ -926,10 +1074,34 @@ func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetOverrideLogicalId() {
 	)
 }
 
+func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetParallelDeployments() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetParallelDeployments",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetPolicyDefinitionId() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetPolicyDefinitionId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetPolicyDefinitionReferenceId() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetPolicyDefinitionReferenceId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_ManagementGroupPolicyRemediation) ResetResourceCount() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetResourceCount",
 		nil, // no parameters
 	)
 }

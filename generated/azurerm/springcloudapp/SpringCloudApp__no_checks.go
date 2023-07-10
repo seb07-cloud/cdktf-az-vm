@@ -60,6 +60,10 @@ func (s *jsiiProxy_SpringCloudApp) validatePutIdentityParameters(value *SpringCl
 	return nil
 }
 
+func (s *jsiiProxy_SpringCloudApp) validatePutIngressSettingsParameters(value *SpringCloudAppIngressSettings) error {
+	return nil
+}
+
 func (s *jsiiProxy_SpringCloudApp) validatePutPersistentDiskParameters(value *SpringCloudAppPersistentDisk) error {
 	return nil
 }
@@ -77,6 +81,10 @@ func validateSpringCloudApp_IsTerraformElementParameters(x interface{}) error {
 }
 
 func validateSpringCloudApp_IsTerraformResourceParameters(x interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_SpringCloudApp) validateSetAddonJsonParameters(val *string) error {
 	return nil
 }
 
@@ -109,6 +117,10 @@ func (j *jsiiProxy_SpringCloudApp) validateSetNameParameters(val *string) error 
 }
 
 func (j *jsiiProxy_SpringCloudApp) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_SpringCloudApp) validateSetPublicEndpointEnabledParameters(val interface{}) error {
 	return nil
 }
 

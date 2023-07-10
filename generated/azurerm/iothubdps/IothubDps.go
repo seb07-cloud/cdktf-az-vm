@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps azurerm_iothub_dps}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps azurerm_iothub_dps}.
 type IothubDps interface {
 	cdktf.TerraformResource
 	AllocationPolicy() *string
@@ -27,6 +27,9 @@ type IothubDps interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DataResidencyEnabled() interface{}
+	SetDataResidencyEnabled(val interface{})
+	DataResidencyEnabledInput() interface{}
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -120,6 +123,7 @@ type IothubDps interface {
 	PutSku(value *IothubDpsSku)
 	PutTimeouts(value *IothubDpsTimeouts)
 	ResetAllocationPolicy()
+	ResetDataResidencyEnabled()
 	ResetId()
 	ResetIpFilterRule()
 	ResetLinkedHub()
@@ -199,6 +203,26 @@ func (j *jsiiProxy_IothubDps) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IothubDps) DataResidencyEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataResidencyEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IothubDps) DataResidencyEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dataResidencyEnabledInput",
 		&returns,
 	)
 	return returns
@@ -555,7 +579,7 @@ func (j *jsiiProxy_IothubDps) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps azurerm_iothub_dps} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps azurerm_iothub_dps} Resource.
 func NewIothubDps(scope constructs.Construct, id *string, config *IothubDpsConfig) IothubDps {
 	_init_.Initialize()
 
@@ -573,7 +597,7 @@ func NewIothubDps(scope constructs.Construct, id *string, config *IothubDpsConfi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iothub_dps azurerm_iothub_dps} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iothub_dps azurerm_iothub_dps} Resource.
 func NewIothubDps_Override(i IothubDps, scope constructs.Construct, id *string, config *IothubDpsConfig) {
 	_init_.Initialize()
 
@@ -613,6 +637,17 @@ func (j *jsiiProxy_IothubDps)SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IothubDps)SetDataResidencyEnabled(val interface{}) {
+	if err := j.validateSetDataResidencyEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dataResidencyEnabled",
 		val,
 	)
 }
@@ -1043,6 +1078,14 @@ func (i *jsiiProxy_IothubDps) ResetAllocationPolicy() {
 	_jsii_.InvokeVoid(
 		i,
 		"resetAllocationPolicy",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IothubDps) ResetDataResidencyEnabled() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetDataResidencyEnabled",
 		nil, // no parameters
 	)
 }

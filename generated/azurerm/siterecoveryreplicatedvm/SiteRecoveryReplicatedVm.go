@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm}.
 type SiteRecoveryReplicatedVm interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -45,6 +45,9 @@ type SiteRecoveryReplicatedVm interface {
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	ManagedDisk() SiteRecoveryReplicatedVmManagedDiskList
 	ManagedDiskInput() interface{}
+	MultiVmGroupName() *string
+	SetMultiVmGroupName(val *string)
+	MultiVmGroupNameInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -83,9 +86,21 @@ type SiteRecoveryReplicatedVm interface {
 	TargetAvailabilitySetId() *string
 	SetTargetAvailabilitySetId(val *string)
 	TargetAvailabilitySetIdInput() *string
+	TargetBootDiagnosticStorageAccountId() *string
+	SetTargetBootDiagnosticStorageAccountId(val *string)
+	TargetBootDiagnosticStorageAccountIdInput() *string
+	TargetCapacityReservationGroupId() *string
+	SetTargetCapacityReservationGroupId(val *string)
+	TargetCapacityReservationGroupIdInput() *string
+	TargetEdgeZone() *string
+	SetTargetEdgeZone(val *string)
+	TargetEdgeZoneInput() *string
 	TargetNetworkId() *string
 	SetTargetNetworkId(val *string)
 	TargetNetworkIdInput() *string
+	TargetProximityPlacementGroupId() *string
+	SetTargetProximityPlacementGroupId(val *string)
+	TargetProximityPlacementGroupIdInput() *string
 	TargetRecoveryFabricId() *string
 	SetTargetRecoveryFabricId(val *string)
 	TargetRecoveryFabricIdInput() *string
@@ -95,6 +110,9 @@ type SiteRecoveryReplicatedVm interface {
 	TargetResourceGroupId() *string
 	SetTargetResourceGroupId(val *string)
 	TargetResourceGroupIdInput() *string
+	TargetVirtualMachineScaleSetId() *string
+	SetTargetVirtualMachineScaleSetId(val *string)
+	TargetVirtualMachineScaleSetIdInput() *string
 	TargetZone() *string
 	SetTargetZone(val *string)
 	TargetZoneInput() *string
@@ -104,8 +122,13 @@ type SiteRecoveryReplicatedVm interface {
 	TerraformMetaArguments() *map[string]interface{}
 	// Experimental.
 	TerraformResourceType() *string
+	TestNetworkId() *string
+	SetTestNetworkId(val *string)
+	TestNetworkIdInput() *string
 	Timeouts() SiteRecoveryReplicatedVmTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	UnmanagedDisk() SiteRecoveryReplicatedVmUnmanagedDiskList
+	UnmanagedDiskInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -134,16 +157,25 @@ type SiteRecoveryReplicatedVm interface {
 	PutManagedDisk(value interface{})
 	PutNetworkInterface(value interface{})
 	PutTimeouts(value *SiteRecoveryReplicatedVmTimeouts)
+	PutUnmanagedDisk(value interface{})
 	ResetId()
 	ResetManagedDisk()
+	ResetMultiVmGroupName()
 	ResetNetworkInterface()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTargetAvailabilitySetId()
+	ResetTargetBootDiagnosticStorageAccountId()
+	ResetTargetCapacityReservationGroupId()
+	ResetTargetEdgeZone()
 	ResetTargetNetworkId()
+	ResetTargetProximityPlacementGroupId()
+	ResetTargetVirtualMachineScaleSetId()
 	ResetTargetZone()
+	ResetTestNetworkId()
 	ResetTimeouts()
+	ResetUnmanagedDisk()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -284,6 +316,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) ManagedDiskInput() interface{} {
 	_jsii_.Get(
 		j,
 		"managedDiskInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) MultiVmGroupName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"multiVmGroupName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) MultiVmGroupNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"multiVmGroupNameInput",
 		&returns,
 	)
 	return returns
@@ -509,6 +561,66 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetAvailabilitySetIdInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetBootDiagnosticStorageAccountId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetBootDiagnosticStorageAccountId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetBootDiagnosticStorageAccountIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetBootDiagnosticStorageAccountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetCapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetCapacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetCapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetCapacityReservationGroupIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetEdgeZone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetEdgeZone",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetEdgeZoneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetEdgeZoneInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetNetworkId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -524,6 +636,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetNetworkIdInput() *string {
 	_jsii_.Get(
 		j,
 		"targetNetworkIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetProximityPlacementGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetProximityPlacementGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetProximityPlacementGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetProximityPlacementGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -589,6 +721,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetResourceGroupIdInput() *strin
 	return returns
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetVirtualMachineScaleSetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetVirtualMachineScaleSetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetVirtualMachineScaleSetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"targetVirtualMachineScaleSetIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVm) TargetZone() *string {
 	var returns *string
 	_jsii_.Get(
@@ -639,6 +791,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) TerraformResourceType() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TestNetworkId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"testNetworkId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) TestNetworkIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"testNetworkIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVm) Timeouts() SiteRecoveryReplicatedVmTimeoutsOutputReference {
 	var returns SiteRecoveryReplicatedVmTimeoutsOutputReference
 	_jsii_.Get(
@@ -659,8 +831,28 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) UnmanagedDisk() SiteRecoveryReplicatedVmUnmanagedDiskList {
+	var returns SiteRecoveryReplicatedVmUnmanagedDiskList
+	_jsii_.Get(
+		j,
+		"unmanagedDisk",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm} Resource.
+func (j *jsiiProxy_SiteRecoveryReplicatedVm) UnmanagedDiskInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"unmanagedDiskInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm} Resource.
 func NewSiteRecoveryReplicatedVm(scope constructs.Construct, id *string, config *SiteRecoveryReplicatedVmConfig) SiteRecoveryReplicatedVm {
 	_init_.Initialize()
 
@@ -678,7 +870,7 @@ func NewSiteRecoveryReplicatedVm(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/site_recovery_replicated_vm azurerm_site_recovery_replicated_vm} Resource.
 func NewSiteRecoveryReplicatedVm_Override(s SiteRecoveryReplicatedVm, scope constructs.Construct, id *string, config *SiteRecoveryReplicatedVmConfig) {
 	_init_.Initialize()
 
@@ -745,6 +937,17 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetLifecycle(val *cdktf.TerraformRes
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetMultiVmGroupName(val *string) {
+	if err := j.validateSetMultiVmGroupNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"multiVmGroupName",
 		val,
 	)
 }
@@ -856,6 +1059,39 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetAvailabilitySetId(val *stri
 	)
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetBootDiagnosticStorageAccountId(val *string) {
+	if err := j.validateSetTargetBootDiagnosticStorageAccountIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetBootDiagnosticStorageAccountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetTargetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetCapacityReservationGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetEdgeZone(val *string) {
+	if err := j.validateSetTargetEdgeZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetEdgeZone",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetNetworkId(val *string) {
 	if err := j.validateSetTargetNetworkIdParameters(val); err != nil {
 		panic(err)
@@ -863,6 +1099,17 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetNetworkId(val *string) {
 	_jsii_.Set(
 		j,
 		"targetNetworkId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetProximityPlacementGroupId(val *string) {
+	if err := j.validateSetTargetProximityPlacementGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetProximityPlacementGroupId",
 		val,
 	)
 }
@@ -900,6 +1147,17 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetResourceGroupId(val *string
 	)
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetVirtualMachineScaleSetId(val *string) {
+	if err := j.validateSetTargetVirtualMachineScaleSetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"targetVirtualMachineScaleSetId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetZone(val *string) {
 	if err := j.validateSetTargetZoneParameters(val); err != nil {
 		panic(err)
@@ -907,6 +1165,17 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTargetZone(val *string) {
 	_jsii_.Set(
 		j,
 		"targetZone",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVm)SetTestNetworkId(val *string) {
+	if err := j.validateSetTestNetworkIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"testNetworkId",
 		val,
 	)
 }
@@ -1210,6 +1479,17 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVm) PutTimeouts(value *SiteRecoveryRepl
 	)
 }
 
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) PutUnmanagedDisk(value interface{}) {
+	if err := s.validatePutUnmanagedDiskParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putUnmanagedDisk",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1222,6 +1502,14 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetManagedDisk() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetManagedDisk",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetMultiVmGroupName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMultiVmGroupName",
 		nil, // no parameters
 	)
 }
@@ -1250,10 +1538,50 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetAvailabilitySetId() {
 	)
 }
 
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetBootDiagnosticStorageAccountId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetBootDiagnosticStorageAccountId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetCapacityReservationGroupId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetEdgeZone() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetEdgeZone",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetNetworkId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTargetNetworkId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetProximityPlacementGroupId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetProximityPlacementGroupId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetVirtualMachineScaleSetId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetVirtualMachineScaleSetId",
 		nil, // no parameters
 	)
 }
@@ -1266,10 +1594,26 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTargetZone() {
 	)
 }
 
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTestNetworkId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTestNetworkId",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVm) ResetUnmanagedDisk() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetUnmanagedDisk",
 		nil, // no parameters
 	)
 }

@@ -111,7 +111,40 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) validateOverrideLogicalIdParameters
 	return nil
 }
 
+func (p *jsiiProxy_PostgresqlFlexibleServer) validatePutAuthenticationParameters(value *PostgresqlFlexibleServerAuthentication) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) validatePutCustomerManagedKeyParameters(value *PostgresqlFlexibleServerCustomerManagedKey) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (p *jsiiProxy_PostgresqlFlexibleServer) validatePutHighAvailabilityParameters(value *PostgresqlFlexibleServerHighAvailability) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) validatePutIdentityParameters(value *PostgresqlFlexibleServerIdentity) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -407,6 +440,14 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) validateSetProvisionersParameters(v
 				return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *cdktf.FileProvisioner, *cdktf.LocalExecProvisioner, *cdktf.RemoteExecProvisioner; received %#v (a %T)", idx_97dfc6, v, v)
 			}
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) validateSetReplicationRoleParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil

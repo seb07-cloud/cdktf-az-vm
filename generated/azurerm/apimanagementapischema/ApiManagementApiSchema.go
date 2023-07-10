@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api_schema azurerm_api_management_api_schema}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api_schema azurerm_api_management_api_schema}.
 type ApiManagementApiSchema interface {
 	cdktf.TerraformResource
 	ApiManagementName() *string
@@ -20,6 +20,9 @@ type ApiManagementApiSchema interface {
 	ApiNameInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	Components() *string
+	SetComponents(val *string)
+	ComponentsInput() *string
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -33,6 +36,9 @@ type ApiManagementApiSchema interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	Definitions() *string
+	SetDefinitions(val *string)
+	DefinitionsInput() *string
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -107,11 +113,14 @@ type ApiManagementApiSchema interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *ApiManagementApiSchemaTimeouts)
+	ResetComponents()
+	ResetDefinitions()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetValue()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -177,6 +186,26 @@ func (j *jsiiProxy_ApiManagementApiSchema) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_ApiManagementApiSchema) Components() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"components",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema) ComponentsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"componentsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiManagementApiSchema) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -222,6 +251,26 @@ func (j *jsiiProxy_ApiManagementApiSchema) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema) Definitions() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"definitions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema) DefinitionsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"definitionsInput",
 		&returns,
 	)
 	return returns
@@ -448,7 +497,7 @@ func (j *jsiiProxy_ApiManagementApiSchema) ValueInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api_schema azurerm_api_management_api_schema} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api_schema azurerm_api_management_api_schema} Resource.
 func NewApiManagementApiSchema(scope constructs.Construct, id *string, config *ApiManagementApiSchemaConfig) ApiManagementApiSchema {
 	_init_.Initialize()
 
@@ -466,7 +515,7 @@ func NewApiManagementApiSchema(scope constructs.Construct, id *string, config *A
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api_schema azurerm_api_management_api_schema} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api_schema azurerm_api_management_api_schema} Resource.
 func NewApiManagementApiSchema_Override(a ApiManagementApiSchema, scope constructs.Construct, id *string, config *ApiManagementApiSchemaConfig) {
 	_init_.Initialize()
 
@@ -495,6 +544,17 @@ func (j *jsiiProxy_ApiManagementApiSchema)SetApiName(val *string) {
 	_jsii_.Set(
 		j,
 		"apiName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema)SetComponents(val *string) {
+	if err := j.validateSetComponentsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"components",
 		val,
 	)
 }
@@ -528,6 +588,17 @@ func (j *jsiiProxy_ApiManagementApiSchema)SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema)SetDefinitions(val *string) {
+	if err := j.validateSetDefinitionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"definitions",
 		val,
 	)
 }
@@ -899,6 +970,22 @@ func (a *jsiiProxy_ApiManagementApiSchema) PutTimeouts(value *ApiManagementApiSc
 	)
 }
 
+func (a *jsiiProxy_ApiManagementApiSchema) ResetComponents() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetComponents",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApiSchema) ResetDefinitions() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetDefinitions",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_ApiManagementApiSchema) ResetId() {
 	_jsii_.InvokeVoid(
 		a,
@@ -919,6 +1006,14 @@ func (a *jsiiProxy_ApiManagementApiSchema) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApiSchema) ResetValue() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetValue",
 		nil, // no parameters
 	)
 }

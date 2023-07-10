@@ -56,19 +56,7 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	return nil
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetEventHubIdParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetInternalValueParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetNameParameters(val *string) error {
-	return nil
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetTenantIdParameters(val *string) error {
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetInternalValueParameters(val *DataAzurermMonitorActionGroupEventHubReceiver) error {
 	return nil
 }
 
@@ -77,10 +65,6 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 }
 
 func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetTerraformResourceParameters(val cdktf.IInterpolatingParent) error {
-	return nil
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) validateSetUseCommonAlertSchemaParameters(val interface{}) error {
 	return nil
 }
 

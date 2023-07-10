@@ -25,10 +25,22 @@ type SiteRecoveryReplicatedVmNetworkInterfaceOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	FailoverTestPublicIpAddressId() *string
+	SetFailoverTestPublicIpAddressId(val *string)
+	FailoverTestPublicIpAddressIdInput() *string
+	FailoverTestStaticIp() *string
+	SetFailoverTestStaticIp(val *string)
+	FailoverTestStaticIpInput() *string
+	FailoverTestSubnetName() *string
+	SetFailoverTestSubnetName(val *string)
+	FailoverTestSubnetNameInput() *string
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
 	SetInternalValue(val interface{})
+	IsPrimary() interface{}
+	SetIsPrimary(val interface{})
+	IsPrimaryInput() interface{}
 	RecoveryPublicIpAddressId() *string
 	SetRecoveryPublicIpAddressId(val *string)
 	RecoveryPublicIpAddressIdInput() *string
@@ -73,6 +85,10 @@ type SiteRecoveryReplicatedVmNetworkInterfaceOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetFailoverTestPublicIpAddressId()
+	ResetFailoverTestStaticIp()
+	ResetFailoverTestSubnetName()
+	ResetIsPrimary()
 	ResetRecoveryPublicIpAddressId()
 	ResetSourceNetworkInterfaceId()
 	ResetTargetStaticIp()
@@ -122,6 +138,66 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) Crea
 	return returns
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestPublicIpAddressId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestPublicIpAddressId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestPublicIpAddressIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestPublicIpAddressIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestStaticIp() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestStaticIp",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestStaticIpInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestStaticIpInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestSubnetName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestSubnetName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) FailoverTestSubnetNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"failoverTestSubnetNameInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -137,6 +213,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) Inte
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) IsPrimary() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isPrimary",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) IsPrimaryInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isPrimaryInput",
 		&returns,
 	)
 	return returns
@@ -292,6 +388,39 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetCo
 	)
 }
 
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetFailoverTestPublicIpAddressId(val *string) {
+	if err := j.validateSetFailoverTestPublicIpAddressIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failoverTestPublicIpAddressId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetFailoverTestStaticIp(val *string) {
+	if err := j.validateSetFailoverTestStaticIpParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failoverTestStaticIp",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetFailoverTestSubnetName(val *string) {
+	if err := j.validateSetFailoverTestSubnetNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failoverTestSubnetName",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetInternalValue(val interface{}) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
@@ -299,6 +428,17 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetIn
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference)SetIsPrimary(val interface{}) {
+	if err := j.validateSetIsPrimaryParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"isPrimary",
 		val,
 	)
 }
@@ -553,6 +693,38 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) Inte
 	)
 
 	return returns
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) ResetFailoverTestPublicIpAddressId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFailoverTestPublicIpAddressId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) ResetFailoverTestStaticIp() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFailoverTestStaticIp",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) ResetFailoverTestSubnetName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetFailoverTestSubnetName",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) ResetIsPrimary() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIsPrimary",
+		nil, // no parameters
+	)
 }
 
 func (s *jsiiProxy_SiteRecoveryReplicatedVmNetworkInterfaceOutputReference) ResetRecoveryPublicIpAddressId() {

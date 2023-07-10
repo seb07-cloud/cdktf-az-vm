@@ -72,6 +72,10 @@ func validateStreamAnalyticsOutputEventhub_IsTerraformResourceParameters(x inter
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputEventhub) validateSetAuthenticationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputEventhub) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

@@ -154,6 +154,14 @@ func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetBatchSizeParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetColumnsToRemoveParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetConnectionParameters(val interface{}) error {
 	switch val.(type) {
 	case *cdktf.SSHProvisionerConnection:

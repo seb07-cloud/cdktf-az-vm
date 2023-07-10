@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_endpoint azurerm_private_endpoint}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_endpoint azurerm_private_endpoint}.
 type PrivateEndpoint interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -25,6 +25,9 @@ type PrivateEndpoint interface {
 	// Experimental.
 	SetCount(val interface{})
 	CustomDnsConfigs() PrivateEndpointCustomDnsConfigsList
+	CustomNetworkInterfaceName() *string
+	SetCustomNetworkInterfaceName(val *string)
+	CustomNetworkInterfaceNameInput() *string
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -40,6 +43,8 @@ type PrivateEndpoint interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	IpConfiguration() PrivateEndpointIpConfigurationList
+	IpConfigurationInput() interface{}
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -110,10 +115,13 @@ type PrivateEndpoint interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIpConfiguration(value interface{})
 	PutPrivateDnsZoneGroup(value *PrivateEndpointPrivateDnsZoneGroup)
 	PutPrivateServiceConnection(value *PrivateEndpointPrivateServiceConnection)
 	PutTimeouts(value *PrivateEndpointTimeouts)
+	ResetCustomNetworkInterfaceName()
 	ResetId()
+	ResetIpConfiguration()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -185,6 +193,26 @@ func (j *jsiiProxy_PrivateEndpoint) CustomDnsConfigs() PrivateEndpointCustomDnsC
 	return returns
 }
 
+func (j *jsiiProxy_PrivateEndpoint) CustomNetworkInterfaceName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customNetworkInterfaceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrivateEndpoint) CustomNetworkInterfaceNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customNetworkInterfaceNameInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_PrivateEndpoint) DependsOn() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -240,6 +268,26 @@ func (j *jsiiProxy_PrivateEndpoint) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrivateEndpoint) IpConfiguration() PrivateEndpointIpConfigurationList {
+	var returns PrivateEndpointIpConfigurationList
+	_jsii_.Get(
+		j,
+		"ipConfiguration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrivateEndpoint) IpConfigurationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipConfigurationInput",
 		&returns,
 	)
 	return returns
@@ -506,7 +554,7 @@ func (j *jsiiProxy_PrivateEndpoint) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_endpoint azurerm_private_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_endpoint azurerm_private_endpoint} Resource.
 func NewPrivateEndpoint(scope constructs.Construct, id *string, config *PrivateEndpointConfig) PrivateEndpoint {
 	_init_.Initialize()
 
@@ -524,7 +572,7 @@ func NewPrivateEndpoint(scope constructs.Construct, id *string, config *PrivateE
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_endpoint azurerm_private_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_endpoint azurerm_private_endpoint} Resource.
 func NewPrivateEndpoint_Override(p PrivateEndpoint, scope constructs.Construct, id *string, config *PrivateEndpointConfig) {
 	_init_.Initialize()
 
@@ -553,6 +601,17 @@ func (j *jsiiProxy_PrivateEndpoint)SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PrivateEndpoint)SetCustomNetworkInterfaceName(val *string) {
+	if err := j.validateSetCustomNetworkInterfaceNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"customNetworkInterfaceName",
 		val,
 	)
 }
@@ -935,6 +994,17 @@ func (p *jsiiProxy_PrivateEndpoint) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (p *jsiiProxy_PrivateEndpoint) PutIpConfiguration(value interface{}) {
+	if err := p.validatePutIpConfigurationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		p,
+		"putIpConfiguration",
+		[]interface{}{value},
+	)
+}
+
 func (p *jsiiProxy_PrivateEndpoint) PutPrivateDnsZoneGroup(value *PrivateEndpointPrivateDnsZoneGroup) {
 	if err := p.validatePutPrivateDnsZoneGroupParameters(value); err != nil {
 		panic(err)
@@ -968,10 +1038,26 @@ func (p *jsiiProxy_PrivateEndpoint) PutTimeouts(value *PrivateEndpointTimeouts) 
 	)
 }
 
+func (p *jsiiProxy_PrivateEndpoint) ResetCustomNetworkInterfaceName() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetCustomNetworkInterfaceName",
+		nil, // no parameters
+	)
+}
+
 func (p *jsiiProxy_PrivateEndpoint) ResetId() {
 	_jsii_.InvokeVoid(
 		p,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (p *jsiiProxy_PrivateEndpoint) ResetIpConfiguration() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetIpConfiguration",
 		nil, // no parameters
 	)
 }

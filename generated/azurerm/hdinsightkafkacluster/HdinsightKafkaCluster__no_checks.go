@@ -56,6 +56,18 @@ func (h *jsiiProxy_HdinsightKafkaCluster) validatePutComponentVersionParameters(
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightKafkaCluster) validatePutComputeIsolationParameters(value *HdinsightKafkaClusterComputeIsolation) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) validatePutDiskEncryptionParameters(value interface{}) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) validatePutExtensionParameters(value *HdinsightKafkaClusterExtension) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightKafkaCluster) validatePutGatewayParameters(value *HdinsightKafkaClusterGateway) error {
 	return nil
 }
@@ -65,6 +77,10 @@ func (h *jsiiProxy_HdinsightKafkaCluster) validatePutMetastoresParameters(value 
 }
 
 func (h *jsiiProxy_HdinsightKafkaCluster) validatePutMonitorParameters(value *HdinsightKafkaClusterMonitor) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) validatePutNetworkParameters(value *HdinsightKafkaClusterNetwork) error {
 	return nil
 }
 

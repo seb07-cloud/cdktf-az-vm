@@ -60,6 +60,14 @@ func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetFrequencyPara
 	return nil
 }
 
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetHourDurationParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetHourIntervalParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetInternalValueParameters(val *BackupPolicyVmBackup) error {
 	return nil
 }

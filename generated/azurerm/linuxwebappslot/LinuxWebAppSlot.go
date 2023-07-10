@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot}.
 type LinuxWebAppSlot interface {
 	cdktf.TerraformResource
 	AppMetadata() cdktf.StringMap
@@ -21,6 +21,8 @@ type LinuxWebAppSlot interface {
 	AppSettingsInput() *map[string]*string
 	AuthSettings() LinuxWebAppSlotAuthSettingsOutputReference
 	AuthSettingsInput() *LinuxWebAppSlotAuthSettings
+	AuthSettingsV2() LinuxWebAppSlotAuthSettingsV2OutputReference
+	AuthSettingsV2Input() *LinuxWebAppSlotAuthSettingsV2
 	Backup() LinuxWebAppSlotBackupOutputReference
 	BackupInput() *LinuxWebAppSlotBackup
 	// Experimental.
@@ -31,6 +33,9 @@ type LinuxWebAppSlot interface {
 	ClientCertificateEnabled() interface{}
 	SetClientCertificateEnabled(val interface{})
 	ClientCertificateEnabledInput() interface{}
+	ClientCertificateExclusionPaths() *string
+	SetClientCertificateExclusionPaths(val *string)
+	ClientCertificateExclusionPathsInput() *string
 	ClientCertificateMode() *string
 	SetClientCertificateMode(val *string)
 	ClientCertificateModeInput() *string
@@ -63,6 +68,7 @@ type LinuxWebAppSlot interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() interface{}
 	SetHttpsOnly(val interface{})
 	HttpsOnlyInput() interface{}
@@ -98,8 +104,14 @@ type LinuxWebAppSlot interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
+	ServicePlanId() *string
+	SetServicePlanId(val *string)
+	ServicePlanIdInput() *string
 	SiteConfig() LinuxWebAppSlotSiteConfigOutputReference
 	SiteConfigInput() *LinuxWebAppSlotSiteConfig
 	SiteCredential() LinuxWebAppSlotSiteCredentialList
@@ -116,6 +128,12 @@ type LinuxWebAppSlot interface {
 	TerraformResourceType() *string
 	Timeouts() LinuxWebAppSlotTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
+	ZipDeployFile() *string
+	SetZipDeployFile(val *string)
+	ZipDeployFileInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -142,6 +160,7 @@ type LinuxWebAppSlot interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthSettings(value *LinuxWebAppSlotAuthSettings)
+	PutAuthSettingsV2(value *LinuxWebAppSlotAuthSettingsV2)
 	PutBackup(value *LinuxWebAppSlotBackup)
 	PutConnectionString(value interface{})
 	PutIdentity(value *LinuxWebAppSlotIdentity)
@@ -151,9 +170,11 @@ type LinuxWebAppSlot interface {
 	PutTimeouts(value *LinuxWebAppSlotTimeouts)
 	ResetAppSettings()
 	ResetAuthSettings()
+	ResetAuthSettingsV2()
 	ResetBackup()
 	ResetClientAffinityEnabled()
 	ResetClientCertificateEnabled()
+	ResetClientCertificateExclusionPaths()
 	ResetClientCertificateMode()
 	ResetConnectionString()
 	ResetEnabled()
@@ -165,9 +186,13 @@ type LinuxWebAppSlot interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetServicePlanId()
 	ResetStorageAccount()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualNetworkSubnetId()
+	ResetZipDeployFile()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -253,6 +278,26 @@ func (j *jsiiProxy_LinuxWebAppSlot) AuthSettingsInput() *LinuxWebAppSlotAuthSett
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebAppSlot) AuthSettingsV2() LinuxWebAppSlotAuthSettingsV2OutputReference {
+	var returns LinuxWebAppSlotAuthSettingsV2OutputReference
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) AuthSettingsV2Input() *LinuxWebAppSlotAuthSettingsV2 {
+	var returns *LinuxWebAppSlotAuthSettingsV2
+	_jsii_.Get(
+		j,
+		"authSettingsV2Input",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxWebAppSlot) Backup() LinuxWebAppSlotBackupOutputReference {
 	var returns LinuxWebAppSlotBackupOutputReference
 	_jsii_.Get(
@@ -318,6 +363,26 @@ func (j *jsiiProxy_LinuxWebAppSlot) ClientCertificateEnabledInput() interface{} 
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ClientCertificateExclusionPathsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPathsInput",
 		&returns,
 	)
 	return returns
@@ -468,6 +533,16 @@ func (j *jsiiProxy_LinuxWebAppSlot) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -683,11 +758,51 @@ func (j *jsiiProxy_LinuxWebAppSlot) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebAppSlot) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxWebAppSlot) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ServicePlanId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ServicePlanIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanIdInput",
 		&returns,
 	)
 	return returns
@@ -813,8 +928,48 @@ func (j *jsiiProxy_LinuxWebAppSlot) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebAppSlot) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot} Resource.
+func (j *jsiiProxy_LinuxWebAppSlot) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ZipDeployFile() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot) ZipDeployFileInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFileInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot} Resource.
 func NewLinuxWebAppSlot(scope constructs.Construct, id *string, config *LinuxWebAppSlotConfig) LinuxWebAppSlot {
 	_init_.Initialize()
 
@@ -832,7 +987,7 @@ func NewLinuxWebAppSlot(scope constructs.Construct, id *string, config *LinuxWeb
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app_slot azurerm_linux_web_app_slot} Resource.
 func NewLinuxWebAppSlot_Override(l LinuxWebAppSlot, scope constructs.Construct, id *string, config *LinuxWebAppSlotConfig) {
 	_init_.Initialize()
 
@@ -883,6 +1038,17 @@ func (j *jsiiProxy_LinuxWebAppSlot)SetClientCertificateEnabled(val interface{}) 
 	_jsii_.Set(
 		j,
 		"clientCertificateEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot)SetClientCertificateExclusionPaths(val *string) {
+	if err := j.validateSetClientCertificateExclusionPathsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificateExclusionPaths",
 		val,
 	)
 }
@@ -1021,6 +1187,28 @@ func (j *jsiiProxy_LinuxWebAppSlot)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_LinuxWebAppSlot)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot)SetServicePlanId(val *string) {
+	if err := j.validateSetServicePlanIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"servicePlanId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxWebAppSlot)SetTags(val *map[string]*string) {
 	if err := j.validateSetTagsParameters(val); err != nil {
 		panic(err)
@@ -1028,6 +1216,28 @@ func (j *jsiiProxy_LinuxWebAppSlot)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlot)SetZipDeployFile(val *string) {
+	if err := j.validateSetZipDeployFileParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zipDeployFile",
 		val,
 	)
 }
@@ -1309,6 +1519,17 @@ func (l *jsiiProxy_LinuxWebAppSlot) PutAuthSettings(value *LinuxWebAppSlotAuthSe
 	)
 }
 
+func (l *jsiiProxy_LinuxWebAppSlot) PutAuthSettingsV2(value *LinuxWebAppSlotAuthSettingsV2) {
+	if err := l.validatePutAuthSettingsV2Parameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putAuthSettingsV2",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxWebAppSlot) PutBackup(value *LinuxWebAppSlotBackup) {
 	if err := l.validatePutBackupParameters(value); err != nil {
 		panic(err)
@@ -1402,6 +1623,14 @@ func (l *jsiiProxy_LinuxWebAppSlot) ResetAuthSettings() {
 	)
 }
 
+func (l *jsiiProxy_LinuxWebAppSlot) ResetAuthSettingsV2() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetAuthSettingsV2",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebAppSlot) ResetBackup() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1422,6 +1651,14 @@ func (l *jsiiProxy_LinuxWebAppSlot) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlot) ResetClientCertificateExclusionPaths() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetClientCertificateExclusionPaths",
 		nil, // no parameters
 	)
 }
@@ -1498,6 +1735,22 @@ func (l *jsiiProxy_LinuxWebAppSlot) ResetOverrideLogicalId() {
 	)
 }
 
+func (l *jsiiProxy_LinuxWebAppSlot) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlot) ResetServicePlanId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetServicePlanId",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebAppSlot) ResetStorageAccount() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1518,6 +1771,22 @@ func (l *jsiiProxy_LinuxWebAppSlot) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlot) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetVirtualNetworkSubnetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlot) ResetZipDeployFile() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetZipDeployFile",
 		nil, // no parameters
 	)
 }

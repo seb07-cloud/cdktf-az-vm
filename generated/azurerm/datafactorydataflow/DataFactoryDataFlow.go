@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow}.
 type DataFactoryDataFlow interface {
 	cdktf.TerraformResource
 	Annotations() *[]*string
@@ -73,6 +73,9 @@ type DataFactoryDataFlow interface {
 	Script() *string
 	SetScript(val *string)
 	ScriptInput() *string
+	ScriptLines() *[]*string
+	SetScriptLines(val *[]*string)
+	ScriptLinesInput() *[]*string
 	Sink() DataFactoryDataFlowSinkList
 	SinkInput() interface{}
 	Source() DataFactoryDataFlowSourceList
@@ -123,6 +126,8 @@ type DataFactoryDataFlow interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetScript()
+	ResetScriptLines()
 	ResetTimeouts()
 	ResetTransformation()
 	SynthesizeAttributes() *map[string]interface{}
@@ -410,6 +415,26 @@ func (j *jsiiProxy_DataFactoryDataFlow) ScriptInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryDataFlow) ScriptLines() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"scriptLines",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlow) ScriptLinesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"scriptLinesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryDataFlow) Sink() DataFactoryDataFlowSinkList {
 	var returns DataFactoryDataFlowSinkList
 	_jsii_.Get(
@@ -521,7 +546,7 @@ func (j *jsiiProxy_DataFactoryDataFlow) TransformationInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow} Resource.
 func NewDataFactoryDataFlow(scope constructs.Construct, id *string, config *DataFactoryDataFlowConfig) DataFactoryDataFlow {
 	_init_.Initialize()
 
@@ -539,7 +564,7 @@ func NewDataFactoryDataFlow(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_data_flow azurerm_data_factory_data_flow} Resource.
 func NewDataFactoryDataFlow_Override(d DataFactoryDataFlow, scope constructs.Construct, id *string, config *DataFactoryDataFlowConfig) {
 	_init_.Initialize()
 
@@ -691,6 +716,17 @@ func (j *jsiiProxy_DataFactoryDataFlow)SetScript(val *string) {
 	_jsii_.Set(
 		j,
 		"script",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryDataFlow)SetScriptLines(val *[]*string) {
+	if err := j.validateSetScriptLinesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"scriptLines",
 		val,
 	)
 }
@@ -1041,6 +1077,22 @@ func (d *jsiiProxy_DataFactoryDataFlow) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlow) ResetScript() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetScript",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlow) ResetScriptLines() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetScriptLines",
 		nil, // no parameters
 	)
 }

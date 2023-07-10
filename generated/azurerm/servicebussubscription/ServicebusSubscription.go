@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription azurerm_servicebus_subscription}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription azurerm_servicebus_subscription}.
 type ServicebusSubscription interface {
 	cdktf.TerraformResource
 	AutoDeleteOnIdle() *string
@@ -17,6 +17,11 @@ type ServicebusSubscription interface {
 	AutoDeleteOnIdleInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ClientScopedSubscription() ServicebusSubscriptionClientScopedSubscriptionOutputReference
+	ClientScopedSubscriptionEnabled() interface{}
+	SetClientScopedSubscriptionEnabled(val interface{})
+	ClientScopedSubscriptionEnabledInput() interface{}
+	ClientScopedSubscriptionInput() *ServicebusSubscriptionClientScopedSubscription
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -127,8 +132,11 @@ type ServicebusSubscription interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutClientScopedSubscription(value *ServicebusSubscriptionClientScopedSubscription)
 	PutTimeouts(value *ServicebusSubscriptionTimeouts)
 	ResetAutoDeleteOnIdle()
+	ResetClientScopedSubscription()
+	ResetClientScopedSubscriptionEnabled()
 	ResetDeadLetteringOnFilterEvaluationError()
 	ResetDeadLetteringOnMessageExpiration()
 	ResetDefaultMessageTtl()
@@ -183,6 +191,46 @@ func (j *jsiiProxy_ServicebusSubscription) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusSubscription) ClientScopedSubscription() ServicebusSubscriptionClientScopedSubscriptionOutputReference {
+	var returns ServicebusSubscriptionClientScopedSubscriptionOutputReference
+	_jsii_.Get(
+		j,
+		"clientScopedSubscription",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusSubscription) ClientScopedSubscriptionEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientScopedSubscriptionEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusSubscription) ClientScopedSubscriptionEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"clientScopedSubscriptionEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusSubscription) ClientScopedSubscriptionInput() *ServicebusSubscriptionClientScopedSubscription {
+	var returns *ServicebusSubscriptionClientScopedSubscription
+	_jsii_.Get(
+		j,
+		"clientScopedSubscriptionInput",
 		&returns,
 	)
 	return returns
@@ -619,7 +667,7 @@ func (j *jsiiProxy_ServicebusSubscription) TopicIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription azurerm_servicebus_subscription} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription azurerm_servicebus_subscription} Resource.
 func NewServicebusSubscription(scope constructs.Construct, id *string, config *ServicebusSubscriptionConfig) ServicebusSubscription {
 	_init_.Initialize()
 
@@ -637,7 +685,7 @@ func NewServicebusSubscription(scope constructs.Construct, id *string, config *S
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_subscription azurerm_servicebus_subscription} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_subscription azurerm_servicebus_subscription} Resource.
 func NewServicebusSubscription_Override(s ServicebusSubscription, scope constructs.Construct, id *string, config *ServicebusSubscriptionConfig) {
 	_init_.Initialize()
 
@@ -655,6 +703,17 @@ func (j *jsiiProxy_ServicebusSubscription)SetAutoDeleteOnIdle(val *string) {
 	_jsii_.Set(
 		j,
 		"autoDeleteOnIdle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicebusSubscription)SetClientScopedSubscriptionEnabled(val interface{}) {
+	if err := j.validateSetClientScopedSubscriptionEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientScopedSubscriptionEnabled",
 		val,
 	)
 }
@@ -1136,6 +1195,17 @@ func (s *jsiiProxy_ServicebusSubscription) OverrideLogicalId(newLogicalId *strin
 	)
 }
 
+func (s *jsiiProxy_ServicebusSubscription) PutClientScopedSubscription(value *ServicebusSubscriptionClientScopedSubscription) {
+	if err := s.validatePutClientScopedSubscriptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putClientScopedSubscription",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_ServicebusSubscription) PutTimeouts(value *ServicebusSubscriptionTimeouts) {
 	if err := s.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1151,6 +1221,22 @@ func (s *jsiiProxy_ServicebusSubscription) ResetAutoDeleteOnIdle() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetAutoDeleteOnIdle",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_ServicebusSubscription) ResetClientScopedSubscription() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetClientScopedSubscription",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_ServicebusSubscription) ResetClientScopedSubscriptionEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetClientScopedSubscriptionEnabled",
 		nil, // no parameters
 	)
 }

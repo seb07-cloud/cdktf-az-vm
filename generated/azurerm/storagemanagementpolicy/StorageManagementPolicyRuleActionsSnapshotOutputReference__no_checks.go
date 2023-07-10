@@ -80,6 +80,10 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsSnapshotOutputReference) va
 	return nil
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsSnapshotOutputReference) validateSetTierToArchiveAfterDaysSinceLastTierChangeGreaterThanParameters(val *float64) error {
+	return nil
+}
+
 func validateNewStorageManagementPolicyRuleActionsSnapshotOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }

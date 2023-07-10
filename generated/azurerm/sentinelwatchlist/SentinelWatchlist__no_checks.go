@@ -92,6 +92,10 @@ func (j *jsiiProxy_SentinelWatchlist) validateSetIdParameters(val *string) error
 	return nil
 }
 
+func (j *jsiiProxy_SentinelWatchlist) validateSetItemSearchKeyParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SentinelWatchlist) validateSetLabelsParameters(val *[]*string) error {
 	return nil
 }

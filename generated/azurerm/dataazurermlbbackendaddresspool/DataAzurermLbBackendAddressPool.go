@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool}.
 type DataAzurermLbBackendAddressPool interface {
 	cdktf.TerraformDataSource
 	BackendAddress() DataAzurermLbBackendAddressPoolBackendAddressList
@@ -37,6 +37,7 @@ type DataAzurermLbBackendAddressPool interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InboundNatRules() *[]*string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -221,6 +222,16 @@ func (j *jsiiProxy_DataAzurermLbBackendAddressPool) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLbBackendAddressPool) InboundNatRules() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"inboundNatRules",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermLbBackendAddressPool) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -372,7 +383,7 @@ func (j *jsiiProxy_DataAzurermLbBackendAddressPool) TimeoutsInput() interface{} 
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool} Data Source.
 func NewDataAzurermLbBackendAddressPool(scope constructs.Construct, id *string, config *DataAzurermLbBackendAddressPoolConfig) DataAzurermLbBackendAddressPool {
 	_init_.Initialize()
 
@@ -390,7 +401,7 @@ func NewDataAzurermLbBackendAddressPool(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/lb_backend_address_pool azurerm_lb_backend_address_pool} Data Source.
 func NewDataAzurermLbBackendAddressPool_Override(d DataAzurermLbBackendAddressPool, scope constructs.Construct, id *string, config *DataAzurermLbBackendAddressPoolConfig) {
 	_init_.Initialize()
 

@@ -84,6 +84,10 @@ func (j *jsiiProxy_VirtualHub) validateSetCountParameters(val interface{}) error
 	return nil
 }
 
+func (j *jsiiProxy_VirtualHub) validateSetHubRoutingPreferenceParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_VirtualHub) validateSetIdParameters(val *string) error {
 	return nil
 }
@@ -113,6 +117,10 @@ func (j *jsiiProxy_VirtualHub) validateSetSkuParameters(val *string) error {
 }
 
 func (j *jsiiProxy_VirtualHub) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_VirtualHub) validateSetVirtualRouterAutoScaleMinCapacityParameters(val *float64) error {
 	return nil
 }
 

@@ -44,6 +44,10 @@ func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) validateInterpola
 	return nil
 }
 
+func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) validatePutCustomBgpAddressParameters(value interface{}) error {
+	return nil
+}
+
 func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) validatePutIpsecPolicyParameters(value interface{}) error {
 	return nil
 }

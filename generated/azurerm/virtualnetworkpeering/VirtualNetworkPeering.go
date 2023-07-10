@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_peering azurerm_virtual_network_peering}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_peering azurerm_virtual_network_peering}.
 type VirtualNetworkPeering interface {
 	cdktf.TerraformResource
 	AllowForwardedTraffic() interface{}
@@ -81,6 +81,9 @@ type VirtualNetworkPeering interface {
 	TerraformResourceType() *string
 	Timeouts() VirtualNetworkPeeringTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Triggers() *map[string]*string
+	SetTriggers(val *map[string]*string)
+	TriggersInput() *map[string]*string
 	UseRemoteGateways() interface{}
 	SetUseRemoteGateways(val interface{})
 	UseRemoteGatewaysInput() interface{}
@@ -121,6 +124,7 @@ type VirtualNetworkPeering interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetTriggers()
 	ResetUseRemoteGateways()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -457,6 +461,26 @@ func (j *jsiiProxy_VirtualNetworkPeering) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualNetworkPeering) Triggers() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"triggers",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkPeering) TriggersInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"triggersInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VirtualNetworkPeering) UseRemoteGateways() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -498,7 +522,7 @@ func (j *jsiiProxy_VirtualNetworkPeering) VirtualNetworkNameInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_peering azurerm_virtual_network_peering} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_peering azurerm_virtual_network_peering} Resource.
 func NewVirtualNetworkPeering(scope constructs.Construct, id *string, config *VirtualNetworkPeeringConfig) VirtualNetworkPeering {
 	_init_.Initialize()
 
@@ -516,7 +540,7 @@ func NewVirtualNetworkPeering(scope constructs.Construct, id *string, config *Vi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_peering azurerm_virtual_network_peering} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_peering azurerm_virtual_network_peering} Resource.
 func NewVirtualNetworkPeering_Override(v VirtualNetworkPeering, scope constructs.Construct, id *string, config *VirtualNetworkPeeringConfig) {
 	_init_.Initialize()
 
@@ -668,6 +692,17 @@ func (j *jsiiProxy_VirtualNetworkPeering)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualNetworkPeering)SetTriggers(val *map[string]*string) {
+	if err := j.validateSetTriggersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"triggers",
 		val,
 	)
 }
@@ -1015,6 +1050,14 @@ func (v *jsiiProxy_VirtualNetworkPeering) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualNetworkPeering) ResetTriggers() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetTriggers",
 		nil, // no parameters
 	)
 }

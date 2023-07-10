@@ -80,6 +80,14 @@ func (j *jsiiProxy_WindowsVirtualMachineOsDiskOutputReference) validateSetNamePa
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineOsDiskOutputReference) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineOsDiskOutputReference) validateSetSecurityEncryptionTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineOsDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	return nil
 }

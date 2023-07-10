@@ -48,6 +48,10 @@ func (m *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) validat
 	return nil
 }
 
+func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) validateSetBackupIntervalInHoursParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) validateSetComplexObjectIndexParameters(val interface{}) error {
 	return nil
 }

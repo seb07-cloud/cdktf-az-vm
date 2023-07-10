@@ -32,6 +32,9 @@ type CdnEndpointCustomDomainUserManagedHttpsOutputReference interface {
 	KeyVaultCertificateId() *string
 	SetKeyVaultCertificateId(val *string)
 	KeyVaultCertificateIdInput() *string
+	KeyVaultSecretId() *string
+	SetKeyVaultSecretId(val *string)
+	KeyVaultSecretIdInput() *string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -67,6 +70,8 @@ type CdnEndpointCustomDomainUserManagedHttpsOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetKeyVaultCertificateId()
+	ResetKeyVaultSecretId()
 	ResetTlsVersion()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -148,6 +153,26 @@ func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) KeyVa
 	_jsii_.Get(
 		j,
 		"keyVaultCertificateIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) KeyVaultSecretId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultSecretId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) KeyVaultSecretIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultSecretIdInput",
 		&returns,
 	)
 	return returns
@@ -261,6 +286,17 @@ func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference)SetKey
 	_jsii_.Set(
 		j,
 		"keyVaultCertificateId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference)SetKeyVaultSecretId(val *string) {
+	if err := j.validateSetKeyVaultSecretIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"keyVaultSecretId",
 		val,
 	)
 }
@@ -482,6 +518,22 @@ func (c *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) Inter
 	)
 
 	return returns
+}
+
+func (c *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) ResetKeyVaultCertificateId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetKeyVaultCertificateId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) ResetKeyVaultSecretId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetKeyVaultSecretId",
+		nil, // no parameters
+	)
 }
 
 func (c *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) ResetTlsVersion() {

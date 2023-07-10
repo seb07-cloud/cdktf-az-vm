@@ -28,6 +28,12 @@ type MonitorActionGroupEventHubReceiverOutputReference interface {
 	EventHubId() *string
 	SetEventHubId(val *string)
 	EventHubIdInput() *string
+	EventHubName() *string
+	SetEventHubName(val *string)
+	EventHubNameInput() *string
+	EventHubNamespace() *string
+	SetEventHubNamespace(val *string)
+	EventHubNamespaceInput() *string
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -35,6 +41,9 @@ type MonitorActionGroupEventHubReceiverOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	SubscriptionId() *string
+	SetSubscriptionId(val *string)
+	SubscriptionIdInput() *string
 	TenantId() *string
 	SetTenantId(val *string)
 	TenantIdInput() *string
@@ -73,6 +82,10 @@ type MonitorActionGroupEventHubReceiverOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetEventHubId()
+	ResetEventHubName()
+	ResetEventHubNamespace()
+	ResetSubscriptionId()
 	ResetTenantId()
 	ResetUseCommonAlertSchema()
 	// Produce the Token's value at resolution time.
@@ -140,6 +153,46 @@ func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) EventHubId
 	return returns
 }
 
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) EventHubName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"eventHubName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) EventHubNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"eventHubNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) EventHubNamespace() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"eventHubNamespace",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) EventHubNamespaceInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"eventHubNamespaceInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -175,6 +228,26 @@ func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) NameInput(
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) SubscriptionId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subscriptionId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) SubscriptionIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"subscriptionIdInput",
 		&returns,
 	)
 	return returns
@@ -301,6 +374,28 @@ func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetEventHub
 	)
 }
 
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetEventHubName(val *string) {
+	if err := j.validateSetEventHubNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"eventHubName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetEventHubNamespace(val *string) {
+	if err := j.validateSetEventHubNamespaceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"eventHubNamespace",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetInternalValue(val interface{}) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
@@ -319,6 +414,17 @@ func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetName(val
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference)SetSubscriptionId(val *string) {
+	if err := j.validateSetSubscriptionIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subscriptionId",
 		val,
 	)
 }
@@ -551,6 +657,38 @@ func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) Interpolat
 	)
 
 	return returns
+}
+
+func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) ResetEventHubId() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetEventHubId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) ResetEventHubName() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetEventHubName",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) ResetEventHubNamespace() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetEventHubNamespace",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) ResetSubscriptionId() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSubscriptionId",
+		nil, // no parameters
+	)
 }
 
 func (m *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) ResetTenantId() {

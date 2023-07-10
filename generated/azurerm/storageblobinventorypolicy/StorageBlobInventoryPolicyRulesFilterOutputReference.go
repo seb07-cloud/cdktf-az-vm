@@ -28,11 +28,17 @@ type StorageBlobInventoryPolicyRulesFilterOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	ExcludePrefixes() *[]*string
+	SetExcludePrefixes(val *[]*string)
+	ExcludePrefixesInput() *[]*string
 	// Experimental.
 	Fqn() *string
 	IncludeBlobVersions() interface{}
 	SetIncludeBlobVersions(val interface{})
 	IncludeBlobVersionsInput() interface{}
+	IncludeDeleted() interface{}
+	SetIncludeDeleted(val interface{})
+	IncludeDeletedInput() interface{}
 	IncludeSnapshots() interface{}
 	SetIncludeSnapshots(val interface{})
 	IncludeSnapshotsInput() interface{}
@@ -73,7 +79,9 @@ type StorageBlobInventoryPolicyRulesFilterOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetExcludePrefixes()
 	ResetIncludeBlobVersions()
+	ResetIncludeDeleted()
 	ResetIncludeSnapshots()
 	ResetPrefixMatch()
 	// Produce the Token's value at resolution time.
@@ -141,6 +149,26 @@ func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) Creatio
 	return returns
 }
 
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) ExcludePrefixes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"excludePrefixes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) ExcludePrefixesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"excludePrefixesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -166,6 +194,26 @@ func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) Include
 	_jsii_.Get(
 		j,
 		"includeBlobVersionsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) IncludeDeleted() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"includeDeleted",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) IncludeDeletedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"includeDeletedInput",
 		&returns,
 	)
 	return returns
@@ -302,6 +350,17 @@ func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference)SetCompl
 	)
 }
 
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference)SetExcludePrefixes(val *[]*string) {
+	if err := j.validateSetExcludePrefixesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"excludePrefixes",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference)SetIncludeBlobVersions(val interface{}) {
 	if err := j.validateSetIncludeBlobVersionsParameters(val); err != nil {
 		panic(err)
@@ -309,6 +368,17 @@ func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference)SetInclu
 	_jsii_.Set(
 		j,
 		"includeBlobVersions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference)SetIncludeDeleted(val interface{}) {
+	if err := j.validateSetIncludeDeletedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"includeDeleted",
 		val,
 	)
 }
@@ -554,10 +624,26 @@ func (s *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) Interpo
 	return returns
 }
 
+func (s *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) ResetExcludePrefixes() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetExcludePrefixes",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) ResetIncludeBlobVersions() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetIncludeBlobVersions",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageBlobInventoryPolicyRulesFilterOutputReference) ResetIncludeDeleted() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIncludeDeleted",
 		nil, // no parameters
 	)
 }

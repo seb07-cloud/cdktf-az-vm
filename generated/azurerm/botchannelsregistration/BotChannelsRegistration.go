@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_channels_registration azurerm_bot_channels_registration}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_channels_registration azurerm_bot_channels_registration}.
 type BotChannelsRegistration interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -89,6 +89,9 @@ type BotChannelsRegistration interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -97,6 +100,9 @@ type BotChannelsRegistration interface {
 	Sku() *string
 	SetSku(val *string)
 	SkuInput() *string
+	StreamingEndpointEnabled() interface{}
+	SetStreamingEndpointEnabled(val interface{})
+	StreamingEndpointEnabledInput() interface{}
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -147,6 +153,8 @@ type BotChannelsRegistration interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetStreamingEndpointEnabled()
 	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -544,6 +552,26 @@ func (j *jsiiProxy_BotChannelsRegistration) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_BotChannelsRegistration) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotChannelsRegistration) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BotChannelsRegistration) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -589,6 +617,26 @@ func (j *jsiiProxy_BotChannelsRegistration) SkuInput() *string {
 	_jsii_.Get(
 		j,
 		"skuInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotChannelsRegistration) StreamingEndpointEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"streamingEndpointEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotChannelsRegistration) StreamingEndpointEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"streamingEndpointEnabledInput",
 		&returns,
 	)
 	return returns
@@ -665,7 +713,7 @@ func (j *jsiiProxy_BotChannelsRegistration) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_channels_registration azurerm_bot_channels_registration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_channels_registration azurerm_bot_channels_registration} Resource.
 func NewBotChannelsRegistration(scope constructs.Construct, id *string, config *BotChannelsRegistrationConfig) BotChannelsRegistration {
 	_init_.Initialize()
 
@@ -683,7 +731,7 @@ func NewBotChannelsRegistration(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_channels_registration azurerm_bot_channels_registration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_channels_registration azurerm_bot_channels_registration} Resource.
 func NewBotChannelsRegistration_Override(b BotChannelsRegistration, scope constructs.Construct, id *string, config *BotChannelsRegistrationConfig) {
 	_init_.Initialize()
 
@@ -905,6 +953,17 @@ func (j *jsiiProxy_BotChannelsRegistration)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_BotChannelsRegistration)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BotChannelsRegistration)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -923,6 +982,17 @@ func (j *jsiiProxy_BotChannelsRegistration)SetSku(val *string) {
 	_jsii_.Set(
 		j,
 		"sku",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BotChannelsRegistration)SetStreamingEndpointEnabled(val interface{}) {
+	if err := j.validateSetStreamingEndpointEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"streamingEndpointEnabled",
 		val,
 	)
 }
@@ -1299,6 +1369,22 @@ func (b *jsiiProxy_BotChannelsRegistration) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BotChannelsRegistration) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BotChannelsRegistration) ResetStreamingEndpointEnabled() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetStreamingEndpointEnabled",
 		nil, // no parameters
 	)
 }

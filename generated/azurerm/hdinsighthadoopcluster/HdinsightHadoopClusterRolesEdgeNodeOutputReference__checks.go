@@ -90,6 +90,37 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validateI
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutHttpsEndpointsParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*HdinsightHadoopClusterRolesEdgeNodeHttpsEndpoints:
+		value := value.(*[]*HdinsightHadoopClusterRolesEdgeNodeHttpsEndpoints)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*HdinsightHadoopClusterRolesEdgeNodeHttpsEndpoints:
+		value_ := value.([]*HdinsightHadoopClusterRolesEdgeNodeHttpsEndpoints)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*HdinsightHadoopClusterRolesEdgeNodeHttpsEndpoints; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutInstallScriptActionParameters(value interface{}) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -115,6 +146,37 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validateP
 	default:
 		if !_jsii_.IsAnonymousProxy(value) {
 			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*HdinsightHadoopClusterRolesEdgeNodeInstallScriptAction; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutUninstallScriptActionsParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActions:
+		value := value.(*[]*HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActions)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActions:
+		value_ := value.([]*HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActions)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActions; received %#v (a %T)", value, value)
 		}
 	}
 

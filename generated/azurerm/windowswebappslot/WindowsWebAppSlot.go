@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot}.
 type WindowsWebAppSlot interface {
 	cdktf.TerraformResource
 	AppServiceId() *string
@@ -20,6 +20,8 @@ type WindowsWebAppSlot interface {
 	AppSettingsInput() *map[string]*string
 	AuthSettings() WindowsWebAppSlotAuthSettingsOutputReference
 	AuthSettingsInput() *WindowsWebAppSlotAuthSettings
+	AuthSettingsV2() WindowsWebAppSlotAuthSettingsV2OutputReference
+	AuthSettingsV2Input() *WindowsWebAppSlotAuthSettingsV2
 	Backup() WindowsWebAppSlotBackupOutputReference
 	BackupInput() *WindowsWebAppSlotBackup
 	// Experimental.
@@ -30,6 +32,9 @@ type WindowsWebAppSlot interface {
 	ClientCertificateEnabled() interface{}
 	SetClientCertificateEnabled(val interface{})
 	ClientCertificateEnabledInput() interface{}
+	ClientCertificateExclusionPaths() *string
+	SetClientCertificateExclusionPaths(val *string)
+	ClientCertificateExclusionPathsInput() *string
 	ClientCertificateMode() *string
 	SetClientCertificateMode(val *string)
 	ClientCertificateModeInput() *string
@@ -62,6 +67,7 @@ type WindowsWebAppSlot interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() interface{}
 	SetHttpsOnly(val interface{})
 	HttpsOnlyInput() interface{}
@@ -97,8 +103,14 @@ type WindowsWebAppSlot interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
+	ServicePlanId() *string
+	SetServicePlanId(val *string)
+	ServicePlanIdInput() *string
 	SiteConfig() WindowsWebAppSlotSiteConfigOutputReference
 	SiteConfigInput() *WindowsWebAppSlotSiteConfig
 	SiteCredential() WindowsWebAppSlotSiteCredentialList
@@ -115,6 +127,12 @@ type WindowsWebAppSlot interface {
 	TerraformResourceType() *string
 	Timeouts() WindowsWebAppSlotTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
+	ZipDeployFile() *string
+	SetZipDeployFile(val *string)
+	ZipDeployFileInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -141,6 +159,7 @@ type WindowsWebAppSlot interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthSettings(value *WindowsWebAppSlotAuthSettings)
+	PutAuthSettingsV2(value *WindowsWebAppSlotAuthSettingsV2)
 	PutBackup(value *WindowsWebAppSlotBackup)
 	PutConnectionString(value interface{})
 	PutIdentity(value *WindowsWebAppSlotIdentity)
@@ -150,9 +169,11 @@ type WindowsWebAppSlot interface {
 	PutTimeouts(value *WindowsWebAppSlotTimeouts)
 	ResetAppSettings()
 	ResetAuthSettings()
+	ResetAuthSettingsV2()
 	ResetBackup()
 	ResetClientAffinityEnabled()
 	ResetClientCertificateEnabled()
+	ResetClientCertificateExclusionPaths()
 	ResetClientCertificateMode()
 	ResetConnectionString()
 	ResetEnabled()
@@ -164,9 +185,13 @@ type WindowsWebAppSlot interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetServicePlanId()
 	ResetStorageAccount()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualNetworkSubnetId()
+	ResetZipDeployFile()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -242,6 +267,26 @@ func (j *jsiiProxy_WindowsWebAppSlot) AuthSettingsInput() *WindowsWebAppSlotAuth
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot) AuthSettingsV2() WindowsWebAppSlotAuthSettingsV2OutputReference {
+	var returns WindowsWebAppSlotAuthSettingsV2OutputReference
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) AuthSettingsV2Input() *WindowsWebAppSlotAuthSettingsV2 {
+	var returns *WindowsWebAppSlotAuthSettingsV2
+	_jsii_.Get(
+		j,
+		"authSettingsV2Input",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebAppSlot) Backup() WindowsWebAppSlotBackupOutputReference {
 	var returns WindowsWebAppSlotBackupOutputReference
 	_jsii_.Get(
@@ -307,6 +352,26 @@ func (j *jsiiProxy_WindowsWebAppSlot) ClientCertificateEnabledInput() interface{
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ClientCertificateExclusionPathsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPathsInput",
 		&returns,
 	)
 	return returns
@@ -457,6 +522,16 @@ func (j *jsiiProxy_WindowsWebAppSlot) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -672,11 +747,51 @@ func (j *jsiiProxy_WindowsWebAppSlot) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebAppSlot) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ServicePlanId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ServicePlanIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanIdInput",
 		&returns,
 	)
 	return returns
@@ -802,8 +917,48 @@ func (j *jsiiProxy_WindowsWebAppSlot) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot} Resource.
+func (j *jsiiProxy_WindowsWebAppSlot) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ZipDeployFile() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) ZipDeployFileInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFileInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot} Resource.
 func NewWindowsWebAppSlot(scope constructs.Construct, id *string, config *WindowsWebAppSlotConfig) WindowsWebAppSlot {
 	_init_.Initialize()
 
@@ -821,7 +976,7 @@ func NewWindowsWebAppSlot(scope constructs.Construct, id *string, config *Window
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app_slot azurerm_windows_web_app_slot} Resource.
 func NewWindowsWebAppSlot_Override(w WindowsWebAppSlot, scope constructs.Construct, id *string, config *WindowsWebAppSlotConfig) {
 	_init_.Initialize()
 
@@ -872,6 +1027,17 @@ func (j *jsiiProxy_WindowsWebAppSlot)SetClientCertificateEnabled(val interface{}
 	_jsii_.Set(
 		j,
 		"clientCertificateEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot)SetClientCertificateExclusionPaths(val *string) {
+	if err := j.validateSetClientCertificateExclusionPathsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificateExclusionPaths",
 		val,
 	)
 }
@@ -1010,6 +1176,28 @@ func (j *jsiiProxy_WindowsWebAppSlot)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot)SetServicePlanId(val *string) {
+	if err := j.validateSetServicePlanIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"servicePlanId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsWebAppSlot)SetTags(val *map[string]*string) {
 	if err := j.validateSetTagsParameters(val); err != nil {
 		panic(err)
@@ -1017,6 +1205,28 @@ func (j *jsiiProxy_WindowsWebAppSlot)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot)SetZipDeployFile(val *string) {
+	if err := j.validateSetZipDeployFileParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zipDeployFile",
 		val,
 	)
 }
@@ -1298,6 +1508,17 @@ func (w *jsiiProxy_WindowsWebAppSlot) PutAuthSettings(value *WindowsWebAppSlotAu
 	)
 }
 
+func (w *jsiiProxy_WindowsWebAppSlot) PutAuthSettingsV2(value *WindowsWebAppSlotAuthSettingsV2) {
+	if err := w.validatePutAuthSettingsV2Parameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putAuthSettingsV2",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsWebAppSlot) PutBackup(value *WindowsWebAppSlotBackup) {
 	if err := w.validatePutBackupParameters(value); err != nil {
 		panic(err)
@@ -1391,6 +1612,14 @@ func (w *jsiiProxy_WindowsWebAppSlot) ResetAuthSettings() {
 	)
 }
 
+func (w *jsiiProxy_WindowsWebAppSlot) ResetAuthSettingsV2() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetAuthSettingsV2",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebAppSlot) ResetBackup() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1411,6 +1640,14 @@ func (w *jsiiProxy_WindowsWebAppSlot) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlot) ResetClientCertificateExclusionPaths() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetClientCertificateExclusionPaths",
 		nil, // no parameters
 	)
 }
@@ -1487,6 +1724,22 @@ func (w *jsiiProxy_WindowsWebAppSlot) ResetOverrideLogicalId() {
 	)
 }
 
+func (w *jsiiProxy_WindowsWebAppSlot) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlot) ResetServicePlanId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetServicePlanId",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebAppSlot) ResetStorageAccount() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1507,6 +1760,22 @@ func (w *jsiiProxy_WindowsWebAppSlot) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlot) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetVirtualNetworkSubnetId",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlot) ResetZipDeployFile() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetZipDeployFile",
 		nil, // no parameters
 	)
 }

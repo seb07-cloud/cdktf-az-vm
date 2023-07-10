@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_service azurerm_spring_cloud_service}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_service azurerm_spring_cloud_service}.
 type SpringCloudService interface {
 	cdktf.TerraformResource
+	BuildAgentPoolSize() *string
+	SetBuildAgentPoolSize(val *string)
+	BuildAgentPoolSizeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ConfigServerGitSetting() SpringCloudServiceConfigServerGitSettingOutputReference
@@ -22,10 +25,14 @@ type SpringCloudService interface {
 	SetConnection(val interface{})
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
+	ContainerRegistry() SpringCloudServiceContainerRegistryList
+	ContainerRegistryInput() interface{}
 	// Experimental.
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DefaultBuildService() SpringCloudServiceDefaultBuildServiceOutputReference
+	DefaultBuildServiceInput() *SpringCloudServiceDefaultBuildService
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -48,6 +55,9 @@ type SpringCloudService interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	LogStreamPublicEndpointEnabled() interface{}
+	SetLogStreamPublicEndpointEnabled(val interface{})
+	LogStreamPublicEndpointEnabledInput() interface{}
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -70,6 +80,10 @@ type SpringCloudService interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	ServiceRegistryEnabled() interface{}
+	SetServiceRegistryEnabled(val interface{})
+	ServiceRegistryEnabledInput() interface{}
+	ServiceRegistryId() *string
 	SkuName() *string
 	SetSkuName(val *string)
 	SkuNameInput() *string
@@ -86,6 +100,9 @@ type SpringCloudService interface {
 	TimeoutsInput() interface{}
 	Trace() SpringCloudServiceTraceOutputReference
 	TraceInput() *SpringCloudServiceTrace
+	ZoneRedundant() interface{}
+	SetZoneRedundant(val interface{})
+	ZoneRedundantInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -112,19 +129,27 @@ type SpringCloudService interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutConfigServerGitSetting(value *SpringCloudServiceConfigServerGitSetting)
+	PutContainerRegistry(value interface{})
+	PutDefaultBuildService(value *SpringCloudServiceDefaultBuildService)
 	PutNetwork(value *SpringCloudServiceNetwork)
 	PutTimeouts(value *SpringCloudServiceTimeouts)
 	PutTrace(value *SpringCloudServiceTrace)
+	ResetBuildAgentPoolSize()
 	ResetConfigServerGitSetting()
+	ResetContainerRegistry()
+	ResetDefaultBuildService()
 	ResetId()
+	ResetLogStreamPublicEndpointEnabled()
 	ResetNetwork()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetServiceRegistryEnabled()
 	ResetSkuName()
 	ResetTags()
 	ResetTimeouts()
 	ResetTrace()
+	ResetZoneRedundant()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -138,6 +163,26 @@ type SpringCloudService interface {
 // The jsii proxy struct for SpringCloudService
 type jsiiProxy_SpringCloudService struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SpringCloudService) BuildAgentPoolSize() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"buildAgentPoolSize",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) BuildAgentPoolSizeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"buildAgentPoolSizeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SpringCloudService) CdktfStack() cdktf.TerraformStack {
@@ -190,11 +235,51 @@ func (j *jsiiProxy_SpringCloudService) ConstructNodeMetadata() *map[string]inter
 	return returns
 }
 
+func (j *jsiiProxy_SpringCloudService) ContainerRegistry() SpringCloudServiceContainerRegistryList {
+	var returns SpringCloudServiceContainerRegistryList
+	_jsii_.Get(
+		j,
+		"containerRegistry",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) ContainerRegistryInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"containerRegistryInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpringCloudService) Count() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) DefaultBuildService() SpringCloudServiceDefaultBuildServiceOutputReference {
+	var returns SpringCloudServiceDefaultBuildServiceOutputReference
+	_jsii_.Get(
+		j,
+		"defaultBuildService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) DefaultBuildServiceInput() *SpringCloudServiceDefaultBuildService {
+	var returns *SpringCloudServiceDefaultBuildService
+	_jsii_.Get(
+		j,
+		"defaultBuildServiceInput",
 		&returns,
 	)
 	return returns
@@ -285,6 +370,26 @@ func (j *jsiiProxy_SpringCloudService) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) LogStreamPublicEndpointEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamPublicEndpointEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) LogStreamPublicEndpointEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"logStreamPublicEndpointEnabledInput",
 		&returns,
 	)
 	return returns
@@ -410,6 +515,36 @@ func (j *jsiiProxy_SpringCloudService) ResourceGroupNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SpringCloudService) ServiceRegistryEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"serviceRegistryEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) ServiceRegistryEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"serviceRegistryEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudService) ServiceRegistryId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"serviceRegistryId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpringCloudService) SkuName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -520,8 +655,28 @@ func (j *jsiiProxy_SpringCloudService) TraceInput() *SpringCloudServiceTrace {
 	return returns
 }
 
+func (j *jsiiProxy_SpringCloudService) ZoneRedundant() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneRedundant",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_service azurerm_spring_cloud_service} Resource.
+func (j *jsiiProxy_SpringCloudService) ZoneRedundantInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneRedundantInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_service azurerm_spring_cloud_service} Resource.
 func NewSpringCloudService(scope constructs.Construct, id *string, config *SpringCloudServiceConfig) SpringCloudService {
 	_init_.Initialize()
 
@@ -539,7 +694,7 @@ func NewSpringCloudService(scope constructs.Construct, id *string, config *Sprin
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_service azurerm_spring_cloud_service} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_service azurerm_spring_cloud_service} Resource.
 func NewSpringCloudService_Override(s SpringCloudService, scope constructs.Construct, id *string, config *SpringCloudServiceConfig) {
 	_init_.Initialize()
 
@@ -547,6 +702,17 @@ func NewSpringCloudService_Override(s SpringCloudService, scope constructs.Const
 		"azurerm.springCloudService.SpringCloudService",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudService)SetBuildAgentPoolSize(val *string) {
+	if err := j.validateSetBuildAgentPoolSizeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"buildAgentPoolSize",
+		val,
 	)
 }
 
@@ -621,6 +787,17 @@ func (j *jsiiProxy_SpringCloudService)SetLocation(val *string) {
 	)
 }
 
+func (j *jsiiProxy_SpringCloudService)SetLogStreamPublicEndpointEnabled(val interface{}) {
+	if err := j.validateSetLogStreamPublicEndpointEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"logStreamPublicEndpointEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SpringCloudService)SetName(val *string) {
 	if err := j.validateSetNameParameters(val); err != nil {
 		panic(err)
@@ -662,6 +839,17 @@ func (j *jsiiProxy_SpringCloudService)SetResourceGroupName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_SpringCloudService)SetServiceRegistryEnabled(val interface{}) {
+	if err := j.validateSetServiceRegistryEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"serviceRegistryEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_SpringCloudService)SetSkuName(val *string) {
 	if err := j.validateSetSkuNameParameters(val); err != nil {
 		panic(err)
@@ -680,6 +868,17 @@ func (j *jsiiProxy_SpringCloudService)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudService)SetZoneRedundant(val interface{}) {
+	if err := j.validateSetZoneRedundantParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zoneRedundant",
 		val,
 	)
 }
@@ -961,6 +1160,28 @@ func (s *jsiiProxy_SpringCloudService) PutConfigServerGitSetting(value *SpringCl
 	)
 }
 
+func (s *jsiiProxy_SpringCloudService) PutContainerRegistry(value interface{}) {
+	if err := s.validatePutContainerRegistryParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putContainerRegistry",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SpringCloudService) PutDefaultBuildService(value *SpringCloudServiceDefaultBuildService) {
+	if err := s.validatePutDefaultBuildServiceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putDefaultBuildService",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SpringCloudService) PutNetwork(value *SpringCloudServiceNetwork) {
 	if err := s.validatePutNetworkParameters(value); err != nil {
 		panic(err)
@@ -994,6 +1215,14 @@ func (s *jsiiProxy_SpringCloudService) PutTrace(value *SpringCloudServiceTrace) 
 	)
 }
 
+func (s *jsiiProxy_SpringCloudService) ResetBuildAgentPoolSize() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetBuildAgentPoolSize",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SpringCloudService) ResetConfigServerGitSetting() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1002,10 +1231,34 @@ func (s *jsiiProxy_SpringCloudService) ResetConfigServerGitSetting() {
 	)
 }
 
+func (s *jsiiProxy_SpringCloudService) ResetContainerRegistry() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetContainerRegistry",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudService) ResetDefaultBuildService() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDefaultBuildService",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SpringCloudService) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudService) ResetLogStreamPublicEndpointEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLogStreamPublicEndpointEnabled",
 		nil, // no parameters
 	)
 }
@@ -1022,6 +1275,14 @@ func (s *jsiiProxy_SpringCloudService) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudService) ResetServiceRegistryEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetServiceRegistryEnabled",
 		nil, // no parameters
 	)
 }
@@ -1054,6 +1315,14 @@ func (s *jsiiProxy_SpringCloudService) ResetTrace() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTrace",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudService) ResetZoneRedundant() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetZoneRedundant",
 		nil, // no parameters
 	)
 }

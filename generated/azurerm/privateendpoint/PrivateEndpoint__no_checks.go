@@ -52,6 +52,10 @@ func (p *jsiiProxy_PrivateEndpoint) validateOverrideLogicalIdParameters(newLogic
 	return nil
 }
 
+func (p *jsiiProxy_PrivateEndpoint) validatePutIpConfigurationParameters(value interface{}) error {
+	return nil
+}
+
 func (p *jsiiProxy_PrivateEndpoint) validatePutPrivateDnsZoneGroupParameters(value *PrivateEndpointPrivateDnsZoneGroup) error {
 	return nil
 }
@@ -81,6 +85,10 @@ func (j *jsiiProxy_PrivateEndpoint) validateSetConnectionParameters(val interfac
 }
 
 func (j *jsiiProxy_PrivateEndpoint) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_PrivateEndpoint) validateSetCustomNetworkInterfaceNameParameters(val *string) error {
 	return nil
 }
 

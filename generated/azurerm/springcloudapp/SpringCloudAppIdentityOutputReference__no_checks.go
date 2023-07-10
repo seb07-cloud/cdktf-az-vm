@@ -56,6 +56,10 @@ func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) validateSetComplexObje
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) validateSetIdentityIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) validateSetInternalValueParameters(val *SpringCloudAppIdentity) error {
 	return nil
 }

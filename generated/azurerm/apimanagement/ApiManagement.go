@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management azurerm_api_management}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management azurerm_api_management}.
 type ApiManagement interface {
 	cdktf.TerraformResource
 	AdditionalLocation() ApiManagementAdditionalLocationList
@@ -31,6 +31,8 @@ type ApiManagement interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	Delegation() ApiManagementDelegationOutputReference
+	DelegationInput() *ApiManagementDelegation
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -165,6 +167,7 @@ type ApiManagement interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutAdditionalLocation(value interface{})
 	PutCertificate(value interface{})
+	PutDelegation(value *ApiManagementDelegation)
 	PutHostnameConfiguration(value *ApiManagementHostnameConfiguration)
 	PutIdentity(value *ApiManagementIdentity)
 	PutPolicy(value interface{})
@@ -178,6 +181,7 @@ type ApiManagement interface {
 	ResetAdditionalLocation()
 	ResetCertificate()
 	ResetClientCertificateEnabled()
+	ResetDelegation()
 	ResetGatewayDisabled()
 	ResetHostnameConfiguration()
 	ResetId()
@@ -310,6 +314,26 @@ func (j *jsiiProxy_ApiManagement) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagement) Delegation() ApiManagementDelegationOutputReference {
+	var returns ApiManagementDelegationOutputReference
+	_jsii_.Get(
+		j,
+		"delegation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagement) DelegationInput() *ApiManagementDelegation {
+	var returns *ApiManagementDelegation
+	_jsii_.Get(
+		j,
+		"delegationInput",
 		&returns,
 	)
 	return returns
@@ -1016,7 +1040,7 @@ func (j *jsiiProxy_ApiManagement) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management azurerm_api_management} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management azurerm_api_management} Resource.
 func NewApiManagement(scope constructs.Construct, id *string, config *ApiManagementConfig) ApiManagement {
 	_init_.Initialize()
 
@@ -1034,7 +1058,7 @@ func NewApiManagement(scope constructs.Construct, id *string, config *ApiManagem
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management azurerm_api_management} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management azurerm_api_management} Resource.
 func NewApiManagement_Override(a ApiManagement, scope constructs.Construct, id *string, config *ApiManagementConfig) {
 	_init_.Initialize()
 
@@ -1577,6 +1601,17 @@ func (a *jsiiProxy_ApiManagement) PutCertificate(value interface{}) {
 	)
 }
 
+func (a *jsiiProxy_ApiManagement) PutDelegation(value *ApiManagementDelegation) {
+	if err := a.validatePutDelegationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putDelegation",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_ApiManagement) PutHostnameConfiguration(value *ApiManagementHostnameConfiguration) {
 	if err := a.validatePutHostnameConfigurationParameters(value); err != nil {
 		panic(err)
@@ -1707,6 +1742,14 @@ func (a *jsiiProxy_ApiManagement) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagement) ResetDelegation() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetDelegation",
 		nil, // no parameters
 	)
 }

@@ -56,6 +56,10 @@ func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdaInputOutputReference) val
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdaInputOutputReference) validateSetConfigurationParameterParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdaInputOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }

@@ -55,6 +55,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetSqlFilter", GoMethod: "ResetSqlFilter"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
 			_jsii_.MemberProperty{JsiiProperty: "sqlFilter", GoGetter: "SqlFilter"},
+			_jsii_.MemberProperty{JsiiProperty: "sqlFilterCompatibilityLevel", GoGetter: "SqlFilterCompatibilityLevel"},
 			_jsii_.MemberProperty{JsiiProperty: "sqlFilterInput", GoGetter: "SqlFilterInput"},
 			_jsii_.MemberProperty{JsiiProperty: "subscriptionId", GoGetter: "SubscriptionId"},
 			_jsii_.MemberProperty{JsiiProperty: "subscriptionIdInput", GoGetter: "SubscriptionIdInput"},

@@ -31,10 +31,16 @@ type KubernetesClusterNetworkProfileOutputReference interface {
 	DockerBridgeCidr() *string
 	SetDockerBridgeCidr(val *string)
 	DockerBridgeCidrInput() *string
+	EbpfDataPlane() *string
+	SetEbpfDataPlane(val *string)
+	EbpfDataPlaneInput() *string
 	// Experimental.
 	Fqn() *string
 	InternalValue() *KubernetesClusterNetworkProfile
 	SetInternalValue(val *KubernetesClusterNetworkProfile)
+	IpVersions() *[]*string
+	SetIpVersions(val *[]*string)
+	IpVersionsInput() *[]*string
 	LoadBalancerProfile() KubernetesClusterNetworkProfileLoadBalancerProfileOutputReference
 	LoadBalancerProfileInput() *KubernetesClusterNetworkProfileLoadBalancerProfile
 	LoadBalancerSku() *string
@@ -48,6 +54,9 @@ type KubernetesClusterNetworkProfileOutputReference interface {
 	NetworkPlugin() *string
 	SetNetworkPlugin(val *string)
 	NetworkPluginInput() *string
+	NetworkPluginMode() *string
+	SetNetworkPluginMode(val *string)
+	NetworkPluginModeInput() *string
 	NetworkPolicy() *string
 	SetNetworkPolicy(val *string)
 	NetworkPolicyInput() *string
@@ -57,9 +66,15 @@ type KubernetesClusterNetworkProfileOutputReference interface {
 	PodCidr() *string
 	SetPodCidr(val *string)
 	PodCidrInput() *string
+	PodCidrs() *[]*string
+	SetPodCidrs(val *[]*string)
+	PodCidrsInput() *[]*string
 	ServiceCidr() *string
 	SetServiceCidr(val *string)
 	ServiceCidrInput() *string
+	ServiceCidrs() *[]*string
+	SetServiceCidrs(val *[]*string)
+	ServiceCidrsInput() *[]*string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -96,14 +111,19 @@ type KubernetesClusterNetworkProfileOutputReference interface {
 	PutNatGatewayProfile(value *KubernetesClusterNetworkProfileNatGatewayProfile)
 	ResetDnsServiceIp()
 	ResetDockerBridgeCidr()
+	ResetEbpfDataPlane()
+	ResetIpVersions()
 	ResetLoadBalancerProfile()
 	ResetLoadBalancerSku()
 	ResetNatGatewayProfile()
 	ResetNetworkMode()
+	ResetNetworkPluginMode()
 	ResetNetworkPolicy()
 	ResetOutboundType()
 	ResetPodCidr()
+	ResetPodCidrs()
 	ResetServiceCidr()
+	ResetServiceCidrs()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -189,6 +209,26 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) DockerBridgeC
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) EbpfDataPlane() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ebpfDataPlane",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) EbpfDataPlaneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"ebpfDataPlaneInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -204,6 +244,26 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) InternalValue
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) IpVersions() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipVersions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) IpVersionsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ipVersionsInput",
 		&returns,
 	)
 	return returns
@@ -309,6 +369,26 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) NetworkPlugin
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) NetworkPluginMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkPluginMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) NetworkPluginModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkPluginModeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) NetworkPolicy() *string {
 	var returns *string
 	_jsii_.Get(
@@ -369,6 +449,26 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) PodCidrInput(
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) PodCidrs() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"podCidrs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) PodCidrsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"podCidrsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ServiceCidr() *string {
 	var returns *string
 	_jsii_.Get(
@@ -384,6 +484,26 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ServiceCidrIn
 	_jsii_.Get(
 		j,
 		"serviceCidrInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ServiceCidrs() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"serviceCidrs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ServiceCidrsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"serviceCidrsInput",
 		&returns,
 	)
 	return returns
@@ -481,6 +601,17 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetDockerBridg
 	)
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetEbpfDataPlane(val *string) {
+	if err := j.validateSetEbpfDataPlaneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ebpfDataPlane",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetInternalValue(val *KubernetesClusterNetworkProfile) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
@@ -488,6 +619,17 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetInternalVal
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetIpVersions(val *[]*string) {
+	if err := j.validateSetIpVersionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipVersions",
 		val,
 	)
 }
@@ -525,6 +667,17 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetNetworkPlug
 	)
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetNetworkPluginMode(val *string) {
+	if err := j.validateSetNetworkPluginModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"networkPluginMode",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetNetworkPolicy(val *string) {
 	if err := j.validateSetNetworkPolicyParameters(val); err != nil {
 		panic(err)
@@ -558,6 +711,17 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetPodCidr(val
 	)
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetPodCidrs(val *[]*string) {
+	if err := j.validateSetPodCidrsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"podCidrs",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetServiceCidr(val *string) {
 	if err := j.validateSetServiceCidrParameters(val); err != nil {
 		panic(err)
@@ -565,6 +729,17 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetServiceCidr
 	_jsii_.Set(
 		j,
 		"serviceCidr",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference)SetServiceCidrs(val *[]*string) {
+	if err := j.validateSetServiceCidrsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"serviceCidrs",
 		val,
 	)
 }
@@ -815,6 +990,22 @@ func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetDockerBr
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetEbpfDataPlane() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetEbpfDataPlane",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetIpVersions() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetIpVersions",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetLoadBalancerProfile() {
 	_jsii_.InvokeVoid(
 		k,
@@ -847,6 +1038,14 @@ func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetNetworkM
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetNetworkPluginMode() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetNetworkPluginMode",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetNetworkPolicy() {
 	_jsii_.InvokeVoid(
 		k,
@@ -871,10 +1070,26 @@ func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetPodCidr(
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetPodCidrs() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetPodCidrs",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetServiceCidr() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetServiceCidr",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) ResetServiceCidrs() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetServiceCidrs",
 		nil, // no parameters
 	)
 }

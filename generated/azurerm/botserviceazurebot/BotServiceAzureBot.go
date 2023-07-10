@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot}.
 type BotServiceAzureBot interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -70,6 +70,15 @@ type BotServiceAzureBot interface {
 	MicrosoftAppId() *string
 	SetMicrosoftAppId(val *string)
 	MicrosoftAppIdInput() *string
+	MicrosoftAppMsiId() *string
+	SetMicrosoftAppMsiId(val *string)
+	MicrosoftAppMsiIdInput() *string
+	MicrosoftAppTenantId() *string
+	SetMicrosoftAppTenantId(val *string)
+	MicrosoftAppTenantIdInput() *string
+	MicrosoftAppType() *string
+	SetMicrosoftAppType(val *string)
+	MicrosoftAppTypeInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -91,6 +100,9 @@ type BotServiceAzureBot interface {
 	Sku() *string
 	SetSku(val *string)
 	SkuInput() *string
+	StreamingEndpointEnabled() interface{}
+	SetStreamingEndpointEnabled(val interface{})
+	StreamingEndpointEnabledInput() interface{}
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -136,9 +148,13 @@ type BotServiceAzureBot interface {
 	ResetId()
 	ResetLuisAppIds()
 	ResetLuisKey()
+	ResetMicrosoftAppMsiId()
+	ResetMicrosoftAppTenantId()
+	ResetMicrosoftAppType()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetStreamingEndpointEnabled()
 	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -446,6 +462,66 @@ func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppIdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppMsiId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppMsiId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppMsiIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppMsiIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppTenantId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppTenantId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppTenantIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppTenantIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) MicrosoftAppTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"microsoftAppTypeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BotServiceAzureBot) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -546,6 +622,26 @@ func (j *jsiiProxy_BotServiceAzureBot) SkuInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BotServiceAzureBot) StreamingEndpointEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"streamingEndpointEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) StreamingEndpointEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"streamingEndpointEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BotServiceAzureBot) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -617,7 +713,7 @@ func (j *jsiiProxy_BotServiceAzureBot) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot} Resource.
 func NewBotServiceAzureBot(scope constructs.Construct, id *string, config *BotServiceAzureBotConfig) BotServiceAzureBot {
 	_init_.Initialize()
 
@@ -635,7 +731,7 @@ func NewBotServiceAzureBot(scope constructs.Construct, id *string, config *BotSe
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/bot_service_azure_bot azurerm_bot_service_azure_bot} Resource.
 func NewBotServiceAzureBot_Override(b BotServiceAzureBot, scope constructs.Construct, id *string, config *BotServiceAzureBotConfig) {
 	_init_.Initialize()
 
@@ -805,6 +901,39 @@ func (j *jsiiProxy_BotServiceAzureBot)SetMicrosoftAppId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_BotServiceAzureBot)SetMicrosoftAppMsiId(val *string) {
+	if err := j.validateSetMicrosoftAppMsiIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"microsoftAppMsiId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BotServiceAzureBot)SetMicrosoftAppTenantId(val *string) {
+	if err := j.validateSetMicrosoftAppTenantIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"microsoftAppTenantId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BotServiceAzureBot)SetMicrosoftAppType(val *string) {
+	if err := j.validateSetMicrosoftAppTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"microsoftAppType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BotServiceAzureBot)SetName(val *string) {
 	if err := j.validateSetNameParameters(val); err != nil {
 		panic(err)
@@ -853,6 +982,17 @@ func (j *jsiiProxy_BotServiceAzureBot)SetSku(val *string) {
 	_jsii_.Set(
 		j,
 		"sku",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BotServiceAzureBot)SetStreamingEndpointEnabled(val interface{}) {
+	if err := j.validateSetStreamingEndpointEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"streamingEndpointEnabled",
 		val,
 	)
 }
@@ -1209,10 +1349,42 @@ func (b *jsiiProxy_BotServiceAzureBot) ResetLuisKey() {
 	)
 }
 
+func (b *jsiiProxy_BotServiceAzureBot) ResetMicrosoftAppMsiId() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetMicrosoftAppMsiId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BotServiceAzureBot) ResetMicrosoftAppTenantId() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetMicrosoftAppTenantId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BotServiceAzureBot) ResetMicrosoftAppType() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetMicrosoftAppType",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BotServiceAzureBot) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BotServiceAzureBot) ResetStreamingEndpointEnabled() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetStreamingEndpointEnabled",
 		nil, // no parameters
 	)
 }

@@ -9,12 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit azurerm_express_route_circuit}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit azurerm_express_route_circuit}.
 type ExpressRouteCircuit interface {
 	cdktf.TerraformResource
 	AllowClassicOperations() interface{}
 	SetAllowClassicOperations(val interface{})
 	AllowClassicOperationsInput() interface{}
+	AuthorizationKey() *string
+	SetAuthorizationKey(val *string)
+	AuthorizationKeyInput() *string
 	BandwidthInGbps() *float64
 	SetBandwidthInGbps(val *float64)
 	BandwidthInGbpsInput() *float64
@@ -125,6 +128,7 @@ type ExpressRouteCircuit interface {
 	PutSku(value *ExpressRouteCircuitSku)
 	PutTimeouts(value *ExpressRouteCircuitTimeouts)
 	ResetAllowClassicOperations()
+	ResetAuthorizationKey()
 	ResetBandwidthInGbps()
 	ResetBandwidthInMbps()
 	ResetExpressRoutePortId()
@@ -166,6 +170,26 @@ func (j *jsiiProxy_ExpressRouteCircuit) AllowClassicOperationsInput() interface{
 	_jsii_.Get(
 		j,
 		"allowClassicOperationsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuit) AuthorizationKey() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authorizationKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRouteCircuit) AuthorizationKeyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authorizationKeyInput",
 		&returns,
 	)
 	return returns
@@ -592,7 +616,7 @@ func (j *jsiiProxy_ExpressRouteCircuit) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit azurerm_express_route_circuit} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit azurerm_express_route_circuit} Resource.
 func NewExpressRouteCircuit(scope constructs.Construct, id *string, config *ExpressRouteCircuitConfig) ExpressRouteCircuit {
 	_init_.Initialize()
 
@@ -610,7 +634,7 @@ func NewExpressRouteCircuit(scope constructs.Construct, id *string, config *Expr
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_circuit azurerm_express_route_circuit} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_circuit azurerm_express_route_circuit} Resource.
 func NewExpressRouteCircuit_Override(e ExpressRouteCircuit, scope constructs.Construct, id *string, config *ExpressRouteCircuitConfig) {
 	_init_.Initialize()
 
@@ -628,6 +652,17 @@ func (j *jsiiProxy_ExpressRouteCircuit)SetAllowClassicOperations(val interface{}
 	_jsii_.Set(
 		j,
 		"allowClassicOperations",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ExpressRouteCircuit)SetAuthorizationKey(val *string) {
+	if err := j.validateSetAuthorizationKeyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authorizationKey",
 		val,
 	)
 }
@@ -1102,6 +1137,14 @@ func (e *jsiiProxy_ExpressRouteCircuit) ResetAllowClassicOperations() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetAllowClassicOperations",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_ExpressRouteCircuit) ResetAuthorizationKey() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetAuthorizationKey",
 		nil, // no parameters
 	)
 }

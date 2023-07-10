@@ -60,7 +60,7 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutpu
 	return nil
 }
 
-func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) validateSetInternalValueParameters(val interface{}) error {
+func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) validateSetInternalValueParameters(val *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest) error {
 	return nil
 }
 
@@ -84,7 +84,7 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutpu
 	return nil
 }
 
-func validateNewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) error {
+func validateNewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }
 

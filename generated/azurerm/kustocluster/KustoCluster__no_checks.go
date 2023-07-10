@@ -84,6 +84,14 @@ func validateKustoCluster_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_KustoCluster) validateSetAllowedFqdnsParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KustoCluster) validateSetAllowedIpRangesParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoCluster) validateSetAutoStopEnabledParameters(val interface{}) error {
 	return nil
 }
@@ -128,7 +136,15 @@ func (j *jsiiProxy_KustoCluster) validateSetNameParameters(val *string) error {
 	return nil
 }
 
+func (j *jsiiProxy_KustoCluster) validateSetOutboundNetworkAccessRestrictedParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoCluster) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_KustoCluster) validateSetPublicIpTypeParameters(val *string) error {
 	return nil
 }
 

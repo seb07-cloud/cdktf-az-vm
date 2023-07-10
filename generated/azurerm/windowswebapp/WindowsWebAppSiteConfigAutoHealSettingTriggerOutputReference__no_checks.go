@@ -48,7 +48,7 @@ func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference)
 	return nil
 }
 
-func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) validatePutSlowRequestParameters(value interface{}) error {
+func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) validatePutSlowRequestParameters(value *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest) error {
 	return nil
 }
 

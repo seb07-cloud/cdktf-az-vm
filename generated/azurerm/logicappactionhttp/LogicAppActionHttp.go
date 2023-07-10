@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_action_http azurerm_logic_app_action_http}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_action_http azurerm_logic_app_action_http}.
 type LogicAppActionHttp interface {
 	cdktf.TerraformResource
 	Body() *string
@@ -68,6 +68,9 @@ type LogicAppActionHttp interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	Queries() *map[string]*string
+	SetQueries(val *map[string]*string)
+	QueriesInput() *map[string]*string
 	// Experimental.
 	RawOverrides() interface{}
 	RunAfter() LogicAppActionHttpRunAfterList
@@ -116,6 +119,7 @@ type LogicAppActionHttp interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetQueries()
 	ResetRunAfter()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -373,6 +377,26 @@ func (j *jsiiProxy_LogicAppActionHttp) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LogicAppActionHttp) Queries() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"queries",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogicAppActionHttp) QueriesInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"queriesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LogicAppActionHttp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -474,7 +498,7 @@ func (j *jsiiProxy_LogicAppActionHttp) UriInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_action_http azurerm_logic_app_action_http} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_action_http azurerm_logic_app_action_http} Resource.
 func NewLogicAppActionHttp(scope constructs.Construct, id *string, config *LogicAppActionHttpConfig) LogicAppActionHttp {
 	_init_.Initialize()
 
@@ -492,7 +516,7 @@ func NewLogicAppActionHttp(scope constructs.Construct, id *string, config *Logic
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_action_http azurerm_logic_app_action_http} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_action_http azurerm_logic_app_action_http} Resource.
 func NewLogicAppActionHttp_Override(l LogicAppActionHttp, scope constructs.Construct, id *string, config *LogicAppActionHttpConfig) {
 	_init_.Initialize()
 
@@ -633,6 +657,17 @@ func (j *jsiiProxy_LogicAppActionHttp)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LogicAppActionHttp)SetQueries(val *map[string]*string) {
+	if err := j.validateSetQueriesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"queries",
 		val,
 	)
 }
@@ -964,6 +999,14 @@ func (l *jsiiProxy_LogicAppActionHttp) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LogicAppActionHttp) ResetQueries() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetQueries",
 		nil, // no parameters
 	)
 }

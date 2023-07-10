@@ -38,6 +38,9 @@ type StorageAccountSharePropertiesSmbOutputReference interface {
 	KerberosTicketEncryptionType() *[]*string
 	SetKerberosTicketEncryptionType(val *[]*string)
 	KerberosTicketEncryptionTypeInput() *[]*string
+	MultichannelEnabled() interface{}
+	SetMultichannelEnabled(val interface{})
+	MultichannelEnabledInput() interface{}
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -76,6 +79,7 @@ type StorageAccountSharePropertiesSmbOutputReference interface {
 	ResetAuthenticationTypes()
 	ResetChannelEncryptionType()
 	ResetKerberosTicketEncryptionType()
+	ResetMultichannelEnabled()
 	ResetVersions()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -197,6 +201,26 @@ func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) KerberosTick
 	_jsii_.Get(
 		j,
 		"kerberosTicketEncryptionTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) MultichannelEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"multichannelEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) MultichannelEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"multichannelEnabledInput",
 		&returns,
 	)
 	return returns
@@ -332,6 +356,17 @@ func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference)SetKerberosTi
 	_jsii_.Set(
 		j,
 		"kerberosTicketEncryptionType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference)SetMultichannelEnabled(val interface{}) {
+	if err := j.validateSetMultichannelEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"multichannelEnabled",
 		val,
 	)
 }
@@ -575,6 +610,14 @@ func (s *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) ResetKerbero
 	_jsii_.InvokeVoid(
 		s,
 		"resetKerberosTicketEncryptionType",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) ResetMultichannelEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMultichannelEnabled",
 		nil, // no parameters
 	)
 }

@@ -53,6 +53,8 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "global", GoGetter: "Global"},
+			_jsii_.MemberProperty{JsiiProperty: "globalInput", GoGetter: "GlobalInput"},
 			_jsii_.MemberProperty{JsiiProperty: "httpListener", GoGetter: "HttpListener"},
 			_jsii_.MemberProperty{JsiiProperty: "httpListenerInput", GoGetter: "HttpListenerInput"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
@@ -82,6 +84,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putFrontendIpConfiguration", GoMethod: "PutFrontendIpConfiguration"},
 			_jsii_.MemberMethod{JsiiMethod: "putFrontendPort", GoMethod: "PutFrontendPort"},
 			_jsii_.MemberMethod{JsiiMethod: "putGatewayIpConfiguration", GoMethod: "PutGatewayIpConfiguration"},
+			_jsii_.MemberMethod{JsiiMethod: "putGlobal", GoMethod: "PutGlobal"},
 			_jsii_.MemberMethod{JsiiMethod: "putHttpListener", GoMethod: "PutHttpListener"},
 			_jsii_.MemberMethod{JsiiMethod: "putIdentity", GoMethod: "PutIdentity"},
 			_jsii_.MemberMethod{JsiiMethod: "putPrivateLinkConfiguration", GoMethod: "PutPrivateLinkConfiguration"},
@@ -110,6 +113,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetFipsEnabled", GoMethod: "ResetFipsEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetFirewallPolicyId", GoMethod: "ResetFirewallPolicyId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetForceFirewallPolicyAssociation", GoMethod: "ResetForceFirewallPolicyAssociation"},
+			_jsii_.MemberMethod{JsiiMethod: "resetGlobal", GoMethod: "ResetGlobal"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIdentity", GoMethod: "ResetIdentity"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
@@ -799,6 +803,46 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"azurerm.applicationGateway.ApplicationGatewayGlobal",
+		reflect.TypeOf((*ApplicationGatewayGlobal)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.applicationGateway.ApplicationGatewayGlobalOutputReference",
+		reflect.TypeOf((*ApplicationGatewayGlobalOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "requestBufferingEnabled", GoGetter: "RequestBufferingEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "requestBufferingEnabledInput", GoGetter: "RequestBufferingEnabledInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "responseBufferingEnabled", GoGetter: "ResponseBufferingEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "responseBufferingEnabledInput", GoGetter: "ResponseBufferingEnabledInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ApplicationGatewayGlobalOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
 		"azurerm.applicationGateway.ApplicationGatewayHttpListener",
 		reflect.TypeOf((*ApplicationGatewayHttpListener)(nil)).Elem(),
 	)
@@ -1233,6 +1277,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "resetBody", GoMethod: "ResetBody"},
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "statusCode", GoGetter: "StatusCode"},
 			_jsii_.MemberProperty{JsiiProperty: "statusCodeInput", GoGetter: "StatusCodeInput"},
@@ -1810,6 +1855,8 @@ func init() {
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
 			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberProperty{JsiiProperty: "components", GoGetter: "Components"},
+			_jsii_.MemberProperty{JsiiProperty: "componentsInput", GoGetter: "ComponentsInput"},
 			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
@@ -1831,6 +1878,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "queryStringInput", GoGetter: "QueryStringInput"},
 			_jsii_.MemberProperty{JsiiProperty: "reroute", GoGetter: "Reroute"},
 			_jsii_.MemberProperty{JsiiProperty: "rerouteInput", GoGetter: "RerouteInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetComponents", GoMethod: "ResetComponents"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPath", GoMethod: "ResetPath"},
 			_jsii_.MemberMethod{JsiiMethod: "resetQueryString", GoMethod: "ResetQueryString"},
 			_jsii_.MemberMethod{JsiiMethod: "resetReroute", GoMethod: "ResetReroute"},

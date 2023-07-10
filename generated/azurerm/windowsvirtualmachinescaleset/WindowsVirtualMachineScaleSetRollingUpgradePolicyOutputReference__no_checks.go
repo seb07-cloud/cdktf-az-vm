@@ -56,6 +56,10 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetCrossZoneUpgradesEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetInternalValueParameters(val *WindowsVirtualMachineScaleSetRollingUpgradePolicy) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 }
 
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetPauseTimeBetweenBatchesParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetPrioritizeUnhealthyInstancesEnabledParameters(val interface{}) error {
 	return nil
 }
 

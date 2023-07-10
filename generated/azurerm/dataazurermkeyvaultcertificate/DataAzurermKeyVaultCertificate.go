@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate}.
 type DataAzurermKeyVaultCertificate interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -58,6 +58,8 @@ type DataAzurermKeyVaultCertificate interface {
 	SetProvider(val cdktf.TerraformProvider)
 	// Experimental.
 	RawOverrides() interface{}
+	ResourceManagerId() *string
+	ResourceManagerVersionlessId() *string
 	SecretId() *string
 	Tags() cdktf.StringMap
 	// Experimental.
@@ -341,6 +343,26 @@ func (j *jsiiProxy_DataAzurermKeyVaultCertificate) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKeyVaultCertificate) ResourceManagerId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceManagerId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKeyVaultCertificate) ResourceManagerVersionlessId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceManagerVersionlessId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKeyVaultCertificate) SecretId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -462,7 +484,7 @@ func (j *jsiiProxy_DataAzurermKeyVaultCertificate) VersionlessSecretId() *string
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate} Data Source.
 func NewDataAzurermKeyVaultCertificate(scope constructs.Construct, id *string, config *DataAzurermKeyVaultCertificateConfig) DataAzurermKeyVaultCertificate {
 	_init_.Initialize()
 
@@ -480,7 +502,7 @@ func NewDataAzurermKeyVaultCertificate(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_certificate azurerm_key_vault_certificate} Data Source.
 func NewDataAzurermKeyVaultCertificate_Override(d DataAzurermKeyVaultCertificate, scope constructs.Construct, id *string, config *DataAzurermKeyVaultCertificateConfig) {
 	_init_.Initialize()
 

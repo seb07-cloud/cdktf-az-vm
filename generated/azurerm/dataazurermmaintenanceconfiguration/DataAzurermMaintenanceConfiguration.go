@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration}.
 type DataAzurermMaintenanceConfiguration interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -35,6 +35,8 @@ type DataAzurermMaintenanceConfiguration interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InGuestUserPatchMode() *string
+	InstallPatches() DataAzurermMaintenanceConfigurationInstallPatchesList
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -198,6 +200,26 @@ func (j *jsiiProxy_DataAzurermMaintenanceConfiguration) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermMaintenanceConfiguration) InGuestUserPatchMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"inGuestUserPatchMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermMaintenanceConfiguration) InstallPatches() DataAzurermMaintenanceConfigurationInstallPatchesList {
+	var returns DataAzurermMaintenanceConfigurationInstallPatchesList
+	_jsii_.Get(
+		j,
+		"installPatches",
 		&returns,
 	)
 	return returns
@@ -394,7 +416,7 @@ func (j *jsiiProxy_DataAzurermMaintenanceConfiguration) Window() DataAzurermMain
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration} Data Source.
 func NewDataAzurermMaintenanceConfiguration(scope constructs.Construct, id *string, config *DataAzurermMaintenanceConfigurationConfig) DataAzurermMaintenanceConfiguration {
 	_init_.Initialize()
 
@@ -412,7 +434,7 @@ func NewDataAzurermMaintenanceConfiguration(scope constructs.Construct, id *stri
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/maintenance_configuration azurerm_maintenance_configuration} Data Source.
 func NewDataAzurermMaintenanceConfiguration_Override(d DataAzurermMaintenanceConfiguration, scope constructs.Construct, id *string, config *DataAzurermMaintenanceConfigurationConfig) {
 	_init_.Initialize()
 

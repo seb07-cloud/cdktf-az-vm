@@ -88,6 +88,10 @@ func (j *jsiiProxy_DataAzurermCognitiveAccount) validateSetResourceGroupNamePara
 	return nil
 }
 
+func (j *jsiiProxy_DataAzurermCognitiveAccount) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
 func validateNewDataAzurermCognitiveAccountParameters(scope constructs.Construct, id *string, config *DataAzurermCognitiveAccountConfig) error {
 	return nil
 }

@@ -80,6 +80,18 @@ func (j *jsiiProxy_SharedImage) validateSetAcceleratedNetworkSupportEnabledParam
 	return nil
 }
 
+func (j *jsiiProxy_SharedImage) validateSetArchitectureParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetConfidentialVmEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetConfidentialVmSupportedParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SharedImage) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -89,6 +101,14 @@ func (j *jsiiProxy_SharedImage) validateSetCountParameters(val interface{}) erro
 }
 
 func (j *jsiiProxy_SharedImage) validateSetDescriptionParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetDiskTypesNotAllowedParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetEndOfLifeDateParameters(val *string) error {
 	return nil
 }
 
@@ -113,6 +133,22 @@ func (j *jsiiProxy_SharedImage) validateSetLifecycleParameters(val *cdktf.Terraf
 }
 
 func (j *jsiiProxy_SharedImage) validateSetLocationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetMaxRecommendedMemoryInGbParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetMaxRecommendedVcpuCountParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetMinRecommendedMemoryInGbParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImage) validateSetMinRecommendedVcpuCountParameters(val *float64) error {
 	return nil
 }
 

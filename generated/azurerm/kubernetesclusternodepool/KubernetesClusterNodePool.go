@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool}.
 type KubernetesClusterNodePool interface {
 	cdktf.TerraformResource
+	CapacityReservationGroupId() *string
+	SetCapacityReservationGroupId(val *string)
+	CapacityReservationGroupIdInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -24,6 +27,9 @@ type KubernetesClusterNodePool interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomCaTrustEnabled() interface{}
+	SetCustomCaTrustEnabled(val interface{})
+	CustomCaTrustEnabledInput() interface{}
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -51,6 +57,9 @@ type KubernetesClusterNodePool interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostGroupId() *string
+	SetHostGroupId(val *string)
+	HostGroupIdInput() *string
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
@@ -74,6 +83,9 @@ type KubernetesClusterNodePool interface {
 	MaxPods() *float64
 	SetMaxPods(val *float64)
 	MaxPodsInput() *float64
+	MessageOfTheDay() *string
+	SetMessageOfTheDay(val *string)
+	MessageOfTheDayInput() *string
 	MinCount() *float64
 	SetMinCount(val *float64)
 	MinCountInput() *float64
@@ -91,6 +103,8 @@ type KubernetesClusterNodePool interface {
 	NodeLabels() *map[string]*string
 	SetNodeLabels(val *map[string]*string)
 	NodeLabelsInput() *map[string]*string
+	NodeNetworkProfile() KubernetesClusterNodePoolNodeNetworkProfileOutputReference
+	NodeNetworkProfileInput() *KubernetesClusterNodePoolNodeNetworkProfile
 	NodePublicIpPrefixId() *string
 	SetNodePublicIpPrefixId(val *string)
 	NodePublicIpPrefixIdInput() *string
@@ -134,6 +148,9 @@ type KubernetesClusterNodePool interface {
 	ScaleDownMode() *string
 	SetScaleDownMode(val *string)
 	ScaleDownModeInput() *string
+	SnapshotId() *string
+	SetSnapshotId(val *string)
+	SnapshotIdInput() *string
 	SpotMaxPrice() *float64
 	SetSpotMaxPrice(val *float64)
 	SpotMaxPriceInput() *float64
@@ -159,6 +176,8 @@ type KubernetesClusterNodePool interface {
 	VnetSubnetId() *string
 	SetVnetSubnetId(val *string)
 	VnetSubnetIdInput() *string
+	WindowsProfile() KubernetesClusterNodePoolWindowsProfileOutputReference
+	WindowsProfileInput() *KubernetesClusterNodePoolWindowsProfile
 	WorkloadRuntime() *string
 	SetWorkloadRuntime(val *string)
 	WorkloadRuntimeInput() *string
@@ -192,23 +211,30 @@ type KubernetesClusterNodePool interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutKubeletConfig(value *KubernetesClusterNodePoolKubeletConfig)
 	PutLinuxOsConfig(value *KubernetesClusterNodePoolLinuxOsConfig)
+	PutNodeNetworkProfile(value *KubernetesClusterNodePoolNodeNetworkProfile)
 	PutTimeouts(value *KubernetesClusterNodePoolTimeouts)
 	PutUpgradeSettings(value *KubernetesClusterNodePoolUpgradeSettings)
+	PutWindowsProfile(value *KubernetesClusterNodePoolWindowsProfile)
+	ResetCapacityReservationGroupId()
+	ResetCustomCaTrustEnabled()
 	ResetEnableAutoScaling()
 	ResetEnableHostEncryption()
 	ResetEnableNodePublicIp()
 	ResetEvictionPolicy()
 	ResetFipsEnabled()
+	ResetHostGroupId()
 	ResetId()
 	ResetKubeletConfig()
 	ResetKubeletDiskType()
 	ResetLinuxOsConfig()
 	ResetMaxCount()
 	ResetMaxPods()
+	ResetMessageOfTheDay()
 	ResetMinCount()
 	ResetMode()
 	ResetNodeCount()
 	ResetNodeLabels()
+	ResetNodeNetworkProfile()
 	ResetNodePublicIpPrefixId()
 	ResetNodeTaints()
 	ResetOrchestratorVersion()
@@ -223,12 +249,14 @@ type KubernetesClusterNodePool interface {
 	ResetPriority()
 	ResetProximityPlacementGroupId()
 	ResetScaleDownMode()
+	ResetSnapshotId()
 	ResetSpotMaxPrice()
 	ResetTags()
 	ResetTimeouts()
 	ResetUltraSsdEnabled()
 	ResetUpgradeSettings()
 	ResetVnetSubnetId()
+	ResetWindowsProfile()
 	ResetWorkloadRuntime()
 	ResetZones()
 	SynthesizeAttributes() *map[string]interface{}
@@ -244,6 +272,26 @@ type KubernetesClusterNodePool interface {
 // The jsii proxy struct for KubernetesClusterNodePool
 type jsiiProxy_KubernetesClusterNodePool struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) CapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) CapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupIdInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KubernetesClusterNodePool) CdktfStack() cdktf.TerraformStack {
@@ -281,6 +329,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) CustomCaTrustEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"customCaTrustEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) CustomCaTrustEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"customCaTrustEnabledInput",
 		&returns,
 	)
 	return returns
@@ -421,6 +489,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) HostGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) HostGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -576,6 +664,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) MaxPodsInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNodePool) MessageOfTheDay() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"messageOfTheDay",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) MessageOfTheDayInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"messageOfTheDayInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNodePool) MinCount() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -681,6 +789,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) NodeLabelsInput() *map[string]*str
 	_jsii_.Get(
 		j,
 		"nodeLabelsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) NodeNetworkProfile() KubernetesClusterNodePoolNodeNetworkProfileOutputReference {
+	var returns KubernetesClusterNodePoolNodeNetworkProfileOutputReference
+	_jsii_.Get(
+		j,
+		"nodeNetworkProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) NodeNetworkProfileInput() *KubernetesClusterNodePoolNodeNetworkProfile {
+	var returns *KubernetesClusterNodePoolNodeNetworkProfile
+	_jsii_.Get(
+		j,
+		"nodeNetworkProfileInput",
 		&returns,
 	)
 	return returns
@@ -936,6 +1064,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) ScaleDownModeInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNodePool) SnapshotId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"snapshotId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) SnapshotIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"snapshotIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNodePool) SpotMaxPrice() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -1106,6 +1254,26 @@ func (j *jsiiProxy_KubernetesClusterNodePool) VnetSubnetIdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesClusterNodePool) WindowsProfile() KubernetesClusterNodePoolWindowsProfileOutputReference {
+	var returns KubernetesClusterNodePoolWindowsProfileOutputReference
+	_jsii_.Get(
+		j,
+		"windowsProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) WindowsProfileInput() *KubernetesClusterNodePoolWindowsProfile {
+	var returns *KubernetesClusterNodePoolWindowsProfile
+	_jsii_.Get(
+		j,
+		"windowsProfileInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesClusterNodePool) WorkloadRuntime() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1147,7 +1315,7 @@ func (j *jsiiProxy_KubernetesClusterNodePool) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool} Resource.
 func NewKubernetesClusterNodePool(scope constructs.Construct, id *string, config *KubernetesClusterNodePoolConfig) KubernetesClusterNodePool {
 	_init_.Initialize()
 
@@ -1165,7 +1333,7 @@ func NewKubernetesClusterNodePool(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster_node_pool azurerm_kubernetes_cluster_node_pool} Resource.
 func NewKubernetesClusterNodePool_Override(k KubernetesClusterNodePool, scope constructs.Construct, id *string, config *KubernetesClusterNodePoolConfig) {
 	_init_.Initialize()
 
@@ -1173,6 +1341,17 @@ func NewKubernetesClusterNodePool_Override(k KubernetesClusterNodePool, scope co
 		"azurerm.kubernetesClusterNodePool.KubernetesClusterNodePool",
 		[]interface{}{scope, id, config},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool)SetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"capacityReservationGroupId",
+		val,
 	)
 }
 
@@ -1194,6 +1373,17 @@ func (j *jsiiProxy_KubernetesClusterNodePool)SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool)SetCustomCaTrustEnabled(val interface{}) {
+	if err := j.validateSetCustomCaTrustEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"customCaTrustEnabled",
 		val,
 	)
 }
@@ -1269,6 +1459,17 @@ func (j *jsiiProxy_KubernetesClusterNodePool)SetForEach(val cdktf.ITerraformIter
 	)
 }
 
+func (j *jsiiProxy_KubernetesClusterNodePool)SetHostGroupId(val *string) {
+	if err := j.validateSetHostGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hostGroupId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesClusterNodePool)SetId(val *string) {
 	if err := j.validateSetIdParameters(val); err != nil {
 		panic(err)
@@ -1331,6 +1532,17 @@ func (j *jsiiProxy_KubernetesClusterNodePool)SetMaxPods(val *float64) {
 	_jsii_.Set(
 		j,
 		"maxPods",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool)SetMessageOfTheDay(val *string) {
+	if err := j.validateSetMessageOfTheDayParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"messageOfTheDay",
 		val,
 	)
 }
@@ -1526,6 +1738,17 @@ func (j *jsiiProxy_KubernetesClusterNodePool)SetScaleDownMode(val *string) {
 	_jsii_.Set(
 		j,
 		"scaleDownMode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool)SetSnapshotId(val *string) {
+	if err := j.validateSetSnapshotIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"snapshotId",
 		val,
 	)
 }
@@ -1895,6 +2118,17 @@ func (k *jsiiProxy_KubernetesClusterNodePool) PutLinuxOsConfig(value *Kubernetes
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNodePool) PutNodeNetworkProfile(value *KubernetesClusterNodePoolNodeNetworkProfile) {
+	if err := k.validatePutNodeNetworkProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putNodeNetworkProfile",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNodePool) PutTimeouts(value *KubernetesClusterNodePoolTimeouts) {
 	if err := k.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1914,6 +2148,33 @@ func (k *jsiiProxy_KubernetesClusterNodePool) PutUpgradeSettings(value *Kubernet
 		k,
 		"putUpgradeSettings",
 		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) PutWindowsProfile(value *KubernetesClusterNodePoolWindowsProfile) {
+	if err := k.validatePutWindowsProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putWindowsProfile",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetCapacityReservationGroupId",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetCustomCaTrustEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetCustomCaTrustEnabled",
+		nil, // no parameters
 	)
 }
 
@@ -1953,6 +2214,14 @@ func (k *jsiiProxy_KubernetesClusterNodePool) ResetFipsEnabled() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetFipsEnabled",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetHostGroupId() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetHostGroupId",
 		nil, // no parameters
 	)
 }
@@ -2005,6 +2274,14 @@ func (k *jsiiProxy_KubernetesClusterNodePool) ResetMaxPods() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetMessageOfTheDay() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetMessageOfTheDay",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNodePool) ResetMinCount() {
 	_jsii_.InvokeVoid(
 		k,
@@ -2033,6 +2310,14 @@ func (k *jsiiProxy_KubernetesClusterNodePool) ResetNodeLabels() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetNodeLabels",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetNodeNetworkProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetNodeNetworkProfile",
 		nil, // no parameters
 	)
 }
@@ -2133,6 +2418,14 @@ func (k *jsiiProxy_KubernetesClusterNodePool) ResetScaleDownMode() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetSnapshotId() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetSnapshotId",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterNodePool) ResetSpotMaxPrice() {
 	_jsii_.InvokeVoid(
 		k,
@@ -2177,6 +2470,14 @@ func (k *jsiiProxy_KubernetesClusterNodePool) ResetVnetSubnetId() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetVnetSubnetId",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) ResetWindowsProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetWindowsProfile",
 		nil, // no parameters
 	)
 }

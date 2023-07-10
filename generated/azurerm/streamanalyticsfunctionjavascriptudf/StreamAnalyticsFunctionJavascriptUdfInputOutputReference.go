@@ -20,6 +20,9 @@ type StreamAnalyticsFunctionJavascriptUdfInputOutputReference interface {
 	ComplexObjectIsFromSet() *bool
 	// Experimental.
 	SetComplexObjectIsFromSet(val *bool)
+	ConfigurationParameter() interface{}
+	SetConfigurationParameter(val interface{})
+	ConfigurationParameterInput() interface{}
 	// The creation stack of this resolvable which will be appended to errors thrown during resolution.
 	//
 	// If this returns an empty array the stack will not be attached.
@@ -64,6 +67,7 @@ type StreamAnalyticsFunctionJavascriptUdfInputOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetConfigurationParameter()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -94,6 +98,26 @@ func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) Com
 	_jsii_.Get(
 		j,
 		"complexObjectIsFromSet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) ConfigurationParameter() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"configurationParameter",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) ConfigurationParameterInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"configurationParameterInput",
 		&returns,
 	)
 	return returns
@@ -215,6 +239,17 @@ func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference)SetC
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference)SetConfigurationParameter(val interface{}) {
+	if err := j.validateSetConfigurationParameterParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"configurationParameter",
 		val,
 	)
 }
@@ -447,6 +482,14 @@ func (s *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) Int
 	)
 
 	return returns
+}
+
+func (s *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) ResetConfigurationParameter() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetConfigurationParameter",
+		nil, // no parameters
+	)
 }
 
 func (s *jsiiProxy_StreamAnalyticsFunctionJavascriptUdfInputOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

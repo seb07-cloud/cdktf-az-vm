@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/container_group azurerm_container_group}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/container_group azurerm_container_group}.
 type ContainerGroup interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -37,6 +37,9 @@ type ContainerGroup interface {
 	DnsNameLabel() *string
 	SetDnsNameLabel(val *string)
 	DnsNameLabelInput() *string
+	DnsNameLabelReusePolicy() *string
+	SetDnsNameLabelReusePolicy(val *string)
+	DnsNameLabelReusePolicyInput() *string
 	ExposedPort() ContainerGroupExposedPortList
 	ExposedPortInput() interface{}
 	// Experimental.
@@ -55,10 +58,15 @@ type ContainerGroup interface {
 	IdInput() *string
 	ImageRegistryCredential() ContainerGroupImageRegistryCredentialList
 	ImageRegistryCredentialInput() interface{}
+	InitContainer() ContainerGroupInitContainerList
+	InitContainerInput() interface{}
 	IpAddress() *string
 	IpAddressType() *string
 	SetIpAddressType(val *string)
 	IpAddressTypeInput() *string
+	KeyVaultKeyId() *string
+	SetKeyVaultKeyId(val *string)
+	KeyVaultKeyIdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -93,6 +101,9 @@ type ContainerGroup interface {
 	RestartPolicy() *string
 	SetRestartPolicy(val *string)
 	RestartPolicyInput() *string
+	SubnetIds() *[]*string
+	SetSubnetIds(val *[]*string)
+	SubnetIdsInput() *[]*string
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -104,6 +115,9 @@ type ContainerGroup interface {
 	TerraformResourceType() *string
 	Timeouts() ContainerGroupTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Zones() *[]*string
+	SetZones(val *[]*string)
+	ZonesInput() *[]*string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -135,22 +149,28 @@ type ContainerGroup interface {
 	PutExposedPort(value interface{})
 	PutIdentity(value *ContainerGroupIdentity)
 	PutImageRegistryCredential(value interface{})
+	PutInitContainer(value interface{})
 	PutTimeouts(value *ContainerGroupTimeouts)
 	ResetDiagnostics()
 	ResetDnsConfig()
 	ResetDnsNameLabel()
+	ResetDnsNameLabelReusePolicy()
 	ResetExposedPort()
 	ResetId()
 	ResetIdentity()
 	ResetImageRegistryCredential()
+	ResetInitContainer()
 	ResetIpAddressType()
+	ResetKeyVaultKeyId()
 	ResetNetworkProfileId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetRestartPolicy()
+	ResetSubnetIds()
 	ResetTags()
 	ResetTimeouts()
+	ResetZones()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -296,6 +316,26 @@ func (j *jsiiProxy_ContainerGroup) DnsNameLabelInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ContainerGroup) DnsNameLabelReusePolicy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsNameLabelReusePolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) DnsNameLabelReusePolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dnsNameLabelReusePolicyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ContainerGroup) ExposedPort() ContainerGroupExposedPortList {
 	var returns ContainerGroupExposedPortList
 	_jsii_.Get(
@@ -416,6 +456,26 @@ func (j *jsiiProxy_ContainerGroup) ImageRegistryCredentialInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ContainerGroup) InitContainer() ContainerGroupInitContainerList {
+	var returns ContainerGroupInitContainerList
+	_jsii_.Get(
+		j,
+		"initContainer",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) InitContainerInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"initContainerInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ContainerGroup) IpAddress() *string {
 	var returns *string
 	_jsii_.Get(
@@ -441,6 +501,26 @@ func (j *jsiiProxy_ContainerGroup) IpAddressTypeInput() *string {
 	_jsii_.Get(
 		j,
 		"ipAddressTypeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) KeyVaultKeyId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultKeyId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) KeyVaultKeyIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultKeyIdInput",
 		&returns,
 	)
 	return returns
@@ -616,6 +696,26 @@ func (j *jsiiProxy_ContainerGroup) RestartPolicyInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ContainerGroup) SubnetIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroup) SubnetIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIdsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ContainerGroup) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -686,8 +786,28 @@ func (j *jsiiProxy_ContainerGroup) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ContainerGroup) Zones() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"zones",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/container_group azurerm_container_group} Resource.
+func (j *jsiiProxy_ContainerGroup) ZonesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"zonesInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/container_group azurerm_container_group} Resource.
 func NewContainerGroup(scope constructs.Construct, id *string, config *ContainerGroupConfig) ContainerGroup {
 	_init_.Initialize()
 
@@ -705,7 +825,7 @@ func NewContainerGroup(scope constructs.Construct, id *string, config *Container
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/container_group azurerm_container_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/container_group azurerm_container_group} Resource.
 func NewContainerGroup_Override(c ContainerGroup, scope constructs.Construct, id *string, config *ContainerGroupConfig) {
 	_init_.Initialize()
 
@@ -757,6 +877,17 @@ func (j *jsiiProxy_ContainerGroup)SetDnsNameLabel(val *string) {
 	)
 }
 
+func (j *jsiiProxy_ContainerGroup)SetDnsNameLabelReusePolicy(val *string) {
+	if err := j.validateSetDnsNameLabelReusePolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dnsNameLabelReusePolicy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ContainerGroup)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
@@ -783,6 +914,17 @@ func (j *jsiiProxy_ContainerGroup)SetIpAddressType(val *string) {
 	_jsii_.Set(
 		j,
 		"ipAddressType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ContainerGroup)SetKeyVaultKeyId(val *string) {
+	if err := j.validateSetKeyVaultKeyIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"keyVaultKeyId",
 		val,
 	)
 }
@@ -883,6 +1025,17 @@ func (j *jsiiProxy_ContainerGroup)SetRestartPolicy(val *string) {
 	)
 }
 
+func (j *jsiiProxy_ContainerGroup)SetSubnetIds(val *[]*string) {
+	if err := j.validateSetSubnetIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subnetIds",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ContainerGroup)SetTags(val *map[string]*string) {
 	if err := j.validateSetTagsParameters(val); err != nil {
 		panic(err)
@@ -890,6 +1043,17 @@ func (j *jsiiProxy_ContainerGroup)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ContainerGroup)SetZones(val *[]*string) {
+	if err := j.validateSetZonesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zones",
 		val,
 	)
 }
@@ -1226,6 +1390,17 @@ func (c *jsiiProxy_ContainerGroup) PutImageRegistryCredential(value interface{})
 	)
 }
 
+func (c *jsiiProxy_ContainerGroup) PutInitContainer(value interface{}) {
+	if err := c.validatePutInitContainerParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		c,
+		"putInitContainer",
+		[]interface{}{value},
+	)
+}
+
 func (c *jsiiProxy_ContainerGroup) PutTimeouts(value *ContainerGroupTimeouts) {
 	if err := c.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1257,6 +1432,14 @@ func (c *jsiiProxy_ContainerGroup) ResetDnsNameLabel() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetDnsNameLabel",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ContainerGroup) ResetDnsNameLabelReusePolicy() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetDnsNameLabelReusePolicy",
 		nil, // no parameters
 	)
 }
@@ -1293,10 +1476,26 @@ func (c *jsiiProxy_ContainerGroup) ResetImageRegistryCredential() {
 	)
 }
 
+func (c *jsiiProxy_ContainerGroup) ResetInitContainer() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetInitContainer",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_ContainerGroup) ResetIpAddressType() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetIpAddressType",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ContainerGroup) ResetKeyVaultKeyId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetKeyVaultKeyId",
 		nil, // no parameters
 	)
 }
@@ -1325,6 +1524,14 @@ func (c *jsiiProxy_ContainerGroup) ResetRestartPolicy() {
 	)
 }
 
+func (c *jsiiProxy_ContainerGroup) ResetSubnetIds() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetSubnetIds",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_ContainerGroup) ResetTags() {
 	_jsii_.InvokeVoid(
 		c,
@@ -1337,6 +1544,14 @@ func (c *jsiiProxy_ContainerGroup) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ContainerGroup) ResetZones() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetZones",
 		nil, // no parameters
 	)
 }

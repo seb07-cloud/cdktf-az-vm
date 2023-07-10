@@ -124,6 +124,10 @@ func (j *jsiiProxy_DataFactoryDataFlow) validateSetScriptParameters(val *string)
 	return nil
 }
 
+func (j *jsiiProxy_DataFactoryDataFlow) validateSetScriptLinesParameters(val *[]*string) error {
+	return nil
+}
+
 func validateNewDataFactoryDataFlowParameters(scope constructs.Construct, id *string, config *DataFactoryDataFlowConfig) error {
 	return nil
 }

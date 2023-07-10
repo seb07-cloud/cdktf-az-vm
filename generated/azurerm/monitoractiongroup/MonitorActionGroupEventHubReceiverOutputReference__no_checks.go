@@ -60,11 +60,23 @@ func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSe
 	return nil
 }
 
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSetEventHubNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSetEventHubNamespaceParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSetNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_MonitorActionGroupEventHubReceiverOutputReference) validateSetSubscriptionIdParameters(val *string) error {
 	return nil
 }
 

@@ -34,6 +34,8 @@ type VpnGatewayConnectionVpnLinkOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	CustomBgpAddress() VpnGatewayConnectionVpnLinkCustomBgpAddressList
+	CustomBgpAddressInput() interface{}
 	EgressNatRuleIds() *[]*string
 	SetEgressNatRuleIds(val *[]*string)
 	EgressNatRuleIdsInput() *[]*string
@@ -102,10 +104,12 @@ type VpnGatewayConnectionVpnLinkOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutCustomBgpAddress(value interface{})
 	PutIpsecPolicy(value interface{})
 	ResetBandwidthMbps()
 	ResetBgpEnabled()
 	ResetConnectionMode()
+	ResetCustomBgpAddress()
 	ResetEgressNatRuleIds()
 	ResetIngressNatRuleIds()
 	ResetIpsecPolicy()
@@ -215,6 +219,26 @@ func (j *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) CreationStack() *
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) CustomBgpAddress() VpnGatewayConnectionVpnLinkCustomBgpAddressList {
+	var returns VpnGatewayConnectionVpnLinkCustomBgpAddressList
+	_jsii_.Get(
+		j,
+		"customBgpAddress",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) CustomBgpAddressInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"customBgpAddressInput",
 		&returns,
 	)
 	return returns
@@ -892,6 +916,17 @@ func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) InterpolationForA
 	return returns
 }
 
+func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) PutCustomBgpAddress(value interface{}) {
+	if err := v.validatePutCustomBgpAddressParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"putCustomBgpAddress",
+		[]interface{}{value},
+	)
+}
+
 func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) PutIpsecPolicy(value interface{}) {
 	if err := v.validatePutIpsecPolicyParameters(value); err != nil {
 		panic(err)
@@ -923,6 +958,14 @@ func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) ResetConnectionMo
 	_jsii_.InvokeVoid(
 		v,
 		"resetConnectionMode",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpnGatewayConnectionVpnLinkOutputReference) ResetCustomBgpAddress() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCustomBgpAddress",
 		nil, // no parameters
 	)
 }

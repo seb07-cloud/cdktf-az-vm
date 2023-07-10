@@ -32,6 +32,9 @@ type HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference inter
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	Parameters() *string
+	SetParameters(val *string)
+	ParametersInput() *string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -67,6 +70,7 @@ type HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference inter
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetParameters()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -147,6 +151,26 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputR
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) Parameters() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parameters",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) ParametersInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"parametersInput",
 		&returns,
 	)
 	return returns
@@ -260,6 +284,17 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputR
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference)SetParameters(val *string) {
+	if err := j.validateSetParametersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"parameters",
 		val,
 	)
 }
@@ -481,6 +516,14 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputR
 	)
 
 	return returns
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) ResetParameters() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetParameters",
+		nil, // no parameters
+	)
 }
 
 func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

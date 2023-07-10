@@ -56,6 +56,10 @@ func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutKeyVault
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutServicePrincipalLinkedKeyVaultKeyParameters(value *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey) error {
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutTimeoutsParameters(value *DataFactoryLinkedServiceAzureBlobStorageTimeouts) error {
 	return nil
 }
@@ -85,6 +89,10 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnecti
 }
 
 func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnectionStringParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnectionStringInsecureParameters(val *string) error {
 	return nil
 }
 
@@ -137,6 +145,10 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetServiceP
 }
 
 func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetServicePrincipalKeyParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetStorageKindParameters(val *string) error {
 	return nil
 }
 

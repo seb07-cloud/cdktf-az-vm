@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine}.
 type WindowsVirtualMachine interface {
 	cdktf.TerraformResource
 	AdditionalCapabilities() WindowsVirtualMachineAdditionalCapabilitiesOutputReference
@@ -30,6 +30,9 @@ type WindowsVirtualMachine interface {
 	AvailabilitySetIdInput() *string
 	BootDiagnostics() WindowsVirtualMachineBootDiagnosticsOutputReference
 	BootDiagnosticsInput() *WindowsVirtualMachineBootDiagnostics
+	CapacityReservationGroupId() *string
+	SetCapacityReservationGroupId(val *string)
+	CapacityReservationGroupIdInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ComputerName() *string
@@ -81,6 +84,8 @@ type WindowsVirtualMachine interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	GalleryApplication() WindowsVirtualMachineGalleryApplicationList
+	GalleryApplicationInput() interface{}
 	HotpatchingEnabled() interface{}
 	SetHotpatchingEnabled(val interface{})
 	HotpatchingEnabledInput() interface{}
@@ -112,6 +117,9 @@ type WindowsVirtualMachine interface {
 	Node() constructs.Node
 	OsDisk() WindowsVirtualMachineOsDiskOutputReference
 	OsDiskInput() *WindowsVirtualMachineOsDisk
+	PatchAssessmentMode() *string
+	SetPatchAssessmentMode(val *string)
+	PatchAssessmentModeInput() *string
 	PatchMode() *string
 	SetPatchMode(val *string)
 	PatchModeInput() *string
@@ -218,6 +226,7 @@ type WindowsVirtualMachine interface {
 	PutAdditionalCapabilities(value *WindowsVirtualMachineAdditionalCapabilities)
 	PutAdditionalUnattendContent(value interface{})
 	PutBootDiagnostics(value *WindowsVirtualMachineBootDiagnostics)
+	PutGalleryApplication(value interface{})
 	PutIdentity(value *WindowsVirtualMachineIdentity)
 	PutOsDisk(value *WindowsVirtualMachineOsDisk)
 	PutPlan(value *WindowsVirtualMachinePlan)
@@ -231,6 +240,7 @@ type WindowsVirtualMachine interface {
 	ResetAllowExtensionOperations()
 	ResetAvailabilitySetId()
 	ResetBootDiagnostics()
+	ResetCapacityReservationGroupId()
 	ResetComputerName()
 	ResetCustomData()
 	ResetDedicatedHostGroupId()
@@ -240,6 +250,7 @@ type WindowsVirtualMachine interface {
 	ResetEncryptionAtHostEnabled()
 	ResetEvictionPolicy()
 	ResetExtensionsTimeBudget()
+	ResetGalleryApplication()
 	ResetHotpatchingEnabled()
 	ResetId()
 	ResetIdentity()
@@ -248,6 +259,7 @@ type WindowsVirtualMachine interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPatchAssessmentMode()
 	ResetPatchMode()
 	ResetPlan()
 	ResetPlatformFaultDomain()
@@ -417,6 +429,26 @@ func (j *jsiiProxy_WindowsVirtualMachine) BootDiagnosticsInput() *WindowsVirtual
 	_jsii_.Get(
 		j,
 		"bootDiagnosticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) CapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) CapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -682,6 +714,26 @@ func (j *jsiiProxy_WindowsVirtualMachine) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsVirtualMachine) GalleryApplication() WindowsVirtualMachineGalleryApplicationList {
+	var returns WindowsVirtualMachineGalleryApplicationList
+	_jsii_.Get(
+		j,
+		"galleryApplication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) GalleryApplicationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"galleryApplicationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsVirtualMachine) HotpatchingEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -877,6 +929,26 @@ func (j *jsiiProxy_WindowsVirtualMachine) OsDiskInput() *WindowsVirtualMachineOs
 	_jsii_.Get(
 		j,
 		"osDiskInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) PatchAssessmentMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) PatchAssessmentModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentModeInput",
 		&returns,
 	)
 	return returns
@@ -1413,7 +1485,7 @@ func (j *jsiiProxy_WindowsVirtualMachine) ZoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine} Resource.
 func NewWindowsVirtualMachine(scope constructs.Construct, id *string, config *WindowsVirtualMachineConfig) WindowsVirtualMachine {
 	_init_.Initialize()
 
@@ -1431,7 +1503,7 @@ func NewWindowsVirtualMachine(scope constructs.Construct, id *string, config *Wi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_virtual_machine azurerm_windows_virtual_machine} Resource.
 func NewWindowsVirtualMachine_Override(w WindowsVirtualMachine, scope constructs.Construct, id *string, config *WindowsVirtualMachineConfig) {
 	_init_.Initialize()
 
@@ -1482,6 +1554,17 @@ func (j *jsiiProxy_WindowsVirtualMachine)SetAvailabilitySetId(val *string) {
 	_jsii_.Set(
 		j,
 		"availabilitySetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine)SetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"capacityReservationGroupId",
 		val,
 	)
 }
@@ -1707,6 +1790,17 @@ func (j *jsiiProxy_WindowsVirtualMachine)SetNetworkInterfaceIds(val *[]*string) 
 	_jsii_.Set(
 		j,
 		"networkInterfaceIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine)SetPatchAssessmentMode(val *string) {
+	if err := j.validateSetPatchAssessmentModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"patchAssessmentMode",
 		val,
 	)
 }
@@ -2194,6 +2288,17 @@ func (w *jsiiProxy_WindowsVirtualMachine) PutBootDiagnostics(value *WindowsVirtu
 	)
 }
 
+func (w *jsiiProxy_WindowsVirtualMachine) PutGalleryApplication(value interface{}) {
+	if err := w.validatePutGalleryApplicationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putGalleryApplication",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsVirtualMachine) PutIdentity(value *WindowsVirtualMachineIdentity) {
 	if err := w.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -2322,6 +2427,14 @@ func (w *jsiiProxy_WindowsVirtualMachine) ResetBootDiagnostics() {
 	)
 }
 
+func (w *jsiiProxy_WindowsVirtualMachine) ResetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetCapacityReservationGroupId",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsVirtualMachine) ResetComputerName() {
 	_jsii_.InvokeVoid(
 		w,
@@ -2394,6 +2507,14 @@ func (w *jsiiProxy_WindowsVirtualMachine) ResetExtensionsTimeBudget() {
 	)
 }
 
+func (w *jsiiProxy_WindowsVirtualMachine) ResetGalleryApplication() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetGalleryApplication",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsVirtualMachine) ResetHotpatchingEnabled() {
 	_jsii_.InvokeVoid(
 		w,
@@ -2438,6 +2559,14 @@ func (w *jsiiProxy_WindowsVirtualMachine) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsVirtualMachine) ResetPatchAssessmentMode() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPatchAssessmentMode",
 		nil, // no parameters
 	)
 }

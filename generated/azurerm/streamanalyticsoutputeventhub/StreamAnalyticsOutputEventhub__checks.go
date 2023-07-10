@@ -157,6 +157,14 @@ func validateStreamAnalyticsOutputEventhub_IsTerraformResourceParameters(x inter
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputEventhub) validateSetAuthenticationModeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputEventhub) validateSetConnectionParameters(val interface{}) error {
 	switch val.(type) {
 	case *cdktf.SSHProvisionerConnection:

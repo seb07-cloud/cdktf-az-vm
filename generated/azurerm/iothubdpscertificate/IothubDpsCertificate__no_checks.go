@@ -88,6 +88,10 @@ func (j *jsiiProxy_IothubDpsCertificate) validateSetIotDpsNameParameters(val *st
 	return nil
 }
 
+func (j *jsiiProxy_IothubDpsCertificate) validateSetIsVerifiedParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_IothubDpsCertificate) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
 	return nil
 }

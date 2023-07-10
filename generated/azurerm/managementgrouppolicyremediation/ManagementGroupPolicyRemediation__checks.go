@@ -236,6 +236,14 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetCountParameters(
 	return nil
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetFailurePercentageParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -276,6 +284,14 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetNameParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetParallelDeploymentsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetPolicyAssignmentIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -285,6 +301,14 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetPolicyAssignment
 }
 
 func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetPolicyDefinitionIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetPolicyDefinitionReferenceIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -333,6 +357,14 @@ func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetProvisionersPara
 				return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *cdktf.FileProvisioner, *cdktf.LocalExecProvisioner, *cdktf.RemoteExecProvisioner; received %#v (a %T)", idx_97dfc6, v, v)
 			}
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ManagementGroupPolicyRemediation) validateSetResourceCountParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil

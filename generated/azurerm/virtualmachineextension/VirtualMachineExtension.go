@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension}.
 type VirtualMachineExtension interface {
 	cdktf.TerraformResource
 	AutomaticUpgradeEnabled() interface{}
@@ -34,6 +34,9 @@ type VirtualMachineExtension interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	FailureSuppressionEnabled() interface{}
+	SetFailureSuppressionEnabled(val interface{})
+	FailureSuppressionEnabledInput() interface{}
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -56,6 +59,8 @@ type VirtualMachineExtension interface {
 	Node() constructs.Node
 	ProtectedSettings() *string
 	SetProtectedSettings(val *string)
+	ProtectedSettingsFromKeyVault() VirtualMachineExtensionProtectedSettingsFromKeyVaultOutputReference
+	ProtectedSettingsFromKeyVaultInput() *VirtualMachineExtensionProtectedSettingsFromKeyVault
 	ProtectedSettingsInput() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
@@ -118,14 +123,17 @@ type VirtualMachineExtension interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutProtectedSettingsFromKeyVault(value *VirtualMachineExtensionProtectedSettingsFromKeyVault)
 	PutTimeouts(value *VirtualMachineExtensionTimeouts)
 	ResetAutomaticUpgradeEnabled()
 	ResetAutoUpgradeMinorVersion()
+	ResetFailureSuppressionEnabled()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetProtectedSettings()
+	ResetProtectedSettingsFromKeyVault()
 	ResetSettings()
 	ResetTags()
 	ResetTimeouts()
@@ -234,6 +242,26 @@ func (j *jsiiProxy_VirtualMachineExtension) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualMachineExtension) FailureSuppressionEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"failureSuppressionEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualMachineExtension) FailureSuppressionEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"failureSuppressionEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VirtualMachineExtension) ForEach() cdktf.ITerraformIterator {
 	var returns cdktf.ITerraformIterator
 	_jsii_.Get(
@@ -329,6 +357,26 @@ func (j *jsiiProxy_VirtualMachineExtension) ProtectedSettings() *string {
 	_jsii_.Get(
 		j,
 		"protectedSettings",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualMachineExtension) ProtectedSettingsFromKeyVault() VirtualMachineExtensionProtectedSettingsFromKeyVaultOutputReference {
+	var returns VirtualMachineExtensionProtectedSettingsFromKeyVaultOutputReference
+	_jsii_.Get(
+		j,
+		"protectedSettingsFromKeyVault",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualMachineExtension) ProtectedSettingsFromKeyVaultInput() *VirtualMachineExtensionProtectedSettingsFromKeyVault {
+	var returns *VirtualMachineExtensionProtectedSettingsFromKeyVault
+	_jsii_.Get(
+		j,
+		"protectedSettingsFromKeyVaultInput",
 		&returns,
 	)
 	return returns
@@ -545,7 +593,7 @@ func (j *jsiiProxy_VirtualMachineExtension) VirtualMachineIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension} Resource.
 func NewVirtualMachineExtension(scope constructs.Construct, id *string, config *VirtualMachineExtensionConfig) VirtualMachineExtension {
 	_init_.Initialize()
 
@@ -563,7 +611,7 @@ func NewVirtualMachineExtension(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_machine_extension azurerm_virtual_machine_extension} Resource.
 func NewVirtualMachineExtension_Override(v VirtualMachineExtension, scope constructs.Construct, id *string, config *VirtualMachineExtensionConfig) {
 	_init_.Initialize()
 
@@ -622,6 +670,17 @@ func (j *jsiiProxy_VirtualMachineExtension)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualMachineExtension)SetFailureSuppressionEnabled(val interface{}) {
+	if err := j.validateSetFailureSuppressionEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failureSuppressionEnabled",
 		val,
 	)
 }
@@ -1029,6 +1088,17 @@ func (v *jsiiProxy_VirtualMachineExtension) OverrideLogicalId(newLogicalId *stri
 	)
 }
 
+func (v *jsiiProxy_VirtualMachineExtension) PutProtectedSettingsFromKeyVault(value *VirtualMachineExtensionProtectedSettingsFromKeyVault) {
+	if err := v.validatePutProtectedSettingsFromKeyVaultParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"putProtectedSettingsFromKeyVault",
+		[]interface{}{value},
+	)
+}
+
 func (v *jsiiProxy_VirtualMachineExtension) PutTimeouts(value *VirtualMachineExtensionTimeouts) {
 	if err := v.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1056,6 +1126,14 @@ func (v *jsiiProxy_VirtualMachineExtension) ResetAutoUpgradeMinorVersion() {
 	)
 }
 
+func (v *jsiiProxy_VirtualMachineExtension) ResetFailureSuppressionEnabled() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetFailureSuppressionEnabled",
+		nil, // no parameters
+	)
+}
+
 func (v *jsiiProxy_VirtualMachineExtension) ResetId() {
 	_jsii_.InvokeVoid(
 		v,
@@ -1076,6 +1154,14 @@ func (v *jsiiProxy_VirtualMachineExtension) ResetProtectedSettings() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetProtectedSettings",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualMachineExtension) ResetProtectedSettingsFromKeyVault() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetProtectedSettingsFromKeyVault",
 		nil, // no parameters
 	)
 }

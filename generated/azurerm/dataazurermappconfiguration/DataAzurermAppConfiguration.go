@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/app_configuration azurerm_app_configuration}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/app_configuration azurerm_app_configuration}.
 type DataAzurermAppConfiguration interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -24,6 +24,7 @@ type DataAzurermAppConfiguration interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	Encryption() DataAzurermAppConfigurationEncryptionList
 	Endpoint() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
@@ -35,11 +36,13 @@ type DataAzurermAppConfiguration interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DataAzurermAppConfigurationIdentityList
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthEnabled() cdktf.IResolvable
 	Location() *string
 	Name() *string
 	SetName(val *string)
@@ -52,6 +55,9 @@ type DataAzurermAppConfiguration interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	PublicNetworkAccess() *string
+	PublicNetworkAccessEnabled() cdktf.IResolvable
+	PurgeProtectionEnabled() cdktf.IResolvable
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -60,6 +66,7 @@ type DataAzurermAppConfiguration interface {
 	SecondaryReadKey() DataAzurermAppConfigurationSecondaryReadKeyList
 	SecondaryWriteKey() DataAzurermAppConfigurationSecondaryWriteKeyList
 	Sku() *string
+	SoftDeleteRetentionDays() *float64
 	Tags() cdktf.StringMap
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -155,6 +162,16 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermAppConfiguration) Encryption() DataAzurermAppConfigurationEncryptionList {
+	var returns DataAzurermAppConfigurationEncryptionList
+	_jsii_.Get(
+		j,
+		"encryption",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermAppConfiguration) Endpoint() *string {
 	var returns *string
 	_jsii_.Get(
@@ -205,6 +222,16 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) Id() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermAppConfiguration) Identity() DataAzurermAppConfigurationIdentityList {
+	var returns DataAzurermAppConfigurationIdentityList
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermAppConfiguration) IdInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -220,6 +247,16 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) Lifecycle() *cdktf.TerraformReso
 	_jsii_.Get(
 		j,
 		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAppConfiguration) LocalAuthEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"localAuthEnabled",
 		&returns,
 	)
 	return returns
@@ -295,6 +332,36 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) Provider() cdktf.TerraformProvid
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermAppConfiguration) PublicNetworkAccess() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicNetworkAccess",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAppConfiguration) PublicNetworkAccessEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAppConfiguration) PurgeProtectionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"purgeProtectionEnabled",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermAppConfiguration) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -350,6 +417,16 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) Sku() *string {
 	_jsii_.Get(
 		j,
 		"sku",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAppConfiguration) SoftDeleteRetentionDays() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"softDeleteRetentionDays",
 		&returns,
 	)
 	return returns
@@ -416,7 +493,7 @@ func (j *jsiiProxy_DataAzurermAppConfiguration) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/app_configuration azurerm_app_configuration} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/app_configuration azurerm_app_configuration} Data Source.
 func NewDataAzurermAppConfiguration(scope constructs.Construct, id *string, config *DataAzurermAppConfigurationConfig) DataAzurermAppConfiguration {
 	_init_.Initialize()
 
@@ -434,7 +511,7 @@ func NewDataAzurermAppConfiguration(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/app_configuration azurerm_app_configuration} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/app_configuration azurerm_app_configuration} Data Source.
 func NewDataAzurermAppConfiguration_Override(d DataAzurermAppConfiguration, scope constructs.Construct, id *string, config *DataAzurermAppConfigurationConfig) {
 	_init_.Initialize()
 

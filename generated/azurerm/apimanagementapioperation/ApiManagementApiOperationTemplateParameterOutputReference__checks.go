@@ -90,6 +90,37 @@ func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) va
 	return nil
 }
 
+func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validatePutExampleParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*ApiManagementApiOperationTemplateParameterExample:
+		value := value.(*[]*ApiManagementApiOperationTemplateParameterExample)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*ApiManagementApiOperationTemplateParameterExample:
+		value_ := value.([]*ApiManagementApiOperationTemplateParameterExample)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*ApiManagementApiOperationTemplateParameterExample; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	if _context == nil {
 		return fmt.Errorf("parameter _context is required, but nil was provided")
@@ -231,6 +262,14 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) va
 	return nil
 }
 
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validateSetSchemaIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -248,6 +287,14 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) va
 }
 
 func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validateSetTypeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) validateSetTypeNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

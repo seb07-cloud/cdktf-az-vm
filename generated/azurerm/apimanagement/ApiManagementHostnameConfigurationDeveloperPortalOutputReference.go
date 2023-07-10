@@ -16,6 +16,8 @@ type ApiManagementHostnameConfigurationDeveloperPortalOutputReference interface 
 	CertificatePassword() *string
 	SetCertificatePassword(val *string)
 	CertificatePasswordInput() *string
+	CertificateSource() *string
+	CertificateStatus() *string
 	// the index of the complex object in a list.
 	// Experimental.
 	ComplexObjectIndex() interface{}
@@ -137,6 +139,26 @@ func (j *jsiiProxy_ApiManagementHostnameConfigurationDeveloperPortalOutputRefere
 	_jsii_.Get(
 		j,
 		"certificatePasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementHostnameConfigurationDeveloperPortalOutputReference) CertificateSource() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"certificateSource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementHostnameConfigurationDeveloperPortalOutputReference) CertificateStatus() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"certificateStatus",
 		&returns,
 	)
 	return returns

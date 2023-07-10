@@ -76,6 +76,14 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) validateSet
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) validateSetSecurityEncryptionTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	return nil
 }

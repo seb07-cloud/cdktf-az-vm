@@ -235,6 +235,14 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) validateSetResourceG
 	return nil
 }
 
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func validateNewDataAzurermActiveDirectoryDomainServiceParameters(scope constructs.Construct, id *string, config *DataAzurermActiveDirectoryDomainServiceConfig) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/policy_definition azurerm_policy_definition}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/policy_definition azurerm_policy_definition}.
 type DataAzurermPolicyDefinition interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -47,6 +47,7 @@ type DataAzurermPolicyDefinition interface {
 	SetManagementGroupName(val *string)
 	ManagementGroupNameInput() *string
 	Metadata() *string
+	Mode() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -61,6 +62,7 @@ type DataAzurermPolicyDefinition interface {
 	SetProvider(val cdktf.TerraformProvider)
 	// Experimental.
 	RawOverrides() interface{}
+	RoleDefinitionIds() *[]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -279,6 +281,16 @@ func (j *jsiiProxy_DataAzurermPolicyDefinition) Metadata() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermPolicyDefinition) Mode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"mode",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermPolicyDefinition) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -359,6 +371,16 @@ func (j *jsiiProxy_DataAzurermPolicyDefinition) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermPolicyDefinition) RoleDefinitionIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"roleDefinitionIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermPolicyDefinition) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -420,7 +442,7 @@ func (j *jsiiProxy_DataAzurermPolicyDefinition) Type() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/policy_definition azurerm_policy_definition} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/policy_definition azurerm_policy_definition} Data Source.
 func NewDataAzurermPolicyDefinition(scope constructs.Construct, id *string, config *DataAzurermPolicyDefinitionConfig) DataAzurermPolicyDefinition {
 	_init_.Initialize()
 
@@ -438,7 +460,7 @@ func NewDataAzurermPolicyDefinition(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/policy_definition azurerm_policy_definition} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/policy_definition azurerm_policy_definition} Data Source.
 func NewDataAzurermPolicyDefinition_Override(d DataAzurermPolicyDefinition, scope constructs.Construct, id *string, config *DataAzurermPolicyDefinitionConfig) {
 	_init_.Initialize()
 

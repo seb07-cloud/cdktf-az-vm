@@ -27,6 +27,8 @@ type HdinsightHadoopClusterRolesEdgeNodeOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	HttpsEndpoints() HdinsightHadoopClusterRolesEdgeNodeHttpsEndpointsList
+	HttpsEndpointsInput() interface{}
 	InstallScriptAction() HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionList
 	InstallScriptActionInput() interface{}
 	InternalValue() *HdinsightHadoopClusterRolesEdgeNode
@@ -42,6 +44,8 @@ type HdinsightHadoopClusterRolesEdgeNodeOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UninstallScriptActions() HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActionsList
+	UninstallScriptActionsInput() interface{}
 	VmSize() *string
 	SetVmSize(val *string)
 	VmSizeInput() *string
@@ -69,7 +73,11 @@ type HdinsightHadoopClusterRolesEdgeNodeOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutHttpsEndpoints(value interface{})
 	PutInstallScriptAction(value interface{})
+	PutUninstallScriptActions(value interface{})
+	ResetHttpsEndpoints()
+	ResetUninstallScriptActions()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -120,6 +128,26 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) Fqn() *st
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) HttpsEndpoints() HdinsightHadoopClusterRolesEdgeNodeHttpsEndpointsList {
+	var returns HdinsightHadoopClusterRolesEdgeNodeHttpsEndpointsList
+	_jsii_.Get(
+		j,
+		"httpsEndpoints",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) HttpsEndpointsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"httpsEndpointsInput",
 		&returns,
 	)
 	return returns
@@ -190,6 +218,26 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) Terraform
 	_jsii_.Get(
 		j,
 		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) UninstallScriptActions() HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActionsList {
+	var returns HdinsightHadoopClusterRolesEdgeNodeUninstallScriptActionsList
+	_jsii_.Get(
+		j,
+		"uninstallScriptActions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) UninstallScriptActionsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"uninstallScriptActionsInput",
 		&returns,
 	)
 	return returns
@@ -506,6 +554,17 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) Interpola
 	return returns
 }
 
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) PutHttpsEndpoints(value interface{}) {
+	if err := h.validatePutHttpsEndpointsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putHttpsEndpoints",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) PutInstallScriptAction(value interface{}) {
 	if err := h.validatePutInstallScriptActionParameters(value); err != nil {
 		panic(err)
@@ -514,6 +573,33 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) PutInstal
 		h,
 		"putInstallScriptAction",
 		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) PutUninstallScriptActions(value interface{}) {
+	if err := h.validatePutUninstallScriptActionsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putUninstallScriptActions",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) ResetHttpsEndpoints() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetHttpsEndpoints",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) ResetUninstallScriptActions() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetUninstallScriptActions",
+		nil, // no parameters
 	)
 }
 

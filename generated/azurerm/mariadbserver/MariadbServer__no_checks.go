@@ -144,6 +144,10 @@ func (j *jsiiProxy_MariadbServer) validateSetSslEnforcementEnabledParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_MariadbServer) validateSetSslMinimalTlsVersionEnforcedParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_MariadbServer) validateSetStorageMbParameters(val *float64) error {
 	return nil
 }

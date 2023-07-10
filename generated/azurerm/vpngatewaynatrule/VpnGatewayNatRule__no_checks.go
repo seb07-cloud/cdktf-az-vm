@@ -52,6 +52,14 @@ func (v *jsiiProxy_VpnGatewayNatRule) validateOverrideLogicalIdParameters(newLog
 	return nil
 }
 
+func (v *jsiiProxy_VpnGatewayNatRule) validatePutExternalMappingParameters(value interface{}) error {
+	return nil
+}
+
+func (v *jsiiProxy_VpnGatewayNatRule) validatePutInternalMappingParameters(value interface{}) error {
+	return nil
+}
+
 func (v *jsiiProxy_VpnGatewayNatRule) validatePutTimeoutsParameters(value *VpnGatewayNatRuleTimeouts) error {
 	return nil
 }

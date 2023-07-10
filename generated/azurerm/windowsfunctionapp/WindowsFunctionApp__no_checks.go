@@ -56,6 +56,10 @@ func (w *jsiiProxy_WindowsFunctionApp) validatePutAuthSettingsParameters(value *
 	return nil
 }
 
+func (w *jsiiProxy_WindowsFunctionApp) validatePutAuthSettingsV2Parameters(value *WindowsFunctionAppAuthSettingsV2) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsFunctionApp) validatePutBackupParameters(value *WindowsFunctionAppBackup) error {
 	return nil
 }
@@ -69,6 +73,14 @@ func (w *jsiiProxy_WindowsFunctionApp) validatePutIdentityParameters(value *Wind
 }
 
 func (w *jsiiProxy_WindowsFunctionApp) validatePutSiteConfigParameters(value *WindowsFunctionAppSiteConfig) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsFunctionApp) validatePutStickySettingsParameters(value *WindowsFunctionAppStickySettings) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsFunctionApp) validatePutStorageAccountParameters(value interface{}) error {
 	return nil
 }
 
@@ -97,6 +109,10 @@ func (j *jsiiProxy_WindowsFunctionApp) validateSetBuiltinLoggingEnabledParameter
 }
 
 func (j *jsiiProxy_WindowsFunctionApp) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionApp) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -156,6 +172,10 @@ func (j *jsiiProxy_WindowsFunctionApp) validateSetProvisionersParameters(val *[]
 	return nil
 }
 
+func (j *jsiiProxy_WindowsFunctionApp) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsFunctionApp) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }
@@ -181,6 +201,14 @@ func (j *jsiiProxy_WindowsFunctionApp) validateSetStorageUsesManagedIdentityPara
 }
 
 func (j *jsiiProxy_WindowsFunctionApp) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionApp) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionApp) validateSetZipDeployFileParameters(val *string) error {
 	return nil
 }
 

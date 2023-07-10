@@ -56,6 +56,10 @@ func (w *jsiiProxy_WindowsWebApp) validatePutAuthSettingsParameters(value *Windo
 	return nil
 }
 
+func (w *jsiiProxy_WindowsWebApp) validatePutAuthSettingsV2Parameters(value *WindowsWebAppAuthSettingsV2) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsWebApp) validatePutBackupParameters(value *WindowsWebAppBackup) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func (w *jsiiProxy_WindowsWebApp) validatePutLogsParameters(value *WindowsWebApp
 }
 
 func (w *jsiiProxy_WindowsWebApp) validatePutSiteConfigParameters(value *WindowsWebAppSiteConfig) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsWebApp) validatePutStickySettingsParameters(value *WindowsWebAppStickySettings) error {
 	return nil
 }
 
@@ -105,6 +113,10 @@ func (j *jsiiProxy_WindowsWebApp) validateSetClientAffinityEnabledParameters(val
 }
 
 func (j *jsiiProxy_WindowsWebApp) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebApp) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -152,6 +164,10 @@ func (j *jsiiProxy_WindowsWebApp) validateSetProvisionersParameters(val *[]inter
 	return nil
 }
 
+func (j *jsiiProxy_WindowsWebApp) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsWebApp) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }
@@ -161,6 +177,14 @@ func (j *jsiiProxy_WindowsWebApp) validateSetServicePlanIdParameters(val *string
 }
 
 func (j *jsiiProxy_WindowsWebApp) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebApp) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebApp) validateSetZipDeployFileParameters(val *string) error {
 	return nil
 }
 

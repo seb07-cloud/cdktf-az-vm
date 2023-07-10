@@ -43,6 +43,9 @@ type OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReferenc
 	Fqn() *string
 	InternalValue() *OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration
 	SetInternalValue(val *OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration)
+	PatchAssessmentMode() *string
+	SetPatchAssessmentMode(val *string)
+	PatchAssessmentModeInput() *string
 	PatchMode() *string
 	SetPatchMode(val *string)
 	PatchModeInput() *string
@@ -89,6 +92,7 @@ type OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReferenc
 	ResetAdminSshKey()
 	ResetComputerNamePrefix()
 	ResetDisablePasswordAuthentication()
+	ResetPatchAssessmentMode()
 	ResetPatchMode()
 	ResetProvisionVmAgent()
 	ResetSecret()
@@ -252,6 +256,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReference) PatchAssessmentMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReference) PatchAssessmentModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"patchAssessmentModeInput",
 		&returns,
 	)
 	return returns
@@ -438,6 +462,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReference)SetPatchAssessmentMode(val *string) {
+	if err := j.validateSetPatchAssessmentModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"patchAssessmentMode",
 		val,
 	)
 }
@@ -722,6 +757,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfiguration
 	_jsii_.InvokeVoid(
 		o,
 		"resetDisablePasswordAuthentication",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetOsProfileLinuxConfigurationOutputReference) ResetPatchAssessmentMode() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetPatchAssessmentMode",
 		nil, // no parameters
 	)
 }

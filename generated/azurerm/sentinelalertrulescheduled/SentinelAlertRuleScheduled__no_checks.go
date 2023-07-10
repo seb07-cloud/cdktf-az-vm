@@ -68,6 +68,10 @@ func (s *jsiiProxy_SentinelAlertRuleScheduled) validatePutIncidentConfigurationP
 	return nil
 }
 
+func (s *jsiiProxy_SentinelAlertRuleScheduled) validatePutSentinelEntityMappingParameters(value interface{}) error {
+	return nil
+}
+
 func (s *jsiiProxy_SentinelAlertRuleScheduled) validatePutTimeoutsParameters(value *SentinelAlertRuleScheduledTimeouts) error {
 	return nil
 }
@@ -161,6 +165,10 @@ func (j *jsiiProxy_SentinelAlertRuleScheduled) validateSetSuppressionEnabledPara
 }
 
 func (j *jsiiProxy_SentinelAlertRuleScheduled) validateSetTacticsParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SentinelAlertRuleScheduled) validateSetTechniquesParameters(val *[]*string) error {
 	return nil
 }
 

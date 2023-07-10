@@ -56,6 +56,10 @@ func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) validateSetComplexObj
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) validateSetIdentityIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) validateSetInternalValueParameters(val *CosmosdbAccountIdentity) error {
 	return nil
 }

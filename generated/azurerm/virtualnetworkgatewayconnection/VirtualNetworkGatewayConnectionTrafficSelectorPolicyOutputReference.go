@@ -27,8 +27,8 @@ type VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference interfa
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
-	InternalValue() *VirtualNetworkGatewayConnectionTrafficSelectorPolicy
-	SetInternalValue(val *VirtualNetworkGatewayConnectionTrafficSelectorPolicy)
+	InternalValue() interface{}
+	SetInternalValue(val interface{})
 	LocalAddressCidrs() *[]*string
 	SetLocalAddressCidrs(val *[]*string)
 	LocalAddressCidrsInput() *[]*string
@@ -122,8 +122,8 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputRef
 	return returns
 }
 
-func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference) InternalValue() *VirtualNetworkGatewayConnectionTrafficSelectorPolicy {
-	var returns *VirtualNetworkGatewayConnectionTrafficSelectorPolicy
+func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference) InternalValue() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"internalValue",
@@ -193,29 +193,29 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputRef
 }
 
 
-func NewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference {
+func NewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference {
 	_init_.Initialize()
 
-	if err := validateNewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReferenceParameters(terraformResource, terraformAttribute); err != nil {
+	if err := validateNewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReferenceParameters(terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet); err != nil {
 		panic(err)
 	}
 	j := jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference{}
 
 	_jsii_.Create(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference",
-		[]interface{}{terraformResource, terraformAttribute},
+		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
 		&j,
 	)
 
 	return &j
 }
 
-func NewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference_Override(v VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) {
+func NewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference_Override(v VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference",
-		[]interface{}{terraformResource, terraformAttribute},
+		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
 		v,
 	)
 }
@@ -242,7 +242,7 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputRef
 	)
 }
 
-func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference)SetInternalValue(val *VirtualNetworkGatewayConnectionTrafficSelectorPolicy) {
+func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference)SetInternalValue(val interface{}) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
 	}

@@ -60,11 +60,19 @@ func (k *jsiiProxy_KubernetesClusterNodePool) validatePutLinuxOsConfigParameters
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesClusterNodePool) validatePutNodeNetworkProfileParameters(value *KubernetesClusterNodePoolNodeNetworkProfile) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesClusterNodePool) validatePutTimeoutsParameters(value *KubernetesClusterNodePoolTimeouts) error {
 	return nil
 }
 
 func (k *jsiiProxy_KubernetesClusterNodePool) validatePutUpgradeSettingsParameters(value *KubernetesClusterNodePoolUpgradeSettings) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesClusterNodePool) validatePutWindowsProfileParameters(value *KubernetesClusterNodePoolWindowsProfile) error {
 	return nil
 }
 
@@ -80,11 +88,19 @@ func validateKubernetesClusterNodePool_IsTerraformResourceParameters(x interface
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNodePool) validateSetCapacityReservationGroupIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNodePool) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_KubernetesClusterNodePool) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) validateSetCustomCaTrustEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -105,6 +121,10 @@ func (j *jsiiProxy_KubernetesClusterNodePool) validateSetEvictionPolicyParameter
 }
 
 func (j *jsiiProxy_KubernetesClusterNodePool) validateSetFipsEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) validateSetHostGroupIdParameters(val *string) error {
 	return nil
 }
 
@@ -129,6 +149,10 @@ func (j *jsiiProxy_KubernetesClusterNodePool) validateSetMaxCountParameters(val 
 }
 
 func (j *jsiiProxy_KubernetesClusterNodePool) validateSetMaxPodsParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) validateSetMessageOfTheDayParameters(val *string) error {
 	return nil
 }
 
@@ -197,6 +221,10 @@ func (j *jsiiProxy_KubernetesClusterNodePool) validateSetProximityPlacementGroup
 }
 
 func (j *jsiiProxy_KubernetesClusterNodePool) validateSetScaleDownModeParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNodePool) validateSetSnapshotIdParameters(val *string) error {
 	return nil
 }
 

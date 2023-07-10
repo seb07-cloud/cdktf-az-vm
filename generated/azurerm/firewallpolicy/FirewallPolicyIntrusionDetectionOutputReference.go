@@ -32,6 +32,9 @@ type FirewallPolicyIntrusionDetectionOutputReference interface {
 	Mode() *string
 	SetMode(val *string)
 	ModeInput() *string
+	PrivateRanges() *[]*string
+	SetPrivateRanges(val *[]*string)
+	PrivateRangesInput() *[]*string
 	SignatureOverrides() FirewallPolicyIntrusionDetectionSignatureOverridesList
 	SignatureOverridesInput() interface{}
 	// Experimental.
@@ -71,6 +74,7 @@ type FirewallPolicyIntrusionDetectionOutputReference interface {
 	PutSignatureOverrides(value interface{})
 	PutTrafficBypass(value interface{})
 	ResetMode()
+	ResetPrivateRanges()
 	ResetSignatureOverrides()
 	ResetTrafficBypass()
 	// Produce the Token's value at resolution time.
@@ -153,6 +157,26 @@ func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) ModeInput() 
 	_jsii_.Get(
 		j,
 		"modeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) PrivateRanges() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"privateRanges",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) PrivateRangesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"privateRangesInput",
 		&returns,
 	)
 	return returns
@@ -286,6 +310,17 @@ func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference)SetMode(val *
 	_jsii_.Set(
 		j,
 		"mode",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference)SetPrivateRanges(val *[]*string) {
+	if err := j.validateSetPrivateRangesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"privateRanges",
 		val,
 	)
 }
@@ -524,6 +559,14 @@ func (f *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) ResetMode() 
 	_jsii_.InvokeVoid(
 		f,
 		"resetMode",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) ResetPrivateRanges() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetPrivateRanges",
 		nil, // no parameters
 	)
 }

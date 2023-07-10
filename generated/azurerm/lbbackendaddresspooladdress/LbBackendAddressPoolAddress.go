@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address}.
 type LbBackendAddressPoolAddress interface {
 	cdktf.TerraformResource
+	BackendAddressIpConfigurationId() *string
+	SetBackendAddressIpConfigurationId(val *string)
+	BackendAddressIpConfigurationIdInput() *string
 	BackendAddressPoolId() *string
 	SetBackendAddressPoolId(val *string)
 	BackendAddressPoolIdInput() *string
@@ -42,6 +45,7 @@ type LbBackendAddressPoolAddress interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InboundNatRulePortMapping() LbBackendAddressPoolAddressInboundNatRulePortMappingList
 	IpAddress() *string
 	SetIpAddress(val *string)
 	IpAddressInput() *string
@@ -101,11 +105,14 @@ type LbBackendAddressPoolAddress interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LbBackendAddressPoolAddressTimeouts)
+	ResetBackendAddressIpConfigurationId()
 	ResetId()
+	ResetIpAddress()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetVirtualNetworkId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -119,6 +126,26 @@ type LbBackendAddressPoolAddress interface {
 // The jsii proxy struct for LbBackendAddressPoolAddress
 type jsiiProxy_LbBackendAddressPoolAddress struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_LbBackendAddressPoolAddress) BackendAddressIpConfigurationId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backendAddressIpConfigurationId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbBackendAddressPoolAddress) BackendAddressIpConfigurationIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backendAddressIpConfigurationIdInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbBackendAddressPoolAddress) BackendAddressPoolId() *string {
@@ -236,6 +263,16 @@ func (j *jsiiProxy_LbBackendAddressPoolAddress) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbBackendAddressPoolAddress) InboundNatRulePortMapping() LbBackendAddressPoolAddressInboundNatRulePortMappingList {
+	var returns LbBackendAddressPoolAddressInboundNatRulePortMappingList
+	_jsii_.Get(
+		j,
+		"inboundNatRulePortMapping",
 		&returns,
 	)
 	return returns
@@ -402,7 +439,7 @@ func (j *jsiiProxy_LbBackendAddressPoolAddress) VirtualNetworkIdInput() *string 
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address} Resource.
 func NewLbBackendAddressPoolAddress(scope constructs.Construct, id *string, config *LbBackendAddressPoolAddressConfig) LbBackendAddressPoolAddress {
 	_init_.Initialize()
 
@@ -420,7 +457,7 @@ func NewLbBackendAddressPoolAddress(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool_address azurerm_lb_backend_address_pool_address} Resource.
 func NewLbBackendAddressPoolAddress_Override(l LbBackendAddressPoolAddress, scope constructs.Construct, id *string, config *LbBackendAddressPoolAddressConfig) {
 	_init_.Initialize()
 
@@ -428,6 +465,17 @@ func NewLbBackendAddressPoolAddress_Override(l LbBackendAddressPoolAddress, scop
 		"azurerm.lbBackendAddressPoolAddress.LbBackendAddressPoolAddress",
 		[]interface{}{scope, id, config},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbBackendAddressPoolAddress)SetBackendAddressIpConfigurationId(val *string) {
+	if err := j.validateSetBackendAddressIpConfigurationIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backendAddressIpConfigurationId",
+		val,
 	)
 }
 
@@ -831,10 +879,26 @@ func (l *jsiiProxy_LbBackendAddressPoolAddress) PutTimeouts(value *LbBackendAddr
 	)
 }
 
+func (l *jsiiProxy_LbBackendAddressPoolAddress) ResetBackendAddressIpConfigurationId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetBackendAddressIpConfigurationId",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LbBackendAddressPoolAddress) ResetId() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbBackendAddressPoolAddress) ResetIpAddress() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetIpAddress",
 		nil, // no parameters
 	)
 }
@@ -851,6 +915,14 @@ func (l *jsiiProxy_LbBackendAddressPoolAddress) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbBackendAddressPoolAddress) ResetVirtualNetworkId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetVirtualNetworkId",
 		nil, // no parameters
 	)
 }

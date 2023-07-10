@@ -30,6 +30,8 @@ type DataFactoryDataFlowSinkOutputReference interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	Flowlet() DataFactoryDataFlowSinkFlowletOutputReference
+	FlowletInput() *DataFactoryDataFlowSinkFlowlet
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -39,6 +41,8 @@ type DataFactoryDataFlowSinkOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	RejectedLinkedService() DataFactoryDataFlowSinkRejectedLinkedServiceOutputReference
+	RejectedLinkedServiceInput() *DataFactoryDataFlowSinkRejectedLinkedService
 	SchemaLinkedService() DataFactoryDataFlowSinkSchemaLinkedServiceOutputReference
 	SchemaLinkedServiceInput() *DataFactoryDataFlowSinkSchemaLinkedService
 	// Experimental.
@@ -74,11 +78,15 @@ type DataFactoryDataFlowSinkOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDataset(value *DataFactoryDataFlowSinkDataset)
+	PutFlowlet(value *DataFactoryDataFlowSinkFlowlet)
 	PutLinkedService(value *DataFactoryDataFlowSinkLinkedService)
+	PutRejectedLinkedService(value *DataFactoryDataFlowSinkRejectedLinkedService)
 	PutSchemaLinkedService(value *DataFactoryDataFlowSinkSchemaLinkedService)
 	ResetDataset()
 	ResetDescription()
+	ResetFlowlet()
 	ResetLinkedService()
+	ResetRejectedLinkedService()
 	ResetSchemaLinkedService()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -165,6 +173,26 @@ func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) DescriptionInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) Flowlet() DataFactoryDataFlowSinkFlowletOutputReference {
+	var returns DataFactoryDataFlowSinkFlowletOutputReference
+	_jsii_.Get(
+		j,
+		"flowlet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) FlowletInput() *DataFactoryDataFlowSinkFlowlet {
+	var returns *DataFactoryDataFlowSinkFlowlet
+	_jsii_.Get(
+		j,
+		"flowletInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -220,6 +248,26 @@ func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) NameInput() *string {
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) RejectedLinkedService() DataFactoryDataFlowSinkRejectedLinkedServiceOutputReference {
+	var returns DataFactoryDataFlowSinkRejectedLinkedServiceOutputReference
+	_jsii_.Get(
+		j,
+		"rejectedLinkedService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSinkOutputReference) RejectedLinkedServiceInput() *DataFactoryDataFlowSinkRejectedLinkedService {
+	var returns *DataFactoryDataFlowSinkRejectedLinkedService
+	_jsii_.Get(
+		j,
+		"rejectedLinkedServiceInput",
 		&returns,
 	)
 	return returns
@@ -567,6 +615,17 @@ func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) PutDataset(value *Dat
 	)
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) PutFlowlet(value *DataFactoryDataFlowSinkFlowlet) {
+	if err := d.validatePutFlowletParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putFlowlet",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) PutLinkedService(value *DataFactoryDataFlowSinkLinkedService) {
 	if err := d.validatePutLinkedServiceParameters(value); err != nil {
 		panic(err)
@@ -574,6 +633,17 @@ func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) PutLinkedService(valu
 	_jsii_.InvokeVoid(
 		d,
 		"putLinkedService",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) PutRejectedLinkedService(value *DataFactoryDataFlowSinkRejectedLinkedService) {
+	if err := d.validatePutRejectedLinkedServiceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putRejectedLinkedService",
 		[]interface{}{value},
 	)
 }
@@ -605,10 +675,26 @@ func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) ResetDescription() {
 	)
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) ResetFlowlet() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFlowlet",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) ResetLinkedService() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetLinkedService",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSinkOutputReference) ResetRejectedLinkedService() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRejectedLinkedService",
 		nil, // no parameters
 	)
 }

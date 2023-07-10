@@ -56,6 +56,10 @@ func (s *jsiiProxy_StreamAnalyticsJob) validatePutIdentityParameters(value *Stre
 	return nil
 }
 
+func (s *jsiiProxy_StreamAnalyticsJob) validatePutJobStorageAccountParameters(value interface{}) error {
+	return nil
+}
+
 func (s *jsiiProxy_StreamAnalyticsJob) validatePutTimeoutsParameters(value *StreamAnalyticsJobTimeouts) error {
 	return nil
 }
@@ -77,6 +81,10 @@ func (j *jsiiProxy_StreamAnalyticsJob) validateSetCompatibilityLevelParameters(v
 }
 
 func (j *jsiiProxy_StreamAnalyticsJob) validateSetConnectionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) validateSetContentStoragePolicyParameters(val *string) error {
 	return nil
 }
 
@@ -141,6 +149,10 @@ func (j *jsiiProxy_StreamAnalyticsJob) validateSetTagsParameters(val *map[string
 }
 
 func (j *jsiiProxy_StreamAnalyticsJob) validateSetTransformationQueryParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) validateSetTypeParameters(val *string) error {
 	return nil
 }
 

@@ -9,16 +9,18 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/windows_function_app azurerm_windows_function_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/windows_function_app azurerm_windows_function_app}.
 type DataAzurermWindowsFunctionApp interface {
 	cdktf.TerraformDataSource
 	AppSettings() cdktf.StringMap
 	AuthSettings() DataAzurermWindowsFunctionAppAuthSettingsList
+	AuthSettingsV2() DataAzurermWindowsFunctionAppAuthSettingsV2List
 	Backup() DataAzurermWindowsFunctionAppBackupList
 	BuiltinLoggingEnabled() cdktf.IResolvable
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ClientCertificateEnabled() cdktf.IResolvable
+	ClientCertificateExclusionPaths() *string
 	ClientCertificateMode() *string
 	ConnectionString() DataAzurermWindowsFunctionAppConnectionStringList
 	// Experimental.
@@ -45,6 +47,7 @@ type DataAzurermWindowsFunctionApp interface {
 	// Experimental.
 	FriendlyUniqueId() *string
 	FunctionsExtensionVersion() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() cdktf.IResolvable
 	Id() *string
 	SetId(val *string)
@@ -69,6 +72,7 @@ type DataAzurermWindowsFunctionApp interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	PublicNetworkAccessEnabled() cdktf.IResolvable
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -77,6 +81,7 @@ type DataAzurermWindowsFunctionApp interface {
 	ServicePlanId() *string
 	SiteConfig() DataAzurermWindowsFunctionAppSiteConfigList
 	SiteCredential() DataAzurermWindowsFunctionAppSiteCredentialList
+	StickySettings() DataAzurermWindowsFunctionAppStickySettingsList
 	StorageAccountAccessKey() *string
 	StorageAccountName() *string
 	StorageKeyVaultSecretId() *string
@@ -90,6 +95,7 @@ type DataAzurermWindowsFunctionApp interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermWindowsFunctionAppTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -156,6 +162,16 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) AuthSettings() DataAzurermWind
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) AuthSettingsV2() DataAzurermWindowsFunctionAppAuthSettingsV2List {
+	var returns DataAzurermWindowsFunctionAppAuthSettingsV2List
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermWindowsFunctionApp) Backup() DataAzurermWindowsFunctionAppBackupList {
 	var returns DataAzurermWindowsFunctionAppBackupList
 	_jsii_.Get(
@@ -191,6 +207,16 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) ClientCertificateEnabled() cdk
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
 		&returns,
 	)
 	return returns
@@ -331,6 +357,16 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) FunctionsExtensionVersion() *s
 	_jsii_.Get(
 		j,
 		"functionsExtensionVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -486,6 +522,16 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) Provider() cdktf.TerraformProv
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) PublicNetworkAccessEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermWindowsFunctionApp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -541,6 +587,16 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) SiteCredential() DataAzurermWi
 	_jsii_.Get(
 		j,
 		"siteCredential",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) StickySettings() DataAzurermWindowsFunctionAppStickySettingsList {
+	var returns DataAzurermWindowsFunctionAppStickySettingsList
+	_jsii_.Get(
+		j,
+		"stickySettings",
 		&returns,
 	)
 	return returns
@@ -646,8 +702,18 @@ func (j *jsiiProxy_DataAzurermWindowsFunctionApp) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermWindowsFunctionApp) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/windows_function_app azurerm_windows_function_app} Data Source.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/windows_function_app azurerm_windows_function_app} Data Source.
 func NewDataAzurermWindowsFunctionApp(scope constructs.Construct, id *string, config *DataAzurermWindowsFunctionAppConfig) DataAzurermWindowsFunctionApp {
 	_init_.Initialize()
 
@@ -665,7 +731,7 @@ func NewDataAzurermWindowsFunctionApp(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/windows_function_app azurerm_windows_function_app} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/windows_function_app azurerm_windows_function_app} Data Source.
 func NewDataAzurermWindowsFunctionApp_Override(d DataAzurermWindowsFunctionApp, scope constructs.Construct, id *string, config *DataAzurermWindowsFunctionAppConfig) {
 	_init_.Initialize()
 

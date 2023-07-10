@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint}.
 type MediaStreamingEndpoint interface {
 	cdktf.TerraformResource
 	AccessControl() MediaStreamingEndpointAccessControlOutputReference
@@ -96,6 +96,7 @@ type MediaStreamingEndpoint interface {
 	ScaleUnits() *float64
 	SetScaleUnits(val *float64)
 	ScaleUnitsInput() *float64
+	Sku() MediaStreamingEndpointSkuList
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -605,6 +606,16 @@ func (j *jsiiProxy_MediaStreamingEndpoint) ScaleUnitsInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_MediaStreamingEndpoint) Sku() MediaStreamingEndpointSkuList {
+	var returns MediaStreamingEndpointSkuList
+	_jsii_.Get(
+		j,
+		"sku",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MediaStreamingEndpoint) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -676,7 +687,7 @@ func (j *jsiiProxy_MediaStreamingEndpoint) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint} Resource.
 func NewMediaStreamingEndpoint(scope constructs.Construct, id *string, config *MediaStreamingEndpointConfig) MediaStreamingEndpoint {
 	_init_.Initialize()
 
@@ -694,7 +705,7 @@ func NewMediaStreamingEndpoint(scope constructs.Construct, id *string, config *M
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_streaming_endpoint azurerm_media_streaming_endpoint} Resource.
 func NewMediaStreamingEndpoint_Override(m MediaStreamingEndpoint, scope constructs.Construct, id *string, config *MediaStreamingEndpointConfig) {
 	_init_.Initialize()
 

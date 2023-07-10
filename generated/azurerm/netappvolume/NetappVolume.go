@@ -9,12 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/netapp_volume azurerm_netapp_volume}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/netapp_volume azurerm_netapp_volume}.
 type NetappVolume interface {
 	cdktf.TerraformResource
 	AccountName() *string
 	SetAccountName(val *string)
 	AccountNameInput() *string
+	AzureVmwareDataStoreEnabled() interface{}
+	SetAzureVmwareDataStoreEnabled(val interface{})
+	AzureVmwareDataStoreEnabledInput() interface{}
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -62,6 +65,9 @@ type NetappVolume interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	NetworkFeatures() *string
+	SetNetworkFeatures(val *string)
+	NetworkFeaturesInput() *string
 	// The tree node.
 	Node() constructs.Node
 	PoolName() *string
@@ -115,6 +121,9 @@ type NetappVolume interface {
 	VolumePath() *string
 	SetVolumePath(val *string)
 	VolumePathInput() *string
+	Zone() *string
+	SetZone(val *string)
+	ZoneInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -144,11 +153,13 @@ type NetappVolume interface {
 	PutDataProtectionSnapshotPolicy(value *NetappVolumeDataProtectionSnapshotPolicy)
 	PutExportPolicyRule(value interface{})
 	PutTimeouts(value *NetappVolumeTimeouts)
+	ResetAzureVmwareDataStoreEnabled()
 	ResetCreateFromSnapshotResourceId()
 	ResetDataProtectionReplication()
 	ResetDataProtectionSnapshotPolicy()
 	ResetExportPolicyRule()
 	ResetId()
+	ResetNetworkFeatures()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -158,6 +169,7 @@ type NetappVolume interface {
 	ResetTags()
 	ResetThroughputInMibps()
 	ResetTimeouts()
+	ResetZone()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -188,6 +200,26 @@ func (j *jsiiProxy_NetappVolume) AccountNameInput() *string {
 	_jsii_.Get(
 		j,
 		"accountNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetappVolume) AzureVmwareDataStoreEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"azureVmwareDataStoreEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetappVolume) AzureVmwareDataStoreEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"azureVmwareDataStoreEnabledInput",
 		&returns,
 	)
 	return returns
@@ -428,6 +460,26 @@ func (j *jsiiProxy_NetappVolume) NameInput() *string {
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetappVolume) NetworkFeatures() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkFeatures",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_NetappVolume) NetworkFeaturesInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkFeaturesInput",
 		&returns,
 	)
 	return returns
@@ -743,8 +795,28 @@ func (j *jsiiProxy_NetappVolume) VolumePathInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_NetappVolume) Zone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zone",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/netapp_volume azurerm_netapp_volume} Resource.
+func (j *jsiiProxy_NetappVolume) ZoneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zoneInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/netapp_volume azurerm_netapp_volume} Resource.
 func NewNetappVolume(scope constructs.Construct, id *string, config *NetappVolumeConfig) NetappVolume {
 	_init_.Initialize()
 
@@ -762,7 +834,7 @@ func NewNetappVolume(scope constructs.Construct, id *string, config *NetappVolum
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/netapp_volume azurerm_netapp_volume} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/netapp_volume azurerm_netapp_volume} Resource.
 func NewNetappVolume_Override(n NetappVolume, scope constructs.Construct, id *string, config *NetappVolumeConfig) {
 	_init_.Initialize()
 
@@ -780,6 +852,17 @@ func (j *jsiiProxy_NetappVolume)SetAccountName(val *string) {
 	_jsii_.Set(
 		j,
 		"accountName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetappVolume)SetAzureVmwareDataStoreEnabled(val interface{}) {
+	if err := j.validateSetAzureVmwareDataStoreEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"azureVmwareDataStoreEnabled",
 		val,
 	)
 }
@@ -873,6 +956,17 @@ func (j *jsiiProxy_NetappVolume)SetName(val *string) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetappVolume)SetNetworkFeatures(val *string) {
+	if err := j.validateSetNetworkFeaturesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"networkFeatures",
 		val,
 	)
 }
@@ -1013,6 +1107,17 @@ func (j *jsiiProxy_NetappVolume)SetVolumePath(val *string) {
 	_jsii_.Set(
 		j,
 		"volumePath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_NetappVolume)SetZone(val *string) {
+	if err := j.validateSetZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zone",
 		val,
 	)
 }
@@ -1327,6 +1432,14 @@ func (n *jsiiProxy_NetappVolume) PutTimeouts(value *NetappVolumeTimeouts) {
 	)
 }
 
+func (n *jsiiProxy_NetappVolume) ResetAzureVmwareDataStoreEnabled() {
+	_jsii_.InvokeVoid(
+		n,
+		"resetAzureVmwareDataStoreEnabled",
+		nil, // no parameters
+	)
+}
+
 func (n *jsiiProxy_NetappVolume) ResetCreateFromSnapshotResourceId() {
 	_jsii_.InvokeVoid(
 		n,
@@ -1363,6 +1476,14 @@ func (n *jsiiProxy_NetappVolume) ResetId() {
 	_jsii_.InvokeVoid(
 		n,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (n *jsiiProxy_NetappVolume) ResetNetworkFeatures() {
+	_jsii_.InvokeVoid(
+		n,
+		"resetNetworkFeatures",
 		nil, // no parameters
 	)
 }
@@ -1419,6 +1540,14 @@ func (n *jsiiProxy_NetappVolume) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		n,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (n *jsiiProxy_NetappVolume) ResetZone() {
+	_jsii_.InvokeVoid(
+		n,
+		"resetZone",
 		nil, // no parameters
 	)
 }

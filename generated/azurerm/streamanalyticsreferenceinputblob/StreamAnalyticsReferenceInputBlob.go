@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob}.
 type StreamAnalyticsReferenceInputBlob interface {
 	cdktf.TerraformResource
+	AuthenticationMode() *string
+	SetAuthenticationMode(val *string)
+	AuthenticationModeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -119,10 +122,12 @@ type StreamAnalyticsReferenceInputBlob interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutSerialization(value *StreamAnalyticsReferenceInputBlobSerialization)
 	PutTimeouts(value *StreamAnalyticsReferenceInputBlobTimeouts)
+	ResetAuthenticationMode()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetStorageAccountKey()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -137,6 +142,26 @@ type StreamAnalyticsReferenceInputBlob interface {
 // The jsii proxy struct for StreamAnalyticsReferenceInputBlob
 type jsiiProxy_StreamAnalyticsReferenceInputBlob struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StreamAnalyticsReferenceInputBlob) AuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsReferenceInputBlob) AuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationModeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StreamAnalyticsReferenceInputBlob) CdktfStack() cdktf.TerraformStack {
@@ -540,7 +565,7 @@ func (j *jsiiProxy_StreamAnalyticsReferenceInputBlob) TimeoutsInput() interface{
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob} Resource.
 func NewStreamAnalyticsReferenceInputBlob(scope constructs.Construct, id *string, config *StreamAnalyticsReferenceInputBlobConfig) StreamAnalyticsReferenceInputBlob {
 	_init_.Initialize()
 
@@ -558,7 +583,7 @@ func NewStreamAnalyticsReferenceInputBlob(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_blob azurerm_stream_analytics_reference_input_blob} Resource.
 func NewStreamAnalyticsReferenceInputBlob_Override(s StreamAnalyticsReferenceInputBlob, scope constructs.Construct, id *string, config *StreamAnalyticsReferenceInputBlobConfig) {
 	_init_.Initialize()
 
@@ -566,6 +591,17 @@ func NewStreamAnalyticsReferenceInputBlob_Override(s StreamAnalyticsReferenceInp
 		"azurerm.streamAnalyticsReferenceInputBlob.StreamAnalyticsReferenceInputBlob",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsReferenceInputBlob)SetAuthenticationMode(val *string) {
+	if err := j.validateSetAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMode",
+		val,
 	)
 }
 
@@ -1035,6 +1071,14 @@ func (s *jsiiProxy_StreamAnalyticsReferenceInputBlob) PutTimeouts(value *StreamA
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsReferenceInputBlob) ResetAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsReferenceInputBlob) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1047,6 +1091,14 @@ func (s *jsiiProxy_StreamAnalyticsReferenceInputBlob) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsReferenceInputBlob) ResetStorageAccountKey() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetStorageAccountKey",
 		nil, // no parameters
 	)
 }

@@ -72,6 +72,10 @@ func validateStreamAnalyticsOutputServicebusQueue_IsTerraformResourceParameters(
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetAuthenticationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -89,6 +93,10 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetLifecyclePar
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetPropertyColumnsParameters(val *[]*string) error {
 	return nil
 }
 
@@ -117,6 +125,10 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetSharedAccess
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetStreamAnalyticsJobNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetSystemPropertyColumnsParameters(val *map[string]*string) error {
 	return nil
 }
 

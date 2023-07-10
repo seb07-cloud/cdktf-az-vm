@@ -166,6 +166,17 @@ func (h *jsiiProxy_HpcCache) validatePutDnsParameters(value *HpcCacheDns) error 
 	return nil
 }
 
+func (h *jsiiProxy_HpcCache) validatePutIdentityParameters(value *HpcCacheIdentity) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (h *jsiiProxy_HpcCache) validatePutTimeoutsParameters(value *HpcCacheTimeouts) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -196,6 +207,26 @@ func validateHpcCache_IsTerraformElementParameters(x interface{}) error {
 func validateHpcCache_IsTerraformResourceParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_HpcCache) validateSetAutomaticallyRotateKeyToLatestEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
@@ -300,6 +331,14 @@ func (j *jsiiProxy_HpcCache) validateSetCountParameters(val interface{}) error {
 }
 
 func (j *jsiiProxy_HpcCache) validateSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_HpcCache) validateSetKeyVaultKeyIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

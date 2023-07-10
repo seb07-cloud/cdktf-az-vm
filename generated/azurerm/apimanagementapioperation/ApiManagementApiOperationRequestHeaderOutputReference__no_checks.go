@@ -44,6 +44,10 @@ func (a *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) valida
 	return nil
 }
 
+func (a *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validatePutExampleParameters(value interface{}) error {
+	return nil
+}
+
 func (a *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }
@@ -76,6 +80,10 @@ func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) valida
 	return nil
 }
 
+func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validateSetSchemaIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }
@@ -85,6 +93,10 @@ func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) valida
 }
 
 func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validateSetTypeParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationRequestHeaderOutputReference) validateSetTypeNameParameters(val *string) error {
 	return nil
 }
 

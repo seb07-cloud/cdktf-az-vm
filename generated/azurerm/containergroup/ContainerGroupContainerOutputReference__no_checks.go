@@ -48,6 +48,10 @@ func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutGpuParamet
 	return nil
 }
 
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutGpuLimitParameters(value *ContainerGroupContainerGpuLimit) error {
+	return nil
+}
+
 func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutLivenessProbeParameters(value *ContainerGroupContainerLivenessProbe) error {
 	return nil
 }
@@ -84,6 +88,10 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetCpuParamet
 	return nil
 }
 
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetCpuLimitParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetEnvironmentVariablesParameters(val *map[string]*string) error {
 	return nil
 }
@@ -97,6 +105,10 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetInternalVa
 }
 
 func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetMemoryParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetMemoryLimitParameters(val *float64) error {
 	return nil
 }
 

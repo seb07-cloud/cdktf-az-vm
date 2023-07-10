@@ -52,6 +52,10 @@ func (i *jsiiProxy_IotcentralApplication) validateOverrideLogicalIdParameters(ne
 	return nil
 }
 
+func (i *jsiiProxy_IotcentralApplication) validatePutIdentityParameters(value *IotcentralApplicationIdentity) error {
+	return nil
+}
+
 func (i *jsiiProxy_IotcentralApplication) validatePutTimeoutsParameters(value *IotcentralApplicationTimeouts) error {
 	return nil
 }
@@ -97,6 +101,10 @@ func (j *jsiiProxy_IotcentralApplication) validateSetNameParameters(val *string)
 }
 
 func (j *jsiiProxy_IotcentralApplication) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_IotcentralApplication) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
 	return nil
 }
 

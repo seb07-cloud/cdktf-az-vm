@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_standard azurerm_logic_app_standard}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_standard azurerm_logic_app_standard}.
 type LogicAppStandard interface {
 	cdktf.TerraformResource
 	AppServicePlanId() *string
@@ -123,6 +123,9 @@ type LogicAppStandard interface {
 	Version() *string
 	SetVersion(val *string)
 	VersionInput() *string
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -170,6 +173,7 @@ type LogicAppStandard interface {
 	ResetTimeouts()
 	ResetUseExtensionBundle()
 	ResetVersion()
+	ResetVirtualNetworkSubnetId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -825,8 +829,28 @@ func (j *jsiiProxy_LogicAppStandard) VersionInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LogicAppStandard) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_standard azurerm_logic_app_standard} Resource.
+func (j *jsiiProxy_LogicAppStandard) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_standard azurerm_logic_app_standard} Resource.
 func NewLogicAppStandard(scope constructs.Construct, id *string, config *LogicAppStandardConfig) LogicAppStandard {
 	_init_.Initialize()
 
@@ -844,7 +868,7 @@ func NewLogicAppStandard(scope constructs.Construct, id *string, config *LogicAp
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/logic_app_standard azurerm_logic_app_standard} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/logic_app_standard azurerm_logic_app_standard} Resource.
 func NewLogicAppStandard_Override(l LogicAppStandard, scope constructs.Construct, id *string, config *LogicAppStandardConfig) {
 	_init_.Initialize()
 
@@ -1106,6 +1130,17 @@ func (j *jsiiProxy_LogicAppStandard)SetVersion(val *string) {
 	_jsii_.Set(
 		j,
 		"version",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LogicAppStandard)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
 		val,
 	)
 }
@@ -1544,6 +1579,14 @@ func (l *jsiiProxy_LogicAppStandard) ResetVersion() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetVersion",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LogicAppStandard) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetVirtualNetworkSubnetId",
 		nil, // no parameters
 	)
 }

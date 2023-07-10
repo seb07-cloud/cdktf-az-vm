@@ -32,6 +32,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
+			_jsii_.MemberProperty{JsiiProperty: "logCategoryGroups", GoGetter: "LogCategoryGroups"},
+			_jsii_.MemberProperty{JsiiProperty: "logCategoryTypes", GoGetter: "LogCategoryTypes"},
 			_jsii_.MemberProperty{JsiiProperty: "logs", GoGetter: "Logs"},
 			_jsii_.MemberProperty{JsiiProperty: "metrics", GoGetter: "Metrics"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},

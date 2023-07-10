@@ -64,6 +64,10 @@ func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) validateSetCo
 	return nil
 }
 
+func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) validateSetGatewayDisabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_ApiManagementAdditionalLocationOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }

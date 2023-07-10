@@ -25,6 +25,8 @@ type WebApplicationFirewallPolicyManagedRulesExclusionOutputReference interface 
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	ExcludedRuleSet() WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSetOutputReference
+	ExcludedRuleSetInput() *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -70,6 +72,8 @@ type WebApplicationFirewallPolicyManagedRulesExclusionOutputReference interface 
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutExcludedRuleSet(value *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet)
+	ResetExcludedRuleSet()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -110,6 +114,26 @@ func (j *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputRefere
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) ExcludedRuleSet() WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSetOutputReference {
+	var returns WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSetOutputReference
+	_jsii_.Get(
+		j,
+		"excludedRuleSet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) ExcludedRuleSetInput() *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet {
+	var returns *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet
+	_jsii_.Get(
+		j,
+		"excludedRuleSetInput",
 		&returns,
 	)
 	return returns
@@ -515,6 +539,25 @@ func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputRefere
 	)
 
 	return returns
+}
+
+func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) PutExcludedRuleSet(value *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet) {
+	if err := w.validatePutExcludedRuleSetParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putExcludedRuleSet",
+		[]interface{}{value},
+	)
+}
+
+func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) ResetExcludedRuleSet() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetExcludedRuleSet",
+		nil, // no parameters
+	)
 }
 
 func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

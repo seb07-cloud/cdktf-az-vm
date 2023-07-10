@@ -72,7 +72,15 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetDo
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetEbpfDataPlaneParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetInternalValueParameters(val *KubernetesClusterNetworkProfile) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetIpVersionsParameters(val *[]*string) error {
 	return nil
 }
 
@@ -88,6 +96,10 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNe
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNetworkPluginModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetNetworkPolicyParameters(val *string) error {
 	return nil
 }
@@ -100,7 +112,15 @@ func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetPo
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetPodCidrsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetServiceCidrParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterNetworkProfileOutputReference) validateSetServiceCidrsParameters(val *[]*string) error {
 	return nil
 }
 

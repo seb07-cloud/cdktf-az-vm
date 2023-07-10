@@ -30,6 +30,8 @@ type DataFactoryDataFlowSourceOutputReference interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	Flowlet() DataFactoryDataFlowSourceFlowletOutputReference
+	FlowletInput() *DataFactoryDataFlowSourceFlowlet
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -39,6 +41,8 @@ type DataFactoryDataFlowSourceOutputReference interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	RejectedLinkedService() DataFactoryDataFlowSourceRejectedLinkedServiceOutputReference
+	RejectedLinkedServiceInput() *DataFactoryDataFlowSourceRejectedLinkedService
 	SchemaLinkedService() DataFactoryDataFlowSourceSchemaLinkedServiceOutputReference
 	SchemaLinkedServiceInput() *DataFactoryDataFlowSourceSchemaLinkedService
 	// Experimental.
@@ -74,11 +78,15 @@ type DataFactoryDataFlowSourceOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutDataset(value *DataFactoryDataFlowSourceDataset)
+	PutFlowlet(value *DataFactoryDataFlowSourceFlowlet)
 	PutLinkedService(value *DataFactoryDataFlowSourceLinkedService)
+	PutRejectedLinkedService(value *DataFactoryDataFlowSourceRejectedLinkedService)
 	PutSchemaLinkedService(value *DataFactoryDataFlowSourceSchemaLinkedService)
 	ResetDataset()
 	ResetDescription()
+	ResetFlowlet()
 	ResetLinkedService()
+	ResetRejectedLinkedService()
 	ResetSchemaLinkedService()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -165,6 +173,26 @@ func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) DescriptionInput() 
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) Flowlet() DataFactoryDataFlowSourceFlowletOutputReference {
+	var returns DataFactoryDataFlowSourceFlowletOutputReference
+	_jsii_.Get(
+		j,
+		"flowlet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) FlowletInput() *DataFactoryDataFlowSourceFlowlet {
+	var returns *DataFactoryDataFlowSourceFlowlet
+	_jsii_.Get(
+		j,
+		"flowletInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -220,6 +248,26 @@ func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) NameInput() *string
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) RejectedLinkedService() DataFactoryDataFlowSourceRejectedLinkedServiceOutputReference {
+	var returns DataFactoryDataFlowSourceRejectedLinkedServiceOutputReference
+	_jsii_.Get(
+		j,
+		"rejectedLinkedService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowSourceOutputReference) RejectedLinkedServiceInput() *DataFactoryDataFlowSourceRejectedLinkedService {
+	var returns *DataFactoryDataFlowSourceRejectedLinkedService
+	_jsii_.Get(
+		j,
+		"rejectedLinkedServiceInput",
 		&returns,
 	)
 	return returns
@@ -567,6 +615,17 @@ func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) PutDataset(value *D
 	)
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) PutFlowlet(value *DataFactoryDataFlowSourceFlowlet) {
+	if err := d.validatePutFlowletParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putFlowlet",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) PutLinkedService(value *DataFactoryDataFlowSourceLinkedService) {
 	if err := d.validatePutLinkedServiceParameters(value); err != nil {
 		panic(err)
@@ -574,6 +633,17 @@ func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) PutLinkedService(va
 	_jsii_.InvokeVoid(
 		d,
 		"putLinkedService",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) PutRejectedLinkedService(value *DataFactoryDataFlowSourceRejectedLinkedService) {
+	if err := d.validatePutRejectedLinkedServiceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putRejectedLinkedService",
 		[]interface{}{value},
 	)
 }
@@ -605,10 +675,26 @@ func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) ResetDescription() 
 	)
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) ResetFlowlet() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFlowlet",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) ResetLinkedService() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetLinkedService",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) ResetRejectedLinkedService() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetRejectedLinkedService",
 		nil, // no parameters
 	)
 }

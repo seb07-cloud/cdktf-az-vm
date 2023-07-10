@@ -92,6 +92,10 @@ func (j *jsiiProxy_ExpressRouteCircuitPeering) validateSetIdParameters(val *stri
 	return nil
 }
 
+func (j *jsiiProxy_ExpressRouteCircuitPeering) validateSetIpv4EnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_ExpressRouteCircuitPeering) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
 	return nil
 }

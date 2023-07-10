@@ -90,63 +90,23 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateInter
 	return nil
 }
 
-func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validatePutResourceHealthParameters(value interface{}) error {
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validatePutResourceHealthParameters(value *MonitorActivityLogAlertCriteriaResourceHealth) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
-	switch value.(type) {
-	case cdktf.IResolvable:
-		// ok
-	case *[]*MonitorActivityLogAlertCriteriaResourceHealth:
-		value := value.(*[]*MonitorActivityLogAlertCriteriaResourceHealth)
-		for idx_cd4240, v := range *value {
-			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
-				return err
-			}
-		}
-	case []*MonitorActivityLogAlertCriteriaResourceHealth:
-		value_ := value.([]*MonitorActivityLogAlertCriteriaResourceHealth)
-		value := &value_
-		for idx_cd4240, v := range *value {
-			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
-				return err
-			}
-		}
-	default:
-		if !_jsii_.IsAnonymousProxy(value) {
-			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*MonitorActivityLogAlertCriteriaResourceHealth; received %#v (a %T)", value, value)
-		}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
 	}
 
 	return nil
 }
 
-func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validatePutServiceHealthParameters(value interface{}) error {
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validatePutServiceHealthParameters(value *MonitorActivityLogAlertCriteriaServiceHealth) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
-	switch value.(type) {
-	case cdktf.IResolvable:
-		// ok
-	case *[]*MonitorActivityLogAlertCriteriaServiceHealth:
-		value := value.(*[]*MonitorActivityLogAlertCriteriaServiceHealth)
-		for idx_cd4240, v := range *value {
-			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
-				return err
-			}
-		}
-	case []*MonitorActivityLogAlertCriteriaServiceHealth:
-		value_ := value.([]*MonitorActivityLogAlertCriteriaServiceHealth)
-		value := &value_
-		for idx_cd4240, v := range *value {
-			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
-				return err
-			}
-		}
-	default:
-		if !_jsii_.IsAnonymousProxy(value) {
-			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*MonitorActivityLogAlertCriteriaServiceHealth; received %#v (a %T)", value, value)
-		}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
 	}
 
 	return nil
@@ -257,6 +217,14 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetLe
 	return nil
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetLevelsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetOperationNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -297,7 +265,23 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetRe
 	return nil
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceGroupsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceIdsParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -313,7 +297,23 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetRe
 	return nil
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceProvidersParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceTypeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetResourceTypesParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -329,7 +329,23 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetSt
 	return nil
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetStatusesParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetSubStatusParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) validateSetSubStatusesParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

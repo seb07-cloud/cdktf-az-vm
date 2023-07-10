@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/service_plan azurerm_service_plan}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/service_plan azurerm_service_plan}.
 type ServicePlan interface {
 	cdktf.TerraformResource
 	AppServiceEnvironmentId() *string
@@ -95,6 +95,9 @@ type ServicePlan interface {
 	WorkerCount() *float64
 	SetWorkerCount(val *float64)
 	WorkerCountInput() *float64
+	ZoneBalancingEnabled() interface{}
+	SetZoneBalancingEnabled(val interface{})
+	ZoneBalancingEnabledInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -131,6 +134,7 @@ type ServicePlan interface {
 	ResetTags()
 	ResetTimeouts()
 	ResetWorkerCount()
+	ResetZoneBalancingEnabled()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -566,8 +570,28 @@ func (j *jsiiProxy_ServicePlan) WorkerCountInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_ServicePlan) ZoneBalancingEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneBalancingEnabled",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/service_plan azurerm_service_plan} Resource.
+func (j *jsiiProxy_ServicePlan) ZoneBalancingEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zoneBalancingEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/service_plan azurerm_service_plan} Resource.
 func NewServicePlan(scope constructs.Construct, id *string, config *ServicePlanConfig) ServicePlan {
 	_init_.Initialize()
 
@@ -585,7 +609,7 @@ func NewServicePlan(scope constructs.Construct, id *string, config *ServicePlanC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/service_plan azurerm_service_plan} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/service_plan azurerm_service_plan} Resource.
 func NewServicePlan_Override(s ServicePlan, scope constructs.Construct, id *string, config *ServicePlanConfig) {
 	_init_.Initialize()
 
@@ -781,6 +805,17 @@ func (j *jsiiProxy_ServicePlan)SetWorkerCount(val *float64) {
 	_jsii_.Set(
 		j,
 		"workerCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicePlan)SetZoneBalancingEnabled(val interface{}) {
+	if err := j.validateSetZoneBalancingEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zoneBalancingEnabled",
 		val,
 	)
 }
@@ -1122,6 +1157,14 @@ func (s *jsiiProxy_ServicePlan) ResetWorkerCount() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetWorkerCount",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_ServicePlan) ResetZoneBalancingEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetZoneBalancingEnabled",
 		nil, // no parameters
 	)
 }

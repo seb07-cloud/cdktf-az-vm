@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/security_center_contact azurerm_security_center_contact}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/security_center_contact azurerm_security_center_contact}.
 type SecurityCenterContact interface {
 	cdktf.TerraformResource
 	AlertNotifications() interface{}
@@ -52,6 +52,9 @@ type SecurityCenterContact interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
 	Phone() *string
@@ -102,6 +105,7 @@ type SecurityCenterContact interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *SecurityCenterContactTimeouts)
 	ResetId()
+	ResetName()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -292,6 +296,26 @@ func (j *jsiiProxy_SecurityCenterContact) Lifecycle() *cdktf.TerraformResourceLi
 	return returns
 }
 
+func (j *jsiiProxy_SecurityCenterContact) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SecurityCenterContact) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SecurityCenterContact) Node() constructs.Node {
 	var returns constructs.Node
 	_jsii_.Get(
@@ -403,7 +427,7 @@ func (j *jsiiProxy_SecurityCenterContact) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/security_center_contact azurerm_security_center_contact} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/security_center_contact azurerm_security_center_contact} Resource.
 func NewSecurityCenterContact(scope constructs.Construct, id *string, config *SecurityCenterContactConfig) SecurityCenterContact {
 	_init_.Initialize()
 
@@ -421,7 +445,7 @@ func NewSecurityCenterContact(scope constructs.Construct, id *string, config *Se
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/security_center_contact azurerm_security_center_contact} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/security_center_contact azurerm_security_center_contact} Resource.
 func NewSecurityCenterContact_Override(s SecurityCenterContact, scope constructs.Construct, id *string, config *SecurityCenterContactConfig) {
 	_init_.Initialize()
 
@@ -521,6 +545,17 @@ func (j *jsiiProxy_SecurityCenterContact)SetLifecycle(val *cdktf.TerraformResour
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SecurityCenterContact)SetName(val *string) {
+	if err := j.validateSetNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"name",
 		val,
 	)
 }
@@ -836,6 +871,14 @@ func (s *jsiiProxy_SecurityCenterContact) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SecurityCenterContact) ResetName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetName",
 		nil, // no parameters
 	)
 }

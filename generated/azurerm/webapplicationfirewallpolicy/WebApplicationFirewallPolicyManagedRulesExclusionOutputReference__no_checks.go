@@ -44,6 +44,10 @@ func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputRefere
 	return nil
 }
 
+func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) validatePutExcludedRuleSetParameters(value *WebApplicationFirewallPolicyManagedRulesExclusionExcludedRuleSet) error {
+	return nil
+}
+
 func (w *jsiiProxy_WebApplicationFirewallPolicyManagedRulesExclusionOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

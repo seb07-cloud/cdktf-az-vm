@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app azurerm_windows_web_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app azurerm_windows_web_app}.
 type WindowsWebApp interface {
 	cdktf.TerraformResource
 	AppSettings() *map[string]*string
@@ -17,6 +17,8 @@ type WindowsWebApp interface {
 	AppSettingsInput() *map[string]*string
 	AuthSettings() WindowsWebAppAuthSettingsOutputReference
 	AuthSettingsInput() *WindowsWebAppAuthSettings
+	AuthSettingsV2() WindowsWebAppAuthSettingsV2OutputReference
+	AuthSettingsV2Input() *WindowsWebAppAuthSettingsV2
 	Backup() WindowsWebAppBackupOutputReference
 	BackupInput() *WindowsWebAppBackup
 	// Experimental.
@@ -27,6 +29,9 @@ type WindowsWebApp interface {
 	ClientCertificateEnabled() interface{}
 	SetClientCertificateEnabled(val interface{})
 	ClientCertificateEnabledInput() interface{}
+	ClientCertificateExclusionPaths() *string
+	SetClientCertificateExclusionPaths(val *string)
+	ClientCertificateExclusionPathsInput() *string
 	ClientCertificateMode() *string
 	SetClientCertificateMode(val *string)
 	ClientCertificateModeInput() *string
@@ -59,6 +64,7 @@ type WindowsWebApp interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() interface{}
 	SetHttpsOnly(val interface{})
 	HttpsOnlyInput() interface{}
@@ -97,6 +103,9 @@ type WindowsWebApp interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -108,6 +117,8 @@ type WindowsWebApp interface {
 	SiteConfig() WindowsWebAppSiteConfigOutputReference
 	SiteConfigInput() *WindowsWebAppSiteConfig
 	SiteCredential() WindowsWebAppSiteCredentialList
+	StickySettings() WindowsWebAppStickySettingsOutputReference
+	StickySettingsInput() *WindowsWebAppStickySettings
 	StorageAccount() WindowsWebAppStorageAccountList
 	StorageAccountInput() interface{}
 	Tags() *map[string]*string
@@ -121,6 +132,12 @@ type WindowsWebApp interface {
 	TerraformResourceType() *string
 	Timeouts() WindowsWebAppTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
+	ZipDeployFile() *string
+	SetZipDeployFile(val *string)
+	ZipDeployFileInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -147,18 +164,22 @@ type WindowsWebApp interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthSettings(value *WindowsWebAppAuthSettings)
+	PutAuthSettingsV2(value *WindowsWebAppAuthSettingsV2)
 	PutBackup(value *WindowsWebAppBackup)
 	PutConnectionString(value interface{})
 	PutIdentity(value *WindowsWebAppIdentity)
 	PutLogs(value *WindowsWebAppLogs)
 	PutSiteConfig(value *WindowsWebAppSiteConfig)
+	PutStickySettings(value *WindowsWebAppStickySettings)
 	PutStorageAccount(value interface{})
 	PutTimeouts(value *WindowsWebAppTimeouts)
 	ResetAppSettings()
 	ResetAuthSettings()
+	ResetAuthSettingsV2()
 	ResetBackup()
 	ResetClientAffinityEnabled()
 	ResetClientCertificateEnabled()
+	ResetClientCertificateExclusionPaths()
 	ResetClientCertificateMode()
 	ResetConnectionString()
 	ResetEnabled()
@@ -170,9 +191,13 @@ type WindowsWebApp interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetStickySettings()
 	ResetStorageAccount()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualNetworkSubnetId()
+	ResetZipDeployFile()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -223,6 +248,26 @@ func (j *jsiiProxy_WindowsWebApp) AuthSettingsInput() *WindowsWebAppAuthSettings
 	_jsii_.Get(
 		j,
 		"authSettingsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) AuthSettingsV2() WindowsWebAppAuthSettingsV2OutputReference {
+	var returns WindowsWebAppAuthSettingsV2OutputReference
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) AuthSettingsV2Input() *WindowsWebAppAuthSettingsV2 {
+	var returns *WindowsWebAppAuthSettingsV2
+	_jsii_.Get(
+		j,
+		"authSettingsV2Input",
 		&returns,
 	)
 	return returns
@@ -293,6 +338,26 @@ func (j *jsiiProxy_WindowsWebApp) ClientCertificateEnabledInput() interface{} {
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) ClientCertificateExclusionPathsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPathsInput",
 		&returns,
 	)
 	return returns
@@ -443,6 +508,16 @@ func (j *jsiiProxy_WindowsWebApp) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -678,6 +753,26 @@ func (j *jsiiProxy_WindowsWebApp) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebApp) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebApp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -753,6 +848,26 @@ func (j *jsiiProxy_WindowsWebApp) SiteCredential() WindowsWebAppSiteCredentialLi
 	_jsii_.Get(
 		j,
 		"siteCredential",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) StickySettings() WindowsWebAppStickySettingsOutputReference {
+	var returns WindowsWebAppStickySettingsOutputReference
+	_jsii_.Get(
+		j,
+		"stickySettings",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) StickySettingsInput() *WindowsWebAppStickySettings {
+	var returns *WindowsWebAppStickySettings
+	_jsii_.Get(
+		j,
+		"stickySettingsInput",
 		&returns,
 	)
 	return returns
@@ -848,8 +963,48 @@ func (j *jsiiProxy_WindowsWebApp) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebApp) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app azurerm_windows_web_app} Resource.
+func (j *jsiiProxy_WindowsWebApp) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) ZipDeployFile() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebApp) ZipDeployFileInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFileInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app azurerm_windows_web_app} Resource.
 func NewWindowsWebApp(scope constructs.Construct, id *string, config *WindowsWebAppConfig) WindowsWebApp {
 	_init_.Initialize()
 
@@ -867,7 +1022,7 @@ func NewWindowsWebApp(scope constructs.Construct, id *string, config *WindowsWeb
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_web_app azurerm_windows_web_app} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_web_app azurerm_windows_web_app} Resource.
 func NewWindowsWebApp_Override(w WindowsWebApp, scope constructs.Construct, id *string, config *WindowsWebAppConfig) {
 	_init_.Initialize()
 
@@ -907,6 +1062,17 @@ func (j *jsiiProxy_WindowsWebApp)SetClientCertificateEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"clientCertificateEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebApp)SetClientCertificateExclusionPaths(val *string) {
+	if err := j.validateSetClientCertificateExclusionPathsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificateExclusionPaths",
 		val,
 	)
 }
@@ -1056,6 +1222,17 @@ func (j *jsiiProxy_WindowsWebApp)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_WindowsWebApp)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsWebApp)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -1085,6 +1262,28 @@ func (j *jsiiProxy_WindowsWebApp)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebApp)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebApp)SetZipDeployFile(val *string) {
+	if err := j.validateSetZipDeployFileParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zipDeployFile",
 		val,
 	)
 }
@@ -1366,6 +1565,17 @@ func (w *jsiiProxy_WindowsWebApp) PutAuthSettings(value *WindowsWebAppAuthSettin
 	)
 }
 
+func (w *jsiiProxy_WindowsWebApp) PutAuthSettingsV2(value *WindowsWebAppAuthSettingsV2) {
+	if err := w.validatePutAuthSettingsV2Parameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putAuthSettingsV2",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsWebApp) PutBackup(value *WindowsWebAppBackup) {
 	if err := w.validatePutBackupParameters(value); err != nil {
 		panic(err)
@@ -1421,6 +1631,17 @@ func (w *jsiiProxy_WindowsWebApp) PutSiteConfig(value *WindowsWebAppSiteConfig) 
 	)
 }
 
+func (w *jsiiProxy_WindowsWebApp) PutStickySettings(value *WindowsWebAppStickySettings) {
+	if err := w.validatePutStickySettingsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putStickySettings",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsWebApp) PutStorageAccount(value interface{}) {
 	if err := w.validatePutStorageAccountParameters(value); err != nil {
 		panic(err)
@@ -1459,6 +1680,14 @@ func (w *jsiiProxy_WindowsWebApp) ResetAuthSettings() {
 	)
 }
 
+func (w *jsiiProxy_WindowsWebApp) ResetAuthSettingsV2() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetAuthSettingsV2",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebApp) ResetBackup() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1479,6 +1708,14 @@ func (w *jsiiProxy_WindowsWebApp) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebApp) ResetClientCertificateExclusionPaths() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetClientCertificateExclusionPaths",
 		nil, // no parameters
 	)
 }
@@ -1555,6 +1792,22 @@ func (w *jsiiProxy_WindowsWebApp) ResetOverrideLogicalId() {
 	)
 }
 
+func (w *jsiiProxy_WindowsWebApp) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebApp) ResetStickySettings() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetStickySettings",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebApp) ResetStorageAccount() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1575,6 +1828,22 @@ func (w *jsiiProxy_WindowsWebApp) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebApp) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetVirtualNetworkSubnetId",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebApp) ResetZipDeployFile() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetZipDeployFile",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table}.
 type StreamAnalyticsOutputTable interface {
 	cdktf.TerraformResource
 	BatchSize() *float64
@@ -17,6 +17,9 @@ type StreamAnalyticsOutputTable interface {
 	BatchSizeInput() *float64
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ColumnsToRemove() *[]*string
+	SetColumnsToRemove(val *[]*string)
+	ColumnsToRemoveInput() *[]*string
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -116,6 +119,7 @@ type StreamAnalyticsOutputTable interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *StreamAnalyticsOutputTableTimeouts)
+	ResetColumnsToRemove()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -161,6 +165,26 @@ func (j *jsiiProxy_StreamAnalyticsOutputTable) CdktfStack() cdktf.TerraformStack
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputTable) ColumnsToRemove() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"columnsToRemove",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputTable) ColumnsToRemoveInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"columnsToRemoveInput",
 		&returns,
 	)
 	return returns
@@ -517,7 +541,7 @@ func (j *jsiiProxy_StreamAnalyticsOutputTable) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table} Resource.
 func NewStreamAnalyticsOutputTable(scope constructs.Construct, id *string, config *StreamAnalyticsOutputTableConfig) StreamAnalyticsOutputTable {
 	_init_.Initialize()
 
@@ -535,7 +559,7 @@ func NewStreamAnalyticsOutputTable(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_table azurerm_stream_analytics_output_table} Resource.
 func NewStreamAnalyticsOutputTable_Override(s StreamAnalyticsOutputTable, scope constructs.Construct, id *string, config *StreamAnalyticsOutputTableConfig) {
 	_init_.Initialize()
 
@@ -553,6 +577,17 @@ func (j *jsiiProxy_StreamAnalyticsOutputTable)SetBatchSize(val *float64) {
 	_jsii_.Set(
 		j,
 		"batchSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputTable)SetColumnsToRemove(val *[]*string) {
+	if err := j.validateSetColumnsToRemoveParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"columnsToRemove",
 		val,
 	)
 }
@@ -998,6 +1033,14 @@ func (s *jsiiProxy_StreamAnalyticsOutputTable) PutTimeouts(value *StreamAnalytic
 		s,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputTable) ResetColumnsToRemove() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetColumnsToRemove",
+		nil, // no parameters
 	)
 }
 

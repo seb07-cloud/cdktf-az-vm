@@ -48,7 +48,15 @@ func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutDatasetP
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutFlowletParameters(value *DataFactoryDataFlowSourceFlowlet) error {
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutLinkedServiceParameters(value *DataFactoryDataFlowSourceLinkedService) error {
+	return nil
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutRejectedLinkedServiceParameters(value *DataFactoryDataFlowSourceRejectedLinkedService) error {
 	return nil
 }
 

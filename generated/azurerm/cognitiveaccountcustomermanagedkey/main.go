@@ -8,8 +8,8 @@ import (
 
 func init() {
 	_jsii_.RegisterClass(
-		"azurerm.cognitiveAccountCustomerManagedKey.CognitiveAccountCustomerManagedKey",
-		reflect.TypeOf((*CognitiveAccountCustomerManagedKey)(nil)).Elem(),
+		"azurerm.cognitiveAccountCustomerManagedKey.CognitiveAccountCustomerManagedKeyA",
+		reflect.TypeOf((*CognitiveAccountCustomerManagedKeyA)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
@@ -60,14 +60,14 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
 		},
 		func() interface{} {
-			j := jsiiProxy_CognitiveAccountCustomerManagedKey{}
+			j := jsiiProxy_CognitiveAccountCustomerManagedKeyA{}
 			_jsii_.InitJsiiProxy(&j.Type__cdktfTerraformResource)
 			return &j
 		},
 	)
 	_jsii_.RegisterStruct(
-		"azurerm.cognitiveAccountCustomerManagedKey.CognitiveAccountCustomerManagedKeyConfig",
-		reflect.TypeOf((*CognitiveAccountCustomerManagedKeyConfig)(nil)).Elem(),
+		"azurerm.cognitiveAccountCustomerManagedKey.CognitiveAccountCustomerManagedKeyAConfig",
+		reflect.TypeOf((*CognitiveAccountCustomerManagedKeyAConfig)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"azurerm.cognitiveAccountCustomerManagedKey.CognitiveAccountCustomerManagedKeyTimeouts",

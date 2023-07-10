@@ -236,6 +236,14 @@ func (j *jsiiProxy_ResourcePolicyRemediation) validateSetCountParameters(val int
 	return nil
 }
 
+func (j *jsiiProxy_ResourcePolicyRemediation) validateSetFailurePercentageParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ResourcePolicyRemediation) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -268,6 +276,14 @@ func (j *jsiiProxy_ResourcePolicyRemediation) validateSetNameParameters(val *str
 	return nil
 }
 
+func (j *jsiiProxy_ResourcePolicyRemediation) validateSetParallelDeploymentsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ResourcePolicyRemediation) validateSetPolicyAssignmentIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -277,6 +293,14 @@ func (j *jsiiProxy_ResourcePolicyRemediation) validateSetPolicyAssignmentIdParam
 }
 
 func (j *jsiiProxy_ResourcePolicyRemediation) validateSetPolicyDefinitionIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ResourcePolicyRemediation) validateSetPolicyDefinitionReferenceIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -325,6 +349,14 @@ func (j *jsiiProxy_ResourcePolicyRemediation) validateSetProvisionersParameters(
 				return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *cdktf.FileProvisioner, *cdktf.LocalExecProvisioner, *cdktf.RemoteExecProvisioner; received %#v (a %T)", idx_97dfc6, v, v)
 			}
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ResourcePolicyRemediation) validateSetResourceCountParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil

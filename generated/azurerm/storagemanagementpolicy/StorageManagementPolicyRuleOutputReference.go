@@ -73,7 +73,6 @@ type StorageManagementPolicyRuleOutputReference interface {
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutActions(value *StorageManagementPolicyRuleActions)
 	PutFilters(value *StorageManagementPolicyRuleFilters)
-	ResetFilters()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -549,14 +548,6 @@ func (s *jsiiProxy_StorageManagementPolicyRuleOutputReference) PutFilters(value 
 		s,
 		"putFilters",
 		[]interface{}{value},
-	)
-}
-
-func (s *jsiiProxy_StorageManagementPolicyRuleOutputReference) ResetFilters() {
-	_jsii_.InvokeVoid(
-		s,
-		"resetFilters",
-		nil, // no parameters
 	)
 }
 

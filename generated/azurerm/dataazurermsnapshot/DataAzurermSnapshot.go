@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/snapshot azurerm_snapshot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/snapshot azurerm_snapshot}.
 type DataAzurermSnapshot interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -69,6 +69,7 @@ type DataAzurermSnapshot interface {
 	TimeCreated() *string
 	Timeouts() DataAzurermSnapshotTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	TrustedLaunchEnabled() cdktf.IResolvable
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -415,8 +416,18 @@ func (j *jsiiProxy_DataAzurermSnapshot) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermSnapshot) TrustedLaunchEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"trustedLaunchEnabled",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/snapshot azurerm_snapshot} Data Source.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/snapshot azurerm_snapshot} Data Source.
 func NewDataAzurermSnapshot(scope constructs.Construct, id *string, config *DataAzurermSnapshotConfig) DataAzurermSnapshot {
 	_init_.Initialize()
 
@@ -434,7 +445,7 @@ func NewDataAzurermSnapshot(scope constructs.Construct, id *string, config *Data
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/snapshot azurerm_snapshot} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/snapshot azurerm_snapshot} Data Source.
 func NewDataAzurermSnapshot_Override(d DataAzurermSnapshot, scope constructs.Construct, id *string, config *DataAzurermSnapshotConfig) {
 	_init_.Initialize()
 

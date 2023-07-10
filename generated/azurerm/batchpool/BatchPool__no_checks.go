@@ -64,6 +64,18 @@ func (b *jsiiProxy_BatchPool) validatePutContainerConfigurationParameters(value 
 	return nil
 }
 
+func (b *jsiiProxy_BatchPool) validatePutDataDisksParameters(value interface{}) error {
+	return nil
+}
+
+func (b *jsiiProxy_BatchPool) validatePutDiskEncryptionParameters(value interface{}) error {
+	return nil
+}
+
+func (b *jsiiProxy_BatchPool) validatePutExtensionsParameters(value interface{}) error {
+	return nil
+}
+
 func (b *jsiiProxy_BatchPool) validatePutFixedScaleParameters(value *BatchPoolFixedScale) error {
 	return nil
 }
@@ -72,7 +84,15 @@ func (b *jsiiProxy_BatchPool) validatePutIdentityParameters(value *BatchPoolIden
 	return nil
 }
 
+func (b *jsiiProxy_BatchPool) validatePutMountParameters(value interface{}) error {
+	return nil
+}
+
 func (b *jsiiProxy_BatchPool) validatePutNetworkConfigurationParameters(value *BatchPoolNetworkConfiguration) error {
+	return nil
+}
+
+func (b *jsiiProxy_BatchPool) validatePutNodePlacementParameters(value interface{}) error {
 	return nil
 }
 
@@ -84,7 +104,19 @@ func (b *jsiiProxy_BatchPool) validatePutStorageImageReferenceParameters(value *
 	return nil
 }
 
+func (b *jsiiProxy_BatchPool) validatePutTaskSchedulingPolicyParameters(value interface{}) error {
+	return nil
+}
+
 func (b *jsiiProxy_BatchPool) validatePutTimeoutsParameters(value *BatchPoolTimeouts) error {
+	return nil
+}
+
+func (b *jsiiProxy_BatchPool) validatePutUserAccountsParameters(value interface{}) error {
+	return nil
+}
+
+func (b *jsiiProxy_BatchPool) validatePutWindowsParameters(value interface{}) error {
 	return nil
 }
 
@@ -120,6 +152,14 @@ func (j *jsiiProxy_BatchPool) validateSetIdParameters(val *string) error {
 	return nil
 }
 
+func (j *jsiiProxy_BatchPool) validateSetInterNodeCommunicationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BatchPool) validateSetLicenseTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_BatchPool) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
 	return nil
 }
@@ -140,6 +180,10 @@ func (j *jsiiProxy_BatchPool) validateSetNodeAgentSkuIdParameters(val *string) e
 	return nil
 }
 
+func (j *jsiiProxy_BatchPool) validateSetOsDiskPlacementParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_BatchPool) validateSetProvisionersParameters(val *[]interface{}) error {
 	return nil
 }
@@ -149,6 +193,10 @@ func (j *jsiiProxy_BatchPool) validateSetResourceGroupNameParameters(val *string
 }
 
 func (j *jsiiProxy_BatchPool) validateSetStopPendingResizeOperationParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_BatchPool) validateSetTargetNodeCommunicationModeParameters(val *string) error {
 	return nil
 }
 

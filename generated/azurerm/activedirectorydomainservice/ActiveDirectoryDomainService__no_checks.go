@@ -92,6 +92,10 @@ func (j *jsiiProxy_ActiveDirectoryDomainService) validateSetCountParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_ActiveDirectoryDomainService) validateSetDomainConfigurationTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ActiveDirectoryDomainService) validateSetDomainNameParameters(val *string) error {
 	return nil
 }

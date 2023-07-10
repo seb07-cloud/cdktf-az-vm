@@ -64,6 +64,10 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputR
 	return nil
 }
 
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) validateSetParametersParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

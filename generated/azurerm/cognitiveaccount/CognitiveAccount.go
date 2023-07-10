@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cognitive_account azurerm_cognitive_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cognitive_account azurerm_cognitive_account}.
 type CognitiveAccount interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -24,6 +24,14 @@ type CognitiveAccount interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomerManagedKey() CognitiveAccountCustomerManagedKeyOutputReference
+	CustomerManagedKeyInput() *CognitiveAccountCustomerManagedKey
+	CustomQuestionAnsweringSearchServiceId() *string
+	SetCustomQuestionAnsweringSearchServiceId(val *string)
+	CustomQuestionAnsweringSearchServiceIdInput() *string
+	CustomQuestionAnsweringSearchServiceKey() *string
+	SetCustomQuestionAnsweringSearchServiceKey(val *string)
+	CustomQuestionAnsweringSearchServiceKeyInput() *string
 	CustomSubdomainName() *string
 	SetCustomSubdomainName(val *string)
 	CustomSubdomainNameInput() *string
@@ -31,6 +39,9 @@ type CognitiveAccount interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DynamicThrottlingEnabled() interface{}
+	SetDynamicThrottlingEnabled(val interface{})
+	DynamicThrottlingEnabledInput() interface{}
 	Endpoint() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
@@ -145,11 +156,16 @@ type CognitiveAccount interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutCustomerManagedKey(value *CognitiveAccountCustomerManagedKey)
 	PutIdentity(value *CognitiveAccountIdentity)
 	PutNetworkAcls(value *CognitiveAccountNetworkAcls)
 	PutStorage(value interface{})
 	PutTimeouts(value *CognitiveAccountTimeouts)
+	ResetCustomerManagedKey()
+	ResetCustomQuestionAnsweringSearchServiceId()
+	ResetCustomQuestionAnsweringSearchServiceKey()
 	ResetCustomSubdomainName()
+	ResetDynamicThrottlingEnabled()
 	ResetFqdns()
 	ResetId()
 	ResetIdentity()
@@ -223,6 +239,66 @@ func (j *jsiiProxy_CognitiveAccount) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_CognitiveAccount) CustomerManagedKey() CognitiveAccountCustomerManagedKeyOutputReference {
+	var returns CognitiveAccountCustomerManagedKeyOutputReference
+	_jsii_.Get(
+		j,
+		"customerManagedKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) CustomerManagedKeyInput() *CognitiveAccountCustomerManagedKey {
+	var returns *CognitiveAccountCustomerManagedKey
+	_jsii_.Get(
+		j,
+		"customerManagedKeyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) CustomQuestionAnsweringSearchServiceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customQuestionAnsweringSearchServiceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) CustomQuestionAnsweringSearchServiceIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customQuestionAnsweringSearchServiceIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) CustomQuestionAnsweringSearchServiceKey() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customQuestionAnsweringSearchServiceKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) CustomQuestionAnsweringSearchServiceKeyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"customQuestionAnsweringSearchServiceKeyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CognitiveAccount) CustomSubdomainName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -248,6 +324,26 @@ func (j *jsiiProxy_CognitiveAccount) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) DynamicThrottlingEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dynamicThrottlingEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CognitiveAccount) DynamicThrottlingEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dynamicThrottlingEnabledInput",
 		&returns,
 	)
 	return returns
@@ -794,7 +890,7 @@ func (j *jsiiProxy_CognitiveAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cognitive_account azurerm_cognitive_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cognitive_account azurerm_cognitive_account} Resource.
 func NewCognitiveAccount(scope constructs.Construct, id *string, config *CognitiveAccountConfig) CognitiveAccount {
 	_init_.Initialize()
 
@@ -812,7 +908,7 @@ func NewCognitiveAccount(scope constructs.Construct, id *string, config *Cogniti
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cognitive_account azurerm_cognitive_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cognitive_account azurerm_cognitive_account} Resource.
 func NewCognitiveAccount_Override(c CognitiveAccount, scope constructs.Construct, id *string, config *CognitiveAccountConfig) {
 	_init_.Initialize()
 
@@ -845,6 +941,28 @@ func (j *jsiiProxy_CognitiveAccount)SetCount(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_CognitiveAccount)SetCustomQuestionAnsweringSearchServiceId(val *string) {
+	if err := j.validateSetCustomQuestionAnsweringSearchServiceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"customQuestionAnsweringSearchServiceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitiveAccount)SetCustomQuestionAnsweringSearchServiceKey(val *string) {
+	if err := j.validateSetCustomQuestionAnsweringSearchServiceKeyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"customQuestionAnsweringSearchServiceKey",
+		val,
+	)
+}
+
 func (j *jsiiProxy_CognitiveAccount)SetCustomSubdomainName(val *string) {
 	if err := j.validateSetCustomSubdomainNameParameters(val); err != nil {
 		panic(err)
@@ -860,6 +978,17 @@ func (j *jsiiProxy_CognitiveAccount)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CognitiveAccount)SetDynamicThrottlingEnabled(val interface{}) {
+	if err := j.validateSetDynamicThrottlingEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dynamicThrottlingEnabled",
 		val,
 	)
 }
@@ -1344,6 +1473,17 @@ func (c *jsiiProxy_CognitiveAccount) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (c *jsiiProxy_CognitiveAccount) PutCustomerManagedKey(value *CognitiveAccountCustomerManagedKey) {
+	if err := c.validatePutCustomerManagedKeyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		c,
+		"putCustomerManagedKey",
+		[]interface{}{value},
+	)
+}
+
 func (c *jsiiProxy_CognitiveAccount) PutIdentity(value *CognitiveAccountIdentity) {
 	if err := c.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -1388,10 +1528,42 @@ func (c *jsiiProxy_CognitiveAccount) PutTimeouts(value *CognitiveAccountTimeouts
 	)
 }
 
+func (c *jsiiProxy_CognitiveAccount) ResetCustomerManagedKey() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetCustomerManagedKey",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitiveAccount) ResetCustomQuestionAnsweringSearchServiceId() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetCustomQuestionAnsweringSearchServiceId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitiveAccount) ResetCustomQuestionAnsweringSearchServiceKey() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetCustomQuestionAnsweringSearchServiceKey",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CognitiveAccount) ResetCustomSubdomainName() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetCustomSubdomainName",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CognitiveAccount) ResetDynamicThrottlingEnabled() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetDynamicThrottlingEnabled",
 		nil, // no parameters
 	)
 }

@@ -64,6 +64,10 @@ func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) valid
 	return nil
 }
 
+func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) validateSetKeyVaultSecretIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CdnEndpointCustomDomainUserManagedHttpsOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

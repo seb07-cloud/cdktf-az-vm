@@ -22,9 +22,13 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "connectionProtocolInput", GoGetter: "ConnectionProtocolInput"},
 			_jsii_.MemberProperty{JsiiProperty: "constructNodeMetadata", GoGetter: "ConstructNodeMetadata"},
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
+			_jsii_.MemberProperty{JsiiProperty: "customBgpAddresses", GoGetter: "CustomBgpAddresses"},
+			_jsii_.MemberProperty{JsiiProperty: "customBgpAddressesInput", GoGetter: "CustomBgpAddressesInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
 			_jsii_.MemberProperty{JsiiProperty: "dpdTimeoutSeconds", GoGetter: "DpdTimeoutSeconds"},
 			_jsii_.MemberProperty{JsiiProperty: "dpdTimeoutSecondsInput", GoGetter: "DpdTimeoutSecondsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "egressNatRuleIds", GoGetter: "EgressNatRuleIds"},
+			_jsii_.MemberProperty{JsiiProperty: "egressNatRuleIdsInput", GoGetter: "EgressNatRuleIdsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "enableBgp", GoGetter: "EnableBgp"},
 			_jsii_.MemberProperty{JsiiProperty: "enableBgpInput", GoGetter: "EnableBgpInput"},
 			_jsii_.MemberProperty{JsiiProperty: "expressRouteCircuitId", GoGetter: "ExpressRouteCircuitId"},
@@ -45,6 +49,8 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "ingressNatRuleIds", GoGetter: "IngressNatRuleIds"},
+			_jsii_.MemberProperty{JsiiProperty: "ingressNatRuleIdsInput", GoGetter: "IngressNatRuleIdsInput"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "ipsecPolicy", GoGetter: "IpsecPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "ipsecPolicyInput", GoGetter: "IpsecPolicyInput"},
@@ -63,6 +69,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "peerVirtualNetworkGatewayIdInput", GoGetter: "PeerVirtualNetworkGatewayIdInput"},
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberProperty{JsiiProperty: "provisioners", GoGetter: "Provisioners"},
+			_jsii_.MemberMethod{JsiiMethod: "putCustomBgpAddresses", GoMethod: "PutCustomBgpAddresses"},
 			_jsii_.MemberMethod{JsiiMethod: "putIpsecPolicy", GoMethod: "PutIpsecPolicy"},
 			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
 			_jsii_.MemberMethod{JsiiMethod: "putTrafficSelectorPolicy", GoMethod: "PutTrafficSelectorPolicy"},
@@ -70,11 +77,14 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetAuthorizationKey", GoMethod: "ResetAuthorizationKey"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConnectionMode", GoMethod: "ResetConnectionMode"},
 			_jsii_.MemberMethod{JsiiMethod: "resetConnectionProtocol", GoMethod: "ResetConnectionProtocol"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCustomBgpAddresses", GoMethod: "ResetCustomBgpAddresses"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDpdTimeoutSeconds", GoMethod: "ResetDpdTimeoutSeconds"},
+			_jsii_.MemberMethod{JsiiMethod: "resetEgressNatRuleIds", GoMethod: "ResetEgressNatRuleIds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnableBgp", GoMethod: "ResetEnableBgp"},
 			_jsii_.MemberMethod{JsiiMethod: "resetExpressRouteCircuitId", GoMethod: "ResetExpressRouteCircuitId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetExpressRouteGatewayBypass", GoMethod: "ResetExpressRouteGatewayBypass"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIngressNatRuleIds", GoMethod: "ResetIngressNatRuleIds"},
 			_jsii_.MemberMethod{JsiiMethod: "resetIpsecPolicy", GoMethod: "ResetIpsecPolicy"},
 			_jsii_.MemberMethod{JsiiMethod: "resetLocalAzureIpAddressEnabled", GoMethod: "ResetLocalAzureIpAddressEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetLocalNetworkGatewayId", GoMethod: "ResetLocalNetworkGatewayId"},
@@ -121,6 +131,46 @@ func init() {
 	_jsii_.RegisterStruct(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionConfig",
 		reflect.TypeOf((*VirtualNetworkGatewayConnectionConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionCustomBgpAddresses",
+		reflect.TypeOf((*VirtualNetworkGatewayConnectionCustomBgpAddresses)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference",
+		reflect.TypeOf((*VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "primary", GoGetter: "Primary"},
+			_jsii_.MemberProperty{JsiiProperty: "primaryInput", GoGetter: "PrimaryInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "secondary", GoGetter: "Secondary"},
+			_jsii_.MemberProperty{JsiiProperty: "secondaryInput", GoGetter: "SecondaryInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
 	)
 	_jsii_.RegisterStruct(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionIpsecPolicy",
@@ -227,6 +277,27 @@ func init() {
 	_jsii_.RegisterStruct(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionTrafficSelectorPolicy",
 		reflect.TypeOf((*VirtualNetworkGatewayConnectionTrafficSelectorPolicy)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionTrafficSelectorPolicyList",
+		reflect.TypeOf((*VirtualNetworkGatewayConnectionTrafficSelectorPolicyList)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "get", GoMethod: "Get"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "wrapsSet", GoGetter: "WrapsSet"},
+		},
+		func() interface{} {
+			j := jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyList{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexList)
+			return &j
+		},
 	)
 	_jsii_.RegisterClass(
 		"azurerm.virtualNetworkGatewayConnection.VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference",

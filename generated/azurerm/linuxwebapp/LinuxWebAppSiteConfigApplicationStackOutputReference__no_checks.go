@@ -60,11 +60,31 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validat
 	return nil
 }
 
+func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDockerImageNameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDockerImageTagParameters(val *string) error {
 	return nil
 }
 
+func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDockerRegistryPasswordParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDockerRegistryUrlParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDockerRegistryUsernameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetDotnetVersionParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebAppSiteConfigApplicationStackOutputReference) validateSetGoVersionParameters(val *string) error {
 	return nil
 }
 

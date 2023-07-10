@@ -128,6 +128,10 @@ func (j *jsiiProxy_DataFactory) validateSetPublicNetworkEnabledParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_DataFactory) validateSetPurviewIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_DataFactory) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }

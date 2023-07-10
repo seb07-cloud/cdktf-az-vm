@@ -27,6 +27,9 @@ type ContainerGroupContainerLivenessProbeHttpGetOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	HttpHeaders() *map[string]*string
+	SetHttpHeaders(val *map[string]*string)
+	HttpHeadersInput() *map[string]*string
 	InternalValue() interface{}
 	SetInternalValue(val interface{})
 	Path() *string
@@ -70,6 +73,7 @@ type ContainerGroupContainerLivenessProbeHttpGetOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetHttpHeaders()
 	ResetPath()
 	ResetPort()
 	ResetScheme()
@@ -123,6 +127,26 @@ func (j *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) F
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) HttpHeaders() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"httpHeaders",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) HttpHeadersInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"httpHeadersInput",
 		&returns,
 	)
 	return returns
@@ -264,6 +288,17 @@ func (j *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference)Se
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference)SetHttpHeaders(val *map[string]*string) {
+	if err := j.validateSetHttpHeadersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"httpHeaders",
 		val,
 	)
 }
@@ -518,6 +553,14 @@ func (c *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) I
 	)
 
 	return returns
+}
+
+func (c *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) ResetHttpHeaders() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetHttpHeaders",
+		nil, // no parameters
+	)
 }
 
 func (c *jsiiProxy_ContainerGroupContainerLivenessProbeHttpGetOutputReference) ResetPath() {

@@ -72,6 +72,7 @@ type VpnServerConfigurationRadiusOutputReference interface {
 	PutServerRootCertificate(value interface{})
 	ResetClientRootCertificate()
 	ResetServer()
+	ResetServerRootCertificate()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -531,6 +532,14 @@ func (v *jsiiProxy_VpnServerConfigurationRadiusOutputReference) ResetServer() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetServer",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpnServerConfigurationRadiusOutputReference) ResetServerRootCertificate() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetServerRootCertificate",
 		nil, // no parameters
 	)
 }

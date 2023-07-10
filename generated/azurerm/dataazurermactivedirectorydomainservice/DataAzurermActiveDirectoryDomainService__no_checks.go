@@ -88,6 +88,10 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) validateSetResourceG
 	return nil
 }
 
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
 func validateNewDataAzurermActiveDirectoryDomainServiceParameters(scope constructs.Construct, id *string, config *DataAzurermActiveDirectoryDomainServiceConfig) error {
 	return nil
 }

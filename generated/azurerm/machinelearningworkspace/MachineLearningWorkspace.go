@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace}.
 type MachineLearningWorkspace interface {
 	cdktf.TerraformResource
 	ApplicationInsightsId() *string
@@ -88,6 +88,9 @@ type MachineLearningWorkspace interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicAccessBehindVirtualNetworkEnabled() interface{}
+	SetPublicAccessBehindVirtualNetworkEnabled(val interface{})
+	PublicAccessBehindVirtualNetworkEnabledInput() interface{}
 	PublicNetworkAccessEnabled() interface{}
 	SetPublicNetworkAccessEnabled(val interface{})
 	PublicNetworkAccessEnabledInput() interface{}
@@ -113,6 +116,10 @@ type MachineLearningWorkspace interface {
 	TerraformResourceType() *string
 	Timeouts() MachineLearningWorkspaceTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	V1LegacyModeEnabled() interface{}
+	SetV1LegacyModeEnabled(val interface{})
+	V1LegacyModeEnabledInput() interface{}
+	WorkspaceId() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -152,10 +159,12 @@ type MachineLearningWorkspace interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPrimaryUserAssignedIdentity()
+	ResetPublicAccessBehindVirtualNetworkEnabled()
 	ResetPublicNetworkAccessEnabled()
 	ResetSkuName()
 	ResetTags()
 	ResetTimeouts()
+	ResetV1LegacyModeEnabled()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -561,6 +570,26 @@ func (j *jsiiProxy_MachineLearningWorkspace) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_MachineLearningWorkspace) PublicAccessBehindVirtualNetworkEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicAccessBehindVirtualNetworkEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MachineLearningWorkspace) PublicAccessBehindVirtualNetworkEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicAccessBehindVirtualNetworkEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MachineLearningWorkspace) PublicNetworkAccessEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -721,8 +750,38 @@ func (j *jsiiProxy_MachineLearningWorkspace) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_MachineLearningWorkspace) V1LegacyModeEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"v1LegacyModeEnabled",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace} Resource.
+func (j *jsiiProxy_MachineLearningWorkspace) V1LegacyModeEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"v1LegacyModeEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MachineLearningWorkspace) WorkspaceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"workspaceId",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace} Resource.
 func NewMachineLearningWorkspace(scope constructs.Construct, id *string, config *MachineLearningWorkspaceConfig) MachineLearningWorkspace {
 	_init_.Initialize()
 
@@ -740,7 +799,7 @@ func NewMachineLearningWorkspace(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/machine_learning_workspace azurerm_machine_learning_workspace} Resource.
 func NewMachineLearningWorkspace_Override(m MachineLearningWorkspace, scope constructs.Construct, id *string, config *MachineLearningWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -940,6 +999,17 @@ func (j *jsiiProxy_MachineLearningWorkspace)SetProvisioners(val *[]interface{}) 
 	)
 }
 
+func (j *jsiiProxy_MachineLearningWorkspace)SetPublicAccessBehindVirtualNetworkEnabled(val interface{}) {
+	if err := j.validateSetPublicAccessBehindVirtualNetworkEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicAccessBehindVirtualNetworkEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MachineLearningWorkspace)SetPublicNetworkAccessEnabled(val interface{}) {
 	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
 		panic(err)
@@ -991,6 +1061,17 @@ func (j *jsiiProxy_MachineLearningWorkspace)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MachineLearningWorkspace)SetV1LegacyModeEnabled(val interface{}) {
+	if err := j.validateSetV1LegacyModeEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"v1LegacyModeEnabled",
 		val,
 	)
 }
@@ -1366,6 +1447,14 @@ func (m *jsiiProxy_MachineLearningWorkspace) ResetPrimaryUserAssignedIdentity() 
 	)
 }
 
+func (m *jsiiProxy_MachineLearningWorkspace) ResetPublicAccessBehindVirtualNetworkEnabled() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetPublicAccessBehindVirtualNetworkEnabled",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MachineLearningWorkspace) ResetPublicNetworkAccessEnabled() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1394,6 +1483,14 @@ func (m *jsiiProxy_MachineLearningWorkspace) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MachineLearningWorkspace) ResetV1LegacyModeEnabled() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetV1LegacyModeEnabled",
 		nil, // no parameters
 	)
 }

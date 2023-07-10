@@ -56,6 +56,10 @@ func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference
 	return nil
 }
 
+func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) validateSetComponentsParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) validateSetInternalValueParameters(val *ApplicationGatewayRewriteRuleSetRewriteRuleUrl) error {
 	return nil
 }

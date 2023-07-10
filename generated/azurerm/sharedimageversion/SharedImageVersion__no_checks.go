@@ -72,11 +72,19 @@ func validateSharedImageVersion_IsTerraformResourceParameters(x interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_SharedImageVersion) validateSetBlobUriParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SharedImageVersion) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_SharedImageVersion) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImageVersion) validateSetEndOfLifeDateParameters(val *string) error {
 	return nil
 }
 
@@ -120,7 +128,15 @@ func (j *jsiiProxy_SharedImageVersion) validateSetProvisionersParameters(val *[]
 	return nil
 }
 
+func (j *jsiiProxy_SharedImageVersion) validateSetReplicationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SharedImageVersion) validateSetResourceGroupNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SharedImageVersion) validateSetStorageAccountIdParameters(val *string) error {
 	return nil
 }
 

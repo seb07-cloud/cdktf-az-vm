@@ -176,6 +176,14 @@ func (j *jsiiProxy_ManagedDisk) validateSetResourceGroupNameParameters(val *stri
 	return nil
 }
 
+func (j *jsiiProxy_ManagedDisk) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_ManagedDisk) validateSetSecurityTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ManagedDisk) validateSetSourceResourceIdParameters(val *string) error {
 	return nil
 }
@@ -201,6 +209,10 @@ func (j *jsiiProxy_ManagedDisk) validateSetTierParameters(val *string) error {
 }
 
 func (j *jsiiProxy_ManagedDisk) validateSetTrustedLaunchEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ManagedDisk) validateSetUploadSizeBytesParameters(val *float64) error {
 	return nil
 }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets}.
 type DataAzurermKeyVaultSecrets interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -51,6 +51,7 @@ type DataAzurermKeyVaultSecrets interface {
 	SetProvider(val cdktf.TerraformProvider)
 	// Experimental.
 	RawOverrides() interface{}
+	Secrets() DataAzurermKeyVaultSecretsSecretsList
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -265,6 +266,16 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecrets) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKeyVaultSecrets) Secrets() DataAzurermKeyVaultSecretsSecretsList {
+	var returns DataAzurermKeyVaultSecretsSecretsList
+	_jsii_.Get(
+		j,
+		"secrets",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKeyVaultSecrets) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -316,7 +327,7 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecrets) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets} Data Source.
 func NewDataAzurermKeyVaultSecrets(scope constructs.Construct, id *string, config *DataAzurermKeyVaultSecretsConfig) DataAzurermKeyVaultSecrets {
 	_init_.Initialize()
 
@@ -334,7 +345,7 @@ func NewDataAzurermKeyVaultSecrets(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secrets azurerm_key_vault_secrets} Data Source.
 func NewDataAzurermKeyVaultSecrets_Override(d DataAzurermKeyVaultSecrets, scope constructs.Construct, id *string, config *DataAzurermKeyVaultSecretsConfig) {
 	_init_.Initialize()
 

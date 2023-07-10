@@ -34,6 +34,9 @@ type EventhubNamespaceNetworkRulesetsOutputReference interface {
 	SetInternalValue(val interface{})
 	IpRule() EventhubNamespaceNetworkRulesetsIpRuleList
 	IpRuleInput() interface{}
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -75,6 +78,7 @@ type EventhubNamespaceNetworkRulesetsOutputReference interface {
 	PutVirtualNetworkRule(value interface{})
 	ResetDefaultAction()
 	ResetIpRule()
+	ResetPublicNetworkAccessEnabled()
 	ResetTrustedServiceAccessEnabled()
 	ResetVirtualNetworkRule()
 	// Produce the Token's value at resolution time.
@@ -177,6 +181,26 @@ func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) IpRuleInput(
 	_jsii_.Get(
 		j,
 		"ipRuleInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
 		&returns,
 	)
 	return returns
@@ -310,6 +334,17 @@ func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference)SetInternalVa
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -567,6 +602,14 @@ func (e *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) ResetIpRule(
 	_jsii_.InvokeVoid(
 		e,
 		"resetIpRule",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

@@ -52,6 +52,10 @@ func (d *jsiiProxy_DedicatedHardwareSecurityModule) validateOverrideLogicalIdPar
 	return nil
 }
 
+func (d *jsiiProxy_DedicatedHardwareSecurityModule) validatePutManagementNetworkProfileParameters(value *DedicatedHardwareSecurityModuleManagementNetworkProfile) error {
+	return nil
+}
+
 func (d *jsiiProxy_DedicatedHardwareSecurityModule) validatePutNetworkProfileParameters(value *DedicatedHardwareSecurityModuleNetworkProfile) error {
 	return nil
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server}.
 type PostgresqlFlexibleServer interface {
 	cdktf.TerraformResource
 	AdministratorLogin() *string
@@ -18,6 +18,8 @@ type PostgresqlFlexibleServer interface {
 	AdministratorPassword() *string
 	SetAdministratorPassword(val *string)
 	AdministratorPasswordInput() *string
+	Authentication() PostgresqlFlexibleServerAuthenticationOutputReference
+	AuthenticationInput() *PostgresqlFlexibleServerAuthentication
 	BackupRetentionDays() *float64
 	SetBackupRetentionDays(val *float64)
 	BackupRetentionDaysInput() *float64
@@ -36,6 +38,8 @@ type PostgresqlFlexibleServer interface {
 	CreateMode() *string
 	SetCreateMode(val *string)
 	CreateModeInput() *string
+	CustomerManagedKey() PostgresqlFlexibleServerCustomerManagedKeyOutputReference
+	CustomerManagedKeyInput() *PostgresqlFlexibleServerCustomerManagedKey
 	DelegatedSubnetId() *string
 	SetDelegatedSubnetId(val *string)
 	DelegatedSubnetIdInput() *string
@@ -59,6 +63,8 @@ type PostgresqlFlexibleServer interface {
 	HighAvailabilityInput() *PostgresqlFlexibleServerHighAvailability
 	Id() *string
 	SetId(val *string)
+	Identity() PostgresqlFlexibleServerIdentityOutputReference
+	IdentityInput() *PostgresqlFlexibleServerIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -91,6 +97,9 @@ type PostgresqlFlexibleServer interface {
 	PublicNetworkAccessEnabled() cdktf.IResolvable
 	// Experimental.
 	RawOverrides() interface{}
+	ReplicationRole() *string
+	SetReplicationRole(val *string)
+	ReplicationRoleInput() *string
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
@@ -145,23 +154,30 @@ type PostgresqlFlexibleServer interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutAuthentication(value *PostgresqlFlexibleServerAuthentication)
+	PutCustomerManagedKey(value *PostgresqlFlexibleServerCustomerManagedKey)
 	PutHighAvailability(value *PostgresqlFlexibleServerHighAvailability)
+	PutIdentity(value *PostgresqlFlexibleServerIdentity)
 	PutMaintenanceWindow(value *PostgresqlFlexibleServerMaintenanceWindow)
 	PutTimeouts(value *PostgresqlFlexibleServerTimeouts)
 	ResetAdministratorLogin()
 	ResetAdministratorPassword()
+	ResetAuthentication()
 	ResetBackupRetentionDays()
 	ResetCreateMode()
+	ResetCustomerManagedKey()
 	ResetDelegatedSubnetId()
 	ResetGeoRedundantBackupEnabled()
 	ResetHighAvailability()
 	ResetId()
+	ResetIdentity()
 	ResetMaintenanceWindow()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPointInTimeRestoreTimeInUtc()
 	ResetPrivateDnsZoneId()
+	ResetReplicationRole()
 	ResetSkuName()
 	ResetSourceServerId()
 	ResetStorageMb()
@@ -219,6 +235,26 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) AdministratorPasswordInput() *strin
 	_jsii_.Get(
 		j,
 		"administratorPasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) Authentication() PostgresqlFlexibleServerAuthenticationOutputReference {
+	var returns PostgresqlFlexibleServerAuthenticationOutputReference
+	_jsii_.Get(
+		j,
+		"authentication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) AuthenticationInput() *PostgresqlFlexibleServerAuthentication {
+	var returns *PostgresqlFlexibleServerAuthentication
+	_jsii_.Get(
+		j,
+		"authenticationInput",
 		&returns,
 	)
 	return returns
@@ -299,6 +335,26 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) CreateModeInput() *string {
 	_jsii_.Get(
 		j,
 		"createModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) CustomerManagedKey() PostgresqlFlexibleServerCustomerManagedKeyOutputReference {
+	var returns PostgresqlFlexibleServerCustomerManagedKeyOutputReference
+	_jsii_.Get(
+		j,
+		"customerManagedKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) CustomerManagedKeyInput() *PostgresqlFlexibleServerCustomerManagedKey {
+	var returns *PostgresqlFlexibleServerCustomerManagedKey
+	_jsii_.Get(
+		j,
+		"customerManagedKeyInput",
 		&returns,
 	)
 	return returns
@@ -419,6 +475,26 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) Identity() PostgresqlFlexibleServerIdentityOutputReference {
+	var returns PostgresqlFlexibleServerIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) IdentityInput() *PostgresqlFlexibleServerIdentity {
+	var returns *PostgresqlFlexibleServerIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -589,6 +665,26 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) RawOverrides() interface{} {
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) ReplicationRole() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicationRole",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer) ReplicationRoleInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"replicationRoleInput",
 		&returns,
 	)
 	return returns
@@ -785,7 +881,7 @@ func (j *jsiiProxy_PostgresqlFlexibleServer) ZoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server} Resource.
 func NewPostgresqlFlexibleServer(scope constructs.Construct, id *string, config *PostgresqlFlexibleServerConfig) PostgresqlFlexibleServer {
 	_init_.Initialize()
 
@@ -803,7 +899,7 @@ func NewPostgresqlFlexibleServer(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/postgresql_flexible_server azurerm_postgresql_flexible_server} Resource.
 func NewPostgresqlFlexibleServer_Override(p PostgresqlFlexibleServer, scope constructs.Construct, id *string, config *PostgresqlFlexibleServerConfig) {
 	_init_.Initialize()
 
@@ -999,6 +1095,17 @@ func (j *jsiiProxy_PostgresqlFlexibleServer)SetProvisioners(val *[]interface{}) 
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PostgresqlFlexibleServer)SetReplicationRole(val *string) {
+	if err := j.validateSetReplicationRoleParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"replicationRole",
 		val,
 	)
 }
@@ -1346,6 +1453,28 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) OverrideLogicalId(newLogicalId *str
 	)
 }
 
+func (p *jsiiProxy_PostgresqlFlexibleServer) PutAuthentication(value *PostgresqlFlexibleServerAuthentication) {
+	if err := p.validatePutAuthenticationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		p,
+		"putAuthentication",
+		[]interface{}{value},
+	)
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) PutCustomerManagedKey(value *PostgresqlFlexibleServerCustomerManagedKey) {
+	if err := p.validatePutCustomerManagedKeyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		p,
+		"putCustomerManagedKey",
+		[]interface{}{value},
+	)
+}
+
 func (p *jsiiProxy_PostgresqlFlexibleServer) PutHighAvailability(value *PostgresqlFlexibleServerHighAvailability) {
 	if err := p.validatePutHighAvailabilityParameters(value); err != nil {
 		panic(err)
@@ -1353,6 +1482,17 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) PutHighAvailability(value *Postgres
 	_jsii_.InvokeVoid(
 		p,
 		"putHighAvailability",
+		[]interface{}{value},
+	)
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) PutIdentity(value *PostgresqlFlexibleServerIdentity) {
+	if err := p.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		p,
+		"putIdentity",
 		[]interface{}{value},
 	)
 }
@@ -1395,6 +1535,14 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) ResetAdministratorPassword() {
 	)
 }
 
+func (p *jsiiProxy_PostgresqlFlexibleServer) ResetAuthentication() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetAuthentication",
+		nil, // no parameters
+	)
+}
+
 func (p *jsiiProxy_PostgresqlFlexibleServer) ResetBackupRetentionDays() {
 	_jsii_.InvokeVoid(
 		p,
@@ -1407,6 +1555,14 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) ResetCreateMode() {
 	_jsii_.InvokeVoid(
 		p,
 		"resetCreateMode",
+		nil, // no parameters
+	)
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) ResetCustomerManagedKey() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetCustomerManagedKey",
 		nil, // no parameters
 	)
 }
@@ -1443,6 +1599,14 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) ResetId() {
 	)
 }
 
+func (p *jsiiProxy_PostgresqlFlexibleServer) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
 func (p *jsiiProxy_PostgresqlFlexibleServer) ResetMaintenanceWindow() {
 	_jsii_.InvokeVoid(
 		p,
@@ -1471,6 +1635,14 @@ func (p *jsiiProxy_PostgresqlFlexibleServer) ResetPrivateDnsZoneId() {
 	_jsii_.InvokeVoid(
 		p,
 		"resetPrivateDnsZoneId",
+		nil, // no parameters
+	)
+}
+
+func (p *jsiiProxy_PostgresqlFlexibleServer) ResetReplicationRole() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetReplicationRole",
 		nil, // no parameters
 	)
 }

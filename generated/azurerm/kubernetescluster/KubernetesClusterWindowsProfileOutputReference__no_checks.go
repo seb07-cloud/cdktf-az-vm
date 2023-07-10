@@ -44,6 +44,10 @@ func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) validateInter
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) validatePutGmsaParameters(value *KubernetesClusterWindowsProfileGmsa) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

@@ -52,6 +52,10 @@ func (d *jsiiProxy_DataFactoryTriggerSchedule) validateOverrideLogicalIdParamete
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryTriggerSchedule) validatePutPipelineParameters(value interface{}) error {
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryTriggerSchedule) validatePutScheduleParameters(value *DataFactoryTriggerScheduleSchedule) error {
 	return nil
 }
@@ -133,6 +137,10 @@ func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetProvisionersParameters
 }
 
 func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetStartTimeParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetTimeZoneParameters(val *string) error {
 	return nil
 }
 

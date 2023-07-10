@@ -9,9 +9,10 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/shared_image azurerm_shared_image}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/shared_image azurerm_shared_image}.
 type DataAzurermSharedImage interface {
 	cdktf.TerraformDataSource
+	Architecture() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -58,6 +59,7 @@ type DataAzurermSharedImage interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	PurchasePlan() DataAzurermSharedImagePurchasePlanList
 	// Experimental.
 	RawOverrides() interface{}
 	ReleaseNoteUri() *string
@@ -118,6 +120,16 @@ type DataAzurermSharedImage interface {
 // The jsii proxy struct for DataAzurermSharedImage
 type jsiiProxy_DataAzurermSharedImage struct {
 	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAzurermSharedImage) Architecture() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"architecture",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAzurermSharedImage) CdktfStack() cdktf.TerraformStack {
@@ -350,6 +362,16 @@ func (j *jsiiProxy_DataAzurermSharedImage) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermSharedImage) PurchasePlan() DataAzurermSharedImagePurchasePlanList {
+	var returns DataAzurermSharedImagePurchasePlanList
+	_jsii_.Get(
+		j,
+		"purchasePlan",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermSharedImage) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -461,7 +483,7 @@ func (j *jsiiProxy_DataAzurermSharedImage) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/shared_image azurerm_shared_image} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/shared_image azurerm_shared_image} Data Source.
 func NewDataAzurermSharedImage(scope constructs.Construct, id *string, config *DataAzurermSharedImageConfig) DataAzurermSharedImage {
 	_init_.Initialize()
 
@@ -479,7 +501,7 @@ func NewDataAzurermSharedImage(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/shared_image azurerm_shared_image} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/shared_image azurerm_shared_image} Data Source.
 func NewDataAzurermSharedImage_Override(d DataAzurermSharedImage, scope constructs.Construct, id *string, config *DataAzurermSharedImageConfig) {
 	_init_.Initialize()
 

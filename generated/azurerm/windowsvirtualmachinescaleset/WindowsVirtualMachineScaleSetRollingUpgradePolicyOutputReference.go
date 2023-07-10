@@ -25,6 +25,9 @@ type WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface 
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	CrossZoneUpgradesEnabled() interface{}
+	SetCrossZoneUpgradesEnabled(val interface{})
+	CrossZoneUpgradesEnabledInput() interface{}
 	// Experimental.
 	Fqn() *string
 	InternalValue() *WindowsVirtualMachineScaleSetRollingUpgradePolicy
@@ -41,6 +44,9 @@ type WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface 
 	PauseTimeBetweenBatches() *string
 	SetPauseTimeBetweenBatches(val *string)
 	PauseTimeBetweenBatchesInput() *string
+	PrioritizeUnhealthyInstancesEnabled() interface{}
+	SetPrioritizeUnhealthyInstancesEnabled(val interface{})
+	PrioritizeUnhealthyInstancesEnabledInput() interface{}
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -73,6 +79,8 @@ type WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface 
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCrossZoneUpgradesEnabled()
+	ResetPrioritizeUnhealthyInstancesEnabled()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -113,6 +121,26 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) CrossZoneUpgradesEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossZoneUpgradesEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) CrossZoneUpgradesEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossZoneUpgradesEnabledInput",
 		&returns,
 	)
 	return returns
@@ -218,6 +246,26 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	return returns
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) PrioritizeUnhealthyInstancesEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"prioritizeUnhealthyInstancesEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) PrioritizeUnhealthyInstancesEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"prioritizeUnhealthyInstancesEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -288,6 +336,17 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	)
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetCrossZoneUpgradesEnabled(val interface{}) {
+	if err := j.validateSetCrossZoneUpgradesEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossZoneUpgradesEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetInternalValue(val *WindowsVirtualMachineScaleSetRollingUpgradePolicy) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
@@ -339,6 +398,17 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	_jsii_.Set(
 		j,
 		"pauseTimeBetweenBatches",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetPrioritizeUnhealthyInstancesEnabled(val interface{}) {
+	if err := j.validateSetPrioritizeUnhealthyInstancesEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"prioritizeUnhealthyInstancesEnabled",
 		val,
 	)
 }
@@ -549,6 +619,22 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputRefere
 	)
 
 	return returns
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) ResetCrossZoneUpgradesEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetCrossZoneUpgradesEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) ResetPrioritizeUnhealthyInstancesEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPrioritizeUnhealthyInstancesEnabled",
+		nil, // no parameters
+	)
 }
 
 func (w *jsiiProxy_WindowsVirtualMachineScaleSetRollingUpgradePolicyOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

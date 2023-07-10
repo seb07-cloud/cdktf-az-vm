@@ -80,6 +80,14 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutExtensionParameters
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutGalleryApplicationParameters(value interface{}) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutGalleryApplicationsParameters(value interface{}) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutIdentityParameters(value *WindowsVirtualMachineScaleSetIdentity) error {
 	return nil
 }
@@ -100,6 +108,10 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutRollingUpgradePolic
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutScaleInParameters(value *WindowsVirtualMachineScaleSetScaleIn) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSecretParameters(value interface{}) error {
 	return nil
 }
@@ -108,7 +120,15 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSourceImageReferenc
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSpotRestoreParameters(value *WindowsVirtualMachineScaleSetSpotRestore) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutTerminateNotificationParameters(value *WindowsVirtualMachineScaleSetTerminateNotification) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutTerminationNotificationParameters(value *WindowsVirtualMachineScaleSetTerminationNotification) error {
 	return nil
 }
 
@@ -137,6 +157,10 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetAdminPasswordParame
 }
 
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetAdminUsernameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	return nil
 }
 
@@ -176,11 +200,19 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetEvictionPolicyParam
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetExtensionOperationsEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetExtensionsTimeBudgetParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetHealthProbeIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetHostGroupIdParameters(val *string) error {
 	return nil
 }
 

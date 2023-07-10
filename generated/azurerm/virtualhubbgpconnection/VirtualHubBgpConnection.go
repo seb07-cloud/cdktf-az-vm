@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection}.
 type VirtualHubBgpConnection interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -75,6 +75,9 @@ type VirtualHubBgpConnection interface {
 	VirtualHubId() *string
 	SetVirtualHubId(val *string)
 	VirtualHubIdInput() *string
+	VirtualNetworkConnectionId() *string
+	SetVirtualNetworkConnectionId(val *string)
+	VirtualNetworkConnectionIdInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -106,6 +109,7 @@ type VirtualHubBgpConnection interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetVirtualNetworkConnectionId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -401,8 +405,28 @@ func (j *jsiiProxy_VirtualHubBgpConnection) VirtualHubIdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualHubBgpConnection) VirtualNetworkConnectionId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkConnectionId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection} Resource.
+func (j *jsiiProxy_VirtualHubBgpConnection) VirtualNetworkConnectionIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkConnectionIdInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection} Resource.
 func NewVirtualHubBgpConnection(scope constructs.Construct, id *string, config *VirtualHubBgpConnectionConfig) VirtualHubBgpConnection {
 	_init_.Initialize()
 
@@ -420,7 +444,7 @@ func NewVirtualHubBgpConnection(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub_bgp_connection azurerm_virtual_hub_bgp_connection} Resource.
 func NewVirtualHubBgpConnection_Override(v VirtualHubBgpConnection, scope constructs.Construct, id *string, config *VirtualHubBgpConnectionConfig) {
 	_init_.Initialize()
 
@@ -550,6 +574,17 @@ func (j *jsiiProxy_VirtualHubBgpConnection)SetVirtualHubId(val *string) {
 	_jsii_.Set(
 		j,
 		"virtualHubId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualHubBgpConnection)SetVirtualNetworkConnectionId(val *string) {
+	if err := j.validateSetVirtualNetworkConnectionIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkConnectionId",
 		val,
 	)
 }
@@ -851,6 +886,14 @@ func (v *jsiiProxy_VirtualHubBgpConnection) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualHubBgpConnection) ResetVirtualNetworkConnectionId() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetVirtualNetworkConnectionId",
 		nil, // no parameters
 	)
 }

@@ -52,6 +52,10 @@ func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutL
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutNodeNetworkProfileParameters(value *KubernetesClusterDefaultNodePoolNodeNetworkProfile) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutUpgradeSettingsParameters(value *KubernetesClusterDefaultNodePoolUpgradeSettings) error {
 	return nil
 }
@@ -60,11 +64,19 @@ func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateReso
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetCapacityReservationGroupIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetComplexObjectIndexParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetComplexObjectIsFromSetParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetCustomCaTrustEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -84,6 +96,10 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetF
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetHostGroupIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetInternalValueParameters(val *KubernetesClusterDefaultNodePool) error {
 	return nil
 }
@@ -97,6 +113,10 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetM
 }
 
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetMaxPodsParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetMessageOfTheDayParameters(val *string) error {
 	return nil
 }
 
@@ -152,7 +172,15 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetP
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetScaleDownModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetTemporaryNameForRotationParameters(val *string) error {
 	return nil
 }
 
@@ -177,6 +205,10 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetV
 }
 
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetVnetSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetWorkloadRuntimeParameters(val *string) error {
 	return nil
 }
 

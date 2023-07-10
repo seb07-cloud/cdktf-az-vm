@@ -9,16 +9,19 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_function_app azurerm_linux_function_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_function_app azurerm_linux_function_app}.
 type DataAzurermLinuxFunctionApp interface {
 	cdktf.TerraformDataSource
 	AppSettings() cdktf.StringMap
 	AuthSettings() DataAzurermLinuxFunctionAppAuthSettingsList
+	AuthSettingsV2() DataAzurermLinuxFunctionAppAuthSettingsV2List
+	Availability() *string
 	Backup() DataAzurermLinuxFunctionAppBackupList
 	BuiltinLoggingEnabled() cdktf.IResolvable
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ClientCertificateEnabled() cdktf.IResolvable
+	ClientCertificateExclusionPaths() *string
 	ClientCertificateMode() *string
 	ConnectionString() DataAzurermLinuxFunctionAppConnectionStringList
 	// Experimental.
@@ -45,6 +48,7 @@ type DataAzurermLinuxFunctionApp interface {
 	// Experimental.
 	FriendlyUniqueId() *string
 	FunctionsExtensionVersion() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() cdktf.IResolvable
 	Id() *string
 	SetId(val *string)
@@ -69,6 +73,7 @@ type DataAzurermLinuxFunctionApp interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	PublicNetworkAccessEnabled() cdktf.IResolvable
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -77,6 +82,7 @@ type DataAzurermLinuxFunctionApp interface {
 	ServicePlanId() *string
 	SiteConfig() DataAzurermLinuxFunctionAppSiteConfigList
 	SiteCredential() DataAzurermLinuxFunctionAppSiteCredentialList
+	StickySettings() DataAzurermLinuxFunctionAppStickySettingsList
 	StorageAccountAccessKey() *string
 	StorageAccountName() *string
 	StorageKeyVaultSecretId() *string
@@ -90,6 +96,8 @@ type DataAzurermLinuxFunctionApp interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermLinuxFunctionAppTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Usage() *string
+	VirtualNetworkSubnetId() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -156,6 +164,26 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) AuthSettings() DataAzurermLinuxF
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) AuthSettingsV2() DataAzurermLinuxFunctionAppAuthSettingsV2List {
+	var returns DataAzurermLinuxFunctionAppAuthSettingsV2List
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) Availability() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"availability",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermLinuxFunctionApp) Backup() DataAzurermLinuxFunctionAppBackupList {
 	var returns DataAzurermLinuxFunctionAppBackupList
 	_jsii_.Get(
@@ -191,6 +219,16 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) ClientCertificateEnabled() cdktf
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
 		&returns,
 	)
 	return returns
@@ -331,6 +369,16 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) FunctionsExtensionVersion() *str
 	_jsii_.Get(
 		j,
 		"functionsExtensionVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -486,6 +534,16 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) Provider() cdktf.TerraformProvid
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) PublicNetworkAccessEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermLinuxFunctionApp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -541,6 +599,16 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) SiteCredential() DataAzurermLinu
 	_jsii_.Get(
 		j,
 		"siteCredential",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) StickySettings() DataAzurermLinuxFunctionAppStickySettingsList {
+	var returns DataAzurermLinuxFunctionAppStickySettingsList
+	_jsii_.Get(
+		j,
+		"stickySettings",
 		&returns,
 	)
 	return returns
@@ -646,8 +714,28 @@ func (j *jsiiProxy_DataAzurermLinuxFunctionApp) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) Usage() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"usage",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_function_app azurerm_linux_function_app} Data Source.
+func (j *jsiiProxy_DataAzurermLinuxFunctionApp) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_function_app azurerm_linux_function_app} Data Source.
 func NewDataAzurermLinuxFunctionApp(scope constructs.Construct, id *string, config *DataAzurermLinuxFunctionAppConfig) DataAzurermLinuxFunctionApp {
 	_init_.Initialize()
 
@@ -665,7 +753,7 @@ func NewDataAzurermLinuxFunctionApp(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_function_app azurerm_linux_function_app} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_function_app azurerm_linux_function_app} Data Source.
 func NewDataAzurermLinuxFunctionApp_Override(d DataAzurermLinuxFunctionApp, scope constructs.Construct, id *string, config *DataAzurermLinuxFunctionAppConfig) {
 	_init_.Initialize()
 

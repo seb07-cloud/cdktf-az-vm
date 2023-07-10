@@ -38,6 +38,9 @@ type SpringCloudServiceNetworkOutputReference interface {
 	Fqn() *string
 	InternalValue() *SpringCloudServiceNetwork
 	SetInternalValue(val *SpringCloudServiceNetwork)
+	ReadTimeoutSeconds() *float64
+	SetReadTimeoutSeconds(val *float64)
+	ReadTimeoutSecondsInput() *float64
 	ServiceRuntimeNetworkResourceGroup() *string
 	SetServiceRuntimeNetworkResourceGroup(val *string)
 	ServiceRuntimeNetworkResourceGroupInput() *string
@@ -77,6 +80,7 @@ type SpringCloudServiceNetworkOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetAppNetworkResourceGroup()
+	ResetReadTimeoutSeconds()
 	ResetServiceRuntimeNetworkResourceGroup()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -198,6 +202,26 @@ func (j *jsiiProxy_SpringCloudServiceNetworkOutputReference) InternalValue() *Sp
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudServiceNetworkOutputReference) ReadTimeoutSeconds() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"readTimeoutSeconds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudServiceNetworkOutputReference) ReadTimeoutSecondsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"readTimeoutSecondsInput",
 		&returns,
 	)
 	return returns
@@ -353,6 +377,17 @@ func (j *jsiiProxy_SpringCloudServiceNetworkOutputReference)SetInternalValue(val
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudServiceNetworkOutputReference)SetReadTimeoutSeconds(val *float64) {
+	if err := j.validateSetReadTimeoutSecondsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"readTimeoutSeconds",
 		val,
 	)
 }
@@ -591,6 +626,14 @@ func (s *jsiiProxy_SpringCloudServiceNetworkOutputReference) ResetAppNetworkReso
 	_jsii_.InvokeVoid(
 		s,
 		"resetAppNetworkResourceGroup",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudServiceNetworkOutputReference) ResetReadTimeoutSeconds() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetReadTimeoutSeconds",
 		nil, // no parameters
 	)
 }

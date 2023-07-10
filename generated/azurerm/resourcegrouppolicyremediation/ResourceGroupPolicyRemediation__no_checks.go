@@ -76,6 +76,10 @@ func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetCountParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetFailurePercentageParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetIdParameters(val *string) error {
 	return nil
 }
@@ -92,6 +96,10 @@ func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetNameParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetParallelDeploymentsParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetPolicyAssignmentIdParameters(val *string) error {
 	return nil
 }
@@ -100,7 +108,15 @@ func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetPolicyDefinitionId
 	return nil
 }
 
+func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetPolicyDefinitionReferenceIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ResourceGroupPolicyRemediation) validateSetResourceCountParameters(val *float64) error {
 	return nil
 }
 

@@ -37,6 +37,21 @@ type WindowsWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	DockerContainerTag() *string
 	SetDockerContainerTag(val *string)
 	DockerContainerTagInput() *string
+	DockerImageName() *string
+	SetDockerImageName(val *string)
+	DockerImageNameInput() *string
+	DockerRegistryPassword() *string
+	SetDockerRegistryPassword(val *string)
+	DockerRegistryPasswordInput() *string
+	DockerRegistryUrl() *string
+	SetDockerRegistryUrl(val *string)
+	DockerRegistryUrlInput() *string
+	DockerRegistryUsername() *string
+	SetDockerRegistryUsername(val *string)
+	DockerRegistryUsernameInput() *string
+	DotnetCoreVersion() *string
+	SetDotnetCoreVersion(val *string)
+	DotnetCoreVersionInput() *string
 	DotnetVersion() *string
 	SetDotnetVersion(val *string)
 	DotnetVersionInput() *string
@@ -50,6 +65,9 @@ type WindowsWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	JavaContainerVersion() *string
 	SetJavaContainerVersion(val *string)
 	JavaContainerVersionInput() *string
+	JavaEmbeddedServerEnabled() interface{}
+	SetJavaEmbeddedServerEnabled(val interface{})
+	JavaEmbeddedServerEnabledInput() interface{}
 	JavaVersion() *string
 	SetJavaVersion(val *string)
 	JavaVersionInput() *string
@@ -59,6 +77,9 @@ type WindowsWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	PhpVersion() *string
 	SetPhpVersion(val *string)
 	PhpVersionInput() *string
+	Python() interface{}
+	SetPython(val interface{})
+	PythonInput() interface{}
 	PythonVersion() *string
 	SetPythonVersion(val *string)
 	PythonVersionInput() *string
@@ -70,6 +91,9 @@ type WindowsWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	TomcatVersion() *string
+	SetTomcatVersion(val *string)
+	TomcatVersionInput() *string
 	// Experimental.
 	ComputeFqn() *string
 	// Experimental.
@@ -98,13 +122,21 @@ type WindowsWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	ResetDockerContainerName()
 	ResetDockerContainerRegistry()
 	ResetDockerContainerTag()
+	ResetDockerImageName()
+	ResetDockerRegistryPassword()
+	ResetDockerRegistryUrl()
+	ResetDockerRegistryUsername()
+	ResetDotnetCoreVersion()
 	ResetDotnetVersion()
 	ResetJavaContainer()
 	ResetJavaContainerVersion()
+	ResetJavaEmbeddedServerEnabled()
 	ResetJavaVersion()
 	ResetNodeVersion()
 	ResetPhpVersion()
+	ResetPython()
 	ResetPythonVersion()
+	ResetTomcatVersion()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -230,6 +262,106 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) D
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerImageName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerImageName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerImageNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerImageNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryPassword() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryPasswordInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryPasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUrlInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUsername() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUsername",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUsernameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUsernameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DotnetCoreVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dotnetCoreVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DotnetCoreVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dotnetCoreVersionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) DotnetVersion() *string {
 	var returns *string
 	_jsii_.Get(
@@ -310,6 +442,26 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) J
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) JavaEmbeddedServerEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"javaEmbeddedServerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) JavaEmbeddedServerEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"javaEmbeddedServerEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) JavaVersion() *string {
 	var returns *string
 	_jsii_.Get(
@@ -370,6 +522,26 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) P
 	return returns
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) Python() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"python",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) PythonInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"pythonInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) PythonVersion() *string {
 	var returns *string
 	_jsii_.Get(
@@ -405,6 +577,26 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) T
 	_jsii_.Get(
 		j,
 		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) TomcatVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tomcatVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) TomcatVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tomcatVersionInput",
 		&returns,
 	)
 	return returns
@@ -504,6 +696,61 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)Se
 	)
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerImageName(val *string) {
+	if err := j.validateSetDockerImageNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerImageName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryPassword(val *string) {
+	if err := j.validateSetDockerRegistryPasswordParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryUrl(val *string) {
+	if err := j.validateSetDockerRegistryUrlParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryUrl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryUsername(val *string) {
+	if err := j.validateSetDockerRegistryUsernameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryUsername",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDotnetCoreVersion(val *string) {
+	if err := j.validateSetDotnetCoreVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dotnetCoreVersion",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetDotnetVersion(val *string) {
 	if err := j.validateSetDotnetVersionParameters(val); err != nil {
 		panic(err)
@@ -548,6 +795,17 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)Se
 	)
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetJavaEmbeddedServerEnabled(val interface{}) {
+	if err := j.validateSetJavaEmbeddedServerEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"javaEmbeddedServerEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetJavaVersion(val *string) {
 	if err := j.validateSetJavaVersionParameters(val); err != nil {
 		panic(err)
@@ -581,6 +839,17 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)Se
 	)
 }
 
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetPython(val interface{}) {
+	if err := j.validateSetPythonParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"python",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetPythonVersion(val *string) {
 	if err := j.validateSetPythonVersionParameters(val); err != nil {
 		panic(err)
@@ -610,6 +879,17 @@ func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)Se
 	_jsii_.Set(
 		j,
 		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference)SetTomcatVersion(val *string) {
+	if err := j.validateSetTomcatVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tomcatVersion",
 		val,
 	)
 }
@@ -832,6 +1112,46 @@ func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) R
 	)
 }
 
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerImageName() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetDockerImageName",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryPassword() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetDockerRegistryPassword",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryUrl() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetDockerRegistryUrl",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryUsername() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetDockerRegistryUsername",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDotnetCoreVersion() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetDotnetCoreVersion",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetDotnetVersion() {
 	_jsii_.InvokeVoid(
 		w,
@@ -852,6 +1172,14 @@ func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) R
 	_jsii_.InvokeVoid(
 		w,
 		"resetJavaContainerVersion",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetJavaEmbeddedServerEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetJavaEmbeddedServerEnabled",
 		nil, // no parameters
 	)
 }
@@ -880,10 +1208,26 @@ func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) R
 	)
 }
 
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetPython() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPython",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetPythonVersion() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetPythonVersion",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsWebAppSlotSiteConfigApplicationStackOutputReference) ResetTomcatVersion() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetTomcatVersion",
 		nil, // no parameters
 	)
 }

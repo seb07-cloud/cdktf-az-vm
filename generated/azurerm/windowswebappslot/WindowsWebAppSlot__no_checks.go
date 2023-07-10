@@ -56,6 +56,10 @@ func (w *jsiiProxy_WindowsWebAppSlot) validatePutAuthSettingsParameters(value *W
 	return nil
 }
 
+func (w *jsiiProxy_WindowsWebAppSlot) validatePutAuthSettingsV2Parameters(value *WindowsWebAppSlotAuthSettingsV2) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsWebAppSlot) validatePutBackupParameters(value *WindowsWebAppSlotBackup) error {
 	return nil
 }
@@ -112,6 +116,10 @@ func (j *jsiiProxy_WindowsWebAppSlot) validateSetClientCertificateEnabledParamet
 	return nil
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot) validateSetClientCertificateExclusionPathsParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsWebAppSlot) validateSetClientCertificateModeParameters(val *string) error {
 	return nil
 }
@@ -152,7 +160,23 @@ func (j *jsiiProxy_WindowsWebAppSlot) validateSetProvisionersParameters(val *[]i
 	return nil
 }
 
+func (j *jsiiProxy_WindowsWebAppSlot) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) validateSetServicePlanIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsWebAppSlot) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsWebAppSlot) validateSetZipDeployFileParameters(val *string) error {
 	return nil
 }
 

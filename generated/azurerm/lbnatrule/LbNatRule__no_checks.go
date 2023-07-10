@@ -68,6 +68,10 @@ func validateLbNatRule_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_LbNatRule) validateSetBackendAddressPoolIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LbNatRule) validateSetBackendPortParameters(val *float64) error {
 	return nil
 }
@@ -93,6 +97,14 @@ func (j *jsiiProxy_LbNatRule) validateSetFrontendIpConfigurationNameParameters(v
 }
 
 func (j *jsiiProxy_LbNatRule) validateSetFrontendPortParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_LbNatRule) validateSetFrontendPortEndParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_LbNatRule) validateSetFrontendPortStartParameters(val *float64) error {
 	return nil
 }
 

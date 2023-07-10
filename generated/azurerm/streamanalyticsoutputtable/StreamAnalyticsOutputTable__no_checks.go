@@ -72,6 +72,10 @@ func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetBatchSizeParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetColumnsToRemoveParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputTable) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

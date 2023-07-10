@@ -9,11 +9,17 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace}.
 type LogAnalyticsWorkspace interface {
 	cdktf.TerraformResource
+	AllowResourceOnlyPermissions() interface{}
+	SetAllowResourceOnlyPermissions(val interface{})
+	AllowResourceOnlyPermissionsInput() interface{}
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	CmkForQueryForced() interface{}
+	SetCmkForQueryForced(val interface{})
+	CmkForQueryForcedInput() interface{}
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -52,6 +58,9 @@ type LogAnalyticsWorkspace interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthenticationDisabled() interface{}
+	SetLocalAuthenticationDisabled(val interface{})
+	LocalAuthenticationDisabledInput() interface{}
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
@@ -122,10 +131,13 @@ type LogAnalyticsWorkspace interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LogAnalyticsWorkspaceTimeouts)
+	ResetAllowResourceOnlyPermissions()
+	ResetCmkForQueryForced()
 	ResetDailyQuotaGb()
 	ResetId()
 	ResetInternetIngestionEnabled()
 	ResetInternetQueryEnabled()
+	ResetLocalAuthenticationDisabled()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -149,11 +161,51 @@ type jsiiProxy_LogAnalyticsWorkspace struct {
 	internal.Type__cdktfTerraformResource
 }
 
+func (j *jsiiProxy_LogAnalyticsWorkspace) AllowResourceOnlyPermissions() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allowResourceOnlyPermissions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace) AllowResourceOnlyPermissionsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"allowResourceOnlyPermissionsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LogAnalyticsWorkspace) CdktfStack() cdktf.TerraformStack {
 	var returns cdktf.TerraformStack
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace) CmkForQueryForced() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cmkForQueryForced",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace) CmkForQueryForcedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"cmkForQueryForcedInput",
 		&returns,
 	)
 	return returns
@@ -314,6 +366,26 @@ func (j *jsiiProxy_LogAnalyticsWorkspace) Lifecycle() *cdktf.TerraformResourceLi
 	_jsii_.Get(
 		j,
 		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace) LocalAuthenticationDisabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationDisabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace) LocalAuthenticationDisabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationDisabledInput",
 		&returns,
 	)
 	return returns
@@ -580,7 +652,7 @@ func (j *jsiiProxy_LogAnalyticsWorkspace) WorkspaceId() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace} Resource.
 func NewLogAnalyticsWorkspace(scope constructs.Construct, id *string, config *LogAnalyticsWorkspaceConfig) LogAnalyticsWorkspace {
 	_init_.Initialize()
 
@@ -598,7 +670,7 @@ func NewLogAnalyticsWorkspace(scope constructs.Construct, id *string, config *Lo
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/log_analytics_workspace azurerm_log_analytics_workspace} Resource.
 func NewLogAnalyticsWorkspace_Override(l LogAnalyticsWorkspace, scope constructs.Construct, id *string, config *LogAnalyticsWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -606,6 +678,28 @@ func NewLogAnalyticsWorkspace_Override(l LogAnalyticsWorkspace, scope constructs
 		"azurerm.logAnalyticsWorkspace.LogAnalyticsWorkspace",
 		[]interface{}{scope, id, config},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace)SetAllowResourceOnlyPermissions(val interface{}) {
+	if err := j.validateSetAllowResourceOnlyPermissionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowResourceOnlyPermissions",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace)SetCmkForQueryForced(val interface{}) {
+	if err := j.validateSetCmkForQueryForcedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"cmkForQueryForced",
+		val,
 	)
 }
 
@@ -698,6 +792,17 @@ func (j *jsiiProxy_LogAnalyticsWorkspace)SetLifecycle(val *cdktf.TerraformResour
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LogAnalyticsWorkspace)SetLocalAuthenticationDisabled(val interface{}) {
+	if err := j.validateSetLocalAuthenticationDisabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"localAuthenticationDisabled",
 		val,
 	)
 }
@@ -1075,6 +1180,22 @@ func (l *jsiiProxy_LogAnalyticsWorkspace) PutTimeouts(value *LogAnalyticsWorkspa
 	)
 }
 
+func (l *jsiiProxy_LogAnalyticsWorkspace) ResetAllowResourceOnlyPermissions() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetAllowResourceOnlyPermissions",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LogAnalyticsWorkspace) ResetCmkForQueryForced() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetCmkForQueryForced",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LogAnalyticsWorkspace) ResetDailyQuotaGb() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1103,6 +1224,14 @@ func (l *jsiiProxy_LogAnalyticsWorkspace) ResetInternetQueryEnabled() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetInternetQueryEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LogAnalyticsWorkspace) ResetLocalAuthenticationDisabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetLocalAuthenticationDisabled",
 		nil, // no parameters
 	)
 }

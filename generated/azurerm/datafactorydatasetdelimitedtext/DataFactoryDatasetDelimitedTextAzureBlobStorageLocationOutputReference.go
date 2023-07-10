@@ -28,6 +28,9 @@ type DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference inte
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	DynamicContainerEnabled() interface{}
+	SetDynamicContainerEnabled(val interface{})
+	DynamicContainerEnabledInput() interface{}
 	DynamicFilenameEnabled() interface{}
 	SetDynamicFilenameEnabled(val interface{})
 	DynamicFilenameEnabledInput() interface{}
@@ -76,6 +79,7 @@ type DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference inte
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetDynamicContainerEnabled()
 	ResetDynamicFilenameEnabled()
 	ResetDynamicPathEnabled()
 	ResetFilename()
@@ -140,6 +144,26 @@ func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutput
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) DynamicContainerEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dynamicContainerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) DynamicContainerEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"dynamicContainerEnabledInput",
 		&returns,
 	)
 	return returns
@@ -322,6 +346,17 @@ func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutput
 	_jsii_.Set(
 		j,
 		"container",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference)SetDynamicContainerEnabled(val interface{}) {
+	if err := j.validateSetDynamicContainerEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dynamicContainerEnabled",
 		val,
 	)
 }
@@ -587,6 +622,14 @@ func (d *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutput
 	)
 
 	return returns
+}
+
+func (d *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) ResetDynamicContainerEnabled() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDynamicContainerEnabled",
+		nil, // no parameters
+	)
 }
 
 func (d *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) ResetDynamicFilenameEnabled() {

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/backup_policy_vm azurerm_backup_policy_vm}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/backup_policy_vm azurerm_backup_policy_vm}.
 type BackupPolicyVm interface {
 	cdktf.TerraformResource
 	Backup() BackupPolicyVmBackupOutputReference
@@ -41,6 +41,8 @@ type BackupPolicyVm interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InstantRestoreResourceGroup() BackupPolicyVmInstantRestoreResourceGroupOutputReference
+	InstantRestoreResourceGroupInput() *BackupPolicyVmInstantRestoreResourceGroup
 	InstantRestoreRetentionDays() *float64
 	SetInstantRestoreRetentionDays(val *float64)
 	InstantRestoreRetentionDaysInput() *float64
@@ -53,6 +55,9 @@ type BackupPolicyVm interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	PolicyType() *string
+	SetPolicyType(val *string)
+	PolicyTypeInput() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -114,16 +119,19 @@ type BackupPolicyVm interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutBackup(value *BackupPolicyVmBackup)
+	PutInstantRestoreResourceGroup(value *BackupPolicyVmInstantRestoreResourceGroup)
 	PutRetentionDaily(value *BackupPolicyVmRetentionDaily)
 	PutRetentionMonthly(value *BackupPolicyVmRetentionMonthly)
 	PutRetentionWeekly(value *BackupPolicyVmRetentionWeekly)
 	PutRetentionYearly(value *BackupPolicyVmRetentionYearly)
 	PutTimeouts(value *BackupPolicyVmTimeouts)
 	ResetId()
+	ResetInstantRestoreResourceGroup()
 	ResetInstantRestoreRetentionDays()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPolicyType()
 	ResetRetentionDaily()
 	ResetRetentionMonthly()
 	ResetRetentionWeekly()
@@ -265,6 +273,26 @@ func (j *jsiiProxy_BackupPolicyVm) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BackupPolicyVm) InstantRestoreResourceGroup() BackupPolicyVmInstantRestoreResourceGroupOutputReference {
+	var returns BackupPolicyVmInstantRestoreResourceGroupOutputReference
+	_jsii_.Get(
+		j,
+		"instantRestoreResourceGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVm) InstantRestoreResourceGroupInput() *BackupPolicyVmInstantRestoreResourceGroup {
+	var returns *BackupPolicyVmInstantRestoreResourceGroup
+	_jsii_.Get(
+		j,
+		"instantRestoreResourceGroupInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BackupPolicyVm) InstantRestoreRetentionDays() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -320,6 +348,26 @@ func (j *jsiiProxy_BackupPolicyVm) Node() constructs.Node {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVm) PolicyType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVm) PolicyTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"policyTypeInput",
 		&returns,
 	)
 	return returns
@@ -546,7 +594,7 @@ func (j *jsiiProxy_BackupPolicyVm) TimezoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/backup_policy_vm azurerm_backup_policy_vm} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/backup_policy_vm azurerm_backup_policy_vm} Resource.
 func NewBackupPolicyVm(scope constructs.Construct, id *string, config *BackupPolicyVmConfig) BackupPolicyVm {
 	_init_.Initialize()
 
@@ -564,7 +612,7 @@ func NewBackupPolicyVm(scope constructs.Construct, id *string, config *BackupPol
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/backup_policy_vm azurerm_backup_policy_vm} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/backup_policy_vm azurerm_backup_policy_vm} Resource.
 func NewBackupPolicyVm_Override(b BackupPolicyVm, scope constructs.Construct, id *string, config *BackupPolicyVmConfig) {
 	_init_.Initialize()
 
@@ -653,6 +701,17 @@ func (j *jsiiProxy_BackupPolicyVm)SetName(val *string) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupPolicyVm)SetPolicyType(val *string) {
+	if err := j.validateSetPolicyTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"policyType",
 		val,
 	)
 }
@@ -986,6 +1045,17 @@ func (b *jsiiProxy_BackupPolicyVm) PutBackup(value *BackupPolicyVmBackup) {
 	)
 }
 
+func (b *jsiiProxy_BackupPolicyVm) PutInstantRestoreResourceGroup(value *BackupPolicyVmInstantRestoreResourceGroup) {
+	if err := b.validatePutInstantRestoreResourceGroupParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		b,
+		"putInstantRestoreResourceGroup",
+		[]interface{}{value},
+	)
+}
+
 func (b *jsiiProxy_BackupPolicyVm) PutRetentionDaily(value *BackupPolicyVmRetentionDaily) {
 	if err := b.validatePutRetentionDailyParameters(value); err != nil {
 		panic(err)
@@ -1049,6 +1119,14 @@ func (b *jsiiProxy_BackupPolicyVm) ResetId() {
 	)
 }
 
+func (b *jsiiProxy_BackupPolicyVm) ResetInstantRestoreResourceGroup() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetInstantRestoreResourceGroup",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BackupPolicyVm) ResetInstantRestoreRetentionDays() {
 	_jsii_.InvokeVoid(
 		b,
@@ -1061,6 +1139,14 @@ func (b *jsiiProxy_BackupPolicyVm) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BackupPolicyVm) ResetPolicyType() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetPolicyType",
 		nil, // no parameters
 	)
 }

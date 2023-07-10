@@ -76,6 +76,10 @@ func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputRefer
 	return nil
 }
 
+func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) validateSetUserAssignedIdentityIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) validateSetUserNameParameters(val *string) error {
 	return nil
 }

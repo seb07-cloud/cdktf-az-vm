@@ -56,6 +56,10 @@ func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) validateSetComplexO
 	return nil
 }
 
+func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) validateSetIdentityIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) validateSetInternalValueParameters(val *EventhubNamespaceIdentity) error {
 	return nil
 }

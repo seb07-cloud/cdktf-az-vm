@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_job azurerm_stream_analytics_job}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_job azurerm_stream_analytics_job}.
 type StreamAnalyticsJob interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -23,6 +23,9 @@ type StreamAnalyticsJob interface {
 	SetConnection(val interface{})
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
+	ContentStoragePolicy() *string
+	SetContentStoragePolicy(val *string)
+	ContentStoragePolicyInput() *string
 	// Experimental.
 	Count() interface{}
 	// Experimental.
@@ -57,6 +60,8 @@ type StreamAnalyticsJob interface {
 	IdentityInput() *StreamAnalyticsJobIdentity
 	IdInput() *string
 	JobId() *string
+	JobStorageAccount() StreamAnalyticsJobJobStorageAccountList
+	JobStorageAccountInput() interface{}
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -105,6 +110,9 @@ type StreamAnalyticsJob interface {
 	TransformationQuery() *string
 	SetTransformationQuery(val *string)
 	TransformationQueryInput() *string
+	Type() *string
+	SetType(val *string)
+	TypeInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -131,21 +139,26 @@ type StreamAnalyticsJob interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutIdentity(value *StreamAnalyticsJobIdentity)
+	PutJobStorageAccount(value interface{})
 	PutTimeouts(value *StreamAnalyticsJobTimeouts)
 	ResetCompatibilityLevel()
+	ResetContentStoragePolicy()
 	ResetDataLocale()
 	ResetEventsLateArrivalMaxDelayInSeconds()
 	ResetEventsOutOfOrderMaxDelayInSeconds()
 	ResetEventsOutOfOrderPolicy()
 	ResetId()
 	ResetIdentity()
+	ResetJobStorageAccount()
 	ResetOutputErrorPolicy()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetStreamAnalyticsClusterId()
+	ResetStreamingUnits()
 	ResetTags()
 	ResetTimeouts()
+	ResetType()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -206,6 +219,26 @@ func (j *jsiiProxy_StreamAnalyticsJob) ConstructNodeMetadata() *map[string]inter
 	_jsii_.Get(
 		j,
 		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) ContentStoragePolicy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentStoragePolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) ContentStoragePolicyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"contentStoragePolicyInput",
 		&returns,
 	)
 	return returns
@@ -386,6 +419,26 @@ func (j *jsiiProxy_StreamAnalyticsJob) JobId() *string {
 	_jsii_.Get(
 		j,
 		"jobId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) JobStorageAccount() StreamAnalyticsJobJobStorageAccountList {
+	var returns StreamAnalyticsJobJobStorageAccountList
+	_jsii_.Get(
+		j,
+		"jobStorageAccount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob) JobStorageAccountInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"jobStorageAccountInput",
 		&returns,
 	)
 	return returns
@@ -651,8 +704,28 @@ func (j *jsiiProxy_StreamAnalyticsJob) TransformationQueryInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_StreamAnalyticsJob) Type() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"type",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_job azurerm_stream_analytics_job} Resource.
+func (j *jsiiProxy_StreamAnalyticsJob) TypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_job azurerm_stream_analytics_job} Resource.
 func NewStreamAnalyticsJob(scope constructs.Construct, id *string, config *StreamAnalyticsJobConfig) StreamAnalyticsJob {
 	_init_.Initialize()
 
@@ -670,7 +743,7 @@ func NewStreamAnalyticsJob(scope constructs.Construct, id *string, config *Strea
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_job azurerm_stream_analytics_job} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_job azurerm_stream_analytics_job} Resource.
 func NewStreamAnalyticsJob_Override(s StreamAnalyticsJob, scope constructs.Construct, id *string, config *StreamAnalyticsJobConfig) {
 	_init_.Initialize()
 
@@ -699,6 +772,17 @@ func (j *jsiiProxy_StreamAnalyticsJob)SetConnection(val interface{}) {
 	_jsii_.Set(
 		j,
 		"connection",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob)SetContentStoragePolicy(val *string) {
+	if err := j.validateSetContentStoragePolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"contentStoragePolicy",
 		val,
 	)
 }
@@ -899,6 +983,17 @@ func (j *jsiiProxy_StreamAnalyticsJob)SetTransformationQuery(val *string) {
 	_jsii_.Set(
 		j,
 		"transformationQuery",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsJob)SetType(val *string) {
+	if err := j.validateSetTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"type",
 		val,
 	)
 }
@@ -1180,6 +1275,17 @@ func (s *jsiiProxy_StreamAnalyticsJob) PutIdentity(value *StreamAnalyticsJobIden
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsJob) PutJobStorageAccount(value interface{}) {
+	if err := s.validatePutJobStorageAccountParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putJobStorageAccount",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsJob) PutTimeouts(value *StreamAnalyticsJobTimeouts) {
 	if err := s.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1195,6 +1301,14 @@ func (s *jsiiProxy_StreamAnalyticsJob) ResetCompatibilityLevel() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetCompatibilityLevel",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsJob) ResetContentStoragePolicy() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetContentStoragePolicy",
 		nil, // no parameters
 	)
 }
@@ -1247,6 +1361,14 @@ func (s *jsiiProxy_StreamAnalyticsJob) ResetIdentity() {
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsJob) ResetJobStorageAccount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetJobStorageAccount",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsJob) ResetOutputErrorPolicy() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1271,6 +1393,14 @@ func (s *jsiiProxy_StreamAnalyticsJob) ResetStreamAnalyticsClusterId() {
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsJob) ResetStreamingUnits() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetStreamingUnits",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsJob) ResetTags() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1283,6 +1413,14 @@ func (s *jsiiProxy_StreamAnalyticsJob) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsJob) ResetType() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetType",
 		nil, // no parameters
 	)
 }

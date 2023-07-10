@@ -43,6 +43,9 @@ type BatchPoolContainerConfigurationContainerRegistriesOutputReference interface
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserAssignedIdentityId() *string
+	SetUserAssignedIdentityId(val *string)
+	UserAssignedIdentityIdInput() *string
 	UserName() *string
 	SetUserName(val *string)
 	UserNameInput() *string
@@ -72,6 +75,7 @@ type BatchPoolContainerConfigurationContainerRegistriesOutputReference interface
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetPassword()
 	ResetRegistryServer()
+	ResetUserAssignedIdentityId()
 	ResetUserName()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -198,6 +202,26 @@ func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputRefer
 	return returns
 }
 
+func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) UserAssignedIdentityId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) UserAssignedIdentityIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) UserName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -319,6 +343,17 @@ func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputRefer
 	_jsii_.Set(
 		j,
 		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference)SetUserAssignedIdentityId(val *string) {
+	if err := j.validateSetUserAssignedIdentityIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"userAssignedIdentityId",
 		val,
 	)
 }
@@ -532,6 +567,14 @@ func (b *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputRefer
 	_jsii_.InvokeVoid(
 		b,
 		"resetRegistryServer",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPoolContainerConfigurationContainerRegistriesOutputReference) ResetUserAssignedIdentityId() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetUserAssignedIdentityId",
 		nil, // no parameters
 	)
 }

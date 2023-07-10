@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection}.
 type VirtualNetworkGatewayConnection interface {
 	cdktf.TerraformResource
 	AuthorizationKey() *string
@@ -33,6 +33,8 @@ type VirtualNetworkGatewayConnection interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomBgpAddresses() VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference
+	CustomBgpAddressesInput() *VirtualNetworkGatewayConnectionCustomBgpAddresses
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -40,6 +42,9 @@ type VirtualNetworkGatewayConnection interface {
 	DpdTimeoutSeconds() *float64
 	SetDpdTimeoutSeconds(val *float64)
 	DpdTimeoutSecondsInput() *float64
+	EgressNatRuleIds() *[]*string
+	SetEgressNatRuleIds(val *[]*string)
+	EgressNatRuleIdsInput() *[]*string
 	EnableBgp() interface{}
 	SetEnableBgp(val interface{})
 	EnableBgpInput() interface{}
@@ -60,6 +65,9 @@ type VirtualNetworkGatewayConnection interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	IngressNatRuleIds() *[]*string
+	SetIngressNatRuleIds(val *[]*string)
+	IngressNatRuleIdsInput() *[]*string
 	IpsecPolicy() VirtualNetworkGatewayConnectionIpsecPolicyOutputReference
 	IpsecPolicyInput() *VirtualNetworkGatewayConnectionIpsecPolicy
 	// Experimental.
@@ -113,8 +121,8 @@ type VirtualNetworkGatewayConnection interface {
 	TerraformResourceType() *string
 	Timeouts() VirtualNetworkGatewayConnectionTimeoutsOutputReference
 	TimeoutsInput() interface{}
-	TrafficSelectorPolicy() VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference
-	TrafficSelectorPolicyInput() *VirtualNetworkGatewayConnectionTrafficSelectorPolicy
+	TrafficSelectorPolicy() VirtualNetworkGatewayConnectionTrafficSelectorPolicyList
+	TrafficSelectorPolicyInput() interface{}
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
@@ -149,17 +157,21 @@ type VirtualNetworkGatewayConnection interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutCustomBgpAddresses(value *VirtualNetworkGatewayConnectionCustomBgpAddresses)
 	PutIpsecPolicy(value *VirtualNetworkGatewayConnectionIpsecPolicy)
 	PutTimeouts(value *VirtualNetworkGatewayConnectionTimeouts)
-	PutTrafficSelectorPolicy(value *VirtualNetworkGatewayConnectionTrafficSelectorPolicy)
+	PutTrafficSelectorPolicy(value interface{})
 	ResetAuthorizationKey()
 	ResetConnectionMode()
 	ResetConnectionProtocol()
+	ResetCustomBgpAddresses()
 	ResetDpdTimeoutSeconds()
+	ResetEgressNatRuleIds()
 	ResetEnableBgp()
 	ResetExpressRouteCircuitId()
 	ResetExpressRouteGatewayBypass()
 	ResetId()
+	ResetIngressNatRuleIds()
 	ResetIpsecPolicy()
 	ResetLocalAzureIpAddressEnabled()
 	ResetLocalNetworkGatewayId()
@@ -288,6 +300,26 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) CustomBgpAddresses() VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference {
+	var returns VirtualNetworkGatewayConnectionCustomBgpAddressesOutputReference
+	_jsii_.Get(
+		j,
+		"customBgpAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) CustomBgpAddressesInput() *VirtualNetworkGatewayConnectionCustomBgpAddresses {
+	var returns *VirtualNetworkGatewayConnectionCustomBgpAddresses
+	_jsii_.Get(
+		j,
+		"customBgpAddressesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VirtualNetworkGatewayConnection) DependsOn() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -313,6 +345,26 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) DpdTimeoutSecondsInput() *fl
 	_jsii_.Get(
 		j,
 		"dpdTimeoutSecondsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) EgressNatRuleIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"egressNatRuleIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) EgressNatRuleIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"egressNatRuleIdsInput",
 		&returns,
 	)
 	return returns
@@ -423,6 +475,26 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) IngressNatRuleIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ingressNatRuleIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) IngressNatRuleIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"ingressNatRuleIdsInput",
 		&returns,
 	)
 	return returns
@@ -728,8 +800,8 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) TimeoutsInput() interface{} 
 	return returns
 }
 
-func (j *jsiiProxy_VirtualNetworkGatewayConnection) TrafficSelectorPolicy() VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference {
-	var returns VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) TrafficSelectorPolicy() VirtualNetworkGatewayConnectionTrafficSelectorPolicyList {
+	var returns VirtualNetworkGatewayConnectionTrafficSelectorPolicyList
 	_jsii_.Get(
 		j,
 		"trafficSelectorPolicy",
@@ -738,8 +810,8 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) TrafficSelectorPolicy() Virt
 	return returns
 }
 
-func (j *jsiiProxy_VirtualNetworkGatewayConnection) TrafficSelectorPolicyInput() *VirtualNetworkGatewayConnectionTrafficSelectorPolicy {
-	var returns *VirtualNetworkGatewayConnectionTrafficSelectorPolicy
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) TrafficSelectorPolicyInput() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
 		"trafficSelectorPolicyInput",
@@ -809,7 +881,7 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) VirtualNetworkGatewayIdInput
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection} Resource.
 func NewVirtualNetworkGatewayConnection(scope constructs.Construct, id *string, config *VirtualNetworkGatewayConnectionConfig) VirtualNetworkGatewayConnection {
 	_init_.Initialize()
 
@@ -827,7 +899,7 @@ func NewVirtualNetworkGatewayConnection(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_network_gateway_connection azurerm_virtual_network_gateway_connection} Resource.
 func NewVirtualNetworkGatewayConnection_Override(v VirtualNetworkGatewayConnection, scope constructs.Construct, id *string, config *VirtualNetworkGatewayConnectionConfig) {
 	_init_.Initialize()
 
@@ -912,6 +984,17 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection)SetDpdTimeoutSeconds(val *flo
 	)
 }
 
+func (j *jsiiProxy_VirtualNetworkGatewayConnection)SetEgressNatRuleIds(val *[]*string) {
+	if err := j.validateSetEgressNatRuleIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"egressNatRuleIds",
+		val,
+	)
+}
+
 func (j *jsiiProxy_VirtualNetworkGatewayConnection)SetEnableBgp(val interface{}) {
 	if err := j.validateSetEnableBgpParameters(val); err != nil {
 		panic(err)
@@ -960,6 +1043,17 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection)SetIngressNatRuleIds(val *[]*string) {
+	if err := j.validateSetIngressNatRuleIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ingressNatRuleIds",
 		val,
 	)
 }
@@ -1392,6 +1486,17 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) OverrideLogicalId(newLogical
 	)
 }
 
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) PutCustomBgpAddresses(value *VirtualNetworkGatewayConnectionCustomBgpAddresses) {
+	if err := v.validatePutCustomBgpAddressesParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"putCustomBgpAddresses",
+		[]interface{}{value},
+	)
+}
+
 func (v *jsiiProxy_VirtualNetworkGatewayConnection) PutIpsecPolicy(value *VirtualNetworkGatewayConnectionIpsecPolicy) {
 	if err := v.validatePutIpsecPolicyParameters(value); err != nil {
 		panic(err)
@@ -1414,7 +1519,7 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) PutTimeouts(value *VirtualNe
 	)
 }
 
-func (v *jsiiProxy_VirtualNetworkGatewayConnection) PutTrafficSelectorPolicy(value *VirtualNetworkGatewayConnectionTrafficSelectorPolicy) {
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) PutTrafficSelectorPolicy(value interface{}) {
 	if err := v.validatePutTrafficSelectorPolicyParameters(value); err != nil {
 		panic(err)
 	}
@@ -1449,10 +1554,26 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetConnectionProtocol() {
 	)
 }
 
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetCustomBgpAddresses() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetCustomBgpAddresses",
+		nil, // no parameters
+	)
+}
+
 func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetDpdTimeoutSeconds() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetDpdTimeoutSeconds",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetEgressNatRuleIds() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetEgressNatRuleIds",
 		nil, // no parameters
 	)
 }
@@ -1485,6 +1606,14 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetId() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) ResetIngressNatRuleIds() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetIngressNatRuleIds",
 		nil, // no parameters
 	)
 }

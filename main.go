@@ -2,29 +2,25 @@ package main
 
 import (
 	"github.com/aws/constructs-go/constructs/v10"
-	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 
-	// Import the local Azure provider
-
-	azurermprovider "./generated/azurerm/provider"
-	resourcegroup "./generated/azurerm/resourcegroup"
+	provider "github.com/seb07-cloud/cdktf-vm-win-linux/generated/azurerm/provider"
+	resourceGroup "github.com/seb07-cloud/cdktf-vm-win-linux/generated/azurerm/resource_group"
 )
 
 func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
 
-	// Create a new instance of the Azure Provider
-	azurermprovider.New(stack, "azure", &azurermprovider.AzurermProviderConfig{
-		Features: &azurermprovider.AzurermProviderConfig{},
+	// New Azurerm Provider instance
+	azurermProvider := provider.NewAzurermProvider(stack, "azurerm", &provider.AzurermProviderConfig{
+		Features: &[]*provider.AzurermProviderFeatures{},
 	})
 
-	resourcegroup.New(stack, "resourcegroup", &resourcegroup.ResourcegroupConfig{
-		Name:     jsii.String("cdktf-vm-win-linux"),
-		Location: jsii.String("westeurope"),
+	// New Resource Group instance
+	resGrp := resourceGroup.NewResourceGroup(stack, "resourceGroup", &provider.ResourceGroupConfig{
+		Name:     &"cdktf-vm-win-linux",
+		Location: &"westeurope",
 	})
-
-	return stack
 }
 
 func main() {

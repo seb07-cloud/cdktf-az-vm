@@ -12,6 +12,8 @@ func init() {
 		reflect.TypeOf((*VpnGateway)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
+			_jsii_.MemberProperty{JsiiProperty: "bgpRouteTranslationForNatEnabled", GoGetter: "BgpRouteTranslationForNatEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "bgpRouteTranslationForNatEnabledInput", GoGetter: "BgpRouteTranslationForNatEnabledInput"},
 			_jsii_.MemberProperty{JsiiProperty: "bgpSettings", GoGetter: "BgpSettings"},
 			_jsii_.MemberProperty{JsiiProperty: "bgpSettingsInput", GoGetter: "BgpSettingsInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
@@ -46,6 +48,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putBgpSettings", GoMethod: "PutBgpSettings"},
 			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetBgpRouteTranslationForNatEnabled", GoMethod: "ResetBgpRouteTranslationForNatEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBgpSettings", GoMethod: "ResetBgpSettings"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},

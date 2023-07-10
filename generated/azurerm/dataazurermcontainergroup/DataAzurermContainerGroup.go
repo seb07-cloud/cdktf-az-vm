@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_group azurerm_container_group}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_group azurerm_container_group}.
 type DataAzurermContainerGroup interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -35,6 +35,7 @@ type DataAzurermContainerGroup interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DataAzurermContainerGroupIdentityList
 	IdInput() *string
 	IpAddress() *string
 	// Experimental.
@@ -56,6 +57,7 @@ type DataAzurermContainerGroup interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	SubnetIds() *[]*string
 	Tags() cdktf.StringMap
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -65,6 +67,9 @@ type DataAzurermContainerGroup interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermContainerGroupTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Zones() *[]*string
+	SetZones(val *[]*string)
+	ZonesInput() *[]*string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -96,6 +101,7 @@ type DataAzurermContainerGroup interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetZones()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -196,6 +202,16 @@ func (j *jsiiProxy_DataAzurermContainerGroup) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermContainerGroup) Identity() DataAzurermContainerGroupIdentityList {
+	var returns DataAzurermContainerGroupIdentityList
+	_jsii_.Get(
+		j,
+		"identity",
 		&returns,
 	)
 	return returns
@@ -311,6 +327,16 @@ func (j *jsiiProxy_DataAzurermContainerGroup) ResourceGroupNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermContainerGroup) SubnetIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subnetIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermContainerGroup) Tags() cdktf.StringMap {
 	var returns cdktf.StringMap
 	_jsii_.Get(
@@ -371,8 +397,28 @@ func (j *jsiiProxy_DataAzurermContainerGroup) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermContainerGroup) Zones() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"zones",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_group azurerm_container_group} Data Source.
+func (j *jsiiProxy_DataAzurermContainerGroup) ZonesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"zonesInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_group azurerm_container_group} Data Source.
 func NewDataAzurermContainerGroup(scope constructs.Construct, id *string, config *DataAzurermContainerGroupConfig) DataAzurermContainerGroup {
 	_init_.Initialize()
 
@@ -390,7 +436,7 @@ func NewDataAzurermContainerGroup(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_group azurerm_container_group} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_group azurerm_container_group} Data Source.
 func NewDataAzurermContainerGroup_Override(d DataAzurermContainerGroup, scope constructs.Construct, id *string, config *DataAzurermContainerGroupConfig) {
 	_init_.Initialize()
 
@@ -476,6 +522,17 @@ func (j *jsiiProxy_DataAzurermContainerGroup)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermContainerGroup)SetZones(val *[]*string) {
+	if err := j.validateSetZonesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zones",
 		val,
 	)
 }
@@ -777,6 +834,14 @@ func (d *jsiiProxy_DataAzurermContainerGroup) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermContainerGroup) ResetZones() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetZones",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database}.
 type RedisEnterpriseDatabase interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -55,6 +55,12 @@ type RedisEnterpriseDatabase interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LinkedDatabaseGroupNickname() *string
+	SetLinkedDatabaseGroupNickname(val *string)
+	LinkedDatabaseGroupNicknameInput() *string
+	LinkedDatabaseId() *[]*string
+	SetLinkedDatabaseId(val *[]*string)
+	LinkedDatabaseIdInput() *[]*string
 	Module() RedisEnterpriseDatabaseModuleList
 	ModuleInput() interface{}
 	Name() *string
@@ -119,6 +125,8 @@ type RedisEnterpriseDatabase interface {
 	ResetClusteringPolicy()
 	ResetEvictionPolicy()
 	ResetId()
+	ResetLinkedDatabaseGroupNickname()
+	ResetLinkedDatabaseId()
 	ResetModule()
 	ResetName()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -332,6 +340,46 @@ func (j *jsiiProxy_RedisEnterpriseDatabase) Lifecycle() *cdktf.TerraformResource
 	return returns
 }
 
+func (j *jsiiProxy_RedisEnterpriseDatabase) LinkedDatabaseGroupNickname() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseGroupNickname",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase) LinkedDatabaseGroupNicknameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseGroupNicknameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase) LinkedDatabaseId() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase) LinkedDatabaseIdInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RedisEnterpriseDatabase) Module() RedisEnterpriseDatabaseModuleList {
 	var returns RedisEnterpriseDatabaseModuleList
 	_jsii_.Get(
@@ -523,7 +571,7 @@ func (j *jsiiProxy_RedisEnterpriseDatabase) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database} Resource.
 func NewRedisEnterpriseDatabase(scope constructs.Construct, id *string, config *RedisEnterpriseDatabaseConfig) RedisEnterpriseDatabase {
 	_init_.Initialize()
 
@@ -541,7 +589,7 @@ func NewRedisEnterpriseDatabase(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_enterprise_database azurerm_redis_enterprise_database} Resource.
 func NewRedisEnterpriseDatabase_Override(r RedisEnterpriseDatabase, scope constructs.Construct, id *string, config *RedisEnterpriseDatabaseConfig) {
 	_init_.Initialize()
 
@@ -652,6 +700,28 @@ func (j *jsiiProxy_RedisEnterpriseDatabase)SetLifecycle(val *cdktf.TerraformReso
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase)SetLinkedDatabaseGroupNickname(val *string) {
+	if err := j.validateSetLinkedDatabaseGroupNicknameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"linkedDatabaseGroupNickname",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase)SetLinkedDatabaseId(val *[]*string) {
+	if err := j.validateSetLinkedDatabaseIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"linkedDatabaseId",
 		val,
 	)
 }
@@ -1024,6 +1094,22 @@ func (r *jsiiProxy_RedisEnterpriseDatabase) ResetId() {
 	_jsii_.InvokeVoid(
 		r,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RedisEnterpriseDatabase) ResetLinkedDatabaseGroupNickname() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetLinkedDatabaseGroupNickname",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RedisEnterpriseDatabase) ResetLinkedDatabaseId() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetLinkedDatabaseId",
 		nil, // no parameters
 	)
 }

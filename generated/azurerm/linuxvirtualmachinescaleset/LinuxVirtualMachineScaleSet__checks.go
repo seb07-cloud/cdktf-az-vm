@@ -248,6 +248,68 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutExtensionParameters(v
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutGalleryApplicationParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*LinuxVirtualMachineScaleSetGalleryApplication:
+		value := value.(*[]*LinuxVirtualMachineScaleSetGalleryApplication)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*LinuxVirtualMachineScaleSetGalleryApplication:
+		value_ := value.([]*LinuxVirtualMachineScaleSetGalleryApplication)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*LinuxVirtualMachineScaleSetGalleryApplication; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutGalleryApplicationsParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*LinuxVirtualMachineScaleSetGalleryApplications:
+		value := value.(*[]*LinuxVirtualMachineScaleSetGalleryApplications)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*LinuxVirtualMachineScaleSetGalleryApplications:
+		value_ := value.([]*LinuxVirtualMachineScaleSetGalleryApplications)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*LinuxVirtualMachineScaleSetGalleryApplications; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutIdentityParameters(value *LinuxVirtualMachineScaleSetIdentity) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -323,6 +385,17 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutRollingUpgradePolicyP
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutScaleInParameters(value *LinuxVirtualMachineScaleSetScaleIn) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSecretParameters(value interface{}) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -365,7 +438,29 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSourceImageReferenceP
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutSpotRestoreParameters(value *LinuxVirtualMachineScaleSetSpotRestore) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutTerminateNotificationParameters(value *LinuxVirtualMachineScaleSetTerminateNotification) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) validatePutTerminationNotificationParameters(value *LinuxVirtualMachineScaleSetTerminationNotification) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -420,6 +515,14 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetAdminPasswordParamete
 }
 
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetAdminUsernameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -609,6 +712,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetEvictionPolicyParamet
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetExtensionOperationsEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetExtensionsTimeBudgetParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -618,6 +741,14 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetExtensionsTimeBudgetP
 }
 
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetHealthProbeIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) validateSetHostGroupIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

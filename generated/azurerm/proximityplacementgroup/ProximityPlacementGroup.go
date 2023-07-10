@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/proximity_placement_group azurerm_proximity_placement_group}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/proximity_placement_group azurerm_proximity_placement_group}.
 type ProximityPlacementGroup interface {
 	cdktf.TerraformResource
+	AllowedVmSizes() *[]*string
+	SetAllowedVmSizes(val *[]*string)
+	AllowedVmSizesInput() *[]*string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -75,6 +78,9 @@ type ProximityPlacementGroup interface {
 	TerraformResourceType() *string
 	Timeouts() ProximityPlacementGroupTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Zone() *string
+	SetZone(val *string)
+	ZoneInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -101,12 +107,14 @@ type ProximityPlacementGroup interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *ProximityPlacementGroupTimeouts)
+	ResetAllowedVmSizes()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTags()
 	ResetTimeouts()
+	ResetZone()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -120,6 +128,26 @@ type ProximityPlacementGroup interface {
 // The jsii proxy struct for ProximityPlacementGroup
 type jsiiProxy_ProximityPlacementGroup struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_ProximityPlacementGroup) AllowedVmSizes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedVmSizes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ProximityPlacementGroup) AllowedVmSizesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedVmSizesInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ProximityPlacementGroup) CdktfStack() cdktf.TerraformStack {
@@ -402,8 +430,28 @@ func (j *jsiiProxy_ProximityPlacementGroup) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ProximityPlacementGroup) Zone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zone",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/proximity_placement_group azurerm_proximity_placement_group} Resource.
+func (j *jsiiProxy_ProximityPlacementGroup) ZoneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zoneInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/proximity_placement_group azurerm_proximity_placement_group} Resource.
 func NewProximityPlacementGroup(scope constructs.Construct, id *string, config *ProximityPlacementGroupConfig) ProximityPlacementGroup {
 	_init_.Initialize()
 
@@ -421,7 +469,7 @@ func NewProximityPlacementGroup(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/proximity_placement_group azurerm_proximity_placement_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/proximity_placement_group azurerm_proximity_placement_group} Resource.
 func NewProximityPlacementGroup_Override(p ProximityPlacementGroup, scope constructs.Construct, id *string, config *ProximityPlacementGroupConfig) {
 	_init_.Initialize()
 
@@ -429,6 +477,17 @@ func NewProximityPlacementGroup_Override(p ProximityPlacementGroup, scope constr
 		"azurerm.proximityPlacementGroup.ProximityPlacementGroup",
 		[]interface{}{scope, id, config},
 		p,
+	)
+}
+
+func (j *jsiiProxy_ProximityPlacementGroup)SetAllowedVmSizes(val *[]*string) {
+	if err := j.validateSetAllowedVmSizesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowedVmSizes",
+		val,
 	)
 }
 
@@ -551,6 +610,17 @@ func (j *jsiiProxy_ProximityPlacementGroup)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ProximityPlacementGroup)SetZone(val *string) {
+	if err := j.validateSetZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zone",
 		val,
 	)
 }
@@ -832,6 +902,14 @@ func (p *jsiiProxy_ProximityPlacementGroup) PutTimeouts(value *ProximityPlacemen
 	)
 }
 
+func (p *jsiiProxy_ProximityPlacementGroup) ResetAllowedVmSizes() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetAllowedVmSizes",
+		nil, // no parameters
+	)
+}
+
 func (p *jsiiProxy_ProximityPlacementGroup) ResetId() {
 	_jsii_.InvokeVoid(
 		p,
@@ -860,6 +938,14 @@ func (p *jsiiProxy_ProximityPlacementGroup) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		p,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (p *jsiiProxy_ProximityPlacementGroup) ResetZone() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetZone",
 		nil, // no parameters
 	)
 }

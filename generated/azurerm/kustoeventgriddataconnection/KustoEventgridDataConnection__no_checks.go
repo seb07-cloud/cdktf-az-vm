@@ -88,7 +88,15 @@ func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDatabaseNameParamete
 	return nil
 }
 
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDatabaseRoutingTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoEventgridDataConnection) validateSetDataFormatParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetEventgridResourceIdParameters(val *string) error {
 	return nil
 }
 
@@ -109,6 +117,10 @@ func (j *jsiiProxy_KustoEventgridDataConnection) validateSetLifecycleParameters(
 }
 
 func (j *jsiiProxy_KustoEventgridDataConnection) validateSetLocationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KustoEventgridDataConnection) validateSetManagedIdentityResourceIdParameters(val *string) error {
 	return nil
 }
 

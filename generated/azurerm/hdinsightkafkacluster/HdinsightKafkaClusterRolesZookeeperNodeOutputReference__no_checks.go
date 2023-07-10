@@ -44,6 +44,10 @@ func (h *jsiiProxy_HdinsightKafkaClusterRolesZookeeperNodeOutputReference) valid
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightKafkaClusterRolesZookeeperNodeOutputReference) validatePutScriptActionsParameters(value interface{}) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightKafkaClusterRolesZookeeperNodeOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

@@ -248,6 +248,68 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutExtensionParameters
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutGalleryApplicationParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*WindowsVirtualMachineScaleSetGalleryApplication:
+		value := value.(*[]*WindowsVirtualMachineScaleSetGalleryApplication)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*WindowsVirtualMachineScaleSetGalleryApplication:
+		value_ := value.([]*WindowsVirtualMachineScaleSetGalleryApplication)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*WindowsVirtualMachineScaleSetGalleryApplication; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutGalleryApplicationsParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*WindowsVirtualMachineScaleSetGalleryApplications:
+		value := value.(*[]*WindowsVirtualMachineScaleSetGalleryApplications)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*WindowsVirtualMachineScaleSetGalleryApplications:
+		value_ := value.([]*WindowsVirtualMachineScaleSetGalleryApplications)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*WindowsVirtualMachineScaleSetGalleryApplications; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutIdentityParameters(value *WindowsVirtualMachineScaleSetIdentity) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -323,6 +385,17 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutRollingUpgradePolic
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutScaleInParameters(value *WindowsVirtualMachineScaleSetScaleIn) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSecretParameters(value interface{}) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -365,7 +438,29 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSourceImageReferenc
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutSpotRestoreParameters(value *WindowsVirtualMachineScaleSetSpotRestore) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutTerminateNotificationParameters(value *WindowsVirtualMachineScaleSetTerminateNotification) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSet) validatePutTerminationNotificationParameters(value *WindowsVirtualMachineScaleSetTerminationNotification) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -451,6 +546,14 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetAdminPasswordParame
 }
 
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetAdminUsernameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -640,6 +743,26 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetEvictionPolicyParam
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetExtensionOperationsEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetExtensionsTimeBudgetParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -649,6 +772,14 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetExtensionsTimeBudge
 }
 
 func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetHealthProbeIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSet) validateSetHostGroupIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

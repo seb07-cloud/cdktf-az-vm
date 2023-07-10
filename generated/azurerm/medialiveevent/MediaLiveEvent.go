@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_live_event azurerm_media_live_event}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_live_event azurerm_media_live_event}.
 type MediaLiveEvent interface {
 	cdktf.TerraformResource
 	AutoStartEnabled() interface{}
@@ -84,6 +84,9 @@ type MediaLiveEvent interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	StreamOptions() *[]*string
+	SetStreamOptions(val *[]*string)
+	StreamOptionsInput() *[]*string
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -141,6 +144,7 @@ type MediaLiveEvent interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPreview()
+	ResetStreamOptions()
 	ResetTags()
 	ResetTimeouts()
 	ResetTranscriptionLanguages()
@@ -530,6 +534,26 @@ func (j *jsiiProxy_MediaLiveEvent) ResourceGroupNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_MediaLiveEvent) StreamOptions() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"streamOptions",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaLiveEvent) StreamOptionsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"streamOptionsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MediaLiveEvent) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -641,7 +665,7 @@ func (j *jsiiProxy_MediaLiveEvent) UseStaticHostnameInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_live_event azurerm_media_live_event} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_live_event azurerm_media_live_event} Resource.
 func NewMediaLiveEvent(scope constructs.Construct, id *string, config *MediaLiveEventConfig) MediaLiveEvent {
 	_init_.Initialize()
 
@@ -659,7 +683,7 @@ func NewMediaLiveEvent(scope constructs.Construct, id *string, config *MediaLive
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_live_event azurerm_media_live_event} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_live_event azurerm_media_live_event} Resource.
 func NewMediaLiveEvent_Override(m MediaLiveEvent, scope constructs.Construct, id *string, config *MediaLiveEventConfig) {
 	_init_.Initialize()
 
@@ -822,6 +846,17 @@ func (j *jsiiProxy_MediaLiveEvent)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MediaLiveEvent)SetStreamOptions(val *[]*string) {
+	if err := j.validateSetStreamOptionsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"streamOptions",
 		val,
 	)
 }
@@ -1240,6 +1275,14 @@ func (m *jsiiProxy_MediaLiveEvent) ResetPreview() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetPreview",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MediaLiveEvent) ResetStreamOptions() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetStreamOptions",
 		nil, // no parameters
 	)
 }

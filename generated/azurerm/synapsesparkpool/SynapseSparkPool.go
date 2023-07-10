@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool}.
 type SynapseSparkPool interface {
 	cdktf.TerraformResource
 	AutoPause() SynapseSparkPoolAutoPauseOutputReference
@@ -58,6 +58,12 @@ type SynapseSparkPool interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	MaxExecutors() *float64
+	SetMaxExecutors(val *float64)
+	MaxExecutorsInput() *float64
+	MinExecutors() *float64
+	SetMinExecutors(val *float64)
+	MinExecutorsInput() *float64
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -147,6 +153,8 @@ type SynapseSparkPool interface {
 	ResetDynamicExecutorAllocationEnabled()
 	ResetId()
 	ResetLibraryRequirement()
+	ResetMaxExecutors()
+	ResetMinExecutors()
 	ResetNodeCount()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -398,6 +406,46 @@ func (j *jsiiProxy_SynapseSparkPool) Lifecycle() *cdktf.TerraformResourceLifecyc
 	_jsii_.Get(
 		j,
 		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSparkPool) MaxExecutors() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxExecutors",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSparkPool) MaxExecutorsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxExecutorsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSparkPool) MinExecutors() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minExecutors",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SynapseSparkPool) MinExecutorsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minExecutorsInput",
 		&returns,
 	)
 	return returns
@@ -714,7 +762,7 @@ func (j *jsiiProxy_SynapseSparkPool) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool} Resource.
 func NewSynapseSparkPool(scope constructs.Construct, id *string, config *SynapseSparkPoolConfig) SynapseSparkPool {
 	_init_.Initialize()
 
@@ -732,7 +780,7 @@ func NewSynapseSparkPool(scope constructs.Construct, id *string, config *Synapse
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_spark_pool azurerm_synapse_spark_pool} Resource.
 func NewSynapseSparkPool_Override(s SynapseSparkPool, scope constructs.Construct, id *string, config *SynapseSparkPoolConfig) {
 	_init_.Initialize()
 
@@ -832,6 +880,28 @@ func (j *jsiiProxy_SynapseSparkPool)SetLifecycle(val *cdktf.TerraformResourceLif
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SynapseSparkPool)SetMaxExecutors(val *float64) {
+	if err := j.validateSetMaxExecutorsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxExecutors",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SynapseSparkPool)SetMinExecutors(val *float64) {
+	if err := j.validateSetMinExecutorsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minExecutors",
 		val,
 	)
 }
@@ -1338,6 +1408,22 @@ func (s *jsiiProxy_SynapseSparkPool) ResetLibraryRequirement() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetLibraryRequirement",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SynapseSparkPool) ResetMaxExecutors() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaxExecutors",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SynapseSparkPool) ResetMinExecutors() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMinExecutors",
 		nil, // no parameters
 	)
 }

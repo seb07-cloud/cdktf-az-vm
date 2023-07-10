@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql}.
 type StreamAnalyticsReferenceInputMssql interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -85,6 +85,9 @@ type StreamAnalyticsReferenceInputMssql interface {
 	StreamAnalyticsJobName() *string
 	SetStreamAnalyticsJobName(val *string)
 	StreamAnalyticsJobNameInput() *string
+	Table() *string
+	SetTable(val *string)
+	TableInput() *string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -128,6 +131,7 @@ type StreamAnalyticsReferenceInputMssql interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetRefreshIntervalDuration()
+	ResetTable()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -494,6 +498,26 @@ func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) StreamAnalyticsJobNameInp
 	return returns
 }
 
+func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) Table() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"table",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) TableInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"tableInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -565,7 +589,7 @@ func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) UsernameInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql} Resource.
 func NewStreamAnalyticsReferenceInputMssql(scope constructs.Construct, id *string, config *StreamAnalyticsReferenceInputMssqlConfig) StreamAnalyticsReferenceInputMssql {
 	_init_.Initialize()
 
@@ -583,7 +607,7 @@ func NewStreamAnalyticsReferenceInputMssql(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_reference_input_mssql azurerm_stream_analytics_reference_input_mssql} Resource.
 func NewStreamAnalyticsReferenceInputMssql_Override(s StreamAnalyticsReferenceInputMssql, scope constructs.Construct, id *string, config *StreamAnalyticsReferenceInputMssqlConfig) {
 	_init_.Initialize()
 
@@ -779,6 +803,17 @@ func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql)SetStreamAnalyticsJobName(
 	_jsii_.Set(
 		j,
 		"streamAnalyticsJobName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql)SetTable(val *string) {
+	if err := j.validateSetTableParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"table",
 		val,
 	)
 }
@@ -1099,6 +1134,14 @@ func (s *jsiiProxy_StreamAnalyticsReferenceInputMssql) ResetRefreshIntervalDurat
 	_jsii_.InvokeVoid(
 		s,
 		"resetRefreshIntervalDuration",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsReferenceInputMssql) ResetTable() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTable",
 		nil, // no parameters
 	)
 }

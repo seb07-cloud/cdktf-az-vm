@@ -56,6 +56,18 @@ func (h *jsiiProxy_HdinsightHadoopCluster) validatePutComponentVersionParameters
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightHadoopCluster) validatePutComputeIsolationParameters(value *HdinsightHadoopClusterComputeIsolation) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) validatePutDiskEncryptionParameters(value interface{}) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) validatePutExtensionParameters(value *HdinsightHadoopClusterExtension) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightHadoopCluster) validatePutGatewayParameters(value *HdinsightHadoopClusterGateway) error {
 	return nil
 }

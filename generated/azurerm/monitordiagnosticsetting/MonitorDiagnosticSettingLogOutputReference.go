@@ -12,6 +12,9 @@ type MonitorDiagnosticSettingLogOutputReference interface {
 	cdktf.ComplexObject
 	Category() *string
 	SetCategory(val *string)
+	CategoryGroup() *string
+	SetCategoryGroup(val *string)
+	CategoryGroupInput() *string
 	CategoryInput() *string
 	// the index of the complex object in a list.
 	// Experimental.
@@ -70,6 +73,8 @@ type MonitorDiagnosticSettingLogOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRetentionPolicy(value *MonitorDiagnosticSettingLogRetentionPolicy)
+	ResetCategory()
+	ResetCategoryGroup()
 	ResetEnabled()
 	ResetRetentionPolicy()
 	// Produce the Token's value at resolution time.
@@ -92,6 +97,26 @@ func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) Category() *strin
 	_jsii_.Get(
 		j,
 		"category",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) CategoryGroup() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"categoryGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) CategoryGroupInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"categoryGroupInput",
 		&returns,
 	)
 	return returns
@@ -252,6 +277,17 @@ func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference)SetCategory(val *s
 	_jsii_.Set(
 		j,
 		"category",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference)SetCategoryGroup(val *string) {
+	if err := j.validateSetCategoryGroupParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"categoryGroup",
 		val,
 	)
 }
@@ -516,6 +552,22 @@ func (m *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) PutRetentionPolic
 		m,
 		"putRetentionPolicy",
 		[]interface{}{value},
+	)
+}
+
+func (m *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) ResetCategory() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetCategory",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) ResetCategoryGroup() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetCategoryGroup",
+		nil, // no parameters
 	)
 }
 

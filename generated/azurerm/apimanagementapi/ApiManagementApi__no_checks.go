@@ -52,7 +52,15 @@ func (a *jsiiProxy_ApiManagementApi) validateOverrideLogicalIdParameters(newLogi
 	return nil
 }
 
+func (a *jsiiProxy_ApiManagementApi) validatePutContactParameters(value *ApiManagementApiContact) error {
+	return nil
+}
+
 func (a *jsiiProxy_ApiManagementApi) validatePutImportParameters(value *ApiManagementApiImport) error {
+	return nil
+}
+
+func (a *jsiiProxy_ApiManagementApi) validatePutLicenseParameters(value *ApiManagementApiLicense) error {
 	return nil
 }
 
@@ -85,6 +93,10 @@ func validateApiManagementApi_IsTerraformResourceParameters(x interface{}) error
 }
 
 func (j *jsiiProxy_ApiManagementApi) validateSetApiManagementNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_ApiManagementApi) validateSetApiTypeParameters(val *string) error {
 	return nil
 }
 
@@ -153,6 +165,10 @@ func (j *jsiiProxy_ApiManagementApi) validateSetSourceApiIdParameters(val *strin
 }
 
 func (j *jsiiProxy_ApiManagementApi) validateSetSubscriptionRequiredParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ApiManagementApi) validateSetTermsOfServiceUrlParameters(val *string) error {
 	return nil
 }
 

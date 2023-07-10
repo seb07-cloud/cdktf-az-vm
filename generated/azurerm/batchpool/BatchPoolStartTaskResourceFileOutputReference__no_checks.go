@@ -92,6 +92,10 @@ func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) validateSetTer
 	return nil
 }
 
+func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) validateSetUserAssignedIdentityIdParameters(val *string) error {
+	return nil
+}
+
 func validateNewBatchPoolStartTaskResourceFileOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) error {
 	return nil
 }

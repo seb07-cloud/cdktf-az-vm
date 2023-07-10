@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_share azurerm_storage_share}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_share azurerm_storage_share}.
 type StorageShare interface {
 	cdktf.TerraformResource
+	AccessTier() *string
+	SetAccessTier(val *string)
+	AccessTierInput() *string
 	Acl() StorageShareAclList
 	AclInput() interface{}
 	// Experimental.
@@ -109,6 +112,7 @@ type StorageShare interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutAcl(value interface{})
 	PutTimeouts(value *StorageShareTimeouts)
+	ResetAccessTier()
 	ResetAcl()
 	ResetEnabledProtocol()
 	ResetId()
@@ -130,6 +134,26 @@ type StorageShare interface {
 // The jsii proxy struct for StorageShare
 type jsiiProxy_StorageShare struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StorageShare) AccessTier() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accessTier",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageShare) AccessTierInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"accessTierInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StorageShare) Acl() StorageShareAclList {
@@ -473,7 +497,7 @@ func (j *jsiiProxy_StorageShare) Url() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_share azurerm_storage_share} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_share azurerm_storage_share} Resource.
 func NewStorageShare(scope constructs.Construct, id *string, config *StorageShareConfig) StorageShare {
 	_init_.Initialize()
 
@@ -491,7 +515,7 @@ func NewStorageShare(scope constructs.Construct, id *string, config *StorageShar
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_share azurerm_storage_share} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_share azurerm_storage_share} Resource.
 func NewStorageShare_Override(s StorageShare, scope constructs.Construct, id *string, config *StorageShareConfig) {
 	_init_.Initialize()
 
@@ -499,6 +523,17 @@ func NewStorageShare_Override(s StorageShare, scope constructs.Construct, id *st
 		"azurerm.storageShare.StorageShare",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StorageShare)SetAccessTier(val *string) {
+	if err := j.validateSetAccessTierParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"accessTier",
+		val,
 	)
 }
 
@@ -921,6 +956,14 @@ func (s *jsiiProxy_StorageShare) PutTimeouts(value *StorageShareTimeouts) {
 		s,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_StorageShare) ResetAccessTier() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAccessTier",
+		nil, // no parameters
 	)
 }
 

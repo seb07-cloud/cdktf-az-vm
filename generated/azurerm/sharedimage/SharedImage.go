@@ -9,14 +9,23 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image azurerm_shared_image}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image azurerm_shared_image}.
 type SharedImage interface {
 	cdktf.TerraformResource
 	AcceleratedNetworkSupportEnabled() interface{}
 	SetAcceleratedNetworkSupportEnabled(val interface{})
 	AcceleratedNetworkSupportEnabledInput() interface{}
+	Architecture() *string
+	SetArchitecture(val *string)
+	ArchitectureInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ConfidentialVmEnabled() interface{}
+	SetConfidentialVmEnabled(val interface{})
+	ConfidentialVmEnabledInput() interface{}
+	ConfidentialVmSupported() interface{}
+	SetConfidentialVmSupported(val interface{})
+	ConfidentialVmSupportedInput() interface{}
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -34,6 +43,12 @@ type SharedImage interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	DiskTypesNotAllowed() *[]*string
+	SetDiskTypesNotAllowed(val *[]*string)
+	DiskTypesNotAllowedInput() *[]*string
+	EndOfLifeDate() *string
+	SetEndOfLifeDate(val *string)
+	EndOfLifeDateInput() *string
 	Eula() *string
 	SetEula(val *string)
 	EulaInput() *string
@@ -63,6 +78,18 @@ type SharedImage interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	MaxRecommendedMemoryInGb() *float64
+	SetMaxRecommendedMemoryInGb(val *float64)
+	MaxRecommendedMemoryInGbInput() *float64
+	MaxRecommendedVcpuCount() *float64
+	SetMaxRecommendedVcpuCount(val *float64)
+	MaxRecommendedVcpuCountInput() *float64
+	MinRecommendedMemoryInGb() *float64
+	SetMinRecommendedMemoryInGb(val *float64)
+	MinRecommendedMemoryInGbInput() *float64
+	MinRecommendedVcpuCount() *float64
+	SetMinRecommendedVcpuCount(val *float64)
+	MinRecommendedVcpuCountInput() *float64
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -138,10 +165,19 @@ type SharedImage interface {
 	PutPurchasePlan(value *SharedImagePurchasePlan)
 	PutTimeouts(value *SharedImageTimeouts)
 	ResetAcceleratedNetworkSupportEnabled()
+	ResetArchitecture()
+	ResetConfidentialVmEnabled()
+	ResetConfidentialVmSupported()
 	ResetDescription()
+	ResetDiskTypesNotAllowed()
+	ResetEndOfLifeDate()
 	ResetEula()
 	ResetHyperVGeneration()
 	ResetId()
+	ResetMaxRecommendedMemoryInGb()
+	ResetMaxRecommendedVcpuCount()
+	ResetMinRecommendedMemoryInGb()
+	ResetMinRecommendedVcpuCount()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -187,11 +223,71 @@ func (j *jsiiProxy_SharedImage) AcceleratedNetworkSupportEnabledInput() interfac
 	return returns
 }
 
+func (j *jsiiProxy_SharedImage) Architecture() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"architecture",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) ArchitectureInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"architectureInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SharedImage) CdktfStack() cdktf.TerraformStack {
 	var returns cdktf.TerraformStack
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) ConfidentialVmEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"confidentialVmEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) ConfidentialVmEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"confidentialVmEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) ConfidentialVmSupported() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"confidentialVmSupported",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) ConfidentialVmSupportedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"confidentialVmSupportedInput",
 		&returns,
 	)
 	return returns
@@ -252,6 +348,46 @@ func (j *jsiiProxy_SharedImage) DescriptionInput() *string {
 	_jsii_.Get(
 		j,
 		"descriptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) DiskTypesNotAllowed() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"diskTypesNotAllowed",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) DiskTypesNotAllowedInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"diskTypesNotAllowedInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) EndOfLifeDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"endOfLifeDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) EndOfLifeDateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"endOfLifeDateInput",
 		&returns,
 	)
 	return returns
@@ -412,6 +548,86 @@ func (j *jsiiProxy_SharedImage) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MaxRecommendedMemoryInGb() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxRecommendedMemoryInGb",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MaxRecommendedMemoryInGbInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxRecommendedMemoryInGbInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MaxRecommendedVcpuCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxRecommendedVcpuCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MaxRecommendedVcpuCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxRecommendedVcpuCountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MinRecommendedMemoryInGb() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minRecommendedMemoryInGb",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MinRecommendedMemoryInGbInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minRecommendedMemoryInGbInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MinRecommendedVcpuCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minRecommendedVcpuCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImage) MinRecommendedVcpuCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"minRecommendedVcpuCountInput",
 		&returns,
 	)
 	return returns
@@ -688,7 +904,7 @@ func (j *jsiiProxy_SharedImage) TrustedLaunchEnabledInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image azurerm_shared_image} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image azurerm_shared_image} Resource.
 func NewSharedImage(scope constructs.Construct, id *string, config *SharedImageConfig) SharedImage {
 	_init_.Initialize()
 
@@ -706,7 +922,7 @@ func NewSharedImage(scope constructs.Construct, id *string, config *SharedImageC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/shared_image azurerm_shared_image} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/shared_image azurerm_shared_image} Resource.
 func NewSharedImage_Override(s SharedImage, scope constructs.Construct, id *string, config *SharedImageConfig) {
 	_init_.Initialize()
 
@@ -724,6 +940,39 @@ func (j *jsiiProxy_SharedImage)SetAcceleratedNetworkSupportEnabled(val interface
 	_jsii_.Set(
 		j,
 		"acceleratedNetworkSupportEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetArchitecture(val *string) {
+	if err := j.validateSetArchitectureParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"architecture",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetConfidentialVmEnabled(val interface{}) {
+	if err := j.validateSetConfidentialVmEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"confidentialVmEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetConfidentialVmSupported(val interface{}) {
+	if err := j.validateSetConfidentialVmSupportedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"confidentialVmSupported",
 		val,
 	)
 }
@@ -765,6 +1014,28 @@ func (j *jsiiProxy_SharedImage)SetDescription(val *string) {
 	_jsii_.Set(
 		j,
 		"description",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetDiskTypesNotAllowed(val *[]*string) {
+	if err := j.validateSetDiskTypesNotAllowedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"diskTypesNotAllowed",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetEndOfLifeDate(val *string) {
+	if err := j.validateSetEndOfLifeDateParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endOfLifeDate",
 		val,
 	)
 }
@@ -839,6 +1110,50 @@ func (j *jsiiProxy_SharedImage)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetMaxRecommendedMemoryInGb(val *float64) {
+	if err := j.validateSetMaxRecommendedMemoryInGbParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxRecommendedMemoryInGb",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetMaxRecommendedVcpuCount(val *float64) {
+	if err := j.validateSetMaxRecommendedVcpuCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxRecommendedVcpuCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetMinRecommendedMemoryInGb(val *float64) {
+	if err := j.validateSetMinRecommendedMemoryInGbParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minRecommendedMemoryInGb",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImage)SetMinRecommendedVcpuCount(val *float64) {
+	if err := j.validateSetMinRecommendedVcpuCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minRecommendedVcpuCount",
 		val,
 	)
 }
@@ -1257,10 +1572,50 @@ func (s *jsiiProxy_SharedImage) ResetAcceleratedNetworkSupportEnabled() {
 	)
 }
 
+func (s *jsiiProxy_SharedImage) ResetArchitecture() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetArchitecture",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetConfidentialVmEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetConfidentialVmEnabled",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetConfidentialVmSupported() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetConfidentialVmSupported",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SharedImage) ResetDescription() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetDiskTypesNotAllowed() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDiskTypesNotAllowed",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetEndOfLifeDate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetEndOfLifeDate",
 		nil, // no parameters
 	)
 }
@@ -1285,6 +1640,38 @@ func (s *jsiiProxy_SharedImage) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetMaxRecommendedMemoryInGb() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaxRecommendedMemoryInGb",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetMaxRecommendedVcpuCount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaxRecommendedVcpuCount",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetMinRecommendedMemoryInGb() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMinRecommendedMemoryInGb",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SharedImage) ResetMinRecommendedVcpuCount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMinRecommendedVcpuCount",
 		nil, // no parameters
 	)
 }

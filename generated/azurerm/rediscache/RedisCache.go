@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_cache azurerm_redis_cache}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_cache azurerm_redis_cache}.
 type RedisCache interface {
 	cdktf.TerraformResource
 	Capacity() *float64
@@ -48,6 +48,8 @@ type RedisCache interface {
 	Hostname() *string
 	Id() *string
 	SetId(val *string)
+	Identity() RedisCacheIdentityOutputReference
+	IdentityInput() *RedisCacheIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -153,11 +155,13 @@ type RedisCache interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIdentity(value *RedisCacheIdentity)
 	PutPatchSchedule(value interface{})
 	PutRedisConfiguration(value *RedisCacheRedisConfiguration)
 	PutTimeouts(value *RedisCacheTimeouts)
 	ResetEnableNonSslPort()
 	ResetId()
+	ResetIdentity()
 	ResetMinimumTlsVersion()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -345,6 +349,26 @@ func (j *jsiiProxy_RedisCache) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisCache) Identity() RedisCacheIdentityOutputReference {
+	var returns RedisCacheIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisCache) IdentityInput() *RedisCacheIdentity {
+	var returns *RedisCacheIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -861,7 +885,7 @@ func (j *jsiiProxy_RedisCache) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_cache azurerm_redis_cache} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_cache azurerm_redis_cache} Resource.
 func NewRedisCache(scope constructs.Construct, id *string, config *RedisCacheConfig) RedisCache {
 	_init_.Initialize()
 
@@ -879,7 +903,7 @@ func NewRedisCache(scope constructs.Construct, id *string, config *RedisCacheCon
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/redis_cache azurerm_redis_cache} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/redis_cache azurerm_redis_cache} Resource.
 func NewRedisCache_Override(r RedisCache, scope constructs.Construct, id *string, config *RedisCacheConfig) {
 	_init_.Initialize()
 
@@ -1433,6 +1457,17 @@ func (r *jsiiProxy_RedisCache) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (r *jsiiProxy_RedisCache) PutIdentity(value *RedisCacheIdentity) {
+	if err := r.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		r,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (r *jsiiProxy_RedisCache) PutPatchSchedule(value interface{}) {
 	if err := r.validatePutPatchScheduleParameters(value); err != nil {
 		panic(err)
@@ -1478,6 +1513,14 @@ func (r *jsiiProxy_RedisCache) ResetId() {
 	_jsii_.InvokeVoid(
 		r,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RedisCache) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetIdentity",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint}.
 type TrafficManagerNestedEndpoint interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -141,6 +141,7 @@ type TrafficManagerNestedEndpoint interface {
 	ResetPriority()
 	ResetSubnet()
 	ResetTimeouts()
+	ResetWeight()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -617,7 +618,7 @@ func (j *jsiiProxy_TrafficManagerNestedEndpoint) WeightInput() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint} Resource.
 func NewTrafficManagerNestedEndpoint(scope constructs.Construct, id *string, config *TrafficManagerNestedEndpointConfig) TrafficManagerNestedEndpoint {
 	_init_.Initialize()
 
@@ -635,7 +636,7 @@ func NewTrafficManagerNestedEndpoint(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/traffic_manager_nested_endpoint azurerm_traffic_manager_nested_endpoint} Resource.
 func NewTrafficManagerNestedEndpoint_Override(t TrafficManagerNestedEndpoint, scope constructs.Construct, id *string, config *TrafficManagerNestedEndpointConfig) {
 	_init_.Initialize()
 
@@ -1229,6 +1230,14 @@ func (t *jsiiProxy_TrafficManagerNestedEndpoint) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		t,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (t *jsiiProxy_TrafficManagerNestedEndpoint) ResetWeight() {
+	_jsii_.InvokeVoid(
+		t,
+		"resetWeight",
 		nil, // no parameters
 	)
 }

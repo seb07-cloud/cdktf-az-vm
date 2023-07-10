@@ -56,6 +56,14 @@ func (s *jsiiProxy_SignalrService) validatePutCorsParameters(value interface{}) 
 	return nil
 }
 
+func (s *jsiiProxy_SignalrService) validatePutIdentityParameters(value *SignalrServiceIdentity) error {
+	return nil
+}
+
+func (s *jsiiProxy_SignalrService) validatePutLiveTraceParameters(value *SignalrServiceLiveTrace) error {
+	return nil
+}
+
 func (s *jsiiProxy_SignalrService) validatePutSkuParameters(value *SignalrServiceSku) error {
 	return nil
 }
@@ -80,6 +88,10 @@ func validateSignalrService_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_SignalrService) validateSetAadAuthEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SignalrService) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -92,6 +104,10 @@ func (j *jsiiProxy_SignalrService) validateSetCountParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_SignalrService) validateSetHttpRequestLogsEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SignalrService) validateSetIdParameters(val *string) error {
 	return nil
 }
@@ -101,6 +117,10 @@ func (j *jsiiProxy_SignalrService) validateSetLifecycleParameters(val *cdktf.Ter
 }
 
 func (j *jsiiProxy_SignalrService) validateSetLiveTraceEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_SignalrService) validateSetLocalAuthEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -120,7 +140,15 @@ func (j *jsiiProxy_SignalrService) validateSetProvisionersParameters(val *[]inte
 	return nil
 }
 
+func (j *jsiiProxy_SignalrService) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_SignalrService) validateSetResourceGroupNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SignalrService) validateSetServerlessConnectionTimeoutInSecondsParameters(val *float64) error {
 	return nil
 }
 
@@ -129,6 +157,10 @@ func (j *jsiiProxy_SignalrService) validateSetServiceModeParameters(val *string)
 }
 
 func (j *jsiiProxy_SignalrService) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_SignalrService) validateSetTlsClientCertEnabledParameters(val interface{}) error {
 	return nil
 }
 

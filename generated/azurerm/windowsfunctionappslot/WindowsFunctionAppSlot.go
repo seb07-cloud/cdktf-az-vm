@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot}.
 type WindowsFunctionAppSlot interface {
 	cdktf.TerraformResource
 	AppSettings() *map[string]*string
@@ -17,6 +17,8 @@ type WindowsFunctionAppSlot interface {
 	AppSettingsInput() *map[string]*string
 	AuthSettings() WindowsFunctionAppSlotAuthSettingsOutputReference
 	AuthSettingsInput() *WindowsFunctionAppSlotAuthSettings
+	AuthSettingsV2() WindowsFunctionAppSlotAuthSettingsV2OutputReference
+	AuthSettingsV2Input() *WindowsFunctionAppSlotAuthSettingsV2
 	Backup() WindowsFunctionAppSlotBackupOutputReference
 	BackupInput() *WindowsFunctionAppSlotBackup
 	BuiltinLoggingEnabled() interface{}
@@ -27,6 +29,9 @@ type WindowsFunctionAppSlot interface {
 	ClientCertificateEnabled() interface{}
 	SetClientCertificateEnabled(val interface{})
 	ClientCertificateEnabledInput() interface{}
+	ClientCertificateExclusionPaths() *string
+	SetClientCertificateExclusionPaths(val *string)
+	ClientCertificateExclusionPathsInput() *string
 	ClientCertificateMode() *string
 	SetClientCertificateMode(val *string)
 	ClientCertificateModeInput() *string
@@ -71,6 +76,7 @@ type WindowsFunctionAppSlot interface {
 	FunctionsExtensionVersion() *string
 	SetFunctionsExtensionVersion(val *string)
 	FunctionsExtensionVersionInput() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() interface{}
 	SetHttpsOnly(val interface{})
 	HttpsOnlyInput() interface{}
@@ -104,14 +110,22 @@ type WindowsFunctionAppSlot interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
+	ServicePlanId() *string
+	SetServicePlanId(val *string)
+	ServicePlanIdInput() *string
 	SiteConfig() WindowsFunctionAppSlotSiteConfigOutputReference
 	SiteConfigInput() *WindowsFunctionAppSlotSiteConfig
 	SiteCredential() WindowsFunctionAppSlotSiteCredentialList
+	StorageAccount() WindowsFunctionAppSlotStorageAccountList
 	StorageAccountAccessKey() *string
 	SetStorageAccountAccessKey(val *string)
 	StorageAccountAccessKeyInput() *string
+	StorageAccountInput() interface{}
 	StorageAccountName() *string
 	SetStorageAccountName(val *string)
 	StorageAccountNameInput() *string
@@ -132,6 +146,9 @@ type WindowsFunctionAppSlot interface {
 	TerraformResourceType() *string
 	Timeouts() WindowsFunctionAppSlotTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -158,16 +175,20 @@ type WindowsFunctionAppSlot interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthSettings(value *WindowsFunctionAppSlotAuthSettings)
+	PutAuthSettingsV2(value *WindowsFunctionAppSlotAuthSettingsV2)
 	PutBackup(value *WindowsFunctionAppSlotBackup)
 	PutConnectionString(value interface{})
 	PutIdentity(value *WindowsFunctionAppSlotIdentity)
 	PutSiteConfig(value *WindowsFunctionAppSlotSiteConfig)
+	PutStorageAccount(value interface{})
 	PutTimeouts(value *WindowsFunctionAppSlotTimeouts)
 	ResetAppSettings()
 	ResetAuthSettings()
+	ResetAuthSettingsV2()
 	ResetBackup()
 	ResetBuiltinLoggingEnabled()
 	ResetClientCertificateEnabled()
+	ResetClientCertificateExclusionPaths()
 	ResetClientCertificateMode()
 	ResetConnectionString()
 	ResetContentShareForceDisabled()
@@ -181,12 +202,16 @@ type WindowsFunctionAppSlot interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetServicePlanId()
+	ResetStorageAccount()
 	ResetStorageAccountAccessKey()
 	ResetStorageAccountName()
 	ResetStorageKeyVaultSecretId()
 	ResetStorageUsesManagedIdentity()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualNetworkSubnetId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -237,6 +262,26 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) AuthSettingsInput() *WindowsFunctionA
 	_jsii_.Get(
 		j,
 		"authSettingsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) AuthSettingsV2() WindowsFunctionAppSlotAuthSettingsV2OutputReference {
+	var returns WindowsFunctionAppSlotAuthSettingsV2OutputReference
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) AuthSettingsV2Input() *WindowsFunctionAppSlotAuthSettingsV2 {
+	var returns *WindowsFunctionAppSlotAuthSettingsV2
+	_jsii_.Get(
+		j,
+		"authSettingsV2Input",
 		&returns,
 	)
 	return returns
@@ -307,6 +352,26 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) ClientCertificateEnabledInput() inter
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) ClientCertificateExclusionPathsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPathsInput",
 		&returns,
 	)
 	return returns
@@ -542,6 +607,16 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) FunctionsExtensionVersionInput() *str
 	return returns
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot) HttpsOnly() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -732,11 +807,51 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) ServicePlanId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) ServicePlanIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"servicePlanIdInput",
 		&returns,
 	)
 	return returns
@@ -772,6 +887,16 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) SiteCredential() WindowsFunctionAppSl
 	return returns
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) StorageAccount() WindowsFunctionAppSlotStorageAccountList {
+	var returns WindowsFunctionAppSlotStorageAccountList
+	_jsii_.Get(
+		j,
+		"storageAccount",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot) StorageAccountAccessKey() *string {
 	var returns *string
 	_jsii_.Get(
@@ -787,6 +912,16 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) StorageAccountAccessKeyInput() *strin
 	_jsii_.Get(
 		j,
 		"storageAccountAccessKeyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) StorageAccountInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"storageAccountInput",
 		&returns,
 	)
 	return returns
@@ -922,8 +1057,28 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot} Resource.
+func (j *jsiiProxy_WindowsFunctionAppSlot) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot} Resource.
 func NewWindowsFunctionAppSlot(scope constructs.Construct, id *string, config *WindowsFunctionAppSlotConfig) WindowsFunctionAppSlot {
 	_init_.Initialize()
 
@@ -941,7 +1096,7 @@ func NewWindowsFunctionAppSlot(scope constructs.Construct, id *string, config *W
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/windows_function_app_slot azurerm_windows_function_app_slot} Resource.
 func NewWindowsFunctionAppSlot_Override(w WindowsFunctionAppSlot, scope constructs.Construct, id *string, config *WindowsFunctionAppSlotConfig) {
 	_init_.Initialize()
 
@@ -981,6 +1136,17 @@ func (j *jsiiProxy_WindowsFunctionAppSlot)SetClientCertificateEnabled(val interf
 	_jsii_.Set(
 		j,
 		"clientCertificateEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot)SetClientCertificateExclusionPaths(val *string) {
+	if err := j.validateSetClientCertificateExclusionPathsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificateExclusionPaths",
 		val,
 	)
 }
@@ -1163,6 +1329,28 @@ func (j *jsiiProxy_WindowsFunctionAppSlot)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot)SetServicePlanId(val *string) {
+	if err := j.validateSetServicePlanIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"servicePlanId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot)SetStorageAccountAccessKey(val *string) {
 	if err := j.validateSetStorageAccountAccessKeyParameters(val); err != nil {
 		panic(err)
@@ -1214,6 +1402,17 @@ func (j *jsiiProxy_WindowsFunctionAppSlot)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
 		val,
 	)
 }
@@ -1495,6 +1694,17 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) PutAuthSettings(value *WindowsFunctio
 	)
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) PutAuthSettingsV2(value *WindowsFunctionAppSlotAuthSettingsV2) {
+	if err := w.validatePutAuthSettingsV2Parameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putAuthSettingsV2",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) PutBackup(value *WindowsFunctionAppSlotBackup) {
 	if err := w.validatePutBackupParameters(value); err != nil {
 		panic(err)
@@ -1539,6 +1749,17 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) PutSiteConfig(value *WindowsFunctionA
 	)
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) PutStorageAccount(value interface{}) {
+	if err := w.validatePutStorageAccountParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		w,
+		"putStorageAccount",
+		[]interface{}{value},
+	)
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) PutTimeouts(value *WindowsFunctionAppSlotTimeouts) {
 	if err := w.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1566,6 +1787,14 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) ResetAuthSettings() {
 	)
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetAuthSettingsV2() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetAuthSettingsV2",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) ResetBackup() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1586,6 +1815,14 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetClientCertificateExclusionPaths() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetClientCertificateExclusionPaths",
 		nil, // no parameters
 	)
 }
@@ -1678,6 +1915,30 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) ResetOverrideLogicalId() {
 	)
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetServicePlanId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetServicePlanId",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetStorageAccount() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetStorageAccount",
+		nil, // no parameters
+	)
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) ResetStorageAccountAccessKey() {
 	_jsii_.InvokeVoid(
 		w,
@@ -1722,6 +1983,14 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		w,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetVirtualNetworkSubnetId",
 		nil, // no parameters
 	)
 }

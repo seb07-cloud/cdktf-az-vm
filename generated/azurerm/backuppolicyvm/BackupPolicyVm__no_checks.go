@@ -56,6 +56,10 @@ func (b *jsiiProxy_BackupPolicyVm) validatePutBackupParameters(value *BackupPoli
 	return nil
 }
 
+func (b *jsiiProxy_BackupPolicyVm) validatePutInstantRestoreResourceGroupParameters(value *BackupPolicyVmInstantRestoreResourceGroup) error {
+	return nil
+}
+
 func (b *jsiiProxy_BackupPolicyVm) validatePutRetentionDailyParameters(value *BackupPolicyVmRetentionDaily) error {
 	return nil
 }
@@ -109,6 +113,10 @@ func (j *jsiiProxy_BackupPolicyVm) validateSetLifecycleParameters(val *cdktf.Ter
 }
 
 func (j *jsiiProxy_BackupPolicyVm) validateSetNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BackupPolicyVm) validateSetPolicyTypeParameters(val *string) error {
 	return nil
 }
 

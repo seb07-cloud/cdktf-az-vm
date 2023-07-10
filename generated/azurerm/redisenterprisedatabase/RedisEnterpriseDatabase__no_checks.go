@@ -104,6 +104,14 @@ func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLifecycleParameters(val *
 	return nil
 }
 
+func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLinkedDatabaseGroupNicknameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetLinkedDatabaseIdParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_RedisEnterpriseDatabase) validateSetNameParameters(val *string) error {
 	return nil
 }

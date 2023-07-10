@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app azurerm_linux_web_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app azurerm_linux_web_app}.
 type LinuxWebApp interface {
 	cdktf.TerraformResource
 	AppSettings() *map[string]*string
@@ -17,6 +17,8 @@ type LinuxWebApp interface {
 	AppSettingsInput() *map[string]*string
 	AuthSettings() LinuxWebAppAuthSettingsOutputReference
 	AuthSettingsInput() *LinuxWebAppAuthSettings
+	AuthSettingsV2() LinuxWebAppAuthSettingsV2OutputReference
+	AuthSettingsV2Input() *LinuxWebAppAuthSettingsV2
 	Backup() LinuxWebAppBackupOutputReference
 	BackupInput() *LinuxWebAppBackup
 	// Experimental.
@@ -27,6 +29,9 @@ type LinuxWebApp interface {
 	ClientCertificateEnabled() interface{}
 	SetClientCertificateEnabled(val interface{})
 	ClientCertificateEnabledInput() interface{}
+	ClientCertificateExclusionPaths() *string
+	SetClientCertificateExclusionPaths(val *string)
+	ClientCertificateExclusionPathsInput() *string
 	ClientCertificateMode() *string
 	SetClientCertificateMode(val *string)
 	ClientCertificateModeInput() *string
@@ -59,6 +64,7 @@ type LinuxWebApp interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() interface{}
 	SetHttpsOnly(val interface{})
 	HttpsOnlyInput() interface{}
@@ -97,6 +103,9 @@ type LinuxWebApp interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -108,6 +117,8 @@ type LinuxWebApp interface {
 	SiteConfig() LinuxWebAppSiteConfigOutputReference
 	SiteConfigInput() *LinuxWebAppSiteConfig
 	SiteCredential() LinuxWebAppSiteCredentialList
+	StickySettings() LinuxWebAppStickySettingsOutputReference
+	StickySettingsInput() *LinuxWebAppStickySettings
 	StorageAccount() LinuxWebAppStorageAccountList
 	StorageAccountInput() interface{}
 	Tags() *map[string]*string
@@ -121,6 +132,12 @@ type LinuxWebApp interface {
 	TerraformResourceType() *string
 	Timeouts() LinuxWebAppTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	VirtualNetworkSubnetId() *string
+	SetVirtualNetworkSubnetId(val *string)
+	VirtualNetworkSubnetIdInput() *string
+	ZipDeployFile() *string
+	SetZipDeployFile(val *string)
+	ZipDeployFileInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -147,18 +164,22 @@ type LinuxWebApp interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAuthSettings(value *LinuxWebAppAuthSettings)
+	PutAuthSettingsV2(value *LinuxWebAppAuthSettingsV2)
 	PutBackup(value *LinuxWebAppBackup)
 	PutConnectionString(value interface{})
 	PutIdentity(value *LinuxWebAppIdentity)
 	PutLogs(value *LinuxWebAppLogs)
 	PutSiteConfig(value *LinuxWebAppSiteConfig)
+	PutStickySettings(value *LinuxWebAppStickySettings)
 	PutStorageAccount(value interface{})
 	PutTimeouts(value *LinuxWebAppTimeouts)
 	ResetAppSettings()
 	ResetAuthSettings()
+	ResetAuthSettingsV2()
 	ResetBackup()
 	ResetClientAffinityEnabled()
 	ResetClientCertificateEnabled()
+	ResetClientCertificateExclusionPaths()
 	ResetClientCertificateMode()
 	ResetConnectionString()
 	ResetEnabled()
@@ -170,9 +191,13 @@ type LinuxWebApp interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
+	ResetStickySettings()
 	ResetStorageAccount()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualNetworkSubnetId()
+	ResetZipDeployFile()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -223,6 +248,26 @@ func (j *jsiiProxy_LinuxWebApp) AuthSettingsInput() *LinuxWebAppAuthSettings {
 	_jsii_.Get(
 		j,
 		"authSettingsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) AuthSettingsV2() LinuxWebAppAuthSettingsV2OutputReference {
+	var returns LinuxWebAppAuthSettingsV2OutputReference
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) AuthSettingsV2Input() *LinuxWebAppAuthSettingsV2 {
+	var returns *LinuxWebAppAuthSettingsV2
+	_jsii_.Get(
+		j,
+		"authSettingsV2Input",
 		&returns,
 	)
 	return returns
@@ -293,6 +338,26 @@ func (j *jsiiProxy_LinuxWebApp) ClientCertificateEnabledInput() interface{} {
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) ClientCertificateExclusionPathsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPathsInput",
 		&returns,
 	)
 	return returns
@@ -443,6 +508,16 @@ func (j *jsiiProxy_LinuxWebApp) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -678,6 +753,26 @@ func (j *jsiiProxy_LinuxWebApp) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebApp) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxWebApp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -753,6 +848,26 @@ func (j *jsiiProxy_LinuxWebApp) SiteCredential() LinuxWebAppSiteCredentialList {
 	_jsii_.Get(
 		j,
 		"siteCredential",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) StickySettings() LinuxWebAppStickySettingsOutputReference {
+	var returns LinuxWebAppStickySettingsOutputReference
+	_jsii_.Get(
+		j,
+		"stickySettings",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) StickySettingsInput() *LinuxWebAppStickySettings {
+	var returns *LinuxWebAppStickySettings
+	_jsii_.Get(
+		j,
+		"stickySettingsInput",
 		&returns,
 	)
 	return returns
@@ -848,8 +963,48 @@ func (j *jsiiProxy_LinuxWebApp) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebApp) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app azurerm_linux_web_app} Resource.
+func (j *jsiiProxy_LinuxWebApp) VirtualNetworkSubnetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) ZipDeployFile() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebApp) ZipDeployFileInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zipDeployFileInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app azurerm_linux_web_app} Resource.
 func NewLinuxWebApp(scope constructs.Construct, id *string, config *LinuxWebAppConfig) LinuxWebApp {
 	_init_.Initialize()
 
@@ -867,7 +1022,7 @@ func NewLinuxWebApp(scope constructs.Construct, id *string, config *LinuxWebAppC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_web_app azurerm_linux_web_app} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_web_app azurerm_linux_web_app} Resource.
 func NewLinuxWebApp_Override(l LinuxWebApp, scope constructs.Construct, id *string, config *LinuxWebAppConfig) {
 	_init_.Initialize()
 
@@ -907,6 +1062,17 @@ func (j *jsiiProxy_LinuxWebApp)SetClientCertificateEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"clientCertificateEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebApp)SetClientCertificateExclusionPaths(val *string) {
+	if err := j.validateSetClientCertificateExclusionPathsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificateExclusionPaths",
 		val,
 	)
 }
@@ -1056,6 +1222,17 @@ func (j *jsiiProxy_LinuxWebApp)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_LinuxWebApp)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxWebApp)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -1085,6 +1262,28 @@ func (j *jsiiProxy_LinuxWebApp)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebApp)SetVirtualNetworkSubnetId(val *string) {
+	if err := j.validateSetVirtualNetworkSubnetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkSubnetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebApp)SetZipDeployFile(val *string) {
+	if err := j.validateSetZipDeployFileParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zipDeployFile",
 		val,
 	)
 }
@@ -1366,6 +1565,17 @@ func (l *jsiiProxy_LinuxWebApp) PutAuthSettings(value *LinuxWebAppAuthSettings) 
 	)
 }
 
+func (l *jsiiProxy_LinuxWebApp) PutAuthSettingsV2(value *LinuxWebAppAuthSettingsV2) {
+	if err := l.validatePutAuthSettingsV2Parameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putAuthSettingsV2",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxWebApp) PutBackup(value *LinuxWebAppBackup) {
 	if err := l.validatePutBackupParameters(value); err != nil {
 		panic(err)
@@ -1421,6 +1631,17 @@ func (l *jsiiProxy_LinuxWebApp) PutSiteConfig(value *LinuxWebAppSiteConfig) {
 	)
 }
 
+func (l *jsiiProxy_LinuxWebApp) PutStickySettings(value *LinuxWebAppStickySettings) {
+	if err := l.validatePutStickySettingsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putStickySettings",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxWebApp) PutStorageAccount(value interface{}) {
 	if err := l.validatePutStorageAccountParameters(value); err != nil {
 		panic(err)
@@ -1459,6 +1680,14 @@ func (l *jsiiProxy_LinuxWebApp) ResetAuthSettings() {
 	)
 }
 
+func (l *jsiiProxy_LinuxWebApp) ResetAuthSettingsV2() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetAuthSettingsV2",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebApp) ResetBackup() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1479,6 +1708,14 @@ func (l *jsiiProxy_LinuxWebApp) ResetClientCertificateEnabled() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetClientCertificateEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebApp) ResetClientCertificateExclusionPaths() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetClientCertificateExclusionPaths",
 		nil, // no parameters
 	)
 }
@@ -1555,6 +1792,22 @@ func (l *jsiiProxy_LinuxWebApp) ResetOverrideLogicalId() {
 	)
 }
 
+func (l *jsiiProxy_LinuxWebApp) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebApp) ResetStickySettings() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetStickySettings",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebApp) ResetStorageAccount() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1575,6 +1828,22 @@ func (l *jsiiProxy_LinuxWebApp) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebApp) ResetVirtualNetworkSubnetId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetVirtualNetworkSubnetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebApp) ResetZipDeployFile() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetZipDeployFile",
 		nil, // no parameters
 	)
 }

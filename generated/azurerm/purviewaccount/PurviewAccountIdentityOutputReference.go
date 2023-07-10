@@ -27,6 +27,9 @@ type PurviewAccountIdentityOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	IdentityIds() *[]*string
+	SetIdentityIds(val *[]*string)
+	IdentityIdsInput() *[]*string
 	InternalValue() *PurviewAccountIdentity
 	SetInternalValue(val *PurviewAccountIdentity)
 	PrincipalId() *string
@@ -66,6 +69,7 @@ type PurviewAccountIdentityOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIdentityIds()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -116,6 +120,26 @@ func (j *jsiiProxy_PurviewAccountIdentityOutputReference) Fqn() *string {
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PurviewAccountIdentityOutputReference) IdentityIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PurviewAccountIdentityOutputReference) IdentityIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIdsInput",
 		&returns,
 	)
 	return returns
@@ -237,6 +261,17 @@ func (j *jsiiProxy_PurviewAccountIdentityOutputReference)SetComplexObjectIsFromS
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PurviewAccountIdentityOutputReference)SetIdentityIds(val *[]*string) {
+	if err := j.validateSetIdentityIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"identityIds",
 		val,
 	)
 }
@@ -469,6 +504,14 @@ func (p *jsiiProxy_PurviewAccountIdentityOutputReference) InterpolationForAttrib
 	)
 
 	return returns
+}
+
+func (p *jsiiProxy_PurviewAccountIdentityOutputReference) ResetIdentityIds() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetIdentityIds",
+		nil, // no parameters
+	)
 }
 
 func (p *jsiiProxy_PurviewAccountIdentityOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

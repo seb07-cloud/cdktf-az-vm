@@ -122,6 +122,17 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutAuthSettingsParameters(val
 	return nil
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutAuthSettingsV2Parameters(value *WindowsFunctionAppSlotAuthSettingsV2) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutBackupParameters(value *WindowsFunctionAppSlotBackup) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -181,6 +192,37 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutSiteConfigParameters(value
 	}
 	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutStorageAccountParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*WindowsFunctionAppSlotStorageAccount:
+		value := value.(*[]*WindowsFunctionAppSlotStorageAccount)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*WindowsFunctionAppSlotStorageAccount:
+		value_ := value.([]*WindowsFunctionAppSlotStorageAccount)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*WindowsFunctionAppSlotStorageAccount; received %#v (a %T)", value, value)
+		}
 	}
 
 	return nil
@@ -264,6 +306,14 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetClientCertificateEnabledPa
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetClientCertificateExclusionPathsParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -529,6 +579,34 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetProvisionersParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetServicePlanIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetStorageAccountAccessKeyParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -574,6 +652,14 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetStorageUsesManagedIdentity
 }
 
 func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

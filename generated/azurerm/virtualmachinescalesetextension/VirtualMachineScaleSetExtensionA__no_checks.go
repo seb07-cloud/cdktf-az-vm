@@ -52,6 +52,10 @@ func (v *jsiiProxy_VirtualMachineScaleSetExtensionA) validateOverrideLogicalIdPa
 	return nil
 }
 
+func (v *jsiiProxy_VirtualMachineScaleSetExtensionA) validatePutProtectedSettingsFromKeyVaultParameters(value *VirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault) error {
+	return nil
+}
+
 func (v *jsiiProxy_VirtualMachineScaleSetExtensionA) validatePutTimeoutsParameters(value *VirtualMachineScaleSetExtensionTimeouts) error {
 	return nil
 }
@@ -81,6 +85,10 @@ func (j *jsiiProxy_VirtualMachineScaleSetExtensionA) validateSetConnectionParame
 }
 
 func (j *jsiiProxy_VirtualMachineScaleSetExtensionA) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_VirtualMachineScaleSetExtensionA) validateSetFailureSuppressionEnabledParameters(val interface{}) error {
 	return nil
 }
 

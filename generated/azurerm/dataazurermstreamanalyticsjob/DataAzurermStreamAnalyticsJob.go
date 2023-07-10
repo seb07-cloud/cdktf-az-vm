@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job}.
 type DataAzurermStreamAnalyticsJob interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -42,6 +42,7 @@ type DataAzurermStreamAnalyticsJob interface {
 	Identity() DataAzurermStreamAnalyticsJobIdentityList
 	IdInput() *string
 	JobId() *string
+	LastOutputTime() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -62,6 +63,8 @@ type DataAzurermStreamAnalyticsJob interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	StartMode() *string
+	StartTime() *string
 	StreamingUnits() *float64
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -278,6 +281,16 @@ func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) JobId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) LastOutputTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lastOutputTime",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -378,6 +391,26 @@ func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) ResourceGroupNameInput() *stri
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) StartMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"startMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) StartTime() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"startTime",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) StreamingUnits() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -449,7 +482,7 @@ func (j *jsiiProxy_DataAzurermStreamAnalyticsJob) TransformationQuery() *string 
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job} Data Source.
 func NewDataAzurermStreamAnalyticsJob(scope constructs.Construct, id *string, config *DataAzurermStreamAnalyticsJobConfig) DataAzurermStreamAnalyticsJob {
 	_init_.Initialize()
 
@@ -467,7 +500,7 @@ func NewDataAzurermStreamAnalyticsJob(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/stream_analytics_job azurerm_stream_analytics_job} Data Source.
 func NewDataAzurermStreamAnalyticsJob_Override(d DataAzurermStreamAnalyticsJob, scope constructs.Construct, id *string, config *DataAzurermStreamAnalyticsJobConfig) {
 	_init_.Initialize()
 

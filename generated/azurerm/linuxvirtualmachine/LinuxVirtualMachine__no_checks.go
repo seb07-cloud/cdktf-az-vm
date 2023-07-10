@@ -64,6 +64,10 @@ func (l *jsiiProxy_LinuxVirtualMachine) validatePutBootDiagnosticsParameters(val
 	return nil
 }
 
+func (l *jsiiProxy_LinuxVirtualMachine) validatePutGalleryApplicationParameters(value interface{}) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxVirtualMachine) validatePutIdentityParameters(value *LinuxVirtualMachineIdentity) error {
 	return nil
 }
@@ -117,6 +121,10 @@ func (j *jsiiProxy_LinuxVirtualMachine) validateSetAllowExtensionOperationsParam
 }
 
 func (j *jsiiProxy_LinuxVirtualMachine) validateSetAvailabilitySetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	return nil
 }
 
@@ -189,6 +197,10 @@ func (j *jsiiProxy_LinuxVirtualMachine) validateSetNameParameters(val *string) e
 }
 
 func (j *jsiiProxy_LinuxVirtualMachine) validateSetNetworkInterfaceIdsParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachine) validateSetPatchAssessmentModeParameters(val *string) error {
 	return nil
 }
 

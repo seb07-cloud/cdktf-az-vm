@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secret azurerm_key_vault_secret}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secret azurerm_key_vault_secret}.
 type DataAzurermKeyVaultSecret interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -25,6 +25,7 @@ type DataAzurermKeyVaultSecret interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	ExpirationDate() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -48,12 +49,15 @@ type DataAzurermKeyVaultSecret interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	NotBeforeDate() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
 	// Experimental.
 	RawOverrides() interface{}
+	ResourceId() *string
+	ResourceVersionlessId() *string
 	Tags() cdktf.StringMap
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -65,6 +69,8 @@ type DataAzurermKeyVaultSecret interface {
 	TimeoutsInput() interface{}
 	Value() *string
 	Version() *string
+	SetVersion(val *string)
+	VersionInput() *string
 	VersionlessId() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
@@ -97,6 +103,7 @@ type DataAzurermKeyVaultSecret interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetVersion()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -157,6 +164,16 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKeyVaultSecret) ExpirationDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"expirationDate",
 		&returns,
 	)
 	return returns
@@ -272,6 +289,16 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKeyVaultSecret) NotBeforeDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"notBeforeDate",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKeyVaultSecret) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -287,6 +314,26 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret) RawOverrides() interface{} {
 	_jsii_.Get(
 		j,
 		"rawOverrides",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKeyVaultSecret) ResourceId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKeyVaultSecret) ResourceVersionlessId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"resourceVersionlessId",
 		&returns,
 	)
 	return returns
@@ -372,6 +419,16 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret) Version() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKeyVaultSecret) VersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"versionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKeyVaultSecret) VersionlessId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -383,7 +440,7 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret) VersionlessId() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secret azurerm_key_vault_secret} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secret azurerm_key_vault_secret} Data Source.
 func NewDataAzurermKeyVaultSecret(scope constructs.Construct, id *string, config *DataAzurermKeyVaultSecretConfig) DataAzurermKeyVaultSecret {
 	_init_.Initialize()
 
@@ -401,7 +458,7 @@ func NewDataAzurermKeyVaultSecret(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/key_vault_secret azurerm_key_vault_secret} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/key_vault_secret azurerm_key_vault_secret} Data Source.
 func NewDataAzurermKeyVaultSecret_Override(d DataAzurermKeyVaultSecret, scope constructs.Construct, id *string, config *DataAzurermKeyVaultSecretConfig) {
 	_init_.Initialize()
 
@@ -487,6 +544,17 @@ func (j *jsiiProxy_DataAzurermKeyVaultSecret)SetProvider(val cdktf.TerraformProv
 	_jsii_.Set(
 		j,
 		"provider",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermKeyVaultSecret)SetVersion(val *string) {
+	if err := j.validateSetVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"version",
 		val,
 	)
 }
@@ -788,6 +856,14 @@ func (d *jsiiProxy_DataAzurermKeyVaultSecret) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermKeyVaultSecret) ResetVersion() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetVersion",
 		nil, // no parameters
 	)
 }

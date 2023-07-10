@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/app_configuration azurerm_app_configuration}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/app_configuration azurerm_app_configuration}.
 type AppConfiguration interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -28,6 +28,8 @@ type AppConfiguration interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	Encryption() AppConfigurationEncryptionOutputReference
+	EncryptionInput() *AppConfigurationEncryption
 	Endpoint() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
@@ -46,6 +48,9 @@ type AppConfiguration interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthEnabled() interface{}
+	SetLocalAuthEnabled(val interface{})
+	LocalAuthEnabledInput() interface{}
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
@@ -64,6 +69,12 @@ type AppConfiguration interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccess() *string
+	SetPublicNetworkAccess(val *string)
+	PublicNetworkAccessInput() *string
+	PurgeProtectionEnabled() interface{}
+	SetPurgeProtectionEnabled(val interface{})
+	PurgeProtectionEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -74,6 +85,9 @@ type AppConfiguration interface {
 	Sku() *string
 	SetSku(val *string)
 	SkuInput() *string
+	SoftDeleteRetentionDays() *float64
+	SetSoftDeleteRetentionDays(val *float64)
+	SoftDeleteRetentionDaysInput() *float64
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -110,14 +124,20 @@ type AppConfiguration interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutEncryption(value *AppConfigurationEncryption)
 	PutIdentity(value *AppConfigurationIdentity)
 	PutTimeouts(value *AppConfigurationTimeouts)
+	ResetEncryption()
 	ResetId()
 	ResetIdentity()
+	ResetLocalAuthEnabled()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccess()
+	ResetPurgeProtectionEnabled()
 	ResetSku()
+	ResetSoftDeleteRetentionDays()
 	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -180,6 +200,26 @@ func (j *jsiiProxy_AppConfiguration) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) Encryption() AppConfigurationEncryptionOutputReference {
+	var returns AppConfigurationEncryptionOutputReference
+	_jsii_.Get(
+		j,
+		"encryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) EncryptionInput() *AppConfigurationEncryption {
+	var returns *AppConfigurationEncryption
+	_jsii_.Get(
+		j,
+		"encryptionInput",
 		&returns,
 	)
 	return returns
@@ -275,6 +315,26 @@ func (j *jsiiProxy_AppConfiguration) Lifecycle() *cdktf.TerraformResourceLifecyc
 	return returns
 }
 
+func (j *jsiiProxy_AppConfiguration) LocalAuthEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) LocalAuthEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppConfiguration) Location() *string {
 	var returns *string
 	_jsii_.Get(
@@ -365,6 +425,46 @@ func (j *jsiiProxy_AppConfiguration) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_AppConfiguration) PublicNetworkAccess() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicNetworkAccess",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) PublicNetworkAccessInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) PurgeProtectionEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"purgeProtectionEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) PurgeProtectionEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"purgeProtectionEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AppConfiguration) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -430,6 +530,26 @@ func (j *jsiiProxy_AppConfiguration) SkuInput() *string {
 	_jsii_.Get(
 		j,
 		"skuInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) SoftDeleteRetentionDays() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"softDeleteRetentionDays",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AppConfiguration) SoftDeleteRetentionDaysInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"softDeleteRetentionDaysInput",
 		&returns,
 	)
 	return returns
@@ -506,7 +626,7 @@ func (j *jsiiProxy_AppConfiguration) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/app_configuration azurerm_app_configuration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/app_configuration azurerm_app_configuration} Resource.
 func NewAppConfiguration(scope constructs.Construct, id *string, config *AppConfigurationConfig) AppConfiguration {
 	_init_.Initialize()
 
@@ -524,7 +644,7 @@ func NewAppConfiguration(scope constructs.Construct, id *string, config *AppConf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/app_configuration azurerm_app_configuration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/app_configuration azurerm_app_configuration} Resource.
 func NewAppConfiguration_Override(a AppConfiguration, scope constructs.Construct, id *string, config *AppConfigurationConfig) {
 	_init_.Initialize()
 
@@ -595,6 +715,17 @@ func (j *jsiiProxy_AppConfiguration)SetLifecycle(val *cdktf.TerraformResourceLif
 	)
 }
 
+func (j *jsiiProxy_AppConfiguration)SetLocalAuthEnabled(val interface{}) {
+	if err := j.validateSetLocalAuthEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"localAuthEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_AppConfiguration)SetLocation(val *string) {
 	if err := j.validateSetLocationParameters(val); err != nil {
 		panic(err)
@@ -636,6 +767,28 @@ func (j *jsiiProxy_AppConfiguration)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_AppConfiguration)SetPublicNetworkAccess(val *string) {
+	if err := j.validateSetPublicNetworkAccessParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccess",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppConfiguration)SetPurgeProtectionEnabled(val interface{}) {
+	if err := j.validateSetPurgeProtectionEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"purgeProtectionEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_AppConfiguration)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -654,6 +807,17 @@ func (j *jsiiProxy_AppConfiguration)SetSku(val *string) {
 	_jsii_.Set(
 		j,
 		"sku",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AppConfiguration)SetSoftDeleteRetentionDays(val *float64) {
+	if err := j.validateSetSoftDeleteRetentionDaysParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"softDeleteRetentionDays",
 		val,
 	)
 }
@@ -935,6 +1099,17 @@ func (a *jsiiProxy_AppConfiguration) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (a *jsiiProxy_AppConfiguration) PutEncryption(value *AppConfigurationEncryption) {
+	if err := a.validatePutEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putEncryption",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_AppConfiguration) PutIdentity(value *AppConfigurationIdentity) {
 	if err := a.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -957,6 +1132,14 @@ func (a *jsiiProxy_AppConfiguration) PutTimeouts(value *AppConfigurationTimeouts
 	)
 }
 
+func (a *jsiiProxy_AppConfiguration) ResetEncryption() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetEncryption",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AppConfiguration) ResetId() {
 	_jsii_.InvokeVoid(
 		a,
@@ -973,6 +1156,14 @@ func (a *jsiiProxy_AppConfiguration) ResetIdentity() {
 	)
 }
 
+func (a *jsiiProxy_AppConfiguration) ResetLocalAuthEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetLocalAuthEnabled",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AppConfiguration) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		a,
@@ -981,10 +1172,34 @@ func (a *jsiiProxy_AppConfiguration) ResetOverrideLogicalId() {
 	)
 }
 
+func (a *jsiiProxy_AppConfiguration) ResetPublicNetworkAccess() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetPublicNetworkAccess",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppConfiguration) ResetPurgeProtectionEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetPurgeProtectionEnabled",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AppConfiguration) ResetSku() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetSku",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AppConfiguration) ResetSoftDeleteRetentionDays() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetSoftDeleteRetentionDays",
 		nil, // no parameters
 	)
 }

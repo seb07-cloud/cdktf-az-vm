@@ -72,6 +72,10 @@ func validateStreamAnalyticsOutputServicebusTopic_IsTerraformResourceParameters(
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetAuthenticationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -117,6 +121,10 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetSharedAccess
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetStreamAnalyticsJobNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetSystemPropertyColumnsParameters(val *map[string]*string) error {
 	return nil
 }
 

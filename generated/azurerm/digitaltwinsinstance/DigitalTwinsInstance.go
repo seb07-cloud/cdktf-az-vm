@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/digital_twins_instance azurerm_digital_twins_instance}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/digital_twins_instance azurerm_digital_twins_instance}.
 type DigitalTwinsInstance interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -39,6 +39,8 @@ type DigitalTwinsInstance interface {
 	HostName() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DigitalTwinsInstanceIdentityOutputReference
+	IdentityInput() *DigitalTwinsInstanceIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -101,8 +103,10 @@ type DigitalTwinsInstance interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIdentity(value *DigitalTwinsInstanceIdentity)
 	PutTimeouts(value *DigitalTwinsInstanceTimeouts)
 	ResetId()
+	ResetIdentity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -218,6 +222,26 @@ func (j *jsiiProxy_DigitalTwinsInstance) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DigitalTwinsInstance) Identity() DigitalTwinsInstanceIdentityOutputReference {
+	var returns DigitalTwinsInstanceIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DigitalTwinsInstance) IdentityInput() *DigitalTwinsInstanceIdentity {
+	var returns *DigitalTwinsInstanceIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -414,7 +438,7 @@ func (j *jsiiProxy_DigitalTwinsInstance) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/digital_twins_instance azurerm_digital_twins_instance} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/digital_twins_instance azurerm_digital_twins_instance} Resource.
 func NewDigitalTwinsInstance(scope constructs.Construct, id *string, config *DigitalTwinsInstanceConfig) DigitalTwinsInstance {
 	_init_.Initialize()
 
@@ -432,7 +456,7 @@ func NewDigitalTwinsInstance(scope constructs.Construct, id *string, config *Dig
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/digital_twins_instance azurerm_digital_twins_instance} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/digital_twins_instance azurerm_digital_twins_instance} Resource.
 func NewDigitalTwinsInstance_Override(d DigitalTwinsInstance, scope constructs.Construct, id *string, config *DigitalTwinsInstanceConfig) {
 	_init_.Initialize()
 
@@ -832,6 +856,17 @@ func (d *jsiiProxy_DigitalTwinsInstance) OverrideLogicalId(newLogicalId *string)
 	)
 }
 
+func (d *jsiiProxy_DigitalTwinsInstance) PutIdentity(value *DigitalTwinsInstanceIdentity) {
+	if err := d.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DigitalTwinsInstance) PutTimeouts(value *DigitalTwinsInstanceTimeouts) {
 	if err := d.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -847,6 +882,14 @@ func (d *jsiiProxy_DigitalTwinsInstance) ResetId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DigitalTwinsInstance) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetIdentity",
 		nil, // no parameters
 	)
 }

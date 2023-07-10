@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster}.
 type HdinsightKafkaCluster interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -19,6 +19,8 @@ type HdinsightKafkaCluster interface {
 	ClusterVersionInput() *string
 	ComponentVersion() HdinsightKafkaClusterComponentVersionOutputReference
 	ComponentVersionInput() *HdinsightKafkaClusterComponentVersion
+	ComputeIsolation() HdinsightKafkaClusterComputeIsolationOutputReference
+	ComputeIsolationInput() *HdinsightKafkaClusterComputeIsolation
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -33,9 +35,13 @@ type HdinsightKafkaCluster interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() HdinsightKafkaClusterDiskEncryptionList
+	DiskEncryptionInput() interface{}
 	EncryptionInTransitEnabled() interface{}
 	SetEncryptionInTransitEnabled(val interface{})
 	EncryptionInTransitEnabledInput() interface{}
+	Extension() HdinsightKafkaClusterExtensionOutputReference
+	ExtensionInput() *HdinsightKafkaClusterExtension
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -65,6 +71,8 @@ type HdinsightKafkaCluster interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	Network() HdinsightKafkaClusterNetworkOutputReference
+	NetworkInput() *HdinsightKafkaClusterNetwork
 	// The tree node.
 	Node() constructs.Node
 	// Experimental.
@@ -134,19 +142,27 @@ type HdinsightKafkaCluster interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutComponentVersion(value *HdinsightKafkaClusterComponentVersion)
+	PutComputeIsolation(value *HdinsightKafkaClusterComputeIsolation)
+	PutDiskEncryption(value interface{})
+	PutExtension(value *HdinsightKafkaClusterExtension)
 	PutGateway(value *HdinsightKafkaClusterGateway)
 	PutMetastores(value *HdinsightKafkaClusterMetastores)
 	PutMonitor(value *HdinsightKafkaClusterMonitor)
+	PutNetwork(value *HdinsightKafkaClusterNetwork)
 	PutRestProxy(value *HdinsightKafkaClusterRestProxy)
 	PutRoles(value *HdinsightKafkaClusterRoles)
 	PutSecurityProfile(value *HdinsightKafkaClusterSecurityProfile)
 	PutStorageAccount(value interface{})
 	PutStorageAccountGen2(value *HdinsightKafkaClusterStorageAccountGen2)
 	PutTimeouts(value *HdinsightKafkaClusterTimeouts)
+	ResetComputeIsolation()
+	ResetDiskEncryption()
 	ResetEncryptionInTransitEnabled()
+	ResetExtension()
 	ResetId()
 	ResetMetastores()
 	ResetMonitor()
+	ResetNetwork()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -222,6 +238,26 @@ func (j *jsiiProxy_HdinsightKafkaCluster) ComponentVersionInput() *HdinsightKafk
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightKafkaCluster) ComputeIsolation() HdinsightKafkaClusterComputeIsolationOutputReference {
+	var returns HdinsightKafkaClusterComputeIsolationOutputReference
+	_jsii_.Get(
+		j,
+		"computeIsolation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) ComputeIsolationInput() *HdinsightKafkaClusterComputeIsolation {
+	var returns *HdinsightKafkaClusterComputeIsolation
+	_jsii_.Get(
+		j,
+		"computeIsolationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightKafkaCluster) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -262,6 +298,26 @@ func (j *jsiiProxy_HdinsightKafkaCluster) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightKafkaCluster) DiskEncryption() HdinsightKafkaClusterDiskEncryptionList {
+	var returns HdinsightKafkaClusterDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) DiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightKafkaCluster) EncryptionInTransitEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -277,6 +333,26 @@ func (j *jsiiProxy_HdinsightKafkaCluster) EncryptionInTransitEnabledInput() inte
 	_jsii_.Get(
 		j,
 		"encryptionInTransitEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) Extension() HdinsightKafkaClusterExtensionOutputReference {
+	var returns HdinsightKafkaClusterExtensionOutputReference
+	_jsii_.Get(
+		j,
+		"extension",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) ExtensionInput() *HdinsightKafkaClusterExtension {
+	var returns *HdinsightKafkaClusterExtension
+	_jsii_.Get(
+		j,
+		"extensionInput",
 		&returns,
 	)
 	return returns
@@ -457,6 +533,26 @@ func (j *jsiiProxy_HdinsightKafkaCluster) NameInput() *string {
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) Network() HdinsightKafkaClusterNetworkOutputReference {
+	var returns HdinsightKafkaClusterNetworkOutputReference
+	_jsii_.Get(
+		j,
+		"network",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightKafkaCluster) NetworkInput() *HdinsightKafkaClusterNetwork {
+	var returns *HdinsightKafkaClusterNetwork
+	_jsii_.Get(
+		j,
+		"networkInput",
 		&returns,
 	)
 	return returns
@@ -743,7 +839,7 @@ func (j *jsiiProxy_HdinsightKafkaCluster) TlsMinVersionInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster} Resource.
 func NewHdinsightKafkaCluster(scope constructs.Construct, id *string, config *HdinsightKafkaClusterConfig) HdinsightKafkaCluster {
 	_init_.Initialize()
 
@@ -761,7 +857,7 @@ func NewHdinsightKafkaCluster(scope constructs.Construct, id *string, config *Hd
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_kafka_cluster azurerm_hdinsight_kafka_cluster} Resource.
 func NewHdinsightKafkaCluster_Override(h HdinsightKafkaCluster, scope constructs.Construct, id *string, config *HdinsightKafkaClusterConfig) {
 	_init_.Initialize()
 
@@ -1216,6 +1312,39 @@ func (h *jsiiProxy_HdinsightKafkaCluster) PutComponentVersion(value *HdinsightKa
 	)
 }
 
+func (h *jsiiProxy_HdinsightKafkaCluster) PutComputeIsolation(value *HdinsightKafkaClusterComputeIsolation) {
+	if err := h.validatePutComputeIsolationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putComputeIsolation",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) PutDiskEncryption(value interface{}) {
+	if err := h.validatePutDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) PutExtension(value *HdinsightKafkaClusterExtension) {
+	if err := h.validatePutExtensionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putExtension",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HdinsightKafkaCluster) PutGateway(value *HdinsightKafkaClusterGateway) {
 	if err := h.validatePutGatewayParameters(value); err != nil {
 		panic(err)
@@ -1245,6 +1374,17 @@ func (h *jsiiProxy_HdinsightKafkaCluster) PutMonitor(value *HdinsightKafkaCluste
 	_jsii_.InvokeVoid(
 		h,
 		"putMonitor",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) PutNetwork(value *HdinsightKafkaClusterNetwork) {
+	if err := h.validatePutNetworkParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putNetwork",
 		[]interface{}{value},
 	)
 }
@@ -1315,10 +1455,34 @@ func (h *jsiiProxy_HdinsightKafkaCluster) PutTimeouts(value *HdinsightKafkaClust
 	)
 }
 
+func (h *jsiiProxy_HdinsightKafkaCluster) ResetComputeIsolation() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetComputeIsolation",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) ResetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetDiskEncryption",
+		nil, // no parameters
+	)
+}
+
 func (h *jsiiProxy_HdinsightKafkaCluster) ResetEncryptionInTransitEnabled() {
 	_jsii_.InvokeVoid(
 		h,
 		"resetEncryptionInTransitEnabled",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) ResetExtension() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetExtension",
 		nil, // no parameters
 	)
 }
@@ -1343,6 +1507,14 @@ func (h *jsiiProxy_HdinsightKafkaCluster) ResetMonitor() {
 	_jsii_.InvokeVoid(
 		h,
 		"resetMonitor",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightKafkaCluster) ResetNetwork() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetNetwork",
 		nil, // no parameters
 	)
 }

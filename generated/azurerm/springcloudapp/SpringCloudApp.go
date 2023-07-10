@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_app azurerm_spring_cloud_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_app azurerm_spring_cloud_app}.
 type SpringCloudApp interface {
 	cdktf.TerraformResource
+	AddonJson() *string
+	SetAddonJson(val *string)
+	AddonJsonInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -47,6 +50,8 @@ type SpringCloudApp interface {
 	Identity() SpringCloudAppIdentityOutputReference
 	IdentityInput() *SpringCloudAppIdentity
 	IdInput() *string
+	IngressSettings() SpringCloudAppIngressSettingsOutputReference
+	IngressSettingsInput() *SpringCloudAppIngressSettings
 	IsPublic() interface{}
 	SetIsPublic(val interface{})
 	IsPublicInput() interface{}
@@ -69,6 +74,9 @@ type SpringCloudApp interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicEndpointEnabled() interface{}
+	SetPublicEndpointEnabled(val interface{})
+	PublicEndpointEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -116,17 +124,21 @@ type SpringCloudApp interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutCustomPersistentDisk(value interface{})
 	PutIdentity(value *SpringCloudAppIdentity)
+	PutIngressSettings(value *SpringCloudAppIngressSettings)
 	PutPersistentDisk(value *SpringCloudAppPersistentDisk)
 	PutTimeouts(value *SpringCloudAppTimeouts)
+	ResetAddonJson()
 	ResetCustomPersistentDisk()
 	ResetHttpsOnly()
 	ResetId()
 	ResetIdentity()
+	ResetIngressSettings()
 	ResetIsPublic()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPersistentDisk()
+	ResetPublicEndpointEnabled()
 	ResetTimeouts()
 	ResetTlsEnabled()
 	SynthesizeAttributes() *map[string]interface{}
@@ -142,6 +154,26 @@ type SpringCloudApp interface {
 // The jsii proxy struct for SpringCloudApp
 type jsiiProxy_SpringCloudApp struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_SpringCloudApp) AddonJson() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"addonJson",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudApp) AddonJsonInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"addonJsonInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_SpringCloudApp) CdktfStack() cdktf.TerraformStack {
@@ -314,6 +346,26 @@ func (j *jsiiProxy_SpringCloudApp) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SpringCloudApp) IngressSettings() SpringCloudAppIngressSettingsOutputReference {
+	var returns SpringCloudAppIngressSettingsOutputReference
+	_jsii_.Get(
+		j,
+		"ingressSettings",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudApp) IngressSettingsInput() *SpringCloudAppIngressSettings {
+	var returns *SpringCloudAppIngressSettings
+	_jsii_.Get(
+		j,
+		"ingressSettingsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SpringCloudApp) IsPublic() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -409,6 +461,26 @@ func (j *jsiiProxy_SpringCloudApp) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudApp) PublicEndpointEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicEndpointEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudApp) PublicEndpointEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicEndpointEnabledInput",
 		&returns,
 	)
 	return returns
@@ -545,7 +617,7 @@ func (j *jsiiProxy_SpringCloudApp) Url() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_app azurerm_spring_cloud_app} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_app azurerm_spring_cloud_app} Resource.
 func NewSpringCloudApp(scope constructs.Construct, id *string, config *SpringCloudAppConfig) SpringCloudApp {
 	_init_.Initialize()
 
@@ -563,7 +635,7 @@ func NewSpringCloudApp(scope constructs.Construct, id *string, config *SpringClo
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/spring_cloud_app azurerm_spring_cloud_app} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/spring_cloud_app azurerm_spring_cloud_app} Resource.
 func NewSpringCloudApp_Override(s SpringCloudApp, scope constructs.Construct, id *string, config *SpringCloudAppConfig) {
 	_init_.Initialize()
 
@@ -571,6 +643,17 @@ func NewSpringCloudApp_Override(s SpringCloudApp, scope constructs.Construct, id
 		"azurerm.springCloudApp.SpringCloudApp",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudApp)SetAddonJson(val *string) {
+	if err := j.validateSetAddonJsonParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"addonJson",
+		val,
 	)
 }
 
@@ -682,6 +765,17 @@ func (j *jsiiProxy_SpringCloudApp)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudApp)SetPublicEndpointEnabled(val interface{}) {
+	if err := j.validateSetPublicEndpointEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicEndpointEnabled",
 		val,
 	)
 }
@@ -1007,6 +1101,17 @@ func (s *jsiiProxy_SpringCloudApp) PutIdentity(value *SpringCloudAppIdentity) {
 	)
 }
 
+func (s *jsiiProxy_SpringCloudApp) PutIngressSettings(value *SpringCloudAppIngressSettings) {
+	if err := s.validatePutIngressSettingsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putIngressSettings",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SpringCloudApp) PutPersistentDisk(value *SpringCloudAppPersistentDisk) {
 	if err := s.validatePutPersistentDiskParameters(value); err != nil {
 		panic(err)
@@ -1026,6 +1131,14 @@ func (s *jsiiProxy_SpringCloudApp) PutTimeouts(value *SpringCloudAppTimeouts) {
 		s,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_SpringCloudApp) ResetAddonJson() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAddonJson",
+		nil, // no parameters
 	)
 }
 
@@ -1061,6 +1174,14 @@ func (s *jsiiProxy_SpringCloudApp) ResetIdentity() {
 	)
 }
 
+func (s *jsiiProxy_SpringCloudApp) ResetIngressSettings() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIngressSettings",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SpringCloudApp) ResetIsPublic() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1081,6 +1202,14 @@ func (s *jsiiProxy_SpringCloudApp) ResetPersistentDisk() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetPersistentDisk",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SpringCloudApp) ResetPublicEndpointEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPublicEndpointEnabled",
 		nil, // no parameters
 	)
 }

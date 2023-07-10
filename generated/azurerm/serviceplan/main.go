@@ -61,6 +61,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetTags", GoMethod: "ResetTags"},
 			_jsii_.MemberMethod{JsiiMethod: "resetTimeouts", GoMethod: "ResetTimeouts"},
 			_jsii_.MemberMethod{JsiiMethod: "resetWorkerCount", GoMethod: "ResetWorkerCount"},
+			_jsii_.MemberMethod{JsiiMethod: "resetZoneBalancingEnabled", GoMethod: "ResetZoneBalancingEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceGroupName", GoGetter: "ResourceGroupName"},
 			_jsii_.MemberProperty{JsiiProperty: "resourceGroupNameInput", GoGetter: "ResourceGroupNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "skuName", GoGetter: "SkuName"},
@@ -78,6 +79,8 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
 			_jsii_.MemberProperty{JsiiProperty: "workerCount", GoGetter: "WorkerCount"},
 			_jsii_.MemberProperty{JsiiProperty: "workerCountInput", GoGetter: "WorkerCountInput"},
+			_jsii_.MemberProperty{JsiiProperty: "zoneBalancingEnabled", GoGetter: "ZoneBalancingEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "zoneBalancingEnabledInput", GoGetter: "ZoneBalancingEnabledInput"},
 		},
 		func() interface{} {
 			j := jsiiProxy_ServicePlan{}

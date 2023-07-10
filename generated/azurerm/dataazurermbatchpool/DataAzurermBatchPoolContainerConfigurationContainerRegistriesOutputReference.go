@@ -39,6 +39,7 @@ type DataAzurermBatchPoolContainerConfigurationContainerRegistriesOutputReferenc
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserAssignedIdentityId() *string
 	UserName() *string
 	// Experimental.
 	ComputeFqn() *string
@@ -164,6 +165,16 @@ func (j *jsiiProxy_DataAzurermBatchPoolContainerConfigurationContainerRegistries
 	_jsii_.Get(
 		j,
 		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPoolContainerConfigurationContainerRegistriesOutputReference) UserAssignedIdentityId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityId",
 		&returns,
 	)
 	return returns

@@ -56,7 +56,7 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputRef
 	return nil
 }
 
-func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference) validateSetInternalValueParameters(val *VirtualNetworkGatewayConnectionTrafficSelectorPolicy) error {
+func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }
 
@@ -76,7 +76,7 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputRef
 	return nil
 }
 
-func validateNewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
+func validateNewVirtualNetworkGatewayConnectionTrafficSelectorPolicyOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) error {
 	return nil
 }
 

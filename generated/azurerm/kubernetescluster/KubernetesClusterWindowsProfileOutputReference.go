@@ -33,6 +33,8 @@ type KubernetesClusterWindowsProfileOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	Gmsa() KubernetesClusterWindowsProfileGmsaOutputReference
+	GmsaInput() *KubernetesClusterWindowsProfileGmsa
 	InternalValue() *KubernetesClusterWindowsProfile
 	SetInternalValue(val *KubernetesClusterWindowsProfile)
 	License() *string
@@ -70,7 +72,9 @@ type KubernetesClusterWindowsProfileOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutGmsa(value *KubernetesClusterWindowsProfileGmsa)
 	ResetAdminPassword()
+	ResetGmsa()
 	ResetLicense()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -162,6 +166,26 @@ func (j *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) Fqn() *string
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) Gmsa() KubernetesClusterWindowsProfileGmsaOutputReference {
+	var returns KubernetesClusterWindowsProfileGmsaOutputReference
+	_jsii_.Get(
+		j,
+		"gmsa",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) GmsaInput() *KubernetesClusterWindowsProfileGmsa {
+	var returns *KubernetesClusterWindowsProfileGmsa
+	_jsii_.Get(
+		j,
+		"gmsaInput",
 		&returns,
 	)
 	return returns
@@ -519,10 +543,29 @@ func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) Interpolation
 	return returns
 }
 
+func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) PutGmsa(value *KubernetesClusterWindowsProfileGmsa) {
+	if err := k.validatePutGmsaParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putGmsa",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) ResetAdminPassword() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetAdminPassword",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesClusterWindowsProfileOutputReference) ResetGmsa() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetGmsa",
 		nil, // no parameters
 	)
 }

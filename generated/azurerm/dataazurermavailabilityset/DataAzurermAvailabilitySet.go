@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/availability_set azurerm_availability_set}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/availability_set azurerm_availability_set}.
 type DataAzurermAvailabilitySet interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -46,8 +46,8 @@ type DataAzurermAvailabilitySet interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
-	PlatformFaultDomainCount() *string
-	PlatformUpdateDomainCount() *string
+	PlatformFaultDomainCount() *float64
+	PlatformUpdateDomainCount() *float64
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -262,8 +262,8 @@ func (j *jsiiProxy_DataAzurermAvailabilitySet) Node() constructs.Node {
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermAvailabilitySet) PlatformFaultDomainCount() *string {
-	var returns *string
+func (j *jsiiProxy_DataAzurermAvailabilitySet) PlatformFaultDomainCount() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"platformFaultDomainCount",
@@ -272,8 +272,8 @@ func (j *jsiiProxy_DataAzurermAvailabilitySet) PlatformFaultDomainCount() *strin
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermAvailabilitySet) PlatformUpdateDomainCount() *string {
-	var returns *string
+func (j *jsiiProxy_DataAzurermAvailabilitySet) PlatformUpdateDomainCount() *float64 {
+	var returns *float64
 	_jsii_.Get(
 		j,
 		"platformUpdateDomainCount",
@@ -383,7 +383,7 @@ func (j *jsiiProxy_DataAzurermAvailabilitySet) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/availability_set azurerm_availability_set} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/availability_set azurerm_availability_set} Data Source.
 func NewDataAzurermAvailabilitySet(scope constructs.Construct, id *string, config *DataAzurermAvailabilitySetConfig) DataAzurermAvailabilitySet {
 	_init_.Initialize()
 
@@ -401,7 +401,7 @@ func NewDataAzurermAvailabilitySet(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/availability_set azurerm_availability_set} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/availability_set azurerm_availability_set} Data Source.
 func NewDataAzurermAvailabilitySet_Override(d DataAzurermAvailabilitySet, scope constructs.Construct, id *string, config *DataAzurermAvailabilitySetConfig) {
 	_init_.Initialize()
 

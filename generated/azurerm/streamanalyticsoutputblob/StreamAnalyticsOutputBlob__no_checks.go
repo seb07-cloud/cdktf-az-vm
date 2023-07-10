@@ -72,6 +72,10 @@ func validateStreamAnalyticsOutputBlob_IsTerraformResourceParameters(x interface
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputBlob) validateSetAuthenticationModeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputBlob) validateSetBatchMaxWaitTimeParameters(val *string) error {
 	return nil
 }

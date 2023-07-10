@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster}.
 type DataAzurermKubernetesCluster interface {
 	cdktf.TerraformDataSource
 	AciConnectorLinux() DataAzurermKubernetesClusterAciConnectorLinuxList
@@ -25,6 +25,7 @@ type DataAzurermKubernetesCluster interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomCaTrustCertificatesBase64() *[]*string
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -47,6 +48,7 @@ type DataAzurermKubernetesCluster interface {
 	Identity() DataAzurermKubernetesClusterIdentityList
 	IdInput() *string
 	IngressApplicationGateway() DataAzurermKubernetesClusterIngressApplicationGatewayList
+	KeyManagementService() DataAzurermKubernetesClusterKeyManagementServiceList
 	KeyVaultSecretsProvider() DataAzurermKubernetesClusterKeyVaultSecretsProviderList
 	KubeAdminConfig() DataAzurermKubernetesClusterKubeAdminConfigList
 	KubeAdminConfigRaw() *string
@@ -60,6 +62,7 @@ type DataAzurermKubernetesCluster interface {
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LinuxProfile() DataAzurermKubernetesClusterLinuxProfileList
 	Location() *string
+	MicrosoftDefender() DataAzurermKubernetesClusterMicrosoftDefenderList
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -67,6 +70,9 @@ type DataAzurermKubernetesCluster interface {
 	// The tree node.
 	Node() constructs.Node
 	NodeResourceGroup() *string
+	NodeResourceGroupId() *string
+	OidcIssuerEnabled() cdktf.IResolvable
+	OidcIssuerUrl() *string
 	OmsAgent() DataAzurermKubernetesClusterOmsAgentList
 	OpenServiceMeshEnabled() cdktf.IResolvable
 	PrivateClusterEnabled() cdktf.IResolvable
@@ -82,6 +88,7 @@ type DataAzurermKubernetesCluster interface {
 	ResourceGroupNameInput() *string
 	RoleBasedAccessControlEnabled() cdktf.IResolvable
 	ServicePrincipal() DataAzurermKubernetesClusterServicePrincipalList
+	StorageProfile() DataAzurermKubernetesClusterStorageProfileList
 	Tags() cdktf.StringMap
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -218,6 +225,16 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKubernetesCluster) CustomCaTrustCertificatesBase64() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"customCaTrustCertificatesBase64",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKubernetesCluster) DependsOn() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -348,6 +365,16 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) IngressApplicationGateway() Dat
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKubernetesCluster) KeyManagementService() DataAzurermKubernetesClusterKeyManagementServiceList {
+	var returns DataAzurermKubernetesClusterKeyManagementServiceList
+	_jsii_.Get(
+		j,
+		"keyManagementService",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKubernetesCluster) KeyVaultSecretsProvider() DataAzurermKubernetesClusterKeyVaultSecretsProviderList {
 	var returns DataAzurermKubernetesClusterKeyVaultSecretsProviderList
 	_jsii_.Get(
@@ -448,6 +475,16 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) Location() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKubernetesCluster) MicrosoftDefender() DataAzurermKubernetesClusterMicrosoftDefenderList {
+	var returns DataAzurermKubernetesClusterMicrosoftDefenderList
+	_jsii_.Get(
+		j,
+		"microsoftDefender",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKubernetesCluster) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -493,6 +530,36 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) NodeResourceGroup() *string {
 	_jsii_.Get(
 		j,
 		"nodeResourceGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKubernetesCluster) NodeResourceGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nodeResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKubernetesCluster) OidcIssuerEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"oidcIssuerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermKubernetesCluster) OidcIssuerUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcIssuerUrl",
 		&returns,
 	)
 	return returns
@@ -598,6 +665,16 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) ServicePrincipal() DataAzurermK
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermKubernetesCluster) StorageProfile() DataAzurermKubernetesClusterStorageProfileList {
+	var returns DataAzurermKubernetesClusterStorageProfileList
+	_jsii_.Get(
+		j,
+		"storageProfile",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermKubernetesCluster) Tags() cdktf.StringMap {
 	var returns cdktf.StringMap
 	_jsii_.Get(
@@ -669,7 +746,7 @@ func (j *jsiiProxy_DataAzurermKubernetesCluster) WindowsProfile() DataAzurermKub
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster} Data Source.
 func NewDataAzurermKubernetesCluster(scope constructs.Construct, id *string, config *DataAzurermKubernetesClusterConfig) DataAzurermKubernetesCluster {
 	_init_.Initialize()
 
@@ -687,7 +764,7 @@ func NewDataAzurermKubernetesCluster(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/kubernetes_cluster azurerm_kubernetes_cluster} Data Source.
 func NewDataAzurermKubernetesCluster_Override(d DataAzurermKubernetesCluster, scope constructs.Construct, id *string, config *DataAzurermKubernetesClusterConfig) {
 	_init_.Initialize()
 

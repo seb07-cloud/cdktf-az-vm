@@ -56,6 +56,10 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutAuthSettingsParameters(val
 	return nil
 }
 
+func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutAuthSettingsV2Parameters(value *WindowsFunctionAppSlotAuthSettingsV2) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutBackupParameters(value *WindowsFunctionAppSlotBackup) error {
 	return nil
 }
@@ -69,6 +73,10 @@ func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutIdentityParameters(value *
 }
 
 func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutSiteConfigParameters(value *WindowsFunctionAppSlotSiteConfig) error {
+	return nil
+}
+
+func (w *jsiiProxy_WindowsFunctionAppSlot) validatePutStorageAccountParameters(value interface{}) error {
 	return nil
 }
 
@@ -97,6 +105,10 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetBuiltinLoggingEnabledParam
 }
 
 func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -156,6 +168,14 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetProvisionersParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetServicePlanIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetStorageAccountAccessKeyParameters(val *string) error {
 	return nil
 }
@@ -173,6 +193,10 @@ func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetStorageUsesManagedIdentity
 }
 
 func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsFunctionAppSlot) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
 	return nil
 }
 

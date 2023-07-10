@@ -171,6 +171,22 @@ func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetFrequencyPara
 	return nil
 }
 
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetHourDurationParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetHourIntervalParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) validateSetInternalValueParameters(val *BackupPolicyVmBackup) error {
 	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
 		return err

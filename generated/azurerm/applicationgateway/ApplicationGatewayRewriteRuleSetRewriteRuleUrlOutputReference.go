@@ -20,6 +20,9 @@ type ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference interface {
 	ComplexObjectIsFromSet() *bool
 	// Experimental.
 	SetComplexObjectIsFromSet(val *bool)
+	Components() *string
+	SetComponents(val *string)
+	ComponentsInput() *string
 	// The creation stack of this resolvable which will be appended to errors thrown during resolution.
 	//
 	// If this returns an empty array the stack will not be attached.
@@ -70,6 +73,7 @@ type ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetComponents()
 	ResetPath()
 	ResetQueryString()
 	ResetReroute()
@@ -103,6 +107,26 @@ func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference
 	_jsii_.Get(
 		j,
 		"complexObjectIsFromSet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) Components() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"components",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) ComponentsInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"componentsInput",
 		&returns,
 	)
 	return returns
@@ -264,6 +288,17 @@ func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference)SetComponents(val *string) {
+	if err := j.validateSetComponentsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"components",
 		val,
 	)
 }
@@ -518,6 +553,14 @@ func (a *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference
 	)
 
 	return returns
+}
+
+func (a *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) ResetComponents() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetComponents",
+		nil, // no parameters
+	)
 }
 
 func (a *jsiiProxy_ApplicationGatewayRewriteRuleSetRewriteRuleUrlOutputReference) ResetPath() {

@@ -72,6 +72,10 @@ func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) validateSetK
 	return nil
 }
 
+func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) validateSetMultichannelEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageAccountSharePropertiesSmbOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

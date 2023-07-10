@@ -60,6 +60,10 @@ func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutput
 	return nil
 }
 
+func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) validateSetDynamicContainerEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_DataFactoryDatasetDelimitedTextAzureBlobStorageLocationOutputReference) validateSetDynamicFilenameEnabledParameters(val interface{}) error {
 	return nil
 }

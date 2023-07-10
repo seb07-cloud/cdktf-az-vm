@@ -52,6 +52,10 @@ func (l *jsiiProxy_LoadTest) validateOverrideLogicalIdParameters(newLogicalId *s
 	return nil
 }
 
+func (l *jsiiProxy_LoadTest) validatePutIdentityParameters(value *LoadTestIdentity) error {
+	return nil
+}
+
 func (l *jsiiProxy_LoadTest) validatePutTimeoutsParameters(value *LoadTestTimeouts) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func (j *jsiiProxy_LoadTest) validateSetConnectionParameters(val interface{}) er
 }
 
 func (j *jsiiProxy_LoadTest) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_LoadTest) validateSetDescriptionParameters(val *string) error {
 	return nil
 }
 

@@ -46,6 +46,9 @@ type RedisEnterpriseDatabaseTimeoutsOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	Update() *string
+	SetUpdate(val *string)
+	UpdateInput() *string
 	// Experimental.
 	ComputeFqn() *string
 	// Experimental.
@@ -73,6 +76,7 @@ type RedisEnterpriseDatabaseTimeoutsOutputReference interface {
 	ResetCreate()
 	ResetDelete()
 	ResetRead()
+	ResetUpdate()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -218,6 +222,26 @@ func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) TerraformReso
 	return returns
 }
 
+func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) Update() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"update",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) UpdateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"updateInput",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRedisEnterpriseDatabaseTimeoutsOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) RedisEnterpriseDatabaseTimeoutsOutputReference {
 	_init_.Initialize()
@@ -330,6 +354,17 @@ func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference)SetTerraformRe
 	_jsii_.Set(
 		j,
 		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference)SetUpdate(val *string) {
+	if err := j.validateSetUpdateParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"update",
 		val,
 	)
 }
@@ -540,6 +575,14 @@ func (r *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) ResetRead() {
 	_jsii_.InvokeVoid(
 		r,
 		"resetRead",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) ResetUpdate() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetUpdate",
 		nil, // no parameters
 	)
 }

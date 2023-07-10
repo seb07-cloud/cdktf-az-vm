@@ -52,6 +52,10 @@ func (s *jsiiProxy_ServicebusSubscription) validateOverrideLogicalIdParameters(n
 	return nil
 }
 
+func (s *jsiiProxy_ServicebusSubscription) validatePutClientScopedSubscriptionParameters(value *ServicebusSubscriptionClientScopedSubscription) error {
+	return nil
+}
+
 func (s *jsiiProxy_ServicebusSubscription) validatePutTimeoutsParameters(value *ServicebusSubscriptionTimeouts) error {
 	return nil
 }
@@ -69,6 +73,10 @@ func validateServicebusSubscription_IsTerraformResourceParameters(x interface{})
 }
 
 func (j *jsiiProxy_ServicebusSubscription) validateSetAutoDeleteOnIdleParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_ServicebusSubscription) validateSetClientScopedSubscriptionEnabledParameters(val interface{}) error {
 	return nil
 }
 

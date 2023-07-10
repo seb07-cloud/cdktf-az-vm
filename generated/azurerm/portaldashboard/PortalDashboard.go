@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/portal_dashboard azurerm_portal_dashboard}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/portal_dashboard azurerm_portal_dashboard}.
 type PortalDashboard interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -104,7 +104,6 @@ type PortalDashboard interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *PortalDashboardTimeouts)
-	ResetDashboardProperties()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -427,7 +426,7 @@ func (j *jsiiProxy_PortalDashboard) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/portal_dashboard azurerm_portal_dashboard} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/portal_dashboard azurerm_portal_dashboard} Resource.
 func NewPortalDashboard(scope constructs.Construct, id *string, config *PortalDashboardConfig) PortalDashboard {
 	_init_.Initialize()
 
@@ -445,7 +444,7 @@ func NewPortalDashboard(scope constructs.Construct, id *string, config *PortalDa
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/portal_dashboard azurerm_portal_dashboard} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/portal_dashboard azurerm_portal_dashboard} Resource.
 func NewPortalDashboard_Override(p PortalDashboard, scope constructs.Construct, id *string, config *PortalDashboardConfig) {
 	_init_.Initialize()
 
@@ -864,14 +863,6 @@ func (p *jsiiProxy_PortalDashboard) PutTimeouts(value *PortalDashboardTimeouts) 
 		p,
 		"putTimeouts",
 		[]interface{}{value},
-	)
-}
-
-func (p *jsiiProxy_PortalDashboard) ResetDashboardProperties() {
-	_jsii_.InvokeVoid(
-		p,
-		"resetDashboardProperties",
-		nil, // no parameters
 	)
 }
 

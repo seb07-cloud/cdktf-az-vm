@@ -146,6 +146,14 @@ func validateLbNatRule_IsTerraformResourceParameters(x interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_LbNatRule) validateSetBackendAddressPoolIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_LbNatRule) validateSetBackendPortParameters(val *float64) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -293,6 +301,22 @@ func (j *jsiiProxy_LbNatRule) validateSetFrontendIpConfigurationNameParameters(v
 }
 
 func (j *jsiiProxy_LbNatRule) validateSetFrontendPortParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LbNatRule) validateSetFrontendPortEndParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LbNatRule) validateSetFrontendPortStartParameters(val *float64) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

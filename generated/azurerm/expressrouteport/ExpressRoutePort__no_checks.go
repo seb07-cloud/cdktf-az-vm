@@ -84,6 +84,10 @@ func (j *jsiiProxy_ExpressRoutePort) validateSetBandwidthInGbpsParameters(val *f
 	return nil
 }
 
+func (j *jsiiProxy_ExpressRoutePort) validateSetBillingTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ExpressRoutePort) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

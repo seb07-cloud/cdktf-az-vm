@@ -52,6 +52,10 @@ func (a *jsiiProxy_AutomationAccount) validateOverrideLogicalIdParameters(newLog
 	return nil
 }
 
+func (a *jsiiProxy_AutomationAccount) validatePutEncryptionParameters(value interface{}) error {
+	return nil
+}
+
 func (a *jsiiProxy_AutomationAccount) validatePutIdentityParameters(value *AutomationAccountIdentity) error {
 	return nil
 }
@@ -85,6 +89,10 @@ func (j *jsiiProxy_AutomationAccount) validateSetIdParameters(val *string) error
 }
 
 func (j *jsiiProxy_AutomationAccount) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
+	return nil
+}
+
+func (j *jsiiProxy_AutomationAccount) validateSetLocalAuthenticationEnabledParameters(val interface{}) error {
 	return nil
 }
 

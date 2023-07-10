@@ -52,6 +52,10 @@ func (r *jsiiProxy_RedisCache) validateOverrideLogicalIdParameters(newLogicalId 
 	return nil
 }
 
+func (r *jsiiProxy_RedisCache) validatePutIdentityParameters(value *RedisCacheIdentity) error {
+	return nil
+}
+
 func (r *jsiiProxy_RedisCache) validatePutPatchScheduleParameters(value interface{}) error {
 	return nil
 }

@@ -163,6 +163,14 @@ func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetCom
 	return nil
 }
 
+func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetDiskEncryptionSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	switch val.(type) {
 	case cdktf.IResolvable:

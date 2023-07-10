@@ -44,6 +44,10 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) v
 	return nil
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) validatePutProtectedSettingsFromKeyVaultParameters(value *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault) error {
+	return nil
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }
@@ -61,6 +65,10 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) v
 }
 
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) validateSetExtensionsToProvisionAfterVmCreationParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) validateSetFailureSuppressionEnabledParameters(val interface{}) error {
 	return nil
 }
 

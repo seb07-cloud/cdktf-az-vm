@@ -9,13 +9,18 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set}.
 type OrchestratedVirtualMachineScaleSet interface {
 	cdktf.TerraformResource
+	AdditionalCapabilities() OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesOutputReference
+	AdditionalCapabilitiesInput() *OrchestratedVirtualMachineScaleSetAdditionalCapabilities
 	AutomaticInstanceRepair() OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairOutputReference
 	AutomaticInstanceRepairInput() *OrchestratedVirtualMachineScaleSetAutomaticInstanceRepair
 	BootDiagnostics() OrchestratedVirtualMachineScaleSetBootDiagnosticsOutputReference
 	BootDiagnosticsInput() *OrchestratedVirtualMachineScaleSetBootDiagnostics
+	CapacityReservationGroupId() *string
+	SetCapacityReservationGroupId(val *string)
+	CapacityReservationGroupIdInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -42,6 +47,9 @@ type OrchestratedVirtualMachineScaleSet interface {
 	EvictionPolicyInput() *string
 	Extension() OrchestratedVirtualMachineScaleSetExtensionList
 	ExtensionInput() interface{}
+	ExtensionOperationsEnabled() interface{}
+	SetExtensionOperationsEnabled(val interface{})
+	ExtensionOperationsEnabledInput() interface{}
 	ExtensionsTimeBudget() *string
 	SetExtensionsTimeBudget(val *string)
 	ExtensionsTimeBudgetInput() *string
@@ -93,6 +101,8 @@ type OrchestratedVirtualMachineScaleSet interface {
 	Priority() *string
 	SetPriority(val *string)
 	PriorityInput() *string
+	PriorityMix() OrchestratedVirtualMachineScaleSetPriorityMixOutputReference
+	PriorityMixInput() *OrchestratedVirtualMachineScaleSetPriorityMix
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -109,6 +119,9 @@ type OrchestratedVirtualMachineScaleSet interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	SinglePlacementGroup() interface{}
+	SetSinglePlacementGroup(val interface{})
+	SinglePlacementGroupInput() interface{}
 	SkuName() *string
 	SetSkuName(val *string)
 	SkuNameInput() *string
@@ -131,6 +144,9 @@ type OrchestratedVirtualMachineScaleSet interface {
 	Timeouts() OrchestratedVirtualMachineScaleSetTimeoutsOutputReference
 	TimeoutsInput() interface{}
 	UniqueId() *string
+	UserDataBase64() *string
+	SetUserDataBase64(val *string)
+	UserDataBase64Input() *string
 	ZoneBalance() interface{}
 	SetZoneBalance(val interface{})
 	ZoneBalanceInput() interface{}
@@ -162,6 +178,7 @@ type OrchestratedVirtualMachineScaleSet interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutAdditionalCapabilities(value *OrchestratedVirtualMachineScaleSetAdditionalCapabilities)
 	PutAutomaticInstanceRepair(value *OrchestratedVirtualMachineScaleSetAutomaticInstanceRepair)
 	PutBootDiagnostics(value *OrchestratedVirtualMachineScaleSetBootDiagnostics)
 	PutDataDisk(value interface{})
@@ -171,15 +188,19 @@ type OrchestratedVirtualMachineScaleSet interface {
 	PutOsDisk(value *OrchestratedVirtualMachineScaleSetOsDisk)
 	PutOsProfile(value *OrchestratedVirtualMachineScaleSetOsProfile)
 	PutPlan(value *OrchestratedVirtualMachineScaleSetPlan)
+	PutPriorityMix(value *OrchestratedVirtualMachineScaleSetPriorityMix)
 	PutSourceImageReference(value *OrchestratedVirtualMachineScaleSetSourceImageReference)
 	PutTerminationNotification(value *OrchestratedVirtualMachineScaleSetTerminationNotification)
 	PutTimeouts(value *OrchestratedVirtualMachineScaleSetTimeouts)
+	ResetAdditionalCapabilities()
 	ResetAutomaticInstanceRepair()
 	ResetBootDiagnostics()
+	ResetCapacityReservationGroupId()
 	ResetDataDisk()
 	ResetEncryptionAtHostEnabled()
 	ResetEvictionPolicy()
 	ResetExtension()
+	ResetExtensionOperationsEnabled()
 	ResetExtensionsTimeBudget()
 	ResetId()
 	ResetIdentity()
@@ -194,13 +215,16 @@ type OrchestratedVirtualMachineScaleSet interface {
 	ResetOverrideLogicalId()
 	ResetPlan()
 	ResetPriority()
+	ResetPriorityMix()
 	ResetProximityPlacementGroupId()
+	ResetSinglePlacementGroup()
 	ResetSkuName()
 	ResetSourceImageId()
 	ResetSourceImageReference()
 	ResetTags()
 	ResetTerminationNotification()
 	ResetTimeouts()
+	ResetUserDataBase64()
 	ResetZoneBalance()
 	ResetZones()
 	SynthesizeAttributes() *map[string]interface{}
@@ -216,6 +240,26 @@ type OrchestratedVirtualMachineScaleSet interface {
 // The jsii proxy struct for OrchestratedVirtualMachineScaleSet
 type jsiiProxy_OrchestratedVirtualMachineScaleSet struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) AdditionalCapabilities() OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesOutputReference {
+	var returns OrchestratedVirtualMachineScaleSetAdditionalCapabilitiesOutputReference
+	_jsii_.Get(
+		j,
+		"additionalCapabilities",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) AdditionalCapabilitiesInput() *OrchestratedVirtualMachineScaleSetAdditionalCapabilities {
+	var returns *OrchestratedVirtualMachineScaleSetAdditionalCapabilities
+	_jsii_.Get(
+		j,
+		"additionalCapabilitiesInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) AutomaticInstanceRepair() OrchestratedVirtualMachineScaleSetAutomaticInstanceRepairOutputReference {
@@ -253,6 +297,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) BootDiagnosticsInput() *O
 	_jsii_.Get(
 		j,
 		"bootDiagnosticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) CapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) CapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -383,6 +447,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ExtensionInput() interfac
 	_jsii_.Get(
 		j,
 		"extensionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ExtensionOperationsEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extensionOperationsEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ExtensionOperationsEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extensionOperationsEnabledInput",
 		&returns,
 	)
 	return returns
@@ -718,6 +802,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) PriorityInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) PriorityMix() OrchestratedVirtualMachineScaleSetPriorityMixOutputReference {
+	var returns OrchestratedVirtualMachineScaleSetPriorityMixOutputReference
+	_jsii_.Get(
+		j,
+		"priorityMix",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) PriorityMixInput() *OrchestratedVirtualMachineScaleSetPriorityMix {
+	var returns *OrchestratedVirtualMachineScaleSetPriorityMix
+	_jsii_.Get(
+		j,
+		"priorityMixInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -783,6 +887,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResourceGroupNameInput() 
 	_jsii_.Get(
 		j,
 		"resourceGroupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) SinglePlacementGroup() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"singlePlacementGroup",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) SinglePlacementGroupInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"singlePlacementGroupInput",
 		&returns,
 	)
 	return returns
@@ -948,6 +1072,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) UniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) UserDataBase64() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userDataBase64",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) UserDataBase64Input() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userDataBase64Input",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ZoneBalance() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -989,7 +1133,7 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set} Resource.
 func NewOrchestratedVirtualMachineScaleSet(scope constructs.Construct, id *string, config *OrchestratedVirtualMachineScaleSetConfig) OrchestratedVirtualMachineScaleSet {
 	_init_.Initialize()
 
@@ -1007,7 +1151,7 @@ func NewOrchestratedVirtualMachineScaleSet(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/orchestrated_virtual_machine_scale_set azurerm_orchestrated_virtual_machine_scale_set} Resource.
 func NewOrchestratedVirtualMachineScaleSet_Override(o OrchestratedVirtualMachineScaleSet, scope constructs.Construct, id *string, config *OrchestratedVirtualMachineScaleSetConfig) {
 	_init_.Initialize()
 
@@ -1015,6 +1159,17 @@ func NewOrchestratedVirtualMachineScaleSet_Override(o OrchestratedVirtualMachine
 		"azurerm.orchestratedVirtualMachineScaleSet.OrchestratedVirtualMachineScaleSet",
 		[]interface{}{scope, id, config},
 		o,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"capacityReservationGroupId",
+		val,
 	)
 }
 
@@ -1066,6 +1221,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetEvictionPolicy(val *str
 	_jsii_.Set(
 		j,
 		"evictionPolicy",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetExtensionOperationsEnabled(val interface{}) {
+	if err := j.validateSetExtensionOperationsEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"extensionOperationsEnabled",
 		val,
 	)
 }
@@ -1229,6 +1395,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetResourceGroupName(val *
 	)
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetSinglePlacementGroup(val interface{}) {
+	if err := j.validateSetSinglePlacementGroupParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"singlePlacementGroup",
+		val,
+	)
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetSkuName(val *string) {
 	if err := j.validateSetSkuNameParameters(val); err != nil {
 		panic(err)
@@ -1258,6 +1435,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetTags(val *map[string]*s
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet)SetUserDataBase64(val *string) {
+	if err := j.validateSetUserDataBase64Parameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"userDataBase64",
 		val,
 	)
 }
@@ -1550,6 +1738,17 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) OverrideLogicalId(newLogi
 	)
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutAdditionalCapabilities(value *OrchestratedVirtualMachineScaleSetAdditionalCapabilities) {
+	if err := o.validatePutAdditionalCapabilitiesParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		o,
+		"putAdditionalCapabilities",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutAutomaticInstanceRepair(value *OrchestratedVirtualMachineScaleSetAutomaticInstanceRepair) {
 	if err := o.validatePutAutomaticInstanceRepairParameters(value); err != nil {
 		panic(err)
@@ -1649,6 +1848,17 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutPlan(value *Orchestrat
 	)
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutPriorityMix(value *OrchestratedVirtualMachineScaleSetPriorityMix) {
+	if err := o.validatePutPriorityMixParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		o,
+		"putPriorityMix",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutSourceImageReference(value *OrchestratedVirtualMachineScaleSetSourceImageReference) {
 	if err := o.validatePutSourceImageReferenceParameters(value); err != nil {
 		panic(err)
@@ -1682,6 +1892,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) PutTimeouts(value *Orches
 	)
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetAdditionalCapabilities() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetAdditionalCapabilities",
+		nil, // no parameters
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetAutomaticInstanceRepair() {
 	_jsii_.InvokeVoid(
 		o,
@@ -1694,6 +1912,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetBootDiagnostics() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetBootDiagnostics",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetCapacityReservationGroupId",
 		nil, // no parameters
 	)
 }
@@ -1726,6 +1952,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetExtension() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetExtension",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetExtensionOperationsEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetExtensionOperationsEnabled",
 		nil, // no parameters
 	)
 }
@@ -1826,10 +2060,26 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetPriority() {
 	)
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetPriorityMix() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetPriorityMix",
+		nil, // no parameters
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetProximityPlacementGroupId() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetProximityPlacementGroupId",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetSinglePlacementGroup() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetSinglePlacementGroup",
 		nil, // no parameters
 	)
 }
@@ -1878,6 +2128,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		o,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) ResetUserDataBase64() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetUserDataBase64",
 		nil, // no parameters
 	)
 }

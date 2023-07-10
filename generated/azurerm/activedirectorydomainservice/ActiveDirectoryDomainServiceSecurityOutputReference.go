@@ -29,6 +29,12 @@ type ActiveDirectoryDomainServiceSecurityOutputReference interface {
 	Fqn() *string
 	InternalValue() *ActiveDirectoryDomainServiceSecurity
 	SetInternalValue(val *ActiveDirectoryDomainServiceSecurity)
+	KerberosArmoringEnabled() interface{}
+	SetKerberosArmoringEnabled(val interface{})
+	KerberosArmoringEnabledInput() interface{}
+	KerberosRc4EncryptionEnabled() interface{}
+	SetKerberosRc4EncryptionEnabled(val interface{})
+	KerberosRc4EncryptionEnabledInput() interface{}
 	NtlmV1Enabled() interface{}
 	SetNtlmV1Enabled(val interface{})
 	NtlmV1EnabledInput() interface{}
@@ -76,6 +82,8 @@ type ActiveDirectoryDomainServiceSecurityOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetKerberosArmoringEnabled()
+	ResetKerberosRc4EncryptionEnabled()
 	ResetNtlmV1Enabled()
 	ResetSyncKerberosPasswords()
 	ResetSyncNtlmPasswords()
@@ -141,6 +149,46 @@ func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) Internal
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) KerberosArmoringEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kerberosArmoringEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) KerberosArmoringEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kerberosArmoringEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) KerberosRc4EncryptionEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kerberosRc4EncryptionEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) KerberosRc4EncryptionEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"kerberosRc4EncryptionEnabledInput",
 		&returns,
 	)
 	return returns
@@ -323,6 +371,28 @@ func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference)SetIntern
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference)SetKerberosArmoringEnabled(val interface{}) {
+	if err := j.validateSetKerberosArmoringEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"kerberosArmoringEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference)SetKerberosRc4EncryptionEnabled(val interface{}) {
+	if err := j.validateSetKerberosRc4EncryptionEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"kerberosRc4EncryptionEnabled",
 		val,
 	)
 }
@@ -588,6 +658,22 @@ func (a *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) Interpol
 	)
 
 	return returns
+}
+
+func (a *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) ResetKerberosArmoringEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetKerberosArmoringEnabled",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) ResetKerberosRc4EncryptionEnabled() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetKerberosRc4EncryptionEnabled",
+		nil, // no parameters
+	)
 }
 
 func (a *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) ResetNtlmV1Enabled() {

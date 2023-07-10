@@ -76,6 +76,10 @@ func (j *jsiiProxy_ApiManagementApiSchema) validateSetApiNameParameters(val *str
 	return nil
 }
 
+func (j *jsiiProxy_ApiManagementApiSchema) validateSetComponentsParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ApiManagementApiSchema) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -85,6 +89,10 @@ func (j *jsiiProxy_ApiManagementApiSchema) validateSetContentTypeParameters(val 
 }
 
 func (j *jsiiProxy_ApiManagementApiSchema) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ApiManagementApiSchema) validateSetDefinitionsParameters(val *string) error {
 	return nil
 }
 

@@ -111,6 +111,17 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) validateOverrideLogicalIdPar
 	return nil
 }
 
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutCustomBgpAddressesParameters(value *VirtualNetworkGatewayConnectionCustomBgpAddresses) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutIpsecPolicyParameters(value *VirtualNetworkGatewayConnectionIpsecPolicy) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -133,12 +144,32 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTimeoutsParameter
 	return nil
 }
 
-func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTrafficSelectorPolicyParameters(value *VirtualNetworkGatewayConnectionTrafficSelectorPolicy) error {
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTrafficSelectorPolicyParameters(value interface{}) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
-	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
-		return err
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*VirtualNetworkGatewayConnectionTrafficSelectorPolicy:
+		value := value.(*[]*VirtualNetworkGatewayConnectionTrafficSelectorPolicy)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*VirtualNetworkGatewayConnectionTrafficSelectorPolicy:
+		value_ := value.([]*VirtualNetworkGatewayConnectionTrafficSelectorPolicy)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*VirtualNetworkGatewayConnectionTrafficSelectorPolicy; received %#v (a %T)", value, value)
+		}
 	}
 
 	return nil
@@ -290,6 +321,14 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetDpdTimeoutSeconds
 	return nil
 }
 
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetEgressNatRuleIdsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetEnableBgpParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -339,6 +378,14 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetExpressRouteGatew
 }
 
 func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetIngressNatRuleIdsParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

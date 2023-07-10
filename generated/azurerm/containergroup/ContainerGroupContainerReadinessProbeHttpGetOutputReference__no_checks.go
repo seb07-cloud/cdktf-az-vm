@@ -56,6 +56,10 @@ func (j *jsiiProxy_ContainerGroupContainerReadinessProbeHttpGetOutputReference) 
 	return nil
 }
 
+func (j *jsiiProxy_ContainerGroupContainerReadinessProbeHttpGetOutputReference) validateSetHttpHeadersParameters(val *map[string]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ContainerGroupContainerReadinessProbeHttpGetOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }

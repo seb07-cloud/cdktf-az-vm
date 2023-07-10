@@ -31,8 +31,8 @@ type LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference interface {
 	SetInternalValue(val *LinuxWebAppSiteConfigAutoHealSettingTrigger)
 	Requests() LinuxWebAppSiteConfigAutoHealSettingTriggerRequestsOutputReference
 	RequestsInput() *LinuxWebAppSiteConfigAutoHealSettingTriggerRequests
-	SlowRequest() LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestList
-	SlowRequestInput() interface{}
+	SlowRequest() LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference
+	SlowRequestInput() *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	StatusCode() LinuxWebAppSiteConfigAutoHealSettingTriggerStatusCodeList
 	StatusCodeInput() interface{}
 	// Experimental.
@@ -68,7 +68,7 @@ type LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRequests(value *LinuxWebAppSiteConfigAutoHealSettingTriggerRequests)
-	PutSlowRequest(value interface{})
+	PutSlowRequest(value *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest)
 	PutStatusCode(value interface{})
 	ResetRequests()
 	ResetSlowRequest()
@@ -158,8 +158,8 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) R
 	return returns
 }
 
-func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequest() LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestList {
-	var returns LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestList
+func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequest() LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
+	var returns LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference
 	_jsii_.Get(
 		j,
 		"slowRequest",
@@ -168,8 +168,8 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) S
 	return returns
 }
 
-func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequestInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequestInput() *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest {
+	var returns *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	_jsii_.Get(
 		j,
 		"slowRequestInput",
@@ -498,7 +498,7 @@ func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) P
 	)
 }
 
-func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) PutSlowRequest(value interface{}) {
+func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) PutSlowRequest(value *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest) {
 	if err := l.validatePutSlowRequestParameters(value); err != nil {
 		panic(err)
 	}

@@ -34,8 +34,8 @@ type WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference interface {
 	PrivateMemoryKbInput() *float64
 	Requests() WindowsWebAppSiteConfigAutoHealSettingTriggerRequestsOutputReference
 	RequestsInput() *WindowsWebAppSiteConfigAutoHealSettingTriggerRequests
-	SlowRequest() WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestList
-	SlowRequestInput() interface{}
+	SlowRequest() WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference
+	SlowRequestInput() *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	StatusCode() WindowsWebAppSiteConfigAutoHealSettingTriggerStatusCodeList
 	StatusCodeInput() interface{}
 	// Experimental.
@@ -71,7 +71,7 @@ type WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutRequests(value *WindowsWebAppSiteConfigAutoHealSettingTriggerRequests)
-	PutSlowRequest(value interface{})
+	PutSlowRequest(value *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest)
 	PutStatusCode(value interface{})
 	ResetPrivateMemoryKb()
 	ResetRequests()
@@ -182,8 +182,8 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequest() WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestList {
-	var returns WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestList
+func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequest() WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
+	var returns WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference
 	_jsii_.Get(
 		j,
 		"slowRequest",
@@ -192,8 +192,8 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequestInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) SlowRequestInput() *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest {
+	var returns *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	_jsii_.Get(
 		j,
 		"slowRequestInput",
@@ -533,7 +533,7 @@ func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference)
 	)
 }
 
-func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) PutSlowRequest(value interface{}) {
+func (w *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerOutputReference) PutSlowRequest(value *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest) {
 	if err := w.validatePutSlowRequestParameters(value); err != nil {
 		panic(err)
 	}

@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hpc_cache azurerm_hpc_cache}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hpc_cache azurerm_hpc_cache}.
 type HpcCache interface {
 	cdktf.TerraformResource
+	AutomaticallyRotateKeyToLatestEnabled() interface{}
+	SetAutomaticallyRotateKeyToLatestEnabled(val interface{})
+	AutomaticallyRotateKeyToLatestEnabledInput() interface{}
 	CacheSizeInGb() *float64
 	SetCacheSizeInGb(val *float64)
 	CacheSizeInGbInput() *float64
@@ -51,7 +54,12 @@ type HpcCache interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() HpcCacheIdentityOutputReference
+	IdentityInput() *HpcCacheIdentity
 	IdInput() *string
+	KeyVaultKeyId() *string
+	SetKeyVaultKeyId(val *string)
+	KeyVaultKeyIdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -131,13 +139,17 @@ type HpcCache interface {
 	PutDirectoryFlatFile(value *HpcCacheDirectoryFlatFile)
 	PutDirectoryLdap(value *HpcCacheDirectoryLdap)
 	PutDns(value *HpcCacheDns)
+	PutIdentity(value *HpcCacheIdentity)
 	PutTimeouts(value *HpcCacheTimeouts)
+	ResetAutomaticallyRotateKeyToLatestEnabled()
 	ResetDefaultAccessPolicy()
 	ResetDirectoryActiveDirectory()
 	ResetDirectoryFlatFile()
 	ResetDirectoryLdap()
 	ResetDns()
 	ResetId()
+	ResetIdentity()
+	ResetKeyVaultKeyId()
 	ResetMtu()
 	ResetNtpServer()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -158,6 +170,26 @@ type HpcCache interface {
 // The jsii proxy struct for HpcCache
 type jsiiProxy_HpcCache struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_HpcCache) AutomaticallyRotateKeyToLatestEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"automaticallyRotateKeyToLatestEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HpcCache) AutomaticallyRotateKeyToLatestEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"automaticallyRotateKeyToLatestEnabledInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_HpcCache) CacheSizeInGb() *float64 {
@@ -370,11 +402,51 @@ func (j *jsiiProxy_HpcCache) Id() *string {
 	return returns
 }
 
+func (j *jsiiProxy_HpcCache) Identity() HpcCacheIdentityOutputReference {
+	var returns HpcCacheIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HpcCache) IdentityInput() *HpcCacheIdentity {
+	var returns *HpcCacheIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HpcCache) IdInput() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HpcCache) KeyVaultKeyId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultKeyId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HpcCache) KeyVaultKeyIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"keyVaultKeyIdInput",
 		&returns,
 	)
 	return returns
@@ -651,7 +723,7 @@ func (j *jsiiProxy_HpcCache) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hpc_cache azurerm_hpc_cache} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hpc_cache azurerm_hpc_cache} Resource.
 func NewHpcCache(scope constructs.Construct, id *string, config *HpcCacheConfig) HpcCache {
 	_init_.Initialize()
 
@@ -669,7 +741,7 @@ func NewHpcCache(scope constructs.Construct, id *string, config *HpcCacheConfig)
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hpc_cache azurerm_hpc_cache} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hpc_cache azurerm_hpc_cache} Resource.
 func NewHpcCache_Override(h HpcCache, scope constructs.Construct, id *string, config *HpcCacheConfig) {
 	_init_.Initialize()
 
@@ -677,6 +749,17 @@ func NewHpcCache_Override(h HpcCache, scope constructs.Construct, id *string, co
 		"azurerm.hpcCache.HpcCache",
 		[]interface{}{scope, id, config},
 		h,
+	)
+}
+
+func (j *jsiiProxy_HpcCache)SetAutomaticallyRotateKeyToLatestEnabled(val interface{}) {
+	if err := j.validateSetAutomaticallyRotateKeyToLatestEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"automaticallyRotateKeyToLatestEnabled",
+		val,
 	)
 }
 
@@ -736,6 +819,17 @@ func (j *jsiiProxy_HpcCache)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_HpcCache)SetKeyVaultKeyId(val *string) {
+	if err := j.validateSetKeyVaultKeyIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"keyVaultKeyId",
 		val,
 	)
 }
@@ -1179,6 +1273,17 @@ func (h *jsiiProxy_HpcCache) PutDns(value *HpcCacheDns) {
 	)
 }
 
+func (h *jsiiProxy_HpcCache) PutIdentity(value *HpcCacheIdentity) {
+	if err := h.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HpcCache) PutTimeouts(value *HpcCacheTimeouts) {
 	if err := h.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1187,6 +1292,14 @@ func (h *jsiiProxy_HpcCache) PutTimeouts(value *HpcCacheTimeouts) {
 		h,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HpcCache) ResetAutomaticallyRotateKeyToLatestEnabled() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetAutomaticallyRotateKeyToLatestEnabled",
+		nil, // no parameters
 	)
 }
 
@@ -1234,6 +1347,22 @@ func (h *jsiiProxy_HpcCache) ResetId() {
 	_jsii_.InvokeVoid(
 		h,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HpcCache) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HpcCache) ResetKeyVaultKeyId() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetKeyVaultKeyId",
 		nil, // no parameters
 	)
 }

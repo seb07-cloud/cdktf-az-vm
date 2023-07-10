@@ -56,11 +56,19 @@ func (s *jsiiProxy_StorageAccountBlobPropertiesOutputReference) validatePutDelet
 	return nil
 }
 
+func (s *jsiiProxy_StorageAccountBlobPropertiesOutputReference) validatePutRestorePolicyParameters(value *StorageAccountBlobPropertiesRestorePolicy) error {
+	return nil
+}
+
 func (s *jsiiProxy_StorageAccountBlobPropertiesOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }
 
 func (j *jsiiProxy_StorageAccountBlobPropertiesOutputReference) validateSetChangeFeedEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageAccountBlobPropertiesOutputReference) validateSetChangeFeedRetentionInDaysParameters(val *float64) error {
 	return nil
 }
 

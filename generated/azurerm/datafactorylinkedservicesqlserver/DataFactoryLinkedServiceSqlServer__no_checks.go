@@ -128,6 +128,10 @@ func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer) validateSetProvisionersPar
 	return nil
 }
 
+func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer) validateSetUserNameParameters(val *string) error {
+	return nil
+}
+
 func validateNewDataFactoryLinkedServiceSqlServerParameters(scope constructs.Construct, id *string, config *DataFactoryLinkedServiceSqlServerConfig) error {
 	return nil
 }

@@ -128,6 +128,10 @@ func (j *jsiiProxy_ServicePlan) validateSetWorkerCountParameters(val *float64) e
 	return nil
 }
 
+func (j *jsiiProxy_ServicePlan) validateSetZoneBalancingEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewServicePlanParameters(scope constructs.Construct, id *string, config *ServicePlanConfig) error {
 	return nil
 }

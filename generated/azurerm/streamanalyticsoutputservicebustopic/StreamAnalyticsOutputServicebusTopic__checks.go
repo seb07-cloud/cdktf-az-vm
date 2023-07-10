@@ -157,6 +157,14 @@ func validateStreamAnalyticsOutputServicebusTopic_IsTerraformResourceParameters(
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetAuthenticationModeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetConnectionParameters(val interface{}) error {
 	switch val.(type) {
 	case *cdktf.SSHProvisionerConnection:
@@ -358,6 +366,14 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetSharedAccess
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetStreamAnalyticsJobNameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) validateSetSystemPropertyColumnsParameters(val *map[string]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

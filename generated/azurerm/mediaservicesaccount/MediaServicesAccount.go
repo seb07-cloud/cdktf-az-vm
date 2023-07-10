@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_services_account azurerm_media_services_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_services_account azurerm_media_services_account}.
 type MediaServicesAccount interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -28,6 +28,8 @@ type MediaServicesAccount interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	Encryption() MediaServicesAccountEncryptionOutputReference
+	EncryptionInput() *MediaServicesAccountEncryption
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -63,6 +65,9 @@ type MediaServicesAccount interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -109,16 +114,19 @@ type MediaServicesAccount interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutEncryption(value *MediaServicesAccountEncryption)
 	PutIdentity(value *MediaServicesAccountIdentity)
 	PutKeyDeliveryAccessControl(value *MediaServicesAccountKeyDeliveryAccessControl)
 	PutStorageAccount(value interface{})
 	PutTimeouts(value *MediaServicesAccountTimeouts)
+	ResetEncryption()
 	ResetId()
 	ResetIdentity()
 	ResetKeyDeliveryAccessControl()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetStorageAuthenticationType()
 	ResetTags()
 	ResetTimeouts()
@@ -182,6 +190,26 @@ func (j *jsiiProxy_MediaServicesAccount) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaServicesAccount) Encryption() MediaServicesAccountEncryptionOutputReference {
+	var returns MediaServicesAccountEncryptionOutputReference
+	_jsii_.Get(
+		j,
+		"encryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaServicesAccount) EncryptionInput() *MediaServicesAccountEncryption {
+	var returns *MediaServicesAccountEncryption
+	_jsii_.Get(
+		j,
+		"encryptionInput",
 		&returns,
 	)
 	return returns
@@ -357,6 +385,26 @@ func (j *jsiiProxy_MediaServicesAccount) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_MediaServicesAccount) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MediaServicesAccount) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MediaServicesAccount) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -498,7 +546,7 @@ func (j *jsiiProxy_MediaServicesAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_services_account azurerm_media_services_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_services_account azurerm_media_services_account} Resource.
 func NewMediaServicesAccount(scope constructs.Construct, id *string, config *MediaServicesAccountConfig) MediaServicesAccount {
 	_init_.Initialize()
 
@@ -516,7 +564,7 @@ func NewMediaServicesAccount(scope constructs.Construct, id *string, config *Med
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/media_services_account azurerm_media_services_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/media_services_account azurerm_media_services_account} Resource.
 func NewMediaServicesAccount_Override(m MediaServicesAccount, scope constructs.Construct, id *string, config *MediaServicesAccountConfig) {
 	_init_.Initialize()
 
@@ -624,6 +672,17 @@ func (j *jsiiProxy_MediaServicesAccount)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MediaServicesAccount)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -927,6 +986,17 @@ func (m *jsiiProxy_MediaServicesAccount) OverrideLogicalId(newLogicalId *string)
 	)
 }
 
+func (m *jsiiProxy_MediaServicesAccount) PutEncryption(value *MediaServicesAccountEncryption) {
+	if err := m.validatePutEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putEncryption",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MediaServicesAccount) PutIdentity(value *MediaServicesAccountIdentity) {
 	if err := m.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -971,6 +1041,14 @@ func (m *jsiiProxy_MediaServicesAccount) PutTimeouts(value *MediaServicesAccount
 	)
 }
 
+func (m *jsiiProxy_MediaServicesAccount) ResetEncryption() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetEncryption",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MediaServicesAccount) ResetId() {
 	_jsii_.InvokeVoid(
 		m,
@@ -999,6 +1077,14 @@ func (m *jsiiProxy_MediaServicesAccount) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MediaServicesAccount) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

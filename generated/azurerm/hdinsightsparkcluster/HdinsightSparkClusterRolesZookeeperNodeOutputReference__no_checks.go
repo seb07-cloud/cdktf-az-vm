@@ -44,6 +44,10 @@ func (h *jsiiProxy_HdinsightSparkClusterRolesZookeeperNodeOutputReference) valid
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightSparkClusterRolesZookeeperNodeOutputReference) validatePutScriptActionsParameters(value interface{}) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightSparkClusterRolesZookeeperNodeOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

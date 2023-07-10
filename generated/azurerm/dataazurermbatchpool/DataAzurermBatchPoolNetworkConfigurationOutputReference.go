@@ -25,11 +25,14 @@ type DataAzurermBatchPoolNetworkConfigurationOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	DynamicVnetAssignmentScope() *string
 	EndpointConfiguration() DataAzurermBatchPoolNetworkConfigurationEndpointConfigurationList
 	// Experimental.
 	Fqn() *string
 	InternalValue() *DataAzurermBatchPoolNetworkConfiguration
 	SetInternalValue(val *DataAzurermBatchPoolNetworkConfiguration)
+	PublicAddressProvisioningType() *string
+	PublicIps() *[]*string
 	SubnetId() *string
 	// Experimental.
 	TerraformAttribute() *string
@@ -108,6 +111,16 @@ func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) Crea
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) DynamicVnetAssignmentScope() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dynamicVnetAssignmentScope",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) EndpointConfiguration() DataAzurermBatchPoolNetworkConfigurationEndpointConfigurationList {
 	var returns DataAzurermBatchPoolNetworkConfigurationEndpointConfigurationList
 	_jsii_.Get(
@@ -133,6 +146,26 @@ func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) Inte
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) PublicAddressProvisioningType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicAddressProvisioningType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPoolNetworkConfigurationOutputReference) PublicIps() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"publicIps",
 		&returns,
 	)
 	return returns

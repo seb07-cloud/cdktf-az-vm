@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist}.
 type SentinelWatchlist interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -48,6 +48,9 @@ type SentinelWatchlist interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	ItemSearchKey() *string
+	SetItemSearchKey(val *string)
+	ItemSearchKeyInput() *string
 	Labels() *[]*string
 	SetLabels(val *[]*string)
 	LabelsInput() *[]*string
@@ -290,6 +293,26 @@ func (j *jsiiProxy_SentinelWatchlist) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_SentinelWatchlist) ItemSearchKey() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"itemSearchKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SentinelWatchlist) ItemSearchKeyInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"itemSearchKeyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SentinelWatchlist) Labels() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -451,7 +474,7 @@ func (j *jsiiProxy_SentinelWatchlist) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist} Resource.
 func NewSentinelWatchlist(scope constructs.Construct, id *string, config *SentinelWatchlistConfig) SentinelWatchlist {
 	_init_.Initialize()
 
@@ -469,7 +492,7 @@ func NewSentinelWatchlist(scope constructs.Construct, id *string, config *Sentin
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_watchlist azurerm_sentinel_watchlist} Resource.
 func NewSentinelWatchlist_Override(s SentinelWatchlist, scope constructs.Construct, id *string, config *SentinelWatchlistConfig) {
 	_init_.Initialize()
 
@@ -558,6 +581,17 @@ func (j *jsiiProxy_SentinelWatchlist)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SentinelWatchlist)SetItemSearchKey(val *string) {
+	if err := j.validateSetItemSearchKeyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"itemSearchKey",
 		val,
 	)
 }

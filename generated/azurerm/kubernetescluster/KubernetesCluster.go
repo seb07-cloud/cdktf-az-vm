@@ -9,11 +9,13 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster}.
 type KubernetesCluster interface {
 	cdktf.TerraformResource
 	AciConnectorLinux() KubernetesClusterAciConnectorLinuxOutputReference
 	AciConnectorLinuxInput() *KubernetesClusterAciConnectorLinux
+	ApiServerAccessProfile() KubernetesClusterApiServerAccessProfileOutputReference
+	ApiServerAccessProfileInput() *KubernetesClusterApiServerAccessProfile
 	ApiServerAuthorizedIpRanges() *[]*string
 	SetApiServerAuthorizedIpRanges(val *[]*string)
 	ApiServerAuthorizedIpRangesInput() *[]*string
@@ -29,6 +31,8 @@ type KubernetesCluster interface {
 	AzurePolicyEnabledInput() interface{}
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ConfidentialComputing() KubernetesClusterConfidentialComputingOutputReference
+	ConfidentialComputingInput() *KubernetesClusterConfidentialComputing
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -39,6 +43,9 @@ type KubernetesCluster interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomCaTrustCertificatesBase64() *[]*string
+	SetCustomCaTrustCertificatesBase64(val *[]*string)
+	CustomCaTrustCertificatesBase64Input() *[]*string
 	DefaultNodePool() KubernetesClusterDefaultNodePoolOutputReference
 	DefaultNodePoolInput() *KubernetesClusterDefaultNodePool
 	// Experimental.
@@ -54,6 +61,9 @@ type KubernetesCluster interface {
 	DnsPrefixPrivateCluster() *string
 	SetDnsPrefixPrivateCluster(val *string)
 	DnsPrefixPrivateClusterInput() *string
+	EdgeZone() *string
+	SetEdgeZone(val *string)
+	EdgeZoneInput() *string
 	EnablePodSecurityPolicy() interface{}
 	SetEnablePodSecurityPolicy(val interface{})
 	EnablePodSecurityPolicyInput() interface{}
@@ -77,8 +87,16 @@ type KubernetesCluster interface {
 	Identity() KubernetesClusterIdentityOutputReference
 	IdentityInput() *KubernetesClusterIdentity
 	IdInput() *string
+	ImageCleanerEnabled() interface{}
+	SetImageCleanerEnabled(val interface{})
+	ImageCleanerEnabledInput() interface{}
+	ImageCleanerIntervalHours() *float64
+	SetImageCleanerIntervalHours(val *float64)
+	ImageCleanerIntervalHoursInput() *float64
 	IngressApplicationGateway() KubernetesClusterIngressApplicationGatewayOutputReference
 	IngressApplicationGatewayInput() *KubernetesClusterIngressApplicationGateway
+	KeyManagementService() KubernetesClusterKeyManagementServiceOutputReference
+	KeyManagementServiceInput() *KubernetesClusterKeyManagementService
 	KeyVaultSecretsProvider() KubernetesClusterKeyVaultSecretsProviderOutputReference
 	KeyVaultSecretsProviderInput() *KubernetesClusterKeyVaultSecretsProvider
 	KubeAdminConfig() KubernetesClusterKubeAdminConfigList
@@ -103,7 +121,15 @@ type KubernetesCluster interface {
 	SetLocation(val *string)
 	LocationInput() *string
 	MaintenanceWindow() KubernetesClusterMaintenanceWindowOutputReference
+	MaintenanceWindowAutoUpgrade() KubernetesClusterMaintenanceWindowAutoUpgradeOutputReference
+	MaintenanceWindowAutoUpgradeInput() *KubernetesClusterMaintenanceWindowAutoUpgrade
 	MaintenanceWindowInput() *KubernetesClusterMaintenanceWindow
+	MaintenanceWindowNodeOs() KubernetesClusterMaintenanceWindowNodeOsOutputReference
+	MaintenanceWindowNodeOsInput() *KubernetesClusterMaintenanceWindowNodeOs
+	MicrosoftDefender() KubernetesClusterMicrosoftDefenderOutputReference
+	MicrosoftDefenderInput() *KubernetesClusterMicrosoftDefender
+	MonitorMetrics() KubernetesClusterMonitorMetricsOutputReference
+	MonitorMetricsInput() *KubernetesClusterMonitorMetrics
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -111,9 +137,17 @@ type KubernetesCluster interface {
 	NetworkProfileInput() *KubernetesClusterNetworkProfile
 	// The tree node.
 	Node() constructs.Node
+	NodeOsChannelUpgrade() *string
+	SetNodeOsChannelUpgrade(val *string)
+	NodeOsChannelUpgradeInput() *string
 	NodeResourceGroup() *string
 	SetNodeResourceGroup(val *string)
+	NodeResourceGroupId() *string
 	NodeResourceGroupInput() *string
+	OidcIssuerEnabled() interface{}
+	SetOidcIssuerEnabled(val interface{})
+	OidcIssuerEnabledInput() interface{}
+	OidcIssuerUrl() *string
 	OmsAgent() KubernetesClusterOmsAgentOutputReference
 	OmsAgentInput() *KubernetesClusterOmsAgent
 	OpenServiceMeshEnabled() interface{}
@@ -149,11 +183,18 @@ type KubernetesCluster interface {
 	RoleBasedAccessControlEnabled() interface{}
 	SetRoleBasedAccessControlEnabled(val interface{})
 	RoleBasedAccessControlEnabledInput() interface{}
+	RunCommandEnabled() interface{}
+	SetRunCommandEnabled(val interface{})
+	RunCommandEnabledInput() interface{}
+	ServiceMeshProfile() KubernetesClusterServiceMeshProfileOutputReference
+	ServiceMeshProfileInput() *KubernetesClusterServiceMeshProfile
 	ServicePrincipal() KubernetesClusterServicePrincipalOutputReference
 	ServicePrincipalInput() *KubernetesClusterServicePrincipal
 	SkuTier() *string
 	SetSkuTier(val *string)
 	SkuTierInput() *string
+	StorageProfile() KubernetesClusterStorageProfileOutputReference
+	StorageProfileInput() *KubernetesClusterStorageProfile
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -165,8 +206,15 @@ type KubernetesCluster interface {
 	TerraformResourceType() *string
 	Timeouts() KubernetesClusterTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	WebAppRouting() KubernetesClusterWebAppRoutingOutputReference
+	WebAppRoutingInput() *KubernetesClusterWebAppRouting
 	WindowsProfile() KubernetesClusterWindowsProfileOutputReference
 	WindowsProfileInput() *KubernetesClusterWindowsProfile
+	WorkloadAutoscalerProfile() KubernetesClusterWorkloadAutoscalerProfileOutputReference
+	WorkloadAutoscalerProfileInput() *KubernetesClusterWorkloadAutoscalerProfile
+	WorkloadIdentityEnabled() interface{}
+	SetWorkloadIdentityEnabled(val interface{})
+	WorkloadIdentityEnabledInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -193,44 +241,68 @@ type KubernetesCluster interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutAciConnectorLinux(value *KubernetesClusterAciConnectorLinux)
+	PutApiServerAccessProfile(value *KubernetesClusterApiServerAccessProfile)
 	PutAutoScalerProfile(value *KubernetesClusterAutoScalerProfile)
 	PutAzureActiveDirectoryRoleBasedAccessControl(value *KubernetesClusterAzureActiveDirectoryRoleBasedAccessControl)
+	PutConfidentialComputing(value *KubernetesClusterConfidentialComputing)
 	PutDefaultNodePool(value *KubernetesClusterDefaultNodePool)
 	PutHttpProxyConfig(value *KubernetesClusterHttpProxyConfig)
 	PutIdentity(value *KubernetesClusterIdentity)
 	PutIngressApplicationGateway(value *KubernetesClusterIngressApplicationGateway)
+	PutKeyManagementService(value *KubernetesClusterKeyManagementService)
 	PutKeyVaultSecretsProvider(value *KubernetesClusterKeyVaultSecretsProvider)
 	PutKubeletIdentity(value *KubernetesClusterKubeletIdentity)
 	PutLinuxProfile(value *KubernetesClusterLinuxProfile)
 	PutMaintenanceWindow(value *KubernetesClusterMaintenanceWindow)
+	PutMaintenanceWindowAutoUpgrade(value *KubernetesClusterMaintenanceWindowAutoUpgrade)
+	PutMaintenanceWindowNodeOs(value *KubernetesClusterMaintenanceWindowNodeOs)
+	PutMicrosoftDefender(value *KubernetesClusterMicrosoftDefender)
+	PutMonitorMetrics(value *KubernetesClusterMonitorMetrics)
 	PutNetworkProfile(value *KubernetesClusterNetworkProfile)
 	PutOmsAgent(value *KubernetesClusterOmsAgent)
+	PutServiceMeshProfile(value *KubernetesClusterServiceMeshProfile)
 	PutServicePrincipal(value *KubernetesClusterServicePrincipal)
+	PutStorageProfile(value *KubernetesClusterStorageProfile)
 	PutTimeouts(value *KubernetesClusterTimeouts)
+	PutWebAppRouting(value *KubernetesClusterWebAppRouting)
 	PutWindowsProfile(value *KubernetesClusterWindowsProfile)
+	PutWorkloadAutoscalerProfile(value *KubernetesClusterWorkloadAutoscalerProfile)
 	ResetAciConnectorLinux()
+	ResetApiServerAccessProfile()
 	ResetApiServerAuthorizedIpRanges()
 	ResetAutomaticChannelUpgrade()
 	ResetAutoScalerProfile()
 	ResetAzureActiveDirectoryRoleBasedAccessControl()
 	ResetAzurePolicyEnabled()
+	ResetConfidentialComputing()
+	ResetCustomCaTrustCertificatesBase64()
 	ResetDiskEncryptionSetId()
 	ResetDnsPrefix()
 	ResetDnsPrefixPrivateCluster()
+	ResetEdgeZone()
 	ResetEnablePodSecurityPolicy()
 	ResetHttpApplicationRoutingEnabled()
 	ResetHttpProxyConfig()
 	ResetId()
 	ResetIdentity()
+	ResetImageCleanerEnabled()
+	ResetImageCleanerIntervalHours()
 	ResetIngressApplicationGateway()
+	ResetKeyManagementService()
 	ResetKeyVaultSecretsProvider()
 	ResetKubeletIdentity()
 	ResetKubernetesVersion()
 	ResetLinuxProfile()
 	ResetLocalAccountDisabled()
 	ResetMaintenanceWindow()
+	ResetMaintenanceWindowAutoUpgrade()
+	ResetMaintenanceWindowNodeOs()
+	ResetMicrosoftDefender()
+	ResetMonitorMetrics()
 	ResetNetworkProfile()
+	ResetNodeOsChannelUpgrade()
 	ResetNodeResourceGroup()
+	ResetOidcIssuerEnabled()
 	ResetOmsAgent()
 	ResetOpenServiceMeshEnabled()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -241,11 +313,17 @@ type KubernetesCluster interface {
 	ResetPrivateDnsZoneId()
 	ResetPublicNetworkAccessEnabled()
 	ResetRoleBasedAccessControlEnabled()
+	ResetRunCommandEnabled()
+	ResetServiceMeshProfile()
 	ResetServicePrincipal()
 	ResetSkuTier()
+	ResetStorageProfile()
 	ResetTags()
 	ResetTimeouts()
+	ResetWebAppRouting()
 	ResetWindowsProfile()
+	ResetWorkloadAutoscalerProfile()
+	ResetWorkloadIdentityEnabled()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -276,6 +354,26 @@ func (j *jsiiProxy_KubernetesCluster) AciConnectorLinuxInput() *KubernetesCluste
 	_jsii_.Get(
 		j,
 		"aciConnectorLinuxInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ApiServerAccessProfile() KubernetesClusterApiServerAccessProfileOutputReference {
+	var returns KubernetesClusterApiServerAccessProfileOutputReference
+	_jsii_.Get(
+		j,
+		"apiServerAccessProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ApiServerAccessProfileInput() *KubernetesClusterApiServerAccessProfile {
+	var returns *KubernetesClusterApiServerAccessProfile
+	_jsii_.Get(
+		j,
+		"apiServerAccessProfileInput",
 		&returns,
 	)
 	return returns
@@ -391,6 +489,26 @@ func (j *jsiiProxy_KubernetesCluster) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) ConfidentialComputing() KubernetesClusterConfidentialComputingOutputReference {
+	var returns KubernetesClusterConfidentialComputingOutputReference
+	_jsii_.Get(
+		j,
+		"confidentialComputing",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ConfidentialComputingInput() *KubernetesClusterConfidentialComputing {
+	var returns *KubernetesClusterConfidentialComputing
+	_jsii_.Get(
+		j,
+		"confidentialComputingInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -416,6 +534,26 @@ func (j *jsiiProxy_KubernetesCluster) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) CustomCaTrustCertificatesBase64() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"customCaTrustCertificatesBase64",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) CustomCaTrustCertificatesBase64Input() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"customCaTrustCertificatesBase64Input",
 		&returns,
 	)
 	return returns
@@ -506,6 +644,26 @@ func (j *jsiiProxy_KubernetesCluster) DnsPrefixPrivateClusterInput() *string {
 	_jsii_.Get(
 		j,
 		"dnsPrefixPrivateClusterInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) EdgeZone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"edgeZone",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) EdgeZoneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"edgeZoneInput",
 		&returns,
 	)
 	return returns
@@ -661,6 +819,46 @@ func (j *jsiiProxy_KubernetesCluster) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) ImageCleanerEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"imageCleanerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ImageCleanerEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"imageCleanerEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ImageCleanerIntervalHours() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"imageCleanerIntervalHours",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ImageCleanerIntervalHoursInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"imageCleanerIntervalHoursInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) IngressApplicationGateway() KubernetesClusterIngressApplicationGatewayOutputReference {
 	var returns KubernetesClusterIngressApplicationGatewayOutputReference
 	_jsii_.Get(
@@ -676,6 +874,26 @@ func (j *jsiiProxy_KubernetesCluster) IngressApplicationGatewayInput() *Kubernet
 	_jsii_.Get(
 		j,
 		"ingressApplicationGatewayInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) KeyManagementService() KubernetesClusterKeyManagementServiceOutputReference {
+	var returns KubernetesClusterKeyManagementServiceOutputReference
+	_jsii_.Get(
+		j,
+		"keyManagementService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) KeyManagementServiceInput() *KubernetesClusterKeyManagementService {
+	var returns *KubernetesClusterKeyManagementService
+	_jsii_.Get(
+		j,
+		"keyManagementServiceInput",
 		&returns,
 	)
 	return returns
@@ -861,11 +1079,91 @@ func (j *jsiiProxy_KubernetesCluster) MaintenanceWindow() KubernetesClusterMaint
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) MaintenanceWindowAutoUpgrade() KubernetesClusterMaintenanceWindowAutoUpgradeOutputReference {
+	var returns KubernetesClusterMaintenanceWindowAutoUpgradeOutputReference
+	_jsii_.Get(
+		j,
+		"maintenanceWindowAutoUpgrade",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MaintenanceWindowAutoUpgradeInput() *KubernetesClusterMaintenanceWindowAutoUpgrade {
+	var returns *KubernetesClusterMaintenanceWindowAutoUpgrade
+	_jsii_.Get(
+		j,
+		"maintenanceWindowAutoUpgradeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) MaintenanceWindowInput() *KubernetesClusterMaintenanceWindow {
 	var returns *KubernetesClusterMaintenanceWindow
 	_jsii_.Get(
 		j,
 		"maintenanceWindowInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MaintenanceWindowNodeOs() KubernetesClusterMaintenanceWindowNodeOsOutputReference {
+	var returns KubernetesClusterMaintenanceWindowNodeOsOutputReference
+	_jsii_.Get(
+		j,
+		"maintenanceWindowNodeOs",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MaintenanceWindowNodeOsInput() *KubernetesClusterMaintenanceWindowNodeOs {
+	var returns *KubernetesClusterMaintenanceWindowNodeOs
+	_jsii_.Get(
+		j,
+		"maintenanceWindowNodeOsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MicrosoftDefender() KubernetesClusterMicrosoftDefenderOutputReference {
+	var returns KubernetesClusterMicrosoftDefenderOutputReference
+	_jsii_.Get(
+		j,
+		"microsoftDefender",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MicrosoftDefenderInput() *KubernetesClusterMicrosoftDefender {
+	var returns *KubernetesClusterMicrosoftDefender
+	_jsii_.Get(
+		j,
+		"microsoftDefenderInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MonitorMetrics() KubernetesClusterMonitorMetricsOutputReference {
+	var returns KubernetesClusterMonitorMetricsOutputReference
+	_jsii_.Get(
+		j,
+		"monitorMetrics",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) MonitorMetricsInput() *KubernetesClusterMonitorMetrics {
+	var returns *KubernetesClusterMonitorMetrics
+	_jsii_.Get(
+		j,
+		"monitorMetricsInput",
 		&returns,
 	)
 	return returns
@@ -921,6 +1219,26 @@ func (j *jsiiProxy_KubernetesCluster) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) NodeOsChannelUpgrade() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nodeOsChannelUpgrade",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) NodeOsChannelUpgradeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nodeOsChannelUpgradeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) NodeResourceGroup() *string {
 	var returns *string
 	_jsii_.Get(
@@ -931,11 +1249,51 @@ func (j *jsiiProxy_KubernetesCluster) NodeResourceGroup() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) NodeResourceGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nodeResourceGroupId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) NodeResourceGroupInput() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"nodeResourceGroupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) OidcIssuerEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"oidcIssuerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) OidcIssuerEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"oidcIssuerEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) OidcIssuerUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcIssuerUrl",
 		&returns,
 	)
 	return returns
@@ -1151,6 +1509,46 @@ func (j *jsiiProxy_KubernetesCluster) RoleBasedAccessControlEnabledInput() inter
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) RunCommandEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"runCommandEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) RunCommandEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"runCommandEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ServiceMeshProfile() KubernetesClusterServiceMeshProfileOutputReference {
+	var returns KubernetesClusterServiceMeshProfileOutputReference
+	_jsii_.Get(
+		j,
+		"serviceMeshProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) ServiceMeshProfileInput() *KubernetesClusterServiceMeshProfile {
+	var returns *KubernetesClusterServiceMeshProfile
+	_jsii_.Get(
+		j,
+		"serviceMeshProfileInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) ServicePrincipal() KubernetesClusterServicePrincipalOutputReference {
 	var returns KubernetesClusterServicePrincipalOutputReference
 	_jsii_.Get(
@@ -1186,6 +1584,26 @@ func (j *jsiiProxy_KubernetesCluster) SkuTierInput() *string {
 	_jsii_.Get(
 		j,
 		"skuTierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) StorageProfile() KubernetesClusterStorageProfileOutputReference {
+	var returns KubernetesClusterStorageProfileOutputReference
+	_jsii_.Get(
+		j,
+		"storageProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) StorageProfileInput() *KubernetesClusterStorageProfile {
+	var returns *KubernetesClusterStorageProfile
+	_jsii_.Get(
+		j,
+		"storageProfileInput",
 		&returns,
 	)
 	return returns
@@ -1261,6 +1679,26 @@ func (j *jsiiProxy_KubernetesCluster) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) WebAppRouting() KubernetesClusterWebAppRoutingOutputReference {
+	var returns KubernetesClusterWebAppRoutingOutputReference
+	_jsii_.Get(
+		j,
+		"webAppRouting",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) WebAppRoutingInput() *KubernetesClusterWebAppRouting {
+	var returns *KubernetesClusterWebAppRouting
+	_jsii_.Get(
+		j,
+		"webAppRoutingInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KubernetesCluster) WindowsProfile() KubernetesClusterWindowsProfileOutputReference {
 	var returns KubernetesClusterWindowsProfileOutputReference
 	_jsii_.Get(
@@ -1281,8 +1719,48 @@ func (j *jsiiProxy_KubernetesCluster) WindowsProfileInput() *KubernetesClusterWi
 	return returns
 }
 
+func (j *jsiiProxy_KubernetesCluster) WorkloadAutoscalerProfile() KubernetesClusterWorkloadAutoscalerProfileOutputReference {
+	var returns KubernetesClusterWorkloadAutoscalerProfileOutputReference
+	_jsii_.Get(
+		j,
+		"workloadAutoscalerProfile",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster} Resource.
+func (j *jsiiProxy_KubernetesCluster) WorkloadAutoscalerProfileInput() *KubernetesClusterWorkloadAutoscalerProfile {
+	var returns *KubernetesClusterWorkloadAutoscalerProfile
+	_jsii_.Get(
+		j,
+		"workloadAutoscalerProfileInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) WorkloadIdentityEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"workloadIdentityEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KubernetesCluster) WorkloadIdentityEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"workloadIdentityEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster} Resource.
 func NewKubernetesCluster(scope constructs.Construct, id *string, config *KubernetesClusterConfig) KubernetesCluster {
 	_init_.Initialize()
 
@@ -1300,7 +1778,7 @@ func NewKubernetesCluster(scope constructs.Construct, id *string, config *Kubern
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kubernetes_cluster azurerm_kubernetes_cluster} Resource.
 func NewKubernetesCluster_Override(k KubernetesCluster, scope constructs.Construct, id *string, config *KubernetesClusterConfig) {
 	_init_.Initialize()
 
@@ -1366,6 +1844,17 @@ func (j *jsiiProxy_KubernetesCluster)SetCount(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_KubernetesCluster)SetCustomCaTrustCertificatesBase64(val *[]*string) {
+	if err := j.validateSetCustomCaTrustCertificatesBase64Parameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"customCaTrustCertificatesBase64",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesCluster)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
@@ -1407,6 +1896,17 @@ func (j *jsiiProxy_KubernetesCluster)SetDnsPrefixPrivateCluster(val *string) {
 	)
 }
 
+func (j *jsiiProxy_KubernetesCluster)SetEdgeZone(val *string) {
+	if err := j.validateSetEdgeZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"edgeZone",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesCluster)SetEnablePodSecurityPolicy(val interface{}) {
 	if err := j.validateSetEnablePodSecurityPolicyParameters(val); err != nil {
 		panic(err)
@@ -1444,6 +1944,28 @@ func (j *jsiiProxy_KubernetesCluster)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesCluster)SetImageCleanerEnabled(val interface{}) {
+	if err := j.validateSetImageCleanerEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"imageCleanerEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesCluster)SetImageCleanerIntervalHours(val *float64) {
+	if err := j.validateSetImageCleanerIntervalHoursParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"imageCleanerIntervalHours",
 		val,
 	)
 }
@@ -1503,6 +2025,17 @@ func (j *jsiiProxy_KubernetesCluster)SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_KubernetesCluster)SetNodeOsChannelUpgrade(val *string) {
+	if err := j.validateSetNodeOsChannelUpgradeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"nodeOsChannelUpgrade",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesCluster)SetNodeResourceGroup(val *string) {
 	if err := j.validateSetNodeResourceGroupParameters(val); err != nil {
 		panic(err)
@@ -1510,6 +2043,17 @@ func (j *jsiiProxy_KubernetesCluster)SetNodeResourceGroup(val *string) {
 	_jsii_.Set(
 		j,
 		"nodeResourceGroup",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesCluster)SetOidcIssuerEnabled(val interface{}) {
+	if err := j.validateSetOidcIssuerEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"oidcIssuerEnabled",
 		val,
 	)
 }
@@ -1610,6 +2154,17 @@ func (j *jsiiProxy_KubernetesCluster)SetRoleBasedAccessControlEnabled(val interf
 	)
 }
 
+func (j *jsiiProxy_KubernetesCluster)SetRunCommandEnabled(val interface{}) {
+	if err := j.validateSetRunCommandEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"runCommandEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KubernetesCluster)SetSkuTier(val *string) {
 	if err := j.validateSetSkuTierParameters(val); err != nil {
 		panic(err)
@@ -1628,6 +2183,17 @@ func (j *jsiiProxy_KubernetesCluster)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KubernetesCluster)SetWorkloadIdentityEnabled(val interface{}) {
+	if err := j.validateSetWorkloadIdentityEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"workloadIdentityEnabled",
 		val,
 	)
 }
@@ -1909,6 +2475,17 @@ func (k *jsiiProxy_KubernetesCluster) PutAciConnectorLinux(value *KubernetesClus
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutApiServerAccessProfile(value *KubernetesClusterApiServerAccessProfile) {
+	if err := k.validatePutApiServerAccessProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putApiServerAccessProfile",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) PutAutoScalerProfile(value *KubernetesClusterAutoScalerProfile) {
 	if err := k.validatePutAutoScalerProfileParameters(value); err != nil {
 		panic(err)
@@ -1927,6 +2504,17 @@ func (k *jsiiProxy_KubernetesCluster) PutAzureActiveDirectoryRoleBasedAccessCont
 	_jsii_.InvokeVoid(
 		k,
 		"putAzureActiveDirectoryRoleBasedAccessControl",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) PutConfidentialComputing(value *KubernetesClusterConfidentialComputing) {
+	if err := k.validatePutConfidentialComputingParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putConfidentialComputing",
 		[]interface{}{value},
 	)
 }
@@ -1975,6 +2563,17 @@ func (k *jsiiProxy_KubernetesCluster) PutIngressApplicationGateway(value *Kubern
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutKeyManagementService(value *KubernetesClusterKeyManagementService) {
+	if err := k.validatePutKeyManagementServiceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putKeyManagementService",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) PutKeyVaultSecretsProvider(value *KubernetesClusterKeyVaultSecretsProvider) {
 	if err := k.validatePutKeyVaultSecretsProviderParameters(value); err != nil {
 		panic(err)
@@ -2019,6 +2618,50 @@ func (k *jsiiProxy_KubernetesCluster) PutMaintenanceWindow(value *KubernetesClus
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutMaintenanceWindowAutoUpgrade(value *KubernetesClusterMaintenanceWindowAutoUpgrade) {
+	if err := k.validatePutMaintenanceWindowAutoUpgradeParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putMaintenanceWindowAutoUpgrade",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) PutMaintenanceWindowNodeOs(value *KubernetesClusterMaintenanceWindowNodeOs) {
+	if err := k.validatePutMaintenanceWindowNodeOsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putMaintenanceWindowNodeOs",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) PutMicrosoftDefender(value *KubernetesClusterMicrosoftDefender) {
+	if err := k.validatePutMicrosoftDefenderParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putMicrosoftDefender",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) PutMonitorMetrics(value *KubernetesClusterMonitorMetrics) {
+	if err := k.validatePutMonitorMetricsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putMonitorMetrics",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) PutNetworkProfile(value *KubernetesClusterNetworkProfile) {
 	if err := k.validatePutNetworkProfileParameters(value); err != nil {
 		panic(err)
@@ -2041,6 +2684,17 @@ func (k *jsiiProxy_KubernetesCluster) PutOmsAgent(value *KubernetesClusterOmsAge
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutServiceMeshProfile(value *KubernetesClusterServiceMeshProfile) {
+	if err := k.validatePutServiceMeshProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putServiceMeshProfile",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) PutServicePrincipal(value *KubernetesClusterServicePrincipal) {
 	if err := k.validatePutServicePrincipalParameters(value); err != nil {
 		panic(err)
@@ -2048,6 +2702,17 @@ func (k *jsiiProxy_KubernetesCluster) PutServicePrincipal(value *KubernetesClust
 	_jsii_.InvokeVoid(
 		k,
 		"putServicePrincipal",
+		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) PutStorageProfile(value *KubernetesClusterStorageProfile) {
+	if err := k.validatePutStorageProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putStorageProfile",
 		[]interface{}{value},
 	)
 }
@@ -2063,6 +2728,17 @@ func (k *jsiiProxy_KubernetesCluster) PutTimeouts(value *KubernetesClusterTimeou
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutWebAppRouting(value *KubernetesClusterWebAppRouting) {
+	if err := k.validatePutWebAppRoutingParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putWebAppRouting",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) PutWindowsProfile(value *KubernetesClusterWindowsProfile) {
 	if err := k.validatePutWindowsProfileParameters(value); err != nil {
 		panic(err)
@@ -2074,10 +2750,29 @@ func (k *jsiiProxy_KubernetesCluster) PutWindowsProfile(value *KubernetesCluster
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) PutWorkloadAutoscalerProfile(value *KubernetesClusterWorkloadAutoscalerProfile) {
+	if err := k.validatePutWorkloadAutoscalerProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		k,
+		"putWorkloadAutoscalerProfile",
+		[]interface{}{value},
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetAciConnectorLinux() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetAciConnectorLinux",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetApiServerAccessProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetApiServerAccessProfile",
 		nil, // no parameters
 	)
 }
@@ -2122,6 +2817,22 @@ func (k *jsiiProxy_KubernetesCluster) ResetAzurePolicyEnabled() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetConfidentialComputing() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetConfidentialComputing",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetCustomCaTrustCertificatesBase64() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetCustomCaTrustCertificatesBase64",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetDiskEncryptionSetId() {
 	_jsii_.InvokeVoid(
 		k,
@@ -2142,6 +2853,14 @@ func (k *jsiiProxy_KubernetesCluster) ResetDnsPrefixPrivateCluster() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetDnsPrefixPrivateCluster",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetEdgeZone() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetEdgeZone",
 		nil, // no parameters
 	)
 }
@@ -2186,10 +2905,34 @@ func (k *jsiiProxy_KubernetesCluster) ResetIdentity() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetImageCleanerEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetImageCleanerEnabled",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetImageCleanerIntervalHours() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetImageCleanerIntervalHours",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetIngressApplicationGateway() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetIngressApplicationGateway",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetKeyManagementService() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetKeyManagementService",
 		nil, // no parameters
 	)
 }
@@ -2242,6 +2985,38 @@ func (k *jsiiProxy_KubernetesCluster) ResetMaintenanceWindow() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetMaintenanceWindowAutoUpgrade() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetMaintenanceWindowAutoUpgrade",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetMaintenanceWindowNodeOs() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetMaintenanceWindowNodeOs",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetMicrosoftDefender() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetMicrosoftDefender",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetMonitorMetrics() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetMonitorMetrics",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetNetworkProfile() {
 	_jsii_.InvokeVoid(
 		k,
@@ -2250,10 +3025,26 @@ func (k *jsiiProxy_KubernetesCluster) ResetNetworkProfile() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetNodeOsChannelUpgrade() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetNodeOsChannelUpgrade",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetNodeResourceGroup() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetNodeResourceGroup",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetOidcIssuerEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetOidcIssuerEnabled",
 		nil, // no parameters
 	)
 }
@@ -2322,6 +3113,22 @@ func (k *jsiiProxy_KubernetesCluster) ResetRoleBasedAccessControlEnabled() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetRunCommandEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetRunCommandEnabled",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetServiceMeshProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetServiceMeshProfile",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetServicePrincipal() {
 	_jsii_.InvokeVoid(
 		k,
@@ -2334,6 +3141,14 @@ func (k *jsiiProxy_KubernetesCluster) ResetSkuTier() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetSkuTier",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetStorageProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetStorageProfile",
 		nil, // no parameters
 	)
 }
@@ -2354,10 +3169,34 @@ func (k *jsiiProxy_KubernetesCluster) ResetTimeouts() {
 	)
 }
 
+func (k *jsiiProxy_KubernetesCluster) ResetWebAppRouting() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetWebAppRouting",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KubernetesCluster) ResetWindowsProfile() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetWindowsProfile",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetWorkloadAutoscalerProfile() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetWorkloadAutoscalerProfile",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KubernetesCluster) ResetWorkloadIdentityEnabled() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetWorkloadIdentityEnabled",
 		nil, // no parameters
 	)
 }

@@ -56,6 +56,10 @@ func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutAuthSettingsParameters(value
 	return nil
 }
 
+func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutAuthSettingsV2Parameters(value *LinuxFunctionAppSlotAuthSettingsV2) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutBackupParameters(value *LinuxFunctionAppSlotBackup) error {
 	return nil
 }
@@ -69,6 +73,10 @@ func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutIdentityParameters(value *Li
 }
 
 func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutSiteConfigParameters(value *LinuxFunctionAppSlotSiteConfig) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxFunctionAppSlot) validatePutStorageAccountParameters(value interface{}) error {
 	return nil
 }
 
@@ -97,6 +105,10 @@ func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetBuiltinLoggingEnabledParamet
 }
 
 func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -156,6 +168,14 @@ func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetProvisionersParameters(val *
 	return nil
 }
 
+func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetServicePlanIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetStorageAccountAccessKeyParameters(val *string) error {
 	return nil
 }
@@ -173,6 +193,10 @@ func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetStorageUsesManagedIdentityPa
 }
 
 func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionAppSlot) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
 	return nil
 }
 

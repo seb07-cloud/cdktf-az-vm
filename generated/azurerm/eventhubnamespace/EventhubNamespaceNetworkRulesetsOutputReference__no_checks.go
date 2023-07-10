@@ -72,6 +72,10 @@ func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) validateSetI
 	return nil
 }
 
+func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_EventhubNamespaceNetworkRulesetsOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_gateway azurerm_vpn_gateway}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_gateway azurerm_vpn_gateway}.
 type VpnGateway interface {
 	cdktf.TerraformResource
+	BgpRouteTranslationForNatEnabled() interface{}
+	SetBgpRouteTranslationForNatEnabled(val interface{})
+	BgpRouteTranslationForNatEnabledInput() interface{}
 	BgpSettings() VpnGatewayBgpSettingsOutputReference
 	BgpSettingsInput() *VpnGatewayBgpSettings
 	// Experimental.
@@ -113,6 +116,7 @@ type VpnGateway interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutBgpSettings(value *VpnGatewayBgpSettings)
 	PutTimeouts(value *VpnGatewayTimeouts)
+	ResetBgpRouteTranslationForNatEnabled()
 	ResetBgpSettings()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -135,6 +139,26 @@ type VpnGateway interface {
 // The jsii proxy struct for VpnGateway
 type jsiiProxy_VpnGateway struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_VpnGateway) BgpRouteTranslationForNatEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bgpRouteTranslationForNatEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnGateway) BgpRouteTranslationForNatEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bgpRouteTranslationForNatEnabledInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_VpnGateway) BgpSettings() VpnGatewayBgpSettingsOutputReference {
@@ -498,7 +522,7 @@ func (j *jsiiProxy_VpnGateway) VirtualHubIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_gateway azurerm_vpn_gateway} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_gateway azurerm_vpn_gateway} Resource.
 func NewVpnGateway(scope constructs.Construct, id *string, config *VpnGatewayConfig) VpnGateway {
 	_init_.Initialize()
 
@@ -516,7 +540,7 @@ func NewVpnGateway(scope constructs.Construct, id *string, config *VpnGatewayCon
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_gateway azurerm_vpn_gateway} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_gateway azurerm_vpn_gateway} Resource.
 func NewVpnGateway_Override(v VpnGateway, scope constructs.Construct, id *string, config *VpnGatewayConfig) {
 	_init_.Initialize()
 
@@ -524,6 +548,17 @@ func NewVpnGateway_Override(v VpnGateway, scope constructs.Construct, id *string
 		"azurerm.vpnGateway.VpnGateway",
 		[]interface{}{scope, id, config},
 		v,
+	)
+}
+
+func (j *jsiiProxy_VpnGateway)SetBgpRouteTranslationForNatEnabled(val interface{}) {
+	if err := j.validateSetBgpRouteTranslationForNatEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bgpRouteTranslationForNatEnabled",
+		val,
 	)
 }
 
@@ -968,6 +1003,14 @@ func (v *jsiiProxy_VpnGateway) PutTimeouts(value *VpnGatewayTimeouts) {
 		v,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (v *jsiiProxy_VpnGateway) ResetBgpRouteTranslationForNatEnabled() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetBgpRouteTranslationForNatEnabled",
+		nil, // no parameters
 	)
 }
 

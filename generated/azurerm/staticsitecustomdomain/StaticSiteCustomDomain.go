@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain}.
 type StaticSiteCustomDomain interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -104,6 +104,7 @@ type StaticSiteCustomDomain interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetTimeouts()
+	ResetValidationType()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -390,7 +391,7 @@ func (j *jsiiProxy_StaticSiteCustomDomain) ValidationTypeInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain} Resource.
 func NewStaticSiteCustomDomain(scope constructs.Construct, id *string, config *StaticSiteCustomDomainConfig) StaticSiteCustomDomain {
 	_init_.Initialize()
 
@@ -408,7 +409,7 @@ func NewStaticSiteCustomDomain(scope constructs.Construct, id *string, config *S
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/static_site_custom_domain azurerm_static_site_custom_domain} Resource.
 func NewStaticSiteCustomDomain_Override(s StaticSiteCustomDomain, scope constructs.Construct, id *string, config *StaticSiteCustomDomainConfig) {
 	_init_.Initialize()
 
@@ -828,6 +829,14 @@ func (s *jsiiProxy_StaticSiteCustomDomain) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StaticSiteCustomDomain) ResetValidationType() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetValidationType",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database}.
 type DataAzurermRedisEnterpriseDatabase interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -42,6 +42,8 @@ type DataAzurermRedisEnterpriseDatabase interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LinkedDatabaseGroupNickname() *string
+	LinkedDatabaseId() *[]*string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -233,6 +235,26 @@ func (j *jsiiProxy_DataAzurermRedisEnterpriseDatabase) Lifecycle() *cdktf.Terraf
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermRedisEnterpriseDatabase) LinkedDatabaseGroupNickname() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseGroupNickname",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermRedisEnterpriseDatabase) LinkedDatabaseId() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"linkedDatabaseId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermRedisEnterpriseDatabase) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -374,7 +396,7 @@ func (j *jsiiProxy_DataAzurermRedisEnterpriseDatabase) TimeoutsInput() interface
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database} Data Source.
 func NewDataAzurermRedisEnterpriseDatabase(scope constructs.Construct, id *string, config *DataAzurermRedisEnterpriseDatabaseConfig) DataAzurermRedisEnterpriseDatabase {
 	_init_.Initialize()
 
@@ -392,7 +414,7 @@ func NewDataAzurermRedisEnterpriseDatabase(scope constructs.Construct, id *strin
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/redis_enterprise_database azurerm_redis_enterprise_database} Data Source.
 func NewDataAzurermRedisEnterpriseDatabase_Override(d DataAzurermRedisEnterpriseDatabase, scope constructs.Construct, id *string, config *DataAzurermRedisEnterpriseDatabaseConfig) {
 	_init_.Initialize()
 

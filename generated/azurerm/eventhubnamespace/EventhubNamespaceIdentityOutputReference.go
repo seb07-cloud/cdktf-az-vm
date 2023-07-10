@@ -27,6 +27,9 @@ type EventhubNamespaceIdentityOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	IdentityIds() *[]*string
+	SetIdentityIds(val *[]*string)
+	IdentityIdsInput() *[]*string
 	InternalValue() *EventhubNamespaceIdentity
 	SetInternalValue(val *EventhubNamespaceIdentity)
 	PrincipalId() *string
@@ -66,6 +69,7 @@ type EventhubNamespaceIdentityOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIdentityIds()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -116,6 +120,26 @@ func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) Fqn() *string {
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) IdentityIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference) IdentityIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIdsInput",
 		&returns,
 	)
 	return returns
@@ -237,6 +261,17 @@ func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference)SetComplexObjectIsFr
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EventhubNamespaceIdentityOutputReference)SetIdentityIds(val *[]*string) {
+	if err := j.validateSetIdentityIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"identityIds",
 		val,
 	)
 }
@@ -469,6 +504,14 @@ func (e *jsiiProxy_EventhubNamespaceIdentityOutputReference) InterpolationForAtt
 	)
 
 	return returns
+}
+
+func (e *jsiiProxy_EventhubNamespaceIdentityOutputReference) ResetIdentityIds() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetIdentityIds",
+		nil, // no parameters
+	)
 }
 
 func (e *jsiiProxy_EventhubNamespaceIdentityOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

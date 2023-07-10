@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/private_dns_zone azurerm_private_dns_zone}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/private_dns_zone azurerm_private_dns_zone}.
 type DataAzurermPrivateDnsZone interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -57,7 +57,9 @@ type DataAzurermPrivateDnsZone interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
-	Tags() cdktf.StringMap
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -97,6 +99,7 @@ type DataAzurermPrivateDnsZone interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetResourceGroupName()
+	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -323,11 +326,21 @@ func (j *jsiiProxy_DataAzurermPrivateDnsZone) ResourceGroupNameInput() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermPrivateDnsZone) Tags() cdktf.StringMap {
-	var returns cdktf.StringMap
+func (j *jsiiProxy_DataAzurermPrivateDnsZone) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermPrivateDnsZone) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
 		&returns,
 	)
 	return returns
@@ -384,7 +397,7 @@ func (j *jsiiProxy_DataAzurermPrivateDnsZone) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/private_dns_zone azurerm_private_dns_zone} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/private_dns_zone azurerm_private_dns_zone} Data Source.
 func NewDataAzurermPrivateDnsZone(scope constructs.Construct, id *string, config *DataAzurermPrivateDnsZoneConfig) DataAzurermPrivateDnsZone {
 	_init_.Initialize()
 
@@ -402,7 +415,7 @@ func NewDataAzurermPrivateDnsZone(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/private_dns_zone azurerm_private_dns_zone} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/private_dns_zone azurerm_private_dns_zone} Data Source.
 func NewDataAzurermPrivateDnsZone_Override(d DataAzurermPrivateDnsZone, scope constructs.Construct, id *string, config *DataAzurermPrivateDnsZoneConfig) {
 	_init_.Initialize()
 
@@ -488,6 +501,17 @@ func (j *jsiiProxy_DataAzurermPrivateDnsZone)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermPrivateDnsZone)SetTags(val *map[string]*string) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }
@@ -789,6 +813,14 @@ func (d *jsiiProxy_DataAzurermPrivateDnsZone) ResetResourceGroupName() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetResourceGroupName",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermPrivateDnsZone) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
 		nil, // no parameters
 	)
 }

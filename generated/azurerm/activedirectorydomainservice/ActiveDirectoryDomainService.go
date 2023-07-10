@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service}.
 type ActiveDirectoryDomainService interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -29,6 +29,9 @@ type ActiveDirectoryDomainService interface {
 	// Experimental.
 	SetDependsOn(val *[]*string)
 	DeploymentId() *string
+	DomainConfigurationType() *string
+	SetDomainConfigurationType(val *string)
+	DomainConfigurationTypeInput() *string
 	DomainName() *string
 	SetDomainName(val *string)
 	DomainNameInput() *string
@@ -127,6 +130,7 @@ type ActiveDirectoryDomainService interface {
 	PutSecureLdap(value *ActiveDirectoryDomainServiceSecureLdap)
 	PutSecurity(value *ActiveDirectoryDomainServiceSecurity)
 	PutTimeouts(value *ActiveDirectoryDomainServiceTimeouts)
+	ResetDomainConfigurationType()
 	ResetFilteredSyncEnabled()
 	ResetId()
 	ResetNotifications()
@@ -207,6 +211,26 @@ func (j *jsiiProxy_ActiveDirectoryDomainService) DeploymentId() *string {
 	_jsii_.Get(
 		j,
 		"deploymentId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainService) DomainConfigurationType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainConfigurationType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainService) DomainConfigurationTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"domainConfigurationTypeInput",
 		&returns,
 	)
 	return returns
@@ -623,7 +647,7 @@ func (j *jsiiProxy_ActiveDirectoryDomainService) Version() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service} Resource.
 func NewActiveDirectoryDomainService(scope constructs.Construct, id *string, config *ActiveDirectoryDomainServiceConfig) ActiveDirectoryDomainService {
 	_init_.Initialize()
 
@@ -641,7 +665,7 @@ func NewActiveDirectoryDomainService(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/active_directory_domain_service azurerm_active_directory_domain_service} Resource.
 func NewActiveDirectoryDomainService_Override(a ActiveDirectoryDomainService, scope constructs.Construct, id *string, config *ActiveDirectoryDomainServiceConfig) {
 	_init_.Initialize()
 
@@ -678,6 +702,17 @@ func (j *jsiiProxy_ActiveDirectoryDomainService)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainService)SetDomainConfigurationType(val *string) {
+	if err := j.validateSetDomainConfigurationTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"domainConfigurationType",
 		val,
 	)
 }
@@ -1126,6 +1161,14 @@ func (a *jsiiProxy_ActiveDirectoryDomainService) PutTimeouts(value *ActiveDirect
 		a,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (a *jsiiProxy_ActiveDirectoryDomainService) ResetDomainConfigurationType() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetDomainConfigurationType",
+		nil, // no parameters
 	)
 }
 

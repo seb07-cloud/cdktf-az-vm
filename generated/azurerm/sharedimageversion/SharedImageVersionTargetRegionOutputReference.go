@@ -25,6 +25,9 @@ type SharedImageVersionTargetRegionOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	DiskEncryptionSetId() *string
+	SetDiskEncryptionSetId(val *string)
+	DiskEncryptionSetIdInput() *string
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -70,6 +73,7 @@ type SharedImageVersionTargetRegionOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetDiskEncryptionSetId()
 	ResetStorageAccountType()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -111,6 +115,26 @@ func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) CreationStack(
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) DiskEncryptionSetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"diskEncryptionSetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) DiskEncryptionSetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"diskEncryptionSetIdInput",
 		&returns,
 	)
 	return returns
@@ -262,6 +286,17 @@ func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference)SetComplexObjec
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference)SetDiskEncryptionSetId(val *string) {
+	if err := j.validateSetDiskEncryptionSetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"diskEncryptionSetId",
 		val,
 	)
 }
@@ -516,6 +551,14 @@ func (s *jsiiProxy_SharedImageVersionTargetRegionOutputReference) InterpolationF
 	)
 
 	return returns
+}
+
+func (s *jsiiProxy_SharedImageVersionTargetRegionOutputReference) ResetDiskEncryptionSetId() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDiskEncryptionSetId",
+		nil, // no parameters
+	)
 }
 
 func (s *jsiiProxy_SharedImageVersionTargetRegionOutputReference) ResetStorageAccountType() {

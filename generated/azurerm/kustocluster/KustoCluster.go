@@ -9,9 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_cluster azurerm_kusto_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_cluster azurerm_kusto_cluster}.
 type KustoCluster interface {
 	cdktf.TerraformResource
+	AllowedFqdns() *[]*string
+	SetAllowedFqdns(val *[]*string)
+	AllowedFqdnsInput() *[]*string
+	AllowedIpRanges() *[]*string
+	SetAllowedIpRanges(val *[]*string)
+	AllowedIpRangesInput() *[]*string
 	AutoStopEnabled() interface{}
 	SetAutoStopEnabled(val interface{})
 	AutoStopEnabledInput() interface{}
@@ -71,6 +77,9 @@ type KustoCluster interface {
 	Node() constructs.Node
 	OptimizedAutoScale() KustoClusterOptimizedAutoScaleOutputReference
 	OptimizedAutoScaleInput() *KustoClusterOptimizedAutoScale
+	OutboundNetworkAccessRestricted() interface{}
+	SetOutboundNetworkAccessRestricted(val interface{})
+	OutboundNetworkAccessRestrictedInput() interface{}
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -79,6 +88,9 @@ type KustoCluster interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicIpType() *string
+	SetPublicIpType(val *string)
+	PublicIpTypeInput() *string
 	PublicNetworkAccessEnabled() interface{}
 	SetPublicNetworkAccessEnabled(val interface{})
 	PublicNetworkAccessEnabledInput() interface{}
@@ -145,6 +157,8 @@ type KustoCluster interface {
 	PutSku(value *KustoClusterSku)
 	PutTimeouts(value *KustoClusterTimeouts)
 	PutVirtualNetworkConfiguration(value *KustoClusterVirtualNetworkConfiguration)
+	ResetAllowedFqdns()
+	ResetAllowedIpRanges()
 	ResetAutoStopEnabled()
 	ResetDiskEncryptionEnabled()
 	ResetDoubleEncryptionEnabled()
@@ -153,9 +167,11 @@ type KustoCluster interface {
 	ResetIdentity()
 	ResetLanguageExtensions()
 	ResetOptimizedAutoScale()
+	ResetOutboundNetworkAccessRestricted()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicIpType()
 	ResetPublicNetworkAccessEnabled()
 	ResetPurgeEnabled()
 	ResetStreamingIngestionEnabled()
@@ -177,6 +193,46 @@ type KustoCluster interface {
 // The jsii proxy struct for KustoCluster
 type jsiiProxy_KustoCluster struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_KustoCluster) AllowedFqdns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedFqdns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) AllowedFqdnsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedFqdnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) AllowedIpRanges() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedIpRanges",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) AllowedIpRangesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedIpRangesInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_KustoCluster) AutoStopEnabled() interface{} {
@@ -489,6 +545,26 @@ func (j *jsiiProxy_KustoCluster) OptimizedAutoScaleInput() *KustoClusterOptimize
 	return returns
 }
 
+func (j *jsiiProxy_KustoCluster) OutboundNetworkAccessRestricted() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"outboundNetworkAccessRestricted",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) OutboundNetworkAccessRestrictedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"outboundNetworkAccessRestrictedInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KustoCluster) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -504,6 +580,26 @@ func (j *jsiiProxy_KustoCluster) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) PublicIpType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicIpType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoCluster) PublicIpTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"publicIpTypeInput",
 		&returns,
 	)
 	return returns
@@ -760,7 +856,7 @@ func (j *jsiiProxy_KustoCluster) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_cluster azurerm_kusto_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_cluster azurerm_kusto_cluster} Resource.
 func NewKustoCluster(scope constructs.Construct, id *string, config *KustoClusterConfig) KustoCluster {
 	_init_.Initialize()
 
@@ -778,7 +874,7 @@ func NewKustoCluster(scope constructs.Construct, id *string, config *KustoCluste
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_cluster azurerm_kusto_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_cluster azurerm_kusto_cluster} Resource.
 func NewKustoCluster_Override(k KustoCluster, scope constructs.Construct, id *string, config *KustoClusterConfig) {
 	_init_.Initialize()
 
@@ -786,6 +882,28 @@ func NewKustoCluster_Override(k KustoCluster, scope constructs.Construct, id *st
 		"azurerm.kustoCluster.KustoCluster",
 		[]interface{}{scope, id, config},
 		k,
+	)
+}
+
+func (j *jsiiProxy_KustoCluster)SetAllowedFqdns(val *[]*string) {
+	if err := j.validateSetAllowedFqdnsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowedFqdns",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KustoCluster)SetAllowedIpRanges(val *[]*string) {
+	if err := j.validateSetAllowedIpRangesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowedIpRanges",
+		val,
 	)
 }
 
@@ -926,6 +1044,17 @@ func (j *jsiiProxy_KustoCluster)SetName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_KustoCluster)SetOutboundNetworkAccessRestricted(val interface{}) {
+	if err := j.validateSetOutboundNetworkAccessRestrictedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"outboundNetworkAccessRestricted",
+		val,
+	)
+}
+
 func (j *jsiiProxy_KustoCluster)SetProvider(val cdktf.TerraformProvider) {
 	_jsii_.Set(
 		j,
@@ -941,6 +1070,17 @@ func (j *jsiiProxy_KustoCluster)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KustoCluster)SetPublicIpType(val *string) {
+	if err := j.validateSetPublicIpTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicIpType",
 		val,
 	)
 }
@@ -1343,6 +1483,22 @@ func (k *jsiiProxy_KustoCluster) PutVirtualNetworkConfiguration(value *KustoClus
 	)
 }
 
+func (k *jsiiProxy_KustoCluster) ResetAllowedFqdns() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetAllowedFqdns",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KustoCluster) ResetAllowedIpRanges() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetAllowedIpRanges",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KustoCluster) ResetAutoStopEnabled() {
 	_jsii_.InvokeVoid(
 		k,
@@ -1407,10 +1563,26 @@ func (k *jsiiProxy_KustoCluster) ResetOptimizedAutoScale() {
 	)
 }
 
+func (k *jsiiProxy_KustoCluster) ResetOutboundNetworkAccessRestricted() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetOutboundNetworkAccessRestricted",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KustoCluster) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KustoCluster) ResetPublicIpType() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetPublicIpType",
 		nil, // no parameters
 	)
 }

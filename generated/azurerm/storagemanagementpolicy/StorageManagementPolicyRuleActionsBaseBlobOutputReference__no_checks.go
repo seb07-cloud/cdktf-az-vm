@@ -48,11 +48,19 @@ func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) va
 	return nil
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetAutoTierToHotFromCoolEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetComplexObjectIndexParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetComplexObjectIsFromSetParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetDeleteAfterDaysSinceCreationGreaterThanParameters(val *float64) error {
 	return nil
 }
 
@@ -76,11 +84,23 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) va
 	return nil
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetTierToArchiveAfterDaysSinceCreationGreaterThanParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThanParameters(val *float64) error {
 	return nil
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetTierToArchiveAfterDaysSinceLastTierChangeGreaterThanParameters(val *float64) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetTierToArchiveAfterDaysSinceModificationGreaterThanParameters(val *float64) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) validateSetTierToCoolAfterDaysSinceCreationGreaterThanParameters(val *float64) error {
 	return nil
 }
 

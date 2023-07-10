@@ -68,6 +68,10 @@ func validateDataAzurermServicebusNamespaceDisasterRecoveryConfig_IsTerraformEle
 	return nil
 }
 
+func (j *jsiiProxy_DataAzurermServicebusNamespaceDisasterRecoveryConfig) validateSetAliasAuthorizationRuleIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_DataAzurermServicebusNamespaceDisasterRecoveryConfig) validateSetCountParameters(val interface{}) error {
 	return nil
 }

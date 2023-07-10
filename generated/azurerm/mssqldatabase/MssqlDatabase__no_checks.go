@@ -52,6 +52,10 @@ func (m *jsiiProxy_MssqlDatabase) validateOverrideLogicalIdParameters(newLogical
 	return nil
 }
 
+func (m *jsiiProxy_MssqlDatabase) validatePutImportParameters(value *MssqlDatabaseImport) error {
+	return nil
+}
+
 func (m *jsiiProxy_MssqlDatabase) validatePutLongTermRetentionPolicyParameters(value *MssqlDatabaseLongTermRetentionPolicy) error {
 	return nil
 }
@@ -116,11 +120,19 @@ func (j *jsiiProxy_MssqlDatabase) validateSetIdParameters(val *string) error {
 	return nil
 }
 
+func (j *jsiiProxy_MssqlDatabase) validateSetLedgerEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_MssqlDatabase) validateSetLicenseTypeParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_MssqlDatabase) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
+	return nil
+}
+
+func (j *jsiiProxy_MssqlDatabase) validateSetMaintenanceConfigurationNameParameters(val *string) error {
 	return nil
 }
 

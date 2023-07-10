@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_registry azurerm_container_registry}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_registry azurerm_container_registry}.
 type DataAzurermContainerRegistry interface {
 	cdktf.TerraformDataSource
 	AdminEnabled() cdktf.IResolvable
@@ -23,6 +23,7 @@ type DataAzurermContainerRegistry interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DataEndpointEnabled() cdktf.IResolvable
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -169,6 +170,16 @@ func (j *jsiiProxy_DataAzurermContainerRegistry) Count() interface{} {
 	_jsii_.Get(
 		j,
 		"count",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermContainerRegistry) DataEndpointEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"dataEndpointEnabled",
 		&returns,
 	)
 	return returns
@@ -405,7 +416,7 @@ func (j *jsiiProxy_DataAzurermContainerRegistry) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_registry azurerm_container_registry} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_registry azurerm_container_registry} Data Source.
 func NewDataAzurermContainerRegistry(scope constructs.Construct, id *string, config *DataAzurermContainerRegistryConfig) DataAzurermContainerRegistry {
 	_init_.Initialize()
 
@@ -423,7 +434,7 @@ func NewDataAzurermContainerRegistry(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/container_registry azurerm_container_registry} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/container_registry azurerm_container_registry} Data Source.
 func NewDataAzurermContainerRegistry_Override(d DataAzurermContainerRegistry, scope constructs.Construct, id *string, config *DataAzurermContainerRegistryConfig) {
 	_init_.Initialize()
 

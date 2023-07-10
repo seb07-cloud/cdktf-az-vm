@@ -136,11 +136,19 @@ func (j *jsiiProxy_BotChannelsRegistration) validateSetProvisionersParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_BotChannelsRegistration) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_BotChannelsRegistration) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_BotChannelsRegistration) validateSetSkuParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BotChannelsRegistration) validateSetStreamingEndpointEnabledParameters(val interface{}) error {
 	return nil
 }
 

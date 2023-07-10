@@ -38,6 +38,9 @@ type MonitorActivityLogAlertCriteriaOutputReference interface {
 	Level() *string
 	SetLevel(val *string)
 	LevelInput() *string
+	Levels() *[]*string
+	SetLevels(val *[]*string)
+	LevelsInput() *[]*string
 	OperationName() *string
 	SetOperationName(val *string)
 	OperationNameInput() *string
@@ -53,24 +56,42 @@ type MonitorActivityLogAlertCriteriaOutputReference interface {
 	ResourceGroup() *string
 	SetResourceGroup(val *string)
 	ResourceGroupInput() *string
-	ResourceHealth() MonitorActivityLogAlertCriteriaResourceHealthList
-	ResourceHealthInput() interface{}
+	ResourceGroups() *[]*string
+	SetResourceGroups(val *[]*string)
+	ResourceGroupsInput() *[]*string
+	ResourceHealth() MonitorActivityLogAlertCriteriaResourceHealthOutputReference
+	ResourceHealthInput() *MonitorActivityLogAlertCriteriaResourceHealth
 	ResourceId() *string
 	SetResourceId(val *string)
 	ResourceIdInput() *string
+	ResourceIds() *[]*string
+	SetResourceIds(val *[]*string)
+	ResourceIdsInput() *[]*string
 	ResourceProvider() *string
 	SetResourceProvider(val *string)
 	ResourceProviderInput() *string
+	ResourceProviders() *[]*string
+	SetResourceProviders(val *[]*string)
+	ResourceProvidersInput() *[]*string
 	ResourceType() *string
 	SetResourceType(val *string)
 	ResourceTypeInput() *string
-	ServiceHealth() MonitorActivityLogAlertCriteriaServiceHealthList
-	ServiceHealthInput() interface{}
+	ResourceTypes() *[]*string
+	SetResourceTypes(val *[]*string)
+	ResourceTypesInput() *[]*string
+	ServiceHealth() MonitorActivityLogAlertCriteriaServiceHealthOutputReference
+	ServiceHealthInput() *MonitorActivityLogAlertCriteriaServiceHealth
 	Status() *string
 	SetStatus(val *string)
+	Statuses() *[]*string
+	SetStatuses(val *[]*string)
+	StatusesInput() *[]*string
 	StatusInput() *string
 	SubStatus() *string
 	SetSubStatus(val *string)
+	SubStatuses() *[]*string
+	SetSubStatuses(val *[]*string)
+	SubStatusesInput() *[]*string
 	SubStatusInput() *string
 	// Experimental.
 	TerraformAttribute() *string
@@ -104,22 +125,29 @@ type MonitorActivityLogAlertCriteriaOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
-	PutResourceHealth(value interface{})
-	PutServiceHealth(value interface{})
+	PutResourceHealth(value *MonitorActivityLogAlertCriteriaResourceHealth)
+	PutServiceHealth(value *MonitorActivityLogAlertCriteriaServiceHealth)
 	ResetCaller()
 	ResetLevel()
+	ResetLevels()
 	ResetOperationName()
 	ResetRecommendationCategory()
 	ResetRecommendationImpact()
 	ResetRecommendationType()
 	ResetResourceGroup()
+	ResetResourceGroups()
 	ResetResourceHealth()
 	ResetResourceId()
+	ResetResourceIds()
 	ResetResourceProvider()
+	ResetResourceProviders()
 	ResetResourceType()
+	ResetResourceTypes()
 	ResetServiceHealth()
 	ResetStatus()
+	ResetStatuses()
 	ResetSubStatus()
+	ResetSubStatuses()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -245,6 +273,26 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) LevelInput() 
 	return returns
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) Levels() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"levels",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) LevelsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"levelsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) OperationName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -345,8 +393,28 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceGroup
 	return returns
 }
 
-func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceHealth() MonitorActivityLogAlertCriteriaResourceHealthList {
-	var returns MonitorActivityLogAlertCriteriaResourceHealthList
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceGroups() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceGroups",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceGroupsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceGroupsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceHealth() MonitorActivityLogAlertCriteriaResourceHealthOutputReference {
+	var returns MonitorActivityLogAlertCriteriaResourceHealthOutputReference
 	_jsii_.Get(
 		j,
 		"resourceHealth",
@@ -355,8 +423,8 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceHealt
 	return returns
 }
 
-func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceHealthInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceHealthInput() *MonitorActivityLogAlertCriteriaResourceHealth {
+	var returns *MonitorActivityLogAlertCriteriaResourceHealth
 	_jsii_.Get(
 		j,
 		"resourceHealthInput",
@@ -385,6 +453,26 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceIdInp
 	return returns
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceIdsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceProvider() *string {
 	var returns *string
 	_jsii_.Get(
@@ -400,6 +488,26 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceProvi
 	_jsii_.Get(
 		j,
 		"resourceProviderInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceProviders() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceProviders",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceProvidersInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceProvidersInput",
 		&returns,
 	)
 	return returns
@@ -425,8 +533,28 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceTypeI
 	return returns
 }
 
-func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ServiceHealth() MonitorActivityLogAlertCriteriaServiceHealthList {
-	var returns MonitorActivityLogAlertCriteriaServiceHealthList
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceTypes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceTypes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResourceTypesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"resourceTypesInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ServiceHealth() MonitorActivityLogAlertCriteriaServiceHealthOutputReference {
+	var returns MonitorActivityLogAlertCriteriaServiceHealthOutputReference
 	_jsii_.Get(
 		j,
 		"serviceHealth",
@@ -435,8 +563,8 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ServiceHealth
 	return returns
 }
 
-func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ServiceHealthInput() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ServiceHealthInput() *MonitorActivityLogAlertCriteriaServiceHealth {
+	var returns *MonitorActivityLogAlertCriteriaServiceHealth
 	_jsii_.Get(
 		j,
 		"serviceHealthInput",
@@ -450,6 +578,26 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) Status() *str
 	_jsii_.Get(
 		j,
 		"status",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) Statuses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"statuses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) StatusesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"statusesInput",
 		&returns,
 	)
 	return returns
@@ -470,6 +618,26 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) SubStatus() *
 	_jsii_.Get(
 		j,
 		"subStatus",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) SubStatuses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subStatuses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) SubStatusesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"subStatusesInput",
 		&returns,
 	)
 	return returns
@@ -599,6 +767,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetLevel(val *
 	)
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetLevels(val *[]*string) {
+	if err := j.validateSetLevelsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"levels",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetOperationName(val *string) {
 	if err := j.validateSetOperationNameParameters(val); err != nil {
 		panic(err)
@@ -654,6 +833,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceGro
 	)
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceGroups(val *[]*string) {
+	if err := j.validateSetResourceGroupsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroups",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceId(val *string) {
 	if err := j.validateSetResourceIdParameters(val); err != nil {
 		panic(err)
@@ -661,6 +851,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceId(
 	_jsii_.Set(
 		j,
 		"resourceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceIds(val *[]*string) {
+	if err := j.validateSetResourceIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceIds",
 		val,
 	)
 }
@@ -676,6 +877,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourcePro
 	)
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceProviders(val *[]*string) {
+	if err := j.validateSetResourceProvidersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceProviders",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceType(val *string) {
 	if err := j.validateSetResourceTypeParameters(val); err != nil {
 		panic(err)
@@ -683,6 +895,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceTyp
 	_jsii_.Set(
 		j,
 		"resourceType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetResourceTypes(val *[]*string) {
+	if err := j.validateSetResourceTypesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceTypes",
 		val,
 	)
 }
@@ -698,6 +921,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetStatus(val 
 	)
 }
 
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetStatuses(val *[]*string) {
+	if err := j.validateSetStatusesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"statuses",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetSubStatus(val *string) {
 	if err := j.validateSetSubStatusParameters(val); err != nil {
 		panic(err)
@@ -705,6 +939,17 @@ func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetSubStatus(v
 	_jsii_.Set(
 		j,
 		"subStatus",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference)SetSubStatuses(val *[]*string) {
+	if err := j.validateSetSubStatusesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"subStatuses",
 		val,
 	)
 }
@@ -917,7 +1162,7 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) Interpolation
 	return returns
 }
 
-func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) PutResourceHealth(value interface{}) {
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) PutResourceHealth(value *MonitorActivityLogAlertCriteriaResourceHealth) {
 	if err := m.validatePutResourceHealthParameters(value); err != nil {
 		panic(err)
 	}
@@ -928,7 +1173,7 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) PutResourceHe
 	)
 }
 
-func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) PutServiceHealth(value interface{}) {
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) PutServiceHealth(value *MonitorActivityLogAlertCriteriaServiceHealth) {
 	if err := m.validatePutServiceHealthParameters(value); err != nil {
 		panic(err)
 	}
@@ -951,6 +1196,14 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetLevel() 
 	_jsii_.InvokeVoid(
 		m,
 		"resetLevel",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetLevels() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetLevels",
 		nil, // no parameters
 	)
 }
@@ -995,6 +1248,14 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResource
 	)
 }
 
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceGroups() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetResourceGroups",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceHealth() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1011,6 +1272,14 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResource
 	)
 }
 
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceIds() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetResourceIds",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceProvider() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1019,10 +1288,26 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResource
 	)
 }
 
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceProviders() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetResourceProviders",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceType() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetResourceType",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetResourceTypes() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetResourceTypes",
 		nil, // no parameters
 	)
 }
@@ -1043,10 +1328,26 @@ func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetStatus()
 	)
 }
 
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetStatuses() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetStatuses",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetSubStatus() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetSubStatus",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActivityLogAlertCriteriaOutputReference) ResetSubStatuses() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSubStatuses",
 		nil, // no parameters
 	)
 }

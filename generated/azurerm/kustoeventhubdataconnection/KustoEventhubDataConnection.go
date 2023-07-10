@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection}.
 type KustoEventhubDataConnection interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -36,6 +36,9 @@ type KustoEventhubDataConnection interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	DatabaseRoutingType() *string
+	SetDatabaseRoutingType(val *string)
+	DatabaseRoutingTypeInput() *string
 	DataFormat() *string
 	SetDataFormat(val *string)
 	DataFormatInput() *string
@@ -129,6 +132,7 @@ type KustoEventhubDataConnection interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *KustoEventhubDataConnectionTimeouts)
 	ResetCompression()
+	ResetDatabaseRoutingType()
 	ResetDataFormat()
 	ResetEventSystemProperties()
 	ResetId()
@@ -269,6 +273,26 @@ func (j *jsiiProxy_KustoEventhubDataConnection) DatabaseNameInput() *string {
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoEventhubDataConnection) DatabaseRoutingType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseRoutingType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoEventhubDataConnection) DatabaseRoutingTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseRoutingTypeInput",
 		&returns,
 	)
 	return returns
@@ -615,7 +639,7 @@ func (j *jsiiProxy_KustoEventhubDataConnection) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection} Resource.
 func NewKustoEventhubDataConnection(scope constructs.Construct, id *string, config *KustoEventhubDataConnectionConfig) KustoEventhubDataConnection {
 	_init_.Initialize()
 
@@ -633,7 +657,7 @@ func NewKustoEventhubDataConnection(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_eventhub_data_connection azurerm_kusto_eventhub_data_connection} Resource.
 func NewKustoEventhubDataConnection_Override(k KustoEventhubDataConnection, scope constructs.Construct, id *string, config *KustoEventhubDataConnectionConfig) {
 	_init_.Initialize()
 
@@ -706,6 +730,17 @@ func (j *jsiiProxy_KustoEventhubDataConnection)SetDatabaseName(val *string) {
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KustoEventhubDataConnection)SetDatabaseRoutingType(val *string) {
+	if err := j.validateSetDatabaseRoutingTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"databaseRoutingType",
 		val,
 	)
 }
@@ -1147,6 +1182,14 @@ func (k *jsiiProxy_KustoEventhubDataConnection) ResetCompression() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetCompression",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KustoEventhubDataConnection) ResetDatabaseRoutingType() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetDatabaseRoutingType",
 		nil, // no parameters
 	)
 }

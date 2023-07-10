@@ -112,6 +112,17 @@ func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutL
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutNodeNetworkProfileParameters(value *KubernetesClusterDefaultNodePoolNodeNetworkProfile) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutUpgradeSettingsParameters(value *KubernetesClusterDefaultNodePoolUpgradeSettings) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -126,6 +137,14 @@ func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validatePutU
 func (k *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	if _context == nil {
 		return fmt.Errorf("parameter _context is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetCapacityReservationGroupIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -191,6 +210,26 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetC
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetComplexObjectIsFromSetParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetCustomCaTrustEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
@@ -276,6 +315,14 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetF
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetHostGroupIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetInternalValueParameters(val *KubernetesClusterDefaultNodePool) error {
 	if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
 		return err
@@ -301,6 +348,14 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetM
 }
 
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetMaxPodsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetMessageOfTheDayParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -424,7 +479,23 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetP
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetScaleDownModeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetTemporaryNameForRotationParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -485,6 +556,14 @@ func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetV
 }
 
 func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetVnetSubnetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesClusterDefaultNodePoolOutputReference) validateSetWorkloadRuntimeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/application_gateway azurerm_application_gateway}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/application_gateway azurerm_application_gateway}.
 type ApplicationGateway interface {
 	cdktf.TerraformResource
 	AuthenticationCertificate() ApplicationGatewayAuthenticationCertificateList
@@ -64,6 +64,8 @@ type ApplicationGateway interface {
 	FrontendPortInput() interface{}
 	GatewayIpConfiguration() ApplicationGatewayGatewayIpConfigurationList
 	GatewayIpConfigurationInput() interface{}
+	Global() ApplicationGatewayGlobalOutputReference
+	GlobalInput() *ApplicationGatewayGlobal
 	HttpListener() ApplicationGatewayHttpListenerList
 	HttpListenerInput() interface{}
 	Id() *string
@@ -170,6 +172,7 @@ type ApplicationGateway interface {
 	PutFrontendIpConfiguration(value interface{})
 	PutFrontendPort(value interface{})
 	PutGatewayIpConfiguration(value interface{})
+	PutGlobal(value *ApplicationGatewayGlobal)
 	PutHttpListener(value interface{})
 	PutIdentity(value *ApplicationGatewayIdentity)
 	PutPrivateLinkConfiguration(value interface{})
@@ -193,6 +196,7 @@ type ApplicationGateway interface {
 	ResetFipsEnabled()
 	ResetFirewallPolicyId()
 	ResetForceFirewallPolicyAssociation()
+	ResetGlobal()
 	ResetId()
 	ResetIdentity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -542,6 +546,26 @@ func (j *jsiiProxy_ApplicationGateway) GatewayIpConfigurationInput() interface{}
 	_jsii_.Get(
 		j,
 		"gatewayIpConfigurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGateway) Global() ApplicationGatewayGlobalOutputReference {
+	var returns ApplicationGatewayGlobalOutputReference
+	_jsii_.Get(
+		j,
+		"global",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGateway) GlobalInput() *ApplicationGatewayGlobal {
+	var returns *ApplicationGatewayGlobal
+	_jsii_.Get(
+		j,
+		"globalInput",
 		&returns,
 	)
 	return returns
@@ -1078,7 +1102,7 @@ func (j *jsiiProxy_ApplicationGateway) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/application_gateway azurerm_application_gateway} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/application_gateway azurerm_application_gateway} Resource.
 func NewApplicationGateway(scope constructs.Construct, id *string, config *ApplicationGatewayConfig) ApplicationGateway {
 	_init_.Initialize()
 
@@ -1096,7 +1120,7 @@ func NewApplicationGateway(scope constructs.Construct, id *string, config *Appli
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/application_gateway azurerm_application_gateway} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/application_gateway azurerm_application_gateway} Resource.
 func NewApplicationGateway_Override(a ApplicationGateway, scope constructs.Construct, id *string, config *ApplicationGatewayConfig) {
 	_init_.Initialize()
 
@@ -1639,6 +1663,17 @@ func (a *jsiiProxy_ApplicationGateway) PutGatewayIpConfiguration(value interface
 	)
 }
 
+func (a *jsiiProxy_ApplicationGateway) PutGlobal(value *ApplicationGatewayGlobal) {
+	if err := a.validatePutGlobalParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putGlobal",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_ApplicationGateway) PutHttpListener(value interface{}) {
 	if err := a.validatePutHttpListenerParameters(value); err != nil {
 		panic(err)
@@ -1867,6 +1902,14 @@ func (a *jsiiProxy_ApplicationGateway) ResetForceFirewallPolicyAssociation() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetForceFirewallPolicyAssociation",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApplicationGateway) ResetGlobal() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetGlobal",
 		nil, // no parameters
 	)
 }

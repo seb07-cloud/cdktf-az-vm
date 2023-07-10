@@ -56,6 +56,10 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetCrossZoneUpgradesEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetInternalValueParameters(val *LinuxVirtualMachineScaleSetRollingUpgradePolicy) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 }
 
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetPauseTimeBetweenBatchesParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) validateSetPrioritizeUnhealthyInstancesEnabledParameters(val interface{}) error {
 	return nil
 }
 

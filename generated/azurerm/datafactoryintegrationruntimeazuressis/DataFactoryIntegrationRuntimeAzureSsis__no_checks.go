@@ -64,6 +64,10 @@ func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) validatePutExpressCus
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) validatePutExpressVnetIntegrationParameters(value *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration) error {
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) validatePutPackageStoreParameters(value interface{}) error {
 	return nil
 }

@@ -25,6 +25,9 @@ type LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	CrossZoneUpgradesEnabled() interface{}
+	SetCrossZoneUpgradesEnabled(val interface{})
+	CrossZoneUpgradesEnabledInput() interface{}
 	// Experimental.
 	Fqn() *string
 	InternalValue() *LinuxVirtualMachineScaleSetRollingUpgradePolicy
@@ -41,6 +44,9 @@ type LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface {
 	PauseTimeBetweenBatches() *string
 	SetPauseTimeBetweenBatches(val *string)
 	PauseTimeBetweenBatchesInput() *string
+	PrioritizeUnhealthyInstancesEnabled() interface{}
+	SetPrioritizeUnhealthyInstancesEnabled(val interface{})
+	PrioritizeUnhealthyInstancesEnabledInput() interface{}
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -73,6 +79,8 @@ type LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetCrossZoneUpgradesEnabled()
+	ResetPrioritizeUnhealthyInstancesEnabled()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -113,6 +121,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) CrossZoneUpgradesEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossZoneUpgradesEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) CrossZoneUpgradesEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossZoneUpgradesEnabledInput",
 		&returns,
 	)
 	return returns
@@ -218,6 +246,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) PrioritizeUnhealthyInstancesEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"prioritizeUnhealthyInstancesEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) PrioritizeUnhealthyInstancesEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"prioritizeUnhealthyInstancesEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -288,6 +336,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	)
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetCrossZoneUpgradesEnabled(val interface{}) {
+	if err := j.validateSetCrossZoneUpgradesEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossZoneUpgradesEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetInternalValue(val *LinuxVirtualMachineScaleSetRollingUpgradePolicy) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
@@ -339,6 +398,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	_jsii_.Set(
 		j,
 		"pauseTimeBetweenBatches",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference)SetPrioritizeUnhealthyInstancesEnabled(val interface{}) {
+	if err := j.validateSetPrioritizeUnhealthyInstancesEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"prioritizeUnhealthyInstancesEnabled",
 		val,
 	)
 }
@@ -549,6 +619,22 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReferenc
 	)
 
 	return returns
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) ResetCrossZoneUpgradesEnabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetCrossZoneUpgradesEnabled",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) ResetPrioritizeUnhealthyInstancesEnabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetPrioritizeUnhealthyInstancesEnabled",
+		nil, // no parameters
+	)
 }
 
 func (l *jsiiProxy_LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

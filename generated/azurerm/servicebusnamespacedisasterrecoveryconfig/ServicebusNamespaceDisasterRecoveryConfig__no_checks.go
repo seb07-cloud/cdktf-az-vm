@@ -68,6 +68,10 @@ func validateServicebusNamespaceDisasterRecoveryConfig_IsTerraformResourceParame
 	return nil
 }
 
+func (j *jsiiProxy_ServicebusNamespaceDisasterRecoveryConfig) validateSetAliasAuthorizationRuleIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_ServicebusNamespaceDisasterRecoveryConfig) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }

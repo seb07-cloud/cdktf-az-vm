@@ -122,6 +122,17 @@ func (k *jsiiProxy_KubernetesCluster) validatePutAciConnectorLinuxParameters(val
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutApiServerAccessProfileParameters(value *KubernetesClusterApiServerAccessProfile) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutAutoScalerProfileParameters(value *KubernetesClusterAutoScalerProfile) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -134,6 +145,17 @@ func (k *jsiiProxy_KubernetesCluster) validatePutAutoScalerProfileParameters(val
 }
 
 func (k *jsiiProxy_KubernetesCluster) validatePutAzureActiveDirectoryRoleBasedAccessControlParameters(value *KubernetesClusterAzureActiveDirectoryRoleBasedAccessControl) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutConfidentialComputingParameters(value *KubernetesClusterConfidentialComputing) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -188,6 +210,17 @@ func (k *jsiiProxy_KubernetesCluster) validatePutIngressApplicationGatewayParame
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutKeyManagementServiceParameters(value *KubernetesClusterKeyManagementService) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutKeyVaultSecretsProviderParameters(value *KubernetesClusterKeyVaultSecretsProvider) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -232,6 +265,50 @@ func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowParameters(val
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowAutoUpgradeParameters(value *KubernetesClusterMaintenanceWindowAutoUpgrade) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowNodeOsParameters(value *KubernetesClusterMaintenanceWindowNodeOs) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMicrosoftDefenderParameters(value *KubernetesClusterMicrosoftDefender) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMonitorMetricsParameters(value *KubernetesClusterMonitorMetrics) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutNetworkProfileParameters(value *KubernetesClusterNetworkProfile) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -254,7 +331,29 @@ func (k *jsiiProxy_KubernetesCluster) validatePutOmsAgentParameters(value *Kuber
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutServiceMeshProfileParameters(value *KubernetesClusterServiceMeshProfile) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutServicePrincipalParameters(value *KubernetesClusterServicePrincipal) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutStorageProfileParameters(value *KubernetesClusterStorageProfile) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -276,7 +375,29 @@ func (k *jsiiProxy_KubernetesCluster) validatePutTimeoutsParameters(value *Kuber
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutWebAppRoutingParameters(value *KubernetesClusterWebAppRouting) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutWindowsProfileParameters(value *KubernetesClusterWindowsProfile) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutWorkloadAutoscalerProfileParameters(value *KubernetesClusterWorkloadAutoscalerProfile) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -437,6 +558,14 @@ func (j *jsiiProxy_KubernetesCluster) validateSetCountParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetCustomCaTrustCertificatesBase64Parameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetDiskEncryptionSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -454,6 +583,14 @@ func (j *jsiiProxy_KubernetesCluster) validateSetDnsPrefixParameters(val *string
 }
 
 func (j *jsiiProxy_KubernetesCluster) validateSetDnsPrefixPrivateClusterParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetEdgeZoneParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -502,6 +639,34 @@ func (j *jsiiProxy_KubernetesCluster) validateSetHttpApplicationRoutingEnabledPa
 }
 
 func (j *jsiiProxy_KubernetesCluster) validateSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetImageCleanerEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetImageCleanerIntervalHoursParameters(val *float64) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -561,9 +726,37 @@ func (j *jsiiProxy_KubernetesCluster) validateSetNameParameters(val *string) err
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetNodeOsChannelUpgradeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetNodeResourceGroupParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetOidcIssuerEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
@@ -731,6 +924,26 @@ func (j *jsiiProxy_KubernetesCluster) validateSetRoleBasedAccessControlEnabledPa
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetRunCommandEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetSkuTierParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -742,6 +955,26 @@ func (j *jsiiProxy_KubernetesCluster) validateSetSkuTierParameters(val *string) 
 func (j *jsiiProxy_KubernetesCluster) validateSetTagsParameters(val *map[string]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetWorkloadIdentityEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil

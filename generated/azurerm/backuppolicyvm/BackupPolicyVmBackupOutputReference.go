@@ -30,6 +30,12 @@ type BackupPolicyVmBackupOutputReference interface {
 	Frequency() *string
 	SetFrequency(val *string)
 	FrequencyInput() *string
+	HourDuration() *float64
+	SetHourDuration(val *float64)
+	HourDurationInput() *float64
+	HourInterval() *float64
+	SetHourInterval(val *float64)
+	HourIntervalInput() *float64
 	InternalValue() *BackupPolicyVmBackup
 	SetInternalValue(val *BackupPolicyVmBackup)
 	// Experimental.
@@ -70,6 +76,8 @@ type BackupPolicyVmBackupOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetHourDuration()
+	ResetHourInterval()
 	ResetWeekdays()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -141,6 +149,46 @@ func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) FrequencyInput() *string
 	_jsii_.Get(
 		j,
 		"frequencyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) HourDuration() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hourDuration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) HourDurationInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hourDurationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) HourInterval() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hourInterval",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference) HourIntervalInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hourIntervalInput",
 		&returns,
 	)
 	return returns
@@ -273,6 +321,28 @@ func (j *jsiiProxy_BackupPolicyVmBackupOutputReference)SetFrequency(val *string)
 	_jsii_.Set(
 		j,
 		"frequency",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference)SetHourDuration(val *float64) {
+	if err := j.validateSetHourDurationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hourDuration",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BackupPolicyVmBackupOutputReference)SetHourInterval(val *float64) {
+	if err := j.validateSetHourIntervalParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hourInterval",
 		val,
 	)
 }
@@ -516,6 +586,22 @@ func (b *jsiiProxy_BackupPolicyVmBackupOutputReference) InterpolationForAttribut
 	)
 
 	return returns
+}
+
+func (b *jsiiProxy_BackupPolicyVmBackupOutputReference) ResetHourDuration() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetHourDuration",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BackupPolicyVmBackupOutputReference) ResetHourInterval() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetHourInterval",
+		nil, // no parameters
+	)
 }
 
 func (b *jsiiProxy_BackupPolicyVmBackupOutputReference) ResetWeekdays() {

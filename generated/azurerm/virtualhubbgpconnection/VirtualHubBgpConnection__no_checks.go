@@ -104,6 +104,10 @@ func (j *jsiiProxy_VirtualHubBgpConnection) validateSetVirtualHubIdParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_VirtualHubBgpConnection) validateSetVirtualNetworkConnectionIdParameters(val *string) error {
+	return nil
+}
+
 func validateNewVirtualHubBgpConnectionParameters(scope constructs.Construct, id *string, config *VirtualHubBgpConnectionConfig) error {
 	return nil
 }

@@ -9,9 +9,11 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine}.
 type MssqlVirtualMachine interface {
 	cdktf.TerraformResource
+	Assessment() MssqlVirtualMachineAssessmentOutputReference
+	AssessmentInput() *MssqlVirtualMachineAssessment
 	AutoBackup() MssqlVirtualMachineAutoBackupOutputReference
 	AutoBackupInput() *MssqlVirtualMachineAutoBackup
 	AutoPatching() MssqlVirtualMachineAutoPatchingOutputReference
@@ -76,6 +78,8 @@ type MssqlVirtualMachine interface {
 	SqlConnectivityUpdateUsername() *string
 	SetSqlConnectivityUpdateUsername(val *string)
 	SqlConnectivityUpdateUsernameInput() *string
+	SqlInstance() MssqlVirtualMachineSqlInstanceOutputReference
+	SqlInstanceInput() *MssqlVirtualMachineSqlInstance
 	SqlLicenseType() *string
 	SetSqlLicenseType(val *string)
 	SqlLicenseTypeInput() *string
@@ -120,11 +124,14 @@ type MssqlVirtualMachine interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutAssessment(value *MssqlVirtualMachineAssessment)
 	PutAutoBackup(value *MssqlVirtualMachineAutoBackup)
 	PutAutoPatching(value *MssqlVirtualMachineAutoPatching)
 	PutKeyVaultCredential(value *MssqlVirtualMachineKeyVaultCredential)
+	PutSqlInstance(value *MssqlVirtualMachineSqlInstance)
 	PutStorageConfiguration(value *MssqlVirtualMachineStorageConfiguration)
 	PutTimeouts(value *MssqlVirtualMachineTimeouts)
+	ResetAssessment()
 	ResetAutoBackup()
 	ResetAutoPatching()
 	ResetId()
@@ -137,6 +144,8 @@ type MssqlVirtualMachine interface {
 	ResetSqlConnectivityType()
 	ResetSqlConnectivityUpdatePassword()
 	ResetSqlConnectivityUpdateUsername()
+	ResetSqlInstance()
+	ResetSqlLicenseType()
 	ResetStorageConfiguration()
 	ResetTags()
 	ResetTimeouts()
@@ -153,6 +162,26 @@ type MssqlVirtualMachine interface {
 // The jsii proxy struct for MssqlVirtualMachine
 type jsiiProxy_MssqlVirtualMachine struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_MssqlVirtualMachine) Assessment() MssqlVirtualMachineAssessmentOutputReference {
+	var returns MssqlVirtualMachineAssessmentOutputReference
+	_jsii_.Get(
+		j,
+		"assessment",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlVirtualMachine) AssessmentInput() *MssqlVirtualMachineAssessment {
+	var returns *MssqlVirtualMachineAssessment
+	_jsii_.Get(
+		j,
+		"assessmentInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MssqlVirtualMachine) AutoBackup() MssqlVirtualMachineAutoBackupOutputReference {
@@ -465,6 +494,26 @@ func (j *jsiiProxy_MssqlVirtualMachine) SqlConnectivityUpdateUsernameInput() *st
 	return returns
 }
 
+func (j *jsiiProxy_MssqlVirtualMachine) SqlInstance() MssqlVirtualMachineSqlInstanceOutputReference {
+	var returns MssqlVirtualMachineSqlInstanceOutputReference
+	_jsii_.Get(
+		j,
+		"sqlInstance",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlVirtualMachine) SqlInstanceInput() *MssqlVirtualMachineSqlInstance {
+	var returns *MssqlVirtualMachineSqlInstance
+	_jsii_.Get(
+		j,
+		"sqlInstanceInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MssqlVirtualMachine) SqlLicenseType() *string {
 	var returns *string
 	_jsii_.Get(
@@ -596,7 +645,7 @@ func (j *jsiiProxy_MssqlVirtualMachine) VirtualMachineIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine} Resource.
 func NewMssqlVirtualMachine(scope constructs.Construct, id *string, config *MssqlVirtualMachineConfig) MssqlVirtualMachine {
 	_init_.Initialize()
 
@@ -614,7 +663,7 @@ func NewMssqlVirtualMachine(scope constructs.Construct, id *string, config *Mssq
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_virtual_machine azurerm_mssql_virtual_machine} Resource.
 func NewMssqlVirtualMachine_Override(m MssqlVirtualMachine, scope constructs.Construct, id *string, config *MssqlVirtualMachineConfig) {
 	_init_.Initialize()
 
@@ -1058,6 +1107,17 @@ func (m *jsiiProxy_MssqlVirtualMachine) OverrideLogicalId(newLogicalId *string) 
 	)
 }
 
+func (m *jsiiProxy_MssqlVirtualMachine) PutAssessment(value *MssqlVirtualMachineAssessment) {
+	if err := m.validatePutAssessmentParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putAssessment",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MssqlVirtualMachine) PutAutoBackup(value *MssqlVirtualMachineAutoBackup) {
 	if err := m.validatePutAutoBackupParameters(value); err != nil {
 		panic(err)
@@ -1091,6 +1151,17 @@ func (m *jsiiProxy_MssqlVirtualMachine) PutKeyVaultCredential(value *MssqlVirtua
 	)
 }
 
+func (m *jsiiProxy_MssqlVirtualMachine) PutSqlInstance(value *MssqlVirtualMachineSqlInstance) {
+	if err := m.validatePutSqlInstanceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putSqlInstance",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MssqlVirtualMachine) PutStorageConfiguration(value *MssqlVirtualMachineStorageConfiguration) {
 	if err := m.validatePutStorageConfigurationParameters(value); err != nil {
 		panic(err)
@@ -1110,6 +1181,14 @@ func (m *jsiiProxy_MssqlVirtualMachine) PutTimeouts(value *MssqlVirtualMachineTi
 		m,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (m *jsiiProxy_MssqlVirtualMachine) ResetAssessment() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetAssessment",
+		nil, // no parameters
 	)
 }
 
@@ -1189,6 +1268,22 @@ func (m *jsiiProxy_MssqlVirtualMachine) ResetSqlConnectivityUpdateUsername() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetSqlConnectivityUpdateUsername",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlVirtualMachine) ResetSqlInstance() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSqlInstance",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlVirtualMachine) ResetSqlLicenseType() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSqlLicenseType",
 		nil, // no parameters
 	)
 }

@@ -44,6 +44,10 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) validateI
 	return nil
 }
 
+func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) validatePutTargetDiskEncryptionParameters(value interface{}) error {
+	return nil
+}
+
 func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

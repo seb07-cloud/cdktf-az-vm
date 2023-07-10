@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set}.
 type LinuxVirtualMachineScaleSet interface {
 	cdktf.TerraformResource
 	AdditionalCapabilities() LinuxVirtualMachineScaleSetAdditionalCapabilitiesOutputReference
@@ -28,6 +28,9 @@ type LinuxVirtualMachineScaleSet interface {
 	AutomaticOsUpgradePolicyInput() *LinuxVirtualMachineScaleSetAutomaticOsUpgradePolicy
 	BootDiagnostics() LinuxVirtualMachineScaleSetBootDiagnosticsOutputReference
 	BootDiagnosticsInput() *LinuxVirtualMachineScaleSetBootDiagnostics
+	CapacityReservationGroupId() *string
+	SetCapacityReservationGroupId(val *string)
+	CapacityReservationGroupIdInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ComputerNamePrefix() *string
@@ -69,6 +72,9 @@ type LinuxVirtualMachineScaleSet interface {
 	EvictionPolicyInput() *string
 	Extension() LinuxVirtualMachineScaleSetExtensionList
 	ExtensionInput() interface{}
+	ExtensionOperationsEnabled() interface{}
+	SetExtensionOperationsEnabled(val interface{})
+	ExtensionOperationsEnabledInput() interface{}
 	ExtensionsTimeBudget() *string
 	SetExtensionsTimeBudget(val *string)
 	ExtensionsTimeBudgetInput() *string
@@ -80,9 +86,16 @@ type LinuxVirtualMachineScaleSet interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	GalleryApplication() LinuxVirtualMachineScaleSetGalleryApplicationList
+	GalleryApplicationInput() interface{}
+	GalleryApplications() LinuxVirtualMachineScaleSetGalleryApplicationsList
+	GalleryApplicationsInput() interface{}
 	HealthProbeId() *string
 	SetHealthProbeId(val *string)
 	HealthProbeIdInput() *string
+	HostGroupId() *string
+	SetHostGroupId(val *string)
+	HostGroupIdInput() *string
 	Id() *string
 	SetId(val *string)
 	Identity() LinuxVirtualMachineScaleSetIdentityOutputReference
@@ -142,6 +155,8 @@ type LinuxVirtualMachineScaleSet interface {
 	ResourceGroupNameInput() *string
 	RollingUpgradePolicy() LinuxVirtualMachineScaleSetRollingUpgradePolicyOutputReference
 	RollingUpgradePolicyInput() *LinuxVirtualMachineScaleSetRollingUpgradePolicy
+	ScaleIn() LinuxVirtualMachineScaleSetScaleInOutputReference
+	ScaleInInput() *LinuxVirtualMachineScaleSetScaleIn
 	ScaleInPolicy() *string
 	SetScaleInPolicy(val *string)
 	ScaleInPolicyInput() *string
@@ -161,11 +176,15 @@ type LinuxVirtualMachineScaleSet interface {
 	SourceImageIdInput() *string
 	SourceImageReference() LinuxVirtualMachineScaleSetSourceImageReferenceOutputReference
 	SourceImageReferenceInput() *LinuxVirtualMachineScaleSetSourceImageReference
+	SpotRestore() LinuxVirtualMachineScaleSetSpotRestoreOutputReference
+	SpotRestoreInput() *LinuxVirtualMachineScaleSetSpotRestore
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
 	TerminateNotification() LinuxVirtualMachineScaleSetTerminateNotificationOutputReference
 	TerminateNotificationInput() *LinuxVirtualMachineScaleSetTerminateNotification
+	TerminationNotification() LinuxVirtualMachineScaleSetTerminationNotificationOutputReference
+	TerminationNotificationInput() *LinuxVirtualMachineScaleSetTerminationNotification
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -222,14 +241,19 @@ type LinuxVirtualMachineScaleSet interface {
 	PutBootDiagnostics(value *LinuxVirtualMachineScaleSetBootDiagnostics)
 	PutDataDisk(value interface{})
 	PutExtension(value interface{})
+	PutGalleryApplication(value interface{})
+	PutGalleryApplications(value interface{})
 	PutIdentity(value *LinuxVirtualMachineScaleSetIdentity)
 	PutNetworkInterface(value interface{})
 	PutOsDisk(value *LinuxVirtualMachineScaleSetOsDisk)
 	PutPlan(value *LinuxVirtualMachineScaleSetPlan)
 	PutRollingUpgradePolicy(value *LinuxVirtualMachineScaleSetRollingUpgradePolicy)
+	PutScaleIn(value *LinuxVirtualMachineScaleSetScaleIn)
 	PutSecret(value interface{})
 	PutSourceImageReference(value *LinuxVirtualMachineScaleSetSourceImageReference)
+	PutSpotRestore(value *LinuxVirtualMachineScaleSetSpotRestore)
 	PutTerminateNotification(value *LinuxVirtualMachineScaleSetTerminateNotification)
+	PutTerminationNotification(value *LinuxVirtualMachineScaleSetTerminationNotification)
 	PutTimeouts(value *LinuxVirtualMachineScaleSetTimeouts)
 	ResetAdditionalCapabilities()
 	ResetAdminPassword()
@@ -237,6 +261,7 @@ type LinuxVirtualMachineScaleSet interface {
 	ResetAutomaticInstanceRepair()
 	ResetAutomaticOsUpgradePolicy()
 	ResetBootDiagnostics()
+	ResetCapacityReservationGroupId()
 	ResetComputerNamePrefix()
 	ResetCustomData()
 	ResetDataDisk()
@@ -246,10 +271,15 @@ type LinuxVirtualMachineScaleSet interface {
 	ResetEncryptionAtHostEnabled()
 	ResetEvictionPolicy()
 	ResetExtension()
+	ResetExtensionOperationsEnabled()
 	ResetExtensionsTimeBudget()
+	ResetGalleryApplication()
+	ResetGalleryApplications()
 	ResetHealthProbeId()
+	ResetHostGroupId()
 	ResetId()
 	ResetIdentity()
+	ResetInstances()
 	ResetMaxBidPrice()
 	ResetOverprovision()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -261,14 +291,17 @@ type LinuxVirtualMachineScaleSet interface {
 	ResetProvisionVmAgent()
 	ResetProximityPlacementGroupId()
 	ResetRollingUpgradePolicy()
+	ResetScaleIn()
 	ResetScaleInPolicy()
 	ResetSecret()
 	ResetSecureBootEnabled()
 	ResetSinglePlacementGroup()
 	ResetSourceImageId()
 	ResetSourceImageReference()
+	ResetSpotRestore()
 	ResetTags()
 	ResetTerminateNotification()
+	ResetTerminationNotification()
 	ResetTimeouts()
 	ResetUpgradeMode()
 	ResetUserData()
@@ -425,6 +458,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) BootDiagnosticsInput() *LinuxVir
 	_jsii_.Get(
 		j,
 		"bootDiagnosticsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) CapacityReservationGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) CapacityReservationGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"capacityReservationGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -660,6 +713,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ExtensionInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ExtensionOperationsEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extensionOperationsEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ExtensionOperationsEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"extensionOperationsEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ExtensionsTimeBudget() *string {
 	var returns *string
 	_jsii_.Get(
@@ -710,6 +783,46 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) GalleryApplication() LinuxVirtualMachineScaleSetGalleryApplicationList {
+	var returns LinuxVirtualMachineScaleSetGalleryApplicationList
+	_jsii_.Get(
+		j,
+		"galleryApplication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) GalleryApplicationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"galleryApplicationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) GalleryApplications() LinuxVirtualMachineScaleSetGalleryApplicationsList {
+	var returns LinuxVirtualMachineScaleSetGalleryApplicationsList
+	_jsii_.Get(
+		j,
+		"galleryApplications",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) GalleryApplicationsInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"galleryApplicationsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) HealthProbeId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -725,6 +838,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) HealthProbeIdInput() *string {
 	_jsii_.Get(
 		j,
 		"healthProbeIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) HostGroupId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostGroupId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) HostGroupIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostGroupIdInput",
 		&returns,
 	)
 	return returns
@@ -1100,6 +1233,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) RollingUpgradePolicyInput() *Lin
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ScaleIn() LinuxVirtualMachineScaleSetScaleInOutputReference {
+	var returns LinuxVirtualMachineScaleSetScaleInOutputReference
+	_jsii_.Get(
+		j,
+		"scaleIn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ScaleInInput() *LinuxVirtualMachineScaleSetScaleIn {
+	var returns *LinuxVirtualMachineScaleSetScaleIn
+	_jsii_.Get(
+		j,
+		"scaleInInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ScaleInPolicy() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1240,6 +1393,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) SourceImageReferenceInput() *Lin
 	return returns
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) SpotRestore() LinuxVirtualMachineScaleSetSpotRestoreOutputReference {
+	var returns LinuxVirtualMachineScaleSetSpotRestoreOutputReference
+	_jsii_.Get(
+		j,
+		"spotRestore",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) SpotRestoreInput() *LinuxVirtualMachineScaleSetSpotRestore {
+	var returns *LinuxVirtualMachineScaleSetSpotRestore
+	_jsii_.Get(
+		j,
+		"spotRestoreInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -1275,6 +1448,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) TerminateNotificationInput() *Li
 	_jsii_.Get(
 		j,
 		"terminateNotificationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) TerminationNotification() LinuxVirtualMachineScaleSetTerminationNotificationOutputReference {
+	var returns LinuxVirtualMachineScaleSetTerminationNotificationOutputReference
+	_jsii_.Get(
+		j,
+		"terminationNotification",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet) TerminationNotificationInput() *LinuxVirtualMachineScaleSetTerminationNotification {
+	var returns *LinuxVirtualMachineScaleSetTerminationNotification
+	_jsii_.Get(
+		j,
+		"terminationNotificationInput",
 		&returns,
 	)
 	return returns
@@ -1441,7 +1634,7 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set} Resource.
 func NewLinuxVirtualMachineScaleSet(scope constructs.Construct, id *string, config *LinuxVirtualMachineScaleSetConfig) LinuxVirtualMachineScaleSet {
 	_init_.Initialize()
 
@@ -1459,7 +1652,7 @@ func NewLinuxVirtualMachineScaleSet(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/linux_virtual_machine_scale_set azurerm_linux_virtual_machine_scale_set} Resource.
 func NewLinuxVirtualMachineScaleSet_Override(l LinuxVirtualMachineScaleSet, scope constructs.Construct, id *string, config *LinuxVirtualMachineScaleSetConfig) {
 	_init_.Initialize()
 
@@ -1488,6 +1681,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetAdminUsername(val *string) {
 	_jsii_.Set(
 		j,
 		"adminUsername",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetCapacityReservationGroupId(val *string) {
+	if err := j.validateSetCapacityReservationGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"capacityReservationGroupId",
 		val,
 	)
 }
@@ -1599,6 +1803,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetEvictionPolicy(val *string) {
 	)
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetExtensionOperationsEnabled(val interface{}) {
+	if err := j.validateSetExtensionOperationsEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"extensionOperationsEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetExtensionsTimeBudget(val *string) {
 	if err := j.validateSetExtensionsTimeBudgetParameters(val); err != nil {
 		panic(err)
@@ -1625,6 +1840,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetHealthProbeId(val *string) {
 	_jsii_.Set(
 		j,
 		"healthProbeId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSet)SetHostGroupId(val *string) {
+	if err := j.validateSetHostGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hostGroupId",
 		val,
 	)
 }
@@ -2244,6 +2470,28 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutExtension(value interface{}) 
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutGalleryApplication(value interface{}) {
+	if err := l.validatePutGalleryApplicationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putGalleryApplication",
+		[]interface{}{value},
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutGalleryApplications(value interface{}) {
+	if err := l.validatePutGalleryApplicationsParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putGalleryApplications",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutIdentity(value *LinuxVirtualMachineScaleSetIdentity) {
 	if err := l.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -2299,6 +2547,17 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutRollingUpgradePolicy(value *L
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutScaleIn(value *LinuxVirtualMachineScaleSetScaleIn) {
+	if err := l.validatePutScaleInParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putScaleIn",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutSecret(value interface{}) {
 	if err := l.validatePutSecretParameters(value); err != nil {
 		panic(err)
@@ -2321,6 +2580,17 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutSourceImageReference(value *L
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutSpotRestore(value *LinuxVirtualMachineScaleSetSpotRestore) {
+	if err := l.validatePutSpotRestoreParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putSpotRestore",
+		[]interface{}{value},
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutTerminateNotification(value *LinuxVirtualMachineScaleSetTerminateNotification) {
 	if err := l.validatePutTerminateNotificationParameters(value); err != nil {
 		panic(err)
@@ -2328,6 +2598,17 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutTerminateNotification(value *
 	_jsii_.InvokeVoid(
 		l,
 		"putTerminateNotification",
+		[]interface{}{value},
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) PutTerminationNotification(value *LinuxVirtualMachineScaleSetTerminationNotification) {
+	if err := l.validatePutTerminationNotificationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		l,
+		"putTerminationNotification",
 		[]interface{}{value},
 	)
 }
@@ -2387,6 +2668,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetBootDiagnostics() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetBootDiagnostics",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetCapacityReservationGroupId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetCapacityReservationGroupId",
 		nil, // no parameters
 	)
 }
@@ -2463,6 +2752,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetExtension() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetExtensionOperationsEnabled() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetExtensionOperationsEnabled",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetExtensionsTimeBudget() {
 	_jsii_.InvokeVoid(
 		l,
@@ -2471,10 +2768,34 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetExtensionsTimeBudget() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetGalleryApplication() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetGalleryApplication",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetGalleryApplications() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetGalleryApplications",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetHealthProbeId() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetHealthProbeId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetHostGroupId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetHostGroupId",
 		nil, // no parameters
 	)
 }
@@ -2491,6 +2812,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetIdentity() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetInstances() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetInstances",
 		nil, // no parameters
 	)
 }
@@ -2567,6 +2896,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetRollingUpgradePolicy() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetScaleIn() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetScaleIn",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetScaleInPolicy() {
 	_jsii_.InvokeVoid(
 		l,
@@ -2615,6 +2952,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetSourceImageReference() {
 	)
 }
 
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetSpotRestore() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetSpotRestore",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetTags() {
 	_jsii_.InvokeVoid(
 		l,
@@ -2627,6 +2972,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetTerminateNotification() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetTerminateNotification",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSet) ResetTerminationNotification() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetTerminationNotification",
 		nil, // no parameters
 	)
 }

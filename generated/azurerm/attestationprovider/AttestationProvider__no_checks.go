@@ -52,6 +52,10 @@ func (a *jsiiProxy_AttestationProvider) validateOverrideLogicalIdParameters(newL
 	return nil
 }
 
+func (a *jsiiProxy_AttestationProvider) validatePutPolicyParameters(value interface{}) error {
+	return nil
+}
+
 func (a *jsiiProxy_AttestationProvider) validatePutTimeoutsParameters(value *AttestationProviderTimeouts) error {
 	return nil
 }
@@ -92,6 +96,10 @@ func (j *jsiiProxy_AttestationProvider) validateSetNameParameters(val *string) e
 	return nil
 }
 
+func (j *jsiiProxy_AttestationProvider) validateSetOpenEnclavePolicyBase64Parameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_AttestationProvider) validateSetPolicySigningCertificateDataParameters(val *string) error {
 	return nil
 }
@@ -104,7 +112,19 @@ func (j *jsiiProxy_AttestationProvider) validateSetResourceGroupNameParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_AttestationProvider) validateSetSevSnpPolicyBase64Parameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_AttestationProvider) validateSetSgxEnclavePolicyBase64Parameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_AttestationProvider) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_AttestationProvider) validateSetTpmPolicyBase64Parameters(val *string) error {
 	return nil
 }
 

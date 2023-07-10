@@ -84,6 +84,10 @@ func (j *jsiiProxy_NetappVolume) validateSetAccountNameParameters(val *string) e
 	return nil
 }
 
+func (j *jsiiProxy_NetappVolume) validateSetAzureVmwareDataStoreEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_NetappVolume) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -109,6 +113,10 @@ func (j *jsiiProxy_NetappVolume) validateSetLocationParameters(val *string) erro
 }
 
 func (j *jsiiProxy_NetappVolume) validateSetNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_NetappVolume) validateSetNetworkFeaturesParameters(val *string) error {
 	return nil
 }
 
@@ -157,6 +165,10 @@ func (j *jsiiProxy_NetappVolume) validateSetThroughputInMibpsParameters(val *flo
 }
 
 func (j *jsiiProxy_NetappVolume) validateSetVolumePathParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_NetappVolume) validateSetZoneParameters(val *string) error {
 	return nil
 }
 

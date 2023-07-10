@@ -27,6 +27,9 @@ type CosmosdbAccountIdentityOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	IdentityIds() *[]*string
+	SetIdentityIds(val *[]*string)
+	IdentityIdsInput() *[]*string
 	InternalValue() *CosmosdbAccountIdentity
 	SetInternalValue(val *CosmosdbAccountIdentity)
 	PrincipalId() *string
@@ -66,6 +69,7 @@ type CosmosdbAccountIdentityOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIdentityIds()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -116,6 +120,26 @@ func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) Fqn() *string {
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) IdentityIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference) IdentityIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIdsInput",
 		&returns,
 	)
 	return returns
@@ -237,6 +261,17 @@ func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference)SetComplexObjectIsFrom
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbAccountIdentityOutputReference)SetIdentityIds(val *[]*string) {
+	if err := j.validateSetIdentityIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"identityIds",
 		val,
 	)
 }
@@ -469,6 +504,14 @@ func (c *jsiiProxy_CosmosdbAccountIdentityOutputReference) InterpolationForAttri
 	)
 
 	return returns
+}
+
+func (c *jsiiProxy_CosmosdbAccountIdentityOutputReference) ResetIdentityIds() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetIdentityIds",
+		nil, // no parameters
+	)
 }
 
 func (c *jsiiProxy_CosmosdbAccountIdentityOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

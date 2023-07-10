@@ -56,11 +56,19 @@ func (k *jsiiProxy_KubernetesCluster) validatePutAciConnectorLinuxParameters(val
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutApiServerAccessProfileParameters(value *KubernetesClusterApiServerAccessProfile) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutAutoScalerProfileParameters(value *KubernetesClusterAutoScalerProfile) error {
 	return nil
 }
 
 func (k *jsiiProxy_KubernetesCluster) validatePutAzureActiveDirectoryRoleBasedAccessControlParameters(value *KubernetesClusterAzureActiveDirectoryRoleBasedAccessControl) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutConfidentialComputingParameters(value *KubernetesClusterConfidentialComputing) error {
 	return nil
 }
 
@@ -80,6 +88,10 @@ func (k *jsiiProxy_KubernetesCluster) validatePutIngressApplicationGatewayParame
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutKeyManagementServiceParameters(value *KubernetesClusterKeyManagementService) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutKeyVaultSecretsProviderParameters(value *KubernetesClusterKeyVaultSecretsProvider) error {
 	return nil
 }
@@ -96,6 +108,22 @@ func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowParameters(val
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowAutoUpgradeParameters(value *KubernetesClusterMaintenanceWindowAutoUpgrade) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMaintenanceWindowNodeOsParameters(value *KubernetesClusterMaintenanceWindowNodeOs) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMicrosoftDefenderParameters(value *KubernetesClusterMicrosoftDefender) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutMonitorMetricsParameters(value *KubernetesClusterMonitorMetrics) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutNetworkProfileParameters(value *KubernetesClusterNetworkProfile) error {
 	return nil
 }
@@ -104,7 +132,15 @@ func (k *jsiiProxy_KubernetesCluster) validatePutOmsAgentParameters(value *Kuber
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutServiceMeshProfileParameters(value *KubernetesClusterServiceMeshProfile) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutServicePrincipalParameters(value *KubernetesClusterServicePrincipal) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutStorageProfileParameters(value *KubernetesClusterStorageProfile) error {
 	return nil
 }
 
@@ -112,7 +148,15 @@ func (k *jsiiProxy_KubernetesCluster) validatePutTimeoutsParameters(value *Kuber
 	return nil
 }
 
+func (k *jsiiProxy_KubernetesCluster) validatePutWebAppRoutingParameters(value *KubernetesClusterWebAppRouting) error {
+	return nil
+}
+
 func (k *jsiiProxy_KubernetesCluster) validatePutWindowsProfileParameters(value *KubernetesClusterWindowsProfile) error {
+	return nil
+}
+
+func (k *jsiiProxy_KubernetesCluster) validatePutWorkloadAutoscalerProfileParameters(value *KubernetesClusterWorkloadAutoscalerProfile) error {
 	return nil
 }
 
@@ -148,6 +192,10 @@ func (j *jsiiProxy_KubernetesCluster) validateSetCountParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetCustomCaTrustCertificatesBase64Parameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetDiskEncryptionSetIdParameters(val *string) error {
 	return nil
 }
@@ -160,6 +208,10 @@ func (j *jsiiProxy_KubernetesCluster) validateSetDnsPrefixPrivateClusterParamete
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetEdgeZoneParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetEnablePodSecurityPolicyParameters(val interface{}) error {
 	return nil
 }
@@ -169,6 +221,14 @@ func (j *jsiiProxy_KubernetesCluster) validateSetHttpApplicationRoutingEnabledPa
 }
 
 func (j *jsiiProxy_KubernetesCluster) validateSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetImageCleanerEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetImageCleanerIntervalHoursParameters(val *float64) error {
 	return nil
 }
 
@@ -192,7 +252,15 @@ func (j *jsiiProxy_KubernetesCluster) validateSetNameParameters(val *string) err
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetNodeOsChannelUpgradeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetNodeResourceGroupParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetOidcIssuerEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -228,11 +296,19 @@ func (j *jsiiProxy_KubernetesCluster) validateSetRoleBasedAccessControlEnabledPa
 	return nil
 }
 
+func (j *jsiiProxy_KubernetesCluster) validateSetRunCommandEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_KubernetesCluster) validateSetSkuTierParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_KubernetesCluster) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_KubernetesCluster) validateSetWorkloadIdentityEnabledParameters(val interface{}) error {
 	return nil
 }
 

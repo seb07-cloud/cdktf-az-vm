@@ -26,6 +26,9 @@ type ContainerGroupContainerOutputReference interface {
 	Cpu() *float64
 	SetCpu(val *float64)
 	CpuInput() *float64
+	CpuLimit() *float64
+	SetCpuLimit(val *float64)
+	CpuLimitInput() *float64
 	// The creation stack of this resolvable which will be appended to errors thrown during resolution.
 	//
 	// If this returns an empty array the stack will not be attached.
@@ -38,6 +41,8 @@ type ContainerGroupContainerOutputReference interface {
 	Fqn() *string
 	Gpu() ContainerGroupContainerGpuOutputReference
 	GpuInput() *ContainerGroupContainerGpu
+	GpuLimit() ContainerGroupContainerGpuLimitOutputReference
+	GpuLimitInput() *ContainerGroupContainerGpuLimit
 	Image() *string
 	SetImage(val *string)
 	ImageInput() *string
@@ -48,6 +53,9 @@ type ContainerGroupContainerOutputReference interface {
 	Memory() *float64
 	SetMemory(val *float64)
 	MemoryInput() *float64
+	MemoryLimit() *float64
+	SetMemoryLimit(val *float64)
+	MemoryLimitInput() *float64
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -93,14 +101,18 @@ type ContainerGroupContainerOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutGpu(value *ContainerGroupContainerGpu)
+	PutGpuLimit(value *ContainerGroupContainerGpuLimit)
 	PutLivenessProbe(value *ContainerGroupContainerLivenessProbe)
 	PutPorts(value interface{})
 	PutReadinessProbe(value *ContainerGroupContainerReadinessProbe)
 	PutVolume(value interface{})
 	ResetCommands()
+	ResetCpuLimit()
 	ResetEnvironmentVariables()
 	ResetGpu()
+	ResetGpuLimit()
 	ResetLivenessProbe()
+	ResetMemoryLimit()
 	ResetPorts()
 	ResetReadinessProbe()
 	ResetSecureEnvironmentVariables()
@@ -180,6 +192,26 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) CpuInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) CpuLimit() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"cpuLimit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) CpuLimitInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"cpuLimitInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ContainerGroupContainerOutputReference) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -235,6 +267,26 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) GpuInput() *Container
 	_jsii_.Get(
 		j,
 		"gpuInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) GpuLimit() ContainerGroupContainerGpuLimitOutputReference {
+	var returns ContainerGroupContainerGpuLimitOutputReference
+	_jsii_.Get(
+		j,
+		"gpuLimit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) GpuLimitInput() *ContainerGroupContainerGpuLimit {
+	var returns *ContainerGroupContainerGpuLimit
+	_jsii_.Get(
+		j,
+		"gpuLimitInput",
 		&returns,
 	)
 	return returns
@@ -305,6 +357,26 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) MemoryInput() *float6
 	_jsii_.Get(
 		j,
 		"memoryInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) MemoryLimit() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"memoryLimit",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) MemoryLimitInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"memoryLimitInput",
 		&returns,
 	)
 	return returns
@@ -502,6 +574,17 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference)SetCpu(val *float64) {
 	)
 }
 
+func (j *jsiiProxy_ContainerGroupContainerOutputReference)SetCpuLimit(val *float64) {
+	if err := j.validateSetCpuLimitParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"cpuLimit",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ContainerGroupContainerOutputReference)SetEnvironmentVariables(val *map[string]*string) {
 	if err := j.validateSetEnvironmentVariablesParameters(val); err != nil {
 		panic(err)
@@ -542,6 +625,17 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference)SetMemory(val *float64
 	_jsii_.Set(
 		j,
 		"memory",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference)SetMemoryLimit(val *float64) {
+	if err := j.validateSetMemoryLimitParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"memoryLimit",
 		val,
 	)
 }
@@ -787,6 +881,17 @@ func (c *jsiiProxy_ContainerGroupContainerOutputReference) PutGpu(value *Contain
 	)
 }
 
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) PutGpuLimit(value *ContainerGroupContainerGpuLimit) {
+	if err := c.validatePutGpuLimitParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		c,
+		"putGpuLimit",
+		[]interface{}{value},
+	)
+}
+
 func (c *jsiiProxy_ContainerGroupContainerOutputReference) PutLivenessProbe(value *ContainerGroupContainerLivenessProbe) {
 	if err := c.validatePutLivenessProbeParameters(value); err != nil {
 		panic(err)
@@ -839,6 +944,14 @@ func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetCommands() {
 	)
 }
 
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetCpuLimit() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetCpuLimit",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetEnvironmentVariables() {
 	_jsii_.InvokeVoid(
 		c,
@@ -855,10 +968,26 @@ func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetGpu() {
 	)
 }
 
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetGpuLimit() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetGpuLimit",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetLivenessProbe() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetLivenessProbe",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) ResetMemoryLimit() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetMemoryLimit",
 		nil, // no parameters
 	)
 }

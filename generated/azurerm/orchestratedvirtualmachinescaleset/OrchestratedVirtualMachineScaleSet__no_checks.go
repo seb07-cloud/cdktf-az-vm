@@ -52,6 +52,10 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateOverrideLogicalId
 	return nil
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validatePutAdditionalCapabilitiesParameters(value *OrchestratedVirtualMachineScaleSetAdditionalCapabilities) error {
+	return nil
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validatePutAutomaticInstanceRepairParameters(value *OrchestratedVirtualMachineScaleSetAutomaticInstanceRepair) error {
 	return nil
 }
@@ -88,6 +92,10 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validatePutPlanParameters
 	return nil
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validatePutPriorityMixParameters(value *OrchestratedVirtualMachineScaleSetPriorityMix) error {
+	return nil
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSet) validatePutSourceImageReferenceParameters(value *OrchestratedVirtualMachineScaleSetSourceImageReference) error {
 	return nil
 }
@@ -112,6 +120,10 @@ func validateOrchestratedVirtualMachineScaleSet_IsTerraformResourceParameters(x 
 	return nil
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetCapacityReservationGroupIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetConnectionParameters(val interface{}) error {
 	return nil
 }
@@ -125,6 +137,10 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetEncryptionAtHo
 }
 
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetEvictionPolicyParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetExtensionOperationsEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -180,6 +196,10 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetResourceGroupN
 	return nil
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetSinglePlacementGroupParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetSkuNameParameters(val *string) error {
 	return nil
 }
@@ -189,6 +209,10 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetSourceImageIdP
 }
 
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSet) validateSetUserDataBase64Parameters(val *string) error {
 	return nil
 }
 

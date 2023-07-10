@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage}.
 type DataFactoryLinkedServiceAzureBlobStorage interface {
 	cdktf.TerraformResource
 	AdditionalProperties() *map[string]*string
@@ -27,6 +27,9 @@ type DataFactoryLinkedServiceAzureBlobStorage interface {
 	ConnectionString() *string
 	SetConnectionString(val *string)
 	ConnectionStringInput() *string
+	ConnectionStringInsecure() *string
+	SetConnectionStringInsecure(val *string)
+	ConnectionStringInsecureInput() *string
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
 	// Experimental.
@@ -93,6 +96,11 @@ type DataFactoryLinkedServiceAzureBlobStorage interface {
 	ServicePrincipalKey() *string
 	SetServicePrincipalKey(val *string)
 	ServicePrincipalKeyInput() *string
+	ServicePrincipalLinkedKeyVaultKey() DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyOutputReference
+	ServicePrincipalLinkedKeyVaultKeyInput() *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey
+	StorageKind() *string
+	SetStorageKind(val *string)
+	StorageKindInput() *string
 	TenantId() *string
 	SetTenantId(val *string)
 	TenantIdInput() *string
@@ -133,10 +141,12 @@ type DataFactoryLinkedServiceAzureBlobStorage interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutKeyVaultSasToken(value *DataFactoryLinkedServiceAzureBlobStorageKeyVaultSasToken)
+	PutServicePrincipalLinkedKeyVaultKey(value *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey)
 	PutTimeouts(value *DataFactoryLinkedServiceAzureBlobStorageTimeouts)
 	ResetAdditionalProperties()
 	ResetAnnotations()
 	ResetConnectionString()
+	ResetConnectionStringInsecure()
 	ResetDescription()
 	ResetId()
 	ResetIntegrationRuntimeName()
@@ -149,6 +159,8 @@ type DataFactoryLinkedServiceAzureBlobStorage interface {
 	ResetServiceEndpoint()
 	ResetServicePrincipalId()
 	ResetServicePrincipalKey()
+	ResetServicePrincipalLinkedKeyVaultKey()
+	ResetStorageKind()
 	ResetTenantId()
 	ResetTimeouts()
 	ResetUseManagedIdentity()
@@ -242,6 +254,26 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ConnectionStringInp
 	_jsii_.Get(
 		j,
 		"connectionStringInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ConnectionStringInsecure() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"connectionStringInsecure",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ConnectionStringInsecureInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"connectionStringInsecureInput",
 		&returns,
 	)
 	return returns
@@ -577,6 +609,46 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ServicePrincipalKey
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ServicePrincipalLinkedKeyVaultKey() DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyOutputReference {
+	var returns DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKeyOutputReference
+	_jsii_.Get(
+		j,
+		"servicePrincipalLinkedKeyVaultKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ServicePrincipalLinkedKeyVaultKeyInput() *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey {
+	var returns *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey
+	_jsii_.Get(
+		j,
+		"servicePrincipalLinkedKeyVaultKeyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) StorageKind() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageKind",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) StorageKindInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageKindInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) TenantId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -668,7 +740,7 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) UseManagedIdentityI
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage} Resource.
 func NewDataFactoryLinkedServiceAzureBlobStorage(scope constructs.Construct, id *string, config *DataFactoryLinkedServiceAzureBlobStorageConfig) DataFactoryLinkedServiceAzureBlobStorage {
 	_init_.Initialize()
 
@@ -686,7 +758,7 @@ func NewDataFactoryLinkedServiceAzureBlobStorage(scope constructs.Construct, id 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_azure_blob_storage azurerm_data_factory_linked_service_azure_blob_storage} Resource.
 func NewDataFactoryLinkedServiceAzureBlobStorage_Override(d DataFactoryLinkedServiceAzureBlobStorage, scope constructs.Construct, id *string, config *DataFactoryLinkedServiceAzureBlobStorageConfig) {
 	_init_.Initialize()
 
@@ -737,6 +809,17 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage)SetConnectionString(
 	_jsii_.Set(
 		j,
 		"connectionString",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage)SetConnectionStringInsecure(val *string) {
+	if err := j.validateSetConnectionStringInsecureParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"connectionStringInsecure",
 		val,
 	)
 }
@@ -904,6 +987,17 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage)SetServicePrincipalK
 	_jsii_.Set(
 		j,
 		"servicePrincipalKey",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage)SetStorageKind(val *string) {
+	if err := j.validateSetStorageKindParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"storageKind",
 		val,
 	)
 }
@@ -1207,6 +1301,17 @@ func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) PutKeyVaultSasToken
 	)
 }
 
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) PutServicePrincipalLinkedKeyVaultKey(value *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey) {
+	if err := d.validatePutServicePrincipalLinkedKeyVaultKeyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putServicePrincipalLinkedKeyVaultKey",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) PutTimeouts(value *DataFactoryLinkedServiceAzureBlobStorageTimeouts) {
 	if err := d.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1238,6 +1343,14 @@ func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ResetConnectionStri
 	_jsii_.InvokeVoid(
 		d,
 		"resetConnectionString",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ResetConnectionStringInsecure() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetConnectionStringInsecure",
 		nil, // no parameters
 	)
 }
@@ -1318,6 +1431,22 @@ func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ResetServicePrincip
 	_jsii_.InvokeVoid(
 		d,
 		"resetServicePrincipalKey",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ResetServicePrincipalLinkedKeyVaultKey() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetServicePrincipalLinkedKeyVaultKey",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) ResetStorageKind() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetStorageKind",
 		nil, // no parameters
 	)
 }

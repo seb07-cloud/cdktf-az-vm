@@ -136,6 +136,10 @@ func (j *jsiiProxy_MachineLearningWorkspace) validateSetProvisionersParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_MachineLearningWorkspace) validateSetPublicAccessBehindVirtualNetworkEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_MachineLearningWorkspace) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
 	return nil
 }
@@ -153,6 +157,10 @@ func (j *jsiiProxy_MachineLearningWorkspace) validateSetStorageAccountIdParamete
 }
 
 func (j *jsiiProxy_MachineLearningWorkspace) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_MachineLearningWorkspace) validateSetV1LegacyModeEnabledParameters(val interface{}) error {
 	return nil
 }
 

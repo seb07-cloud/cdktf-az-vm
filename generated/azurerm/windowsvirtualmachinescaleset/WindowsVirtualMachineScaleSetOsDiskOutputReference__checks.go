@@ -206,6 +206,22 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateS
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetSecurityEncryptionTypeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

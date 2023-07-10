@@ -30,8 +30,8 @@ type WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference int
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
-	InternalValue() interface{}
-	SetInternalValue(val interface{})
+	InternalValue() *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest
+	SetInternalValue(val *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest)
 	Interval() *string
 	SetInterval(val *string)
 	IntervalInput() *string
@@ -149,8 +149,8 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutpu
 	return returns
 }
 
-func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) InternalValue() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) InternalValue() *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest {
+	var returns *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	_jsii_.Get(
 		j,
 		"internalValue",
@@ -240,29 +240,29 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutpu
 }
 
 
-func NewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
+func NewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
 	_init_.Initialize()
 
-	if err := validateNewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet); err != nil {
+	if err := validateNewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource, terraformAttribute); err != nil {
 		panic(err)
 	}
 	j := jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference{}
 
 	_jsii_.Create(
 		"azurerm.windowsWebApp.WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
+		[]interface{}{terraformResource, terraformAttribute},
 		&j,
 	)
 
 	return &j
 }
 
-func NewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference_Override(w WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) {
+func NewWindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference_Override(w WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"azurerm.windowsWebApp.WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
+		[]interface{}{terraformResource, terraformAttribute},
 		w,
 	)
 }
@@ -300,7 +300,7 @@ func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutpu
 	)
 }
 
-func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference)SetInternalValue(val interface{}) {
+func (j *jsiiProxy_WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference)SetInternalValue(val *WindowsWebAppSiteConfigAutoHealSettingTriggerSlowRequest) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
 	}

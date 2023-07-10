@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_link_service azurerm_private_link_service}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_link_service azurerm_private_link_service}.
 type PrivateLinkService interface {
 	cdktf.TerraformResource
 	Alias() *string
@@ -39,6 +39,9 @@ type PrivateLinkService interface {
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
 	SetForEach(val cdktf.ITerraformIterator)
+	Fqdns() *[]*string
+	SetFqdns(val *[]*string)
+	FqdnsInput() *[]*string
 	// Experimental.
 	Fqn() *string
 	// Experimental.
@@ -119,6 +122,7 @@ type PrivateLinkService interface {
 	PutTimeouts(value *PrivateLinkServiceTimeouts)
 	ResetAutoApprovalSubscriptionIds()
 	ResetEnableProxyProtocol()
+	ResetFqdns()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -246,6 +250,26 @@ func (j *jsiiProxy_PrivateLinkService) ForEach() cdktf.ITerraformIterator {
 	_jsii_.Get(
 		j,
 		"forEach",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrivateLinkService) Fqdns() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"fqdns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_PrivateLinkService) FqdnsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"fqdnsInput",
 		&returns,
 	)
 	return returns
@@ -532,7 +556,7 @@ func (j *jsiiProxy_PrivateLinkService) VisibilitySubscriptionIdsInput() *[]*stri
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_link_service azurerm_private_link_service} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_link_service azurerm_private_link_service} Resource.
 func NewPrivateLinkService(scope constructs.Construct, id *string, config *PrivateLinkServiceConfig) PrivateLinkService {
 	_init_.Initialize()
 
@@ -550,7 +574,7 @@ func NewPrivateLinkService(scope constructs.Construct, id *string, config *Priva
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/private_link_service azurerm_private_link_service} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/private_link_service azurerm_private_link_service} Resource.
 func NewPrivateLinkService_Override(p PrivateLinkService, scope constructs.Construct, id *string, config *PrivateLinkServiceConfig) {
 	_init_.Initialize()
 
@@ -617,6 +641,17 @@ func (j *jsiiProxy_PrivateLinkService)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
 		"forEach",
+		val,
+	)
+}
+
+func (j *jsiiProxy_PrivateLinkService)SetFqdns(val *[]*string) {
+	if err := j.validateSetFqdnsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"fqdns",
 		val,
 	)
 }
@@ -1028,6 +1063,14 @@ func (p *jsiiProxy_PrivateLinkService) ResetEnableProxyProtocol() {
 	_jsii_.InvokeVoid(
 		p,
 		"resetEnableProxyProtocol",
+		nil, // no parameters
+	)
+}
+
+func (p *jsiiProxy_PrivateLinkService) ResetFqdns() {
+	_jsii_.InvokeVoid(
+		p,
+		"resetFqdns",
 		nil, // no parameters
 	)
 }

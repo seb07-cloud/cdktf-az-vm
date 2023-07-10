@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/managed_disk azurerm_managed_disk}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/managed_disk azurerm_managed_disk}.
 type ManagedDisk interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -120,6 +120,12 @@ type ManagedDisk interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	SecureVmDiskEncryptionSetId() *string
+	SetSecureVmDiskEncryptionSetId(val *string)
+	SecureVmDiskEncryptionSetIdInput() *string
+	SecurityType() *string
+	SetSecurityType(val *string)
+	SecurityTypeInput() *string
 	SourceResourceId() *string
 	SetSourceResourceId(val *string)
 	SourceResourceIdInput() *string
@@ -149,6 +155,9 @@ type ManagedDisk interface {
 	TrustedLaunchEnabled() interface{}
 	SetTrustedLaunchEnabled(val interface{})
 	TrustedLaunchEnabledInput() interface{}
+	UploadSizeBytes() *float64
+	SetUploadSizeBytes(val *float64)
+	UploadSizeBytesInput() *float64
 	Zone() *string
 	SetZone(val *string)
 	ZoneInput() *string
@@ -201,6 +210,8 @@ type ManagedDisk interface {
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPublicNetworkAccessEnabled()
+	ResetSecureVmDiskEncryptionSetId()
+	ResetSecurityType()
 	ResetSourceResourceId()
 	ResetSourceUri()
 	ResetStorageAccountId()
@@ -208,6 +219,7 @@ type ManagedDisk interface {
 	ResetTier()
 	ResetTimeouts()
 	ResetTrustedLaunchEnabled()
+	ResetUploadSizeBytes()
 	ResetZone()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -814,6 +826,46 @@ func (j *jsiiProxy_ManagedDisk) ResourceGroupNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ManagedDisk) SecureVmDiskEncryptionSetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedDisk) SecureVmDiskEncryptionSetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedDisk) SecurityType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedDisk) SecurityTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityTypeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ManagedDisk) SourceResourceId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1004,6 +1056,26 @@ func (j *jsiiProxy_ManagedDisk) TrustedLaunchEnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ManagedDisk) UploadSizeBytes() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"uploadSizeBytes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ManagedDisk) UploadSizeBytesInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"uploadSizeBytesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ManagedDisk) Zone() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1025,7 +1097,7 @@ func (j *jsiiProxy_ManagedDisk) ZoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/managed_disk azurerm_managed_disk} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/managed_disk azurerm_managed_disk} Resource.
 func NewManagedDisk(scope constructs.Construct, id *string, config *ManagedDiskConfig) ManagedDisk {
 	_init_.Initialize()
 
@@ -1043,7 +1115,7 @@ func NewManagedDisk(scope constructs.Construct, id *string, config *ManagedDiskC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/managed_disk azurerm_managed_disk} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/managed_disk azurerm_managed_disk} Resource.
 func NewManagedDisk_Override(m ManagedDisk, scope constructs.Construct, id *string, config *ManagedDiskConfig) {
 	_init_.Initialize()
 
@@ -1364,6 +1436,28 @@ func (j *jsiiProxy_ManagedDisk)SetResourceGroupName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_ManagedDisk)SetSecureVmDiskEncryptionSetId(val *string) {
+	if err := j.validateSetSecureVmDiskEncryptionSetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"secureVmDiskEncryptionSetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ManagedDisk)SetSecurityType(val *string) {
+	if err := j.validateSetSecurityTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"securityType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ManagedDisk)SetSourceResourceId(val *string) {
 	if err := j.validateSetSourceResourceIdParameters(val); err != nil {
 		panic(err)
@@ -1437,6 +1531,17 @@ func (j *jsiiProxy_ManagedDisk)SetTrustedLaunchEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"trustedLaunchEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ManagedDisk)SetUploadSizeBytes(val *float64) {
+	if err := j.validateSetUploadSizeBytesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"uploadSizeBytes",
 		val,
 	)
 }
@@ -1900,6 +2005,22 @@ func (m *jsiiProxy_ManagedDisk) ResetPublicNetworkAccessEnabled() {
 	)
 }
 
+func (m *jsiiProxy_ManagedDisk) ResetSecureVmDiskEncryptionSetId() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSecureVmDiskEncryptionSetId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_ManagedDisk) ResetSecurityType() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSecurityType",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_ManagedDisk) ResetSourceResourceId() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1952,6 +2073,14 @@ func (m *jsiiProxy_ManagedDisk) ResetTrustedLaunchEnabled() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetTrustedLaunchEnabled",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_ManagedDisk) ResetUploadSizeBytes() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetUploadSizeBytes",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool}.
 type LbBackendAddressPool interface {
 	cdktf.TerraformResource
 	BackendIpConfigurations() *[]*string
@@ -40,6 +40,7 @@ type LbBackendAddressPool interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InboundNatRules() *[]*string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -74,6 +75,9 @@ type LbBackendAddressPool interface {
 	TimeoutsInput() interface{}
 	TunnelInterface() LbBackendAddressPoolTunnelInterfaceList
 	TunnelInterfaceInput() interface{}
+	VirtualNetworkId() *string
+	SetVirtualNetworkId(val *string)
+	VirtualNetworkIdInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -107,6 +111,7 @@ type LbBackendAddressPool interface {
 	ResetOverrideLogicalId()
 	ResetTimeouts()
 	ResetTunnelInterface()
+	ResetVirtualNetworkId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -227,6 +232,16 @@ func (j *jsiiProxy_LbBackendAddressPool) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbBackendAddressPool) InboundNatRules() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"inboundNatRules",
 		&returns,
 	)
 	return returns
@@ -412,8 +427,28 @@ func (j *jsiiProxy_LbBackendAddressPool) TunnelInterfaceInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_LbBackendAddressPool) VirtualNetworkId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkId",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool} Resource.
+func (j *jsiiProxy_LbBackendAddressPool) VirtualNetworkIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkIdInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool} Resource.
 func NewLbBackendAddressPool(scope constructs.Construct, id *string, config *LbBackendAddressPoolConfig) LbBackendAddressPool {
 	_init_.Initialize()
 
@@ -431,7 +466,7 @@ func NewLbBackendAddressPool(scope constructs.Construct, id *string, config *LbB
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_backend_address_pool azurerm_lb_backend_address_pool} Resource.
 func NewLbBackendAddressPool_Override(l LbBackendAddressPool, scope constructs.Construct, id *string, config *LbBackendAddressPoolConfig) {
 	_init_.Initialize()
 
@@ -539,6 +574,17 @@ func (j *jsiiProxy_LbBackendAddressPool)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbBackendAddressPool)SetVirtualNetworkId(val *string) {
+	if err := j.validateSetVirtualNetworkIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualNetworkId",
 		val,
 	)
 }
@@ -859,6 +905,14 @@ func (l *jsiiProxy_LbBackendAddressPool) ResetTunnelInterface() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetTunnelInterface",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbBackendAddressPool) ResetVirtualNetworkId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetVirtualNetworkId",
 		nil, // no parameters
 	)
 }

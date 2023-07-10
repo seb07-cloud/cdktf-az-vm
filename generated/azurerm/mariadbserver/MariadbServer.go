@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mariadb_server azurerm_mariadb_server}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mariadb_server azurerm_mariadb_server}.
 type MariadbServer interface {
 	cdktf.TerraformResource
 	AdministratorLogin() *string
@@ -98,6 +98,9 @@ type MariadbServer interface {
 	SslEnforcementEnabled() interface{}
 	SetSslEnforcementEnabled(val interface{})
 	SslEnforcementEnabledInput() interface{}
+	SslMinimalTlsVersionEnforced() *string
+	SetSslMinimalTlsVersionEnforced(val *string)
+	SslMinimalTlsVersionEnforcedInput() *string
 	StorageMb() *float64
 	SetStorageMb(val *float64)
 	StorageMbInput() *float64
@@ -154,6 +157,7 @@ type MariadbServer interface {
 	ResetOverrideLogicalId()
 	ResetPublicNetworkAccessEnabled()
 	ResetRestorePointInTime()
+	ResetSslMinimalTlsVersionEnforced()
 	ResetStorageMb()
 	ResetTags()
 	ResetTimeouts()
@@ -612,6 +616,26 @@ func (j *jsiiProxy_MariadbServer) SslEnforcementEnabledInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_MariadbServer) SslMinimalTlsVersionEnforced() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sslMinimalTlsVersionEnforced",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MariadbServer) SslMinimalTlsVersionEnforcedInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"sslMinimalTlsVersionEnforcedInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MariadbServer) StorageMb() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -723,7 +747,7 @@ func (j *jsiiProxy_MariadbServer) VersionInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mariadb_server azurerm_mariadb_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mariadb_server azurerm_mariadb_server} Resource.
 func NewMariadbServer(scope constructs.Construct, id *string, config *MariadbServerConfig) MariadbServer {
 	_init_.Initialize()
 
@@ -741,7 +765,7 @@ func NewMariadbServer(scope constructs.Construct, id *string, config *MariadbSer
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mariadb_server azurerm_mariadb_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mariadb_server azurerm_mariadb_server} Resource.
 func NewMariadbServer_Override(m MariadbServer, scope constructs.Construct, id *string, config *MariadbServerConfig) {
 	_init_.Initialize()
 
@@ -981,6 +1005,17 @@ func (j *jsiiProxy_MariadbServer)SetSslEnforcementEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"sslEnforcementEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MariadbServer)SetSslMinimalTlsVersionEnforced(val *string) {
+	if err := j.validateSetSslMinimalTlsVersionEnforcedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sslMinimalTlsVersionEnforced",
 		val,
 	)
 }
@@ -1379,6 +1414,14 @@ func (m *jsiiProxy_MariadbServer) ResetRestorePointInTime() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetRestorePointInTime",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MariadbServer) ResetSslMinimalTlsVersionEnforced() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetSslMinimalTlsVersionEnforced",
 		nil, // no parameters
 	)
 }

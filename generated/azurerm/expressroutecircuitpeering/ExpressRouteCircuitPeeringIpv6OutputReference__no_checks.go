@@ -60,6 +60,10 @@ func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) validateSetCom
 	return nil
 }
 
+func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) validateSetEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_ExpressRouteCircuitPeeringIpv6OutputReference) validateSetInternalValueParameters(val *ExpressRouteCircuitPeeringIpv6) error {
 	return nil
 }

@@ -88,6 +88,10 @@ func (j *jsiiProxy_KustoIothubDataConnection) validateSetDatabaseNameParameters(
 	return nil
 }
 
+func (j *jsiiProxy_KustoIothubDataConnection) validateSetDatabaseRoutingTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoIothubDataConnection) validateSetDataFormatParameters(val *string) error {
 	return nil
 }

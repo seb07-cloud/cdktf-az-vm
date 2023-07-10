@@ -72,6 +72,14 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetAvailabilityZonesEnab
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetBackupStorageCustomerKeyUriParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetBase64EncodedYamlFragmentParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetCassandraClusterIdParameters(val *string) error {
 	return nil
 }
@@ -92,6 +100,10 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetDiskCountParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetDiskSkuParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetIdParameters(val *string) error {
 	return nil
 }
@@ -101,6 +113,10 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetLifecycleParameters(v
 }
 
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetLocationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetManagedDiskCustomerKeyUriParameters(val *string) error {
 	return nil
 }
 

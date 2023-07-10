@@ -60,6 +60,10 @@ func (a *jsiiProxy_ApiManagement) validatePutCertificateParameters(value interfa
 	return nil
 }
 
+func (a *jsiiProxy_ApiManagement) validatePutDelegationParameters(value *ApiManagementDelegation) error {
+	return nil
+}
+
 func (a *jsiiProxy_ApiManagement) validatePutHostnameConfigurationParameters(value *ApiManagementHostnameConfiguration) error {
 	return nil
 }

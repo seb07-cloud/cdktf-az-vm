@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server}.
 type MysqlFlexibleServer interface {
 	cdktf.TerraformResource
 	AdministratorLogin() *string
@@ -36,6 +36,8 @@ type MysqlFlexibleServer interface {
 	CreateMode() *string
 	SetCreateMode(val *string)
 	CreateModeInput() *string
+	CustomerManagedKey() MysqlFlexibleServerCustomerManagedKeyOutputReference
+	CustomerManagedKeyInput() *MysqlFlexibleServerCustomerManagedKey
 	DelegatedSubnetId() *string
 	SetDelegatedSubnetId(val *string)
 	DelegatedSubnetIdInput() *string
@@ -59,6 +61,8 @@ type MysqlFlexibleServer interface {
 	HighAvailabilityInput() *MysqlFlexibleServerHighAvailability
 	Id() *string
 	SetId(val *string)
+	Identity() MysqlFlexibleServerIdentityOutputReference
+	IdentityInput() *MysqlFlexibleServerIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -148,7 +152,9 @@ type MysqlFlexibleServer interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutCustomerManagedKey(value *MysqlFlexibleServerCustomerManagedKey)
 	PutHighAvailability(value *MysqlFlexibleServerHighAvailability)
+	PutIdentity(value *MysqlFlexibleServerIdentity)
 	PutMaintenanceWindow(value *MysqlFlexibleServerMaintenanceWindow)
 	PutStorage(value *MysqlFlexibleServerStorage)
 	PutTimeouts(value *MysqlFlexibleServerTimeouts)
@@ -156,10 +162,12 @@ type MysqlFlexibleServer interface {
 	ResetAdministratorPassword()
 	ResetBackupRetentionDays()
 	ResetCreateMode()
+	ResetCustomerManagedKey()
 	ResetDelegatedSubnetId()
 	ResetGeoRedundantBackupEnabled()
 	ResetHighAvailability()
 	ResetId()
+	ResetIdentity()
 	ResetMaintenanceWindow()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -309,6 +317,26 @@ func (j *jsiiProxy_MysqlFlexibleServer) CreateModeInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_MysqlFlexibleServer) CustomerManagedKey() MysqlFlexibleServerCustomerManagedKeyOutputReference {
+	var returns MysqlFlexibleServerCustomerManagedKeyOutputReference
+	_jsii_.Get(
+		j,
+		"customerManagedKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MysqlFlexibleServer) CustomerManagedKeyInput() *MysqlFlexibleServerCustomerManagedKey {
+	var returns *MysqlFlexibleServerCustomerManagedKey
+	_jsii_.Get(
+		j,
+		"customerManagedKeyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MysqlFlexibleServer) DelegatedSubnetId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -424,6 +452,26 @@ func (j *jsiiProxy_MysqlFlexibleServer) Id() *string {
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MysqlFlexibleServer) Identity() MysqlFlexibleServerIdentityOutputReference {
+	var returns MysqlFlexibleServerIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MysqlFlexibleServer) IdentityInput() *MysqlFlexibleServerIdentity {
+	var returns *MysqlFlexibleServerIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -820,7 +868,7 @@ func (j *jsiiProxy_MysqlFlexibleServer) ZoneInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server} Resource.
 func NewMysqlFlexibleServer(scope constructs.Construct, id *string, config *MysqlFlexibleServerConfig) MysqlFlexibleServer {
 	_init_.Initialize()
 
@@ -838,7 +886,7 @@ func NewMysqlFlexibleServer(scope constructs.Construct, id *string, config *Mysq
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mysql_flexible_server azurerm_mysql_flexible_server} Resource.
 func NewMysqlFlexibleServer_Override(m MysqlFlexibleServer, scope constructs.Construct, id *string, config *MysqlFlexibleServerConfig) {
 	_init_.Initialize()
 
@@ -1381,6 +1429,17 @@ func (m *jsiiProxy_MysqlFlexibleServer) OverrideLogicalId(newLogicalId *string) 
 	)
 }
 
+func (m *jsiiProxy_MysqlFlexibleServer) PutCustomerManagedKey(value *MysqlFlexibleServerCustomerManagedKey) {
+	if err := m.validatePutCustomerManagedKeyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putCustomerManagedKey",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MysqlFlexibleServer) PutHighAvailability(value *MysqlFlexibleServerHighAvailability) {
 	if err := m.validatePutHighAvailabilityParameters(value); err != nil {
 		panic(err)
@@ -1388,6 +1447,17 @@ func (m *jsiiProxy_MysqlFlexibleServer) PutHighAvailability(value *MysqlFlexible
 	_jsii_.InvokeVoid(
 		m,
 		"putHighAvailability",
+		[]interface{}{value},
+	)
+}
+
+func (m *jsiiProxy_MysqlFlexibleServer) PutIdentity(value *MysqlFlexibleServerIdentity) {
+	if err := m.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putIdentity",
 		[]interface{}{value},
 	)
 }
@@ -1457,6 +1527,14 @@ func (m *jsiiProxy_MysqlFlexibleServer) ResetCreateMode() {
 	)
 }
 
+func (m *jsiiProxy_MysqlFlexibleServer) ResetCustomerManagedKey() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetCustomerManagedKey",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MysqlFlexibleServer) ResetDelegatedSubnetId() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1485,6 +1563,14 @@ func (m *jsiiProxy_MysqlFlexibleServer) ResetId() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MysqlFlexibleServer) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetIdentity",
 		nil, // no parameters
 	)
 }

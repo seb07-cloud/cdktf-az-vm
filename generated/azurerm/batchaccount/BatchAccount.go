@@ -9,10 +9,13 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_account azurerm_batch_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_account azurerm_batch_account}.
 type BatchAccount interface {
 	cdktf.TerraformResource
 	AccountEndpoint() *string
+	AllowedAuthenticationModes() *[]*string
+	SetAllowedAuthenticationModes(val *[]*string)
+	AllowedAuthenticationModesInput() *[]*string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -79,9 +82,15 @@ type BatchAccount interface {
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
 	SecondaryAccessKey() *string
+	StorageAccountAuthenticationMode() *string
+	SetStorageAccountAuthenticationMode(val *string)
+	StorageAccountAuthenticationModeInput() *string
 	StorageAccountId() *string
 	SetStorageAccountId(val *string)
 	StorageAccountIdInput() *string
+	StorageAccountNodeIdentity() *string
+	SetStorageAccountNodeIdentity(val *string)
+	StorageAccountNodeIdentityInput() *string
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -122,6 +131,7 @@ type BatchAccount interface {
 	PutIdentity(value *BatchAccountIdentity)
 	PutKeyVaultReference(value *BatchAccountKeyVaultReference)
 	PutTimeouts(value *BatchAccountTimeouts)
+	ResetAllowedAuthenticationModes()
 	ResetEncryption()
 	ResetId()
 	ResetIdentity()
@@ -131,7 +141,9 @@ type BatchAccount interface {
 	ResetOverrideLogicalId()
 	ResetPoolAllocationMode()
 	ResetPublicNetworkAccessEnabled()
+	ResetStorageAccountAuthenticationMode()
 	ResetStorageAccountId()
+	ResetStorageAccountNodeIdentity()
 	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
@@ -154,6 +166,26 @@ func (j *jsiiProxy_BatchAccount) AccountEndpoint() *string {
 	_jsii_.Get(
 		j,
 		"accountEndpoint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchAccount) AllowedAuthenticationModes() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedAuthenticationModes",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchAccount) AllowedAuthenticationModesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"allowedAuthenticationModesInput",
 		&returns,
 	)
 	return returns
@@ -489,6 +521,26 @@ func (j *jsiiProxy_BatchAccount) SecondaryAccessKey() *string {
 	return returns
 }
 
+func (j *jsiiProxy_BatchAccount) StorageAccountAuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountAuthenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchAccount) StorageAccountAuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountAuthenticationModeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_BatchAccount) StorageAccountId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -504,6 +556,26 @@ func (j *jsiiProxy_BatchAccount) StorageAccountIdInput() *string {
 	_jsii_.Get(
 		j,
 		"storageAccountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchAccount) StorageAccountNodeIdentity() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountNodeIdentity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchAccount) StorageAccountNodeIdentityInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"storageAccountNodeIdentityInput",
 		&returns,
 	)
 	return returns
@@ -580,7 +652,7 @@ func (j *jsiiProxy_BatchAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_account azurerm_batch_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_account azurerm_batch_account} Resource.
 func NewBatchAccount(scope constructs.Construct, id *string, config *BatchAccountConfig) BatchAccount {
 	_init_.Initialize()
 
@@ -598,7 +670,7 @@ func NewBatchAccount(scope constructs.Construct, id *string, config *BatchAccoun
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/batch_account azurerm_batch_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/batch_account azurerm_batch_account} Resource.
 func NewBatchAccount_Override(b BatchAccount, scope constructs.Construct, id *string, config *BatchAccountConfig) {
 	_init_.Initialize()
 
@@ -606,6 +678,17 @@ func NewBatchAccount_Override(b BatchAccount, scope constructs.Construct, id *st
 		"azurerm.batchAccount.BatchAccount",
 		[]interface{}{scope, id, config},
 		b,
+	)
+}
+
+func (j *jsiiProxy_BatchAccount)SetAllowedAuthenticationModes(val *[]*string) {
+	if err := j.validateSetAllowedAuthenticationModesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowedAuthenticationModes",
+		val,
 	)
 }
 
@@ -743,6 +826,17 @@ func (j *jsiiProxy_BatchAccount)SetResourceGroupName(val *string) {
 	)
 }
 
+func (j *jsiiProxy_BatchAccount)SetStorageAccountAuthenticationMode(val *string) {
+	if err := j.validateSetStorageAccountAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"storageAccountAuthenticationMode",
+		val,
+	)
+}
+
 func (j *jsiiProxy_BatchAccount)SetStorageAccountId(val *string) {
 	if err := j.validateSetStorageAccountIdParameters(val); err != nil {
 		panic(err)
@@ -750,6 +844,17 @@ func (j *jsiiProxy_BatchAccount)SetStorageAccountId(val *string) {
 	_jsii_.Set(
 		j,
 		"storageAccountId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchAccount)SetStorageAccountNodeIdentity(val *string) {
+	if err := j.validateSetStorageAccountNodeIdentityParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"storageAccountNodeIdentity",
 		val,
 	)
 }
@@ -1075,6 +1180,14 @@ func (b *jsiiProxy_BatchAccount) PutTimeouts(value *BatchAccountTimeouts) {
 	)
 }
 
+func (b *jsiiProxy_BatchAccount) ResetAllowedAuthenticationModes() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetAllowedAuthenticationModes",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchAccount) ResetEncryption() {
 	_jsii_.InvokeVoid(
 		b,
@@ -1131,10 +1244,26 @@ func (b *jsiiProxy_BatchAccount) ResetPublicNetworkAccessEnabled() {
 	)
 }
 
+func (b *jsiiProxy_BatchAccount) ResetStorageAccountAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetStorageAccountAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (b *jsiiProxy_BatchAccount) ResetStorageAccountId() {
 	_jsii_.InvokeVoid(
 		b,
 		"resetStorageAccountId",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchAccount) ResetStorageAccountNodeIdentity() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetStorageAccountNodeIdentity",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_site azurerm_vpn_site}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_site azurerm_vpn_site}.
 type VpnSite interface {
 	cdktf.TerraformResource
 	AddressCidrs() *[]*string
@@ -62,6 +62,8 @@ type VpnSite interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	O365Policy() VpnSiteO365PolicyOutputReference
+	O365PolicyInput() *VpnSiteO365Policy
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -115,12 +117,14 @@ type VpnSite interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutLink(value interface{})
+	PutO365Policy(value *VpnSiteO365Policy)
 	PutTimeouts(value *VpnSiteTimeouts)
 	ResetAddressCidrs()
 	ResetDeviceModel()
 	ResetDeviceVendor()
 	ResetId()
 	ResetLink()
+	ResetO365Policy()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -381,6 +385,26 @@ func (j *jsiiProxy_VpnSite) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_VpnSite) O365Policy() VpnSiteO365PolicyOutputReference {
+	var returns VpnSiteO365PolicyOutputReference
+	_jsii_.Get(
+		j,
+		"o365Policy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VpnSite) O365PolicyInput() *VpnSiteO365Policy {
+	var returns *VpnSiteO365Policy
+	_jsii_.Get(
+		j,
+		"o365PolicyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VpnSite) Provider() cdktf.TerraformProvider {
 	var returns cdktf.TerraformProvider
 	_jsii_.Get(
@@ -522,7 +546,7 @@ func (j *jsiiProxy_VpnSite) VirtualWanIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_site azurerm_vpn_site} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_site azurerm_vpn_site} Resource.
 func NewVpnSite(scope constructs.Construct, id *string, config *VpnSiteConfig) VpnSite {
 	_init_.Initialize()
 
@@ -540,7 +564,7 @@ func NewVpnSite(scope constructs.Construct, id *string, config *VpnSiteConfig) V
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/vpn_site azurerm_vpn_site} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/vpn_site azurerm_vpn_site} Resource.
 func NewVpnSite_Override(v VpnSite, scope constructs.Construct, id *string, config *VpnSiteConfig) {
 	_init_.Initialize()
 
@@ -995,6 +1019,17 @@ func (v *jsiiProxy_VpnSite) PutLink(value interface{}) {
 	)
 }
 
+func (v *jsiiProxy_VpnSite) PutO365Policy(value *VpnSiteO365Policy) {
+	if err := v.validatePutO365PolicyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"putO365Policy",
+		[]interface{}{value},
+	)
+}
+
 func (v *jsiiProxy_VpnSite) PutTimeouts(value *VpnSiteTimeouts) {
 	if err := v.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1042,6 +1077,14 @@ func (v *jsiiProxy_VpnSite) ResetLink() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetLink",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VpnSite) ResetO365Policy() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetO365Policy",
 		nil, // no parameters
 	)
 }

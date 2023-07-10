@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule}.
 type DataFactoryTriggerSchedule interface {
 	cdktf.TerraformResource
 	Activated() interface{}
@@ -69,6 +69,8 @@ type DataFactoryTriggerSchedule interface {
 	NameInput() *string
 	// The tree node.
 	Node() constructs.Node
+	Pipeline() DataFactoryTriggerSchedulePipelineList
+	PipelineInput() interface{}
 	PipelineName() *string
 	SetPipelineName(val *string)
 	PipelineNameInput() *string
@@ -98,6 +100,9 @@ type DataFactoryTriggerSchedule interface {
 	TerraformResourceType() *string
 	Timeouts() DataFactoryTriggerScheduleTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	TimeZone() *string
+	SetTimeZone(val *string)
+	TimeZoneInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -123,6 +128,7 @@ type DataFactoryTriggerSchedule interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutPipeline(value interface{})
 	PutSchedule(value *DataFactoryTriggerScheduleSchedule)
 	PutTimeouts(value *DataFactoryTriggerScheduleTimeouts)
 	ResetActivated()
@@ -135,10 +141,13 @@ type DataFactoryTriggerSchedule interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPipeline()
+	ResetPipelineName()
 	ResetPipelineParameters()
 	ResetSchedule()
 	ResetStartTime()
 	ResetTimeouts()
+	ResetTimeZone()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -434,6 +443,26 @@ func (j *jsiiProxy_DataFactoryTriggerSchedule) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryTriggerSchedule) Pipeline() DataFactoryTriggerSchedulePipelineList {
+	var returns DataFactoryTriggerSchedulePipelineList
+	_jsii_.Get(
+		j,
+		"pipeline",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryTriggerSchedule) PipelineInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"pipelineInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryTriggerSchedule) PipelineName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -594,8 +623,28 @@ func (j *jsiiProxy_DataFactoryTriggerSchedule) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryTriggerSchedule) TimeZone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"timeZone",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule} Resource.
+func (j *jsiiProxy_DataFactoryTriggerSchedule) TimeZoneInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"timeZoneInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule} Resource.
 func NewDataFactoryTriggerSchedule(scope constructs.Construct, id *string, config *DataFactoryTriggerScheduleConfig) DataFactoryTriggerSchedule {
 	_init_.Initialize()
 
@@ -613,7 +662,7 @@ func NewDataFactoryTriggerSchedule(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_trigger_schedule azurerm_data_factory_trigger_schedule} Resource.
 func NewDataFactoryTriggerSchedule_Override(d DataFactoryTriggerSchedule, scope constructs.Construct, id *string, config *DataFactoryTriggerScheduleConfig) {
 	_init_.Initialize()
 
@@ -820,6 +869,17 @@ func (j *jsiiProxy_DataFactoryTriggerSchedule)SetStartTime(val *string) {
 	_jsii_.Set(
 		j,
 		"startTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryTriggerSchedule)SetTimeZone(val *string) {
+	if err := j.validateSetTimeZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"timeZone",
 		val,
 	)
 }
@@ -1090,6 +1150,17 @@ func (d *jsiiProxy_DataFactoryTriggerSchedule) OverrideLogicalId(newLogicalId *s
 	)
 }
 
+func (d *jsiiProxy_DataFactoryTriggerSchedule) PutPipeline(value interface{}) {
+	if err := d.validatePutPipelineParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putPipeline",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DataFactoryTriggerSchedule) PutSchedule(value *DataFactoryTriggerScheduleSchedule) {
 	if err := d.validatePutScheduleParameters(value); err != nil {
 		panic(err)
@@ -1176,6 +1247,22 @@ func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetOverrideLogicalId() {
 	)
 }
 
+func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetPipeline() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetPipeline",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetPipelineName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetPipelineName",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetPipelineParameters() {
 	_jsii_.InvokeVoid(
 		d,
@@ -1204,6 +1291,14 @@ func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryTriggerSchedule) ResetTimeZone() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTimeZone",
 		nil, // no parameters
 	)
 }

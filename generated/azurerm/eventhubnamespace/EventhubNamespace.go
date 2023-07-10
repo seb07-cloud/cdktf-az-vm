@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/eventhub_namespace azurerm_eventhub_namespace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/eventhub_namespace azurerm_eventhub_namespace}.
 type EventhubNamespace interface {
 	cdktf.TerraformResource
 	AutoInflateEnabled() interface{}
@@ -60,12 +60,18 @@ type EventhubNamespace interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthenticationEnabled() interface{}
+	SetLocalAuthenticationEnabled(val interface{})
+	LocalAuthenticationEnabledInput() interface{}
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
 	MaximumThroughputUnits() *float64
 	SetMaximumThroughputUnits(val *float64)
 	MaximumThroughputUnitsInput() *float64
+	MinimumTlsVersion() *string
+	SetMinimumTlsVersion(val *string)
+	MinimumTlsVersionInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -81,6 +87,9 @@ type EventhubNamespace interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -136,11 +145,14 @@ type EventhubNamespace interface {
 	ResetDedicatedClusterId()
 	ResetId()
 	ResetIdentity()
+	ResetLocalAuthenticationEnabled()
 	ResetMaximumThroughputUnits()
+	ResetMinimumTlsVersion()
 	ResetNetworkRulesets()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetTags()
 	ResetTimeouts()
 	ResetZoneRedundant()
@@ -409,6 +421,26 @@ func (j *jsiiProxy_EventhubNamespace) Lifecycle() *cdktf.TerraformResourceLifecy
 	return returns
 }
 
+func (j *jsiiProxy_EventhubNamespace) LocalAuthenticationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespace) LocalAuthenticationEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthenticationEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_EventhubNamespace) Location() *string {
 	var returns *string
 	_jsii_.Get(
@@ -444,6 +476,26 @@ func (j *jsiiProxy_EventhubNamespace) MaximumThroughputUnitsInput() *float64 {
 	_jsii_.Get(
 		j,
 		"maximumThroughputUnitsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespace) MinimumTlsVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"minimumTlsVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespace) MinimumTlsVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"minimumTlsVersionInput",
 		&returns,
 	)
 	return returns
@@ -514,6 +566,26 @@ func (j *jsiiProxy_EventhubNamespace) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespace) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_EventhubNamespace) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
 		&returns,
 	)
 	return returns
@@ -660,7 +732,7 @@ func (j *jsiiProxy_EventhubNamespace) ZoneRedundantInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/eventhub_namespace azurerm_eventhub_namespace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/eventhub_namespace azurerm_eventhub_namespace} Resource.
 func NewEventhubNamespace(scope constructs.Construct, id *string, config *EventhubNamespaceConfig) EventhubNamespace {
 	_init_.Initialize()
 
@@ -678,7 +750,7 @@ func NewEventhubNamespace(scope constructs.Construct, id *string, config *Eventh
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/eventhub_namespace azurerm_eventhub_namespace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/eventhub_namespace azurerm_eventhub_namespace} Resource.
 func NewEventhubNamespace_Override(e EventhubNamespace, scope constructs.Construct, id *string, config *EventhubNamespaceConfig) {
 	_init_.Initialize()
 
@@ -782,6 +854,17 @@ func (j *jsiiProxy_EventhubNamespace)SetLifecycle(val *cdktf.TerraformResourceLi
 	)
 }
 
+func (j *jsiiProxy_EventhubNamespace)SetLocalAuthenticationEnabled(val interface{}) {
+	if err := j.validateSetLocalAuthenticationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"localAuthenticationEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_EventhubNamespace)SetLocation(val *string) {
 	if err := j.validateSetLocationParameters(val); err != nil {
 		panic(err)
@@ -800,6 +883,17 @@ func (j *jsiiProxy_EventhubNamespace)SetMaximumThroughputUnits(val *float64) {
 	_jsii_.Set(
 		j,
 		"maximumThroughputUnits",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EventhubNamespace)SetMinimumTlsVersion(val *string) {
+	if err := j.validateSetMinimumTlsVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minimumTlsVersion",
 		val,
 	)
 }
@@ -830,6 +924,17 @@ func (j *jsiiProxy_EventhubNamespace)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_EventhubNamespace)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -1217,10 +1322,26 @@ func (e *jsiiProxy_EventhubNamespace) ResetIdentity() {
 	)
 }
 
+func (e *jsiiProxy_EventhubNamespace) ResetLocalAuthenticationEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetLocalAuthenticationEnabled",
+		nil, // no parameters
+	)
+}
+
 func (e *jsiiProxy_EventhubNamespace) ResetMaximumThroughputUnits() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetMaximumThroughputUnits",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EventhubNamespace) ResetMinimumTlsVersion() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetMinimumTlsVersion",
 		nil, // no parameters
 	)
 }
@@ -1237,6 +1358,14 @@ func (e *jsiiProxy_EventhubNamespace) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		e,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (e *jsiiProxy_EventhubNamespace) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

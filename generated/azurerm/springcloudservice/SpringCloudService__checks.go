@@ -122,6 +122,48 @@ func (s *jsiiProxy_SpringCloudService) validatePutConfigServerGitSettingParamete
 	return nil
 }
 
+func (s *jsiiProxy_SpringCloudService) validatePutContainerRegistryParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*SpringCloudServiceContainerRegistry:
+		value := value.(*[]*SpringCloudServiceContainerRegistry)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*SpringCloudServiceContainerRegistry:
+		value_ := value.([]*SpringCloudServiceContainerRegistry)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*SpringCloudServiceContainerRegistry; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
+func (s *jsiiProxy_SpringCloudService) validatePutDefaultBuildServiceParameters(value *SpringCloudServiceDefaultBuildService) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (s *jsiiProxy_SpringCloudService) validatePutNetworkParameters(value *SpringCloudServiceNetwork) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -174,6 +216,14 @@ func validateSpringCloudService_IsTerraformElementParameters(x interface{}) erro
 func validateSpringCloudService_IsTerraformResourceParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_SpringCloudService) validateSetBuildAgentPoolSizeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -293,6 +343,26 @@ func (j *jsiiProxy_SpringCloudService) validateSetLocationParameters(val *string
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudService) validateSetLogStreamPublicEndpointEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudService) validateSetNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -355,6 +425,26 @@ func (j *jsiiProxy_SpringCloudService) validateSetResourceGroupNameParameters(va
 	return nil
 }
 
+func (j *jsiiProxy_SpringCloudService) validateSetServiceRegistryEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SpringCloudService) validateSetSkuNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -366,6 +456,26 @@ func (j *jsiiProxy_SpringCloudService) validateSetSkuNameParameters(val *string)
 func (j *jsiiProxy_SpringCloudService) validateSetTagsParameters(val *map[string]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_SpringCloudService) validateSetZoneRedundantParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil

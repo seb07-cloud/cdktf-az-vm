@@ -60,6 +60,10 @@ func (j *jsiiProxy_BatchPoolFixedScaleOutputReference) validateSetInternalValueP
 	return nil
 }
 
+func (j *jsiiProxy_BatchPoolFixedScaleOutputReference) validateSetNodeDeallocationMethodParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_BatchPoolFixedScaleOutputReference) validateSetResizeTimeoutParameters(val *string) error {
 	return nil
 }

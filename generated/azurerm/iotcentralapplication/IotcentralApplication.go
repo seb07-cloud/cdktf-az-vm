@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iotcentral_application azurerm_iotcentral_application}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iotcentral_application azurerm_iotcentral_application}.
 type IotcentralApplication interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -41,6 +41,8 @@ type IotcentralApplication interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() IotcentralApplicationIdentityOutputReference
+	IdentityInput() *IotcentralApplicationIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -62,6 +64,9 @@ type IotcentralApplication interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -112,12 +117,15 @@ type IotcentralApplication interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIdentity(value *IotcentralApplicationIdentity)
 	PutTimeouts(value *IotcentralApplicationTimeouts)
 	ResetDisplayName()
 	ResetId()
+	ResetIdentity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetSku()
 	ResetTags()
 	ResetTemplate()
@@ -247,6 +255,26 @@ func (j *jsiiProxy_IotcentralApplication) Id() *string {
 	return returns
 }
 
+func (j *jsiiProxy_IotcentralApplication) Identity() IotcentralApplicationIdentityOutputReference {
+	var returns IotcentralApplicationIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotcentralApplication) IdentityInput() *IotcentralApplicationIdentity {
+	var returns *IotcentralApplicationIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_IotcentralApplication) IdInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -332,6 +360,26 @@ func (j *jsiiProxy_IotcentralApplication) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotcentralApplication) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IotcentralApplication) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
 		&returns,
 	)
 	return returns
@@ -498,7 +546,7 @@ func (j *jsiiProxy_IotcentralApplication) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iotcentral_application azurerm_iotcentral_application} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iotcentral_application azurerm_iotcentral_application} Resource.
 func NewIotcentralApplication(scope constructs.Construct, id *string, config *IotcentralApplicationConfig) IotcentralApplication {
 	_init_.Initialize()
 
@@ -516,7 +564,7 @@ func NewIotcentralApplication(scope constructs.Construct, id *string, config *Io
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/iotcentral_application azurerm_iotcentral_application} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/iotcentral_application azurerm_iotcentral_application} Resource.
 func NewIotcentralApplication_Override(i IotcentralApplication, scope constructs.Construct, id *string, config *IotcentralApplicationConfig) {
 	_init_.Initialize()
 
@@ -635,6 +683,17 @@ func (j *jsiiProxy_IotcentralApplication)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IotcentralApplication)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -960,6 +1019,17 @@ func (i *jsiiProxy_IotcentralApplication) OverrideLogicalId(newLogicalId *string
 	)
 }
 
+func (i *jsiiProxy_IotcentralApplication) PutIdentity(value *IotcentralApplicationIdentity) {
+	if err := i.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		i,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (i *jsiiProxy_IotcentralApplication) PutTimeouts(value *IotcentralApplicationTimeouts) {
 	if err := i.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -987,10 +1057,26 @@ func (i *jsiiProxy_IotcentralApplication) ResetId() {
 	)
 }
 
+func (i *jsiiProxy_IotcentralApplication) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
 func (i *jsiiProxy_IotcentralApplication) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		i,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (i *jsiiProxy_IotcentralApplication) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		i,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

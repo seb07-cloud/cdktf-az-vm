@@ -10,6 +10,9 @@ import (
 
 type MssqlDatabaseShortTermRetentionPolicyOutputReference interface {
 	cdktf.ComplexObject
+	BackupIntervalInHours() *float64
+	SetBackupIntervalInHours(val *float64)
+	BackupIntervalInHoursInput() *float64
 	// the index of the complex object in a list.
 	// Experimental.
 	ComplexObjectIndex() interface{}
@@ -64,6 +67,7 @@ type MssqlDatabaseShortTermRetentionPolicyOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetBackupIntervalInHours()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -77,6 +81,26 @@ type MssqlDatabaseShortTermRetentionPolicyOutputReference interface {
 // The jsii proxy struct for MssqlDatabaseShortTermRetentionPolicyOutputReference
 type jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) BackupIntervalInHours() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"backupIntervalInHours",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) BackupIntervalInHoursInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"backupIntervalInHoursInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) ComplexObjectIndex() interface{} {
@@ -194,6 +218,17 @@ func NewMssqlDatabaseShortTermRetentionPolicyOutputReference_Override(m MssqlDat
 		"azurerm.mssqlDatabase.MssqlDatabaseShortTermRetentionPolicyOutputReference",
 		[]interface{}{terraformResource, terraformAttribute},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference)SetBackupIntervalInHours(val *float64) {
+	if err := j.validateSetBackupIntervalInHoursParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backupIntervalInHours",
+		val,
 	)
 }
 
@@ -447,6 +482,14 @@ func (m *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) Interpo
 	)
 
 	return returns
+}
+
+func (m *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) ResetBackupIntervalInHours() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetBackupIntervalInHours",
+		nil, // no parameters
+	)
 }
 
 func (m *jsiiProxy_MssqlDatabaseShortTermRetentionPolicyOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

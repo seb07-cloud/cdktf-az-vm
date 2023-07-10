@@ -31,6 +31,9 @@ type OrchestratedVirtualMachineScaleSetExtensionOutputReference interface {
 	ExtensionsToProvisionAfterVmCreation() *[]*string
 	SetExtensionsToProvisionAfterVmCreation(val *[]*string)
 	ExtensionsToProvisionAfterVmCreationInput() *[]*string
+	FailureSuppressionEnabled() interface{}
+	SetFailureSuppressionEnabled(val interface{})
+	FailureSuppressionEnabledInput() interface{}
 	ForceExtensionExecutionOnChange() *string
 	SetForceExtensionExecutionOnChange(val *string)
 	ForceExtensionExecutionOnChangeInput() *string
@@ -43,6 +46,8 @@ type OrchestratedVirtualMachineScaleSetExtensionOutputReference interface {
 	NameInput() *string
 	ProtectedSettings() *string
 	SetProtectedSettings(val *string)
+	ProtectedSettingsFromKeyVault() OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultOutputReference
+	ProtectedSettingsFromKeyVaultInput() *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault
 	ProtectedSettingsInput() *string
 	Publisher() *string
 	SetPublisher(val *string)
@@ -88,10 +93,13 @@ type OrchestratedVirtualMachineScaleSetExtensionOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutProtectedSettingsFromKeyVault(value *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault)
 	ResetAutoUpgradeMinorVersionEnabled()
 	ResetExtensionsToProvisionAfterVmCreation()
+	ResetFailureSuppressionEnabled()
 	ResetForceExtensionExecutionOnChange()
 	ResetProtectedSettings()
+	ResetProtectedSettingsFromKeyVault()
 	ResetSettings()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -178,6 +186,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) E
 	return returns
 }
 
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) FailureSuppressionEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"failureSuppressionEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) FailureSuppressionEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"failureSuppressionEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ForceExtensionExecutionOnChange() *string {
 	var returns *string
 	_jsii_.Get(
@@ -243,6 +271,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) P
 	_jsii_.Get(
 		j,
 		"protectedSettings",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ProtectedSettingsFromKeyVault() OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultOutputReference {
+	var returns OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVaultOutputReference
+	_jsii_.Get(
+		j,
+		"protectedSettingsFromKeyVault",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ProtectedSettingsFromKeyVaultInput() *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault {
+	var returns *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault
+	_jsii_.Get(
+		j,
+		"protectedSettingsFromKeyVaultInput",
 		&returns,
 	)
 	return returns
@@ -426,6 +474,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference)Se
 	_jsii_.Set(
 		j,
 		"extensionsToProvisionAfterVmCreation",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference)SetFailureSuppressionEnabled(val interface{}) {
+	if err := j.validateSetFailureSuppressionEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"failureSuppressionEnabled",
 		val,
 	)
 }
@@ -726,6 +785,17 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) I
 	return returns
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) PutProtectedSettingsFromKeyVault(value *OrchestratedVirtualMachineScaleSetExtensionProtectedSettingsFromKeyVault) {
+	if err := o.validatePutProtectedSettingsFromKeyVaultParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		o,
+		"putProtectedSettingsFromKeyVault",
+		[]interface{}{value},
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ResetAutoUpgradeMinorVersionEnabled() {
 	_jsii_.InvokeVoid(
 		o,
@@ -742,6 +812,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) R
 	)
 }
 
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ResetFailureSuppressionEnabled() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetFailureSuppressionEnabled",
+		nil, // no parameters
+	)
+}
+
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ResetForceExtensionExecutionOnChange() {
 	_jsii_.InvokeVoid(
 		o,
@@ -754,6 +832,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) R
 	_jsii_.InvokeVoid(
 		o,
 		"resetProtectedSettings",
+		nil, // no parameters
+	)
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetExtensionOutputReference) ResetProtectedSettingsFromKeyVault() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetProtectedSettingsFromKeyVault",
 		nil, // no parameters
 	)
 }

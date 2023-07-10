@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_account azurerm_storage_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_account azurerm_storage_account}.
 type StorageAccount interface {
 	cdktf.TerraformResource
 	AccessTier() *string
@@ -24,6 +24,9 @@ type StorageAccount interface {
 	AccountTier() *string
 	SetAccountTier(val *string)
 	AccountTierInput() *string
+	AllowedCopyScope() *string
+	SetAllowedCopyScope(val *string)
+	AllowedCopyScopeInput() *string
 	AllowNestedItemsToBePublic() interface{}
 	SetAllowNestedItemsToBePublic(val interface{})
 	AllowNestedItemsToBePublicInput() interface{}
@@ -43,10 +46,16 @@ type StorageAccount interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CrossTenantReplicationEnabled() interface{}
+	SetCrossTenantReplicationEnabled(val interface{})
+	CrossTenantReplicationEnabledInput() interface{}
 	CustomDomain() StorageAccountCustomDomainOutputReference
 	CustomDomainInput() *StorageAccountCustomDomain
 	CustomerManagedKey() StorageAccountCustomerManagedKeyOutputReference
 	CustomerManagedKeyInput() *StorageAccountCustomerManagedKey
+	DefaultToOauthAuthentication() interface{}
+	SetDefaultToOauthAuthentication(val interface{})
+	DefaultToOauthAuthenticationInput() interface{}
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
@@ -70,6 +79,8 @@ type StorageAccount interface {
 	Identity() StorageAccountIdentityOutputReference
 	IdentityInput() *StorageAccountIdentity
 	IdInput() *string
+	ImmutabilityPolicy() StorageAccountImmutabilityPolicyOutputReference
+	ImmutabilityPolicyInput() *StorageAccountImmutabilityPolicy
 	InfrastructureEncryptionEnabled() interface{}
 	SetInfrastructureEncryptionEnabled(val interface{})
 	InfrastructureEncryptionEnabledInput() interface{}
@@ -123,6 +134,9 @@ type StorageAccount interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	QueueEncryptionKeyType() *string
 	SetQueueEncryptionKeyType(val *string)
 	QueueEncryptionKeyTypeInput() *string
@@ -135,6 +149,8 @@ type StorageAccount interface {
 	ResourceGroupNameInput() *string
 	Routing() StorageAccountRoutingOutputReference
 	RoutingInput() *StorageAccountRouting
+	SasPolicy() StorageAccountSasPolicyOutputReference
+	SasPolicyInput() *StorageAccountSasPolicy
 	SecondaryAccessKey() *string
 	SecondaryBlobConnectionString() *string
 	SecondaryBlobEndpoint() *string
@@ -151,6 +167,9 @@ type StorageAccount interface {
 	SecondaryTableHost() *string
 	SecondaryWebEndpoint() *string
 	SecondaryWebHost() *string
+	SftpEnabled() interface{}
+	SetSftpEnabled(val interface{})
+	SftpEnabledInput() interface{}
 	SharedAccessKeyEnabled() interface{}
 	SetSharedAccessKeyEnabled(val interface{})
 	SharedAccessKeyEnabledInput() interface{}
@@ -202,23 +221,29 @@ type StorageAccount interface {
 	PutCustomDomain(value *StorageAccountCustomDomain)
 	PutCustomerManagedKey(value *StorageAccountCustomerManagedKey)
 	PutIdentity(value *StorageAccountIdentity)
+	PutImmutabilityPolicy(value *StorageAccountImmutabilityPolicy)
 	PutNetworkRules(value *StorageAccountNetworkRules)
 	PutQueueProperties(value *StorageAccountQueueProperties)
 	PutRouting(value *StorageAccountRouting)
+	PutSasPolicy(value *StorageAccountSasPolicy)
 	PutShareProperties(value *StorageAccountShareProperties)
 	PutStaticWebsite(value *StorageAccountStaticWebsite)
 	PutTimeouts(value *StorageAccountTimeouts)
 	ResetAccessTier()
 	ResetAccountKind()
+	ResetAllowedCopyScope()
 	ResetAllowNestedItemsToBePublic()
 	ResetAzureFilesAuthentication()
 	ResetBlobProperties()
+	ResetCrossTenantReplicationEnabled()
 	ResetCustomDomain()
 	ResetCustomerManagedKey()
+	ResetDefaultToOauthAuthentication()
 	ResetEdgeZone()
 	ResetEnableHttpsTrafficOnly()
 	ResetId()
 	ResetIdentity()
+	ResetImmutabilityPolicy()
 	ResetInfrastructureEncryptionEnabled()
 	ResetIsHnsEnabled()
 	ResetLargeFileShareEnabled()
@@ -228,9 +253,12 @@ type StorageAccount interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetQueueEncryptionKeyType()
 	ResetQueueProperties()
 	ResetRouting()
+	ResetSasPolicy()
+	ResetSftpEnabled()
 	ResetSharedAccessKeyEnabled()
 	ResetShareProperties()
 	ResetStaticWebsite()
@@ -327,6 +355,26 @@ func (j *jsiiProxy_StorageAccount) AccountTierInput() *string {
 	_jsii_.Get(
 		j,
 		"accountTierInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) AllowedCopyScope() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"allowedCopyScope",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) AllowedCopyScopeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"allowedCopyScopeInput",
 		&returns,
 	)
 	return returns
@@ -432,6 +480,26 @@ func (j *jsiiProxy_StorageAccount) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_StorageAccount) CrossTenantReplicationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossTenantReplicationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) CrossTenantReplicationEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"crossTenantReplicationEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageAccount) CustomDomain() StorageAccountCustomDomainOutputReference {
 	var returns StorageAccountCustomDomainOutputReference
 	_jsii_.Get(
@@ -467,6 +535,26 @@ func (j *jsiiProxy_StorageAccount) CustomerManagedKeyInput() *StorageAccountCust
 	_jsii_.Get(
 		j,
 		"customerManagedKeyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) DefaultToOauthAuthentication() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"defaultToOauthAuthentication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) DefaultToOauthAuthenticationInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"defaultToOauthAuthenticationInput",
 		&returns,
 	)
 	return returns
@@ -587,6 +675,26 @@ func (j *jsiiProxy_StorageAccount) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) ImmutabilityPolicy() StorageAccountImmutabilityPolicyOutputReference {
+	var returns StorageAccountImmutabilityPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"immutabilityPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) ImmutabilityPolicyInput() *StorageAccountImmutabilityPolicy {
+	var returns *StorageAccountImmutabilityPolicy
+	_jsii_.Get(
+		j,
+		"immutabilityPolicyInput",
 		&returns,
 	)
 	return returns
@@ -952,6 +1060,26 @@ func (j *jsiiProxy_StorageAccount) Provisioners() *[]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_StorageAccount) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageAccount) QueueEncryptionKeyType() *string {
 	var returns *string
 	_jsii_.Get(
@@ -1037,6 +1165,26 @@ func (j *jsiiProxy_StorageAccount) RoutingInput() *StorageAccountRouting {
 	_jsii_.Get(
 		j,
 		"routingInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) SasPolicy() StorageAccountSasPolicyOutputReference {
+	var returns StorageAccountSasPolicyOutputReference
+	_jsii_.Get(
+		j,
+		"sasPolicy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) SasPolicyInput() *StorageAccountSasPolicy {
+	var returns *StorageAccountSasPolicy
+	_jsii_.Get(
+		j,
+		"sasPolicyInput",
 		&returns,
 	)
 	return returns
@@ -1202,6 +1350,26 @@ func (j *jsiiProxy_StorageAccount) SecondaryWebHost() *string {
 	return returns
 }
 
+func (j *jsiiProxy_StorageAccount) SftpEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sftpEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageAccount) SftpEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sftpEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageAccount) SharedAccessKeyEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -1353,7 +1521,7 @@ func (j *jsiiProxy_StorageAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_account azurerm_storage_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_account azurerm_storage_account} Resource.
 func NewStorageAccount(scope constructs.Construct, id *string, config *StorageAccountConfig) StorageAccount {
 	_init_.Initialize()
 
@@ -1371,7 +1539,7 @@ func NewStorageAccount(scope constructs.Construct, id *string, config *StorageAc
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/storage_account azurerm_storage_account} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/storage_account azurerm_storage_account} Resource.
 func NewStorageAccount_Override(s StorageAccount, scope constructs.Construct, id *string, config *StorageAccountConfig) {
 	_init_.Initialize()
 
@@ -1426,6 +1594,17 @@ func (j *jsiiProxy_StorageAccount)SetAccountTier(val *string) {
 	)
 }
 
+func (j *jsiiProxy_StorageAccount)SetAllowedCopyScope(val *string) {
+	if err := j.validateSetAllowedCopyScopeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"allowedCopyScope",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageAccount)SetAllowNestedItemsToBePublic(val interface{}) {
 	if err := j.validateSetAllowNestedItemsToBePublicParameters(val); err != nil {
 		panic(err)
@@ -1455,6 +1634,28 @@ func (j *jsiiProxy_StorageAccount)SetCount(val interface{}) {
 	_jsii_.Set(
 		j,
 		"count",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageAccount)SetCrossTenantReplicationEnabled(val interface{}) {
+	if err := j.validateSetCrossTenantReplicationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"crossTenantReplicationEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageAccount)SetDefaultToOauthAuthentication(val interface{}) {
+	if err := j.validateSetDefaultToOauthAuthenticationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"defaultToOauthAuthentication",
 		val,
 	)
 }
@@ -1615,6 +1816,17 @@ func (j *jsiiProxy_StorageAccount)SetProvisioners(val *[]interface{}) {
 	)
 }
 
+func (j *jsiiProxy_StorageAccount)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageAccount)SetQueueEncryptionKeyType(val *string) {
 	if err := j.validateSetQueueEncryptionKeyTypeParameters(val); err != nil {
 		panic(err)
@@ -1633,6 +1845,17 @@ func (j *jsiiProxy_StorageAccount)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageAccount)SetSftpEnabled(val interface{}) {
+	if err := j.validateSetSftpEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sftpEnabled",
 		val,
 	)
 }
@@ -1991,6 +2214,17 @@ func (s *jsiiProxy_StorageAccount) PutIdentity(value *StorageAccountIdentity) {
 	)
 }
 
+func (s *jsiiProxy_StorageAccount) PutImmutabilityPolicy(value *StorageAccountImmutabilityPolicy) {
+	if err := s.validatePutImmutabilityPolicyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putImmutabilityPolicy",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_StorageAccount) PutNetworkRules(value *StorageAccountNetworkRules) {
 	if err := s.validatePutNetworkRulesParameters(value); err != nil {
 		panic(err)
@@ -2020,6 +2254,17 @@ func (s *jsiiProxy_StorageAccount) PutRouting(value *StorageAccountRouting) {
 	_jsii_.InvokeVoid(
 		s,
 		"putRouting",
+		[]interface{}{value},
+	)
+}
+
+func (s *jsiiProxy_StorageAccount) PutSasPolicy(value *StorageAccountSasPolicy) {
+	if err := s.validatePutSasPolicyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putSasPolicy",
 		[]interface{}{value},
 	)
 }
@@ -2073,6 +2318,14 @@ func (s *jsiiProxy_StorageAccount) ResetAccountKind() {
 	)
 }
 
+func (s *jsiiProxy_StorageAccount) ResetAllowedCopyScope() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAllowedCopyScope",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageAccount) ResetAllowNestedItemsToBePublic() {
 	_jsii_.InvokeVoid(
 		s,
@@ -2097,6 +2350,14 @@ func (s *jsiiProxy_StorageAccount) ResetBlobProperties() {
 	)
 }
 
+func (s *jsiiProxy_StorageAccount) ResetCrossTenantReplicationEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCrossTenantReplicationEnabled",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageAccount) ResetCustomDomain() {
 	_jsii_.InvokeVoid(
 		s,
@@ -2109,6 +2370,14 @@ func (s *jsiiProxy_StorageAccount) ResetCustomerManagedKey() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetCustomerManagedKey",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageAccount) ResetDefaultToOauthAuthentication() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDefaultToOauthAuthentication",
 		nil, // no parameters
 	)
 }
@@ -2141,6 +2410,14 @@ func (s *jsiiProxy_StorageAccount) ResetIdentity() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageAccount) ResetImmutabilityPolicy() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetImmutabilityPolicy",
 		nil, // no parameters
 	)
 }
@@ -2201,6 +2478,14 @@ func (s *jsiiProxy_StorageAccount) ResetOverrideLogicalId() {
 	)
 }
 
+func (s *jsiiProxy_StorageAccount) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPublicNetworkAccessEnabled",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageAccount) ResetQueueEncryptionKeyType() {
 	_jsii_.InvokeVoid(
 		s,
@@ -2221,6 +2506,22 @@ func (s *jsiiProxy_StorageAccount) ResetRouting() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetRouting",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageAccount) ResetSasPolicy() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSasPolicy",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageAccount) ResetSftpEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSftpEnabled",
 		nil, // no parameters
 	)
 }

@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql}.
 type StreamAnalyticsOutputMssql interface {
 	cdktf.TerraformResource
+	AuthenticationMode() *string
+	SetAuthenticationMode(val *string)
+	AuthenticationModeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -46,6 +49,12 @@ type StreamAnalyticsOutputMssql interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	MaxBatchCount() *float64
+	SetMaxBatchCount(val *float64)
+	MaxBatchCountInput() *float64
+	MaxWriterCount() *float64
+	SetMaxWriterCount(val *float64)
+	MaxWriterCountInput() *float64
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -113,11 +122,16 @@ type StreamAnalyticsOutputMssql interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *StreamAnalyticsOutputMssqlTimeouts)
+	ResetAuthenticationMode()
 	ResetId()
+	ResetMaxBatchCount()
+	ResetMaxWriterCount()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPassword()
 	ResetTimeouts()
+	ResetUser()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -131,6 +145,26 @@ type StreamAnalyticsOutputMssql interface {
 // The jsii proxy struct for StreamAnalyticsOutputMssql
 type jsiiProxy_StreamAnalyticsOutputMssql struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) AuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) AuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationModeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputMssql) CdktfStack() cdktf.TerraformStack {
@@ -258,6 +292,46 @@ func (j *jsiiProxy_StreamAnalyticsOutputMssql) Lifecycle() *cdktf.TerraformResou
 	_jsii_.Get(
 		j,
 		"lifecycle",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) MaxBatchCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxBatchCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) MaxBatchCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxBatchCountInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) MaxWriterCount() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxWriterCount",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql) MaxWriterCountInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"maxWriterCountInput",
 		&returns,
 	)
 	return returns
@@ -494,7 +568,7 @@ func (j *jsiiProxy_StreamAnalyticsOutputMssql) UserInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql} Resource.
 func NewStreamAnalyticsOutputMssql(scope constructs.Construct, id *string, config *StreamAnalyticsOutputMssqlConfig) StreamAnalyticsOutputMssql {
 	_init_.Initialize()
 
@@ -512,7 +586,7 @@ func NewStreamAnalyticsOutputMssql(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_mssql azurerm_stream_analytics_output_mssql} Resource.
 func NewStreamAnalyticsOutputMssql_Override(s StreamAnalyticsOutputMssql, scope constructs.Construct, id *string, config *StreamAnalyticsOutputMssqlConfig) {
 	_init_.Initialize()
 
@@ -520,6 +594,17 @@ func NewStreamAnalyticsOutputMssql_Override(s StreamAnalyticsOutputMssql, scope 
 		"azurerm.streamAnalyticsOutputMssql.StreamAnalyticsOutputMssql",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql)SetAuthenticationMode(val *string) {
+	if err := j.validateSetAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMode",
+		val,
 	)
 }
 
@@ -590,6 +675,28 @@ func (j *jsiiProxy_StreamAnalyticsOutputMssql)SetLifecycle(val *cdktf.TerraformR
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql)SetMaxBatchCount(val *float64) {
+	if err := j.validateSetMaxBatchCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxBatchCount",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputMssql)SetMaxWriterCount(val *float64) {
+	if err := j.validateSetMaxWriterCountParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maxWriterCount",
 		val,
 	)
 }
@@ -967,10 +1074,34 @@ func (s *jsiiProxy_StreamAnalyticsOutputMssql) PutTimeouts(value *StreamAnalytic
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetMaxBatchCount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaxBatchCount",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetMaxWriterCount() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMaxWriterCount",
 		nil, // no parameters
 	)
 }
@@ -983,10 +1114,26 @@ func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetOverrideLogicalId() {
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetPassword() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPassword",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputMssql) ResetUser() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetUser",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool}.
 type VirtualDesktopHostPool interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -85,6 +85,8 @@ type VirtualDesktopHostPool interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	ScheduledAgentUpdates() VirtualDesktopHostPoolScheduledAgentUpdatesOutputReference
+	ScheduledAgentUpdatesInput() *VirtualDesktopHostPoolScheduledAgentUpdates
 	StartVmOnConnect() interface{}
 	SetStartVmOnConnect(val interface{})
 	StartVmOnConnectInput() interface{}
@@ -130,6 +132,7 @@ type VirtualDesktopHostPool interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutScheduledAgentUpdates(value *VirtualDesktopHostPoolScheduledAgentUpdates)
 	PutTimeouts(value *VirtualDesktopHostPoolTimeouts)
 	ResetCustomRdpProperties()
 	ResetDescription()
@@ -141,6 +144,7 @@ type VirtualDesktopHostPool interface {
 	ResetOverrideLogicalId()
 	ResetPersonalDesktopAssignmentType()
 	ResetPreferredAppGroupType()
+	ResetScheduledAgentUpdates()
 	ResetStartVmOnConnect()
 	ResetTags()
 	ResetTimeouts()
@@ -510,6 +514,26 @@ func (j *jsiiProxy_VirtualDesktopHostPool) ResourceGroupNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualDesktopHostPool) ScheduledAgentUpdates() VirtualDesktopHostPoolScheduledAgentUpdatesOutputReference {
+	var returns VirtualDesktopHostPoolScheduledAgentUpdatesOutputReference
+	_jsii_.Get(
+		j,
+		"scheduledAgentUpdates",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualDesktopHostPool) ScheduledAgentUpdatesInput() *VirtualDesktopHostPoolScheduledAgentUpdates {
+	var returns *VirtualDesktopHostPoolScheduledAgentUpdates
+	_jsii_.Get(
+		j,
+		"scheduledAgentUpdatesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VirtualDesktopHostPool) StartVmOnConnect() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -641,7 +665,7 @@ func (j *jsiiProxy_VirtualDesktopHostPool) ValidateEnvironmentInput() interface{
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool} Resource.
 func NewVirtualDesktopHostPool(scope constructs.Construct, id *string, config *VirtualDesktopHostPoolConfig) VirtualDesktopHostPool {
 	_init_.Initialize()
 
@@ -659,7 +683,7 @@ func NewVirtualDesktopHostPool(scope constructs.Construct, id *string, config *V
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_desktop_host_pool azurerm_virtual_desktop_host_pool} Resource.
 func NewVirtualDesktopHostPool_Override(v VirtualDesktopHostPool, scope constructs.Construct, id *string, config *VirtualDesktopHostPoolConfig) {
 	_init_.Initialize()
 
@@ -1169,6 +1193,17 @@ func (v *jsiiProxy_VirtualDesktopHostPool) OverrideLogicalId(newLogicalId *strin
 	)
 }
 
+func (v *jsiiProxy_VirtualDesktopHostPool) PutScheduledAgentUpdates(value *VirtualDesktopHostPoolScheduledAgentUpdates) {
+	if err := v.validatePutScheduledAgentUpdatesParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		v,
+		"putScheduledAgentUpdates",
+		[]interface{}{value},
+	)
+}
+
 func (v *jsiiProxy_VirtualDesktopHostPool) PutTimeouts(value *VirtualDesktopHostPoolTimeouts) {
 	if err := v.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1240,6 +1275,14 @@ func (v *jsiiProxy_VirtualDesktopHostPool) ResetPreferredAppGroupType() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetPreferredAppGroupType",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualDesktopHostPool) ResetScheduledAgentUpdates() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetScheduledAgentUpdates",
 		nil, // no parameters
 	)
 }

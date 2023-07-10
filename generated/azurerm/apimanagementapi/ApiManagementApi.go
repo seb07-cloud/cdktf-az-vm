@@ -9,12 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api azurerm_api_management_api}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api azurerm_api_management_api}.
 type ApiManagementApi interface {
 	cdktf.TerraformResource
 	ApiManagementName() *string
 	SetApiManagementName(val *string)
 	ApiManagementNameInput() *string
+	ApiType() *string
+	SetApiType(val *string)
+	ApiTypeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -23,6 +26,8 @@ type ApiManagementApi interface {
 	SetConnection(val interface{})
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
+	Contact() ApiManagementApiContactOutputReference
+	ContactInput() *ApiManagementApiContact
 	// Experimental.
 	Count() interface{}
 	// Experimental.
@@ -52,6 +57,8 @@ type ApiManagementApi interface {
 	ImportInput() *ApiManagementApiImport
 	IsCurrent() cdktf.IResolvable
 	IsOnline() cdktf.IResolvable
+	License() ApiManagementApiLicenseOutputReference
+	LicenseInput() *ApiManagementApiLicense
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -104,6 +111,9 @@ type ApiManagementApi interface {
 	SubscriptionRequired() interface{}
 	SetSubscriptionRequired(val interface{})
 	SubscriptionRequiredInput() interface{}
+	TermsOfServiceUrl() *string
+	SetTermsOfServiceUrl(val *string)
+	TermsOfServiceUrlInput() *string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -146,15 +156,20 @@ type ApiManagementApi interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutContact(value *ApiManagementApiContact)
 	PutImport(value *ApiManagementApiImport)
+	PutLicense(value *ApiManagementApiLicense)
 	PutOauth2Authorization(value *ApiManagementApiOauth2Authorization)
 	PutOpenidAuthentication(value *ApiManagementApiOpenidAuthentication)
 	PutSubscriptionKeyParameterNames(value *ApiManagementApiSubscriptionKeyParameterNames)
 	PutTimeouts(value *ApiManagementApiTimeouts)
+	ResetApiType()
+	ResetContact()
 	ResetDescription()
 	ResetDisplayName()
 	ResetId()
 	ResetImport()
+	ResetLicense()
 	ResetOauth2Authorization()
 	ResetOpenidAuthentication()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -168,6 +183,7 @@ type ApiManagementApi interface {
 	ResetSourceApiId()
 	ResetSubscriptionKeyParameterNames()
 	ResetSubscriptionRequired()
+	ResetTermsOfServiceUrl()
 	ResetTimeouts()
 	ResetVersion()
 	ResetVersionDescription()
@@ -207,6 +223,26 @@ func (j *jsiiProxy_ApiManagementApi) ApiManagementNameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_ApiManagementApi) ApiType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"apiType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) ApiTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"apiTypeInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiManagementApi) CdktfStack() cdktf.TerraformStack {
 	var returns cdktf.TerraformStack
 	_jsii_.Get(
@@ -232,6 +268,26 @@ func (j *jsiiProxy_ApiManagementApi) ConstructNodeMetadata() *map[string]interfa
 	_jsii_.Get(
 		j,
 		"constructNodeMetadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) Contact() ApiManagementApiContactOutputReference {
+	var returns ApiManagementApiContactOutputReference
+	_jsii_.Get(
+		j,
+		"contact",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) ContactInput() *ApiManagementApiContact {
+	var returns *ApiManagementApiContact
+	_jsii_.Get(
+		j,
+		"contactInput",
 		&returns,
 	)
 	return returns
@@ -382,6 +438,26 @@ func (j *jsiiProxy_ApiManagementApi) IsOnline() cdktf.IResolvable {
 	_jsii_.Get(
 		j,
 		"isOnline",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) License() ApiManagementApiLicenseOutputReference {
+	var returns ApiManagementApiLicenseOutputReference
+	_jsii_.Get(
+		j,
+		"license",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) LicenseInput() *ApiManagementApiLicense {
+	var returns *ApiManagementApiLicense
+	_jsii_.Get(
+		j,
+		"licenseInput",
 		&returns,
 	)
 	return returns
@@ -697,6 +773,26 @@ func (j *jsiiProxy_ApiManagementApi) SubscriptionRequiredInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ApiManagementApi) TermsOfServiceUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"termsOfServiceUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApi) TermsOfServiceUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"termsOfServiceUrlInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiManagementApi) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -808,7 +904,7 @@ func (j *jsiiProxy_ApiManagementApi) VersionSetIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api azurerm_api_management_api} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api azurerm_api_management_api} Resource.
 func NewApiManagementApi(scope constructs.Construct, id *string, config *ApiManagementApiConfig) ApiManagementApi {
 	_init_.Initialize()
 
@@ -826,7 +922,7 @@ func NewApiManagementApi(scope constructs.Construct, id *string, config *ApiMana
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/api_management_api azurerm_api_management_api} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/api_management_api azurerm_api_management_api} Resource.
 func NewApiManagementApi_Override(a ApiManagementApi, scope constructs.Construct, id *string, config *ApiManagementApiConfig) {
 	_init_.Initialize()
 
@@ -844,6 +940,17 @@ func (j *jsiiProxy_ApiManagementApi)SetApiManagementName(val *string) {
 	_jsii_.Set(
 		j,
 		"apiManagementName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementApi)SetApiType(val *string) {
+	if err := j.validateSetApiTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"apiType",
 		val,
 	)
 }
@@ -1055,6 +1162,17 @@ func (j *jsiiProxy_ApiManagementApi)SetSubscriptionRequired(val interface{}) {
 	_jsii_.Set(
 		j,
 		"subscriptionRequired",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementApi)SetTermsOfServiceUrl(val *string) {
+	if err := j.validateSetTermsOfServiceUrlParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"termsOfServiceUrl",
 		val,
 	)
 }
@@ -1358,6 +1476,17 @@ func (a *jsiiProxy_ApiManagementApi) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (a *jsiiProxy_ApiManagementApi) PutContact(value *ApiManagementApiContact) {
+	if err := a.validatePutContactParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putContact",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_ApiManagementApi) PutImport(value *ApiManagementApiImport) {
 	if err := a.validatePutImportParameters(value); err != nil {
 		panic(err)
@@ -1365,6 +1494,17 @@ func (a *jsiiProxy_ApiManagementApi) PutImport(value *ApiManagementApiImport) {
 	_jsii_.InvokeVoid(
 		a,
 		"putImport",
+		[]interface{}{value},
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApi) PutLicense(value *ApiManagementApiLicense) {
+	if err := a.validatePutLicenseParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putLicense",
 		[]interface{}{value},
 	)
 }
@@ -1413,6 +1553,22 @@ func (a *jsiiProxy_ApiManagementApi) PutTimeouts(value *ApiManagementApiTimeouts
 	)
 }
 
+func (a *jsiiProxy_ApiManagementApi) ResetApiType() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetApiType",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApi) ResetContact() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetContact",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_ApiManagementApi) ResetDescription() {
 	_jsii_.InvokeVoid(
 		a,
@@ -1441,6 +1597,14 @@ func (a *jsiiProxy_ApiManagementApi) ResetImport() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetImport",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApi) ResetLicense() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetLicense",
 		nil, // no parameters
 	)
 }
@@ -1529,6 +1693,14 @@ func (a *jsiiProxy_ApiManagementApi) ResetSubscriptionRequired() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetSubscriptionRequired",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApi) ResetTermsOfServiceUrl() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetTermsOfServiceUrl",
 		nil, // no parameters
 	)
 }

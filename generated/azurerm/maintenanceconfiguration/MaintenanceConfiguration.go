@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/maintenance_configuration azurerm_maintenance_configuration}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/maintenance_configuration azurerm_maintenance_configuration}.
 type MaintenanceConfiguration interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -39,6 +39,11 @@ type MaintenanceConfiguration interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InGuestUserPatchMode() *string
+	SetInGuestUserPatchMode(val *string)
+	InGuestUserPatchModeInput() *string
+	InstallPatches() MaintenanceConfigurationInstallPatchesOutputReference
+	InstallPatchesInput() *MaintenanceConfigurationInstallPatches
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -111,14 +116,16 @@ type MaintenanceConfiguration interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutInstallPatches(value *MaintenanceConfigurationInstallPatches)
 	PutTimeouts(value *MaintenanceConfigurationTimeouts)
 	PutWindow(value *MaintenanceConfigurationWindow)
 	ResetId()
+	ResetInGuestUserPatchMode()
+	ResetInstallPatches()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetProperties()
-	ResetScope()
 	ResetTags()
 	ResetTimeouts()
 	ResetVisibility()
@@ -233,6 +240,46 @@ func (j *jsiiProxy_MaintenanceConfiguration) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MaintenanceConfiguration) InGuestUserPatchMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"inGuestUserPatchMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MaintenanceConfiguration) InGuestUserPatchModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"inGuestUserPatchModeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MaintenanceConfiguration) InstallPatches() MaintenanceConfigurationInstallPatchesOutputReference {
+	var returns MaintenanceConfigurationInstallPatchesOutputReference
+	_jsii_.Get(
+		j,
+		"installPatches",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MaintenanceConfiguration) InstallPatchesInput() *MaintenanceConfigurationInstallPatches {
+	var returns *MaintenanceConfigurationInstallPatches
+	_jsii_.Get(
+		j,
+		"installPatchesInput",
 		&returns,
 	)
 	return returns
@@ -499,7 +546,7 @@ func (j *jsiiProxy_MaintenanceConfiguration) WindowInput() *MaintenanceConfigura
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/maintenance_configuration azurerm_maintenance_configuration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/maintenance_configuration azurerm_maintenance_configuration} Resource.
 func NewMaintenanceConfiguration(scope constructs.Construct, id *string, config *MaintenanceConfigurationConfig) MaintenanceConfiguration {
 	_init_.Initialize()
 
@@ -517,7 +564,7 @@ func NewMaintenanceConfiguration(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/maintenance_configuration azurerm_maintenance_configuration} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/maintenance_configuration azurerm_maintenance_configuration} Resource.
 func NewMaintenanceConfiguration_Override(m MaintenanceConfiguration, scope constructs.Construct, id *string, config *MaintenanceConfigurationConfig) {
 	_init_.Initialize()
 
@@ -573,6 +620,17 @@ func (j *jsiiProxy_MaintenanceConfiguration)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MaintenanceConfiguration)SetInGuestUserPatchMode(val *string) {
+	if err := j.validateSetInGuestUserPatchModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"inGuestUserPatchMode",
 		val,
 	)
 }
@@ -950,6 +1008,17 @@ func (m *jsiiProxy_MaintenanceConfiguration) OverrideLogicalId(newLogicalId *str
 	)
 }
 
+func (m *jsiiProxy_MaintenanceConfiguration) PutInstallPatches(value *MaintenanceConfigurationInstallPatches) {
+	if err := m.validatePutInstallPatchesParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putInstallPatches",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MaintenanceConfiguration) PutTimeouts(value *MaintenanceConfigurationTimeouts) {
 	if err := m.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -980,6 +1049,22 @@ func (m *jsiiProxy_MaintenanceConfiguration) ResetId() {
 	)
 }
 
+func (m *jsiiProxy_MaintenanceConfiguration) ResetInGuestUserPatchMode() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetInGuestUserPatchMode",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MaintenanceConfiguration) ResetInstallPatches() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetInstallPatches",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MaintenanceConfiguration) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		m,
@@ -992,14 +1077,6 @@ func (m *jsiiProxy_MaintenanceConfiguration) ResetProperties() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetProperties",
-		nil, // no parameters
-	)
-}
-
-func (m *jsiiProxy_MaintenanceConfiguration) ResetScope() {
-	_jsii_.InvokeVoid(
-		m,
-		"resetScope",
 		nil, // no parameters
 	)
 }

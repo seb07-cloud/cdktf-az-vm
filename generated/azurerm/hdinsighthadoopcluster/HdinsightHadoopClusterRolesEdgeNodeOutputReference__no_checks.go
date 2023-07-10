@@ -44,7 +44,15 @@ func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validateI
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutHttpsEndpointsParameters(value interface{}) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutInstallScriptActionParameters(value interface{}) error {
+	return nil
+}
+
+func (h *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeOutputReference) validatePutUninstallScriptActionsParameters(value interface{}) error {
 	return nil
 }
 

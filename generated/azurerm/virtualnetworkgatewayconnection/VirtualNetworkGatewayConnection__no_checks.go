@@ -52,6 +52,10 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) validateOverrideLogicalIdPar
 	return nil
 }
 
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutCustomBgpAddressesParameters(value *VirtualNetworkGatewayConnectionCustomBgpAddresses) error {
+	return nil
+}
+
 func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutIpsecPolicyParameters(value *VirtualNetworkGatewayConnectionIpsecPolicy) error {
 	return nil
 }
@@ -60,7 +64,7 @@ func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTimeoutsParameter
 	return nil
 }
 
-func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTrafficSelectorPolicyParameters(value *VirtualNetworkGatewayConnectionTrafficSelectorPolicy) error {
+func (v *jsiiProxy_VirtualNetworkGatewayConnection) validatePutTrafficSelectorPolicyParameters(value interface{}) error {
 	return nil
 }
 
@@ -100,6 +104,10 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetDpdTimeoutSeconds
 	return nil
 }
 
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetEgressNatRuleIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetEnableBgpParameters(val interface{}) error {
 	return nil
 }
@@ -113,6 +121,10 @@ func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetExpressRouteGatew
 }
 
 func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_VirtualNetworkGatewayConnection) validateSetIngressNatRuleIdsParameters(val *[]*string) error {
 	return nil
 }
 

@@ -111,6 +111,17 @@ func (c *jsiiProxy_CosmosdbCassandraCluster) validateOverrideLogicalIdParameters
 	return nil
 }
 
+func (c *jsiiProxy_CosmosdbCassandraCluster) validatePutIdentityParameters(value *CosmosdbCassandraClusterIdentity) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (c *jsiiProxy_CosmosdbCassandraCluster) validatePutTimeoutsParameters(value *CosmosdbCassandraClusterTimeouts) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -141,6 +152,22 @@ func validateCosmosdbCassandraCluster_IsTerraformElementParameters(x interface{}
 func validateCosmosdbCassandraCluster_IsTerraformResourceParameters(x interface{}) error {
 	if x == nil {
 		return fmt.Errorf("parameter x is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetAuthenticationMethodParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetClientCertificatePemsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -252,6 +279,30 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetDelegatedManagementSubne
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetExternalGossipCertificatePemsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetExternalSeedNodeIpAddressesParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetHoursBetweenBackupsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -330,7 +381,43 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetProvisionersParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetRepairEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetResourceGroupNameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) validateSetVersionParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

@@ -157,6 +157,14 @@ func validateStreamAnalyticsOutputServicebusQueue_IsTerraformResourceParameters(
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetAuthenticationModeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetConnectionParameters(val interface{}) error {
 	switch val.(type) {
 	case *cdktf.SSHProvisionerConnection:
@@ -271,6 +279,14 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetNameParamete
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetPropertyColumnsParameters(val *[]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetProvisionersParameters(val *[]interface{}) error {
 	for idx_97dfc6, v := range *val {
 		switch v.(type) {
@@ -358,6 +374,14 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetSharedAccess
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetStreamAnalyticsJobNameParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusQueue) validateSetSystemPropertyColumnsParameters(val *map[string]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

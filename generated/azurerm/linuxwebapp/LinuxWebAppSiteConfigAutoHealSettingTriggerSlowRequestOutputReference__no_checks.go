@@ -60,7 +60,7 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputR
 	return nil
 }
 
-func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) validateSetInternalValueParameters(val interface{}) error {
+func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) validateSetInternalValueParameters(val *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest) error {
 	return nil
 }
 
@@ -84,7 +84,7 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputR
 	return nil
 }
 
-func validateNewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) error {
+func validateNewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }
 

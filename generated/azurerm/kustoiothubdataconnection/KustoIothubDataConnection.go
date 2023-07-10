@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection}.
 type KustoIothubDataConnection interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -33,6 +33,9 @@ type KustoIothubDataConnection interface {
 	DatabaseName() *string
 	SetDatabaseName(val *string)
 	DatabaseNameInput() *string
+	DatabaseRoutingType() *string
+	SetDatabaseRoutingType(val *string)
+	DatabaseRoutingTypeInput() *string
 	DataFormat() *string
 	SetDataFormat(val *string)
 	DataFormatInput() *string
@@ -125,6 +128,7 @@ type KustoIothubDataConnection interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *KustoIothubDataConnectionTimeouts)
+	ResetDatabaseRoutingType()
 	ResetDataFormat()
 	ResetEventSystemProperties()
 	ResetId()
@@ -244,6 +248,26 @@ func (j *jsiiProxy_KustoIothubDataConnection) DatabaseNameInput() *string {
 	_jsii_.Get(
 		j,
 		"databaseNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoIothubDataConnection) DatabaseRoutingType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseRoutingType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoIothubDataConnection) DatabaseRoutingTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"databaseRoutingTypeInput",
 		&returns,
 	)
 	return returns
@@ -590,7 +614,7 @@ func (j *jsiiProxy_KustoIothubDataConnection) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection} Resource.
 func NewKustoIothubDataConnection(scope constructs.Construct, id *string, config *KustoIothubDataConnectionConfig) KustoIothubDataConnection {
 	_init_.Initialize()
 
@@ -608,7 +632,7 @@ func NewKustoIothubDataConnection(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_iothub_data_connection azurerm_kusto_iothub_data_connection} Resource.
 func NewKustoIothubDataConnection_Override(k KustoIothubDataConnection, scope constructs.Construct, id *string, config *KustoIothubDataConnectionConfig) {
 	_init_.Initialize()
 
@@ -670,6 +694,17 @@ func (j *jsiiProxy_KustoIothubDataConnection)SetDatabaseName(val *string) {
 	_jsii_.Set(
 		j,
 		"databaseName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KustoIothubDataConnection)SetDatabaseRoutingType(val *string) {
+	if err := j.validateSetDatabaseRoutingTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"databaseRoutingType",
 		val,
 	)
 }
@@ -1104,6 +1139,14 @@ func (k *jsiiProxy_KustoIothubDataConnection) PutTimeouts(value *KustoIothubData
 		k,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (k *jsiiProxy_KustoIothubDataConnection) ResetDatabaseRoutingType() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetDatabaseRoutingType",
+		nil, // no parameters
 	)
 }
 

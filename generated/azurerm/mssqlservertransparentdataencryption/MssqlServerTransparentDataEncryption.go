@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption}.
 type MssqlServerTransparentDataEncryption interface {
 	cdktf.TerraformResource
+	AutoRotationEnabled() interface{}
+	SetAutoRotationEnabled(val interface{})
+	AutoRotationEnabledInput() interface{}
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -95,6 +98,7 @@ type MssqlServerTransparentDataEncryption interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *MssqlServerTransparentDataEncryptionTimeouts)
+	ResetAutoRotationEnabled()
 	ResetId()
 	ResetKeyVaultKeyId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -114,6 +118,26 @@ type MssqlServerTransparentDataEncryption interface {
 // The jsii proxy struct for MssqlServerTransparentDataEncryption
 type jsiiProxy_MssqlServerTransparentDataEncryption struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_MssqlServerTransparentDataEncryption) AutoRotationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRotationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlServerTransparentDataEncryption) AutoRotationEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoRotationEnabledInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_MssqlServerTransparentDataEncryption) CdktfStack() cdktf.TerraformStack {
@@ -357,7 +381,7 @@ func (j *jsiiProxy_MssqlServerTransparentDataEncryption) TimeoutsInput() interfa
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption} Resource.
 func NewMssqlServerTransparentDataEncryption(scope constructs.Construct, id *string, config *MssqlServerTransparentDataEncryptionConfig) MssqlServerTransparentDataEncryption {
 	_init_.Initialize()
 
@@ -375,7 +399,7 @@ func NewMssqlServerTransparentDataEncryption(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_server_transparent_data_encryption azurerm_mssql_server_transparent_data_encryption} Resource.
 func NewMssqlServerTransparentDataEncryption_Override(m MssqlServerTransparentDataEncryption, scope constructs.Construct, id *string, config *MssqlServerTransparentDataEncryptionConfig) {
 	_init_.Initialize()
 
@@ -383,6 +407,17 @@ func NewMssqlServerTransparentDataEncryption_Override(m MssqlServerTransparentDa
 		"azurerm.mssqlServerTransparentDataEncryption.MssqlServerTransparentDataEncryption",
 		[]interface{}{scope, id, config},
 		m,
+	)
+}
+
+func (j *jsiiProxy_MssqlServerTransparentDataEncryption)SetAutoRotationEnabled(val interface{}) {
+	if err := j.validateSetAutoRotationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoRotationEnabled",
+		val,
 	)
 }
 
@@ -761,6 +796,14 @@ func (m *jsiiProxy_MssqlServerTransparentDataEncryption) PutTimeouts(value *Mssq
 		m,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (m *jsiiProxy_MssqlServerTransparentDataEncryption) ResetAutoRotationEnabled() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetAutoRotationEnabled",
+		nil, // no parameters
 	)
 }
 

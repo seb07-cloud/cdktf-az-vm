@@ -9,17 +9,20 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_web_app azurerm_linux_web_app}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_web_app azurerm_linux_web_app}.
 type DataAzurermLinuxWebApp interface {
 	cdktf.TerraformDataSource
 	AppMetadata() cdktf.StringMap
 	AppSettings() cdktf.StringMap
 	AuthSettings() DataAzurermLinuxWebAppAuthSettingsList
+	AuthSettingsV2() DataAzurermLinuxWebAppAuthSettingsV2List
+	Availability() *string
 	Backup() DataAzurermLinuxWebAppBackupList
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	ClientAffinityEnabled() cdktf.IResolvable
 	ClientCertificateEnabled() cdktf.IResolvable
+	ClientCertificateExclusionPaths() *string
 	ClientCertificateMode() *string
 	ConnectionString() DataAzurermLinuxWebAppConnectionStringList
 	// Experimental.
@@ -43,6 +46,7 @@ type DataAzurermLinuxWebApp interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HostingEnvironmentId() *string
 	HttpsOnly() cdktf.IResolvable
 	Id() *string
 	SetId(val *string)
@@ -69,6 +73,7 @@ type DataAzurermLinuxWebApp interface {
 	Provider() cdktf.TerraformProvider
 	// Experimental.
 	SetProvider(val cdktf.TerraformProvider)
+	PublicNetworkAccessEnabled() cdktf.IResolvable
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -77,6 +82,7 @@ type DataAzurermLinuxWebApp interface {
 	ServicePlanId() *string
 	SiteConfig() DataAzurermLinuxWebAppSiteConfigList
 	SiteCredential() DataAzurermLinuxWebAppSiteCredentialList
+	StickySettings() DataAzurermLinuxWebAppStickySettingsList
 	StorageAccount() DataAzurermLinuxWebAppStorageAccountList
 	Tags() cdktf.StringMap
 	// Experimental.
@@ -87,6 +93,8 @@ type DataAzurermLinuxWebApp interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermLinuxWebAppTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Usage() *string
+	VirtualNetworkSubnetId() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -163,6 +171,26 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) AuthSettings() DataAzurermLinuxWebApp
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxWebApp) AuthSettingsV2() DataAzurermLinuxWebAppAuthSettingsV2List {
+	var returns DataAzurermLinuxWebAppAuthSettingsV2List
+	_jsii_.Get(
+		j,
+		"authSettingsV2",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxWebApp) Availability() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"availability",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermLinuxWebApp) Backup() DataAzurermLinuxWebAppBackupList {
 	var returns DataAzurermLinuxWebAppBackupList
 	_jsii_.Get(
@@ -198,6 +226,16 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) ClientCertificateEnabled() cdktf.IRes
 	_jsii_.Get(
 		j,
 		"clientCertificateEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxWebApp) ClientCertificateExclusionPaths() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateExclusionPaths",
 		&returns,
 	)
 	return returns
@@ -308,6 +346,16 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxWebApp) HostingEnvironmentId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hostingEnvironmentId",
 		&returns,
 	)
 	return returns
@@ -483,6 +531,16 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) Provider() cdktf.TerraformProvider {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxWebApp) PublicNetworkAccessEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermLinuxWebApp) RawOverrides() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -538,6 +596,16 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) SiteCredential() DataAzurermLinuxWebA
 	_jsii_.Get(
 		j,
 		"siteCredential",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLinuxWebApp) StickySettings() DataAzurermLinuxWebAppStickySettingsList {
+	var returns DataAzurermLinuxWebAppStickySettingsList
+	_jsii_.Get(
+		j,
+		"stickySettings",
 		&returns,
 	)
 	return returns
@@ -613,8 +681,28 @@ func (j *jsiiProxy_DataAzurermLinuxWebApp) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermLinuxWebApp) Usage() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"usage",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_web_app azurerm_linux_web_app} Data Source.
+func (j *jsiiProxy_DataAzurermLinuxWebApp) VirtualNetworkSubnetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"virtualNetworkSubnetId",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_web_app azurerm_linux_web_app} Data Source.
 func NewDataAzurermLinuxWebApp(scope constructs.Construct, id *string, config *DataAzurermLinuxWebAppConfig) DataAzurermLinuxWebApp {
 	_init_.Initialize()
 
@@ -632,7 +720,7 @@ func NewDataAzurermLinuxWebApp(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/linux_web_app azurerm_linux_web_app} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/linux_web_app azurerm_linux_web_app} Data Source.
 func NewDataAzurermLinuxWebApp_Override(d DataAzurermLinuxWebApp, scope constructs.Construct, id *string, config *DataAzurermLinuxWebAppConfig) {
 	_init_.Initialize()
 

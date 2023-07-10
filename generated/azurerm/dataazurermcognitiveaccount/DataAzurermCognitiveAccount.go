@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/cognitive_account azurerm_cognitive_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/cognitive_account azurerm_cognitive_account}.
 type DataAzurermCognitiveAccount interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -60,7 +60,9 @@ type DataAzurermCognitiveAccount interface {
 	ResourceGroupNameInput() *string
 	SecondaryAccessKey() *string
 	SkuName() *string
-	Tags() cdktf.StringMap
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -99,6 +101,7 @@ type DataAzurermCognitiveAccount interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -355,11 +358,21 @@ func (j *jsiiProxy_DataAzurermCognitiveAccount) SkuName() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermCognitiveAccount) Tags() cdktf.StringMap {
-	var returns cdktf.StringMap
+func (j *jsiiProxy_DataAzurermCognitiveAccount) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermCognitiveAccount) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
 		&returns,
 	)
 	return returns
@@ -416,7 +429,7 @@ func (j *jsiiProxy_DataAzurermCognitiveAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/cognitive_account azurerm_cognitive_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/cognitive_account azurerm_cognitive_account} Data Source.
 func NewDataAzurermCognitiveAccount(scope constructs.Construct, id *string, config *DataAzurermCognitiveAccountConfig) DataAzurermCognitiveAccount {
 	_init_.Initialize()
 
@@ -434,7 +447,7 @@ func NewDataAzurermCognitiveAccount(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/cognitive_account azurerm_cognitive_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/cognitive_account azurerm_cognitive_account} Data Source.
 func NewDataAzurermCognitiveAccount_Override(d DataAzurermCognitiveAccount, scope constructs.Construct, id *string, config *DataAzurermCognitiveAccountConfig) {
 	_init_.Initialize()
 
@@ -520,6 +533,17 @@ func (j *jsiiProxy_DataAzurermCognitiveAccount)SetResourceGroupName(val *string)
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermCognitiveAccount)SetTags(val *map[string]*string) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }
@@ -813,6 +837,14 @@ func (d *jsiiProxy_DataAzurermCognitiveAccount) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermCognitiveAccount) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
 		nil, // no parameters
 	)
 }

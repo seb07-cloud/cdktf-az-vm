@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_nat_rule azurerm_lb_nat_rule}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_nat_rule azurerm_lb_nat_rule}.
 type LbNatRule interface {
 	cdktf.TerraformResource
+	BackendAddressPoolId() *string
+	SetBackendAddressPoolId(val *string)
+	BackendAddressPoolIdInput() *string
 	BackendIpConfigurationId() *string
 	BackendPort() *float64
 	SetBackendPort(val *float64)
@@ -52,7 +55,13 @@ type LbNatRule interface {
 	FrontendIpConfigurationNameInput() *string
 	FrontendPort() *float64
 	SetFrontendPort(val *float64)
+	FrontendPortEnd() *float64
+	SetFrontendPortEnd(val *float64)
+	FrontendPortEndInput() *float64
 	FrontendPortInput() *float64
+	FrontendPortStart() *float64
+	SetFrontendPortStart(val *float64)
+	FrontendPortStartInput() *float64
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
@@ -121,8 +130,12 @@ type LbNatRule interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *LbNatRuleTimeouts)
+	ResetBackendAddressPoolId()
 	ResetEnableFloatingIp()
 	ResetEnableTcpReset()
+	ResetFrontendPort()
+	ResetFrontendPortEnd()
+	ResetFrontendPortStart()
 	ResetId()
 	ResetIdleTimeoutInMinutes()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -142,6 +155,26 @@ type LbNatRule interface {
 // The jsii proxy struct for LbNatRule
 type jsiiProxy_LbNatRule struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_LbNatRule) BackendAddressPoolId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backendAddressPoolId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbNatRule) BackendAddressPoolIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backendAddressPoolIdInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_LbNatRule) BackendIpConfigurationId() *string {
@@ -334,11 +367,51 @@ func (j *jsiiProxy_LbNatRule) FrontendPort() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_LbNatRule) FrontendPortEnd() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"frontendPortEnd",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbNatRule) FrontendPortEndInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"frontendPortEndInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LbNatRule) FrontendPortInput() *float64 {
 	var returns *float64
 	_jsii_.Get(
 		j,
 		"frontendPortInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbNatRule) FrontendPortStart() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"frontendPortStart",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LbNatRule) FrontendPortStartInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"frontendPortStartInput",
 		&returns,
 	)
 	return returns
@@ -565,7 +638,7 @@ func (j *jsiiProxy_LbNatRule) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_nat_rule azurerm_lb_nat_rule} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_nat_rule azurerm_lb_nat_rule} Resource.
 func NewLbNatRule(scope constructs.Construct, id *string, config *LbNatRuleConfig) LbNatRule {
 	_init_.Initialize()
 
@@ -583,7 +656,7 @@ func NewLbNatRule(scope constructs.Construct, id *string, config *LbNatRuleConfi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/lb_nat_rule azurerm_lb_nat_rule} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/lb_nat_rule azurerm_lb_nat_rule} Resource.
 func NewLbNatRule_Override(l LbNatRule, scope constructs.Construct, id *string, config *LbNatRuleConfig) {
 	_init_.Initialize()
 
@@ -591,6 +664,17 @@ func NewLbNatRule_Override(l LbNatRule, scope constructs.Construct, id *string, 
 		"azurerm.lbNatRule.LbNatRule",
 		[]interface{}{scope, id, config},
 		l,
+	)
+}
+
+func (j *jsiiProxy_LbNatRule)SetBackendAddressPoolId(val *string) {
+	if err := j.validateSetBackendAddressPoolIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backendAddressPoolId",
+		val,
 	)
 }
 
@@ -683,6 +767,28 @@ func (j *jsiiProxy_LbNatRule)SetFrontendPort(val *float64) {
 	_jsii_.Set(
 		j,
 		"frontendPort",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbNatRule)SetFrontendPortEnd(val *float64) {
+	if err := j.validateSetFrontendPortEndParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"frontendPortEnd",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LbNatRule)SetFrontendPortStart(val *float64) {
+	if err := j.validateSetFrontendPortStartParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"frontendPortStart",
 		val,
 	)
 }
@@ -1060,6 +1166,14 @@ func (l *jsiiProxy_LbNatRule) PutTimeouts(value *LbNatRuleTimeouts) {
 	)
 }
 
+func (l *jsiiProxy_LbNatRule) ResetBackendAddressPoolId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetBackendAddressPoolId",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LbNatRule) ResetEnableFloatingIp() {
 	_jsii_.InvokeVoid(
 		l,
@@ -1072,6 +1186,30 @@ func (l *jsiiProxy_LbNatRule) ResetEnableTcpReset() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetEnableTcpReset",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbNatRule) ResetFrontendPort() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetFrontendPort",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbNatRule) ResetFrontendPortEnd() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetFrontendPortEnd",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LbNatRule) ResetFrontendPortStart() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetFrontendPortStart",
 		nil, // no parameters
 	)
 }

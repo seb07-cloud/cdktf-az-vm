@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/ip_group azurerm_ip_group}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/ip_group azurerm_ip_group}.
 type IpGroup interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -31,6 +31,8 @@ type IpGroup interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	FirewallIds() *[]*string
+	FirewallPolicyIds() *[]*string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -191,6 +193,26 @@ func (j *jsiiProxy_IpGroup) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IpGroup) FirewallIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"firewallIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IpGroup) FirewallPolicyIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"firewallPolicyIds",
 		&returns,
 	)
 	return returns
@@ -427,7 +449,7 @@ func (j *jsiiProxy_IpGroup) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/ip_group azurerm_ip_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/ip_group azurerm_ip_group} Resource.
 func NewIpGroup(scope constructs.Construct, id *string, config *IpGroupConfig) IpGroup {
 	_init_.Initialize()
 
@@ -445,7 +467,7 @@ func NewIpGroup(scope constructs.Construct, id *string, config *IpGroupConfig) I
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/ip_group azurerm_ip_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/ip_group azurerm_ip_group} Resource.
 func NewIpGroup_Override(i IpGroup, scope constructs.Construct, id *string, config *IpGroupConfig) {
 	_init_.Initialize()
 

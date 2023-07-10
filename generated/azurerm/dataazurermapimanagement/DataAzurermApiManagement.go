@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/api_management azurerm_api_management}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/api_management azurerm_api_management}.
 type DataAzurermApiManagement interface {
 	cdktf.TerraformDataSource
 	AdditionalLocation() DataAzurermApiManagementAdditionalLocationList
@@ -71,6 +71,7 @@ type DataAzurermApiManagement interface {
 	ScmUrl() *string
 	SkuName() *string
 	Tags() cdktf.StringMap
+	TenantAccess() DataAzurermApiManagementTenantAccessList
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -475,6 +476,16 @@ func (j *jsiiProxy_DataAzurermApiManagement) Tags() cdktf.StringMap {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermApiManagement) TenantAccess() DataAzurermApiManagementTenantAccessList {
+	var returns DataAzurermApiManagementTenantAccessList
+	_jsii_.Get(
+		j,
+		"tenantAccess",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermApiManagement) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -526,7 +537,7 @@ func (j *jsiiProxy_DataAzurermApiManagement) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/api_management azurerm_api_management} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/api_management azurerm_api_management} Data Source.
 func NewDataAzurermApiManagement(scope constructs.Construct, id *string, config *DataAzurermApiManagementConfig) DataAzurermApiManagement {
 	_init_.Initialize()
 
@@ -544,7 +555,7 @@ func NewDataAzurermApiManagement(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/api_management azurerm_api_management} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/api_management azurerm_api_management} Data Source.
 func NewDataAzurermApiManagement_Override(d DataAzurermApiManagement, scope constructs.Construct, id *string, config *DataAzurermApiManagementConfig) {
 	_init_.Initialize()
 

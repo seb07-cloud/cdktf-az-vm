@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance}.
 type MssqlManagedInstance interface {
 	cdktf.TerraformResource
 	AdministratorLogin() *string
@@ -64,6 +64,9 @@ type MssqlManagedInstance interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	MaintenanceConfigurationName() *string
+	SetMaintenanceConfigurationName(val *string)
+	MaintenanceConfigurationNameInput() *string
 	MinimumTlsVersion() *string
 	SetMinimumTlsVersion(val *string)
 	MinimumTlsVersionInput() *string
@@ -151,6 +154,7 @@ type MssqlManagedInstance interface {
 	ResetDnsZonePartnerId()
 	ResetId()
 	ResetIdentity()
+	ResetMaintenanceConfigurationName()
 	ResetMinimumTlsVersion()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -431,6 +435,26 @@ func (j *jsiiProxy_MssqlManagedInstance) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlManagedInstance) MaintenanceConfigurationName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlManagedInstance) MaintenanceConfigurationNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationNameInput",
 		&returns,
 	)
 	return returns
@@ -767,7 +791,7 @@ func (j *jsiiProxy_MssqlManagedInstance) VcoresInput() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance} Resource.
 func NewMssqlManagedInstance(scope constructs.Construct, id *string, config *MssqlManagedInstanceConfig) MssqlManagedInstance {
 	_init_.Initialize()
 
@@ -785,7 +809,7 @@ func NewMssqlManagedInstance(scope constructs.Construct, id *string, config *Mss
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_managed_instance azurerm_mssql_managed_instance} Resource.
 func NewMssqlManagedInstance_Override(m MssqlManagedInstance, scope constructs.Construct, id *string, config *MssqlManagedInstanceConfig) {
 	_init_.Initialize()
 
@@ -918,6 +942,17 @@ func (j *jsiiProxy_MssqlManagedInstance)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MssqlManagedInstance)SetMaintenanceConfigurationName(val *string) {
+	if err := j.validateSetMaintenanceConfigurationNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maintenanceConfigurationName",
 		val,
 	)
 }
@@ -1389,6 +1424,14 @@ func (m *jsiiProxy_MssqlManagedInstance) ResetIdentity() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlManagedInstance) ResetMaintenanceConfigurationName() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetMaintenanceConfigurationName",
 		nil, // no parameters
 	)
 }

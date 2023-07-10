@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence}.
 type SentinelDataConnectorThreatIntelligence interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -46,6 +46,9 @@ type SentinelDataConnectorThreatIntelligence interface {
 	LogAnalyticsWorkspaceId() *string
 	SetLogAnalyticsWorkspaceId(val *string)
 	LogAnalyticsWorkspaceIdInput() *string
+	LookbackDate() *string
+	SetLookbackDate(val *string)
+	LookbackDateInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -99,6 +102,7 @@ type SentinelDataConnectorThreatIntelligence interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *SentinelDataConnectorThreatIntelligenceTimeouts)
 	ResetId()
+	ResetLookbackDate()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -249,6 +253,26 @@ func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) LogAnalyticsWorkspac
 	return returns
 }
 
+func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) LookbackDate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lookbackDate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) LookbackDateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"lookbackDateInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -380,7 +404,7 @@ func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) TimeoutsInput() inte
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence} Resource.
 func NewSentinelDataConnectorThreatIntelligence(scope constructs.Construct, id *string, config *SentinelDataConnectorThreatIntelligenceConfig) SentinelDataConnectorThreatIntelligence {
 	_init_.Initialize()
 
@@ -398,7 +422,7 @@ func NewSentinelDataConnectorThreatIntelligence(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/sentinel_data_connector_threat_intelligence azurerm_sentinel_data_connector_threat_intelligence} Resource.
 func NewSentinelDataConnectorThreatIntelligence_Override(s SentinelDataConnectorThreatIntelligence, scope constructs.Construct, id *string, config *SentinelDataConnectorThreatIntelligenceConfig) {
 	_init_.Initialize()
 
@@ -476,6 +500,17 @@ func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence)SetLogAnalyticsWorksp
 	_jsii_.Set(
 		j,
 		"logAnalyticsWorkspaceId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence)SetLookbackDate(val *string) {
+	if err := j.validateSetLookbackDateParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"lookbackDate",
 		val,
 	)
 }
@@ -802,6 +837,14 @@ func (s *jsiiProxy_SentinelDataConnectorThreatIntelligence) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SentinelDataConnectorThreatIntelligence) ResetLookbackDate() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLookbackDate",
 		nil, // no parameters
 	)
 }

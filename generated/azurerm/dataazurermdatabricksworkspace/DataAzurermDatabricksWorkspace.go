@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/databricks_workspace azurerm_databricks_workspace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/databricks_workspace azurerm_databricks_workspace}.
 type DataAzurermDatabricksWorkspace interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -39,6 +39,8 @@ type DataAzurermDatabricksWorkspace interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Location() *string
+	ManagedDiskIdentity() DataAzurermDatabricksWorkspaceManagedDiskIdentityList
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -54,6 +56,7 @@ type DataAzurermDatabricksWorkspace interface {
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
 	Sku() *string
+	StorageAccountIdentity() DataAzurermDatabricksWorkspaceStorageAccountIdentityList
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -214,6 +217,26 @@ func (j *jsiiProxy_DataAzurermDatabricksWorkspace) Lifecycle() *cdktf.TerraformR
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermDatabricksWorkspace) Location() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"location",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermDatabricksWorkspace) ManagedDiskIdentity() DataAzurermDatabricksWorkspaceManagedDiskIdentityList {
+	var returns DataAzurermDatabricksWorkspaceManagedDiskIdentityList
+	_jsii_.Get(
+		j,
+		"managedDiskIdentity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermDatabricksWorkspace) Name() *string {
 	var returns *string
 	_jsii_.Get(
@@ -289,6 +312,16 @@ func (j *jsiiProxy_DataAzurermDatabricksWorkspace) Sku() *string {
 	_jsii_.Get(
 		j,
 		"sku",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermDatabricksWorkspace) StorageAccountIdentity() DataAzurermDatabricksWorkspaceStorageAccountIdentityList {
+	var returns DataAzurermDatabricksWorkspaceStorageAccountIdentityList
+	_jsii_.Get(
+		j,
+		"storageAccountIdentity",
 		&returns,
 	)
 	return returns
@@ -385,7 +418,7 @@ func (j *jsiiProxy_DataAzurermDatabricksWorkspace) WorkspaceUrl() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/databricks_workspace azurerm_databricks_workspace} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/databricks_workspace azurerm_databricks_workspace} Data Source.
 func NewDataAzurermDatabricksWorkspace(scope constructs.Construct, id *string, config *DataAzurermDatabricksWorkspaceConfig) DataAzurermDatabricksWorkspace {
 	_init_.Initialize()
 
@@ -403,7 +436,7 @@ func NewDataAzurermDatabricksWorkspace(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/databricks_workspace azurerm_databricks_workspace} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/databricks_workspace azurerm_databricks_workspace} Data Source.
 func NewDataAzurermDatabricksWorkspace_Override(d DataAzurermDatabricksWorkspace, scope constructs.Construct, id *string, config *DataAzurermDatabricksWorkspaceConfig) {
 	_init_.Initialize()
 

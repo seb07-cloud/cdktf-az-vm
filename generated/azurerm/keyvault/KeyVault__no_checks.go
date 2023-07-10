@@ -124,6 +124,10 @@ func (j *jsiiProxy_KeyVault) validateSetProvisionersParameters(val *[]interface{
 	return nil
 }
 
+func (j *jsiiProxy_KeyVault) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_KeyVault) validateSetPurgeProtectionEnabledParameters(val interface{}) error {
 	return nil
 }

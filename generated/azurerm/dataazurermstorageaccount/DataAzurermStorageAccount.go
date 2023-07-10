@@ -9,14 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/storage_account azurerm_storage_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/storage_account azurerm_storage_account}.
 type DataAzurermStorageAccount interface {
 	cdktf.TerraformDataSource
 	AccessTier() *string
 	AccountKind() *string
 	AccountReplicationType() *string
 	AccountTier() *string
-	AllowBlobPublicAccess() cdktf.IResolvable
+	AllowNestedItemsToBePublic() cdktf.IResolvable
+	AzureFilesAuthentication() DataAzurermStorageAccountAzureFilesAuthenticationList
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -41,6 +42,7 @@ type DataAzurermStorageAccount interface {
 	FriendlyUniqueId() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DataAzurermStorageAccountIdentityList
 	IdInput() *string
 	InfrastructureEncryptionEnabled() cdktf.IResolvable
 	IsHnsEnabled() cdktf.IResolvable
@@ -55,6 +57,7 @@ type DataAzurermStorageAccount interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	Nfsv3Enabled() cdktf.IResolvable
 	// The tree node.
 	Node() constructs.Node
 	PrimaryAccessKey() *string
@@ -196,11 +199,21 @@ func (j *jsiiProxy_DataAzurermStorageAccount) AccountTier() *string {
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermStorageAccount) AllowBlobPublicAccess() cdktf.IResolvable {
+func (j *jsiiProxy_DataAzurermStorageAccount) AllowNestedItemsToBePublic() cdktf.IResolvable {
 	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
-		"allowBlobPublicAccess",
+		"allowNestedItemsToBePublic",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermStorageAccount) AzureFilesAuthentication() DataAzurermStorageAccountAzureFilesAuthenticationList {
+	var returns DataAzurermStorageAccountAzureFilesAuthenticationList
+	_jsii_.Get(
+		j,
+		"azureFilesAuthentication",
 		&returns,
 	)
 	return returns
@@ -306,6 +319,16 @@ func (j *jsiiProxy_DataAzurermStorageAccount) Id() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermStorageAccount) Identity() DataAzurermStorageAccountIdentityList {
+	var returns DataAzurermStorageAccountIdentityList
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermStorageAccount) IdInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -391,6 +414,16 @@ func (j *jsiiProxy_DataAzurermStorageAccount) NameInput() *string {
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermStorageAccount) Nfsv3Enabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"nfsv3Enabled",
 		&returns,
 	)
 	return returns
@@ -847,7 +880,7 @@ func (j *jsiiProxy_DataAzurermStorageAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/storage_account azurerm_storage_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/storage_account azurerm_storage_account} Data Source.
 func NewDataAzurermStorageAccount(scope constructs.Construct, id *string, config *DataAzurermStorageAccountConfig) DataAzurermStorageAccount {
 	_init_.Initialize()
 
@@ -865,7 +898,7 @@ func NewDataAzurermStorageAccount(scope constructs.Construct, id *string, config
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/storage_account azurerm_storage_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/storage_account azurerm_storage_account} Data Source.
 func NewDataAzurermStorageAccount_Override(d DataAzurermStorageAccount, scope constructs.Construct, id *string, config *DataAzurermStorageAccountConfig) {
 	_init_.Initialize()
 

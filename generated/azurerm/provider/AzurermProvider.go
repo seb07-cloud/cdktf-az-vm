@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs azurerm}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs azurerm}.
 type AzurermProvider interface {
 	cdktf.TerraformProvider
 	Alias() *string
@@ -20,6 +20,9 @@ type AzurermProvider interface {
 	AuxiliaryTenantIdsInput() *[]*string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ClientCertificate() *string
+	SetClientCertificate(val *string)
+	ClientCertificateInput() *string
 	ClientCertificatePassword() *string
 	SetClientCertificatePassword(val *string)
 	ClientCertificatePasswordInput() *string
@@ -28,9 +31,15 @@ type AzurermProvider interface {
 	ClientCertificatePathInput() *string
 	ClientId() *string
 	SetClientId(val *string)
+	ClientIdFilePath() *string
+	SetClientIdFilePath(val *string)
+	ClientIdFilePathInput() *string
 	ClientIdInput() *string
 	ClientSecret() *string
 	SetClientSecret(val *string)
+	ClientSecretFilePath() *string
+	SetClientSecretFilePath(val *string)
+	ClientSecretFilePathInput() *string
 	ClientSecretInput() *string
 	// Experimental.
 	ConstructNodeMetadata() *map[string]interface{}
@@ -60,6 +69,18 @@ type AzurermProvider interface {
 	MsiEndpointInput() *string
 	// The tree node.
 	Node() constructs.Node
+	OidcRequestToken() *string
+	SetOidcRequestToken(val *string)
+	OidcRequestTokenInput() *string
+	OidcRequestUrl() *string
+	SetOidcRequestUrl(val *string)
+	OidcRequestUrlInput() *string
+	OidcToken() *string
+	SetOidcToken(val *string)
+	OidcTokenFilePath() *string
+	SetOidcTokenFilePath(val *string)
+	OidcTokenFilePathInput() *string
+	OidcTokenInput() *string
 	PartnerId() *string
 	SetPartnerId(val *string)
 	PartnerIdInput() *string
@@ -83,9 +104,15 @@ type AzurermProvider interface {
 	TerraformProviderSource() *string
 	// Experimental.
 	TerraformResourceType() *string
+	UseCli() interface{}
+	SetUseCli(val interface{})
+	UseCliInput() interface{}
 	UseMsi() interface{}
 	SetUseMsi(val interface{})
 	UseMsiInput() interface{}
+	UseOidc() interface{}
+	SetUseOidc(val interface{})
+	UseOidcInput() interface{}
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Overrides the auto-generated logical ID with a specific ID.
@@ -93,15 +120,22 @@ type AzurermProvider interface {
 	OverrideLogicalId(newLogicalId *string)
 	ResetAlias()
 	ResetAuxiliaryTenantIds()
+	ResetClientCertificate()
 	ResetClientCertificatePassword()
 	ResetClientCertificatePath()
 	ResetClientId()
+	ResetClientIdFilePath()
 	ResetClientSecret()
+	ResetClientSecretFilePath()
 	ResetDisableCorrelationRequestId()
 	ResetDisableTerraformPartnerId()
 	ResetEnvironment()
 	ResetMetadataHost()
 	ResetMsiEndpoint()
+	ResetOidcRequestToken()
+	ResetOidcRequestUrl()
+	ResetOidcToken()
+	ResetOidcTokenFilePath()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -110,7 +144,9 @@ type AzurermProvider interface {
 	ResetStorageUseAzuread()
 	ResetSubscriptionId()
 	ResetTenantId()
+	ResetUseCli()
 	ResetUseMsi()
+	ResetUseOidc()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -176,6 +212,26 @@ func (j *jsiiProxy_AzurermProvider) CdktfStack() cdktf.TerraformStack {
 	return returns
 }
 
+func (j *jsiiProxy_AzurermProvider) ClientCertificate() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificate",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) ClientCertificateInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientCertificateInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AzurermProvider) ClientCertificatePassword() *string {
 	var returns *string
 	_jsii_.Get(
@@ -226,6 +282,26 @@ func (j *jsiiProxy_AzurermProvider) ClientId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AzurermProvider) ClientIdFilePath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientIdFilePath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) ClientIdFilePathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientIdFilePathInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AzurermProvider) ClientIdInput() *string {
 	var returns *string
 	_jsii_.Get(
@@ -241,6 +317,26 @@ func (j *jsiiProxy_AzurermProvider) ClientSecret() *string {
 	_jsii_.Get(
 		j,
 		"clientSecret",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) ClientSecretFilePath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientSecretFilePath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) ClientSecretFilePathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"clientSecretFilePathInput",
 		&returns,
 	)
 	return returns
@@ -426,6 +522,86 @@ func (j *jsiiProxy_AzurermProvider) Node() constructs.Node {
 	return returns
 }
 
+func (j *jsiiProxy_AzurermProvider) OidcRequestToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcRequestToken",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcRequestTokenInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcRequestTokenInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcRequestUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcRequestUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcRequestUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcRequestUrlInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcToken() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcToken",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcTokenFilePath() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcTokenFilePath",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcTokenFilePathInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcTokenFilePathInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) OidcTokenInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"oidcTokenInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AzurermProvider) PartnerId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -566,6 +742,26 @@ func (j *jsiiProxy_AzurermProvider) TerraformResourceType() *string {
 	return returns
 }
 
+func (j *jsiiProxy_AzurermProvider) UseCli() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useCli",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_AzurermProvider) UseCliInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useCliInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_AzurermProvider) UseMsi() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -586,8 +782,28 @@ func (j *jsiiProxy_AzurermProvider) UseMsiInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_AzurermProvider) UseOidc() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useOidc",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs azurerm} Resource.
+func (j *jsiiProxy_AzurermProvider) UseOidcInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"useOidcInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs azurerm} Resource.
 func NewAzurermProvider(scope constructs.Construct, id *string, config *AzurermProviderConfig) AzurermProvider {
 	_init_.Initialize()
 
@@ -605,7 +821,7 @@ func NewAzurermProvider(scope constructs.Construct, id *string, config *AzurermP
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs azurerm} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs azurerm} Resource.
 func NewAzurermProvider_Override(a AzurermProvider, scope constructs.Construct, id *string, config *AzurermProviderConfig) {
 	_init_.Initialize()
 
@@ -628,6 +844,14 @@ func (j *jsiiProxy_AzurermProvider)SetAuxiliaryTenantIds(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"auxiliaryTenantIds",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetClientCertificate(val *string) {
+	_jsii_.Set(
+		j,
+		"clientCertificate",
 		val,
 	)
 }
@@ -656,10 +880,26 @@ func (j *jsiiProxy_AzurermProvider)SetClientId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_AzurermProvider)SetClientIdFilePath(val *string) {
+	_jsii_.Set(
+		j,
+		"clientIdFilePath",
+		val,
+	)
+}
+
 func (j *jsiiProxy_AzurermProvider)SetClientSecret(val *string) {
 	_jsii_.Set(
 		j,
 		"clientSecret",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetClientSecretFilePath(val *string) {
+	_jsii_.Set(
+		j,
+		"clientSecretFilePath",
 		val,
 	)
 }
@@ -721,6 +961,38 @@ func (j *jsiiProxy_AzurermProvider)SetMsiEndpoint(val *string) {
 	)
 }
 
+func (j *jsiiProxy_AzurermProvider)SetOidcRequestToken(val *string) {
+	_jsii_.Set(
+		j,
+		"oidcRequestToken",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetOidcRequestUrl(val *string) {
+	_jsii_.Set(
+		j,
+		"oidcRequestUrl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetOidcToken(val *string) {
+	_jsii_.Set(
+		j,
+		"oidcToken",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetOidcTokenFilePath(val *string) {
+	_jsii_.Set(
+		j,
+		"oidcTokenFilePath",
+		val,
+	)
+}
+
 func (j *jsiiProxy_AzurermProvider)SetPartnerId(val *string) {
 	_jsii_.Set(
 		j,
@@ -767,6 +1039,17 @@ func (j *jsiiProxy_AzurermProvider)SetTenantId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_AzurermProvider)SetUseCli(val interface{}) {
+	if err := j.validateSetUseCliParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"useCli",
+		val,
+	)
+}
+
 func (j *jsiiProxy_AzurermProvider)SetUseMsi(val interface{}) {
 	if err := j.validateSetUseMsiParameters(val); err != nil {
 		panic(err)
@@ -774,6 +1057,17 @@ func (j *jsiiProxy_AzurermProvider)SetUseMsi(val interface{}) {
 	_jsii_.Set(
 		j,
 		"useMsi",
+		val,
+	)
+}
+
+func (j *jsiiProxy_AzurermProvider)SetUseOidc(val interface{}) {
+	if err := j.validateSetUseOidcParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"useOidc",
 		val,
 	)
 }
@@ -900,6 +1194,14 @@ func (a *jsiiProxy_AzurermProvider) ResetAuxiliaryTenantIds() {
 	)
 }
 
+func (a *jsiiProxy_AzurermProvider) ResetClientCertificate() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetClientCertificate",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AzurermProvider) ResetClientCertificatePassword() {
 	_jsii_.InvokeVoid(
 		a,
@@ -924,10 +1226,26 @@ func (a *jsiiProxy_AzurermProvider) ResetClientId() {
 	)
 }
 
+func (a *jsiiProxy_AzurermProvider) ResetClientIdFilePath() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetClientIdFilePath",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AzurermProvider) ResetClientSecret() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetClientSecret",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetClientSecretFilePath() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetClientSecretFilePath",
 		nil, // no parameters
 	)
 }
@@ -968,6 +1286,38 @@ func (a *jsiiProxy_AzurermProvider) ResetMsiEndpoint() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetMsiEndpoint",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetOidcRequestToken() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOidcRequestToken",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetOidcRequestUrl() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOidcRequestUrl",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetOidcToken() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOidcToken",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetOidcTokenFilePath() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetOidcTokenFilePath",
 		nil, // no parameters
 	)
 }
@@ -1020,10 +1370,26 @@ func (a *jsiiProxy_AzurermProvider) ResetTenantId() {
 	)
 }
 
+func (a *jsiiProxy_AzurermProvider) ResetUseCli() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetUseCli",
+		nil, // no parameters
+	)
+}
+
 func (a *jsiiProxy_AzurermProvider) ResetUseMsi() {
 	_jsii_.InvokeVoid(
 		a,
 		"resetUseMsi",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_AzurermProvider) ResetUseOidc() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetUseOidc",
 		nil, // no parameters
 	)
 }

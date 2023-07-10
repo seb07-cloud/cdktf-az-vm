@@ -9,12 +9,18 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter}.
 type CosmosdbCassandraDatacenter interface {
 	cdktf.TerraformResource
 	AvailabilityZonesEnabled() interface{}
 	SetAvailabilityZonesEnabled(val interface{})
 	AvailabilityZonesEnabledInput() interface{}
+	BackupStorageCustomerKeyUri() *string
+	SetBackupStorageCustomerKeyUri(val *string)
+	BackupStorageCustomerKeyUriInput() *string
+	Base64EncodedYamlFragment() *string
+	SetBase64EncodedYamlFragment(val *string)
+	Base64EncodedYamlFragmentInput() *string
 	CassandraClusterId() *string
 	SetCassandraClusterId(val *string)
 	CassandraClusterIdInput() *string
@@ -40,6 +46,9 @@ type CosmosdbCassandraDatacenter interface {
 	DiskCount() *float64
 	SetDiskCount(val *float64)
 	DiskCountInput() *float64
+	DiskSku() *string
+	SetDiskSku(val *string)
+	DiskSkuInput() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -58,6 +67,9 @@ type CosmosdbCassandraDatacenter interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	ManagedDiskCustomerKeyUri() *string
+	SetManagedDiskCustomerKeyUri(val *string)
+	ManagedDiskCustomerKeyUriInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -114,8 +126,12 @@ type CosmosdbCassandraDatacenter interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *CosmosdbCassandraDatacenterTimeouts)
 	ResetAvailabilityZonesEnabled()
+	ResetBackupStorageCustomerKeyUri()
+	ResetBase64EncodedYamlFragment()
 	ResetDiskCount()
+	ResetDiskSku()
 	ResetId()
+	ResetManagedDiskCustomerKeyUri()
 	ResetNodeCount()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -152,6 +168,46 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) AvailabilityZonesEnabledInput() 
 	_jsii_.Get(
 		j,
 		"availabilityZonesEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) BackupStorageCustomerKeyUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backupStorageCustomerKeyUri",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) BackupStorageCustomerKeyUriInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"backupStorageCustomerKeyUriInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) Base64EncodedYamlFragment() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"base64EncodedYamlFragment",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) Base64EncodedYamlFragmentInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"base64EncodedYamlFragmentInput",
 		&returns,
 	)
 	return returns
@@ -267,6 +323,26 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) DiskCountInput() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) DiskSku() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"diskSku",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) DiskSkuInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"diskSkuInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) ForEach() cdktf.ITerraformIterator {
 	var returns cdktf.ITerraformIterator
 	_jsii_.Get(
@@ -342,6 +418,26 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) ManagedDiskCustomerKeyUri() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"managedDiskCustomerKeyUri",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) ManagedDiskCustomerKeyUriInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"managedDiskCustomerKeyUriInput",
 		&returns,
 	)
 	return returns
@@ -498,7 +594,7 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter} Resource.
 func NewCosmosdbCassandraDatacenter(scope constructs.Construct, id *string, config *CosmosdbCassandraDatacenterConfig) CosmosdbCassandraDatacenter {
 	_init_.Initialize()
 
@@ -516,7 +612,7 @@ func NewCosmosdbCassandraDatacenter(scope constructs.Construct, id *string, conf
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_datacenter azurerm_cosmosdb_cassandra_datacenter} Resource.
 func NewCosmosdbCassandraDatacenter_Override(c CosmosdbCassandraDatacenter, scope constructs.Construct, id *string, config *CosmosdbCassandraDatacenterConfig) {
 	_init_.Initialize()
 
@@ -534,6 +630,28 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetAvailabilityZonesEnabled(val i
 	_jsii_.Set(
 		j,
 		"availabilityZonesEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetBackupStorageCustomerKeyUri(val *string) {
+	if err := j.validateSetBackupStorageCustomerKeyUriParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backupStorageCustomerKeyUri",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetBase64EncodedYamlFragment(val *string) {
+	if err := j.validateSetBase64EncodedYamlFragmentParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"base64EncodedYamlFragment",
 		val,
 	)
 }
@@ -601,6 +719,17 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetDiskCount(val *float64) {
 	)
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetDiskSku(val *string) {
+	if err := j.validateSetDiskSkuParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"diskSku",
+		val,
+	)
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
@@ -638,6 +767,17 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter)SetManagedDiskCustomerKeyUri(val *string) {
+	if err := j.validateSetManagedDiskCustomerKeyUriParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"managedDiskCustomerKeyUri",
 		val,
 	)
 }
@@ -979,6 +1119,22 @@ func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetAvailabilityZonesEnabled() 
 	)
 }
 
+func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetBackupStorageCustomerKeyUri() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetBackupStorageCustomerKeyUri",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetBase64EncodedYamlFragment() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetBase64EncodedYamlFragment",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetDiskCount() {
 	_jsii_.InvokeVoid(
 		c,
@@ -987,10 +1143,26 @@ func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetDiskCount() {
 	)
 }
 
+func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetDiskSku() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetDiskSku",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetId() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraDatacenter) ResetManagedDiskCustomerKeyUri() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetManagedDiskCustomerKeyUri",
 		nil, // no parameters
 	)
 }

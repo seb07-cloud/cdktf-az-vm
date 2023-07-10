@@ -56,6 +56,10 @@ func (l *jsiiProxy_LinuxWebApp) validatePutAuthSettingsParameters(value *LinuxWe
 	return nil
 }
 
+func (l *jsiiProxy_LinuxWebApp) validatePutAuthSettingsV2Parameters(value *LinuxWebAppAuthSettingsV2) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxWebApp) validatePutBackupParameters(value *LinuxWebAppBackup) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func (l *jsiiProxy_LinuxWebApp) validatePutLogsParameters(value *LinuxWebAppLogs
 }
 
 func (l *jsiiProxy_LinuxWebApp) validatePutSiteConfigParameters(value *LinuxWebAppSiteConfig) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxWebApp) validatePutStickySettingsParameters(value *LinuxWebAppStickySettings) error {
 	return nil
 }
 
@@ -105,6 +113,10 @@ func (j *jsiiProxy_LinuxWebApp) validateSetClientAffinityEnabledParameters(val i
 }
 
 func (j *jsiiProxy_LinuxWebApp) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -152,6 +164,10 @@ func (j *jsiiProxy_LinuxWebApp) validateSetProvisionersParameters(val *[]interfa
 	return nil
 }
 
+func (j *jsiiProxy_LinuxWebApp) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxWebApp) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }
@@ -161,6 +177,14 @@ func (j *jsiiProxy_LinuxWebApp) validateSetServicePlanIdParameters(val *string) 
 }
 
 func (j *jsiiProxy_LinuxWebApp) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetZipDeployFileParameters(val *string) error {
 	return nil
 }
 

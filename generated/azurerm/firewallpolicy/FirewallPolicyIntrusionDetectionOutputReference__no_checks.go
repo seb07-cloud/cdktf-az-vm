@@ -72,6 +72,10 @@ func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) validateSetM
 	return nil
 }
 
+func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) validateSetPrivateRangesParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_FirewallPolicyIntrusionDetectionOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	return nil
 }

@@ -52,6 +52,10 @@ func (s *jsiiProxy_ServicebusNamespace) validateOverrideLogicalIdParameters(newL
 	return nil
 }
 
+func (s *jsiiProxy_ServicebusNamespace) validatePutCustomerManagedKeyParameters(value *ServicebusNamespaceCustomerManagedKey) error {
+	return nil
+}
+
 func (s *jsiiProxy_ServicebusNamespace) validatePutIdentityParameters(value *ServicebusNamespaceIdentity) error {
 	return nil
 }
@@ -92,7 +96,15 @@ func (j *jsiiProxy_ServicebusNamespace) validateSetLifecycleParameters(val *cdkt
 	return nil
 }
 
+func (j *jsiiProxy_ServicebusNamespace) validateSetLocalAuthEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_ServicebusNamespace) validateSetLocationParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_ServicebusNamespace) validateSetMinimumTlsVersionParameters(val *string) error {
 	return nil
 }
 
@@ -101,6 +113,10 @@ func (j *jsiiProxy_ServicebusNamespace) validateSetNameParameters(val *string) e
 }
 
 func (j *jsiiProxy_ServicebusNamespace) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ServicebusNamespace) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
 	return nil
 }
 

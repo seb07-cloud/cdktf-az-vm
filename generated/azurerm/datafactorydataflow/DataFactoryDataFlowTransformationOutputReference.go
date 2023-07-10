@@ -25,13 +25,19 @@ type DataFactoryDataFlowTransformationOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	Dataset() DataFactoryDataFlowTransformationDatasetOutputReference
+	DatasetInput() *DataFactoryDataFlowTransformationDataset
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	Flowlet() DataFactoryDataFlowTransformationFlowletOutputReference
+	FlowletInput() *DataFactoryDataFlowTransformationFlowlet
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
 	SetInternalValue(val interface{})
+	LinkedService() DataFactoryDataFlowTransformationLinkedServiceOutputReference
+	LinkedServiceInput() *DataFactoryDataFlowTransformationLinkedService
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -67,7 +73,13 @@ type DataFactoryDataFlowTransformationOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutDataset(value *DataFactoryDataFlowTransformationDataset)
+	PutFlowlet(value *DataFactoryDataFlowTransformationFlowlet)
+	PutLinkedService(value *DataFactoryDataFlowTransformationLinkedService)
+	ResetDataset()
 	ResetDescription()
+	ResetFlowlet()
+	ResetLinkedService()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -113,6 +125,26 @@ func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) CreationSta
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Dataset() DataFactoryDataFlowTransformationDatasetOutputReference {
+	var returns DataFactoryDataFlowTransformationDatasetOutputReference
+	_jsii_.Get(
+		j,
+		"dataset",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) DatasetInput() *DataFactoryDataFlowTransformationDataset {
+	var returns *DataFactoryDataFlowTransformationDataset
+	_jsii_.Get(
+		j,
+		"datasetInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Description() *string {
 	var returns *string
 	_jsii_.Get(
@@ -133,6 +165,26 @@ func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Description
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Flowlet() DataFactoryDataFlowTransformationFlowletOutputReference {
+	var returns DataFactoryDataFlowTransformationFlowletOutputReference
+	_jsii_.Get(
+		j,
+		"flowlet",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) FlowletInput() *DataFactoryDataFlowTransformationFlowlet {
+	var returns *DataFactoryDataFlowTransformationFlowlet
+	_jsii_.Get(
+		j,
+		"flowletInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -148,6 +200,26 @@ func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) InternalVal
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) LinkedService() DataFactoryDataFlowTransformationLinkedServiceOutputReference {
+	var returns DataFactoryDataFlowTransformationLinkedServiceOutputReference
+	_jsii_.Get(
+		j,
+		"linkedService",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) LinkedServiceInput() *DataFactoryDataFlowTransformationLinkedService {
+	var returns *DataFactoryDataFlowTransformationLinkedService
+	_jsii_.Get(
+		j,
+		"linkedServiceInput",
 		&returns,
 	)
 	return returns
@@ -484,10 +556,67 @@ func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) Interpolati
 	return returns
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) PutDataset(value *DataFactoryDataFlowTransformationDataset) {
+	if err := d.validatePutDatasetParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putDataset",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) PutFlowlet(value *DataFactoryDataFlowTransformationFlowlet) {
+	if err := d.validatePutFlowletParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putFlowlet",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) PutLinkedService(value *DataFactoryDataFlowTransformationLinkedService) {
+	if err := d.validatePutLinkedServiceParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putLinkedService",
+		[]interface{}{value},
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) ResetDataset() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDataset",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) ResetDescription() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) ResetFlowlet() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetFlowlet",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) ResetLinkedService() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetLinkedService",
 		nil, // no parameters
 	)
 }

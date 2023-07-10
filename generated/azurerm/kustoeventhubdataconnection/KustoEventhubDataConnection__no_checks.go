@@ -92,6 +92,10 @@ func (j *jsiiProxy_KustoEventhubDataConnection) validateSetDatabaseNameParameter
 	return nil
 }
 
+func (j *jsiiProxy_KustoEventhubDataConnection) validateSetDatabaseRoutingTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoEventhubDataConnection) validateSetDataFormatParameters(val *string) error {
 	return nil
 }

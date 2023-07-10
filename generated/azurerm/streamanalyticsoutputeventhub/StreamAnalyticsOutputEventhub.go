@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub}.
 type StreamAnalyticsOutputEventhub interface {
 	cdktf.TerraformResource
+	AuthenticationMode() *string
+	SetAuthenticationMode(val *string)
+	AuthenticationModeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -119,12 +122,15 @@ type StreamAnalyticsOutputEventhub interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutSerialization(value *StreamAnalyticsOutputEventhubSerialization)
 	PutTimeouts(value *StreamAnalyticsOutputEventhubTimeouts)
+	ResetAuthenticationMode()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPartitionKey()
 	ResetPropertyColumns()
+	ResetSharedAccessPolicyKey()
+	ResetSharedAccessPolicyName()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -139,6 +145,26 @@ type StreamAnalyticsOutputEventhub interface {
 // The jsii proxy struct for StreamAnalyticsOutputEventhub
 type jsiiProxy_StreamAnalyticsOutputEventhub struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputEventhub) AuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputEventhub) AuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationModeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputEventhub) CdktfStack() cdktf.TerraformStack {
@@ -542,7 +568,7 @@ func (j *jsiiProxy_StreamAnalyticsOutputEventhub) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub} Resource.
 func NewStreamAnalyticsOutputEventhub(scope constructs.Construct, id *string, config *StreamAnalyticsOutputEventhubConfig) StreamAnalyticsOutputEventhub {
 	_init_.Initialize()
 
@@ -560,7 +586,7 @@ func NewStreamAnalyticsOutputEventhub(scope constructs.Construct, id *string, co
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_eventhub azurerm_stream_analytics_output_eventhub} Resource.
 func NewStreamAnalyticsOutputEventhub_Override(s StreamAnalyticsOutputEventhub, scope constructs.Construct, id *string, config *StreamAnalyticsOutputEventhubConfig) {
 	_init_.Initialize()
 
@@ -568,6 +594,17 @@ func NewStreamAnalyticsOutputEventhub_Override(s StreamAnalyticsOutputEventhub, 
 		"azurerm.streamAnalyticsOutputEventhub.StreamAnalyticsOutputEventhub",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputEventhub)SetAuthenticationMode(val *string) {
+	if err := j.validateSetAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMode",
+		val,
 	)
 }
 
@@ -1037,6 +1074,14 @@ func (s *jsiiProxy_StreamAnalyticsOutputEventhub) PutTimeouts(value *StreamAnaly
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsOutputEventhub) ResetAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsOutputEventhub) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1065,6 +1110,22 @@ func (s *jsiiProxy_StreamAnalyticsOutputEventhub) ResetPropertyColumns() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetPropertyColumns",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputEventhub) ResetSharedAccessPolicyKey() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyKey",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputEventhub) ResetSharedAccessPolicyName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyName",
 		nil, // no parameters
 	)
 }

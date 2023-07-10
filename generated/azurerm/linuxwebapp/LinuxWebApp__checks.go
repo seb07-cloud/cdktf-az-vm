@@ -122,6 +122,17 @@ func (l *jsiiProxy_LinuxWebApp) validatePutAuthSettingsParameters(value *LinuxWe
 	return nil
 }
 
+func (l *jsiiProxy_LinuxWebApp) validatePutAuthSettingsV2Parameters(value *LinuxWebAppAuthSettingsV2) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (l *jsiiProxy_LinuxWebApp) validatePutBackupParameters(value *LinuxWebAppBackup) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -187,6 +198,17 @@ func (l *jsiiProxy_LinuxWebApp) validatePutLogsParameters(value *LinuxWebAppLogs
 }
 
 func (l *jsiiProxy_LinuxWebApp) validatePutSiteConfigParameters(value *LinuxWebAppSiteConfig) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (l *jsiiProxy_LinuxWebApp) validatePutStickySettingsParameters(value *LinuxWebAppStickySettings) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}
@@ -306,6 +328,14 @@ func (j *jsiiProxy_LinuxWebApp) validateSetClientCertificateEnabledParameters(va
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetClientCertificateExclusionPathsParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil
@@ -535,6 +565,26 @@ func (j *jsiiProxy_LinuxWebApp) validateSetProvisionersParameters(val *[]interfa
 	return nil
 }
 
+func (j *jsiiProxy_LinuxWebApp) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case cdktf.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, cdktf.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_LinuxWebApp) validateSetResourceGroupNameParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -552,6 +602,22 @@ func (j *jsiiProxy_LinuxWebApp) validateSetServicePlanIdParameters(val *string) 
 }
 
 func (j *jsiiProxy_LinuxWebApp) validateSetTagsParameters(val *map[string]*string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxWebApp) validateSetZipDeployFileParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

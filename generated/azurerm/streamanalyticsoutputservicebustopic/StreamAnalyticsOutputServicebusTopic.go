@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic}.
 type StreamAnalyticsOutputServicebusTopic interface {
 	cdktf.TerraformResource
+	AuthenticationMode() *string
+	SetAuthenticationMode(val *string)
+	AuthenticationModeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -78,6 +81,9 @@ type StreamAnalyticsOutputServicebusTopic interface {
 	StreamAnalyticsJobName() *string
 	SetStreamAnalyticsJobName(val *string)
 	StreamAnalyticsJobNameInput() *string
+	SystemPropertyColumns() *map[string]*string
+	SetSystemPropertyColumns(val *map[string]*string)
+	SystemPropertyColumnsInput() *map[string]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -116,11 +122,15 @@ type StreamAnalyticsOutputServicebusTopic interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutSerialization(value *StreamAnalyticsOutputServicebusTopicSerialization)
 	PutTimeouts(value *StreamAnalyticsOutputServicebusTopicTimeouts)
+	ResetAuthenticationMode()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
 	ResetPropertyColumns()
+	ResetSharedAccessPolicyKey()
+	ResetSharedAccessPolicyName()
+	ResetSystemPropertyColumns()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -135,6 +145,26 @@ type StreamAnalyticsOutputServicebusTopic interface {
 // The jsii proxy struct for StreamAnalyticsOutputServicebusTopic
 type jsiiProxy_StreamAnalyticsOutputServicebusTopic struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) AuthenticationMode() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMode",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) AuthenticationModeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationModeInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) CdktfStack() cdktf.TerraformStack {
@@ -447,6 +477,26 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) StreamAnalyticsJobNameI
 	return returns
 }
 
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) SystemPropertyColumns() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"systemPropertyColumns",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) SystemPropertyColumnsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"systemPropertyColumnsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -518,7 +568,7 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic) TopicNameInput() *strin
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic} Resource.
 func NewStreamAnalyticsOutputServicebusTopic(scope constructs.Construct, id *string, config *StreamAnalyticsOutputServicebusTopicConfig) StreamAnalyticsOutputServicebusTopic {
 	_init_.Initialize()
 
@@ -536,7 +586,7 @@ func NewStreamAnalyticsOutputServicebusTopic(scope constructs.Construct, id *str
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/stream_analytics_output_servicebus_topic azurerm_stream_analytics_output_servicebus_topic} Resource.
 func NewStreamAnalyticsOutputServicebusTopic_Override(s StreamAnalyticsOutputServicebusTopic, scope constructs.Construct, id *string, config *StreamAnalyticsOutputServicebusTopicConfig) {
 	_init_.Initialize()
 
@@ -544,6 +594,17 @@ func NewStreamAnalyticsOutputServicebusTopic_Override(s StreamAnalyticsOutputSer
 		"azurerm.streamAnalyticsOutputServicebusTopic.StreamAnalyticsOutputServicebusTopic",
 		[]interface{}{scope, id, config},
 		s,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic)SetAuthenticationMode(val *string) {
+	if err := j.validateSetAuthenticationModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMode",
+		val,
 	)
 }
 
@@ -699,6 +760,17 @@ func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic)SetStreamAnalyticsJobNam
 	_jsii_.Set(
 		j,
 		"streamAnalyticsJobName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StreamAnalyticsOutputServicebusTopic)SetSystemPropertyColumns(val *map[string]*string) {
+	if err := j.validateSetSystemPropertyColumnsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"systemPropertyColumns",
 		val,
 	)
 }
@@ -1002,6 +1074,14 @@ func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) PutTimeouts(value *Stre
 	)
 }
 
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetAuthenticationMode() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAuthenticationMode",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1022,6 +1102,30 @@ func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetPropertyColumns() 
 	_jsii_.InvokeVoid(
 		s,
 		"resetPropertyColumns",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetSharedAccessPolicyKey() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyKey",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetSharedAccessPolicyName() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSharedAccessPolicyName",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StreamAnalyticsOutputServicebusTopic) ResetSystemPropertyColumns() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSystemPropertyColumns",
 		nil, // no parameters
 	)
 }

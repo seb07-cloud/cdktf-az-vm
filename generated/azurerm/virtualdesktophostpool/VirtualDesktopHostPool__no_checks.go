@@ -52,6 +52,10 @@ func (v *jsiiProxy_VirtualDesktopHostPool) validateOverrideLogicalIdParameters(n
 	return nil
 }
 
+func (v *jsiiProxy_VirtualDesktopHostPool) validatePutScheduledAgentUpdatesParameters(value *VirtualDesktopHostPoolScheduledAgentUpdates) error {
+	return nil
+}
+
 func (v *jsiiProxy_VirtualDesktopHostPool) validatePutTimeoutsParameters(value *VirtualDesktopHostPoolTimeouts) error {
 	return nil
 }

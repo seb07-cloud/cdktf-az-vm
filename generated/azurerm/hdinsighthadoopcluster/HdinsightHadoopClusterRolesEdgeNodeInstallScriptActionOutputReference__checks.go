@@ -195,6 +195,14 @@ func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputR
 	return nil
 }
 
+func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) validateSetParametersParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_HdinsightHadoopClusterRolesEdgeNodeInstallScriptActionOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

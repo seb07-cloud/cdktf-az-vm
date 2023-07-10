@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/managed_disk azurerm_managed_disk}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/managed_disk azurerm_managed_disk}.
 type DataAzurermManagedDisk interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -25,10 +25,12 @@ type DataAzurermManagedDisk interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskAccessId() *string
 	DiskEncryptionSetId() *string
 	DiskIopsReadWrite() *float64
 	DiskMbpsReadWrite() *float64
 	DiskSizeGb() *float64
+	EncryptionSettings() DataAzurermManagedDiskEncryptionSettingsList
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -48,6 +50,7 @@ type DataAzurermManagedDisk interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	NetworkAccessPolicy() *string
 	// The tree node.
 	Node() constructs.Node
 	OsType() *string
@@ -170,6 +173,16 @@ func (j *jsiiProxy_DataAzurermManagedDisk) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermManagedDisk) DiskAccessId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"diskAccessId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermManagedDisk) DiskEncryptionSetId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -205,6 +218,16 @@ func (j *jsiiProxy_DataAzurermManagedDisk) DiskSizeGb() *float64 {
 	_jsii_.Get(
 		j,
 		"diskSizeGb",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermManagedDisk) EncryptionSettings() DataAzurermManagedDiskEncryptionSettingsList {
+	var returns DataAzurermManagedDiskEncryptionSettingsList
+	_jsii_.Get(
+		j,
+		"encryptionSettings",
 		&returns,
 	)
 	return returns
@@ -295,6 +318,16 @@ func (j *jsiiProxy_DataAzurermManagedDisk) NameInput() *string {
 	_jsii_.Get(
 		j,
 		"nameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermManagedDisk) NetworkAccessPolicy() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkAccessPolicy",
 		&returns,
 	)
 	return returns
@@ -471,7 +504,7 @@ func (j *jsiiProxy_DataAzurermManagedDisk) Zones() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/managed_disk azurerm_managed_disk} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/managed_disk azurerm_managed_disk} Data Source.
 func NewDataAzurermManagedDisk(scope constructs.Construct, id *string, config *DataAzurermManagedDiskConfig) DataAzurermManagedDisk {
 	_init_.Initialize()
 
@@ -489,7 +522,7 @@ func NewDataAzurermManagedDisk(scope constructs.Construct, id *string, config *D
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/managed_disk azurerm_managed_disk} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/managed_disk azurerm_managed_disk} Data Source.
 func NewDataAzurermManagedDisk_Override(d DataAzurermManagedDisk, scope constructs.Construct, id *string, config *DataAzurermManagedDiskConfig) {
 	_init_.Initialize()
 

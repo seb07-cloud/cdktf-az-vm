@@ -28,14 +28,29 @@ type LinuxWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	DockerImage() *string
 	SetDockerImage(val *string)
 	DockerImageInput() *string
+	DockerImageName() *string
+	SetDockerImageName(val *string)
+	DockerImageNameInput() *string
 	DockerImageTag() *string
 	SetDockerImageTag(val *string)
 	DockerImageTagInput() *string
+	DockerRegistryPassword() *string
+	SetDockerRegistryPassword(val *string)
+	DockerRegistryPasswordInput() *string
+	DockerRegistryUrl() *string
+	SetDockerRegistryUrl(val *string)
+	DockerRegistryUrlInput() *string
+	DockerRegistryUsername() *string
+	SetDockerRegistryUsername(val *string)
+	DockerRegistryUsernameInput() *string
 	DotnetVersion() *string
 	SetDotnetVersion(val *string)
 	DotnetVersionInput() *string
 	// Experimental.
 	Fqn() *string
+	GoVersion() *string
+	SetGoVersion(val *string)
+	GoVersionInput() *string
 	InternalValue() *LinuxWebAppSlotSiteConfigApplicationStack
 	SetInternalValue(val *LinuxWebAppSlotSiteConfigApplicationStack)
 	JavaServer() *string
@@ -92,8 +107,13 @@ type LinuxWebAppSlotSiteConfigApplicationStackOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetDockerImage()
+	ResetDockerImageName()
 	ResetDockerImageTag()
+	ResetDockerRegistryPassword()
+	ResetDockerRegistryUrl()
+	ResetDockerRegistryUsername()
 	ResetDotnetVersion()
+	ResetGoVersion()
 	ResetJavaServer()
 	ResetJavaServerVersion()
 	ResetJavaVersion()
@@ -166,6 +186,26 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) Doc
 	return returns
 }
 
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerImageName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerImageName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerImageNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerImageNameInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerImageTag() *string {
 	var returns *string
 	_jsii_.Get(
@@ -181,6 +221,66 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) Doc
 	_jsii_.Get(
 		j,
 		"dockerImageTagInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryPassword() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryPassword",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryPasswordInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryPasswordInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUrl",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUrlInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUrlInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUsername() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUsername",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) DockerRegistryUsernameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"dockerRegistryUsernameInput",
 		&returns,
 	)
 	return returns
@@ -211,6 +311,26 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) Fqn
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) GoVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"goVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) GoVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"goVersionInput",
 		&returns,
 	)
 	return returns
@@ -447,6 +567,17 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetD
 	)
 }
 
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerImageName(val *string) {
+	if err := j.validateSetDockerImageNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerImageName",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerImageTag(val *string) {
 	if err := j.validateSetDockerImageTagParameters(val); err != nil {
 		panic(err)
@@ -458,6 +589,39 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetD
 	)
 }
 
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryPassword(val *string) {
+	if err := j.validateSetDockerRegistryPasswordParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryUrl(val *string) {
+	if err := j.validateSetDockerRegistryUrlParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryUrl",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDockerRegistryUsername(val *string) {
+	if err := j.validateSetDockerRegistryUsernameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"dockerRegistryUsername",
+		val,
+	)
+}
+
 func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetDotnetVersion(val *string) {
 	if err := j.validateSetDotnetVersionParameters(val); err != nil {
 		panic(err)
@@ -465,6 +629,17 @@ func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetD
 	_jsii_.Set(
 		j,
 		"dotnetVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference)SetGoVersion(val *string) {
+	if err := j.validateSetGoVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"goVersion",
 		val,
 	)
 }
@@ -773,6 +948,14 @@ func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) Res
 	)
 }
 
+func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerImageName() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDockerImageName",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerImageTag() {
 	_jsii_.InvokeVoid(
 		l,
@@ -781,10 +964,42 @@ func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) Res
 	)
 }
 
+func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryPassword() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDockerRegistryPassword",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryUrl() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDockerRegistryUrl",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDockerRegistryUsername() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetDockerRegistryUsername",
+		nil, // no parameters
+	)
+}
+
 func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetDotnetVersion() {
 	_jsii_.InvokeVoid(
 		l,
 		"resetDotnetVersion",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxWebAppSlotSiteConfigApplicationStackOutputReference) ResetGoVersion() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetGoVersion",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account}.
 type DataAzurermSpatialAnchorsAccount interface {
 	cdktf.TerraformDataSource
 	AccountDomain() *string
@@ -56,6 +56,7 @@ type DataAzurermSpatialAnchorsAccount interface {
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	Tags() cdktf.StringMap
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -310,6 +311,16 @@ func (j *jsiiProxy_DataAzurermSpatialAnchorsAccount) ResourceGroupNameInput() *s
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermSpatialAnchorsAccount) Tags() cdktf.StringMap {
+	var returns cdktf.StringMap
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermSpatialAnchorsAccount) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -361,7 +372,7 @@ func (j *jsiiProxy_DataAzurermSpatialAnchorsAccount) TimeoutsInput() interface{}
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account} Data Source.
 func NewDataAzurermSpatialAnchorsAccount(scope constructs.Construct, id *string, config *DataAzurermSpatialAnchorsAccountConfig) DataAzurermSpatialAnchorsAccount {
 	_init_.Initialize()
 
@@ -379,7 +390,7 @@ func NewDataAzurermSpatialAnchorsAccount(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/spatial_anchors_account azurerm_spatial_anchors_account} Data Source.
 func NewDataAzurermSpatialAnchorsAccount_Override(d DataAzurermSpatialAnchorsAccount, scope constructs.Construct, id *string, config *DataAzurermSpatialAnchorsAccountConfig) {
 	_init_.Initialize()
 

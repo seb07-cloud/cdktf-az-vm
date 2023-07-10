@@ -44,7 +44,15 @@ func (j *jsiiProxy_AzurermProvider) validateSetStorageUseAzureadParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_AzurermProvider) validateSetUseCliParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_AzurermProvider) validateSetUseMsiParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_AzurermProvider) validateSetUseOidcParameters(val interface{}) error {
 	return nil
 }
 

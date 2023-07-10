@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_database azurerm_mssql_database}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_database azurerm_mssql_database}.
 type MssqlDatabase interface {
 	cdktf.TerraformResource
 	AutoPauseDelayInMinutes() *float64
@@ -57,6 +57,11 @@ type MssqlDatabase interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	Import() MssqlDatabaseImportOutputReference
+	ImportInput() *MssqlDatabaseImport
+	LedgerEnabled() interface{}
+	SetLedgerEnabled(val interface{})
+	LedgerEnabledInput() interface{}
 	LicenseType() *string
 	SetLicenseType(val *string)
 	LicenseTypeInput() *string
@@ -66,6 +71,9 @@ type MssqlDatabase interface {
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	LongTermRetentionPolicy() MssqlDatabaseLongTermRetentionPolicyOutputReference
 	LongTermRetentionPolicyInput() *MssqlDatabaseLongTermRetentionPolicy
+	MaintenanceConfigurationName() *string
+	SetMaintenanceConfigurationName(val *string)
+	MaintenanceConfigurationNameInput() *string
 	MaxSizeGb() *float64
 	SetMaxSizeGb(val *float64)
 	MaxSizeGbInput() *float64
@@ -160,6 +168,7 @@ type MssqlDatabase interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutImport(value *MssqlDatabaseImport)
 	PutLongTermRetentionPolicy(value *MssqlDatabaseLongTermRetentionPolicy)
 	PutShortTermRetentionPolicy(value *MssqlDatabaseShortTermRetentionPolicy)
 	PutThreatDetectionPolicy(value *MssqlDatabaseThreatDetectionPolicy)
@@ -171,8 +180,11 @@ type MssqlDatabase interface {
 	ResetElasticPoolId()
 	ResetGeoBackupEnabled()
 	ResetId()
+	ResetImport()
+	ResetLedgerEnabled()
 	ResetLicenseType()
 	ResetLongTermRetentionPolicy()
+	ResetMaintenanceConfigurationName()
 	ResetMaxSizeGb()
 	ResetMinCapacity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
@@ -427,6 +439,46 @@ func (j *jsiiProxy_MssqlDatabase) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_MssqlDatabase) Import() MssqlDatabaseImportOutputReference {
+	var returns MssqlDatabaseImportOutputReference
+	_jsii_.Get(
+		j,
+		"import",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabase) ImportInput() *MssqlDatabaseImport {
+	var returns *MssqlDatabaseImport
+	_jsii_.Get(
+		j,
+		"importInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabase) LedgerEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ledgerEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabase) LedgerEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ledgerEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MssqlDatabase) LicenseType() *string {
 	var returns *string
 	_jsii_.Get(
@@ -472,6 +524,26 @@ func (j *jsiiProxy_MssqlDatabase) LongTermRetentionPolicyInput() *MssqlDatabaseL
 	_jsii_.Get(
 		j,
 		"longTermRetentionPolicyInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabase) MaintenanceConfigurationName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MssqlDatabase) MaintenanceConfigurationNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"maintenanceConfigurationNameInput",
 		&returns,
 	)
 	return returns
@@ -908,7 +980,7 @@ func (j *jsiiProxy_MssqlDatabase) ZoneRedundantInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_database azurerm_mssql_database} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_database azurerm_mssql_database} Resource.
 func NewMssqlDatabase(scope constructs.Construct, id *string, config *MssqlDatabaseConfig) MssqlDatabase {
 	_init_.Initialize()
 
@@ -926,7 +998,7 @@ func NewMssqlDatabase(scope constructs.Construct, id *string, config *MssqlDatab
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/mssql_database azurerm_mssql_database} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/mssql_database azurerm_mssql_database} Resource.
 func NewMssqlDatabase_Override(m MssqlDatabase, scope constructs.Construct, id *string, config *MssqlDatabaseConfig) {
 	_init_.Initialize()
 
@@ -1052,6 +1124,17 @@ func (j *jsiiProxy_MssqlDatabase)SetId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_MssqlDatabase)SetLedgerEnabled(val interface{}) {
+	if err := j.validateSetLedgerEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ledgerEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_MssqlDatabase)SetLicenseType(val *string) {
 	if err := j.validateSetLicenseTypeParameters(val); err != nil {
 		panic(err)
@@ -1070,6 +1153,17 @@ func (j *jsiiProxy_MssqlDatabase)SetLifecycle(val *cdktf.TerraformResourceLifecy
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MssqlDatabase)SetMaintenanceConfigurationName(val *string) {
+	if err := j.validateSetMaintenanceConfigurationNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"maintenanceConfigurationName",
 		val,
 	)
 }
@@ -1524,6 +1618,17 @@ func (m *jsiiProxy_MssqlDatabase) OverrideLogicalId(newLogicalId *string) {
 	)
 }
 
+func (m *jsiiProxy_MssqlDatabase) PutImport(value *MssqlDatabaseImport) {
+	if err := m.validatePutImportParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		m,
+		"putImport",
+		[]interface{}{value},
+	)
+}
+
 func (m *jsiiProxy_MssqlDatabase) PutLongTermRetentionPolicy(value *MssqlDatabaseLongTermRetentionPolicy) {
 	if err := m.validatePutLongTermRetentionPolicyParameters(value); err != nil {
 		panic(err)
@@ -1624,6 +1729,22 @@ func (m *jsiiProxy_MssqlDatabase) ResetId() {
 	)
 }
 
+func (m *jsiiProxy_MssqlDatabase) ResetImport() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetImport",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlDatabase) ResetLedgerEnabled() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetLedgerEnabled",
+		nil, // no parameters
+	)
+}
+
 func (m *jsiiProxy_MssqlDatabase) ResetLicenseType() {
 	_jsii_.InvokeVoid(
 		m,
@@ -1636,6 +1757,14 @@ func (m *jsiiProxy_MssqlDatabase) ResetLongTermRetentionPolicy() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetLongTermRetentionPolicy",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MssqlDatabase) ResetMaintenanceConfigurationName() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetMaintenanceConfigurationName",
 		nil, // no parameters
 	)
 }

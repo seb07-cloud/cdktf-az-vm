@@ -27,6 +27,7 @@ type DataAzurermSpringCloudAppIdentityOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	IdentityIds() *[]*string
 	InternalValue() *DataAzurermSpringCloudAppIdentity
 	SetInternalValue(val *DataAzurermSpringCloudAppIdentity)
 	PrincipalId() *string
@@ -114,6 +115,16 @@ func (j *jsiiProxy_DataAzurermSpringCloudAppIdentityOutputReference) Fqn() *stri
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermSpringCloudAppIdentityOutputReference) IdentityIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIds",
 		&returns,
 	)
 	return returns

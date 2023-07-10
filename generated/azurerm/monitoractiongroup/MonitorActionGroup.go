@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/monitor_action_group azurerm_monitor_action_group}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/monitor_action_group azurerm_monitor_action_group}.
 type MonitorActionGroup interface {
 	cdktf.TerraformResource
 	ArmRoleReceiver() MonitorActionGroupArmRoleReceiverList
@@ -60,6 +60,9 @@ type MonitorActionGroup interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	Location() *string
+	SetLocation(val *string)
+	LocationInput() *string
 	LogicAppReceiver() MonitorActionGroupLogicAppReceiverList
 	LogicAppReceiverInput() interface{}
 	Name() *string
@@ -146,6 +149,7 @@ type MonitorActionGroup interface {
 	ResetEventHubReceiver()
 	ResetId()
 	ResetItsmReceiver()
+	ResetLocation()
 	ResetLogicAppReceiver()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -440,6 +444,26 @@ func (j *jsiiProxy_MonitorActionGroup) Lifecycle() *cdktf.TerraformResourceLifec
 	return returns
 }
 
+func (j *jsiiProxy_MonitorActionGroup) Location() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"location",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_MonitorActionGroup) LocationInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_MonitorActionGroup) LogicAppReceiver() MonitorActionGroupLogicAppReceiverList {
 	var returns MonitorActionGroupLogicAppReceiverList
 	_jsii_.Get(
@@ -691,7 +715,7 @@ func (j *jsiiProxy_MonitorActionGroup) WebhookReceiverInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/monitor_action_group azurerm_monitor_action_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/monitor_action_group azurerm_monitor_action_group} Resource.
 func NewMonitorActionGroup(scope constructs.Construct, id *string, config *MonitorActionGroupConfig) MonitorActionGroup {
 	_init_.Initialize()
 
@@ -709,7 +733,7 @@ func NewMonitorActionGroup(scope constructs.Construct, id *string, config *Monit
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/monitor_action_group azurerm_monitor_action_group} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/monitor_action_group azurerm_monitor_action_group} Resource.
 func NewMonitorActionGroup_Override(m MonitorActionGroup, scope constructs.Construct, id *string, config *MonitorActionGroupConfig) {
 	_init_.Initialize()
 
@@ -787,6 +811,17 @@ func (j *jsiiProxy_MonitorActionGroup)SetLifecycle(val *cdktf.TerraformResourceL
 	_jsii_.Set(
 		j,
 		"lifecycle",
+		val,
+	)
+}
+
+func (j *jsiiProxy_MonitorActionGroup)SetLocation(val *string) {
+	if err := j.validateSetLocationParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"location",
 		val,
 	)
 }
@@ -1320,6 +1355,14 @@ func (m *jsiiProxy_MonitorActionGroup) ResetItsmReceiver() {
 	_jsii_.InvokeVoid(
 		m,
 		"resetItsmReceiver",
+		nil, // no parameters
+	)
+}
+
+func (m *jsiiProxy_MonitorActionGroup) ResetLocation() {
+	_jsii_.InvokeVoid(
+		m,
+		"resetLocation",
 		nil, // no parameters
 	)
 }

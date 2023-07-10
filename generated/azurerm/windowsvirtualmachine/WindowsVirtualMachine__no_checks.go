@@ -64,6 +64,10 @@ func (w *jsiiProxy_WindowsVirtualMachine) validatePutBootDiagnosticsParameters(v
 	return nil
 }
 
+func (w *jsiiProxy_WindowsVirtualMachine) validatePutGalleryApplicationParameters(value interface{}) error {
+	return nil
+}
+
 func (w *jsiiProxy_WindowsVirtualMachine) validatePutIdentityParameters(value *WindowsVirtualMachineIdentity) error {
 	return nil
 }
@@ -121,6 +125,10 @@ func (j *jsiiProxy_WindowsVirtualMachine) validateSetAllowExtensionOperationsPar
 }
 
 func (j *jsiiProxy_WindowsVirtualMachine) validateSetAvailabilitySetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) validateSetCapacityReservationGroupIdParameters(val *string) error {
 	return nil
 }
 
@@ -197,6 +205,10 @@ func (j *jsiiProxy_WindowsVirtualMachine) validateSetNameParameters(val *string)
 }
 
 func (j *jsiiProxy_WindowsVirtualMachine) validateSetNetworkInterfaceIdsParameters(val *[]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_WindowsVirtualMachine) validateSetPatchAssessmentModeParameters(val *string) error {
 	return nil
 }
 

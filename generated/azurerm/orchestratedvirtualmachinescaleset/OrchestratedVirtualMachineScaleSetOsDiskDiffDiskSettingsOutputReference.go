@@ -32,6 +32,9 @@ type OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference int
 	Option() *string
 	SetOption(val *string)
 	OptionInput() *string
+	Placement() *string
+	SetPlacement(val *string)
+	PlacementInput() *string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -64,6 +67,7 @@ type OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference int
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetPlacement()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -144,6 +148,26 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutpu
 	_jsii_.Get(
 		j,
 		"optionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) Placement() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"placement",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) PlacementInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"placementInput",
 		&returns,
 	)
 	return returns
@@ -237,6 +261,17 @@ func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutpu
 	_jsii_.Set(
 		j,
 		"option",
+		val,
+	)
+}
+
+func (j *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference)SetPlacement(val *string) {
+	if err := j.validateSetPlacementParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"placement",
 		val,
 	)
 }
@@ -447,6 +482,14 @@ func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutpu
 	)
 
 	return returns
+}
+
+func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) ResetPlacement() {
+	_jsii_.InvokeVoid(
+		o,
+		"resetPlacement",
+		nil, // no parameters
+	)
 }
 
 func (o *jsiiProxy_OrchestratedVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

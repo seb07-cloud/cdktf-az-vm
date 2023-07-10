@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_script azurerm_kusto_script}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_script azurerm_kusto_script}.
 type KustoScript interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -70,6 +70,9 @@ type KustoScript interface {
 	SasToken() *string
 	SetSasToken(val *string)
 	SasTokenInput() *string
+	ScriptContent() *string
+	SetScriptContent(val *string)
+	ScriptContentInput() *string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -113,7 +116,10 @@ type KustoScript interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetSasToken()
+	ResetScriptContent()
 	ResetTimeouts()
+	ResetUrl()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -379,6 +385,26 @@ func (j *jsiiProxy_KustoScript) SasTokenInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_KustoScript) ScriptContent() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"scriptContent",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_KustoScript) ScriptContentInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"scriptContentInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_KustoScript) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -450,7 +476,7 @@ func (j *jsiiProxy_KustoScript) UrlInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_script azurerm_kusto_script} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_script azurerm_kusto_script} Resource.
 func NewKustoScript(scope constructs.Construct, id *string, config *KustoScriptConfig) KustoScript {
 	_init_.Initialize()
 
@@ -468,7 +494,7 @@ func NewKustoScript(scope constructs.Construct, id *string, config *KustoScriptC
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/kusto_script azurerm_kusto_script} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/kusto_script azurerm_kusto_script} Resource.
 func NewKustoScript_Override(k KustoScript, scope constructs.Construct, id *string, config *KustoScriptConfig) {
 	_init_.Initialize()
 
@@ -609,6 +635,17 @@ func (j *jsiiProxy_KustoScript)SetSasToken(val *string) {
 	_jsii_.Set(
 		j,
 		"sasToken",
+		val,
+	)
+}
+
+func (j *jsiiProxy_KustoScript)SetScriptContent(val *string) {
+	if err := j.validateSetScriptContentParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"scriptContent",
 		val,
 	)
 }
@@ -933,10 +970,34 @@ func (k *jsiiProxy_KustoScript) ResetOverrideLogicalId() {
 	)
 }
 
+func (k *jsiiProxy_KustoScript) ResetSasToken() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetSasToken",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KustoScript) ResetScriptContent() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetScriptContent",
+		nil, // no parameters
+	)
+}
+
 func (k *jsiiProxy_KustoScript) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		k,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (k *jsiiProxy_KustoScript) ResetUrl() {
+	_jsii_.InvokeVoid(
+		k,
+		"resetUrl",
 		nil, // no parameters
 	)
 }

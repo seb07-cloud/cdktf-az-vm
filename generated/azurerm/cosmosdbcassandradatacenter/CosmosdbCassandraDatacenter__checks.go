@@ -166,6 +166,22 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetAvailabilityZonesEnab
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetBackupStorageCustomerKeyUriParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetBase64EncodedYamlFragmentParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetCassandraClusterIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -280,6 +296,14 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetDiskCountParameters(v
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetDiskSkuParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -297,6 +321,14 @@ func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetLifecycleParameters(v
 }
 
 func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetLocationParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_CosmosdbCassandraDatacenter) validateSetManagedDiskCustomerKeyUriParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

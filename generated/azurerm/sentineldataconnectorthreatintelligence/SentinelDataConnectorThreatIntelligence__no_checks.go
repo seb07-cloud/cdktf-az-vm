@@ -88,6 +88,10 @@ func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) validateSetLogAnalyt
 	return nil
 }
 
+func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) validateSetLookbackDateParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SentinelDataConnectorThreatIntelligence) validateSetNameParameters(val *string) error {
 	return nil
 }

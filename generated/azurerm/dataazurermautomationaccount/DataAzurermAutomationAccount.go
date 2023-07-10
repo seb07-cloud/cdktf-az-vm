@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/automation_account azurerm_automation_account}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/automation_account azurerm_automation_account}.
 type DataAzurermAutomationAccount interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -33,8 +33,10 @@ type DataAzurermAutomationAccount interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HybridServiceUrl() *string
 	Id() *string
 	SetId(val *string)
+	Identity() DataAzurermAutomationAccountIdentityList
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -46,6 +48,7 @@ type DataAzurermAutomationAccount interface {
 	// The tree node.
 	Node() constructs.Node
 	PrimaryKey() *string
+	PrivateEndpointConnection() DataAzurermAutomationAccountPrivateEndpointConnectionList
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -190,11 +193,31 @@ func (j *jsiiProxy_DataAzurermAutomationAccount) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermAutomationAccount) HybridServiceUrl() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hybridServiceUrl",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermAutomationAccount) Id() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAutomationAccount) Identity() DataAzurermAutomationAccountIdentityList {
+	var returns DataAzurermAutomationAccountIdentityList
+	_jsii_.Get(
+		j,
+		"identity",
 		&returns,
 	)
 	return returns
@@ -255,6 +278,16 @@ func (j *jsiiProxy_DataAzurermAutomationAccount) PrimaryKey() *string {
 	_jsii_.Get(
 		j,
 		"primaryKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermAutomationAccount) PrivateEndpointConnection() DataAzurermAutomationAccountPrivateEndpointConnectionList {
+	var returns DataAzurermAutomationAccountPrivateEndpointConnectionList
+	_jsii_.Get(
+		j,
+		"privateEndpointConnection",
 		&returns,
 	)
 	return returns
@@ -361,7 +394,7 @@ func (j *jsiiProxy_DataAzurermAutomationAccount) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/automation_account azurerm_automation_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/automation_account azurerm_automation_account} Data Source.
 func NewDataAzurermAutomationAccount(scope constructs.Construct, id *string, config *DataAzurermAutomationAccountConfig) DataAzurermAutomationAccount {
 	_init_.Initialize()
 
@@ -379,7 +412,7 @@ func NewDataAzurermAutomationAccount(scope constructs.Construct, id *string, con
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/automation_account azurerm_automation_account} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/automation_account azurerm_automation_account} Data Source.
 func NewDataAzurermAutomationAccount_Override(d DataAzurermAutomationAccount, scope constructs.Construct, id *string, config *DataAzurermAutomationAccountConfig) {
 	_init_.Initialize()
 

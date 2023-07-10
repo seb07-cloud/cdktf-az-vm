@@ -56,6 +56,10 @@ func (j *jsiiProxy_LogicAppStandardIdentityOutputReference) validateSetComplexOb
 	return nil
 }
 
+func (j *jsiiProxy_LogicAppStandardIdentityOutputReference) validateSetIdentityIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LogicAppStandardIdentityOutputReference) validateSetInternalValueParameters(val *LogicAppStandardIdentity) error {
 	return nil
 }

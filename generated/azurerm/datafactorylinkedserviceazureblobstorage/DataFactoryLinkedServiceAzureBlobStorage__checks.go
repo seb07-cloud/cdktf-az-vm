@@ -122,6 +122,17 @@ func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutKeyVault
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutServicePrincipalLinkedKeyVaultKeyParameters(value *DataFactoryLinkedServiceAzureBlobStorageServicePrincipalLinkedKeyVaultKey) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validatePutTimeoutsParameters(value *DataFactoryLinkedServiceAzureBlobStorageTimeouts) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -207,6 +218,14 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnecti
 }
 
 func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnectionStringParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetConnectionStringInsecureParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -398,6 +417,14 @@ func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetServiceP
 }
 
 func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetServicePrincipalKeyParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceAzureBlobStorage) validateSetStorageKindParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

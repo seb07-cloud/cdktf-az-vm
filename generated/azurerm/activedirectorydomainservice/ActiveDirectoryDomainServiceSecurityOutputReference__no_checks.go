@@ -60,6 +60,14 @@ func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) validate
 	return nil
 }
 
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) validateSetKerberosArmoringEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) validateSetKerberosRc4EncryptionEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_ActiveDirectoryDomainServiceSecurityOutputReference) validateSetNtlmV1EnabledParameters(val interface{}) error {
 	return nil
 }

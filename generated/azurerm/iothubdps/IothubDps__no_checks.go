@@ -92,6 +92,10 @@ func (j *jsiiProxy_IothubDps) validateSetCountParameters(val interface{}) error 
 	return nil
 }
 
+func (j *jsiiProxy_IothubDps) validateSetDataResidencyEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_IothubDps) validateSetIdParameters(val *string) error {
 	return nil
 }

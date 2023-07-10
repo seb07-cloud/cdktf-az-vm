@@ -68,6 +68,10 @@ func validateLbBackendAddressPoolAddress_IsTerraformResourceParameters(x interfa
 	return nil
 }
 
+func (j *jsiiProxy_LbBackendAddressPoolAddress) validateSetBackendAddressIpConfigurationIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LbBackendAddressPoolAddress) validateSetBackendAddressPoolIdParameters(val *string) error {
 	return nil
 }

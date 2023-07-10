@@ -40,6 +40,12 @@ type WindowsVirtualMachineScaleSetOsDiskOutputReference interface {
 	Fqn() *string
 	InternalValue() *WindowsVirtualMachineScaleSetOsDisk
 	SetInternalValue(val *WindowsVirtualMachineScaleSetOsDisk)
+	SecureVmDiskEncryptionSetId() *string
+	SetSecureVmDiskEncryptionSetId(val *string)
+	SecureVmDiskEncryptionSetIdInput() *string
+	SecurityEncryptionType() *string
+	SetSecurityEncryptionType(val *string)
+	SecurityEncryptionTypeInput() *string
 	StorageAccountType() *string
 	SetStorageAccountType(val *string)
 	StorageAccountTypeInput() *string
@@ -82,6 +88,8 @@ type WindowsVirtualMachineScaleSetOsDiskOutputReference interface {
 	ResetDiffDiskSettings()
 	ResetDiskEncryptionSetId()
 	ResetDiskSizeGb()
+	ResetSecureVmDiskEncryptionSetId()
+	ResetSecurityEncryptionType()
 	ResetWriteAcceleratorEnabled()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -223,6 +231,46 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) InternalV
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) SecureVmDiskEncryptionSetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) SecureVmDiskEncryptionSetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) SecurityEncryptionType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityEncryptionType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) SecurityEncryptionTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityEncryptionTypeInput",
 		&returns,
 	)
 	return returns
@@ -378,6 +426,28 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference)SetInterna
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference)SetSecureVmDiskEncryptionSetId(val *string) {
+	if err := j.validateSetSecureVmDiskEncryptionSetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"secureVmDiskEncryptionSetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference)SetSecurityEncryptionType(val *string) {
+	if err := j.validateSetSecurityEncryptionTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"securityEncryptionType",
 		val,
 	)
 }
@@ -643,6 +713,22 @@ func (w *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) ResetDisk
 	_jsii_.InvokeVoid(
 		w,
 		"resetDiskSizeGb",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) ResetSecureVmDiskEncryptionSetId() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetSecureVmDiskEncryptionSetId",
+		nil, // no parameters
+	)
+}
+
+func (w *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskOutputReference) ResetSecurityEncryptionType() {
+	_jsii_.InvokeVoid(
+		w,
+		"resetSecurityEncryptionType",
 		nil, // no parameters
 	)
 }

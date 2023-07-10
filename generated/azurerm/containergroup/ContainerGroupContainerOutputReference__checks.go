@@ -101,6 +101,17 @@ func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutGpuParamet
 	return nil
 }
 
+func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutGpuLimitParameters(value *ContainerGroupContainerGpuLimit) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (c *jsiiProxy_ContainerGroupContainerOutputReference) validatePutLivenessProbeParameters(value *ContainerGroupContainerLivenessProbe) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -274,6 +285,14 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetCpuParamet
 	return nil
 }
 
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetCpuLimitParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetEnvironmentVariablesParameters(val *map[string]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -315,6 +334,14 @@ func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetInternalVa
 }
 
 func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetMemoryParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_ContainerGroupContainerOutputReference) validateSetMemoryLimitParameters(val *float64) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

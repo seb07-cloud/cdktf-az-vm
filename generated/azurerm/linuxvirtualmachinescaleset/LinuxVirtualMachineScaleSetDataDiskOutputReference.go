@@ -44,6 +44,9 @@ type LinuxVirtualMachineScaleSetDataDiskOutputReference interface {
 	Lun() *float64
 	SetLun(val *float64)
 	LunInput() *float64
+	Name() *string
+	SetName(val *string)
+	NameInput() *string
 	StorageAccountType() *string
 	SetStorageAccountType(val *string)
 	StorageAccountTypeInput() *string
@@ -90,6 +93,7 @@ type LinuxVirtualMachineScaleSetDataDiskOutputReference interface {
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	ResetCreateOption()
 	ResetDiskEncryptionSetId()
+	ResetName()
 	ResetUltraSsdDiskIopsReadWrite()
 	ResetUltraSsdDiskMbpsReadWrite()
 	ResetWriteAcceleratorEnabled()
@@ -253,6 +257,26 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) LunInput(
 	_jsii_.Get(
 		j,
 		"lunInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) Name() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"name",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) NameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"nameInput",
 		&returns,
 	)
 	return returns
@@ -470,6 +494,17 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference)SetLun(val
 	_jsii_.Set(
 		j,
 		"lun",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference)SetName(val *string) {
+	if err := j.validateSetNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"name",
 		val,
 	)
 }
@@ -738,6 +773,14 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) ResetDisk
 	_jsii_.InvokeVoid(
 		l,
 		"resetDiskEncryptionSetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) ResetName() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetName",
 		nil, // no parameters
 	)
 }

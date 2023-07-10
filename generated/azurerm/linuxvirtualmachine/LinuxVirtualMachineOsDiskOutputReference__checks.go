@@ -214,6 +214,22 @@ func (j *jsiiProxy_LinuxVirtualMachineOsDiskOutputReference) validateSetNamePara
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineOsDiskOutputReference) validateSetSecureVmDiskEncryptionSetIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineOsDiskOutputReference) validateSetSecurityEncryptionTypeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineOsDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

@@ -111,6 +111,37 @@ func (d *jsiiProxy_DataFactoryTriggerSchedule) validateOverrideLogicalIdParamete
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryTriggerSchedule) validatePutPipelineParameters(value interface{}) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	switch value.(type) {
+	case cdktf.IResolvable:
+		// ok
+	case *[]*DataFactoryTriggerSchedulePipeline:
+		value := value.(*[]*DataFactoryTriggerSchedulePipeline)
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	case []*DataFactoryTriggerSchedulePipeline:
+		value_ := value.([]*DataFactoryTriggerSchedulePipeline)
+		value := &value_
+		for idx_cd4240, v := range *value {
+			if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter value[%#v]", idx_cd4240) }); err != nil {
+				return err
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(value) {
+			return fmt.Errorf("parameter value must be one of the allowed types: cdktf.IResolvable, *[]*DataFactoryTriggerSchedulePipeline; received %#v (a %T)", value, value)
+		}
+	}
+
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryTriggerSchedule) validatePutScheduleParameters(value *DataFactoryTriggerScheduleSchedule) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -402,6 +433,14 @@ func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetProvisionersParameters
 }
 
 func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetStartTimeParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_DataFactoryTriggerSchedule) validateSetTimeZoneParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

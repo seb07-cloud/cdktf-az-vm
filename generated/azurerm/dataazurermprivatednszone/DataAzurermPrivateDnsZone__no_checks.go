@@ -88,6 +88,10 @@ func (j *jsiiProxy_DataAzurermPrivateDnsZone) validateSetResourceGroupNameParame
 	return nil
 }
 
+func (j *jsiiProxy_DataAzurermPrivateDnsZone) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
 func validateNewDataAzurermPrivateDnsZoneParameters(scope constructs.Construct, id *string, config *DataAzurermPrivateDnsZoneConfig) error {
 	return nil
 }

@@ -236,6 +236,14 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetCountParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetFailurePercentageParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -268,6 +276,14 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetNameParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetParallelDeploymentsParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetPolicyAssignmentIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -277,6 +293,14 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetPolicyAssignmentIdP
 }
 
 func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetPolicyDefinitionIdParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetPolicyDefinitionReferenceIdParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -325,6 +349,14 @@ func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetProvisionersParamet
 				return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *cdktf.FileProvisioner, *cdktf.LocalExecProvisioner, *cdktf.RemoteExecProvisioner; received %#v (a %T)", idx_97dfc6, v, v)
 			}
 		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_SubscriptionPolicyRemediation) validateSetResourceCountParameters(val *float64) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
 
 	return nil

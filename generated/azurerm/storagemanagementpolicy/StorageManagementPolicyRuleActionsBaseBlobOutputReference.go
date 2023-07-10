@@ -10,6 +10,9 @@ import (
 
 type StorageManagementPolicyRuleActionsBaseBlobOutputReference interface {
 	cdktf.ComplexObject
+	AutoTierToHotFromCoolEnabled() interface{}
+	SetAutoTierToHotFromCoolEnabled(val interface{})
+	AutoTierToHotFromCoolEnabledInput() interface{}
 	// the index of the complex object in a list.
 	// Experimental.
 	ComplexObjectIndex() interface{}
@@ -25,6 +28,9 @@ type StorageManagementPolicyRuleActionsBaseBlobOutputReference interface {
 	// If this returns an empty array the stack will not be attached.
 	// Experimental.
 	CreationStack() *[]*string
+	DeleteAfterDaysSinceCreationGreaterThan() *float64
+	SetDeleteAfterDaysSinceCreationGreaterThan(val *float64)
+	DeleteAfterDaysSinceCreationGreaterThanInput() *float64
 	DeleteAfterDaysSinceLastAccessTimeGreaterThan() *float64
 	SetDeleteAfterDaysSinceLastAccessTimeGreaterThan(val *float64)
 	DeleteAfterDaysSinceLastAccessTimeGreaterThanInput() *float64
@@ -43,12 +49,21 @@ type StorageManagementPolicyRuleActionsBaseBlobOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	TierToArchiveAfterDaysSinceCreationGreaterThan() *float64
+	SetTierToArchiveAfterDaysSinceCreationGreaterThan(val *float64)
+	TierToArchiveAfterDaysSinceCreationGreaterThanInput() *float64
 	TierToArchiveAfterDaysSinceLastAccessTimeGreaterThan() *float64
 	SetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThan(val *float64)
 	TierToArchiveAfterDaysSinceLastAccessTimeGreaterThanInput() *float64
+	TierToArchiveAfterDaysSinceLastTierChangeGreaterThan() *float64
+	SetTierToArchiveAfterDaysSinceLastTierChangeGreaterThan(val *float64)
+	TierToArchiveAfterDaysSinceLastTierChangeGreaterThanInput() *float64
 	TierToArchiveAfterDaysSinceModificationGreaterThan() *float64
 	SetTierToArchiveAfterDaysSinceModificationGreaterThan(val *float64)
 	TierToArchiveAfterDaysSinceModificationGreaterThanInput() *float64
+	TierToCoolAfterDaysSinceCreationGreaterThan() *float64
+	SetTierToCoolAfterDaysSinceCreationGreaterThan(val *float64)
+	TierToCoolAfterDaysSinceCreationGreaterThanInput() *float64
 	TierToCoolAfterDaysSinceLastAccessTimeGreaterThan() *float64
 	SetTierToCoolAfterDaysSinceLastAccessTimeGreaterThan(val *float64)
 	TierToCoolAfterDaysSinceLastAccessTimeGreaterThanInput() *float64
@@ -79,10 +94,15 @@ type StorageManagementPolicyRuleActionsBaseBlobOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetAutoTierToHotFromCoolEnabled()
+	ResetDeleteAfterDaysSinceCreationGreaterThan()
 	ResetDeleteAfterDaysSinceLastAccessTimeGreaterThan()
 	ResetDeleteAfterDaysSinceModificationGreaterThan()
+	ResetTierToArchiveAfterDaysSinceCreationGreaterThan()
 	ResetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThan()
+	ResetTierToArchiveAfterDaysSinceLastTierChangeGreaterThan()
 	ResetTierToArchiveAfterDaysSinceModificationGreaterThan()
+	ResetTierToCoolAfterDaysSinceCreationGreaterThan()
 	ResetTierToCoolAfterDaysSinceLastAccessTimeGreaterThan()
 	ResetTierToCoolAfterDaysSinceModificationGreaterThan()
 	// Produce the Token's value at resolution time.
@@ -98,6 +118,26 @@ type StorageManagementPolicyRuleActionsBaseBlobOutputReference interface {
 // The jsii proxy struct for StorageManagementPolicyRuleActionsBaseBlobOutputReference
 type jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference struct {
 	internal.Type__cdktfComplexObject
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) AutoTierToHotFromCoolEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoTierToHotFromCoolEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) AutoTierToHotFromCoolEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoTierToHotFromCoolEnabledInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ComplexObjectIndex() interface{} {
@@ -125,6 +165,26 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Cr
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) DeleteAfterDaysSinceCreationGreaterThan() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"deleteAfterDaysSinceCreationGreaterThan",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) DeleteAfterDaysSinceCreationGreaterThanInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"deleteAfterDaysSinceCreationGreaterThanInput",
 		&returns,
 	)
 	return returns
@@ -210,6 +270,26 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Te
 	return returns
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceCreationGreaterThan() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToArchiveAfterDaysSinceCreationGreaterThan",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceCreationGreaterThanInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToArchiveAfterDaysSinceCreationGreaterThanInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceLastAccessTimeGreaterThan() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -230,6 +310,26 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Ti
 	return returns
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceLastTierChangeGreaterThan() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceLastTierChangeGreaterThanInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToArchiveAfterDaysSinceLastTierChangeGreaterThanInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToArchiveAfterDaysSinceModificationGreaterThan() *float64 {
 	var returns *float64
 	_jsii_.Get(
@@ -245,6 +345,26 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Ti
 	_jsii_.Get(
 		j,
 		"tierToArchiveAfterDaysSinceModificationGreaterThanInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToCoolAfterDaysSinceCreationGreaterThan() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToCoolAfterDaysSinceCreationGreaterThan",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) TierToCoolAfterDaysSinceCreationGreaterThanInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"tierToCoolAfterDaysSinceCreationGreaterThanInput",
 		&returns,
 	)
 	return returns
@@ -318,6 +438,17 @@ func NewStorageManagementPolicyRuleActionsBaseBlobOutputReference_Override(s Sto
 	)
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetAutoTierToHotFromCoolEnabled(val interface{}) {
+	if err := j.validateSetAutoTierToHotFromCoolEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoTierToHotFromCoolEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetComplexObjectIndex(val interface{}) {
 	if err := j.validateSetComplexObjectIndexParameters(val); err != nil {
 		panic(err)
@@ -336,6 +467,17 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)Set
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetDeleteAfterDaysSinceCreationGreaterThan(val *float64) {
+	if err := j.validateSetDeleteAfterDaysSinceCreationGreaterThanParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deleteAfterDaysSinceCreationGreaterThan",
 		val,
 	)
 }
@@ -395,6 +537,17 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)Set
 	)
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetTierToArchiveAfterDaysSinceCreationGreaterThan(val *float64) {
+	if err := j.validateSetTierToArchiveAfterDaysSinceCreationGreaterThanParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tierToArchiveAfterDaysSinceCreationGreaterThan",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThan(val *float64) {
 	if err := j.validateSetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThanParameters(val); err != nil {
 		panic(err)
@@ -406,6 +559,17 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)Set
 	)
 }
 
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetTierToArchiveAfterDaysSinceLastTierChangeGreaterThan(val *float64) {
+	if err := j.validateSetTierToArchiveAfterDaysSinceLastTierChangeGreaterThanParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
+		val,
+	)
+}
+
 func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetTierToArchiveAfterDaysSinceModificationGreaterThan(val *float64) {
 	if err := j.validateSetTierToArchiveAfterDaysSinceModificationGreaterThanParameters(val); err != nil {
 		panic(err)
@@ -413,6 +577,17 @@ func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)Set
 	_jsii_.Set(
 		j,
 		"tierToArchiveAfterDaysSinceModificationGreaterThan",
+		val,
+	)
+}
+
+func (j *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference)SetTierToCoolAfterDaysSinceCreationGreaterThan(val *float64) {
+	if err := j.validateSetTierToCoolAfterDaysSinceCreationGreaterThanParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tierToCoolAfterDaysSinceCreationGreaterThan",
 		val,
 	)
 }
@@ -625,6 +800,22 @@ func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) In
 	return returns
 }
 
+func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetAutoTierToHotFromCoolEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetAutoTierToHotFromCoolEnabled",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetDeleteAfterDaysSinceCreationGreaterThan() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetDeleteAfterDaysSinceCreationGreaterThan",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetDeleteAfterDaysSinceLastAccessTimeGreaterThan() {
 	_jsii_.InvokeVoid(
 		s,
@@ -641,6 +832,14 @@ func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Re
 	)
 }
 
+func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetTierToArchiveAfterDaysSinceCreationGreaterThan() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTierToArchiveAfterDaysSinceCreationGreaterThan",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetTierToArchiveAfterDaysSinceLastAccessTimeGreaterThan() {
 	_jsii_.InvokeVoid(
 		s,
@@ -649,10 +848,26 @@ func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) Re
 	)
 }
 
+func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetTierToArchiveAfterDaysSinceLastTierChangeGreaterThan() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTierToArchiveAfterDaysSinceLastTierChangeGreaterThan",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetTierToArchiveAfterDaysSinceModificationGreaterThan() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetTierToArchiveAfterDaysSinceModificationGreaterThan",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_StorageManagementPolicyRuleActionsBaseBlobOutputReference) ResetTierToCoolAfterDaysSinceCreationGreaterThan() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTierToCoolAfterDaysSinceCreationGreaterThan",
 		nil, // no parameters
 	)
 }

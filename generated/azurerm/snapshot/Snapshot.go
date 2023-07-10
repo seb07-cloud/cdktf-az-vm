@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/snapshot azurerm_snapshot}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/snapshot azurerm_snapshot}.
 type Snapshot interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -47,6 +47,9 @@ type Snapshot interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	IncrementalEnabled() interface{}
+	SetIncrementalEnabled(val interface{})
+	IncrementalEnabledInput() interface{}
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -92,6 +95,7 @@ type Snapshot interface {
 	TerraformResourceType() *string
 	Timeouts() SnapshotTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	TrustedLaunchEnabled() cdktf.IResolvable
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -122,6 +126,7 @@ type Snapshot interface {
 	ResetDiskSizeGb()
 	ResetEncryptionSettings()
 	ResetId()
+	ResetIncrementalEnabled()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -300,6 +305,26 @@ func (j *jsiiProxy_Snapshot) IdInput() *string {
 	_jsii_.Get(
 		j,
 		"idInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Snapshot) IncrementalEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"incrementalEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Snapshot) IncrementalEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"incrementalEnabledInput",
 		&returns,
 	)
 	return returns
@@ -545,8 +570,18 @@ func (j *jsiiProxy_Snapshot) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_Snapshot) TrustedLaunchEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"trustedLaunchEnabled",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/snapshot azurerm_snapshot} Resource.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/snapshot azurerm_snapshot} Resource.
 func NewSnapshot(scope constructs.Construct, id *string, config *SnapshotConfig) Snapshot {
 	_init_.Initialize()
 
@@ -564,7 +599,7 @@ func NewSnapshot(scope constructs.Construct, id *string, config *SnapshotConfig)
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/snapshot azurerm_snapshot} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/snapshot azurerm_snapshot} Resource.
 func NewSnapshot_Override(s Snapshot, scope constructs.Construct, id *string, config *SnapshotConfig) {
 	_init_.Initialize()
 
@@ -642,6 +677,17 @@ func (j *jsiiProxy_Snapshot)SetId(val *string) {
 	_jsii_.Set(
 		j,
 		"id",
+		val,
+	)
+}
+
+func (j *jsiiProxy_Snapshot)SetIncrementalEnabled(val interface{}) {
+	if err := j.validateSetIncrementalEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"incrementalEnabled",
 		val,
 	)
 }
@@ -1061,6 +1107,14 @@ func (s *jsiiProxy_Snapshot) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_Snapshot) ResetIncrementalEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIncrementalEnabled",
 		nil, // no parameters
 	)
 }

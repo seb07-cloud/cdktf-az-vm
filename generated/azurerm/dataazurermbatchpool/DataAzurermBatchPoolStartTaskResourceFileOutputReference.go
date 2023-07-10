@@ -43,6 +43,7 @@ type DataAzurermBatchPoolStartTaskResourceFileOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserAssignedIdentityId() *string
 	// Experimental.
 	ComputeFqn() *string
 	// Experimental.
@@ -207,6 +208,16 @@ func (j *jsiiProxy_DataAzurermBatchPoolStartTaskResourceFileOutputReference) Ter
 	_jsii_.Get(
 		j,
 		"terraformResource",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPoolStartTaskResourceFileOutputReference) UserAssignedIdentityId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityId",
 		&returns,
 	)
 	return returns

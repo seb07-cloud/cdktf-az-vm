@@ -80,6 +80,10 @@ func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) validateSetTe
 	return nil
 }
 
+func (j *jsiiProxy_RedisEnterpriseDatabaseTimeoutsOutputReference) validateSetUpdateParameters(val *string) error {
+	return nil
+}
+
 func validateNewRedisEnterpriseDatabaseTimeoutsOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }

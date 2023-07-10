@@ -72,6 +72,10 @@ func (s *jsiiProxy_StorageAccount) validatePutIdentityParameters(value *StorageA
 	return nil
 }
 
+func (s *jsiiProxy_StorageAccount) validatePutImmutabilityPolicyParameters(value *StorageAccountImmutabilityPolicy) error {
+	return nil
+}
+
 func (s *jsiiProxy_StorageAccount) validatePutNetworkRulesParameters(value *StorageAccountNetworkRules) error {
 	return nil
 }
@@ -81,6 +85,10 @@ func (s *jsiiProxy_StorageAccount) validatePutQueuePropertiesParameters(value *S
 }
 
 func (s *jsiiProxy_StorageAccount) validatePutRoutingParameters(value *StorageAccountRouting) error {
+	return nil
+}
+
+func (s *jsiiProxy_StorageAccount) validatePutSasPolicyParameters(value *StorageAccountSasPolicy) error {
 	return nil
 }
 
@@ -124,6 +132,10 @@ func (j *jsiiProxy_StorageAccount) validateSetAccountTierParameters(val *string)
 	return nil
 }
 
+func (j *jsiiProxy_StorageAccount) validateSetAllowedCopyScopeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageAccount) validateSetAllowNestedItemsToBePublicParameters(val interface{}) error {
 	return nil
 }
@@ -133,6 +145,14 @@ func (j *jsiiProxy_StorageAccount) validateSetConnectionParameters(val interface
 }
 
 func (j *jsiiProxy_StorageAccount) validateSetCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageAccount) validateSetCrossTenantReplicationEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageAccount) validateSetDefaultToOauthAuthenticationParameters(val interface{}) error {
 	return nil
 }
 
@@ -184,11 +204,19 @@ func (j *jsiiProxy_StorageAccount) validateSetProvisionersParameters(val *[]inte
 	return nil
 }
 
+func (j *jsiiProxy_StorageAccount) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_StorageAccount) validateSetQueueEncryptionKeyTypeParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_StorageAccount) validateSetResourceGroupNameParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_StorageAccount) validateSetSftpEnabledParameters(val interface{}) error {
 	return nil
 }
 

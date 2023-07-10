@@ -52,10 +52,6 @@ func (d *jsiiProxy_DataAzurermMonitorActionGroup) validateOverrideLogicalIdParam
 	return nil
 }
 
-func (d *jsiiProxy_DataAzurermMonitorActionGroup) validatePutEventHubReceiverParameters(value interface{}) error {
-	return nil
-}
-
 func (d *jsiiProxy_DataAzurermMonitorActionGroup) validatePutTimeoutsParameters(value *DataAzurermMonitorActionGroupTimeouts) error {
 	return nil
 }

@@ -120,6 +120,18 @@ func (j *jsiiProxy_BotServiceAzureBot) validateSetMicrosoftAppIdParameters(val *
 	return nil
 }
 
+func (j *jsiiProxy_BotServiceAzureBot) validateSetMicrosoftAppMsiIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) validateSetMicrosoftAppTenantIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) validateSetMicrosoftAppTypeParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_BotServiceAzureBot) validateSetNameParameters(val *string) error {
 	return nil
 }
@@ -133,6 +145,10 @@ func (j *jsiiProxy_BotServiceAzureBot) validateSetResourceGroupNameParameters(va
 }
 
 func (j *jsiiProxy_BotServiceAzureBot) validateSetSkuParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_BotServiceAzureBot) validateSetStreamingEndpointEnabledParameters(val interface{}) error {
 	return nil
 }
 

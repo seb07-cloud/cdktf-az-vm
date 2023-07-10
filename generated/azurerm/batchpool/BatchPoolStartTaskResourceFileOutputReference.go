@@ -55,6 +55,9 @@ type BatchPoolStartTaskResourceFileOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
+	UserAssignedIdentityId() *string
+	SetUserAssignedIdentityId(val *string)
+	UserAssignedIdentityIdInput() *string
 	// Experimental.
 	ComputeFqn() *string
 	// Experimental.
@@ -85,6 +88,7 @@ type BatchPoolStartTaskResourceFileOutputReference interface {
 	ResetFilePath()
 	ResetHttpUrl()
 	ResetStorageContainerUrl()
+	ResetUserAssignedIdentityId()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -290,6 +294,26 @@ func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) TerraformResou
 	return returns
 }
 
+func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) UserAssignedIdentityId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) UserAssignedIdentityIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userAssignedIdentityIdInput",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewBatchPoolStartTaskResourceFileOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) BatchPoolStartTaskResourceFileOutputReference {
 	_init_.Initialize()
@@ -435,6 +459,17 @@ func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference)SetTerraformRes
 	_jsii_.Set(
 		j,
 		"terraformResource",
+		val,
+	)
+}
+
+func (j *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference)SetUserAssignedIdentityId(val *string) {
+	if err := j.validateSetUserAssignedIdentityIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"userAssignedIdentityId",
 		val,
 	)
 }
@@ -669,6 +704,14 @@ func (b *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) ResetStorageCo
 	_jsii_.InvokeVoid(
 		b,
 		"resetStorageContainerUrl",
+		nil, // no parameters
+	)
+}
+
+func (b *jsiiProxy_BatchPoolStartTaskResourceFileOutputReference) ResetUserAssignedIdentityId() {
+	_jsii_.InvokeVoid(
+		b,
+		"resetUserAssignedIdentityId",
 		nil, // no parameters
 	)
 }

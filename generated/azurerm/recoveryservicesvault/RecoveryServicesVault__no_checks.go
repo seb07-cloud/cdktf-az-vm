@@ -60,6 +60,10 @@ func (r *jsiiProxy_RecoveryServicesVault) validatePutIdentityParameters(value *R
 	return nil
 }
 
+func (r *jsiiProxy_RecoveryServicesVault) validatePutMonitoringParameters(value *RecoveryServicesVaultMonitoring) error {
+	return nil
+}
+
 func (r *jsiiProxy_RecoveryServicesVault) validatePutTimeoutsParameters(value *RecoveryServicesVaultTimeouts) error {
 	return nil
 }
@@ -73,6 +77,10 @@ func validateRecoveryServicesVault_IsTerraformElementParameters(x interface{}) e
 }
 
 func validateRecoveryServicesVault_IsTerraformResourceParameters(x interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) validateSetClassicVmwareReplicationEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -92,6 +100,10 @@ func (j *jsiiProxy_RecoveryServicesVault) validateSetIdParameters(val *string) e
 	return nil
 }
 
+func (j *jsiiProxy_RecoveryServicesVault) validateSetImmutabilityParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_RecoveryServicesVault) validateSetLifecycleParameters(val *cdktf.TerraformResourceLifecycle) error {
 	return nil
 }
@@ -105,6 +117,10 @@ func (j *jsiiProxy_RecoveryServicesVault) validateSetNameParameters(val *string)
 }
 
 func (j *jsiiProxy_RecoveryServicesVault) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
 	return nil
 }
 

@@ -27,6 +27,9 @@ type SpringCloudAppIdentityOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	IdentityIds() *[]*string
+	SetIdentityIds(val *[]*string)
+	IdentityIdsInput() *[]*string
 	InternalValue() *SpringCloudAppIdentity
 	SetInternalValue(val *SpringCloudAppIdentity)
 	PrincipalId() *string
@@ -66,6 +69,7 @@ type SpringCloudAppIdentityOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	ResetIdentityIds()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -116,6 +120,26 @@ func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) Fqn() *string {
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) IdentityIds() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIds",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SpringCloudAppIdentityOutputReference) IdentityIdsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"identityIdsInput",
 		&returns,
 	)
 	return returns
@@ -237,6 +261,17 @@ func (j *jsiiProxy_SpringCloudAppIdentityOutputReference)SetComplexObjectIsFromS
 	_jsii_.Set(
 		j,
 		"complexObjectIsFromSet",
+		val,
+	)
+}
+
+func (j *jsiiProxy_SpringCloudAppIdentityOutputReference)SetIdentityIds(val *[]*string) {
+	if err := j.validateSetIdentityIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"identityIds",
 		val,
 	)
 }
@@ -469,6 +504,14 @@ func (s *jsiiProxy_SpringCloudAppIdentityOutputReference) InterpolationForAttrib
 	)
 
 	return returns
+}
+
+func (s *jsiiProxy_SpringCloudAppIdentityOutputReference) ResetIdentityIds() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIdentityIds",
+		nil, // no parameters
+	)
 }
 
 func (s *jsiiProxy_SpringCloudAppIdentityOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

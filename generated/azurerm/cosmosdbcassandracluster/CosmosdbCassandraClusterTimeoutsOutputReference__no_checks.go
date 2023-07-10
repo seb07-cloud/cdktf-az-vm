@@ -80,6 +80,10 @@ func (j *jsiiProxy_CosmosdbCassandraClusterTimeoutsOutputReference) validateSetT
 	return nil
 }
 
+func (j *jsiiProxy_CosmosdbCassandraClusterTimeoutsOutputReference) validateSetUpdateParameters(val *string) error {
+	return nil
+}
+
 func validateNewCosmosdbCassandraClusterTimeoutsOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }

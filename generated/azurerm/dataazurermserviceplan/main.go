@@ -63,6 +63,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
 			_jsii_.MemberMethod{JsiiMethod: "toTerraform", GoMethod: "ToTerraform"},
 			_jsii_.MemberProperty{JsiiProperty: "workerCount", GoGetter: "WorkerCount"},
+			_jsii_.MemberProperty{JsiiProperty: "zoneBalancingEnabled", GoGetter: "ZoneBalancingEnabled"},
 		},
 		func() interface{} {
 			j := jsiiProxy_DataAzurermServicePlan{}

@@ -88,6 +88,10 @@ func (j *jsiiProxy_PrivateLinkService) validateSetEnableProxyProtocolParameters(
 	return nil
 }
 
+func (j *jsiiProxy_PrivateLinkService) validateSetFqdnsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_PrivateLinkService) validateSetIdParameters(val *string) error {
 	return nil
 }

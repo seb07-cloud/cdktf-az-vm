@@ -80,6 +80,10 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) validateS
 	return nil
 }
 
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) validateSetNameParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxVirtualMachineScaleSetDataDiskOutputReference) validateSetStorageAccountTypeParameters(val *string) error {
 	return nil
 }

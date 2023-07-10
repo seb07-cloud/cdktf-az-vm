@@ -56,6 +56,10 @@ func (l *jsiiProxy_LinuxFunctionApp) validatePutAuthSettingsParameters(value *Li
 	return nil
 }
 
+func (l *jsiiProxy_LinuxFunctionApp) validatePutAuthSettingsV2Parameters(value *LinuxFunctionAppAuthSettingsV2) error {
+	return nil
+}
+
 func (l *jsiiProxy_LinuxFunctionApp) validatePutBackupParameters(value *LinuxFunctionAppBackup) error {
 	return nil
 }
@@ -69,6 +73,14 @@ func (l *jsiiProxy_LinuxFunctionApp) validatePutIdentityParameters(value *LinuxF
 }
 
 func (l *jsiiProxy_LinuxFunctionApp) validatePutSiteConfigParameters(value *LinuxFunctionAppSiteConfig) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxFunctionApp) validatePutStickySettingsParameters(value *LinuxFunctionAppStickySettings) error {
+	return nil
+}
+
+func (l *jsiiProxy_LinuxFunctionApp) validatePutStorageAccountParameters(value interface{}) error {
 	return nil
 }
 
@@ -97,6 +109,10 @@ func (j *jsiiProxy_LinuxFunctionApp) validateSetBuiltinLoggingEnabledParameters(
 }
 
 func (j *jsiiProxy_LinuxFunctionApp) validateSetClientCertificateEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionApp) validateSetClientCertificateExclusionPathsParameters(val *string) error {
 	return nil
 }
 
@@ -156,6 +172,10 @@ func (j *jsiiProxy_LinuxFunctionApp) validateSetProvisionersParameters(val *[]in
 	return nil
 }
 
+func (j *jsiiProxy_LinuxFunctionApp) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_LinuxFunctionApp) validateSetResourceGroupNameParameters(val *string) error {
 	return nil
 }
@@ -181,6 +201,14 @@ func (j *jsiiProxy_LinuxFunctionApp) validateSetStorageUsesManagedIdentityParame
 }
 
 func (j *jsiiProxy_LinuxFunctionApp) validateSetTagsParameters(val *map[string]*string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionApp) validateSetVirtualNetworkSubnetIdParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_LinuxFunctionApp) validateSetZipDeployFileParameters(val *string) error {
 	return nil
 }
 

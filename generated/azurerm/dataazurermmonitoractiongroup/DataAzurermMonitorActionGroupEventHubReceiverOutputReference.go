@@ -26,18 +26,15 @@ type DataAzurermMonitorActionGroupEventHubReceiverOutputReference interface {
 	// Experimental.
 	CreationStack() *[]*string
 	EventHubId() *string
-	SetEventHubId(val *string)
-	EventHubIdInput() *string
+	EventHubName() *string
+	EventHubNamespace() *string
 	// Experimental.
 	Fqn() *string
-	InternalValue() interface{}
-	SetInternalValue(val interface{})
+	InternalValue() *DataAzurermMonitorActionGroupEventHubReceiver
+	SetInternalValue(val *DataAzurermMonitorActionGroupEventHubReceiver)
 	Name() *string
-	SetName(val *string)
-	NameInput() *string
+	SubscriptionId() *string
 	TenantId() *string
-	SetTenantId(val *string)
-	TenantIdInput() *string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -46,9 +43,7 @@ type DataAzurermMonitorActionGroupEventHubReceiverOutputReference interface {
 	TerraformResource() cdktf.IInterpolatingParent
 	// Experimental.
 	SetTerraformResource(val cdktf.IInterpolatingParent)
-	UseCommonAlertSchema() interface{}
-	SetUseCommonAlertSchema(val interface{})
-	UseCommonAlertSchemaInput() interface{}
+	UseCommonAlertSchema() cdktf.IResolvable
 	// Experimental.
 	ComputeFqn() *string
 	// Experimental.
@@ -73,8 +68,6 @@ type DataAzurermMonitorActionGroupEventHubReceiverOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
-	ResetTenantId()
-	ResetUseCommonAlertSchema()
 	// Produce the Token's value at resolution time.
 	// Experimental.
 	Resolve(_context cdktf.IResolveContext) interface{}
@@ -130,11 +123,21 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) EventHubIdInput() *string {
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) EventHubName() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
-		"eventHubIdInput",
+		"eventHubName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) EventHubNamespace() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"eventHubNamespace",
 		&returns,
 	)
 	return returns
@@ -150,8 +153,8 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) InternalValue() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) InternalValue() *DataAzurermMonitorActionGroupEventHubReceiver {
+	var returns *DataAzurermMonitorActionGroupEventHubReceiver
 	_jsii_.Get(
 		j,
 		"internalValue",
@@ -170,11 +173,11 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) NameInput() *string {
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) SubscriptionId() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
-		"nameInput",
+		"subscriptionId",
 		&returns,
 	)
 	return returns
@@ -185,16 +188,6 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	_jsii_.Get(
 		j,
 		"tenantId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) TenantIdInput() *string {
-	var returns *string
-	_jsii_.Get(
-		j,
-		"tenantIdInput",
 		&returns,
 	)
 	return returns
@@ -220,21 +213,11 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) UseCommonAlertSchema() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) UseCommonAlertSchema() cdktf.IResolvable {
+	var returns cdktf.IResolvable
 	_jsii_.Get(
 		j,
 		"useCommonAlertSchema",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) UseCommonAlertSchemaInput() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"useCommonAlertSchemaInput",
 		&returns,
 	)
 	return returns
@@ -290,46 +273,13 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	)
 }
 
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetEventHubId(val *string) {
-	if err := j.validateSetEventHubIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"eventHubId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetInternalValue(val interface{}) {
+func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetInternalValue(val *DataAzurermMonitorActionGroupEventHubReceiver) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
 		"internalValue",
-		val,
-	)
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetName(val *string) {
-	if err := j.validateSetNameParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"name",
-		val,
-	)
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetTenantId(val *string) {
-	if err := j.validateSetTenantIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"tenantId",
 		val,
 	)
 }
@@ -352,17 +302,6 @@ func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	_jsii_.Set(
 		j,
 		"terraformResource",
-		val,
-	)
-}
-
-func (j *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)SetUseCommonAlertSchema(val interface{}) {
-	if err := j.validateSetUseCommonAlertSchemaParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"useCommonAlertSchema",
 		val,
 	)
 }
@@ -551,22 +490,6 @@ func (d *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference)
 	)
 
 	return returns
-}
-
-func (d *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) ResetTenantId() {
-	_jsii_.InvokeVoid(
-		d,
-		"resetTenantId",
-		nil, // no parameters
-	)
-}
-
-func (d *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) ResetUseCommonAlertSchema() {
-	_jsii_.InvokeVoid(
-		d,
-		"resetUseCommonAlertSchema",
-		nil, // no parameters
-	)
 }
 
 func (d *jsiiProxy_DataAzurermMonitorActionGroupEventHubReceiverOutputReference) Resolve(_context cdktf.IResolveContext) interface{} {

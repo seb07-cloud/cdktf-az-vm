@@ -9,12 +9,15 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_port azurerm_express_route_port}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_port azurerm_express_route_port}.
 type ExpressRoutePort interface {
 	cdktf.TerraformResource
 	BandwidthInGbps() *float64
 	SetBandwidthInGbps(val *float64)
 	BandwidthInGbpsInput() *float64
+	BillingType() *string
+	SetBillingType(val *string)
+	BillingTypeInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -122,6 +125,7 @@ type ExpressRoutePort interface {
 	PutLink1(value *ExpressRoutePortLink1)
 	PutLink2(value *ExpressRoutePortLink2)
 	PutTimeouts(value *ExpressRoutePortTimeouts)
+	ResetBillingType()
 	ResetId()
 	ResetIdentity()
 	ResetLink1()
@@ -161,6 +165,26 @@ func (j *jsiiProxy_ExpressRoutePort) BandwidthInGbpsInput() *float64 {
 	_jsii_.Get(
 		j,
 		"bandwidthInGbpsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRoutePort) BillingType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"billingType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ExpressRoutePort) BillingTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"billingTypeInput",
 		&returns,
 	)
 	return returns
@@ -577,7 +601,7 @@ func (j *jsiiProxy_ExpressRoutePort) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_port azurerm_express_route_port} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_port azurerm_express_route_port} Resource.
 func NewExpressRoutePort(scope constructs.Construct, id *string, config *ExpressRoutePortConfig) ExpressRoutePort {
 	_init_.Initialize()
 
@@ -595,7 +619,7 @@ func NewExpressRoutePort(scope constructs.Construct, id *string, config *Express
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/express_route_port azurerm_express_route_port} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/express_route_port azurerm_express_route_port} Resource.
 func NewExpressRoutePort_Override(e ExpressRoutePort, scope constructs.Construct, id *string, config *ExpressRoutePortConfig) {
 	_init_.Initialize()
 
@@ -613,6 +637,17 @@ func (j *jsiiProxy_ExpressRoutePort)SetBandwidthInGbps(val *float64) {
 	_jsii_.Set(
 		j,
 		"bandwidthInGbps",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ExpressRoutePort)SetBillingType(val *string) {
+	if err := j.validateSetBillingTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"billingType",
 		val,
 	)
 }
@@ -1069,6 +1104,14 @@ func (e *jsiiProxy_ExpressRoutePort) PutTimeouts(value *ExpressRoutePortTimeouts
 		e,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (e *jsiiProxy_ExpressRoutePort) ResetBillingType() {
+	_jsii_.InvokeVoid(
+		e,
+		"resetBillingType",
+		nil, // no parameters
 	)
 }
 

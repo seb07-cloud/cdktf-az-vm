@@ -44,6 +44,10 @@ func (h *jsiiProxy_HdinsightHbaseClusterRolesHeadNodeOutputReference) validateIn
 	return nil
 }
 
+func (h *jsiiProxy_HdinsightHbaseClusterRolesHeadNodeOutputReference) validatePutScriptActionsParameters(value interface{}) error {
+	return nil
+}
+
 func (h *jsiiProxy_HdinsightHbaseClusterRolesHeadNodeOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

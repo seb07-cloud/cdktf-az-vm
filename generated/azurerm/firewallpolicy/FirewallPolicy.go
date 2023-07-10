@@ -9,9 +9,12 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/firewall_policy azurerm_firewall_policy}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/firewall_policy azurerm_firewall_policy}.
 type FirewallPolicy interface {
 	cdktf.TerraformResource
+	AutoLearnPrivateRangesEnabled() interface{}
+	SetAutoLearnPrivateRangesEnabled(val interface{})
+	AutoLearnPrivateRangesEnabledInput() interface{}
 	BasePolicyId() *string
 	SetBasePolicyId(val *string)
 	BasePolicyIdInput() *string
@@ -34,6 +37,8 @@ type FirewallPolicy interface {
 	SetDependsOn(val *[]*string)
 	Dns() FirewallPolicyDnsOutputReference
 	DnsInput() *FirewallPolicyDns
+	ExplicitProxy() FirewallPolicyExplicitProxyOutputReference
+	ExplicitProxyInput() *FirewallPolicyExplicitProxy
 	Firewalls() *[]*string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
@@ -84,6 +89,9 @@ type FirewallPolicy interface {
 	Sku() *string
 	SetSku(val *string)
 	SkuInput() *string
+	SqlRedirectAllowed() interface{}
+	SetSqlRedirectAllowed(val interface{})
+	SqlRedirectAllowedInput() interface{}
 	Tags() *map[string]*string
 	SetTags(val *map[string]*string)
 	TagsInput() *map[string]*string
@@ -128,14 +136,17 @@ type FirewallPolicy interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutDns(value *FirewallPolicyDns)
+	PutExplicitProxy(value *FirewallPolicyExplicitProxy)
 	PutIdentity(value *FirewallPolicyIdentity)
 	PutInsights(value *FirewallPolicyInsights)
 	PutIntrusionDetection(value *FirewallPolicyIntrusionDetection)
 	PutThreatIntelligenceAllowlist(value *FirewallPolicyThreatIntelligenceAllowlistStruct)
 	PutTimeouts(value *FirewallPolicyTimeouts)
 	PutTlsCertificate(value *FirewallPolicyTlsCertificate)
+	ResetAutoLearnPrivateRangesEnabled()
 	ResetBasePolicyId()
 	ResetDns()
+	ResetExplicitProxy()
 	ResetId()
 	ResetIdentity()
 	ResetInsights()
@@ -145,6 +156,7 @@ type FirewallPolicy interface {
 	ResetOverrideLogicalId()
 	ResetPrivateIpRanges()
 	ResetSku()
+	ResetSqlRedirectAllowed()
 	ResetTags()
 	ResetThreatIntelligenceAllowlist()
 	ResetThreatIntelligenceMode()
@@ -163,6 +175,26 @@ type FirewallPolicy interface {
 // The jsii proxy struct for FirewallPolicy
 type jsiiProxy_FirewallPolicy struct {
 	internal.Type__cdktfTerraformResource
+}
+
+func (j *jsiiProxy_FirewallPolicy) AutoLearnPrivateRangesEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoLearnPrivateRangesEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicy) AutoLearnPrivateRangesEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoLearnPrivateRangesEnabledInput",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_FirewallPolicy) BasePolicyId() *string {
@@ -260,6 +292,26 @@ func (j *jsiiProxy_FirewallPolicy) DnsInput() *FirewallPolicyDns {
 	_jsii_.Get(
 		j,
 		"dnsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicy) ExplicitProxy() FirewallPolicyExplicitProxyOutputReference {
+	var returns FirewallPolicyExplicitProxyOutputReference
+	_jsii_.Get(
+		j,
+		"explicitProxy",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicy) ExplicitProxyInput() *FirewallPolicyExplicitProxy {
+	var returns *FirewallPolicyExplicitProxy
+	_jsii_.Get(
+		j,
+		"explicitProxyInput",
 		&returns,
 	)
 	return returns
@@ -545,6 +597,26 @@ func (j *jsiiProxy_FirewallPolicy) SkuInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_FirewallPolicy) SqlRedirectAllowed() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sqlRedirectAllowed",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_FirewallPolicy) SqlRedirectAllowedInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"sqlRedirectAllowedInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_FirewallPolicy) Tags() *map[string]*string {
 	var returns *map[string]*string
 	_jsii_.Get(
@@ -676,7 +748,7 @@ func (j *jsiiProxy_FirewallPolicy) TlsCertificateInput() *FirewallPolicyTlsCerti
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/firewall_policy azurerm_firewall_policy} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/firewall_policy azurerm_firewall_policy} Resource.
 func NewFirewallPolicy(scope constructs.Construct, id *string, config *FirewallPolicyConfig) FirewallPolicy {
 	_init_.Initialize()
 
@@ -694,7 +766,7 @@ func NewFirewallPolicy(scope constructs.Construct, id *string, config *FirewallP
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/firewall_policy azurerm_firewall_policy} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/firewall_policy azurerm_firewall_policy} Resource.
 func NewFirewallPolicy_Override(f FirewallPolicy, scope constructs.Construct, id *string, config *FirewallPolicyConfig) {
 	_init_.Initialize()
 
@@ -702,6 +774,17 @@ func NewFirewallPolicy_Override(f FirewallPolicy, scope constructs.Construct, id
 		"azurerm.firewallPolicy.FirewallPolicy",
 		[]interface{}{scope, id, config},
 		f,
+	)
+}
+
+func (j *jsiiProxy_FirewallPolicy)SetAutoLearnPrivateRangesEnabled(val interface{}) {
+	if err := j.validateSetAutoLearnPrivateRangesEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoLearnPrivateRangesEnabled",
+		val,
 	)
 }
 
@@ -846,6 +929,17 @@ func (j *jsiiProxy_FirewallPolicy)SetSku(val *string) {
 	_jsii_.Set(
 		j,
 		"sku",
+		val,
+	)
+}
+
+func (j *jsiiProxy_FirewallPolicy)SetSqlRedirectAllowed(val interface{}) {
+	if err := j.validateSetSqlRedirectAllowedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"sqlRedirectAllowed",
 		val,
 	)
 }
@@ -1149,6 +1243,17 @@ func (f *jsiiProxy_FirewallPolicy) PutDns(value *FirewallPolicyDns) {
 	)
 }
 
+func (f *jsiiProxy_FirewallPolicy) PutExplicitProxy(value *FirewallPolicyExplicitProxy) {
+	if err := f.validatePutExplicitProxyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		f,
+		"putExplicitProxy",
+		[]interface{}{value},
+	)
+}
+
 func (f *jsiiProxy_FirewallPolicy) PutIdentity(value *FirewallPolicyIdentity) {
 	if err := f.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -1215,6 +1320,14 @@ func (f *jsiiProxy_FirewallPolicy) PutTlsCertificate(value *FirewallPolicyTlsCer
 	)
 }
 
+func (f *jsiiProxy_FirewallPolicy) ResetAutoLearnPrivateRangesEnabled() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetAutoLearnPrivateRangesEnabled",
+		nil, // no parameters
+	)
+}
+
 func (f *jsiiProxy_FirewallPolicy) ResetBasePolicyId() {
 	_jsii_.InvokeVoid(
 		f,
@@ -1227,6 +1340,14 @@ func (f *jsiiProxy_FirewallPolicy) ResetDns() {
 	_jsii_.InvokeVoid(
 		f,
 		"resetDns",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FirewallPolicy) ResetExplicitProxy() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetExplicitProxy",
 		nil, // no parameters
 	)
 }
@@ -1283,6 +1404,14 @@ func (f *jsiiProxy_FirewallPolicy) ResetSku() {
 	_jsii_.InvokeVoid(
 		f,
 		"resetSku",
+		nil, // no parameters
+	)
+}
+
+func (f *jsiiProxy_FirewallPolicy) ResetSqlRedirectAllowed() {
+	_jsii_.InvokeVoid(
+		f,
+		"resetSqlRedirectAllowed",
 		nil, // no parameters
 	)
 }

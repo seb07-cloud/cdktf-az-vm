@@ -16,6 +16,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "administratorLoginInput", GoGetter: "AdministratorLoginInput"},
 			_jsii_.MemberProperty{JsiiProperty: "administratorPassword", GoGetter: "AdministratorPassword"},
 			_jsii_.MemberProperty{JsiiProperty: "administratorPasswordInput", GoGetter: "AdministratorPasswordInput"},
+			_jsii_.MemberProperty{JsiiProperty: "authentication", GoGetter: "Authentication"},
+			_jsii_.MemberProperty{JsiiProperty: "authenticationInput", GoGetter: "AuthenticationInput"},
 			_jsii_.MemberProperty{JsiiProperty: "backupRetentionDays", GoGetter: "BackupRetentionDays"},
 			_jsii_.MemberProperty{JsiiProperty: "backupRetentionDaysInput", GoGetter: "BackupRetentionDaysInput"},
 			_jsii_.MemberProperty{JsiiProperty: "cdktfStack", GoGetter: "CdktfStack"},
@@ -24,6 +26,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "count", GoGetter: "Count"},
 			_jsii_.MemberProperty{JsiiProperty: "createMode", GoGetter: "CreateMode"},
 			_jsii_.MemberProperty{JsiiProperty: "createModeInput", GoGetter: "CreateModeInput"},
+			_jsii_.MemberProperty{JsiiProperty: "customerManagedKey", GoGetter: "CustomerManagedKey"},
+			_jsii_.MemberProperty{JsiiProperty: "customerManagedKeyInput", GoGetter: "CustomerManagedKeyInput"},
 			_jsii_.MemberProperty{JsiiProperty: "delegatedSubnetId", GoGetter: "DelegatedSubnetId"},
 			_jsii_.MemberProperty{JsiiProperty: "delegatedSubnetIdInput", GoGetter: "DelegatedSubnetIdInput"},
 			_jsii_.MemberProperty{JsiiProperty: "dependsOn", GoGetter: "DependsOn"},
@@ -45,6 +49,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "highAvailability", GoGetter: "HighAvailability"},
 			_jsii_.MemberProperty{JsiiProperty: "highAvailabilityInput", GoGetter: "HighAvailabilityInput"},
 			_jsii_.MemberProperty{JsiiProperty: "id", GoGetter: "Id"},
+			_jsii_.MemberProperty{JsiiProperty: "identity", GoGetter: "Identity"},
+			_jsii_.MemberProperty{JsiiProperty: "identityInput", GoGetter: "IdentityInput"},
 			_jsii_.MemberProperty{JsiiProperty: "idInput", GoGetter: "IdInput"},
 			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
 			_jsii_.MemberProperty{JsiiProperty: "lifecycle", GoGetter: "Lifecycle"},
@@ -63,22 +69,31 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "provider", GoGetter: "Provider"},
 			_jsii_.MemberProperty{JsiiProperty: "provisioners", GoGetter: "Provisioners"},
 			_jsii_.MemberProperty{JsiiProperty: "publicNetworkAccessEnabled", GoGetter: "PublicNetworkAccessEnabled"},
+			_jsii_.MemberMethod{JsiiMethod: "putAuthentication", GoMethod: "PutAuthentication"},
+			_jsii_.MemberMethod{JsiiMethod: "putCustomerManagedKey", GoMethod: "PutCustomerManagedKey"},
 			_jsii_.MemberMethod{JsiiMethod: "putHighAvailability", GoMethod: "PutHighAvailability"},
+			_jsii_.MemberMethod{JsiiMethod: "putIdentity", GoMethod: "PutIdentity"},
 			_jsii_.MemberMethod{JsiiMethod: "putMaintenanceWindow", GoMethod: "PutMaintenanceWindow"},
 			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberProperty{JsiiProperty: "replicationRole", GoGetter: "ReplicationRole"},
+			_jsii_.MemberProperty{JsiiProperty: "replicationRoleInput", GoGetter: "ReplicationRoleInput"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAdministratorLogin", GoMethod: "ResetAdministratorLogin"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAdministratorPassword", GoMethod: "ResetAdministratorPassword"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAuthentication", GoMethod: "ResetAuthentication"},
 			_jsii_.MemberMethod{JsiiMethod: "resetBackupRetentionDays", GoMethod: "ResetBackupRetentionDays"},
 			_jsii_.MemberMethod{JsiiMethod: "resetCreateMode", GoMethod: "ResetCreateMode"},
+			_jsii_.MemberMethod{JsiiMethod: "resetCustomerManagedKey", GoMethod: "ResetCustomerManagedKey"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDelegatedSubnetId", GoMethod: "ResetDelegatedSubnetId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetGeoRedundantBackupEnabled", GoMethod: "ResetGeoRedundantBackupEnabled"},
 			_jsii_.MemberMethod{JsiiMethod: "resetHighAvailability", GoMethod: "ResetHighAvailability"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetIdentity", GoMethod: "ResetIdentity"},
 			_jsii_.MemberMethod{JsiiMethod: "resetMaintenanceWindow", GoMethod: "ResetMaintenanceWindow"},
 			_jsii_.MemberMethod{JsiiMethod: "resetOverrideLogicalId", GoMethod: "ResetOverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPointInTimeRestoreTimeInUtc", GoMethod: "ResetPointInTimeRestoreTimeInUtc"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPrivateDnsZoneId", GoMethod: "ResetPrivateDnsZoneId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetReplicationRole", GoMethod: "ResetReplicationRole"},
 			_jsii_.MemberMethod{JsiiMethod: "resetSkuName", GoMethod: "ResetSkuName"},
 			_jsii_.MemberMethod{JsiiMethod: "resetSourceServerId", GoMethod: "ResetSourceServerId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetStorageMb", GoMethod: "ResetStorageMb"},
@@ -117,8 +132,95 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerAuthentication",
+		reflect.TypeOf((*PostgresqlFlexibleServerAuthentication)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerAuthenticationOutputReference",
+		reflect.TypeOf((*PostgresqlFlexibleServerAuthenticationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "activeDirectoryAuthEnabled", GoGetter: "ActiveDirectoryAuthEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "activeDirectoryAuthEnabledInput", GoGetter: "ActiveDirectoryAuthEnabledInput"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "passwordAuthEnabled", GoGetter: "PasswordAuthEnabled"},
+			_jsii_.MemberProperty{JsiiProperty: "passwordAuthEnabledInput", GoGetter: "PasswordAuthEnabledInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetActiveDirectoryAuthEnabled", GoMethod: "ResetActiveDirectoryAuthEnabled"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPasswordAuthEnabled", GoMethod: "ResetPasswordAuthEnabled"},
+			_jsii_.MemberMethod{JsiiMethod: "resetTenantId", GoMethod: "ResetTenantId"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "tenantId", GoGetter: "TenantId"},
+			_jsii_.MemberProperty{JsiiProperty: "tenantIdInput", GoGetter: "TenantIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_PostgresqlFlexibleServerAuthenticationOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
 		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerConfig",
 		reflect.TypeOf((*PostgresqlFlexibleServerConfig)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerCustomerManagedKey",
+		reflect.TypeOf((*PostgresqlFlexibleServerCustomerManagedKey)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerCustomerManagedKeyOutputReference",
+		reflect.TypeOf((*PostgresqlFlexibleServerCustomerManagedKeyOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "keyVaultKeyId", GoGetter: "KeyVaultKeyId"},
+			_jsii_.MemberProperty{JsiiProperty: "keyVaultKeyIdInput", GoGetter: "KeyVaultKeyIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "primaryUserAssignedIdentityId", GoGetter: "PrimaryUserAssignedIdentityId"},
+			_jsii_.MemberProperty{JsiiProperty: "primaryUserAssignedIdentityIdInput", GoGetter: "PrimaryUserAssignedIdentityIdInput"},
+			_jsii_.MemberMethod{JsiiMethod: "resetKeyVaultKeyId", GoMethod: "ResetKeyVaultKeyId"},
+			_jsii_.MemberMethod{JsiiMethod: "resetPrimaryUserAssignedIdentityId", GoMethod: "ResetPrimaryUserAssignedIdentityId"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_PostgresqlFlexibleServerCustomerManagedKeyOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
 	)
 	_jsii_.RegisterStruct(
 		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerHighAvailability",
@@ -157,6 +259,46 @@ func init() {
 		},
 		func() interface{} {
 			j := jsiiProxy_PostgresqlFlexibleServerHighAvailabilityOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerIdentity",
+		reflect.TypeOf((*PostgresqlFlexibleServerIdentity)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.postgresqlFlexibleServer.PostgresqlFlexibleServerIdentityOutputReference",
+		reflect.TypeOf((*PostgresqlFlexibleServerIdentityOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "identityIds", GoGetter: "IdentityIds"},
+			_jsii_.MemberProperty{JsiiProperty: "identityIdsInput", GoGetter: "IdentityIdsInput"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+			_jsii_.MemberProperty{JsiiProperty: "type", GoGetter: "Type"},
+			_jsii_.MemberProperty{JsiiProperty: "typeInput", GoGetter: "TypeInput"},
+		},
+		func() interface{} {
+			j := jsiiProxy_PostgresqlFlexibleServerIdentityOutputReference{}
 			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
 			return &j
 		},

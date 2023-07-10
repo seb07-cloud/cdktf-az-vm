@@ -35,6 +35,8 @@ type SiteRecoveryReplicatedVmManagedDiskOutputReference interface {
 	StagingStorageAccountId() *string
 	SetStagingStorageAccountId(val *string)
 	StagingStorageAccountIdInput() *string
+	TargetDiskEncryption() SiteRecoveryReplicatedVmManagedDiskTargetDiskEncryptionList
+	TargetDiskEncryptionInput() interface{}
 	TargetDiskEncryptionSetId() *string
 	SetTargetDiskEncryptionSetId(val *string)
 	TargetDiskEncryptionSetIdInput() *string
@@ -79,8 +81,10 @@ type SiteRecoveryReplicatedVmManagedDiskOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutTargetDiskEncryption(value interface{})
 	ResetDiskId()
 	ResetStagingStorageAccountId()
+	ResetTargetDiskEncryption()
 	ResetTargetDiskEncryptionSetId()
 	ResetTargetDiskType()
 	ResetTargetReplicaDiskType()
@@ -185,6 +189,26 @@ func (j *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) StagingSt
 	_jsii_.Get(
 		j,
 		"stagingStorageAccountIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) TargetDiskEncryption() SiteRecoveryReplicatedVmManagedDiskTargetDiskEncryptionList {
+	var returns SiteRecoveryReplicatedVmManagedDiskTargetDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"targetDiskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) TargetDiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"targetDiskEncryptionInput",
 		&returns,
 	)
 	return returns
@@ -625,6 +649,17 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) Interpola
 	return returns
 }
 
+func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) PutTargetDiskEncryption(value interface{}) {
+	if err := s.validatePutTargetDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putTargetDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) ResetDiskId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -637,6 +672,14 @@ func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) ResetStag
 	_jsii_.InvokeVoid(
 		s,
 		"resetStagingStorageAccountId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SiteRecoveryReplicatedVmManagedDiskOutputReference) ResetTargetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetTargetDiskEncryption",
 		nil, // no parameters
 	)
 }

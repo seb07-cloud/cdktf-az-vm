@@ -27,6 +27,7 @@ type DataAzurermLbBackendAddressPoolBackendAddressOutputReference interface {
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
+	InboundNatRulePortMapping() DataAzurermLbBackendAddressPoolBackendAddressInboundNatRulePortMappingList
 	InternalValue() *DataAzurermLbBackendAddressPoolBackendAddress
 	SetInternalValue(val *DataAzurermLbBackendAddressPoolBackendAddress)
 	IpAddress() *string
@@ -114,6 +115,16 @@ func (j *jsiiProxy_DataAzurermLbBackendAddressPoolBackendAddressOutputReference)
 	_jsii_.Get(
 		j,
 		"fqn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermLbBackendAddressPoolBackendAddressOutputReference) InboundNatRulePortMapping() DataAzurermLbBackendAddressPoolBackendAddressInboundNatRulePortMappingList {
+	var returns DataAzurermLbBackendAddressPoolBackendAddressInboundNatRulePortMappingList
+	_jsii_.Get(
+		j,
+		"inboundNatRulePortMapping",
 		&returns,
 	)
 	return returns

@@ -56,6 +56,10 @@ func (f *jsiiProxy_FirewallPolicy) validatePutDnsParameters(value *FirewallPolic
 	return nil
 }
 
+func (f *jsiiProxy_FirewallPolicy) validatePutExplicitProxyParameters(value *FirewallPolicyExplicitProxy) error {
+	return nil
+}
+
 func (f *jsiiProxy_FirewallPolicy) validatePutIdentityParameters(value *FirewallPolicyIdentity) error {
 	return nil
 }
@@ -89,6 +93,10 @@ func validateFirewallPolicy_IsTerraformElementParameters(x interface{}) error {
 }
 
 func validateFirewallPolicy_IsTerraformResourceParameters(x interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_FirewallPolicy) validateSetAutoLearnPrivateRangesEnabledParameters(val interface{}) error {
 	return nil
 }
 
@@ -133,6 +141,10 @@ func (j *jsiiProxy_FirewallPolicy) validateSetResourceGroupNameParameters(val *s
 }
 
 func (j *jsiiProxy_FirewallPolicy) validateSetSkuParameters(val *string) error {
+	return nil
+}
+
+func (j *jsiiProxy_FirewallPolicy) validateSetSqlRedirectAllowedParameters(val interface{}) error {
 	return nil
 }
 

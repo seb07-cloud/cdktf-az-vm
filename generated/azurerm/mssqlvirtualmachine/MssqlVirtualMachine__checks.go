@@ -111,6 +111,17 @@ func (m *jsiiProxy_MssqlVirtualMachine) validateOverrideLogicalIdParameters(newL
 	return nil
 }
 
+func (m *jsiiProxy_MssqlVirtualMachine) validatePutAssessmentParameters(value *MssqlVirtualMachineAssessment) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *jsiiProxy_MssqlVirtualMachine) validatePutAutoBackupParameters(value *MssqlVirtualMachineAutoBackup) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
@@ -134,6 +145,17 @@ func (m *jsiiProxy_MssqlVirtualMachine) validatePutAutoPatchingParameters(value 
 }
 
 func (m *jsiiProxy_MssqlVirtualMachine) validatePutKeyVaultCredentialParameters(value *MssqlVirtualMachineKeyVaultCredential) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *jsiiProxy_MssqlVirtualMachine) validatePutSqlInstanceParameters(value *MssqlVirtualMachineSqlInstance) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}

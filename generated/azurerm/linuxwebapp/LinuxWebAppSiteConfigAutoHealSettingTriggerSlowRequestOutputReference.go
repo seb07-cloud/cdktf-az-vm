@@ -30,8 +30,8 @@ type LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference inter
 	CreationStack() *[]*string
 	// Experimental.
 	Fqn() *string
-	InternalValue() interface{}
-	SetInternalValue(val interface{})
+	InternalValue() *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest
+	SetInternalValue(val *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest)
 	Interval() *string
 	SetInterval(val *string)
 	IntervalInput() *string
@@ -149,8 +149,8 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputR
 	return returns
 }
 
-func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) InternalValue() interface{} {
-	var returns interface{}
+func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference) InternalValue() *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest {
+	var returns *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest
 	_jsii_.Get(
 		j,
 		"internalValue",
@@ -240,29 +240,29 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputR
 }
 
 
-func NewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
+func NewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference {
 	_init_.Initialize()
 
-	if err := validateNewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet); err != nil {
+	if err := validateNewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReferenceParameters(terraformResource, terraformAttribute); err != nil {
 		panic(err)
 	}
 	j := jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference{}
 
 	_jsii_.Create(
 		"azurerm.linuxWebApp.LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
+		[]interface{}{terraformResource, terraformAttribute},
 		&j,
 	)
 
 	return &j
 }
 
-func NewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference_Override(l LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string, complexObjectIndex *float64, complexObjectIsFromSet *bool) {
+func NewLinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference_Override(l LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference, terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) {
 	_init_.Initialize()
 
 	_jsii_.Create(
 		"azurerm.linuxWebApp.LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference",
-		[]interface{}{terraformResource, terraformAttribute, complexObjectIndex, complexObjectIsFromSet},
+		[]interface{}{terraformResource, terraformAttribute},
 		l,
 	)
 }
@@ -300,7 +300,7 @@ func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputR
 	)
 }
 
-func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference)SetInternalValue(val interface{}) {
+func (j *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequestOutputReference)SetInternalValue(val *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest) {
 	if err := j.validateSetInternalValueParameters(val); err != nil {
 		panic(err)
 	}

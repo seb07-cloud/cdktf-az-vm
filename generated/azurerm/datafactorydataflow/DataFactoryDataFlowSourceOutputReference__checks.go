@@ -101,7 +101,29 @@ func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutDatasetP
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutFlowletParameters(value *DataFactoryDataFlowSourceFlowlet) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutLinkedServiceParameters(value *DataFactoryDataFlowSourceLinkedService) error {
+	if value == nil {
+		return fmt.Errorf("parameter value is required, but nil was provided")
+	}
+	if err := _jsii_.ValidateStruct(value, func() string { return "parameter value" }); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowSourceOutputReference) validatePutRejectedLinkedServiceParameters(value *DataFactoryDataFlowSourceRejectedLinkedService) error {
 	if value == nil {
 		return fmt.Errorf("parameter value is required, but nil was provided")
 	}

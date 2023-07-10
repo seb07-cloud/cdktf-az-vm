@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub azurerm_virtual_hub}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub azurerm_virtual_hub}.
 type VirtualHub interface {
 	cdktf.TerraformResource
 	AddressPrefix() *string
@@ -40,6 +40,9 @@ type VirtualHub interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HubRoutingPreference() *string
+	SetHubRoutingPreference(val *string)
+	HubRoutingPreferenceInput() *string
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
@@ -85,6 +88,9 @@ type VirtualHub interface {
 	Timeouts() VirtualHubTimeoutsOutputReference
 	TimeoutsInput() interface{}
 	VirtualRouterAsn() *float64
+	VirtualRouterAutoScaleMinCapacity() *float64
+	SetVirtualRouterAutoScaleMinCapacity(val *float64)
+	VirtualRouterAutoScaleMinCapacityInput() *float64
 	VirtualRouterIps() *[]*string
 	VirtualWanId() *string
 	SetVirtualWanId(val *string)
@@ -117,6 +123,7 @@ type VirtualHub interface {
 	PutRoute(value interface{})
 	PutTimeouts(value *VirtualHubTimeouts)
 	ResetAddressPrefix()
+	ResetHubRoutingPreference()
 	ResetId()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
@@ -125,6 +132,7 @@ type VirtualHub interface {
 	ResetSku()
 	ResetTags()
 	ResetTimeouts()
+	ResetVirtualRouterAutoScaleMinCapacity()
 	ResetVirtualWanId()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -246,6 +254,26 @@ func (j *jsiiProxy_VirtualHub) FriendlyUniqueId() *string {
 	_jsii_.Get(
 		j,
 		"friendlyUniqueId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualHub) HubRoutingPreference() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hubRoutingPreference",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualHub) HubRoutingPreferenceInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"hubRoutingPreferenceInput",
 		&returns,
 	)
 	return returns
@@ -501,6 +529,26 @@ func (j *jsiiProxy_VirtualHub) VirtualRouterAsn() *float64 {
 	return returns
 }
 
+func (j *jsiiProxy_VirtualHub) VirtualRouterAutoScaleMinCapacity() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"virtualRouterAutoScaleMinCapacity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_VirtualHub) VirtualRouterAutoScaleMinCapacityInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"virtualRouterAutoScaleMinCapacityInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_VirtualHub) VirtualRouterIps() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -532,7 +580,7 @@ func (j *jsiiProxy_VirtualHub) VirtualWanIdInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub azurerm_virtual_hub} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub azurerm_virtual_hub} Resource.
 func NewVirtualHub(scope constructs.Construct, id *string, config *VirtualHubConfig) VirtualHub {
 	_init_.Initialize()
 
@@ -550,7 +598,7 @@ func NewVirtualHub(scope constructs.Construct, id *string, config *VirtualHubCon
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/virtual_hub azurerm_virtual_hub} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/virtual_hub azurerm_virtual_hub} Resource.
 func NewVirtualHub_Override(v VirtualHub, scope constructs.Construct, id *string, config *VirtualHubConfig) {
 	_init_.Initialize()
 
@@ -606,6 +654,17 @@ func (j *jsiiProxy_VirtualHub)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
 		"forEach",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualHub)SetHubRoutingPreference(val *string) {
+	if err := j.validateSetHubRoutingPreferenceParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hubRoutingPreference",
 		val,
 	)
 }
@@ -702,6 +761,17 @@ func (j *jsiiProxy_VirtualHub)SetTags(val *map[string]*string) {
 	_jsii_.Set(
 		j,
 		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_VirtualHub)SetVirtualRouterAutoScaleMinCapacity(val *float64) {
+	if err := j.validateSetVirtualRouterAutoScaleMinCapacityParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"virtualRouterAutoScaleMinCapacity",
 		val,
 	)
 }
@@ -1013,6 +1083,14 @@ func (v *jsiiProxy_VirtualHub) ResetAddressPrefix() {
 	)
 }
 
+func (v *jsiiProxy_VirtualHub) ResetHubRoutingPreference() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetHubRoutingPreference",
+		nil, // no parameters
+	)
+}
+
 func (v *jsiiProxy_VirtualHub) ResetId() {
 	_jsii_.InvokeVoid(
 		v,
@@ -1057,6 +1135,14 @@ func (v *jsiiProxy_VirtualHub) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		v,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (v *jsiiProxy_VirtualHub) ResetVirtualRouterAutoScaleMinCapacity() {
+	_jsii_.InvokeVoid(
+		v,
+		"resetVirtualRouterAutoScaleMinCapacity",
 		nil, // no parameters
 	)
 }

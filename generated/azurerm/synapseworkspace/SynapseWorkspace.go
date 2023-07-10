@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_workspace azurerm_synapse_workspace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_workspace azurerm_synapse_workspace}.
 type SynapseWorkspace interface {
 	cdktf.TerraformResource
 	AadAdmin() SynapseWorkspaceAadAdminList
@@ -160,6 +160,7 @@ type SynapseWorkspace interface {
 	ResetDataExfiltrationProtectionEnabled()
 	ResetGithubRepo()
 	ResetId()
+	ResetIdentity()
 	ResetLinkingAllowedForAadTenantIds()
 	ResetManagedResourceGroupName()
 	ResetManagedVirtualNetworkEnabled()
@@ -169,6 +170,8 @@ type SynapseWorkspace interface {
 	ResetPublicNetworkAccessEnabled()
 	ResetPurviewId()
 	ResetSqlAadAdmin()
+	ResetSqlAdministratorLogin()
+	ResetSqlAdministratorLoginPassword()
 	ResetSqlIdentityControlEnabled()
 	ResetTags()
 	ResetTimeouts()
@@ -818,7 +821,7 @@ func (j *jsiiProxy_SynapseWorkspace) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_workspace azurerm_synapse_workspace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_workspace azurerm_synapse_workspace} Resource.
 func NewSynapseWorkspace(scope constructs.Construct, id *string, config *SynapseWorkspaceConfig) SynapseWorkspace {
 	_init_.Initialize()
 
@@ -836,7 +839,7 @@ func NewSynapseWorkspace(scope constructs.Construct, id *string, config *Synapse
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/synapse_workspace azurerm_synapse_workspace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/synapse_workspace azurerm_synapse_workspace} Resource.
 func NewSynapseWorkspace_Override(s SynapseWorkspace, scope constructs.Construct, id *string, config *SynapseWorkspaceConfig) {
 	_init_.Initialize()
 
@@ -1490,6 +1493,14 @@ func (s *jsiiProxy_SynapseWorkspace) ResetId() {
 	)
 }
 
+func (s *jsiiProxy_SynapseWorkspace) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetIdentity",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_SynapseWorkspace) ResetLinkingAllowedForAadTenantIds() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1542,6 +1553,22 @@ func (s *jsiiProxy_SynapseWorkspace) ResetSqlAadAdmin() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetSqlAadAdmin",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SynapseWorkspace) ResetSqlAdministratorLogin() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSqlAdministratorLogin",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_SynapseWorkspace) ResetSqlAdministratorLoginPassword() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetSqlAdministratorLoginPassword",
 		nil, // no parameters
 	)
 }

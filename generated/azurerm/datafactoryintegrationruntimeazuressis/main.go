@@ -29,6 +29,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "editionInput", GoGetter: "EditionInput"},
 			_jsii_.MemberProperty{JsiiProperty: "expressCustomSetup", GoGetter: "ExpressCustomSetup"},
 			_jsii_.MemberProperty{JsiiProperty: "expressCustomSetupInput", GoGetter: "ExpressCustomSetupInput"},
+			_jsii_.MemberProperty{JsiiProperty: "expressVnetIntegration", GoGetter: "ExpressVnetIntegration"},
+			_jsii_.MemberProperty{JsiiProperty: "expressVnetIntegrationInput", GoGetter: "ExpressVnetIntegrationInput"},
 			_jsii_.MemberProperty{JsiiProperty: "forEach", GoGetter: "ForEach"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberProperty{JsiiProperty: "friendlyUniqueId", GoGetter: "FriendlyUniqueId"},
@@ -68,6 +70,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "putCatalogInfo", GoMethod: "PutCatalogInfo"},
 			_jsii_.MemberMethod{JsiiMethod: "putCustomSetupScript", GoMethod: "PutCustomSetupScript"},
 			_jsii_.MemberMethod{JsiiMethod: "putExpressCustomSetup", GoMethod: "PutExpressCustomSetup"},
+			_jsii_.MemberMethod{JsiiMethod: "putExpressVnetIntegration", GoMethod: "PutExpressVnetIntegration"},
 			_jsii_.MemberMethod{JsiiMethod: "putPackageStore", GoMethod: "PutPackageStore"},
 			_jsii_.MemberMethod{JsiiMethod: "putProxy", GoMethod: "PutProxy"},
 			_jsii_.MemberMethod{JsiiMethod: "putTimeouts", GoMethod: "PutTimeouts"},
@@ -78,6 +81,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetDescription", GoMethod: "ResetDescription"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEdition", GoMethod: "ResetEdition"},
 			_jsii_.MemberMethod{JsiiMethod: "resetExpressCustomSetup", GoMethod: "ResetExpressCustomSetup"},
+			_jsii_.MemberMethod{JsiiMethod: "resetExpressVnetIntegration", GoMethod: "ResetExpressVnetIntegration"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},
 			_jsii_.MemberMethod{JsiiMethod: "resetLicenseType", GoMethod: "ResetLicenseType"},
 			_jsii_.MemberMethod{JsiiMethod: "resetMaxParallelExecutionsPerNode", GoMethod: "ResetMaxParallelExecutionsPerNode"},
@@ -123,6 +127,8 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "dualStandbyPairName", GoGetter: "DualStandbyPairName"},
 			_jsii_.MemberProperty{JsiiProperty: "dualStandbyPairNameInput", GoGetter: "DualStandbyPairNameInput"},
+			_jsii_.MemberProperty{JsiiProperty: "elasticPoolName", GoGetter: "ElasticPoolName"},
+			_jsii_.MemberProperty{JsiiProperty: "elasticPoolNameInput", GoGetter: "ElasticPoolNameInput"},
 			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
 			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
 			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
@@ -141,6 +147,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "resetAdministratorLogin", GoMethod: "ResetAdministratorLogin"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAdministratorPassword", GoMethod: "ResetAdministratorPassword"},
 			_jsii_.MemberMethod{JsiiMethod: "resetDualStandbyPairName", GoMethod: "ResetDualStandbyPairName"},
+			_jsii_.MemberMethod{JsiiMethod: "resetElasticPoolName", GoMethod: "ResetElasticPoolName"},
 			_jsii_.MemberMethod{JsiiMethod: "resetPricingTier", GoMethod: "ResetPricingTier"},
 			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
 			_jsii_.MemberProperty{JsiiProperty: "serverEndpoint", GoGetter: "ServerEndpoint"},
@@ -471,6 +478,44 @@ func init() {
 		},
 		func() interface{} {
 			j := jsiiProxy_DataFactoryIntegrationRuntimeAzureSsisExpressCustomSetupOutputReference{}
+			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"azurerm.dataFactoryIntegrationRuntimeAzureSsis.DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration",
+		reflect.TypeOf((*DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"azurerm.dataFactoryIntegrationRuntimeAzureSsis.DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference",
+		reflect.TypeOf((*DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIndex", GoGetter: "ComplexObjectIndex"},
+			_jsii_.MemberProperty{JsiiProperty: "complexObjectIsFromSet", GoGetter: "ComplexObjectIsFromSet"},
+			_jsii_.MemberMethod{JsiiMethod: "computeFqn", GoMethod: "ComputeFqn"},
+			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "fqn", GoGetter: "Fqn"},
+			_jsii_.MemberMethod{JsiiMethod: "getAnyMapAttribute", GoMethod: "GetAnyMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanAttribute", GoMethod: "GetBooleanAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getBooleanMapAttribute", GoMethod: "GetBooleanMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getListAttribute", GoMethod: "GetListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberAttribute", GoMethod: "GetNumberAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberListAttribute", GoMethod: "GetNumberListAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getNumberMapAttribute", GoMethod: "GetNumberMapAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringAttribute", GoMethod: "GetStringAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "getStringMapAttribute", GoMethod: "GetStringMapAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "internalValue", GoGetter: "InternalValue"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationAsList", GoMethod: "InterpolationAsList"},
+			_jsii_.MemberMethod{JsiiMethod: "interpolationForAttribute", GoMethod: "InterpolationForAttribute"},
+			_jsii_.MemberMethod{JsiiMethod: "resolve", GoMethod: "Resolve"},
+			_jsii_.MemberProperty{JsiiProperty: "subnetId", GoGetter: "SubnetId"},
+			_jsii_.MemberProperty{JsiiProperty: "subnetIdInput", GoGetter: "SubnetIdInput"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformAttribute", GoGetter: "TerraformAttribute"},
+			_jsii_.MemberProperty{JsiiProperty: "terraformResource", GoGetter: "TerraformResource"},
+			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
+		},
+		func() interface{} {
+			j := jsiiProxy_DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference{}
 			_jsii_.InitJsiiProxy(&j.Type__cdktfComplexObject)
 			return &j
 		},

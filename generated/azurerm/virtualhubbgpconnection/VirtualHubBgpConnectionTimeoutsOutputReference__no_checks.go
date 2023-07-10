@@ -80,6 +80,10 @@ func (j *jsiiProxy_VirtualHubBgpConnectionTimeoutsOutputReference) validateSetTe
 	return nil
 }
 
+func (j *jsiiProxy_VirtualHubBgpConnectionTimeoutsOutputReference) validateSetUpdateParameters(val *string) error {
+	return nil
+}
+
 func validateNewVirtualHubBgpConnectionTimeoutsOutputReferenceParameters(terraformResource cdktf.IInterpolatingParent, terraformAttribute *string) error {
 	return nil
 }

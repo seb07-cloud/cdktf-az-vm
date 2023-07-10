@@ -44,6 +44,18 @@ func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) validateInt
 	return nil
 }
 
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) validatePutDatasetParameters(value *DataFactoryDataFlowTransformationDataset) error {
+	return nil
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) validatePutFlowletParameters(value *DataFactoryDataFlowTransformationFlowlet) error {
+	return nil
+}
+
+func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) validatePutLinkedServiceParameters(value *DataFactoryDataFlowTransformationLinkedService) error {
+	return nil
+}
+
 func (d *jsiiProxy_DataFactoryDataFlowTransformationOutputReference) validateResolveParameters(_context cdktf.IResolveContext) error {
 	return nil
 }

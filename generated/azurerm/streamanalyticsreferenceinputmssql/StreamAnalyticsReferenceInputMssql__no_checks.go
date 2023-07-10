@@ -128,6 +128,10 @@ func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) validateSetStreamAnalytic
 	return nil
 }
 
+func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) validateSetTableParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_StreamAnalyticsReferenceInputMssql) validateSetUsernameParameters(val *string) error {
 	return nil
 }

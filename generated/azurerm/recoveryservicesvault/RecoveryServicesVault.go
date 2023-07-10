@@ -9,11 +9,14 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/recovery_services_vault azurerm_recovery_services_vault}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/recovery_services_vault azurerm_recovery_services_vault}.
 type RecoveryServicesVault interface {
 	cdktf.TerraformResource
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ClassicVmwareReplicationEnabled() interface{}
+	SetClassicVmwareReplicationEnabled(val interface{})
+	ClassicVmwareReplicationEnabledInput() interface{}
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -46,6 +49,9 @@ type RecoveryServicesVault interface {
 	Identity() RecoveryServicesVaultIdentityOutputReference
 	IdentityInput() *RecoveryServicesVaultIdentity
 	IdInput() *string
+	Immutability() *string
+	SetImmutability(val *string)
+	ImmutabilityInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
@@ -53,6 +59,8 @@ type RecoveryServicesVault interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	Monitoring() RecoveryServicesVaultMonitoringOutputReference
+	MonitoringInput() *RecoveryServicesVaultMonitoring
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -66,6 +74,9 @@ type RecoveryServicesVault interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -118,14 +129,19 @@ type RecoveryServicesVault interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutEncryption(value *RecoveryServicesVaultEncryption)
 	PutIdentity(value *RecoveryServicesVaultIdentity)
+	PutMonitoring(value *RecoveryServicesVaultMonitoring)
 	PutTimeouts(value *RecoveryServicesVaultTimeouts)
+	ResetClassicVmwareReplicationEnabled()
 	ResetCrossRegionRestoreEnabled()
 	ResetEncryption()
 	ResetId()
 	ResetIdentity()
+	ResetImmutability()
+	ResetMonitoring()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetSoftDeleteEnabled()
 	ResetStorageModeType()
 	ResetTags()
@@ -150,6 +166,26 @@ func (j *jsiiProxy_RecoveryServicesVault) CdktfStack() cdktf.TerraformStack {
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) ClassicVmwareReplicationEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"classicVmwareReplicationEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) ClassicVmwareReplicationEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"classicVmwareReplicationEnabledInput",
 		&returns,
 	)
 	return returns
@@ -305,6 +341,26 @@ func (j *jsiiProxy_RecoveryServicesVault) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RecoveryServicesVault) Immutability() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"immutability",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) ImmutabilityInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"immutabilityInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RecoveryServicesVault) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -330,6 +386,26 @@ func (j *jsiiProxy_RecoveryServicesVault) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) Monitoring() RecoveryServicesVaultMonitoringOutputReference {
+	var returns RecoveryServicesVaultMonitoringOutputReference
+	_jsii_.Get(
+		j,
+		"monitoring",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) MonitoringInput() *RecoveryServicesVaultMonitoring {
+	var returns *RecoveryServicesVaultMonitoring
+	_jsii_.Get(
+		j,
+		"monitoringInput",
 		&returns,
 	)
 	return returns
@@ -380,6 +456,26 @@ func (j *jsiiProxy_RecoveryServicesVault) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RecoveryServicesVault) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
 		&returns,
 	)
 	return returns
@@ -546,7 +642,7 @@ func (j *jsiiProxy_RecoveryServicesVault) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/recovery_services_vault azurerm_recovery_services_vault} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/recovery_services_vault azurerm_recovery_services_vault} Resource.
 func NewRecoveryServicesVault(scope constructs.Construct, id *string, config *RecoveryServicesVaultConfig) RecoveryServicesVault {
 	_init_.Initialize()
 
@@ -564,7 +660,7 @@ func NewRecoveryServicesVault(scope constructs.Construct, id *string, config *Re
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/recovery_services_vault azurerm_recovery_services_vault} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/recovery_services_vault azurerm_recovery_services_vault} Resource.
 func NewRecoveryServicesVault_Override(r RecoveryServicesVault, scope constructs.Construct, id *string, config *RecoveryServicesVaultConfig) {
 	_init_.Initialize()
 
@@ -572,6 +668,17 @@ func NewRecoveryServicesVault_Override(r RecoveryServicesVault, scope constructs
 		"azurerm.recoveryServicesVault.RecoveryServicesVault",
 		[]interface{}{scope, id, config},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RecoveryServicesVault)SetClassicVmwareReplicationEnabled(val interface{}) {
+	if err := j.validateSetClassicVmwareReplicationEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"classicVmwareReplicationEnabled",
+		val,
 	)
 }
 
@@ -635,6 +742,17 @@ func (j *jsiiProxy_RecoveryServicesVault)SetId(val *string) {
 	)
 }
 
+func (j *jsiiProxy_RecoveryServicesVault)SetImmutability(val *string) {
+	if err := j.validateSetImmutabilityParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"immutability",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RecoveryServicesVault)SetLifecycle(val *cdktf.TerraformResourceLifecycle) {
 	if err := j.validateSetLifecycleParameters(val); err != nil {
 		panic(err)
@@ -683,6 +801,17 @@ func (j *jsiiProxy_RecoveryServicesVault)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RecoveryServicesVault)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -1030,6 +1159,17 @@ func (r *jsiiProxy_RecoveryServicesVault) PutIdentity(value *RecoveryServicesVau
 	)
 }
 
+func (r *jsiiProxy_RecoveryServicesVault) PutMonitoring(value *RecoveryServicesVaultMonitoring) {
+	if err := r.validatePutMonitoringParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		r,
+		"putMonitoring",
+		[]interface{}{value},
+	)
+}
+
 func (r *jsiiProxy_RecoveryServicesVault) PutTimeouts(value *RecoveryServicesVaultTimeouts) {
 	if err := r.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -1038,6 +1178,14 @@ func (r *jsiiProxy_RecoveryServicesVault) PutTimeouts(value *RecoveryServicesVau
 		r,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (r *jsiiProxy_RecoveryServicesVault) ResetClassicVmwareReplicationEnabled() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetClassicVmwareReplicationEnabled",
+		nil, // no parameters
 	)
 }
 
@@ -1073,10 +1221,34 @@ func (r *jsiiProxy_RecoveryServicesVault) ResetIdentity() {
 	)
 }
 
+func (r *jsiiProxy_RecoveryServicesVault) ResetImmutability() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetImmutability",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RecoveryServicesVault) ResetMonitoring() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetMonitoring",
+		nil, // no parameters
+	)
+}
+
 func (r *jsiiProxy_RecoveryServicesVault) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		r,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (r *jsiiProxy_RecoveryServicesVault) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		r,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

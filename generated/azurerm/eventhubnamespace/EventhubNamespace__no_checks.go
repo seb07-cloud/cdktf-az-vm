@@ -104,6 +104,10 @@ func (j *jsiiProxy_EventhubNamespace) validateSetLifecycleParameters(val *cdktf.
 	return nil
 }
 
+func (j *jsiiProxy_EventhubNamespace) validateSetLocalAuthenticationEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_EventhubNamespace) validateSetLocationParameters(val *string) error {
 	return nil
 }
@@ -112,11 +116,19 @@ func (j *jsiiProxy_EventhubNamespace) validateSetMaximumThroughputUnitsParameter
 	return nil
 }
 
+func (j *jsiiProxy_EventhubNamespace) validateSetMinimumTlsVersionParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_EventhubNamespace) validateSetNameParameters(val *string) error {
 	return nil
 }
 
 func (j *jsiiProxy_EventhubNamespace) validateSetProvisionersParameters(val *[]interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_EventhubNamespace) validateSetPublicNetworkAccessEnabledParameters(val interface{}) error {
 	return nil
 }
 

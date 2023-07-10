@@ -9,9 +9,10 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys}.
 type DataAzurermFunctionAppHostKeys interface {
 	cdktf.TerraformDataSource
+	BlobsExtensionKey() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
 	// Experimental.
@@ -66,6 +67,7 @@ type DataAzurermFunctionAppHostKeys interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermFunctionAppHostKeysTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	WebpubsubExtensionKey() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -110,6 +112,16 @@ type DataAzurermFunctionAppHostKeys interface {
 // The jsii proxy struct for DataAzurermFunctionAppHostKeys
 type jsiiProxy_DataAzurermFunctionAppHostKeys struct {
 	internal.Type__cdktfTerraformDataSource
+}
+
+func (j *jsiiProxy_DataAzurermFunctionAppHostKeys) BlobsExtensionKey() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"blobsExtensionKey",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_DataAzurermFunctionAppHostKeys) CdktfStack() cdktf.TerraformStack {
@@ -382,8 +394,18 @@ func (j *jsiiProxy_DataAzurermFunctionAppHostKeys) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermFunctionAppHostKeys) WebpubsubExtensionKey() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"webpubsubExtensionKey",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys} Data Source.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys} Data Source.
 func NewDataAzurermFunctionAppHostKeys(scope constructs.Construct, id *string, config *DataAzurermFunctionAppHostKeysConfig) DataAzurermFunctionAppHostKeys {
 	_init_.Initialize()
 
@@ -401,7 +423,7 @@ func NewDataAzurermFunctionAppHostKeys(scope constructs.Construct, id *string, c
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/function_app_host_keys azurerm_function_app_host_keys} Data Source.
 func NewDataAzurermFunctionAppHostKeys_Override(d DataAzurermFunctionAppHostKeys, scope constructs.Construct, id *string, config *DataAzurermFunctionAppHostKeysConfig) {
 	_init_.Initialize()
 

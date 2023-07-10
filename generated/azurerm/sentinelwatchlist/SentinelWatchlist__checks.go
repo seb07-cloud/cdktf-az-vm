@@ -268,6 +268,14 @@ func (j *jsiiProxy_SentinelWatchlist) validateSetIdParameters(val *string) error
 	return nil
 }
 
+func (j *jsiiProxy_SentinelWatchlist) validateSetItemSearchKeyParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_SentinelWatchlist) validateSetLabelsParameters(val *[]*string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

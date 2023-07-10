@@ -56,6 +56,10 @@ func (j *jsiiProxy_PurviewAccountIdentityOutputReference) validateSetComplexObje
 	return nil
 }
 
+func (j *jsiiProxy_PurviewAccountIdentityOutputReference) validateSetIdentityIdsParameters(val *[]*string) error {
+	return nil
+}
+
 func (j *jsiiProxy_PurviewAccountIdentityOutputReference) validateSetInternalValueParameters(val *PurviewAccountIdentity) error {
 	return nil
 }

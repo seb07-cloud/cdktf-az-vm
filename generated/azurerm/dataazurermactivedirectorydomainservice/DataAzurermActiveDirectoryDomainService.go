@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service}.
 type DataAzurermActiveDirectoryDomainService interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -65,7 +65,9 @@ type DataAzurermActiveDirectoryDomainService interface {
 	Security() DataAzurermActiveDirectoryDomainServiceSecurityList
 	Sku() *string
 	SyncOwner() *string
-	Tags() cdktf.StringMap
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	TenantId() *string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
@@ -106,6 +108,7 @@ type DataAzurermActiveDirectoryDomainService interface {
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetTags()
 	ResetTimeouts()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
@@ -412,11 +415,21 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) SyncOwner() *string 
 	return returns
 }
 
-func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) Tags() cdktf.StringMap {
-	var returns cdktf.StringMap
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) Tags() *map[string]*string {
+	var returns *map[string]*string
 	_jsii_.Get(
 		j,
 		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
 		&returns,
 	)
 	return returns
@@ -493,7 +506,7 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService) Version() *float64 {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service} Data Source.
 func NewDataAzurermActiveDirectoryDomainService(scope constructs.Construct, id *string, config *DataAzurermActiveDirectoryDomainServiceConfig) DataAzurermActiveDirectoryDomainService {
 	_init_.Initialize()
 
@@ -511,7 +524,7 @@ func NewDataAzurermActiveDirectoryDomainService(scope constructs.Construct, id *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/active_directory_domain_service azurerm_active_directory_domain_service} Data Source.
 func NewDataAzurermActiveDirectoryDomainService_Override(d DataAzurermActiveDirectoryDomainService, scope constructs.Construct, id *string, config *DataAzurermActiveDirectoryDomainServiceConfig) {
 	_init_.Initialize()
 
@@ -597,6 +610,17 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService)SetResourceGroupName(
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainService)SetTags(val *map[string]*string) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }
@@ -890,6 +914,14 @@ func (d *jsiiProxy_DataAzurermActiveDirectoryDomainService) ResetOverrideLogical
 	_jsii_.InvokeVoid(
 		d,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermActiveDirectoryDomainService) ResetTags() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetTags",
 		nil, // no parameters
 	)
 }

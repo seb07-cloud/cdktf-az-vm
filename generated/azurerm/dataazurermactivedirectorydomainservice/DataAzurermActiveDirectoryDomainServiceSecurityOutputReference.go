@@ -29,6 +29,8 @@ type DataAzurermActiveDirectoryDomainServiceSecurityOutputReference interface {
 	Fqn() *string
 	InternalValue() *DataAzurermActiveDirectoryDomainServiceSecurity
 	SetInternalValue(val *DataAzurermActiveDirectoryDomainServiceSecurity)
+	KerberosArmoringEnabled() cdktf.IResolvable
+	KerberosRc4EncryptionEnabled() cdktf.IResolvable
 	NtlmV1Enabled() cdktf.IResolvable
 	SyncKerberosPasswords() cdktf.IResolvable
 	SyncNtlmPasswords() cdktf.IResolvable
@@ -126,6 +128,26 @@ func (j *jsiiProxy_DataAzurermActiveDirectoryDomainServiceSecurityOutputReferenc
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainServiceSecurityOutputReference) KerberosArmoringEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"kerberosArmoringEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermActiveDirectoryDomainServiceSecurityOutputReference) KerberosRc4EncryptionEnabled() cdktf.IResolvable {
+	var returns cdktf.IResolvable
+	_jsii_.Get(
+		j,
+		"kerberosRc4EncryptionEnabled",
 		&returns,
 	)
 	return returns

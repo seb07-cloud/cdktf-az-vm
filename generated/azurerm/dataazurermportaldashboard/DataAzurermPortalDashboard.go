@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/portal_dashboard azurerm_portal_dashboard}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/portal_dashboard azurerm_portal_dashboard}.
 type DataAzurermPortalDashboard interface {
 	cdktf.TerraformDataSource
 	// Experimental.
@@ -27,6 +27,9 @@ type DataAzurermPortalDashboard interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DisplayName() *string
+	SetDisplayName(val *string)
+	DisplayNameInput() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -93,7 +96,9 @@ type DataAzurermPortalDashboard interface {
 	OverrideLogicalId(newLogicalId *string)
 	PutTimeouts(value *DataAzurermPortalDashboardTimeouts)
 	ResetDashboardProperties()
+	ResetDisplayName()
 	ResetId()
+	ResetName()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -168,6 +173,26 @@ func (j *jsiiProxy_DataAzurermPortalDashboard) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermPortalDashboard) DisplayName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"displayName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermPortalDashboard) DisplayNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"displayNameInput",
 		&returns,
 	)
 	return returns
@@ -374,7 +399,7 @@ func (j *jsiiProxy_DataAzurermPortalDashboard) TimeoutsInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/portal_dashboard azurerm_portal_dashboard} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/portal_dashboard azurerm_portal_dashboard} Data Source.
 func NewDataAzurermPortalDashboard(scope constructs.Construct, id *string, config *DataAzurermPortalDashboardConfig) DataAzurermPortalDashboard {
 	_init_.Initialize()
 
@@ -392,7 +417,7 @@ func NewDataAzurermPortalDashboard(scope constructs.Construct, id *string, confi
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/portal_dashboard azurerm_portal_dashboard} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/portal_dashboard azurerm_portal_dashboard} Data Source.
 func NewDataAzurermPortalDashboard_Override(d DataAzurermPortalDashboard, scope constructs.Construct, id *string, config *DataAzurermPortalDashboardConfig) {
 	_init_.Initialize()
 
@@ -429,6 +454,17 @@ func (j *jsiiProxy_DataAzurermPortalDashboard)SetDependsOn(val *[]*string) {
 	_jsii_.Set(
 		j,
 		"dependsOn",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataAzurermPortalDashboard)SetDisplayName(val *string) {
+	if err := j.validateSetDisplayNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"displayName",
 		val,
 	)
 }
@@ -778,10 +814,26 @@ func (d *jsiiProxy_DataAzurermPortalDashboard) ResetDashboardProperties() {
 	)
 }
 
+func (d *jsiiProxy_DataAzurermPortalDashboard) ResetDisplayName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetDisplayName",
+		nil, // no parameters
+	)
+}
+
 func (d *jsiiProxy_DataAzurermPortalDashboard) ResetId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataAzurermPortalDashboard) ResetName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetName",
 		nil, // no parameters
 	)
 }

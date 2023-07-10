@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster}.
 type HdinsightHadoopCluster interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -19,6 +19,8 @@ type HdinsightHadoopCluster interface {
 	ClusterVersionInput() *string
 	ComponentVersion() HdinsightHadoopClusterComponentVersionOutputReference
 	ComponentVersionInput() *HdinsightHadoopClusterComponentVersion
+	ComputeIsolation() HdinsightHadoopClusterComputeIsolationOutputReference
+	ComputeIsolationInput() *HdinsightHadoopClusterComputeIsolation
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -33,6 +35,10 @@ type HdinsightHadoopCluster interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() HdinsightHadoopClusterDiskEncryptionList
+	DiskEncryptionInput() interface{}
+	Extension() HdinsightHadoopClusterExtensionOutputReference
+	ExtensionInput() *HdinsightHadoopClusterExtension
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -130,6 +136,9 @@ type HdinsightHadoopCluster interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutComponentVersion(value *HdinsightHadoopClusterComponentVersion)
+	PutComputeIsolation(value *HdinsightHadoopClusterComputeIsolation)
+	PutDiskEncryption(value interface{})
+	PutExtension(value *HdinsightHadoopClusterExtension)
 	PutGateway(value *HdinsightHadoopClusterGateway)
 	PutMetastores(value *HdinsightHadoopClusterMetastores)
 	PutMonitor(value *HdinsightHadoopClusterMonitor)
@@ -139,6 +148,9 @@ type HdinsightHadoopCluster interface {
 	PutStorageAccount(value interface{})
 	PutStorageAccountGen2(value *HdinsightHadoopClusterStorageAccountGen2)
 	PutTimeouts(value *HdinsightHadoopClusterTimeouts)
+	ResetComputeIsolation()
+	ResetDiskEncryption()
+	ResetExtension()
 	ResetId()
 	ResetMetastores()
 	ResetMonitor()
@@ -217,6 +229,26 @@ func (j *jsiiProxy_HdinsightHadoopCluster) ComponentVersionInput() *HdinsightHad
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightHadoopCluster) ComputeIsolation() HdinsightHadoopClusterComputeIsolationOutputReference {
+	var returns HdinsightHadoopClusterComputeIsolationOutputReference
+	_jsii_.Get(
+		j,
+		"computeIsolation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopCluster) ComputeIsolationInput() *HdinsightHadoopClusterComputeIsolation {
+	var returns *HdinsightHadoopClusterComputeIsolation
+	_jsii_.Get(
+		j,
+		"computeIsolationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightHadoopCluster) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -252,6 +284,46 @@ func (j *jsiiProxy_HdinsightHadoopCluster) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopCluster) DiskEncryption() HdinsightHadoopClusterDiskEncryptionList {
+	var returns HdinsightHadoopClusterDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopCluster) DiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopCluster) Extension() HdinsightHadoopClusterExtensionOutputReference {
+	var returns HdinsightHadoopClusterExtensionOutputReference
+	_jsii_.Get(
+		j,
+		"extension",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightHadoopCluster) ExtensionInput() *HdinsightHadoopClusterExtension {
+	var returns *HdinsightHadoopClusterExtension
+	_jsii_.Get(
+		j,
+		"extensionInput",
 		&returns,
 	)
 	return returns
@@ -708,7 +780,7 @@ func (j *jsiiProxy_HdinsightHadoopCluster) TlsMinVersionInput() *string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster} Resource.
 func NewHdinsightHadoopCluster(scope constructs.Construct, id *string, config *HdinsightHadoopClusterConfig) HdinsightHadoopCluster {
 	_init_.Initialize()
 
@@ -726,7 +798,7 @@ func NewHdinsightHadoopCluster(scope constructs.Construct, id *string, config *H
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_hadoop_cluster azurerm_hdinsight_hadoop_cluster} Resource.
 func NewHdinsightHadoopCluster_Override(h HdinsightHadoopCluster, scope constructs.Construct, id *string, config *HdinsightHadoopClusterConfig) {
 	_init_.Initialize()
 
@@ -1170,6 +1242,39 @@ func (h *jsiiProxy_HdinsightHadoopCluster) PutComponentVersion(value *HdinsightH
 	)
 }
 
+func (h *jsiiProxy_HdinsightHadoopCluster) PutComputeIsolation(value *HdinsightHadoopClusterComputeIsolation) {
+	if err := h.validatePutComputeIsolationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putComputeIsolation",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) PutDiskEncryption(value interface{}) {
+	if err := h.validatePutDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) PutExtension(value *HdinsightHadoopClusterExtension) {
+	if err := h.validatePutExtensionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putExtension",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HdinsightHadoopCluster) PutGateway(value *HdinsightHadoopClusterGateway) {
 	if err := h.validatePutGatewayParameters(value); err != nil {
 		panic(err)
@@ -1266,6 +1371,30 @@ func (h *jsiiProxy_HdinsightHadoopCluster) PutTimeouts(value *HdinsightHadoopClu
 		h,
 		"putTimeouts",
 		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) ResetComputeIsolation() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetComputeIsolation",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) ResetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetDiskEncryption",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightHadoopCluster) ResetExtension() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetExtension",
+		nil, // no parameters
 	)
 }
 

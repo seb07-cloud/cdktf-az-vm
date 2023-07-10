@@ -56,6 +56,10 @@ func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetCom
 	return nil
 }
 
+func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetDiskEncryptionSetIdParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_SharedImageVersionTargetRegionOutputReference) validateSetInternalValueParameters(val interface{}) error {
 	return nil
 }

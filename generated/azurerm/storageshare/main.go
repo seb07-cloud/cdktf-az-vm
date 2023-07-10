@@ -11,6 +11,8 @@ func init() {
 		"azurerm.storageShare.StorageShare",
 		reflect.TypeOf((*StorageShare)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "accessTier", GoGetter: "AccessTier"},
+			_jsii_.MemberProperty{JsiiProperty: "accessTierInput", GoGetter: "AccessTierInput"},
 			_jsii_.MemberProperty{JsiiProperty: "acl", GoGetter: "Acl"},
 			_jsii_.MemberProperty{JsiiProperty: "aclInput", GoGetter: "AclInput"},
 			_jsii_.MemberMethod{JsiiMethod: "addOverride", GoMethod: "AddOverride"},
@@ -50,6 +52,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "quota", GoGetter: "Quota"},
 			_jsii_.MemberProperty{JsiiProperty: "quotaInput", GoGetter: "QuotaInput"},
 			_jsii_.MemberProperty{JsiiProperty: "rawOverrides", GoGetter: "RawOverrides"},
+			_jsii_.MemberMethod{JsiiMethod: "resetAccessTier", GoMethod: "ResetAccessTier"},
 			_jsii_.MemberMethod{JsiiMethod: "resetAcl", GoMethod: "ResetAcl"},
 			_jsii_.MemberMethod{JsiiMethod: "resetEnabledProtocol", GoMethod: "ResetEnabledProtocol"},
 			_jsii_.MemberMethod{JsiiMethod: "resetId", GoMethod: "ResetId"},

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server}.
 type DataFactoryLinkedServiceSqlServer interface {
 	cdktf.TerraformResource
 	AdditionalProperties() *map[string]*string
@@ -91,6 +91,9 @@ type DataFactoryLinkedServiceSqlServer interface {
 	TerraformResourceType() *string
 	Timeouts() DataFactoryLinkedServiceSqlServerTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	UserName() *string
+	SetUserName(val *string)
+	UserNameInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -132,6 +135,7 @@ type DataFactoryLinkedServiceSqlServer interface {
 	ResetOverrideLogicalId()
 	ResetParameters()
 	ResetTimeouts()
+	ResetUserName()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -547,8 +551,28 @@ func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer) TimeoutsInput() interface{
 	return returns
 }
 
+func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer) UserName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userName",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server} Resource.
+func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer) UserNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"userNameInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server} Resource.
 func NewDataFactoryLinkedServiceSqlServer(scope constructs.Construct, id *string, config *DataFactoryLinkedServiceSqlServerConfig) DataFactoryLinkedServiceSqlServer {
 	_init_.Initialize()
 
@@ -566,7 +590,7 @@ func NewDataFactoryLinkedServiceSqlServer(scope constructs.Construct, id *string
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_linked_service_sql_server azurerm_data_factory_linked_service_sql_server} Resource.
 func NewDataFactoryLinkedServiceSqlServer_Override(d DataFactoryLinkedServiceSqlServer, scope constructs.Construct, id *string, config *DataFactoryLinkedServiceSqlServerConfig) {
 	_init_.Initialize()
 
@@ -740,6 +764,17 @@ func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer)SetProvisioners(val *[]inte
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_DataFactoryLinkedServiceSqlServer)SetUserName(val *string) {
+	if err := j.validateSetUserNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"userName",
 		val,
 	)
 }
@@ -1127,6 +1162,14 @@ func (d *jsiiProxy_DataFactoryLinkedServiceSqlServer) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryLinkedServiceSqlServer) ResetUserName() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetUserName",
 		nil, // no parameters
 	)
 }

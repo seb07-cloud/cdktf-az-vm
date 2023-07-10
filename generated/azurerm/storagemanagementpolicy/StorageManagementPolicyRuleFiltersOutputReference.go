@@ -70,7 +70,6 @@ type StorageManagementPolicyRuleFiltersOutputReference interface {
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
 	PutMatchBlobIndexTag(value interface{})
-	ResetBlobTypes()
 	ResetMatchBlobIndexTag()
 	ResetPrefixMatch()
 	// Produce the Token's value at resolution time.
@@ -517,14 +516,6 @@ func (s *jsiiProxy_StorageManagementPolicyRuleFiltersOutputReference) PutMatchBl
 		s,
 		"putMatchBlobIndexTag",
 		[]interface{}{value},
-	)
-}
-
-func (s *jsiiProxy_StorageManagementPolicyRuleFiltersOutputReference) ResetBlobTypes() {
-	_jsii_.InvokeVoid(
-		s,
-		"resetBlobTypes",
-		nil, // no parameters
 	)
 }
 

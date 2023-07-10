@@ -52,6 +52,10 @@ func (m *jsiiProxy_MssqlVirtualMachine) validateOverrideLogicalIdParameters(newL
 	return nil
 }
 
+func (m *jsiiProxy_MssqlVirtualMachine) validatePutAssessmentParameters(value *MssqlVirtualMachineAssessment) error {
+	return nil
+}
+
 func (m *jsiiProxy_MssqlVirtualMachine) validatePutAutoBackupParameters(value *MssqlVirtualMachineAutoBackup) error {
 	return nil
 }
@@ -61,6 +65,10 @@ func (m *jsiiProxy_MssqlVirtualMachine) validatePutAutoPatchingParameters(value 
 }
 
 func (m *jsiiProxy_MssqlVirtualMachine) validatePutKeyVaultCredentialParameters(value *MssqlVirtualMachineKeyVaultCredential) error {
+	return nil
+}
+
+func (m *jsiiProxy_MssqlVirtualMachine) validatePutSqlInstanceParameters(value *MssqlVirtualMachineSqlInstance) error {
 	return nil
 }
 

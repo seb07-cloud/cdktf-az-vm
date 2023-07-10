@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/netapp_volume azurerm_netapp_volume}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/netapp_volume azurerm_netapp_volume}.
 type DataAzurermNetappVolume interface {
 	cdktf.TerraformDataSource
 	AccountName() *string
@@ -48,6 +48,7 @@ type DataAzurermNetappVolume interface {
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
+	NetworkFeatures() *string
 	// The tree node.
 	Node() constructs.Node
 	PoolName() *string
@@ -78,6 +79,7 @@ type DataAzurermNetappVolume interface {
 	Timeouts() DataAzurermNetappVolumeTimeoutsOutputReference
 	TimeoutsInput() interface{}
 	VolumePath() *string
+	Zone() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -295,6 +297,16 @@ func (j *jsiiProxy_DataAzurermNetappVolume) NameInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermNetappVolume) NetworkFeatures() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"networkFeatures",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermNetappVolume) Node() constructs.Node {
 	var returns constructs.Node
 	_jsii_.Get(
@@ -485,8 +497,18 @@ func (j *jsiiProxy_DataAzurermNetappVolume) VolumePath() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermNetappVolume) Zone() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"zone",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/netapp_volume azurerm_netapp_volume} Data Source.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/netapp_volume azurerm_netapp_volume} Data Source.
 func NewDataAzurermNetappVolume(scope constructs.Construct, id *string, config *DataAzurermNetappVolumeConfig) DataAzurermNetappVolume {
 	_init_.Initialize()
 
@@ -504,7 +526,7 @@ func NewDataAzurermNetappVolume(scope constructs.Construct, id *string, config *
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/netapp_volume azurerm_netapp_volume} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/netapp_volume azurerm_netapp_volume} Data Source.
 func NewDataAzurermNetappVolume_Override(d DataAzurermNetappVolume, scope constructs.Construct, id *string, config *DataAzurermNetappVolumeConfig) {
 	_init_.Initialize()
 

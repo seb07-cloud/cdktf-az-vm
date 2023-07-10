@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis}.
 type DataFactoryIntegrationRuntimeAzureSsis interface {
 	cdktf.TerraformResource
 	CatalogInfo() DataFactoryIntegrationRuntimeAzureSsisCatalogInfoOutputReference
@@ -43,6 +43,8 @@ type DataFactoryIntegrationRuntimeAzureSsis interface {
 	EditionInput() *string
 	ExpressCustomSetup() DataFactoryIntegrationRuntimeAzureSsisExpressCustomSetupOutputReference
 	ExpressCustomSetupInput() *DataFactoryIntegrationRuntimeAzureSsisExpressCustomSetup
+	ExpressVnetIntegration() DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference
+	ExpressVnetIntegrationInput() *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -130,6 +132,7 @@ type DataFactoryIntegrationRuntimeAzureSsis interface {
 	PutCatalogInfo(value *DataFactoryIntegrationRuntimeAzureSsisCatalogInfo)
 	PutCustomSetupScript(value *DataFactoryIntegrationRuntimeAzureSsisCustomSetupScript)
 	PutExpressCustomSetup(value *DataFactoryIntegrationRuntimeAzureSsisExpressCustomSetup)
+	PutExpressVnetIntegration(value *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration)
 	PutPackageStore(value interface{})
 	PutProxy(value *DataFactoryIntegrationRuntimeAzureSsisProxy)
 	PutTimeouts(value *DataFactoryIntegrationRuntimeAzureSsisTimeouts)
@@ -139,6 +142,7 @@ type DataFactoryIntegrationRuntimeAzureSsis interface {
 	ResetDescription()
 	ResetEdition()
 	ResetExpressCustomSetup()
+	ResetExpressVnetIntegration()
 	ResetId()
 	ResetLicenseType()
 	ResetMaxParallelExecutionsPerNode()
@@ -330,6 +334,26 @@ func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) ExpressCustomSetupInp
 	_jsii_.Get(
 		j,
 		"expressCustomSetupInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) ExpressVnetIntegration() DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference {
+	var returns DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegrationOutputReference
+	_jsii_.Get(
+		j,
+		"expressVnetIntegration",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) ExpressVnetIntegrationInput() *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration {
+	var returns *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration
+	_jsii_.Get(
+		j,
+		"expressVnetIntegrationInput",
 		&returns,
 	)
 	return returns
@@ -666,7 +690,7 @@ func (j *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) VnetIntegrationInput(
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis} Resource.
 func NewDataFactoryIntegrationRuntimeAzureSsis(scope constructs.Construct, id *string, config *DataFactoryIntegrationRuntimeAzureSsisConfig) DataFactoryIntegrationRuntimeAzureSsis {
 	_init_.Initialize()
 
@@ -684,7 +708,7 @@ func NewDataFactoryIntegrationRuntimeAzureSsis(scope constructs.Construct, id *s
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/data_factory_integration_runtime_azure_ssis azurerm_data_factory_integration_runtime_azure_ssis} Resource.
 func NewDataFactoryIntegrationRuntimeAzureSsis_Override(d DataFactoryIntegrationRuntimeAzureSsis, scope constructs.Construct, id *string, config *DataFactoryIntegrationRuntimeAzureSsisConfig) {
 	_init_.Initialize()
 
@@ -1172,6 +1196,17 @@ func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) PutExpressCustomSetup
 	)
 }
 
+func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) PutExpressVnetIntegration(value *DataFactoryIntegrationRuntimeAzureSsisExpressVnetIntegration) {
+	if err := d.validatePutExpressVnetIntegrationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putExpressVnetIntegration",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) PutPackageStore(value interface{}) {
 	if err := d.validatePutPackageStoreParameters(value); err != nil {
 		panic(err)
@@ -1252,6 +1287,14 @@ func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) ResetExpressCustomSet
 	_jsii_.InvokeVoid(
 		d,
 		"resetExpressCustomSetup",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DataFactoryIntegrationRuntimeAzureSsis) ResetExpressVnetIntegration() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetExpressVnetIntegration",
 		nil, // no parameters
 	)
 }

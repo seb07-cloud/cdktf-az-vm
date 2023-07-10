@@ -56,6 +56,10 @@ func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) validateSetCatego
 	return nil
 }
 
+func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) validateSetCategoryGroupParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_MonitorDiagnosticSettingLogOutputReference) validateSetComplexObjectIndexParameters(val interface{}) error {
 	return nil
 }

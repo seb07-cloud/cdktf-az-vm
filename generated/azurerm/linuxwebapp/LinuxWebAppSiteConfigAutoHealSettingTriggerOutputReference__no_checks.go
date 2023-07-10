@@ -48,7 +48,7 @@ func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) v
 	return nil
 }
 
-func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) validatePutSlowRequestParameters(value interface{}) error {
+func (l *jsiiProxy_LinuxWebAppSiteConfigAutoHealSettingTriggerOutputReference) validatePutSlowRequestParameters(value *LinuxWebAppSiteConfigAutoHealSettingTriggerSlowRequest) error {
 	return nil
 }
 

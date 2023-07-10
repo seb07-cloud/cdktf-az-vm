@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module}.
 type DedicatedHardwareSecurityModule interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -46,6 +46,8 @@ type DedicatedHardwareSecurityModule interface {
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	ManagementNetworkProfile() DedicatedHardwareSecurityModuleManagementNetworkProfileOutputReference
+	ManagementNetworkProfileInput() *DedicatedHardwareSecurityModuleManagementNetworkProfile
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -111,9 +113,11 @@ type DedicatedHardwareSecurityModule interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutManagementNetworkProfile(value *DedicatedHardwareSecurityModuleManagementNetworkProfile)
 	PutNetworkProfile(value *DedicatedHardwareSecurityModuleNetworkProfile)
 	PutTimeouts(value *DedicatedHardwareSecurityModuleTimeouts)
 	ResetId()
+	ResetManagementNetworkProfile()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
@@ -261,6 +265,26 @@ func (j *jsiiProxy_DedicatedHardwareSecurityModule) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DedicatedHardwareSecurityModule) ManagementNetworkProfile() DedicatedHardwareSecurityModuleManagementNetworkProfileOutputReference {
+	var returns DedicatedHardwareSecurityModuleManagementNetworkProfileOutputReference
+	_jsii_.Get(
+		j,
+		"managementNetworkProfile",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DedicatedHardwareSecurityModule) ManagementNetworkProfileInput() *DedicatedHardwareSecurityModuleManagementNetworkProfile {
+	var returns *DedicatedHardwareSecurityModuleManagementNetworkProfile
+	_jsii_.Get(
+		j,
+		"managementNetworkProfileInput",
 		&returns,
 	)
 	return returns
@@ -497,7 +521,7 @@ func (j *jsiiProxy_DedicatedHardwareSecurityModule) ZonesInput() *[]*string {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module} Resource.
 func NewDedicatedHardwareSecurityModule(scope constructs.Construct, id *string, config *DedicatedHardwareSecurityModuleConfig) DedicatedHardwareSecurityModule {
 	_init_.Initialize()
 
@@ -515,7 +539,7 @@ func NewDedicatedHardwareSecurityModule(scope constructs.Construct, id *string, 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/dedicated_hardware_security_module azurerm_dedicated_hardware_security_module} Resource.
 func NewDedicatedHardwareSecurityModule_Override(d DedicatedHardwareSecurityModule, scope constructs.Construct, id *string, config *DedicatedHardwareSecurityModuleConfig) {
 	_init_.Initialize()
 
@@ -948,6 +972,17 @@ func (d *jsiiProxy_DedicatedHardwareSecurityModule) OverrideLogicalId(newLogical
 	)
 }
 
+func (d *jsiiProxy_DedicatedHardwareSecurityModule) PutManagementNetworkProfile(value *DedicatedHardwareSecurityModuleManagementNetworkProfile) {
+	if err := d.validatePutManagementNetworkProfileParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		d,
+		"putManagementNetworkProfile",
+		[]interface{}{value},
+	)
+}
+
 func (d *jsiiProxy_DedicatedHardwareSecurityModule) PutNetworkProfile(value *DedicatedHardwareSecurityModuleNetworkProfile) {
 	if err := d.validatePutNetworkProfileParameters(value); err != nil {
 		panic(err)
@@ -974,6 +1009,14 @@ func (d *jsiiProxy_DedicatedHardwareSecurityModule) ResetId() {
 	_jsii_.InvokeVoid(
 		d,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (d *jsiiProxy_DedicatedHardwareSecurityModule) ResetManagementNetworkProfile() {
+	_jsii_.InvokeVoid(
+		d,
+		"resetManagementNetworkProfile",
 		nil, // no parameters
 	)
 }

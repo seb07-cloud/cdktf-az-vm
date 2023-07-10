@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_namespace azurerm_servicebus_namespace}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_namespace azurerm_servicebus_namespace}.
 type ServicebusNamespace interface {
 	cdktf.TerraformResource
 	Capacity() *float64
@@ -27,6 +27,8 @@ type ServicebusNamespace interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	CustomerManagedKey() ServicebusNamespaceCustomerManagedKeyOutputReference
+	CustomerManagedKeyInput() *ServicebusNamespaceCustomerManagedKey
 	DefaultPrimaryConnectionString() *string
 	DefaultPrimaryKey() *string
 	DefaultSecondaryConnectionString() *string
@@ -35,6 +37,7 @@ type ServicebusNamespace interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	Endpoint() *string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -52,9 +55,15 @@ type ServicebusNamespace interface {
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
+	LocalAuthEnabled() interface{}
+	SetLocalAuthEnabled(val interface{})
+	LocalAuthEnabledInput() interface{}
 	Location() *string
 	SetLocation(val *string)
 	LocationInput() *string
+	MinimumTlsVersion() *string
+	SetMinimumTlsVersion(val *string)
+	MinimumTlsVersionInput() *string
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -68,6 +77,9 @@ type ServicebusNamespace interface {
 	Provisioners() *[]interface{}
 	// Experimental.
 	SetProvisioners(val *[]interface{})
+	PublicNetworkAccessEnabled() interface{}
+	SetPublicNetworkAccessEnabled(val interface{})
+	PublicNetworkAccessEnabledInput() interface{}
 	// Experimental.
 	RawOverrides() interface{}
 	ResourceGroupName() *string
@@ -115,14 +127,19 @@ type ServicebusNamespace interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutCustomerManagedKey(value *ServicebusNamespaceCustomerManagedKey)
 	PutIdentity(value *ServicebusNamespaceIdentity)
 	PutTimeouts(value *ServicebusNamespaceTimeouts)
 	ResetCapacity()
+	ResetCustomerManagedKey()
 	ResetId()
 	ResetIdentity()
+	ResetLocalAuthEnabled()
+	ResetMinimumTlsVersion()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetPublicNetworkAccessEnabled()
 	ResetTags()
 	ResetTimeouts()
 	ResetZoneRedundant()
@@ -201,6 +218,26 @@ func (j *jsiiProxy_ServicebusNamespace) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_ServicebusNamespace) CustomerManagedKey() ServicebusNamespaceCustomerManagedKeyOutputReference {
+	var returns ServicebusNamespaceCustomerManagedKeyOutputReference
+	_jsii_.Get(
+		j,
+		"customerManagedKey",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) CustomerManagedKeyInput() *ServicebusNamespaceCustomerManagedKey {
+	var returns *ServicebusNamespaceCustomerManagedKey
+	_jsii_.Get(
+		j,
+		"customerManagedKeyInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServicebusNamespace) DefaultPrimaryConnectionString() *string {
 	var returns *string
 	_jsii_.Get(
@@ -246,6 +283,16 @@ func (j *jsiiProxy_ServicebusNamespace) DependsOn() *[]*string {
 	_jsii_.Get(
 		j,
 		"dependsOn",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) Endpoint() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"endpoint",
 		&returns,
 	)
 	return returns
@@ -331,6 +378,26 @@ func (j *jsiiProxy_ServicebusNamespace) Lifecycle() *cdktf.TerraformResourceLife
 	return returns
 }
 
+func (j *jsiiProxy_ServicebusNamespace) LocalAuthEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) LocalAuthEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"localAuthEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ServicebusNamespace) Location() *string {
 	var returns *string
 	_jsii_.Get(
@@ -346,6 +413,26 @@ func (j *jsiiProxy_ServicebusNamespace) LocationInput() *string {
 	_jsii_.Get(
 		j,
 		"locationInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) MinimumTlsVersion() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"minimumTlsVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) MinimumTlsVersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"minimumTlsVersionInput",
 		&returns,
 	)
 	return returns
@@ -396,6 +483,26 @@ func (j *jsiiProxy_ServicebusNamespace) Provisioners() *[]interface{} {
 	_jsii_.Get(
 		j,
 		"provisioners",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) PublicNetworkAccessEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ServicebusNamespace) PublicNetworkAccessEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"publicNetworkAccessEnabledInput",
 		&returns,
 	)
 	return returns
@@ -542,7 +649,7 @@ func (j *jsiiProxy_ServicebusNamespace) ZoneRedundantInput() interface{} {
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_namespace azurerm_servicebus_namespace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_namespace azurerm_servicebus_namespace} Resource.
 func NewServicebusNamespace(scope constructs.Construct, id *string, config *ServicebusNamespaceConfig) ServicebusNamespace {
 	_init_.Initialize()
 
@@ -560,7 +667,7 @@ func NewServicebusNamespace(scope constructs.Construct, id *string, config *Serv
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/servicebus_namespace azurerm_servicebus_namespace} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/servicebus_namespace azurerm_servicebus_namespace} Resource.
 func NewServicebusNamespace_Override(s ServicebusNamespace, scope constructs.Construct, id *string, config *ServicebusNamespaceConfig) {
 	_init_.Initialize()
 
@@ -642,6 +749,17 @@ func (j *jsiiProxy_ServicebusNamespace)SetLifecycle(val *cdktf.TerraformResource
 	)
 }
 
+func (j *jsiiProxy_ServicebusNamespace)SetLocalAuthEnabled(val interface{}) {
+	if err := j.validateSetLocalAuthEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"localAuthEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ServicebusNamespace)SetLocation(val *string) {
 	if err := j.validateSetLocationParameters(val); err != nil {
 		panic(err)
@@ -649,6 +767,17 @@ func (j *jsiiProxy_ServicebusNamespace)SetLocation(val *string) {
 	_jsii_.Set(
 		j,
 		"location",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicebusNamespace)SetMinimumTlsVersion(val *string) {
+	if err := j.validateSetMinimumTlsVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"minimumTlsVersion",
 		val,
 	)
 }
@@ -679,6 +808,17 @@ func (j *jsiiProxy_ServicebusNamespace)SetProvisioners(val *[]interface{}) {
 	_jsii_.Set(
 		j,
 		"provisioners",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ServicebusNamespace)SetPublicNetworkAccessEnabled(val interface{}) {
+	if err := j.validateSetPublicNetworkAccessEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"publicNetworkAccessEnabled",
 		val,
 	)
 }
@@ -993,6 +1133,17 @@ func (s *jsiiProxy_ServicebusNamespace) OverrideLogicalId(newLogicalId *string) 
 	)
 }
 
+func (s *jsiiProxy_ServicebusNamespace) PutCustomerManagedKey(value *ServicebusNamespaceCustomerManagedKey) {
+	if err := s.validatePutCustomerManagedKeyParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		s,
+		"putCustomerManagedKey",
+		[]interface{}{value},
+	)
+}
+
 func (s *jsiiProxy_ServicebusNamespace) PutIdentity(value *ServicebusNamespaceIdentity) {
 	if err := s.validatePutIdentityParameters(value); err != nil {
 		panic(err)
@@ -1023,6 +1174,14 @@ func (s *jsiiProxy_ServicebusNamespace) ResetCapacity() {
 	)
 }
 
+func (s *jsiiProxy_ServicebusNamespace) ResetCustomerManagedKey() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetCustomerManagedKey",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_ServicebusNamespace) ResetId() {
 	_jsii_.InvokeVoid(
 		s,
@@ -1039,10 +1198,34 @@ func (s *jsiiProxy_ServicebusNamespace) ResetIdentity() {
 	)
 }
 
+func (s *jsiiProxy_ServicebusNamespace) ResetLocalAuthEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetLocalAuthEnabled",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_ServicebusNamespace) ResetMinimumTlsVersion() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetMinimumTlsVersion",
+		nil, // no parameters
+	)
+}
+
 func (s *jsiiProxy_ServicebusNamespace) ResetOverrideLogicalId() {
 	_jsii_.InvokeVoid(
 		s,
 		"resetOverrideLogicalId",
+		nil, // no parameters
+	)
+}
+
+func (s *jsiiProxy_ServicebusNamespace) ResetPublicNetworkAccessEnabled() {
+	_jsii_.InvokeVoid(
+		s,
+		"resetPublicNetworkAccessEnabled",
 		nil, // no parameters
 	)
 }

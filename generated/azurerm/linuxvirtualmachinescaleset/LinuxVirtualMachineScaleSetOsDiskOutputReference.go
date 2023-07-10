@@ -40,6 +40,12 @@ type LinuxVirtualMachineScaleSetOsDiskOutputReference interface {
 	Fqn() *string
 	InternalValue() *LinuxVirtualMachineScaleSetOsDisk
 	SetInternalValue(val *LinuxVirtualMachineScaleSetOsDisk)
+	SecureVmDiskEncryptionSetId() *string
+	SetSecureVmDiskEncryptionSetId(val *string)
+	SecureVmDiskEncryptionSetIdInput() *string
+	SecurityEncryptionType() *string
+	SetSecurityEncryptionType(val *string)
+	SecurityEncryptionTypeInput() *string
 	StorageAccountType() *string
 	SetStorageAccountType(val *string)
 	StorageAccountTypeInput() *string
@@ -82,6 +88,8 @@ type LinuxVirtualMachineScaleSetOsDiskOutputReference interface {
 	ResetDiffDiskSettings()
 	ResetDiskEncryptionSetId()
 	ResetDiskSizeGb()
+	ResetSecureVmDiskEncryptionSetId()
+	ResetSecurityEncryptionType()
 	ResetWriteAcceleratorEnabled()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -223,6 +231,46 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) InternalVal
 	_jsii_.Get(
 		j,
 		"internalValue",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) SecureVmDiskEncryptionSetId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) SecureVmDiskEncryptionSetIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"secureVmDiskEncryptionSetIdInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) SecurityEncryptionType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityEncryptionType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) SecurityEncryptionTypeInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"securityEncryptionTypeInput",
 		&returns,
 	)
 	return returns
@@ -378,6 +426,28 @@ func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference)SetInternalV
 	_jsii_.Set(
 		j,
 		"internalValue",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference)SetSecureVmDiskEncryptionSetId(val *string) {
+	if err := j.validateSetSecureVmDiskEncryptionSetIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"secureVmDiskEncryptionSetId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference)SetSecurityEncryptionType(val *string) {
+	if err := j.validateSetSecurityEncryptionTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"securityEncryptionType",
 		val,
 	)
 }
@@ -643,6 +713,22 @@ func (l *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) ResetDiskSi
 	_jsii_.InvokeVoid(
 		l,
 		"resetDiskSizeGb",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) ResetSecureVmDiskEncryptionSetId() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetSecureVmDiskEncryptionSetId",
+		nil, // no parameters
+	)
+}
+
+func (l *jsiiProxy_LinuxVirtualMachineScaleSetOsDiskOutputReference) ResetSecurityEncryptionType() {
+	_jsii_.InvokeVoid(
+		l,
+		"resetSecurityEncryptionType",
 		nil, // no parameters
 	)
 }

@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster}.
 type HdinsightInteractiveQueryCluster interface {
 	cdktf.TerraformResource
 	// Experimental.
@@ -19,6 +19,8 @@ type HdinsightInteractiveQueryCluster interface {
 	ClusterVersionInput() *string
 	ComponentVersion() HdinsightInteractiveQueryClusterComponentVersionOutputReference
 	ComponentVersionInput() *HdinsightInteractiveQueryClusterComponentVersion
+	ComputeIsolation() HdinsightInteractiveQueryClusterComputeIsolationOutputReference
+	ComputeIsolationInput() *HdinsightInteractiveQueryClusterComputeIsolation
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -33,9 +35,13 @@ type HdinsightInteractiveQueryCluster interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() HdinsightInteractiveQueryClusterDiskEncryptionList
+	DiskEncryptionInput() interface{}
 	EncryptionInTransitEnabled() interface{}
 	SetEncryptionInTransitEnabled(val interface{})
 	EncryptionInTransitEnabledInput() interface{}
+	Extension() HdinsightInteractiveQueryClusterExtensionOutputReference
+	ExtensionInput() *HdinsightInteractiveQueryClusterExtension
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -133,6 +139,9 @@ type HdinsightInteractiveQueryCluster interface {
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
 	PutComponentVersion(value *HdinsightInteractiveQueryClusterComponentVersion)
+	PutComputeIsolation(value *HdinsightInteractiveQueryClusterComputeIsolation)
+	PutDiskEncryption(value interface{})
+	PutExtension(value *HdinsightInteractiveQueryClusterExtension)
 	PutGateway(value *HdinsightInteractiveQueryClusterGateway)
 	PutMetastores(value *HdinsightInteractiveQueryClusterMetastores)
 	PutMonitor(value *HdinsightInteractiveQueryClusterMonitor)
@@ -142,7 +151,10 @@ type HdinsightInteractiveQueryCluster interface {
 	PutStorageAccount(value interface{})
 	PutStorageAccountGen2(value *HdinsightInteractiveQueryClusterStorageAccountGen2)
 	PutTimeouts(value *HdinsightInteractiveQueryClusterTimeouts)
+	ResetComputeIsolation()
+	ResetDiskEncryption()
 	ResetEncryptionInTransitEnabled()
+	ResetExtension()
 	ResetId()
 	ResetMetastores()
 	ResetMonitor()
@@ -221,6 +233,26 @@ func (j *jsiiProxy_HdinsightInteractiveQueryCluster) ComponentVersionInput() *Hd
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) ComputeIsolation() HdinsightInteractiveQueryClusterComputeIsolationOutputReference {
+	var returns HdinsightInteractiveQueryClusterComputeIsolationOutputReference
+	_jsii_.Get(
+		j,
+		"computeIsolation",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) ComputeIsolationInput() *HdinsightInteractiveQueryClusterComputeIsolation {
+	var returns *HdinsightInteractiveQueryClusterComputeIsolation
+	_jsii_.Get(
+		j,
+		"computeIsolationInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightInteractiveQueryCluster) Connection() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -261,6 +293,26 @@ func (j *jsiiProxy_HdinsightInteractiveQueryCluster) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) DiskEncryption() HdinsightInteractiveQueryClusterDiskEncryptionList {
+	var returns HdinsightInteractiveQueryClusterDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) DiskEncryptionInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"diskEncryptionInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_HdinsightInteractiveQueryCluster) EncryptionInTransitEnabled() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -276,6 +328,26 @@ func (j *jsiiProxy_HdinsightInteractiveQueryCluster) EncryptionInTransitEnabledI
 	_jsii_.Get(
 		j,
 		"encryptionInTransitEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) Extension() HdinsightInteractiveQueryClusterExtensionOutputReference {
+	var returns HdinsightInteractiveQueryClusterExtensionOutputReference
+	_jsii_.Get(
+		j,
+		"extension",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_HdinsightInteractiveQueryCluster) ExtensionInput() *HdinsightInteractiveQueryClusterExtension {
+	var returns *HdinsightInteractiveQueryClusterExtension
+	_jsii_.Get(
+		j,
+		"extensionInput",
 		&returns,
 	)
 	return returns
@@ -732,7 +804,7 @@ func (j *jsiiProxy_HdinsightInteractiveQueryCluster) TlsMinVersionInput() *strin
 }
 
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster} Resource.
 func NewHdinsightInteractiveQueryCluster(scope constructs.Construct, id *string, config *HdinsightInteractiveQueryClusterConfig) HdinsightInteractiveQueryCluster {
 	_init_.Initialize()
 
@@ -750,7 +822,7 @@ func NewHdinsightInteractiveQueryCluster(scope constructs.Construct, id *string,
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/hdinsight_interactive_query_cluster azurerm_hdinsight_interactive_query_cluster} Resource.
 func NewHdinsightInteractiveQueryCluster_Override(h HdinsightInteractiveQueryCluster, scope constructs.Construct, id *string, config *HdinsightInteractiveQueryClusterConfig) {
 	_init_.Initialize()
 
@@ -1205,6 +1277,39 @@ func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutComponentVersion(value *
 	)
 }
 
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutComputeIsolation(value *HdinsightInteractiveQueryClusterComputeIsolation) {
+	if err := h.validatePutComputeIsolationParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putComputeIsolation",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutDiskEncryption(value interface{}) {
+	if err := h.validatePutDiskEncryptionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putDiskEncryption",
+		[]interface{}{value},
+	)
+}
+
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutExtension(value *HdinsightInteractiveQueryClusterExtension) {
+	if err := h.validatePutExtensionParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		h,
+		"putExtension",
+		[]interface{}{value},
+	)
+}
+
 func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutGateway(value *HdinsightInteractiveQueryClusterGateway) {
 	if err := h.validatePutGatewayParameters(value); err != nil {
 		panic(err)
@@ -1304,10 +1409,34 @@ func (h *jsiiProxy_HdinsightInteractiveQueryCluster) PutTimeouts(value *Hdinsigh
 	)
 }
 
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) ResetComputeIsolation() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetComputeIsolation",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) ResetDiskEncryption() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetDiskEncryption",
+		nil, // no parameters
+	)
+}
+
 func (h *jsiiProxy_HdinsightInteractiveQueryCluster) ResetEncryptionInTransitEnabled() {
 	_jsii_.InvokeVoid(
 		h,
 		"resetEncryptionInTransitEnabled",
+		nil, // no parameters
+	)
+}
+
+func (h *jsiiProxy_HdinsightInteractiveQueryCluster) ResetExtension() {
+	_jsii_.InvokeVoid(
+		h,
+		"resetExtension",
 		nil, // no parameters
 	)
 }

@@ -9,11 +9,17 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster}.
 type CosmosdbCassandraCluster interface {
 	cdktf.TerraformResource
+	AuthenticationMethod() *string
+	SetAuthenticationMethod(val *string)
+	AuthenticationMethodInput() *string
 	// Experimental.
 	CdktfStack() cdktf.TerraformStack
+	ClientCertificatePems() *[]*string
+	SetClientCertificatePems(val *[]*string)
+	ClientCertificatePemsInput() *[]*string
 	// Experimental.
 	Connection() interface{}
 	// Experimental.
@@ -34,6 +40,12 @@ type CosmosdbCassandraCluster interface {
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	ExternalGossipCertificatePems() *[]*string
+	SetExternalGossipCertificatePems(val *[]*string)
+	ExternalGossipCertificatePemsInput() *[]*string
+	ExternalSeedNodeIpAddresses() *[]*string
+	SetExternalSeedNodeIpAddresses(val *[]*string)
+	ExternalSeedNodeIpAddressesInput() *[]*string
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
 	// Experimental.
@@ -42,8 +54,13 @@ type CosmosdbCassandraCluster interface {
 	Fqn() *string
 	// Experimental.
 	FriendlyUniqueId() *string
+	HoursBetweenBackups() *float64
+	SetHoursBetweenBackups(val *float64)
+	HoursBetweenBackupsInput() *float64
 	Id() *string
 	SetId(val *string)
+	Identity() CosmosdbCassandraClusterIdentityOutputReference
+	IdentityInput() *CosmosdbCassandraClusterIdentity
 	IdInput() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
@@ -67,9 +84,15 @@ type CosmosdbCassandraCluster interface {
 	SetProvisioners(val *[]interface{})
 	// Experimental.
 	RawOverrides() interface{}
+	RepairEnabled() interface{}
+	SetRepairEnabled(val interface{})
+	RepairEnabledInput() interface{}
 	ResourceGroupName() *string
 	SetResourceGroupName(val *string)
 	ResourceGroupNameInput() *string
+	Tags() *map[string]*string
+	SetTags(val *map[string]*string)
+	TagsInput() *map[string]*string
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -78,6 +101,9 @@ type CosmosdbCassandraCluster interface {
 	TerraformResourceType() *string
 	Timeouts() CosmosdbCassandraClusterTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	Version() *string
+	SetVersion(val *string)
+	VersionInput() *string
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -103,12 +129,22 @@ type CosmosdbCassandraCluster interface {
 	// Overrides the auto-generated logical ID with a specific ID.
 	// Experimental.
 	OverrideLogicalId(newLogicalId *string)
+	PutIdentity(value *CosmosdbCassandraClusterIdentity)
 	PutTimeouts(value *CosmosdbCassandraClusterTimeouts)
+	ResetAuthenticationMethod()
+	ResetClientCertificatePems()
+	ResetExternalGossipCertificatePems()
+	ResetExternalSeedNodeIpAddresses()
+	ResetHoursBetweenBackups()
 	ResetId()
+	ResetIdentity()
 	// Resets a previously passed logical Id to use the auto-generated logical id again.
 	// Experimental.
 	ResetOverrideLogicalId()
+	ResetRepairEnabled()
+	ResetTags()
 	ResetTimeouts()
+	ResetVersion()
 	SynthesizeAttributes() *map[string]interface{}
 	// Experimental.
 	ToMetadata() interface{}
@@ -124,11 +160,51 @@ type jsiiProxy_CosmosdbCassandraCluster struct {
 	internal.Type__cdktfTerraformResource
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) AuthenticationMethod() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMethod",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) AuthenticationMethodInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"authenticationMethodInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) CdktfStack() cdktf.TerraformStack {
 	var returns cdktf.TerraformStack
 	_jsii_.Get(
 		j,
 		"cdktfStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) ClientCertificatePems() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"clientCertificatePems",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) ClientCertificatePemsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"clientCertificatePemsInput",
 		&returns,
 	)
 	return returns
@@ -214,6 +290,46 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) ExternalGossipCertificatePems() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"externalGossipCertificatePems",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) ExternalGossipCertificatePemsInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"externalGossipCertificatePemsInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) ExternalSeedNodeIpAddresses() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"externalSeedNodeIpAddresses",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) ExternalSeedNodeIpAddressesInput() *[]*string {
+	var returns *[]*string
+	_jsii_.Get(
+		j,
+		"externalSeedNodeIpAddressesInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) ForEach() cdktf.ITerraformIterator {
 	var returns cdktf.ITerraformIterator
 	_jsii_.Get(
@@ -244,11 +360,51 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) FriendlyUniqueId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) HoursBetweenBackups() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hoursBetweenBackups",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) HoursBetweenBackupsInput() *float64 {
+	var returns *float64
+	_jsii_.Get(
+		j,
+		"hoursBetweenBackupsInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) Id() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"id",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) Identity() CosmosdbCassandraClusterIdentityOutputReference {
+	var returns CosmosdbCassandraClusterIdentityOutputReference
+	_jsii_.Get(
+		j,
+		"identity",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) IdentityInput() *CosmosdbCassandraClusterIdentity {
+	var returns *CosmosdbCassandraClusterIdentity
+	_jsii_.Get(
+		j,
+		"identityInput",
 		&returns,
 	)
 	return returns
@@ -354,6 +510,26 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) RawOverrides() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) RepairEnabled() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repairEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) RepairEnabledInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"repairEnabledInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster) ResourceGroupName() *string {
 	var returns *string
 	_jsii_.Get(
@@ -369,6 +545,26 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) ResourceGroupNameInput() *string {
 	_jsii_.Get(
 		j,
 		"resourceGroupNameInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) Tags() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tags",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster) TagsInput() *map[string]*string {
+	var returns *map[string]*string
+	_jsii_.Get(
+		j,
+		"tagsInput",
 		&returns,
 	)
 	return returns
@@ -424,8 +620,28 @@ func (j *jsiiProxy_CosmosdbCassandraCluster) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster) Version() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"version",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster} Resource.
+func (j *jsiiProxy_CosmosdbCassandraCluster) VersionInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"versionInput",
+		&returns,
+	)
+	return returns
+}
+
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster} Resource.
 func NewCosmosdbCassandraCluster(scope constructs.Construct, id *string, config *CosmosdbCassandraClusterConfig) CosmosdbCassandraCluster {
 	_init_.Initialize()
 
@@ -443,7 +659,7 @@ func NewCosmosdbCassandraCluster(scope constructs.Construct, id *string, config 
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster} Resource.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/resources/cosmosdb_cassandra_cluster azurerm_cosmosdb_cassandra_cluster} Resource.
 func NewCosmosdbCassandraCluster_Override(c CosmosdbCassandraCluster, scope constructs.Construct, id *string, config *CosmosdbCassandraClusterConfig) {
 	_init_.Initialize()
 
@@ -451,6 +667,28 @@ func NewCosmosdbCassandraCluster_Override(c CosmosdbCassandraCluster, scope cons
 		"azurerm.cosmosdbCassandraCluster.CosmosdbCassandraCluster",
 		[]interface{}{scope, id, config},
 		c,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetAuthenticationMethod(val *string) {
+	if err := j.validateSetAuthenticationMethodParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authenticationMethod",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetClientCertificatePems(val *[]*string) {
+	if err := j.validateSetClientCertificatePemsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"clientCertificatePems",
+		val,
 	)
 }
 
@@ -506,10 +744,43 @@ func (j *jsiiProxy_CosmosdbCassandraCluster)SetDependsOn(val *[]*string) {
 	)
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetExternalGossipCertificatePems(val *[]*string) {
+	if err := j.validateSetExternalGossipCertificatePemsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"externalGossipCertificatePems",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetExternalSeedNodeIpAddresses(val *[]*string) {
+	if err := j.validateSetExternalSeedNodeIpAddressesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"externalSeedNodeIpAddresses",
+		val,
+	)
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster)SetForEach(val cdktf.ITerraformIterator) {
 	_jsii_.Set(
 		j,
 		"forEach",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetHoursBetweenBackups(val *float64) {
+	if err := j.validateSetHoursBetweenBackupsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"hoursBetweenBackups",
 		val,
 	)
 }
@@ -577,6 +848,17 @@ func (j *jsiiProxy_CosmosdbCassandraCluster)SetProvisioners(val *[]interface{}) 
 	)
 }
 
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetRepairEnabled(val interface{}) {
+	if err := j.validateSetRepairEnabledParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"repairEnabled",
+		val,
+	)
+}
+
 func (j *jsiiProxy_CosmosdbCassandraCluster)SetResourceGroupName(val *string) {
 	if err := j.validateSetResourceGroupNameParameters(val); err != nil {
 		panic(err)
@@ -584,6 +866,28 @@ func (j *jsiiProxy_CosmosdbCassandraCluster)SetResourceGroupName(val *string) {
 	_jsii_.Set(
 		j,
 		"resourceGroupName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetTags(val *map[string]*string) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
+		val,
+	)
+}
+
+func (j *jsiiProxy_CosmosdbCassandraCluster)SetVersion(val *string) {
+	if err := j.validateSetVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"version",
 		val,
 	)
 }
@@ -854,6 +1158,17 @@ func (c *jsiiProxy_CosmosdbCassandraCluster) OverrideLogicalId(newLogicalId *str
 	)
 }
 
+func (c *jsiiProxy_CosmosdbCassandraCluster) PutIdentity(value *CosmosdbCassandraClusterIdentity) {
+	if err := c.validatePutIdentityParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		c,
+		"putIdentity",
+		[]interface{}{value},
+	)
+}
+
 func (c *jsiiProxy_CosmosdbCassandraCluster) PutTimeouts(value *CosmosdbCassandraClusterTimeouts) {
 	if err := c.validatePutTimeoutsParameters(value); err != nil {
 		panic(err)
@@ -865,10 +1180,58 @@ func (c *jsiiProxy_CosmosdbCassandraCluster) PutTimeouts(value *CosmosdbCassandr
 	)
 }
 
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetAuthenticationMethod() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetAuthenticationMethod",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetClientCertificatePems() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetClientCertificatePems",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetExternalGossipCertificatePems() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetExternalGossipCertificatePems",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetExternalSeedNodeIpAddresses() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetExternalSeedNodeIpAddresses",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetHoursBetweenBackups() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetHoursBetweenBackups",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CosmosdbCassandraCluster) ResetId() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetId",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetIdentity() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetIdentity",
 		nil, // no parameters
 	)
 }
@@ -881,10 +1244,34 @@ func (c *jsiiProxy_CosmosdbCassandraCluster) ResetOverrideLogicalId() {
 	)
 }
 
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetRepairEnabled() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetRepairEnabled",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetTags() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetTags",
+		nil, // no parameters
+	)
+}
+
 func (c *jsiiProxy_CosmosdbCassandraCluster) ResetTimeouts() {
 	_jsii_.InvokeVoid(
 		c,
 		"resetTimeouts",
+		nil, // no parameters
+	)
+}
+
+func (c *jsiiProxy_CosmosdbCassandraCluster) ResetVersion() {
+	_jsii_.InvokeVoid(
+		c,
+		"resetVersion",
 		nil, // no parameters
 	)
 }

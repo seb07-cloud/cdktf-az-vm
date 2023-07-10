@@ -31,6 +31,8 @@ type ApiManagementApiOperationTemplateParameterOutputReference interface {
 	Description() *string
 	SetDescription(val *string)
 	DescriptionInput() *string
+	Example() ApiManagementApiOperationTemplateParameterExampleList
+	ExampleInput() interface{}
 	// Experimental.
 	Fqn() *string
 	InternalValue() interface{}
@@ -41,6 +43,9 @@ type ApiManagementApiOperationTemplateParameterOutputReference interface {
 	Required() interface{}
 	SetRequired(val interface{})
 	RequiredInput() interface{}
+	SchemaId() *string
+	SetSchemaId(val *string)
+	SchemaIdInput() *string
 	// Experimental.
 	TerraformAttribute() *string
 	// Experimental.
@@ -52,6 +57,9 @@ type ApiManagementApiOperationTemplateParameterOutputReference interface {
 	Type() *string
 	SetType(val *string)
 	TypeInput() *string
+	TypeName() *string
+	SetTypeName(val *string)
+	TypeNameInput() *string
 	Values() *[]*string
 	SetValues(val *[]*string)
 	ValuesInput() *[]*string
@@ -79,8 +87,12 @@ type ApiManagementApiOperationTemplateParameterOutputReference interface {
 	InterpolationAsList() cdktf.IResolvable
 	// Experimental.
 	InterpolationForAttribute(property *string) cdktf.IResolvable
+	PutExample(value interface{})
 	ResetDefaultValue()
 	ResetDescription()
+	ResetExample()
+	ResetSchemaId()
+	ResetTypeName()
 	ResetValues()
 	// Produce the Token's value at resolution time.
 	// Experimental.
@@ -167,6 +179,26 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) De
 	return returns
 }
 
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) Example() ApiManagementApiOperationTemplateParameterExampleList {
+	var returns ApiManagementApiOperationTemplateParameterExampleList
+	_jsii_.Get(
+		j,
+		"example",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) ExampleInput() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"exampleInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) Fqn() *string {
 	var returns *string
 	_jsii_.Get(
@@ -227,6 +259,26 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) Re
 	return returns
 }
 
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) SchemaId() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"schemaId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) SchemaIdInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"schemaIdInput",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) TerraformAttribute() *string {
 	var returns *string
 	_jsii_.Get(
@@ -262,6 +314,26 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) Ty
 	_jsii_.Get(
 		j,
 		"typeInput",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) TypeName() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) TypeNameInput() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"typeNameInput",
 		&returns,
 	)
 	return returns
@@ -392,6 +464,17 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference)Set
 	)
 }
 
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference)SetSchemaId(val *string) {
+	if err := j.validateSetSchemaIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"schemaId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference)SetTerraformAttribute(val *string) {
 	if err := j.validateSetTerraformAttributeParameters(val); err != nil {
 		panic(err)
@@ -421,6 +504,17 @@ func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference)Set
 	_jsii_.Set(
 		j,
 		"type",
+		val,
+	)
+}
+
+func (j *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference)SetTypeName(val *string) {
+	if err := j.validateSetTypeNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"typeName",
 		val,
 	)
 }
@@ -622,6 +716,17 @@ func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) In
 	return returns
 }
 
+func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) PutExample(value interface{}) {
+	if err := a.validatePutExampleParameters(value); err != nil {
+		panic(err)
+	}
+	_jsii_.InvokeVoid(
+		a,
+		"putExample",
+		[]interface{}{value},
+	)
+}
+
 func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) ResetDefaultValue() {
 	_jsii_.InvokeVoid(
 		a,
@@ -634,6 +739,30 @@ func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) Re
 	_jsii_.InvokeVoid(
 		a,
 		"resetDescription",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) ResetExample() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetExample",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) ResetSchemaId() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetSchemaId",
+		nil, // no parameters
+	)
+}
+
+func (a *jsiiProxy_ApiManagementApiOperationTemplateParameterOutputReference) ResetTypeName() {
+	_jsii_.InvokeVoid(
+		a,
+		"resetTypeName",
 		nil, // no parameters
 	)
 }

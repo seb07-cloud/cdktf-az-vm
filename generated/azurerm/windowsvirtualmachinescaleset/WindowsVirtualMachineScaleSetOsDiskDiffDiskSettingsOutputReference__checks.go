@@ -179,6 +179,14 @@ func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputRefe
 	return nil
 }
 
+func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) validateSetPlacementParameters(val *string) error {
+	if val == nil {
+		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_WindowsVirtualMachineScaleSetOsDiskDiffDiskSettingsOutputReference) validateSetTerraformAttributeParameters(val *string) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")

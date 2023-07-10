@@ -9,7 +9,7 @@ import (
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
-// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/batch_pool azurerm_batch_pool}.
+// Represents a {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/batch_pool azurerm_batch_pool}.
 type DataAzurermBatchPool interface {
 	cdktf.TerraformDataSource
 	AccountName() *string
@@ -26,11 +26,14 @@ type DataAzurermBatchPool interface {
 	Count() interface{}
 	// Experimental.
 	SetCount(val interface{})
+	DataDisks() DataAzurermBatchPoolDataDisksList
 	// Experimental.
 	DependsOn() *[]*string
 	// Experimental.
 	SetDependsOn(val *[]*string)
+	DiskEncryption() DataAzurermBatchPoolDiskEncryptionList
 	DisplayName() *string
+	Extensions() DataAzurermBatchPoolExtensionsList
 	FixedScale() DataAzurermBatchPoolFixedScaleList
 	// Experimental.
 	ForEach() cdktf.ITerraformIterator
@@ -43,12 +46,15 @@ type DataAzurermBatchPool interface {
 	Id() *string
 	SetId(val *string)
 	IdInput() *string
+	InterNodeCommunication() *string
+	LicenseType() *string
 	// Experimental.
 	Lifecycle() *cdktf.TerraformResourceLifecycle
 	// Experimental.
 	SetLifecycle(val *cdktf.TerraformResourceLifecycle)
 	MaxTasksPerNode() *float64
 	Metadata() cdktf.StringMap
+	Mount() DataAzurermBatchPoolMountList
 	Name() *string
 	SetName(val *string)
 	NameInput() *string
@@ -56,6 +62,8 @@ type DataAzurermBatchPool interface {
 	// The tree node.
 	Node() constructs.Node
 	NodeAgentSkuId() *string
+	NodePlacement() DataAzurermBatchPoolNodePlacementList
+	OsDiskPlacement() *string
 	// Experimental.
 	Provider() cdktf.TerraformProvider
 	// Experimental.
@@ -67,6 +75,7 @@ type DataAzurermBatchPool interface {
 	ResourceGroupNameInput() *string
 	StartTask() DataAzurermBatchPoolStartTaskList
 	StorageImageReference() DataAzurermBatchPoolStorageImageReferenceList
+	TaskSchedulingPolicy() DataAzurermBatchPoolTaskSchedulingPolicyList
 	// Experimental.
 	TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata
 	// Experimental.
@@ -75,7 +84,9 @@ type DataAzurermBatchPool interface {
 	TerraformResourceType() *string
 	Timeouts() DataAzurermBatchPoolTimeoutsOutputReference
 	TimeoutsInput() interface{}
+	UserAccounts() DataAzurermBatchPoolUserAccountsList
 	VmSize() *string
+	Windows() DataAzurermBatchPoolWindowsList
 	// Experimental.
 	AddOverride(path *string, value interface{})
 	// Experimental.
@@ -202,6 +213,16 @@ func (j *jsiiProxy_DataAzurermBatchPool) Count() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) DataDisks() DataAzurermBatchPoolDataDisksList {
+	var returns DataAzurermBatchPoolDataDisksList
+	_jsii_.Get(
+		j,
+		"dataDisks",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPool) DependsOn() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -212,11 +233,31 @@ func (j *jsiiProxy_DataAzurermBatchPool) DependsOn() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) DiskEncryption() DataAzurermBatchPoolDiskEncryptionList {
+	var returns DataAzurermBatchPoolDiskEncryptionList
+	_jsii_.Get(
+		j,
+		"diskEncryption",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPool) DisplayName() *string {
 	var returns *string
 	_jsii_.Get(
 		j,
 		"displayName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPool) Extensions() DataAzurermBatchPoolExtensionsList {
+	var returns DataAzurermBatchPoolExtensionsList
+	_jsii_.Get(
+		j,
+		"extensions",
 		&returns,
 	)
 	return returns
@@ -282,6 +323,26 @@ func (j *jsiiProxy_DataAzurermBatchPool) IdInput() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) InterNodeCommunication() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"interNodeCommunication",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPool) LicenseType() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"licenseType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPool) Lifecycle() *cdktf.TerraformResourceLifecycle {
 	var returns *cdktf.TerraformResourceLifecycle
 	_jsii_.Get(
@@ -307,6 +368,16 @@ func (j *jsiiProxy_DataAzurermBatchPool) Metadata() cdktf.StringMap {
 	_jsii_.Get(
 		j,
 		"metadata",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPool) Mount() DataAzurermBatchPoolMountList {
+	var returns DataAzurermBatchPoolMountList
+	_jsii_.Get(
+		j,
+		"mount",
 		&returns,
 	)
 	return returns
@@ -357,6 +428,26 @@ func (j *jsiiProxy_DataAzurermBatchPool) NodeAgentSkuId() *string {
 	_jsii_.Get(
 		j,
 		"nodeAgentSkuId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPool) NodePlacement() DataAzurermBatchPoolNodePlacementList {
+	var returns DataAzurermBatchPoolNodePlacementList
+	_jsii_.Get(
+		j,
+		"nodePlacement",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_DataAzurermBatchPool) OsDiskPlacement() *string {
+	var returns *string
+	_jsii_.Get(
+		j,
+		"osDiskPlacement",
 		&returns,
 	)
 	return returns
@@ -422,6 +513,16 @@ func (j *jsiiProxy_DataAzurermBatchPool) StorageImageReference() DataAzurermBatc
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) TaskSchedulingPolicy() DataAzurermBatchPoolTaskSchedulingPolicyList {
+	var returns DataAzurermBatchPoolTaskSchedulingPolicyList
+	_jsii_.Get(
+		j,
+		"taskSchedulingPolicy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPool) TerraformGeneratorMetadata() *cdktf.TerraformProviderGeneratorMetadata {
 	var returns *cdktf.TerraformProviderGeneratorMetadata
 	_jsii_.Get(
@@ -472,6 +573,16 @@ func (j *jsiiProxy_DataAzurermBatchPool) TimeoutsInput() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) UserAccounts() DataAzurermBatchPoolUserAccountsList {
+	var returns DataAzurermBatchPoolUserAccountsList
+	_jsii_.Get(
+		j,
+		"userAccounts",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_DataAzurermBatchPool) VmSize() *string {
 	var returns *string
 	_jsii_.Get(
@@ -482,8 +593,18 @@ func (j *jsiiProxy_DataAzurermBatchPool) VmSize() *string {
 	return returns
 }
 
+func (j *jsiiProxy_DataAzurermBatchPool) Windows() DataAzurermBatchPoolWindowsList {
+	var returns DataAzurermBatchPoolWindowsList
+	_jsii_.Get(
+		j,
+		"windows",
+		&returns,
+	)
+	return returns
+}
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/batch_pool azurerm_batch_pool} Data Source.
+
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/batch_pool azurerm_batch_pool} Data Source.
 func NewDataAzurermBatchPool(scope constructs.Construct, id *string, config *DataAzurermBatchPoolConfig) DataAzurermBatchPool {
 	_init_.Initialize()
 
@@ -501,7 +622,7 @@ func NewDataAzurermBatchPool(scope constructs.Construct, id *string, config *Dat
 	return &j
 }
 
-// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.0.2/docs/data-sources/batch_pool azurerm_batch_pool} Data Source.
+// Create a new {@link https://registry.terraform.io/providers/hashicorp/azurerm/3.64.0/docs/data-sources/batch_pool azurerm_batch_pool} Data Source.
 func NewDataAzurermBatchPool_Override(d DataAzurermBatchPool, scope constructs.Construct, id *string, config *DataAzurermBatchPoolConfig) {
 	_init_.Initialize()
 

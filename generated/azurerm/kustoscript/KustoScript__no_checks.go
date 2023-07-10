@@ -108,6 +108,10 @@ func (j *jsiiProxy_KustoScript) validateSetSasTokenParameters(val *string) error
 	return nil
 }
 
+func (j *jsiiProxy_KustoScript) validateSetScriptContentParameters(val *string) error {
+	return nil
+}
+
 func (j *jsiiProxy_KustoScript) validateSetUrlParameters(val *string) error {
 	return nil
 }
