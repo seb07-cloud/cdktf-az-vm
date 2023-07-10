@@ -1,6 +1,6 @@
-# Project Name
+# Infra-Logic-as-Code
 
-This project is a CDK for Terraform stack that creates a virtual network in Azure.
+This project is based on CDKTF and creates resources in Azure.
 
 ## Getting Started
 
