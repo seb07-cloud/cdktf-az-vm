@@ -1,5 +1,7 @@
 # Infra-Logic-as-Code
 
+./images/terraform.png
+
 This project is based on CDKTF and creates resources in Azure.
 
 ## Getting Started
