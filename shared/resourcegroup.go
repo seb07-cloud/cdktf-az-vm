@@ -20,7 +20,8 @@ func NewAzResourceGroupConfig(name string, location string) *ResourceGroupConfig
 	}
 }
 
-func CreateAzResourceGroup(stack cdktf.TerraformStack, rgrp *ResourceGroupConfig) resourcegroup.ResourceGroup {
+// a function which takes a resource group config and creates a resourcegroup.ResourceGroup
+func CreateAzResourceGroup(stack cdktf.TerraformStack, rgrp ResourceGroupConfig) resourcegroup.ResourceGroup {
 	return resourcegroup.NewResourceGroup(stack, jsii.String("resourcegroup"),
 		&resourcegroup.ResourceGroupConfig{
 			Name:     jsii.String(rgrp.Name),

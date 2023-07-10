@@ -21,7 +21,7 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 
 	// Create a resource group
 	rgrp := shared.NewAzResourceGroupConfig("cdktf-vm-win-linux", azureLocation)
-	shared.CreateAzResourceGroup(stack, rgrp)
+	shared.CreateAzResourceGroup(stack, *rgrp)
 
 	// Create a virtual network
 	vnet := shared.NewAzVnetConfig("cdktf-vm-win-linux", vnetAddressSpace, azureLocation, rgrp.Name, snetAddressSpace)
