@@ -1,8 +1,8 @@
 # Infra-Logic-as-Code
 
-![Infra-Logic-as-Code](https://github.com/seb07-cloud/infra-logic-as-code/blob/main/images/cdktf.png)
-
 This project is based on CDKTF and creates resources in Azure.
+
+![Infra-Logic-as-Code](https://github.com/seb07-cloud/infra-logic-as-code/blob/main/images/cdktf.png)
 
 ## Getting Started
 
