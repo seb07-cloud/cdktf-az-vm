@@ -3,6 +3,8 @@
 package shared
 
 import (
+	"fmt"
+
 	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 
@@ -12,7 +14,7 @@ import (
 // new struct for vnet config
 type VnetConfig struct {
 	Name              string
-	AddressSpace      *[]*string
+	AddressSpace      string
 	Location          string
 	ResourceGroupName string
 	Subnet            *SubnetConfig
@@ -25,19 +27,14 @@ type SubnetConfig struct {
 }
 
 // a function to create a virtualnetwork.VirtualNetworkConfig and return a pointer to it.
-func NewAzVnetConfig(name string, vnetAddressSpace string, location string, resourceGroupName string, subnetAddressSpace string) *VnetConfig {
-
-	return &VnetConfig{
-		Name:              name,
-		AddressSpace:      StringSlice(vnetAddressSpace),
-		Location:          location,
-		ResourceGroupName: resourceGroupName,
-		Subnet: func() *SubnetConfig {
-			return &SubnetConfig{
-				Name:          name,
-				AddressPrefix: subnetAddressSpace,
-			}
-		}(),
+func (vnonf *VnetConfig) Init(name string, vnetAddressSpace string, location string, resourceGroupName string, subnetAddressSpace string) {
+	vnonf.Name = name
+	vnonf.AddressSpace = vnetAddressSpace
+	vnonf.Location = location
+	vnonf.ResourceGroupName = resourceGroupName
+	vnonf.Subnet = &SubnetConfig{
+		Name:          fmt.Sprintf("%s-subnet", name),
+		AddressPrefix: subnetAddressSpace,
 	}
 }
 
@@ -46,7 +43,7 @@ func CreateAzVirtualNetwork(stack cdktf.TerraformStack, vnet VnetConfig) virtual
 	return virtualnetwork.NewVirtualNetwork(stack, jsii.String("virtualnetwork"),
 		&virtualnetwork.VirtualNetworkConfig{
 			Name:              jsii.String(vnet.Name),
-			AddressSpace:      vnet.AddressSpace,
+			AddressSpace:      StringSlice(vnet.AddressSpace),
 			Location:          jsii.String(vnet.Location),
 			ResourceGroupName: jsii.String(vnet.ResourceGroupName),
 			Subnet: []*virtualnetwork.VirtualNetworkSubnet{

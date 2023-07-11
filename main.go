@@ -11,6 +11,7 @@ const (
 	resourceGroupName = "rg-cdktf-vm-win-linux"
 	azureLocation     = "westeurope"
 	vnetName          = "vnet-cdktf-vm-win-linux"
+	subnetName        = "subnet-cdktf-vm-win-linux"
 	vnetAddressSpace  = "10.0.0.0/16"
 	snetAddressSpace  = "10.0.0.0/24"
 
@@ -30,7 +31,7 @@ const (
 	version       = "latest"
 )
 
-func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
+func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
 
 	// Create an Azure provider
@@ -41,12 +42,28 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	shared.CreateAzResourceGroup(stack, *rgrp)
 
 	// Create a virtual network
-	vnet := shared.NewAzVnetConfig(vnetName, vnetAddressSpace, azureLocation, rgrp.Name, snetAddressSpace)
+	vnet := &shared.VnetConfig{
+		Name:              vnetName,
+		AddressSpace:      vnetAddressSpace,
+		Location:          azureLocation,
+		ResourceGroupName: resourceGroupName,
+		Subnet: &shared.SubnetConfig{
+			Name:          subnetName,
+			AddressPrefix: snetAddressSpace,
+		},
+	}
 	shared.CreateAzVirtualNetwork(stack, *vnet)
 
 	// Create a vm with a public ip
-	nicconfig := shared.NewAzNetworkInterfaceConfig(vmName, azureLocation, rgrp.Name, vnet, vnet.Subnet)
-	nicId := shared.CreateAzNetworkInterface(stack, *nicconfig)
+	vmic := &shared.NetworkInterfaceConfig{
+		Name:              "nic-cdktf-vm-win-linux",
+		Location:          azureLocation,
+		ResourceGroupName: resourceGroupName,
+		Vnet:              vnet,
+		Subnet:            vnet.Subnet,
+	}
+
+	nicId := shared.CreateAzNetworkInterface(stack, *vmic)
 
 	// Create Storage Image Reference
 	vmir := &shared.VirtualMachineStorageImageReferenceConfig{
@@ -69,7 +86,7 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	vmconfig := &shared.VirtualMachineConfig{
 		Name:                        vmName,
 		Location:                    azureLocation,
-		ResourceGroupName:           rgrp.Name,
+		ResourceGroupName:           resourceGroupName,
 		VmSize:                      vmSize,
 		OsDiskSizeGb:                vmOsDiskSizeGb,
 		OsType:                      vmOsType,
@@ -91,7 +108,7 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 func main() {
 	app := cdktf.NewApp(nil)
 
-	NewMyStack(app, "cdktf-vm-win-linux")
+	NewVmStack(app, "cdktf-vm-win-linux")
 
 	app.Synth()
 }

@@ -10,8 +10,6 @@ import (
 	virtualmachine "cdk.tf/go/stack/generated/azurerm/virtualmachine"
 )
 
-// a function to create a virtual machine and return a pointer to it.
-
 // new struct for virtual machine config
 type VirtualMachineConfig struct {
 	Name                        string
@@ -97,25 +95,27 @@ func (vmir *VirtualMachineStorageImageReferenceConfig) Init(publisher string, of
 }
 
 // a function to create a virtualmachine.VirtualMachineConfig and return a pointer to it.
-func NewAzVirtualMachineConfig(name string, location string, resourceGroupName string, vmSize string, osDiskSizeGb int, osType string, adminUsername string, adminPassword string, vnet *VnetConfig, subnet *SubnetConfig, nicId string) *VirtualMachineConfig {
+func (vmconf *VirtualMachineConfig) NewAzVirtualMachineConfig(name string, location string, resourceGroupName string, vmSize string, osDiskSizeGb int, osType string, adminUsername string, adminPassword string, vnet *VnetConfig, subnet *SubnetConfig, nicId string, vmosd *VirtualMachineStorageOsDiskConfig, vmir *VirtualMachineStorageImageReferenceConfig) *VirtualMachineConfig {
 
 	return &VirtualMachineConfig{
-		Name:              name,
-		Location:          location,
-		ResourceGroupName: resourceGroupName,
-		VmSize:            vmSize,
-		OsDiskSizeGb:      osDiskSizeGb,
-		OsType:            osType,
-		AdminUsername:     adminUsername,
-		AdminPassword:     adminPassword,
-		Vnet:              vnet,
-		Subnet:            subnet,
-		NicId:             nicId,
+		Name:                        name,
+		Location:                    location,
+		ResourceGroupName:           resourceGroupName,
+		VmSize:                      vmSize,
+		OsDiskSizeGb:                osDiskSizeGb,
+		OsType:                      osType,
+		AdminUsername:               adminUsername,
+		AdminPassword:               adminPassword,
+		Vnet:                        vnet,
+		Subnet:                      subnet,
+		NicId:                       nicId,
+		StorageOsDiskConfig:         vmosd,
+		StorageImageReferenceConfig: vmir,
 	}
 }
 
 // a function to create a network interface and return the id
-func NewAzNetworkInterfaceConfig(name string, location string, resourceGroupName string, vnet *VnetConfig, subnet *SubnetConfig) *NetworkInterfaceConfig {
+func (nic *NetworkInterfaceConfig) NewAzNetworkInterfaceConfig(name string, location string, resourceGroupName string, vnet *VnetConfig, subnet *SubnetConfig) *NetworkInterfaceConfig {
 
 	return &NetworkInterfaceConfig{
 		Name:              name,
