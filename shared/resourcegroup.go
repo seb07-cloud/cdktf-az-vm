@@ -10,14 +10,14 @@ import (
 type ResourceGroupConfig struct {
 	Name     string
 	Location string
+	Tags     *cdktf.TerraformLocal
 }
 
 // a function to create a resource group and return a pointer to it.
-func NewAzResourceGroupConfig(name string, location string) *ResourceGroupConfig {
-	return &ResourceGroupConfig{
-		Name:     name,
-		Location: location,
-	}
+func (rgrp *ResourceGroupConfig) Init(name string, location string, tags *cdktf.TerraformLocal) {
+	rgrp.Name = name
+	rgrp.Location = location
+	rgrp.Tags = tags
 }
 
 // a function which takes a resource group config and creates a resourcegroup.ResourceGroup

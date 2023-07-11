@@ -31,18 +31,42 @@ const (
 	version       = "latest"
 )
 
-func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
+// Azure Tags
+
+var tags = &shared.Tags{
+	Owner:       "seb@testing.local",
+	Service:     "cdktf-testing",
+	Environment: "dev",
+}
+
+func NewResourceGroupStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
+
+	// Create tags
+	tg := shared.CreateTags(&stack, *tags)
 
 	// Create an Azure provider
 	shared.NewAzProvider(stack, "azurerm")
 
 	// Create a resource group
-	rgrp := shared.NewAzResourceGroupConfig(resourceGroupName, azureLocation)
+	rgrp := &shared.ResourceGroupConfig{
+		Name:     resourceGroupName,
+		Location: azureLocation,
+		Tags:     &tg,
+	}
 	shared.CreateAzResourceGroup(stack, *rgrp)
 
+	return stack
+}
+
+func NewVnetStack(scope constructs.Construct, id string) cdktf.TerraformStack {
+	stack := cdktf.NewTerraformStack(scope, &id)
+
+	// Create an Azure provider
+	shared.NewAzProvider(stack, "azurerm")
+
 	// Create a virtual network + subnet config
-	vnet := &shared.VnetConfig{
+	vnc := &shared.VnetConfig{
 		Name:              vnetName,
 		AddressSpace:      vnetAddressSpace,
 		Location:          azureLocation,
@@ -54,15 +78,25 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	}
 
 	// Create a virtual network + subnet
-	shared.CreateAzVirtualNetwork(stack, *vnet)
+	shared.CreateAzVirtualNetwork(stack, *vnc)
+
+	return stack
+}
+
+func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
+	stack := cdktf.NewTerraformStack(scope, &id)
+
+	// Create an Azure provider
+	shared.NewAzProvider(stack, "azurerm")
 
 	// Create a vm with a public ip
 	vmic := &shared.NetworkInterfaceConfig{
 		Name:              "nic-cdktf-vm-win-linux",
 		Location:          azureLocation,
 		ResourceGroupName: resourceGroupName,
-		Vnet:              vnet,
-		Subnet:            vnet.Subnet,
+		Vnet:              vnc,
+		// NEED  to pass the subnet id
+		Subnet: vnc.Subnet,
 	}
 
 	// Create a network interface
@@ -95,8 +129,8 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 		OsType:                      vmOsType,
 		AdminUsername:               vmAdminUsername,
 		AdminPassword:               vmAdminPassword,
-		Vnet:                        vnet,
-		Subnet:                      vnet.Subnet,
+		Vnet:                        vnc,
+		Subnet:                      vnc.Subnet,
 		NicId:                       nicId,
 		StorageOsDiskConfig:         vmosd,
 		StorageImageReferenceConfig: vmir,
@@ -111,6 +145,8 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 func main() {
 	app := cdktf.NewApp(nil)
 
+	NewResourceGroupStack(app, "cdktf-rg-win-linux")
+	NewVnetStack(app, "cdktf-vnet-win-linux")
 	NewVmStack(app, "cdktf-vm-win-linux")
 
 	app.Synth()
