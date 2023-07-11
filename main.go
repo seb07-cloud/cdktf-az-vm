@@ -31,8 +31,7 @@ const (
 	version       = "latest"
 )
 
-// Azure Tags
-
+// Tag Definitions
 var tags = &shared.Tags{
 	Owner:       "seb@testing.local",
 	Service:     "cdktf-testing",
