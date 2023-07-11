@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Read the JSON from a file
-json=$(cat input.json)
+json=$(cat ../cdktf.json)
 
 providers='["hashicorp/azurerm@~> 3.6.4"]'
 
