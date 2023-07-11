@@ -3,6 +3,7 @@ package main
 import (
 	"cdk.tf/go/stack/shared"
 	"github.com/aws/constructs-go/constructs/v10"
+	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 )
 
@@ -38,14 +39,14 @@ var tags = &shared.Tags{
 	Environment: "dev",
 }
 
-func NewResourceGroupStack(scope constructs.Construct, id string) cdktf.TerraformStack {
+func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	stack := cdktf.NewTerraformStack(scope, &id)
-
-	// Create tags
-	tg := shared.CreateTags(&stack, *tags)
 
 	// Create an Azure provider
 	shared.NewAzProvider(stack, "azurerm")
+
+	// Create tags
+	tg := shared.CreateTags(&stack, *tags)
 
 	// Create a resource group
 	rgrp := &shared.ResourceGroupConfig{
@@ -55,14 +56,9 @@ func NewResourceGroupStack(scope constructs.Construct, id string) cdktf.Terrafor
 	}
 	shared.CreateAzResourceGroup(stack, *rgrp)
 
-	return stack
-}
-
-func NewVnetStack(scope constructs.Construct, id string) cdktf.TerraformStack {
-	stack := cdktf.NewTerraformStack(scope, &id)
-
-	// Create an Azure provider
-	shared.NewAzProvider(stack, "azurerm")
+	cdktf.NewTerraformOutput(stack, jsii.String("resource_group_name"), &cdktf.TerraformOutputConfig{
+		Value: rgrp.Name,
+	})
 
 	// Create a virtual network + subnet config
 	vnc := &shared.VnetConfig{
@@ -78,15 +74,6 @@ func NewVnetStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 
 	// Create a virtual network + subnet
 	shared.CreateAzVirtualNetwork(stack, *vnc)
-
-	return stack
-}
-
-func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
-	stack := cdktf.NewTerraformStack(scope, &id)
-
-	// Create an Azure provider
-	shared.NewAzProvider(stack, "azurerm")
 
 	// Create a vm with a public ip
 	vmic := &shared.NetworkInterfaceConfig{
@@ -144,8 +131,6 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 func main() {
 	app := cdktf.NewApp(nil)
 
-	NewResourceGroupStack(app, "cdktf-rg-win-linux")
-	NewVnetStack(app, "cdktf-vnet-win-linux")
 	NewVmStack(app, "cdktf-vm-win-linux")
 
 	app.Synth()
