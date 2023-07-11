@@ -11,6 +11,14 @@ const (
 	azureLocation    = "westeurope"
 	vnetAddressSpace = "10.0.0.0/16"
 	snetAddressSpace = "10.0.0.0/24"
+
+	// Azure Virtual Machine based consts
+	vmName          = "cdktf-vm-win-linux"
+	vmSize          = "Standard_B1s"
+	vmOsDiskSizeGb  = 30
+	vmOsType        = "Linux"
+	vmAdminUsername = "cdktfuser"
+	vmAdminPassword = "cdktfpassword"
 )
 
 func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
@@ -26,6 +34,11 @@ func NewMyStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	// Create a virtual network
 	vnet := shared.NewAzVnetConfig("cdktf-vm-win-linux", vnetAddressSpace, azureLocation, rgrp.Name, snetAddressSpace)
 	shared.CreateAzVirtualNetwork(stack, *vnet)
+
+	// Create a vm with a public ip
+	vm := shared.NewAzVirtualMachineConfig(vmName, azureLocation, rgrp.Name, vmSize, 30, vmOsType, vmAdminUsername, vmAdminPassword, vnet, vnet.Subnet)
+	shared.CreateAzVirtualMachine(stack, *vm)
+
 	return stack
 }
 
