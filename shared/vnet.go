@@ -3,8 +3,6 @@
 package shared
 
 import (
-	"fmt"
-
 	"github.com/aws/jsii-runtime-go"
 	"github.com/hashicorp/terraform-cdk-go/cdktf"
 
@@ -27,13 +25,13 @@ type SubnetConfig struct {
 }
 
 // a function to create a virtualnetwork.VirtualNetworkConfig and return a pointer to it.
-func (vnonf *VnetConfig) Init(name string, vnetAddressSpace string, location string, resourceGroupName string, subnetAddressSpace string) {
-	vnonf.Name = name
+func (vnonf *VnetConfig) Init(subnetName string, vnetName string, vnetAddressSpace string, location string, resourceGroupName string, subnetAddressSpace string) {
+	vnonf.Name = vnetName
 	vnonf.AddressSpace = vnetAddressSpace
 	vnonf.Location = location
 	vnonf.ResourceGroupName = resourceGroupName
 	vnonf.Subnet = &SubnetConfig{
-		Name:          fmt.Sprintf("%s-subnet", name),
+		Name:          subnetName,
 		AddressPrefix: subnetAddressSpace,
 	}
 }

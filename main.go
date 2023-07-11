@@ -17,7 +17,7 @@ const (
 
 	// Azure Virtual Machine based consts
 	vmName          = "cdktf-vm-win-linux"
-	vmSize          = "Standard_B1s"
+	vmSize          = "Standard_B2ms"
 	vmOsDiskSizeGb  = 30
 	vmOsType        = "Linux"
 	vmAdminUsername = "cdktfuser"
