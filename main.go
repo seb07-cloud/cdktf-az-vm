@@ -41,7 +41,7 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 	rgrp := shared.NewAzResourceGroupConfig(resourceGroupName, azureLocation)
 	shared.CreateAzResourceGroup(stack, *rgrp)
 
-	// Create a virtual network
+	// Create a virtual network + subnet config
 	vnet := &shared.VnetConfig{
 		Name:              vnetName,
 		AddressSpace:      vnetAddressSpace,
@@ -52,6 +52,8 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 			AddressPrefix: snetAddressSpace,
 		},
 	}
+
+	// Create a virtual network + subnet
 	shared.CreateAzVirtualNetwork(stack, *vnet)
 
 	// Create a vm with a public ip
@@ -63,6 +65,7 @@ func NewVmStack(scope constructs.Construct, id string) cdktf.TerraformStack {
 		Subnet:            vnet.Subnet,
 	}
 
+	// Create a network interface
 	nicId := shared.CreateAzNetworkInterface(stack, *vmic)
 
 	// Create Storage Image Reference
