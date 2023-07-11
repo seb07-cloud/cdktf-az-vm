@@ -18,6 +18,8 @@ To get started with this project, follow these steps:
 - Terraform
 - CDK for Terraform
 - Azure CLI
+- Go
+- Node.js
 
 ### Installing
 
